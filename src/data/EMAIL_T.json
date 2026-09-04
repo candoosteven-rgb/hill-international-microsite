@@ -1,0 +1,18 @@
+{
+  "en": {
+    "subject": "Thanks for registering your interest with Hill International",
+    "body": "Hi {name},\n\nThanks for registering your interest. A member of our international sales team will be in touch within one business day to talk through next steps in {language}.\n\nIn the meantime, feel free to explore our developments and download the brochures that interest you.\n\nThe Hill International team\nenquiries@hillinternational.co.uk"
+  },
+  "tr": {
+    "subject": "Hill International'a olan ilginizi kaydettiğiniz için teşekkürler",
+    "body": "Merhaba {name},\n\nİlginizi kaydettiğiniz için teşekkür ederiz. Uluslararası satış ekibimizden biri, sonraki adımları {language} dilinde konuşmak üzere bir iş günü içinde sizinle iletişime geçecektir.\n\nBu süre zarfında projelerimizi keşfedebilir ve ilginizi çeken broşürleri indirebilirsiniz.\n\nHill International Ekibi\nenquiries@hillinternational.co.uk"
+  },
+  "zh": {
+    "subject": "感谢您登记对 Hill International 的意向",
+    "body": "{name} 您好，\n\n感谢您登记意向。我们的国际销售团队成员将在一个工作日内与您联系，并以{language}与您沟通后续步骤。\n\n在此之前，欢迎浏览我们的项目并下载您感兴趣的楼书。\n\nHill International 团队\nenquiries@hillinternational.co.uk"
+  },
+  "ar": {
+    "subject": "شكرًا لتسجيل اهتمامك مع هيل إنترناشونال",
+    "body": "مرحبًا {name}،\n\nشكرًا لتسجيل اهتمامك. سيتواصل معك أحد أعضاء فريق المبيعات الدولي خلال يوم عمل واحد لمناقشة الخطوات التالية باللغة {language}.\n\nفي غضون ذلك، يمكنك استكشاف مشاريعنا وتحميل الكتيبات التي تهمك.\n\nفريق هيل إنترناشونال\nenquiries@hillinternational.co.uk"
+  }
+}

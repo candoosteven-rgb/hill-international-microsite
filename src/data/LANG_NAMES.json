@@ -1,0 +1,26 @@
+{
+  "en": {
+    "en": "English",
+    "tr": "Turkish",
+    "zh": "Mandarin",
+    "ar": "Arabic"
+  },
+  "tr": {
+    "en": "İngilizce",
+    "tr": "Türkçe",
+    "zh": "Mandarin Çincesi",
+    "ar": "Arapça"
+  },
+  "zh": {
+    "en": "英语",
+    "tr": "土耳其语",
+    "zh": "中文",
+    "ar": "阿拉伯语"
+  },
+  "ar": {
+    "en": "الإنجليزية",
+    "tr": "التركية",
+    "zh": "الماندرين",
+    "ar": "العربية"
+  }
+}

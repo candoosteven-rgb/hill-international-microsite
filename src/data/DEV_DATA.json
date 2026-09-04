@@ -1,0 +1,1175 @@
+[
+  {
+    "id": "lampton-parkside",
+    "name": "Lampton Parkside",
+    "region": "London",
+    "zone": 4,
+    "status": "live",
+    "docs": {
+      "brochure": true,
+      "factsheet": true,
+      "investor": false
+    },
+    "siteUrl": "https://lamptonparkside.millerhare.com/",
+    "image": "uploads/opt/screenshot-2026-08-28-081144.jpg",
+    "logo": "uploads/lampton-parkside-logo-white.png",
+    "locationLabel": "Hounslow, West London · Zone 4",
+    "tagline": "1, 2 & 3 bed apartments and duplexes",
+    "showBedIcon": true,
+    "images": [
+      "uploads/opt/screenshot-2026-08-28-081144.jpg",
+      "uploads/opt/screenshot-2026-08-28-081906.jpg",
+      "uploads/opt/screenshot-2026-08-28-082149.jpg",
+      "uploads/opt/screenshot-2026-08-28-082600.jpg",
+      "uploads/Lampton Parkside - External - Block E1 (23).jpg.webp",
+      "https://www.lamptonparkside.co.uk/sites/lamptonparkside.co.uk/files/styles/media_gallery/public/images/2025-10/DSC_8518-%20LR.jpg.webp?h=a9fd4dc1&itok=OxfT3K5B",
+      "https://www.lamptonparkside.co.uk/sites/lamptonparkside.co.uk/files/styles/media_gallery/public/images/2025-09/To%20use%20%283%29.jpg.webp?h=a0e56f0f&itok=jCSwZ8iB",
+      "https://www.lamptonparkside.co.uk/sites/lamptonparkside.co.uk/files/styles/media_gallery/public/images/2025-09/To%20use%20%282%29.jpg.webp?h=b81a5b26&itok=yvcu2q0k",
+      "https://www.lamptonparkside.co.uk/sites/lamptonparkside.co.uk/files/styles/media_gallery/public/images/2025-08/Birds%20eye%20view%20from%20park%20.jpg.webp?h=b79ded1c&itok=qs60r546"
+    ],
+    "accessNote": "27 minutes by tube to Zone 1",
+    "place": "Hounslow, West London",
+    "accessPoints": [
+      {
+        "label": "Private balcony",
+        "icon": "terrace"
+      },
+      {
+        "label": "40 acre park",
+        "icon": "park"
+      },
+      {
+        "label": "Concierge, 12hrs a day",
+        "icon": "concierge"
+      },
+      {
+        "label": "EV charging points",
+        "icon": "car"
+      }
+    ]
+  },
+  {
+    "id": "kew-bridge-rise",
+    "name": "Kew Bridge Rise",
+    "region": "London",
+    "zone": 3,
+    "status": "live",
+    "logo": "uploads/vb2292160_KBR_White_RGB.png",
+    "docs": {
+      "brochure": true,
+      "factsheet": true,
+      "investor": true
+    },
+    "siteUrl": "https://kewbridgerise.millerhare.com/",
+    "image": "uploads/opt/kew-bridge-rise-photo.jpg",
+    "images": [
+      "https://kewbridgerise.co.uk/sites/kewbridgerise.co.uk/files/styles/media_gallery/public/images/2024-01/vb2310794_4192_Brentford_Ext_102%20Cantilever_Final_AB%20%281%29.jpg.webp?h=07f5f294&itok=IVDkfkKo",
+      "https://kewbridgerise.co.uk/sites/kewbridgerise.co.uk/files/styles/media_gallery/public/images/2025-06/Wren%20House%20Open%20Plan%20Dining%20%26%20Living.jpg.webp?h=ea11ab6b&itok=7GPgmaWl",
+      "https://kewbridgerise.co.uk/sites/kewbridgerise.co.uk/files/styles/media_gallery/public/images/2025-06/Wren%20Show%20Apartment%20Kitchen%20Wide%20Angle.jpg.webp?h=788b0b0c&itok=WntLeCzy",
+      "https://kewbridgerise.co.uk/sites/kewbridgerise.co.uk/files/styles/media_gallery/public/images/2025-06/Wren%20House%20Principal%20Bedroom%20Bed.jpg.webp?h=6f98d453&itok=Bv3s7deb",
+      "https://kewbridgerise.co.uk/sites/kewbridgerise.co.uk/files/styles/media_gallery/public/images/2025-06/Wren%20House%20Bathroom%20Wide%20Shot.jpg.webp?h=9354f665&itok=p9U-r35j",
+      "https://kewbridgerise.co.uk/sites/kewbridgerise.co.uk/files/styles/media_gallery/public/images/2025-06/Wren%20House%20balcony%20%282%29.jpg.webp?h=3379aa37&itok=BHMYJIZ7",
+      "https://kewbridgerise.co.uk/sites/kewbridgerise.co.uk/files/styles/media_gallery/public/images/2024-09/4192_Amenities_Gym_Final_GB.jpg.webp?h=c5f5e628&itok=GqzwelUm",
+      "https://kewbridgerise.co.uk/sites/kewbridgerise.co.uk/files/styles/media_gallery/public/images/2024-09/4192_Amenities_Co-Working_CAM01_Final_CT.jpg.webp?h=1c9b88c9&itok=GDK4UVPw",
+      "https://kewbridgerise.co.uk/sites/kewbridgerise.co.uk/files/styles/media_gallery/public/images/2024-07/7423_2400_240709.jpg.webp?h=6afbe2ac&itok=RRmKWTvz"
+    ],
+    "flowerLeft": "uploads/opt/kew-bridge-rise-pattern.jpg",
+    "flowerRight": "uploads/opt/kew-bridge-rise-pattern.jpg",
+    "locationLabel": "Brentford, West London · Zone 3",
+    "tagline": "Studios & 2 bed apartments",
+    "showBedIcon": true,
+    "place": "Brentford, London",
+    "accessNote": "2 min walk to Kew Bridge station",
+    "accessPoints": [
+      {
+        "label": "Gym",
+        "icon": "gym"
+      },
+      {
+        "label": "Nursery",
+        "icon": "nursery"
+      },
+      {
+        "label": "Concierge",
+        "icon": "concierge"
+      },
+      {
+        "label": "Co-working space",
+        "icon": "concierge"
+      },
+      {
+        "label": "Riverside, near Kew Gardens",
+        "icon": "park"
+      }
+    ]
+  },
+  {
+    "id": "north-gate-park",
+    "name": "North Gate Park",
+    "region": "London",
+    "zone": 3,
+    "status": "live",
+    "logo": "uploads/NGP_Logo_WHITE.png",
+    "docs": {
+      "brochure": true,
+      "factsheet": true,
+      "investor": false
+    },
+    "siteUrl": "https://tekuchiapps.com/northgatepark/home",
+    "images": [
+      "uploads/opt/ngp-foxtail-street.jpg",
+      "uploads/opt/ngp-foxtail-elevation.jpg",
+      "uploads/North Gate Park - Plot 2 The Ash -bifolding doors.jpg.webp",
+      "uploads/opt/north-gate-park-211a2098.jpg"
+    ],
+    "locationLabel": "Harringay, North London · Zone 3",
+    "place": "Harringay, North London",
+    "tagline": "1 & 2 bed apartments and 3 & 4 bed houses",
+    "showBedIcon": true,
+    "accessNote": "30 mins to King’s Cross",
+    "accessPoints": [
+      {
+        "label": "4.5 acres of landscaped gardens",
+        "icon": "park"
+      },
+      {
+        "label": "Concierge service",
+        "icon": "concierge"
+      },
+      {
+        "label": "Freehold houses",
+        "icon": "pin"
+      },
+      {
+        "label": "Private garden or balcony",
+        "icon": "terrace"
+      }
+    ]
+  },
+  {
+    "id": "dagenham-green",
+    "name": "Dagenham Green",
+    "region": "London",
+    "zone": 5,
+    "status": "live",
+    "docs": {
+      "brochure": true,
+      "factsheet": true,
+      "investor": true
+    },
+    "siteUrl": "https://tekuchiapps.com/dagenhamgreen/login",
+    "image": "uploads/DJI_20260122175944_0182_D.jpg.webp",
+    "images": [
+      "uploads/opt/dagenham-green-balcony.jpg",
+      "uploads/DSC_0447 - HR.jpg",
+      "uploads/DSC_0787 - HR.jpg",
+      "uploads/Dagenham Green_BlockC_Humming_bird.jpg",
+      "uploads/Dagenham Green_B_Market_Square.jpg",
+      "uploads/DJI_20260122175944_0182_D.jpg.webp"
+    ],
+    "logo": "uploads/dagenham-green-logo.png",
+    "flowerLeft": "uploads/opt/dagenham-green-flower-left.jpg",
+    "flowerRight": "uploads/opt/dagenham-green-flower-right.jpg",
+    "tagline": "1, 2 & 3 bed apartments from £317,000",
+    "locationLabel": "Dagenham, East London · Zone 5",
+    "place": "Dagenham, East London",
+    "showBedIcon": true,
+    "accessNote": "2 min walk to Dagenham Dock station",
+    "accessPoints": [
+      {
+        "label": "10 acres of landscaped parkland",
+        "icon": "park"
+      },
+      {
+        "label": "On-site Sainsbury’s and concierge",
+        "icon": "supermarket"
+      },
+      {
+        "label": "Car club",
+        "icon": "car"
+      },
+      {
+        "label": "34 mins to Canary Wharf by train",
+        "icon": "pin"
+      }
+    ]
+  },
+  {
+    "id": "wembley",
+    "name": "Wembley",
+    "region": "London",
+    "zone": 4,
+    "status": "coming-soon",
+    "docs": {
+      "brochure": true,
+      "factsheet": true,
+      "investor": false
+    },
+    "siteUrl": "https://hill.co.uk",
+    "image": "uploads/opt/wembley-cgi.jpg",
+    "locationLabel": "Wembley, North West London",
+    "tagline": "1, 2 & 3 bed apartments",
+    "showBedIcon": true,
+    "images": [
+      "uploads/opt/wembley-cgi.jpg"
+    ],
+    "accessNote": "Jubilee line to Bond Street in 15 mins",
+    "accessPoints": [
+      {
+        "label": "Minutes from Wembley Stadium",
+        "icon": "stadium"
+      },
+      {
+        "label": "Designer outlet shopping nearby",
+        "icon": "supermarket"
+      }
+    ]
+  },
+  {
+    "id": "dollis-hill",
+    "name": "Dollis Village",
+    "region": "London",
+    "zone": 3,
+    "status": "coming-soon",
+    "docs": {
+      "brochure": true,
+      "factsheet": true,
+      "investor": false
+    },
+    "siteUrl": "https://hill.co.uk",
+    "image": "uploads/opt/dollis-hill-cgi.jpg",
+    "locationLabel": "Dollis Hill, North West London",
+    "tagline": "1, 2 & 3 bed apartments",
+    "showBedIcon": true,
+    "images": [
+      "uploads/opt/dollis-hill-cgi.jpg"
+    ],
+    "accessNote": "Jubilee line to Bond Street in 17 mins",
+    "accessPoints": [
+      {
+        "label": "Gladstone Park on the doorstep",
+        "icon": "park"
+      },
+      {
+        "label": "Village shops and cafés",
+        "icon": "supermarket"
+      }
+    ]
+  },
+  {
+    "id": "ham-richmond",
+    "name": "Ham, Richmond",
+    "region": "London",
+    "zone": 4,
+    "status": "coming-soon",
+    "docs": {
+      "brochure": true,
+      "factsheet": true,
+      "investor": false
+    },
+    "siteUrl": "https://hill.co.uk",
+    "image": "uploads/opt/ham-richmond-cgi.jpg",
+    "locationLabel": "Ham, South West London",
+    "tagline": "2, 3 & 4 bed houses and apartments",
+    "showBedIcon": true,
+    "images": [
+      "uploads/opt/ham-richmond-cgi.jpg"
+    ],
+    "accessNote": "Beside Richmond Park",
+    "accessPoints": [
+      {
+        "label": "Thames riverside walks",
+        "icon": "woodland"
+      },
+      {
+        "label": "Well-regarded local schools",
+        "icon": "school"
+      },
+      {
+        "label": "Freehold Houses",
+        "icon": "pin"
+      },
+      {
+        "label": "Walking distance to Richmond Park, the River Thames and Ham Common",
+        "icon": "park"
+      }
+    ]
+  },
+  {
+    "id": "woolwich",
+    "name": "Woolwich",
+    "region": "London",
+    "zone": 4,
+    "status": "coming-soon",
+    "docs": {
+      "brochure": true,
+      "factsheet": true,
+      "investor": false
+    },
+    "siteUrl": "https://hill.co.uk",
+    "image": "uploads/opt/woolwich-cgi.jpg",
+    "locationLabel": "Woolwich, South East London",
+    "tagline": "1, 2 & 3 bed apartments",
+    "showBedIcon": true,
+    "images": [
+      "uploads/opt/woolwich-cgi.jpg"
+    ],
+    "accessNote": "Elizabeth line to the City in 15 mins",
+    "accessPoints": [
+      {
+        "label": "2 minutes’ walk to Woolwich Arsenal station, serviced by the DLR and Elizabeth Line (Zone 4)",
+        "icon": "pin"
+      },
+      {
+        "label": "Fast links to City and Canary Wharf",
+        "icon": "pin"
+      }
+    ]
+  },
+  {
+    "id": "colindale",
+    "name": "Colindale",
+    "region": "London",
+    "zone": 4,
+    "status": "coming-soon",
+    "docs": {
+      "brochure": true,
+      "factsheet": true,
+      "investor": false
+    },
+    "siteUrl": "https://hill.co.uk",
+    "image": "uploads/opt/colindale-cgi.jpg",
+    "locationLabel": "Colindale, North West London",
+    "tagline": "Studios, 1, 2 & 3 bed apartments",
+    "showBedIcon": true,
+    "images": [
+      "uploads/opt/colindale-cgi.jpg"
+    ],
+    "accessNote": "Northern line to the West End in 25 mins",
+    "accessPoints": [
+      {
+        "label": "New public park alongside",
+        "icon": "park"
+      },
+      {
+        "label": "Retail park and supermarket nearby",
+        "icon": "supermarket"
+      },
+      {
+        "label": "Located between Colindale underground station and Mill Hill Broadway overground station",
+        "icon": "pin"
+      }
+    ]
+  },
+  {
+    "id": "langdon-park",
+    "name": "Langdon Park",
+    "region": "London",
+    "zone": 2,
+    "status": "coming-soon",
+    "docs": {
+      "brochure": true,
+      "factsheet": true,
+      "investor": false
+    },
+    "siteUrl": "https://hill.co.uk",
+    "image": "uploads/opt/langdon-park-cgi.jpg",
+    "locationLabel": "Poplar, East London",
+    "tagline": "1, 2 & 3 bed apartments",
+    "showBedIcon": true,
+    "images": [
+      "uploads/opt/langdon-park-cgi.jpg"
+    ],
+    "accessNote": "DLR to Canary Wharf in 6 mins",
+    "accessPoints": [
+      {
+        "label": "Langdon Park green space",
+        "icon": "park"
+      },
+      {
+        "label": "Leisure centre and gym nearby",
+        "icon": "gym"
+      },
+      {
+        "label": "10 minutes by train to Bank Station",
+        "icon": "pin"
+      }
+    ]
+  },
+  {
+    "id": "barnet",
+    "name": "Honeywood",
+    "region": "London",
+    "zone": 5,
+    "status": "coming-soon",
+    "logo": "uploads/honeywood-logo-white.png",
+    "docs": {
+      "brochure": true,
+      "factsheet": true,
+      "investor": false
+    },
+    "siteUrl": "https://www.hill.co.uk/honeywood",
+    "image": "uploads/opt/honeywood-cgi.jpg",
+    "locationLabel": "Barnet, North London",
+    "tagline": "2, 3 & 4 bed houses",
+    "showBedIcon": true,
+    "images": [
+      "uploads/opt/honeywood-cgi.jpg"
+    ],
+    "accessNote": "Sought-after schools on the doorstep",
+    "accessPoints": [
+      {
+        "label": "Open green space and playing fields",
+        "icon": "park"
+      },
+      {
+        "label": "Northern line into the West End",
+        "icon": "pin"
+      },
+      {
+        "label": "Queen Elizabeth’s School (QE Boys) less than a mile away",
+        "icon": "school"
+      }
+    ]
+  },
+  {
+    "id": "hoxton",
+    "name": "Shoreditch Heights",
+    "region": "London",
+    "zone": 2,
+    "status": "coming-soon",
+    "docs": {
+      "brochure": true,
+      "factsheet": true,
+      "investor": false
+    },
+    "siteUrl": "https://hill.co.uk",
+    "image": "uploads/opt/hoxton-cgi.jpg",
+    "locationLabel": "Hoxton, East London",
+    "tagline": "1, 2 & 3 bed apartments",
+    "showBedIcon": true,
+    "images": [
+      "uploads/opt/hoxton-cgi.jpg"
+    ],
+    "accessNote": "4 mins to Bank & King’s Cross from Old Street station",
+    "accessPoints": [
+      {
+        "label": "Shoreditch galleries and cafés",
+        "icon": "landmark"
+      },
+      {
+        "label": "Gyms and studios nearby",
+        "icon": "gym"
+      },
+      {
+        "label": "Next to Regent’s Canal & Shoreditch Park",
+        "icon": "park"
+      }
+    ]
+  },
+  {
+    "id": "little-chalfont-park",
+    "name": "Little Chalfont Park",
+    "region": "Buckinghamshire",
+    "status": "coming-soon",
+    "docs": {
+      "brochure": true,
+      "factsheet": true,
+      "investor": false
+    },
+    "siteUrl": "https://www.hill.co.uk/little-chalfont-park",
+    "locationLabel": "Little Chalfont, Buckinghamshire",
+    "image": "uploads/opt/little-chalfont-park-meadow.jpg",
+    "images": [
+      "uploads/opt/little-chalfont-park-meadow.jpg",
+      "https://www.hill.co.uk/sites/default/files/styles/text_image_panel/public/images/2026-06/02215_View%201_241129_RT.jpg.webp?h=5ae4ceff&itok=w_nqvj0C",
+      "https://www.hill.co.uk/sites/default/files/styles/text_image_panel/public/images/2026-06/Copy%20of%2002215_View%202_241129_RT.jpg.webp?h=5ae4ceff&itok=D6Oy5QL5"
+    ],
+    "tagline": "3, 4 & 5 bed houses",
+    "showBedIcon": true,
+    "place": "Little Chalfont, Buckinghamshire",
+    "accessNote": "0.9 miles to Chalfont & Latimer station",
+    "accessPoints": [
+      {
+        "label": "Exceptional schools",
+        "icon": "school"
+      },
+      {
+        "label": "Little Chalfont Nature Park",
+        "icon": "woodland"
+      },
+      {
+        "label": "Harewood Downs Golf Club",
+        "icon": "pin"
+      }
+    ]
+  },
+  {
+    "id": "nexus",
+    "name": "Nexus",
+    "region": "Hertfordshire",
+    "locationLabel": "Stevenage, Hertfordshire",
+    "status": "live",
+    "epc": "B",
+    "logo": "uploads/pasted-1788518197730-0.png",
+    "docs": {
+      "brochure": true,
+      "factsheet": true,
+      "investor": true
+    },
+    "siteUrl": "https://tekuchiapps.com/nexus",
+    "tagline": "1, 2 & 3 bed apartments",
+    "showBedIcon": true,
+    "images": [
+      "uploads/NEXUS_LIVING (1).png.webp",
+      "uploads/4371_NEXUS_KITCHEN_CAM001_DRAFT04_LTI.jpg.webp",
+      "uploads/NEXUS_BEDROOM 2_VIGNETTE_.jpg.webp",
+      "uploads/opt/nexus-photo.jpg"
+    ],
+    "accessNote": "22 minutes by train to London King’s Cross",
+    "accessPoints": [
+      {
+        "label": "Private balcony or terrace",
+        "icon": "terrace"
+      },
+      {
+        "label": "Car club on the doorstep",
+        "icon": "car"
+      },
+      {
+        "label": "Town centre and station a short walk",
+        "icon": "supermarket"
+      },
+      {
+        "label": "Estimated rental yields of up to 6.6%*",
+        "icon": "yield"
+      }
+    ]
+  },
+  {
+    "id": "mulberry-rise",
+    "name": "Mulberry Rise",
+    "region": "Hertfordshire",
+    "locationLabel": "Hitchin, Hertfordshire",
+    "status": "coming-soon",
+    "logo": "uploads/mulberry-rise-logo-white.png",
+    "docs": {
+      "brochure": true,
+      "factsheet": true,
+      "investor": false
+    },
+    "siteUrl": "https://www.hill.co.uk/mulberry-rise",
+    "tagline": "2, 3 & 4 bed homes",
+    "showBedIcon": true,
+    "place": "Hitchin, Hertfordshire",
+    "images": [
+      "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-03/Lucas%20Lane%20-%20Hitchin%20Town%20Centre%20%28200%29.jpg.webp?h=53772638&itok=JrI-5fmS",
+      "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-03/Lucas%20Lane%20-%20Hitchin%20Town%20Centre%20%28101%29.jpg.webp?h=587c505d&itok=w5MwDs0a",
+      "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-03/Lucas%20Lane%20-%20Hitchin%20Town%20Centre%20%2865%29.jpg.webp?h=fa21cbc3&itok=ZorLPCeN",
+      "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2025-08/Lucas%20Lane%20-%20Hitchin%20Town%20Centre%20%2880%29.jpg.webp?h=06ac0d8c&itok=zDYoJmQK",
+      "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2025-08/Lucas%20Lane%20-%20Hitchin%20Town%20Centre%20%28161%29.jpg.webp?h=06ac0d8c&itok=uMSoPBjQ",
+      "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-03/Lucas%20Lane%20-%20Hitchin%20Town%20Centre%20%28197%29.jpg.webp?h=fa5f4214&itok=h9TpLgMK",
+      "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2024-09/SJH_9807-Edit.jpg.webp?h=a1e1a043&itok=QkLU8NGo",
+      "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2024-09/SJH_0305-Edit.jpg.webp?h=a1e1a043&itok=fI6ESf8A",
+      "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2024-09/SJH_0218-Edit.jpg.webp?h=a1e1a043&itok=sVI2icth",
+      "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2024-09/SJH_0036-Edit.jpg.webp?h=a1e1a043&itok=mFOwkz6M",
+      "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2024-09/SJH_0288-Edit.jpg.webp?h=a1e1a043&itok=upJdk4ev",
+      "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2024-09/SJH_0088-Edit.jpg.webp?h=a1e1a043&itok=s6SxuBA2",
+      "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2024-09/SJH_0125-Edit.jpg.webp?h=a1e1a043&itok=w-Cux06M",
+      "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2024-09/SJH_0261-Edit.jpg.webp?h=a1e1a043&itok=7CwXqz7G",
+      "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2024-09/SJH_0166-Edit.jpg.webp?h=a1e1a043&itok=k72A-jyY",
+      "https://www.hill.co.uk/sites/default/files/styles/siteplan/public/2026-07/Gray-Lanes-Site-Plan-4000x2929px.jpg?itok=QUTXV3Ka"
+    ],
+    "accessNote": "Set off Gray’s Lane, moments from Hitchin town centre",
+    "accessPoints": [
+      {
+        "label": "Waitrose & Partners, 0.4 miles",
+        "icon": "supermarket"
+      },
+      {
+        "label": "Samuel Lucas Junior Mixed and Infant School, 0.3 miles",
+        "icon": "school"
+      },
+      {
+        "label": "Hitchin town centre shops and cafés",
+        "icon": "landmark"
+      }
+    ]
+  },
+  {
+    "id": "farehurst-park",
+    "name": "Farehurst Park",
+    "region": "Cambridge",
+    "locationLabel": "Fulbourn, Cambridgeshire",
+    "status": "live",
+    "logo": "uploads/pasted-1788517996366-0.png",
+    "docs": {
+      "brochure": true,
+      "factsheet": true,
+      "investor": false
+    },
+    "siteUrl": "https://www.hill.co.uk/farehurst-park",
+    "tagline": "2-5 bed homes",
+    "showBedIcon": true,
+    "place": "Fulbourn, Cambridgeshire",
+    "images": [
+      "uploads/Screenshot 2026-08-28 104844.png",
+      "uploads/Screenshot 2026-08-28 104855.png",
+      "uploads/Screenshot 2026-08-28 104906.png",
+      "uploads/Screenshot 2026-08-28 104918.png",
+      "uploads/Screenshot 2026-08-28 104939.png"
+    ],
+    "accessNote": "4 miles from Cambridge city centre",
+    "accessPoints": [
+      {
+        "label": "7 acres of open space",
+        "icon": "park"
+      },
+      {
+        "label": "1.3km pathway for walking and cycling",
+        "icon": "pin"
+      },
+      {
+        "label": "60% sold",
+        "icon": "pin"
+      }
+    ]
+  },
+  {
+    "id": "the-icon",
+    "name": "The Icon",
+    "region": "Cambridge",
+    "locationLabel": "Eddington, Cambridge",
+    "status": "live",
+    "logo": "uploads/pasted-1788517248362-0.png",
+    "docs": {
+      "brochure": true,
+      "factsheet": true,
+      "investor": false
+    },
+    "siteUrl": "https://www.hill.co.uk/all-developments/cambridgeshire/the-icon",
+    "tagline": "1, 2 & 3 bed apartments & duplexes",
+    "showBedIcon": true,
+    "place": "Eddington, Cambridge",
+    "images": [
+      "uploads/Screenshot 2026-08-28 103148.png",
+      "uploads/Version-4_Dusk (1).jpg",
+      "uploads/03_LowRes_ICON-Roof-Terrace_DJI_0016_D-HDR.jpg",
+      "https://www.hill.co.uk/sites/default/files/styles/hero_mobile/public/images/2026-03/Bike%20Path_Spring%20%282%29.jpg.webp?h=37b6d6bb&itok=6bDyuCov"
+    ],
+    "accessNote": "Rooftop garden with city views",
+    "accessPoints": [
+      {
+        "label": "Residents’ rooftop garden",
+        "icon": "terrace"
+      },
+      {
+        "label": "Sustainable design",
+        "icon": "park"
+      },
+      {
+        "label": "Award-winning Eddington location",
+        "icon": "landmark"
+      },
+      {
+        "label": "12-minute cycle to Cambridge city centre",
+        "icon": "pin"
+      },
+      {
+        "label": "Cambridge University Primary School on site",
+        "icon": "school"
+      },
+      {
+        "label": "Concierge, shops, cafés & restaurants",
+        "icon": "concierge"
+      }
+    ]
+  },
+  {
+    "id": "millside-grange",
+    "name": "Millside Grange",
+    "region": "Hertfordshire",
+    "locationLabel": "Croxley Green, Rickmansworth",
+    "status": "live",
+    "docs": {
+      "brochure": true,
+      "factsheet": true,
+      "investor": false
+    },
+    "siteUrl": "https://www.hill.co.uk/millside-grange",
+    "tagline": "Last two 5 bed detached homes",
+    "showBedIcon": true,
+    "place": "Croxley Green, Rickmansworth",
+    "images": [
+      "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2025-11/Plot%202%20Kitchen%2C%20Dining%2C%20Living.jpg.webp?h=790be497&itok=PfhAuEzo",
+      "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2025-11/MILLSIDE%20GRANGE_EXTERNALS-%20%2872%29.jpg.webp?h=bae7209c&itok=8I9zqtX2",
+      "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2025-11/Millside%20Grange%20Play%20Area.JPG.webp?h=9202a37b&itok=wr4ggiMh",
+      "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-01/Advanced%20Edit_2%20%281%29.jpg.webp?h=3189ad10&itok=3GSi0uGO"
+    ],
+    "accessNote": "9 minutes to Watford, 45 minutes to London",
+    "accessPoints": [
+      {
+        "label": "Little Green Junior School, 0.3 miles",
+        "icon": "school"
+      },
+      {
+        "label": "The Artichoke pub, 0.6 miles",
+        "icon": "landmark"
+      },
+      {
+        "label": "Croxley Underground Station, 0.8 miles",
+        "icon": "car"
+      },
+      {
+        "label": "Cassiobury Park, 1.8 miles",
+        "icon": "park"
+      }
+    ]
+  },
+  {
+    "id": "city-reach",
+    "name": "City Reach",
+    "region": "Cambridge",
+    "status": "live",
+    "logo": "uploads/pasted-1788517409870-0.png",
+    "docs": {
+      "brochure": true,
+      "factsheet": true,
+      "investor": true
+    },
+    "siteUrl": "https://www.hill.co.uk/city-reach",
+    "locationLabel": "Cambridge, Cambridgeshire",
+    "tagline": "1, 2 & 3 bed apartments",
+    "showBedIcon": true,
+    "images": [
+      "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-02/City%20Reach%20-%20Apartment%20Street%20Scene.jpg.webp?h=790be497&itok=CXQ7yJI9",
+      "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-02/City%20Reach%20-Ida%20Court%20Block%20E1.jpg.webp?h=790be497&itok=H8GJ4l-A",
+      "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-02/City%20Reach%20-%20Florence%20Court%20Block%20W2.jpg.webp?h=790be497&itok=Q_n0tvFF",
+      "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-02/City%20Reach%20-%20Aerial%20Drone%20CGI%20-%20Outline.jpg.webp?h=21cd0a81&itok=gPANke4Q"
+    ],
+    "accessNote": "Walk to Cambridge North station",
+    "accessPoints": [
+      {
+        "label": "Prime central Cambridge location, CB1",
+        "icon": "landmark"
+      },
+      {
+        "label": "16-minute walk to Cambridge station",
+        "icon": "pin"
+      },
+      {
+        "label": "Top schools nearby: The Leys, The Perse, Abbey College & Hills Road",
+        "icon": "school"
+      }
+    ]
+  },
+  {
+    "id": "hartmere",
+    "name": "Hartmere",
+    "region": "Cambridge",
+    "status": "coming-soon",
+    "logo": "uploads/hartmere-logo-white.png",
+    "docs": {
+      "brochure": true,
+      "factsheet": true,
+      "investor": false
+    },
+    "siteUrl": "https://hartmere.millerhare.com/",
+    "locationLabel": "Huntingdon, Cambridgeshire",
+    "tagline": "2, 3, 4 & 5 bed houses",
+    "showBedIcon": true,
+    "images": [
+      "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-05/Hartmere%20Externals_AE2-11%20%281%29.jpg.webp?h=d668167d&itok=4OaqI7zi",
+      "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-05/Hartmere%20Externals_AE2-4.jpg.webp?h=d668167d&itok=KP-MbHEl",
+      "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-04/Hartmere%20Show%20Home_Internals-31.jpg.webp?h=8c1344d8&itok=h8nHbKMm",
+      "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-04/Hartmere%20Show%20Home_Internals-28.jpg.webp?h=8c1344d8&itok=2VpblEWo"
+    ],
+    "accessNote": "Country park on the doorstep",
+    "accessPoints": [
+      {
+        "label": "Prime Cambridge CB2 location",
+        "icon": "landmark"
+      },
+      {
+        "label": "Close to Cambridge Biomedical Campus",
+        "icon": "pin"
+      },
+      {
+        "label": "Top schools nearby: The Leys, The Perse, Abbey College & Hills Road",
+        "icon": "school"
+      },
+      {
+        "label": "Walk to Cambridge South Station, with direct links to London",
+        "icon": "pin"
+      }
+    ]
+  },
+  {
+    "id": "knights-park",
+    "name": "Knights Park",
+    "region": "Cambridge",
+    "status": "live",
+    "logo": "uploads/pasted-1788517318272-0.png",
+    "docs": {
+      "brochure": true,
+      "factsheet": true,
+      "investor": false
+    },
+    "siteUrl": "https://knightspark.millerhare.com/",
+    "locationLabel": "Eddington, Cambridge",
+    "tagline": "1, 2 & 3 bed apartments and 3 & 4 bed houses",
+    "showBedIcon": true,
+    "images": [
+      "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-04/Athena%20External%20Image.jpg.webp?h=c44fcfa1&itok=klQfAypd",
+      "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-04/Athena%2C%20Plot%207%20External.jpg.webp?h=e42c87bc&itok=WybNm5fH",
+      "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-04/Athena%2C%20Plot%207%2C%20Living%20Room.jpg.webp?h=303de691&itok=Vc44EVU0",
+      "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-04/Athena%2C%20Plot%207-%20Kitchen%20Island.jpg.webp?h=8c9d1d26&itok=mw_pDFJj"
+    ],
+    "accessNote": "Cycle into central Cambridge in 20 mins",
+    "accessPoints": [
+      {
+        "label": "Eddington parkland and lakes",
+        "icon": "woodland"
+      },
+      {
+        "label": "University of Cambridge nearby",
+        "icon": "school"
+      }
+    ]
+  },
+  {
+    "id": "fitzwilliam-gate",
+    "name": "Fitzwilliam Gate",
+    "region": "Cambridge",
+    "status": "coming-soon",
+    "docs": {
+      "brochure": true,
+      "factsheet": true,
+      "investor": true
+    },
+    "siteUrl": "https://www.hill.co.uk/fitzwilliam-gate",
+    "locationLabel": "Cambridge, Cambridgeshire",
+    "tagline": "1 & 2 bed apartments",
+    "showBedIcon": true,
+    "images": [
+      "https://www.hill.co.uk/sites/default/files/styles/text_image_panel/public/images/2026-08/View%202%20Plots%2009-12.jpg.webp?h=9eb0d413&itok=nZ6WOF9Z",
+      "https://www.hill.co.uk/sites/default/files/styles/text_image_panel/public/images/2026-08/View%206%20Plots%2013-14_0.jpg.webp?h=9eb0d413&itok=gAIBX-JP"
+    ],
+    "accessNote": "Walk to Cambridge station in 10 mins",
+    "accessPoints": [
+      {
+        "label": "Prime central Cambridge CB4 location",
+        "icon": "landmark"
+      },
+      {
+        "label": "Close to University of Cambridge colleges",
+        "icon": "school"
+      },
+      {
+        "label": "High-quality new homes",
+        "icon": "pin"
+      },
+      {
+        "label": "Walk to the city centre & employment hubs",
+        "icon": "pin"
+      }
+    ]
+  },
+  {
+    "id": "marleigh-park",
+    "name": "Marleigh Park",
+    "region": "Cambridge",
+    "status": "live",
+    "logo": "uploads/marleigh-park-logo-white.png",
+    "docs": {
+      "brochure": true,
+      "factsheet": true,
+      "investor": true
+    },
+    "siteUrl": "https://marleigh.millerhare.com/",
+    "locationLabel": "Cambridge, Cambridgeshire",
+    "tagline": "1, 2 & 3 bed apartments and 3 & 4 bed houses",
+    "showBedIcon": true,
+    "images": [
+      "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-01/rsz_marleigh_park_externals_part_2-44_2.jpg.webp?h=0a365b51&itok=Om075b3Z",
+      "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-02/Marleigh%20Park%20-%20The%20Lime%20Housetype.jpg.webp?h=de2fe499&itok=0Go38ptV",
+      "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-01/25_04_01_Hill_MarleighPark_017_0.jpg.webp?h=78739331&itok=9Fm3KqXf",
+      "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-01/25_04_01_Hill_MarleighPark_013.jpg.webp?h=111611c5&itok=o3kVCfJA",
+      "https://www.marleighpark.co.uk/sites/marleigh-cambridge.co.uk/files/styles/media_gallery/public/images/2025-04/25_04_01_Hill_MarleighPark_025_0.jpg.webp?h=ab5c2332&itok=5oj3TgvL",
+      "https://www.marleighpark.co.uk/sites/marleigh-cambridge.co.uk/files/styles/media_gallery/public/images/2025-01/DSC_9041-%20HR.jpg.webp?h=4325b425&itok=b0EScTej",
+      "https://www.marleighpark.co.uk/sites/marleigh-cambridge.co.uk/files/styles/media_gallery/public/images/2025-01/DSC_8444-%20HR.jpg.webp?h=b6589297&itok=HMp9N3Jz",
+      "https://www.marleighpark.co.uk/sites/marleigh-cambridge.co.uk/files/styles/media_gallery/public/images/2025-10/Marleigh%20-%20Plot%20158%20-%20Living%20Room%20%281%29.jpg.webp?h=8c1344d8&itok=8IKDmU77",
+      "https://www.marleighpark.co.uk/sites/marleigh-cambridge.co.uk/files/styles/media_gallery/public/images/2025-04/25_04_01_Hill_MarleighPark_006_0.jpg.webp?h=e3455c55&itok=7CeAiNpO",
+      "https://www.marleighpark.co.uk/sites/marleigh-cambridge.co.uk/files/styles/media_gallery/public/images/2025-01/DSC_8533-%20HR.jpg.webp?h=1f9982bc&itok=T4Ha23H9"
+    ],
+    "accessNote": "New 12-acre public park alongside",
+    "accessPoints": [
+      {
+        "label": "Award-winning development",
+        "icon": "landmark"
+      },
+      {
+        "label": "Freehold houses",
+        "icon": "pin"
+      },
+      {
+        "label": "Pilates, café & Co-op on site",
+        "icon": "supermarket"
+      },
+      {
+        "label": "Two nurseries & primary school on site",
+        "icon": "nursery"
+      },
+      {
+        "label": "15-minute cycle to Cambridge",
+        "icon": "pin"
+      }
+    ]
+  },
+  {
+    "id": "cambium-square",
+    "name": "Cambium Square",
+    "region": "Cambridge",
+    "status": "coming-soon",
+    "image": "uploads/Screenshot 2026-08-28 130141.png",
+    "logo": "uploads/Screenshot 2026-08-28 124851.png",
+    "docs": {
+      "brochure": true,
+      "factsheet": true,
+      "investor": true
+    },
+    "siteUrl": "https://www.hill.co.uk/cambium-square",
+    "locationLabel": "Cambourne, Cambridgeshire",
+    "tagline": "2, 3, 4 & 5 bed houses",
+    "showBedIcon": true,
+    "images": [
+      "uploads/Screenshot 2026-08-28 130141.png",
+      "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-08/1498%20Cambium%20Square%20Cam%2027%20Street%20B19-B30%2004%20Low%20Res.jpg.webp?h=af97b938&itok=lsO0WSgu",
+      "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-08/1498%20Cambium%20Square%20Cam%2026%20Street%20H1-H5%2003%20Low%20Res.jpg.webp?h=af97b938&itok=-A3iR6-n",
+      "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-08/1498%20Cambium%20Square%20Cam%2028%20Playground%2003%20Low%20Res.jpg.webp?h=af97b938&itok=KIG2otj2",
+      "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-08/1498%20Cambium%20Square%20Cam%2002%20MS3D%20Plot%20B24%20%2841%29%20The%20Orchard%20Vignette%2001.jpg.webp?h=b008cc0d&itok=SdTwEWd8"
+    ],
+    "accessNote": "Launching 20th September 2026",
+    "accessPoints": [
+      {
+        "label": "Next to Cambourne Business Park",
+        "icon": "landmark"
+      },
+      {
+        "label": "Cambourne Nature Reserve nearby",
+        "icon": "woodland"
+      },
+      {
+        "label": "Great Cambourne local centre and schools",
+        "icon": "school"
+      },
+      {
+        "label": "Freehold Houses",
+        "icon": "pin"
+      }
+    ]
+  },
+  {
+    "id": "canalside-quarter",
+    "name": "Canalside Quarter",
+    "region": "Oxford",
+    "status": "live",
+    "docs": {
+      "brochure": true,
+      "factsheet": true,
+      "investor": true
+    },
+    "siteUrl": "https://canalside-overseas.netlify.app/",
+    "locationLabel": "Jericho, Oxford",
+    "tagline": "1, 2 & 3 bedroom apartments,\n3, 4 & 5 bedroom freehold houses",
+    "showBedIcon": true,
+    "logo": "uploads/pasted-1788510616692-0.png",
+    "images": [
+      "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-06/Copy%20of%20CANALSIDE%20QUARTER_AREIL%20EDIT-1.jpg.webp?h=b75339e9&itok=ZhluVH4G",
+      "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2025-11/CANALSIDE.jpg.webp?h=4ca9cb25&itok=009x8LT9",
+      "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2025-03/EDIT%20Canalside%20Quarter%2C%20The%20Villas%2C%20Externals%20%289%29%20dp.jpg.webp?h=790be497&itok=vu3gy5g2",
+      "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2024-09/Plot%2093%20Living%2C%20Dining%2C%20Kitchen%20%283%29.jpg.webp?h=790be497&itok=5MTdgoKp"
+    ],
+    "accessNote": "Minutes from Oxford city centre",
+    "accessPoints": [
+      {
+        "label": "Prime Oxford OX2 location",
+        "icon": "landmark"
+      },
+      {
+        "label": "Next to Oxford North innovation district",
+        "icon": "pin"
+      },
+      {
+        "label": "Close to Summertown & Oxford Canal",
+        "icon": "woodland"
+      },
+      {
+        "label": "16 minutes to Oxford city centre",
+        "icon": "pin"
+      },
+      {
+        "label": "12-minute drive to Bicester Village",
+        "icon": "car"
+      }
+    ]
+  },
+  {
+    "id": "clifton-collection",
+    "name": "The Clifton Collection",
+    "region": "Bristol",
+    "status": "live",
+    "docs": {
+      "brochure": true,
+      "factsheet": true,
+      "investor": true
+    },
+    "siteUrl": "https://thecliftoncollection.millerhare.com/",
+    "logo": "uploads/pasted-1788511212003-0.png",
+    "locationLabel": "Clifton, Bristol",
+    "tagline": "1, 2, 3 & 4 bed apartments,\n4 bedroom freehold mews houses",
+    "showBedIcon": true,
+    "images": [
+      "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2025-08/7607_1400_250709_xfer_0.jpg.webp?h=995d1b92&itok=6sSbmmN7",
+      "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2025-12/THE%20CLIFTON%20COLLECTION_SHOW%20HOME-22.jpg.webp?h=3bb6718d&itok=5YTpf1P6",
+      "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2025-12/THE%20CLIFTON%20COLLECTION_SHOW%20HOME-1.jpg.webp?h=3bb6718d&itok=p0Inx0EK",
+      "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2025-08/7607_1200_250704_xfer.jpg.webp?h=67053b8b&itok=t_cL1hmu"
+    ],
+    "accessNote": "Walk to Clifton Village",
+    "accessPoints": [
+      {
+        "label": "Prestigious Clifton location",
+        "icon": "landmark"
+      },
+      {
+        "label": "Top universities & schools nearby",
+        "icon": "school"
+      },
+      {
+        "label": "Rare brand-new homes in Clifton",
+        "icon": "pin"
+      },
+      {
+        "label": "Walk to Bristol city centre",
+        "icon": "pin"
+      },
+      {
+        "label": "Close to Clifton Suspension Bridge",
+        "icon": "landmark"
+      }
+    ]
+  },
+  {
+    "id": "baltic-wharf",
+    "name": "Baltic Wharf",
+    "region": "Bristol",
+    "status": "coming-soon",
+    "hasMap": true,
+    "docs": {
+      "brochure": true,
+      "factsheet": true,
+      "investor": true
+    },
+    "siteUrl": "https://www.hill.co.uk/all-developments/avon/baltic-wharf-0",
+    "locationLabel": "Harbourside, Bristol",
+    "tagline": "1, 2 & 3 bed apartments",
+    "showBedIcon": true,
+    "images": [
+      "uploads/view from water-e__157,49,182.jpg.webp",
+      "https://www.hill.co.uk/sites/default/files/styles/text_image_panel/public/images/2025-12/view%208%20_e__153%2CVIII%2C84%2C121.jpg.webp?h=8f74817f&itok=vSxFBu_0",
+      "https://www.hill.co.uk/sites/default/files/styles/text_image_panel/public/images/2025-12/Baltic%20Wharf%20Bristol_View01_Entrance%201.jpg.webp?h=f9ef42e2&itok=kvHzNlbL"
+    ],
+    "accessNote": "Harbourside marina setting",
+    "accessPoints": [
+      {
+        "label": "Walk into the city centre",
+        "icon": "pin"
+      },
+      {
+        "label": "SS Great Britain on the waterfront",
+        "icon": "landmark"
+      }
+    ]
+  },
+  {
+    "id": "southville-collection",
+    "name": "The Southville Collection",
+    "region": "Bristol",
+    "status": "coming-soon",
+    "hasMap": true,
+    "logo": "uploads/pasted-1788513060181-0.png",
+    "docs": {
+      "brochure": true,
+      "factsheet": true,
+      "investor": false
+    },
+    "siteUrl": "https://hill.co.uk",
+    "locationLabel": "Southville, Bristol",
+    "tagline": "1 & 2 bed apartments",
+    "showBedIcon": true,
+    "images": [
+      "uploads/Screenshot 2026-08-28 123629.png",
+      "uploads/Screenshot 2026-08-28 123649.png",
+      "uploads/Screenshot 2026-08-28 123706.png"
+    ],
+    "accessNote": "Walk to North Street independents",
+    "accessPoints": [
+      {
+        "label": "Greville Smyth Park nearby",
+        "icon": "park"
+      },
+      {
+        "label": "Easy reach of the harbourside",
+        "icon": "pin"
+      }
+    ]
+  },
+  {
+    "id": "ribbon-quarter",
+    "name": "The Ribbon Quarter",
+    "region": "West Midlands",
+    "status": "coming-soon",
+    "docs": {
+      "brochure": true,
+      "factsheet": true,
+      "investor": false
+    },
+    "siteUrl": "https://hill.co.uk",
+    "locationLabel": "Coventry, West Midlands",
+    "image": "uploads/opt/screenshot-2026-07-08-180242.jpg",
+    "images": [
+      "uploads/opt/screenshot-2026-07-08-180242.jpg",
+      "uploads/Screenshot 2026-08-28 124121.png",
+      "uploads/Screenshot 2026-08-28 124210.png",
+      "uploads/Screenshot 2026-08-28 124226.png"
+    ],
+    "tagline": "15.7-acre city-centre regeneration",
+    "accessNote": "Less than 1 hour to London by train",
+    "accessPoints": [
+      {
+        "label": "15.7-acre city-centre regeneration",
+        "icon": "landmark"
+      },
+      {
+        "label": "1,500+ new homes",
+        "icon": "pin"
+      },
+      {
+        "label": "Walk to Coventry Station",
+        "icon": "pin"
+      },
+      {
+        "label": "Under 1 hour to London",
+        "icon": "pin"
+      },
+      {
+        "label": "Coventry & Warwick Universities nearby",
+        "icon": "school"
+      },
+      {
+        "label": "Home of iconic British brand Jaguar Land Rover",
+        "icon": "car"
+      }
+    ]
+  }
+]

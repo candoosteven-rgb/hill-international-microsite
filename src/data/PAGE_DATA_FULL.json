@@ -1,0 +1,3894 @@
+{
+  "lampton-parkside": {
+    "auto": true,
+    "hero": "uploads/opt/screenshot-2026-08-28-081144.jpg",
+    "gallery": [
+      {
+        "src": "uploads/opt/screenshot-2026-08-28-081144.jpg",
+        "cap": "cap_aerial"
+      },
+      {
+        "src": "uploads/opt/screenshot-2026-08-28-081906.jpg",
+        "cap": "cap_living"
+      },
+      {
+        "src": "uploads/opt/screenshot-2026-08-28-082149.jpg",
+        "cap": "cap_kitchen"
+      },
+      {
+        "src": "uploads/opt/screenshot-2026-08-28-082600.jpg",
+        "cap": "cap_bedroom"
+      },
+      {
+        "src": "uploads/Lampton Parkside - External - Block E1 (23).jpg.webp",
+        "cap": "cap_exterior"
+      },
+      {
+        "src": "https://www.lamptonparkside.co.uk/sites/lamptonparkside.co.uk/files/styles/media_gallery/public/images/2025-10/DSC_8518-%20LR.jpg.webp?h=a9fd4dc1&itok=OxfT3K5B",
+        "cap": "cap_kitchen"
+      },
+      {
+        "src": "https://www.lamptonparkside.co.uk/sites/lamptonparkside.co.uk/files/styles/media_gallery/public/images/2025-09/To%20use%20%283%29.jpg.webp?h=a0e56f0f&itok=jCSwZ8iB",
+        "cap": "cap_bathroom"
+      },
+      {
+        "src": "https://www.lamptonparkside.co.uk/sites/lamptonparkside.co.uk/files/styles/media_gallery/public/images/2025-09/To%20use%20%282%29.jpg.webp?h=b81a5b26&itok=yvcu2q0k",
+        "cap": "cap_balcony"
+      },
+      {
+        "src": "https://www.lamptonparkside.co.uk/sites/lamptonparkside.co.uk/files/styles/media_gallery/public/images/2025-08/Birds%20eye%20view%20from%20park%20.jpg.webp?h=b79ded1c&itok=qs60r546",
+        "cap": "cap_aerial"
+      }
+    ],
+    "facts": [],
+    "spec": [
+      {
+        "k": "sg_kitchen",
+        "img": "https://www.lamptonparkside.co.uk/sites/lamptonparkside.co.uk/files/styles/media_gallery/public/images/2025-10/DSC_8518-%20LR.jpg.webp?h=a9fd4dc1&itok=OxfT3K5B",
+        "items": [
+          "Matt finish handleless units with soft close to doors and drawers",
+          "Caesarstone worktop with matching upstands and splashback behind hob",
+          "Induction hob with integrated cooker hood",
+          "Integrated single oven and microwave",
+          "Integrated dishwasher and fridge/freezer",
+          "Stainless steel undermounted sink with brushed steel mixer tap",
+          "LED feature lighting to wall units",
+          "Washer/dryer, freestanding in hallway cupboard"
+        ],
+        "note": "Kitchen designs and layouts vary; speak to our Sales Executives for details."
+      },
+      {
+        "k": "sg_bathroom",
+        "img": "https://www.lamptonparkside.co.uk/sites/lamptonparkside.co.uk/files/styles/media_gallery/public/images/2025-09/To%20use%20%283%29.jpg.webp?h=a0e56f0f&itok=jCSwZ8iB",
+        "items": [
+          "Bath with shower over and glass screen",
+          "Low profile shower tray with glass door to en-suite",
+          "Feature mirror with shelf to match vanity top",
+          "Heated chrome towel rail to bathroom and en-suite"
+        ]
+      },
+      {
+        "k": "sg_heating",
+        "img": "https://www.lamptonparkside.co.uk/sites/lamptonparkside.co.uk/files/styles/media_gallery/public/images/2025-10/DSC_8579-%20LR_0.jpg.webp?h=82f342d7&itok=6uGLJTbb",
+        "items": [
+          "Underfloor heating throughout each apartment",
+          "Heating and hot water via communal heating plant"
+        ]
+      },
+      {
+        "k": "sg_electrical",
+        "img": "https://www.lamptonparkside.co.uk/sites/lamptonparkside.co.uk/files/styles/media_gallery/public/images/2025-09/DSC_8711-%20LR.jpg.webp?h=ef168ef7&itok=Zr1LMnbL",
+        "items": [
+          "Downlights to hall, kitchen/dining/living, bathroom, en-suite and WC",
+          "Pendant fittings to family room and all bedrooms",
+          "Video entry system linked to the main entrance door",
+          "TV, BT and data points; wiring for your own broadband and pre-wired for Sky Q",
+          "Hard-wired smoke and heat detectors, plus a sprinkler system to all apartments",
+          "Spur for your own security alarm panel"
+        ]
+      },
+      {
+        "k": "sg_communal",
+        "img": "https://www.lamptonparkside.co.uk/sites/lamptonparkside.co.uk/files/styles/media_gallery/public/images/2026-07/Lampton%20Parkside%20-%20External%20-%20Block%20G1%20%287%29.jpg.webp?h=8c1344d8&itok=zapHvjkz",
+        "items": [
+          "Concierge service, 12 hours a day, 7 days a week",
+          "Fob controlled access to the entrance lobby",
+          "Lift access to all floors",
+          "Cycle and bin storage",
+          "Letterboxes within the communal entrance lobby"
+        ]
+      },
+      {
+        "k": "sg_finishes",
+        "img": "https://www.lamptonparkside.co.uk/sites/lamptonparkside.co.uk/files/styles/media_gallery/public/images/2025-10/To%20use.jpg.webp?h=73f6da71&itok=OYMskKBJ",
+        "items": [
+          "Painted solid core entrance door with multi-point locking system",
+          "High efficiency double glazed aluminium timber composite windows",
+          "Built-in mirrored wardrobe with sliding doors to principal bedroom",
+          "Amtico flooring to entrance hall, kitchen/dining/living and bathrooms; carpet to bedrooms",
+          "Porcelain tiles to balconies; private tiled terrace to selected apartments and duplexes"
+        ]
+      },
+      {
+        "k": "sg_additional",
+        "img": "https://www.lamptonparkside.co.uk/sites/lamptonparkside.co.uk/files/styles/media_gallery/public/images/2026-07/Lampton%20Parkside%20-%20External%20-%20Block%20E3%20%284%29.jpg.webp?h=930cfbaf&itok=JI_FJBSG",
+        "items": [
+          "Right to Park car parking spaces available for purchase",
+          "Electric car charging points available to selected parking spaces",
+          "Steel reinforced concrete frame with brick facing and biodiverse roofs",
+          "10 year NHBC warranty",
+          "999 year lease",
+          "Service charge payable for maintenance of shared facilities and communal areas"
+        ]
+      }
+    ],
+    "travel": [],
+    "hours": [
+      [
+        "d_mon",
+        "10:00 – 17:30"
+      ],
+      [
+        "d_tue",
+        "10:00 – 17:30"
+      ],
+      [
+        "d_wed",
+        "10:00 – 17:30"
+      ],
+      [
+        "d_thu",
+        "10:00 – 17:30"
+      ],
+      [
+        "d_fri",
+        "10:00 – 17:30"
+      ],
+      [
+        "d_sat",
+        "10:00 – 17:30"
+      ],
+      [
+        "d_sun",
+        "10:00 – 17:30"
+      ]
+    ],
+    "amenities": {
+      "cat_transport": [
+        {
+          "name": "Hounslow Central station",
+          "d": "4 min walk"
+        },
+        {
+          "name": "M4 access to Heathrow & London",
+          "d": ""
+        }
+      ],
+      "cat_green": [
+        {
+          "name": "Lampton Park",
+          "d": ""
+        },
+        {
+          "name": "Osterley Park",
+          "d": ""
+        }
+      ],
+      "cat_shops": [
+        {
+          "name": "Local shops and cafés",
+          "d": ""
+        }
+      ],
+      "cat_fitness": [
+        {
+          "name": "Gyms and healthcare facilities nearby",
+          "d": ""
+        }
+      ],
+      "cat_schools": [
+        {
+          "name": "Local schools",
+          "d": ""
+        }
+      ]
+    },
+    "suite": {
+      "line1": "Lampton Parkside Sales Suite",
+      "line2": "Lampton Road",
+      "line3": "Hounslow, West London TW3 4FD",
+      "phone": "020 3959 0900",
+      "email": "hello@lamptonparkside.co.uk",
+      "maps": "https://www.google.com/maps/search/?api=1&query=51.474078,-0.365989"
+    },
+    "plots": [
+      {
+        "plot": "Forest View, F2.8",
+        "building": "Forest View",
+        "floor": "2",
+        "beds": 1,
+        "baths": 1,
+        "size": 531,
+        "price": 325000,
+        "avail": true
+      },
+      {
+        "plot": "Forest View, F1.19",
+        "building": "Forest View",
+        "floor": "1",
+        "beds": 1,
+        "baths": 1,
+        "size": 545,
+        "price": 355000,
+        "avail": true
+      },
+      {
+        "plot": "The Evergreens, E3.44",
+        "building": "The Evergreens",
+        "floor": "3",
+        "beds": 1,
+        "baths": 1,
+        "size": 624,
+        "price": 372500,
+        "avail": true
+      },
+      {
+        "plot": "Forest View, F1.11",
+        "building": "Forest View",
+        "floor": "1",
+        "beds": 2,
+        "baths": 1,
+        "size": 688,
+        "price": 425000,
+        "avail": true
+      },
+      {
+        "plot": "Forest View, F1.27",
+        "building": "Forest View",
+        "floor": "1",
+        "beds": 2,
+        "baths": 2,
+        "size": 769,
+        "price": 462500,
+        "avail": true
+      },
+      {
+        "plot": "Forest View, F1.36",
+        "building": "Forest View",
+        "floor": "1",
+        "beds": 2,
+        "baths": 2,
+        "size": 704,
+        "price": 470000,
+        "avail": true
+      },
+      {
+        "plot": "Forest View, Duplex F2.3",
+        "building": "Forest View",
+        "floor": "Ground/1",
+        "beds": 2,
+        "baths": 2,
+        "size": 921,
+        "price": 535000,
+        "avail": true
+      },
+      {
+        "plot": "The Evergreens, Duplex E2.4",
+        "building": "The Evergreens",
+        "floor": "Ground/1",
+        "beds": 3,
+        "baths": 3,
+        "size": 1175,
+        "price": 632500,
+        "avail": true
+      }
+    ],
+    "nearby": [
+      "kew-bridge-rise",
+      "north-gate-park",
+      "dagenham-green"
+    ]
+  },
+  "kew-bridge-rise": {
+    "auto": true,
+    "hero": "https://kewbridgerise.co.uk/sites/kewbridgerise.co.uk/files/styles/media_gallery/public/images/2024-01/vb2310794_4192_Brentford_Ext_102%20Cantilever_Final_AB%20%281%29.jpg.webp?h=07f5f294&itok=IVDkfkKo",
+    "gallery": [
+      {
+        "src": "https://kewbridgerise.co.uk/sites/kewbridgerise.co.uk/files/styles/media_gallery/public/images/2024-01/vb2310794_4192_Brentford_Ext_102%20Cantilever_Final_AB%20%281%29.jpg.webp?h=07f5f294&itok=IVDkfkKo",
+        "cap": "cap_exterior"
+      },
+      {
+        "src": "https://kewbridgerise.co.uk/sites/kewbridgerise.co.uk/files/styles/media_gallery/public/images/2025-06/Wren%20House%20Open%20Plan%20Dining%20%26%20Living.jpg.webp?h=ea11ab6b&itok=7GPgmaWl",
+        "cap": "cap_living"
+      },
+      {
+        "src": "https://kewbridgerise.co.uk/sites/kewbridgerise.co.uk/files/styles/media_gallery/public/images/2025-06/Wren%20Show%20Apartment%20Kitchen%20Wide%20Angle.jpg.webp?h=788b0b0c&itok=WntLeCzy",
+        "cap": "cap_kitchen"
+      },
+      {
+        "src": "https://kewbridgerise.co.uk/sites/kewbridgerise.co.uk/files/styles/media_gallery/public/images/2025-06/Wren%20House%20Principal%20Bedroom%20Bed.jpg.webp?h=6f98d453&itok=Bv3s7deb",
+        "cap": "cap_bedroom"
+      },
+      {
+        "src": "https://kewbridgerise.co.uk/sites/kewbridgerise.co.uk/files/styles/media_gallery/public/images/2025-06/Wren%20House%20Bathroom%20Wide%20Shot.jpg.webp?h=9354f665&itok=p9U-r35j",
+        "cap": "cap_bathroom"
+      },
+      {
+        "src": "https://kewbridgerise.co.uk/sites/kewbridgerise.co.uk/files/styles/media_gallery/public/images/2025-06/Wren%20House%20balcony%20%282%29.jpg.webp?h=3379aa37&itok=BHMYJIZ7",
+        "cap": "cap_balcony"
+      },
+      {
+        "src": "https://kewbridgerise.co.uk/sites/kewbridgerise.co.uk/files/styles/media_gallery/public/images/2024-09/4192_Amenities_Gym_Final_GB.jpg.webp?h=c5f5e628&itok=GqzwelUm",
+        "cap": "cap_amenity"
+      },
+      {
+        "src": "https://kewbridgerise.co.uk/sites/kewbridgerise.co.uk/files/styles/media_gallery/public/images/2024-09/4192_Amenities_Co-Working_CAM01_Final_CT.jpg.webp?h=1c9b88c9&itok=GDK4UVPw",
+        "cap": "cap_amenity"
+      },
+      {
+        "src": "https://kewbridgerise.co.uk/sites/kewbridgerise.co.uk/files/styles/media_gallery/public/images/2024-07/7423_2400_240709.jpg.webp?h=6afbe2ac&itok=RRmKWTvz",
+        "cap": "cap_exterior"
+      }
+    ],
+    "facts": [],
+    "spec": [
+      {
+        "k": "sg_kitchen",
+        "img": "https://kewbridgerise.co.uk/sites/kewbridgerise.co.uk/files/styles/text_image_panel/public/images/2024-09/DSC_9463-LR-2.jpg.webp?h=567911d4&itok=splaohqD",
+        "items": [
+          "Matt finish handleless units with soft close doors and drawers",
+          "Caesarstone worktop",
+          "Fully integrated kitchen appliances",
+          "LED feature lighting to wall units",
+          "Stainless steel undermounted sink with matt black mixer tap"
+        ]
+      },
+      {
+        "k": "sg_bathroom",
+        "img": "https://kewbridgerise.co.uk/sites/kewbridgerise.co.uk/files/styles/text_image_panel/public/images/2024-01/vb2295188_www.andrewhendry.com8__0.jpg.webp?h=832a653d&itok=kjcwpBk2",
+        "items": [
+          "Large feature mirror with shelving",
+          "Heated chrome towel rail",
+          "Matching bath panel and vanity top"
+        ]
+      },
+      {
+        "k": "sg_heating",
+        "img": "https://kewbridgerise.co.uk/sites/kewbridgerise.co.uk/files/styles/text_image_panel/public/images/2024-09/DSC_9499-LR.jpg.webp?h=7b90978c&itok=Ej7xtT0d",
+        "items": [
+          "Underfloor heating throughout the apartment"
+        ]
+      },
+      {
+        "k": "sg_finishes",
+        "img": "https://kewbridgerise.co.uk/sites/kewbridgerise.co.uk/files/styles/text_image_panel/public/images/2024-01/vb2295231_www.andrewhendry.com52.jpg.webp?h=cef85595&itok=NsfXQZqR",
+        "items": [
+          "Amtico flooring to entrance hall, kitchen/living/dining room",
+          "Plush carpet to bedrooms",
+          "Fully fitted sliding wardrobe to principal bedroom"
+        ]
+      }
+    ],
+    "travel": [],
+    "hours": [
+      [
+        "d_mon",
+        "10:00 – 17:30"
+      ],
+      [
+        "d_tue",
+        "10:00 – 17:30"
+      ],
+      [
+        "d_wed",
+        "10:00 – 17:30"
+      ],
+      [
+        "d_thu",
+        "10:00 – 17:30"
+      ],
+      [
+        "d_fri",
+        "10:00 – 17:30"
+      ],
+      [
+        "d_sat",
+        "10:00 – 17:30"
+      ],
+      [
+        "d_sun",
+        "10:00 – 17:30"
+      ]
+    ],
+    "amenities": {
+      "cat_transport": [
+        {
+          "name": "Kew Bridge station",
+          "d": "2 min walk"
+        },
+        {
+          "name": "Gunnersbury station",
+          "d": "10 min walk"
+        },
+        {
+          "name": "Bus stops within 1,000m",
+          "d": "33"
+        },
+        {
+          "name": "M4 corridor",
+          "d": ""
+        }
+      ],
+      "cat_green": [
+        {
+          "name": "Kew Gardens",
+          "d": ""
+        }
+      ],
+      "cat_fitness": [
+        {
+          "name": "On-site 24-hour resident gym",
+          "d": ""
+        }
+      ],
+      "cat_shops": [
+        {
+          "name": "Cafés, restaurants & shops on the square",
+          "d": ""
+        }
+      ]
+    },
+    "suite": {
+      "line1": "Kew Bridge Rise Sales Suite",
+      "line2": "Capital Interchange Way",
+      "line3": "Brentford, London TW8 0EX",
+      "phone": "020 3906 1952",
+      "email": "hello@kewbridgerise.co.uk",
+      "maps": "https://www.google.com/maps/search/?api=1&query=51.490768054934,-0.28607114325941"
+    },
+    "plots": [
+      {
+        "plot": "Starling House, 54",
+        "building": "Starling House",
+        "floor": "-",
+        "beds": 1,
+        "baths": 1,
+        "size": 429,
+        "price": 385000,
+        "avail": true
+      },
+      {
+        "plot": "Starling House, 78",
+        "building": "Starling House",
+        "floor": "-",
+        "beds": 1,
+        "baths": 1,
+        "size": 429,
+        "price": 435000,
+        "avail": true
+      },
+      {
+        "plot": "Starling House, 86",
+        "building": "Starling House",
+        "floor": "-",
+        "beds": 1,
+        "baths": 1,
+        "size": 429,
+        "price": 445000,
+        "avail": true
+      },
+      {
+        "plot": "Starling House, 25",
+        "building": "Starling House",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 668,
+        "price": 555000,
+        "avail": true
+      },
+      {
+        "plot": "Starling House, 20",
+        "building": "Starling House",
+        "floor": "-",
+        "beds": 2,
+        "baths": 2,
+        "size": 846,
+        "price": 599000,
+        "avail": true
+      },
+      {
+        "plot": "Wren House, 119",
+        "building": "Wren House",
+        "floor": "-",
+        "beds": 2,
+        "baths": 2,
+        "size": 781,
+        "price": 610000,
+        "avail": true
+      },
+      {
+        "plot": "Wren House, 135",
+        "building": "Wren House",
+        "floor": "-",
+        "beds": 2,
+        "baths": 2,
+        "size": 830,
+        "price": 635000,
+        "avail": true
+      },
+      {
+        "plot": "Starling House, 85",
+        "building": "Starling House",
+        "floor": "-",
+        "beds": 2,
+        "baths": 2,
+        "size": 806,
+        "price": 675000,
+        "avail": true
+      }
+    ],
+    "nearby": [
+      "lampton-parkside",
+      "north-gate-park",
+      "dagenham-green"
+    ]
+  },
+  "north-gate-park": {
+    "hero": "uploads/0223_001_46_H2.jpg.webp",
+    "gallery": [
+      {
+        "src": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-03/DSC_6976-%20LR.jpg.webp?h=8d3c5a9f&itok=FBAy9H2Z",
+        "cap": "cap_ext_photo"
+      },
+      {
+        "src": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-04/DomGinnPhoto_NGP2B--11.jpg.webp?h=41010fb9&itok=MPSrRcXO",
+        "cap": "cap_living"
+      },
+      {
+        "src": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2025-07/North%20Gate%20Park%20-%20Plot%202%20The%20Ash%20-%20Kitchen%20counter.jpg.webp?h=b477ea88&itok=8TQrqFdL",
+        "cap": "cap_kitchen"
+      },
+      {
+        "src": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-04/DomGinnPhoto_NGP2B--7.jpg.webp?h=5c841c81&itok=TCpBBR8I",
+        "cap": "cap_bedroom"
+      },
+      {
+        "src": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-03/DSC_6588-%20LR.jpg.webp?h=aae97d09&itok=r4srJaZQ",
+        "cap": "cap_garden"
+      },
+      {
+        "src": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2025-02/0223_001_26_Peace_Building_Entrance.jpg.webp?h=3d43c187&itok=YhBNmF_e",
+        "cap": "cap_amenity"
+      },
+      {
+        "src": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2025-07/North%20Gate%20Park%20-%20Plot%202%20The%20Ash%20-bifolding%20doors.jpg.webp?h=4a4d9694&itok=s6E4xeba",
+        "cap": "cap_ext_photo"
+      },
+      {
+        "src": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2025-02/0223_001_27_High_Level_Park_V4.jpg.webp?h=3d43c187&itok=0EfwI6Ai",
+        "cap": "cap_aerial"
+      }
+    ],
+    "facts": [
+      {
+        "k": "f_types",
+        "v": "1, 2, 3 & 4"
+      },
+      {
+        "k": "f_zone",
+        "v": "Zone 3"
+      },
+      {
+        "k": "f_epc",
+        "v": "A"
+      }
+    ],
+    "spec": [
+      {
+        "k": "sg_kitchen",
+        "img": "https://northgatepark.co.uk/sites/northgatepark.co.uk/files/styles/media_gallery/public/images/2026-04/DSC_6558-%20LR.jpg.webp?h=46fc67cc&itok=z7cugh-T",
+        "items": [
+          "Matt finish handleless units with contemporary black trim and soft-close to doors and drawers",
+          "Caesarstone worktop with matching upstand and splashback behind hob",
+          "Induction hob with integrated cooker hood",
+          "Integrated single oven and microwave",
+          "Integrated dishwasher and fridge/freezer",
+          "Stainless steel undermounted sink with contemporary matt black mixer tap",
+          "LED feature lighting to wall units",
+          "Washer/dryer, freestanding in hallway cupboard"
+        ],
+        "note": "Kitchen designs and layouts vary; please speak to our Sales Team for further information."
+      },
+      {
+        "k": "sg_bathroom",
+        "img": "https://northgatepark.co.uk/sites/northgatepark.co.uk/files/styles/media_gallery/public/images/2026-04/DSC_4739-%20LR.jpg.webp?h=869a9f79&itok=VwY5svz9",
+        "items": [
+          "White sanitaryware with contemporary matt black brassware",
+          "Bath with shower over and glass screen",
+          "Feature framed mirror with shelf to match vanity top",
+          "Large format wall and floor tiles",
+          "Heated matt black towel rail to bathroom and en-suite"
+        ]
+      },
+      {
+        "k": "sg_heating",
+        "img": "https://northgatepark.co.uk/sites/northgatepark.co.uk/files/styles/media_gallery/public/images/2026-04/DSC_6512-HDR-%20LR_0.jpg.webp?h=bcf6475a&itok=wQr2xxBK",
+        "items": [
+          "Underfloor heating throughout each apartment",
+          "Heating via communal heating plant",
+          "Heated matt black towel rails to bathroom and en-suite"
+        ]
+      },
+      {
+        "k": "sg_electrical",
+        "img": "https://northgatepark.co.uk/sites/northgatepark.co.uk/files/styles/media_gallery/public/images/2026-04/DomGinnPhoto_NGP2B--14.jpg.webp?h=f9515182&itok=f_g6ed-d",
+        "items": [
+          "Downlights to hall, kitchen/dining/living room, bathroom and en-suite",
+          "Pendant fittings to all bedrooms",
+          "BT & Hyperoptic fibre connection for your choice of broadband provider",
+          "Video entry system linked to the main entrance door",
+          "Hard-wired smoke and heat detectors, plus a sprinkler system to all apartments",
+          "Spur for your own security alarm panel"
+        ]
+      },
+      {
+        "k": "sg_communal",
+        "img": "https://northgatepark.co.uk/sites/northgatepark.co.uk/files/styles/media_gallery/public/images/2025-02/0223_001_26_Peace_Building_Entrance.jpg.webp?h=3d43c187&itok=UjNJTgVL",
+        "items": [
+          "Concierge service, based in the restored Harston House",
+          "Fob controlled access to the entrance lobby",
+          "Lift access to all floors",
+          "Cycle and bin storage space",
+          "Letterboxes within the communal entrance lobby"
+        ]
+      },
+      {
+        "k": "sg_finishes",
+        "img": "https://northgatepark.co.uk/sites/northgatepark.co.uk/files/styles/media_gallery/public/images/2026-04/DSC_4667-%20LR.jpg.webp?h=8779381a&itok=Sux5gCYr",
+        "items": [
+          "Solid core or composite front entrance door with multi-point locking system",
+          "High efficiency triple glazed aluminium timber composite windows",
+          "Built-in mirrored wardrobe with sliding doors to principal bedroom",
+          "Amtico flooring to hall and kitchen/dining/living room; carpet to bedrooms",
+          "Porcelain tiles to balcony and terraces"
+        ]
+      },
+      {
+        "k": "sg_additional",
+        "img": "https://northgatepark.co.uk/sites/northgatepark.co.uk/files/styles/media_gallery/public/images/2025-02/0223_001_24_B1_Houses_Street.jpg.webp?h=3d43c187&itok=HMFXFKI9",
+        "items": [
+          "Steel reinforced concrete frame with outer brickwork, cavity filled with insulation",
+          "PV panels to selected roofs",
+          "10 year NHBC warranty",
+          "990 year lease",
+          "Service charge payable for maintenance of shared facilities and communal areas"
+        ]
+      }
+    ],
+    "travel": [
+      {
+        "to": "Harringay Green Lanes station",
+        "n": "13",
+        "mode": "mode_walk"
+      }
+    ],
+    "amenities": {
+      "cat_transport": [
+        {
+          "name": "Harringay Green Lanes station",
+          "d": "13 min walk"
+        },
+        {
+          "name": "Seven Sisters Underground station",
+          "d": "18 min walk"
+        },
+        {
+          "name": "Manor House Underground station",
+          "d": "0.8 mi"
+        },
+        {
+          "name": "Turnpike Lane Underground station",
+          "d": "0.9 mi"
+        }
+      ],
+      "cat_green": [
+        {
+          "name": "Chestnuts Park",
+          "d": "0.1 mi"
+        },
+        {
+          "name": "Finsbury Park",
+          "d": "0.7 mi"
+        },
+        {
+          "name": "Woodberry Wetlands",
+          "d": "0.8 mi"
+        },
+        {
+          "name": "Walthamstow Wetlands",
+          "d": "1.6 mi"
+        }
+      ],
+      "cat_food": [
+        {
+          "name": "Devran Kitchen",
+          "d": "0.3 mi"
+        },
+        {
+          "name": "Antepliler Restaurant",
+          "d": "0.3 mi"
+        },
+        {
+          "name": "The Dusty Knuckle",
+          "d": "0.3 mi"
+        },
+        {
+          "name": "Forks & Green Brasserie, Philip Lane",
+          "d": "0.4 mi"
+        },
+        {
+          "name": "Jam in a Jar",
+          "d": "0.4 mi"
+        },
+        {
+          "name": "Durazzo Pizzeria",
+          "d": "0.5 mi"
+        }
+      ],
+      "cat_schools": [
+        {
+          "name": "Woodlands Park Nursery School",
+          "d": "0.2 mi"
+        },
+        {
+          "name": "Chestnuts Preschool",
+          "d": "0.4 mi"
+        },
+        {
+          "name": "Brown Bears Nursery School",
+          "d": "0.4 mi"
+        },
+        {
+          "name": "Park View School",
+          "d": "0.4 mi"
+        },
+        {
+          "name": "Triangle Nursery",
+          "d": "0.7 mi"
+        },
+        {
+          "name": "UAL: Central Saint Martins",
+          "d": "2.0 mi"
+        }
+      ],
+      "cat_fitness": [
+        {
+          "name": "The Gym Group",
+          "d": "0.7 mi"
+        }
+      ],
+      "cat_shops": [
+        {
+          "name": "Alexandra Palace",
+          "d": "1.6 mi"
+        },
+        {
+          "name": "Tottenham Hotspur Stadium",
+          "d": "2.0 mi"
+        },
+        {
+          "name": "Arsenal Stadium",
+          "d": "2.0 mi"
+        }
+      ]
+    },
+    "plots": [
+      {
+        "plot": "Marram House, 89",
+        "building": "Marram House",
+        "floor": "-",
+        "beds": 1,
+        "baths": 1,
+        "size": 551,
+        "price": 395000,
+        "avail": true
+      },
+      {
+        "plot": "Marram House, 100",
+        "building": "Marram House",
+        "floor": "-",
+        "beds": 1,
+        "baths": 1,
+        "size": 556,
+        "price": 405000,
+        "avail": true
+      },
+      {
+        "plot": "Foxtail House, 68",
+        "building": "Foxtail House",
+        "floor": "-",
+        "beds": 1,
+        "baths": 1,
+        "size": 556,
+        "price": 420000,
+        "avail": true
+      },
+      {
+        "plot": "Marram House, 78",
+        "building": "Marram House",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 791,
+        "price": 570000,
+        "avail": true
+      },
+      {
+        "plot": "Foxtail House, 66",
+        "building": "Foxtail House",
+        "floor": "-",
+        "beds": 2,
+        "baths": 2,
+        "size": 835,
+        "price": 595000,
+        "avail": true
+      },
+      {
+        "plot": "Rowan, Number 1",
+        "building": "Rowan",
+        "floor": "-",
+        "beds": 3,
+        "baths": 3,
+        "size": 1310,
+        "price": 965000,
+        "avail": true
+      },
+      {
+        "plot": "The Elm, Number 27",
+        "building": "The Elm",
+        "floor": "-",
+        "beds": 4,
+        "baths": 3,
+        "size": 1287,
+        "price": 1040000,
+        "avail": true
+      }
+    ],
+    "suite": {
+      "line1": "North Gate Park Sales Suite",
+      "line2": "St Ann’s Road",
+      "line3": "London N15 3TH",
+      "phone": "0208 501 8777",
+      "email": "hello@northgatepark.co.uk",
+      "maps": "https://www.google.com/maps/search/?api=1&query=51.581481832593,-0.092358494680653"
+    },
+    "hours": [
+      [
+        "d_mon",
+        "10:00 – 17:30"
+      ],
+      [
+        "d_tue",
+        "10:00 – 17:30"
+      ],
+      [
+        "d_wed",
+        "10:00 – 17:30"
+      ],
+      [
+        "d_thu",
+        "10:00 – 17:30"
+      ],
+      [
+        "d_fri",
+        "10:00 – 17:30"
+      ],
+      [
+        "d_sat",
+        "10:00 – 17:30"
+      ],
+      [
+        "d_sun",
+        "10:00 – 17:30"
+      ]
+    ],
+    "nearby": [
+      "kew-bridge-rise",
+      "dagenham-green",
+      "lampton-parkside"
+    ]
+  },
+  "dagenham-green": {
+    "auto": true,
+    "hero": "uploads/opt/dagenham-green-balcony.jpg",
+    "gallery": [
+      {
+        "src": "uploads/opt/dagenham-green-balcony.jpg",
+        "cap": "cap_exterior"
+      },
+      {
+        "src": "uploads/DSC_0447 - HR.jpg",
+        "cap": "cap_living"
+      },
+      {
+        "src": "uploads/DSC_0787 - HR.jpg",
+        "cap": "cap_kitchen"
+      },
+      {
+        "src": "uploads/Dagenham Green_BlockC_Humming_bird.jpg",
+        "cap": "cap_bedroom"
+      },
+      {
+        "src": "uploads/Dagenham Green_B_Market_Square.jpg",
+        "cap": "cap_exterior"
+      },
+      {
+        "src": "uploads/DJI_20260122175944_0182_D.jpg.webp",
+        "cap": "cap_living"
+      }
+    ],
+    "facts": [],
+    "spec": [
+      {
+        "k": "sg_kitchen",
+        "img": "https://www.dagenhamgreen.co.uk/sites/dagenhamgreen.co.uk/files/styles/plot_spec_main_landscape/public/images/2026-08/DSC_0688%20-%20LR%20%281%29.jpg.webp?h=16f1019e&itok=zz_bwEfw",
+        "items": [
+          "Matt finish handleless units with soft close to doors and drawers",
+          "Caesarstone worktop with matching upstand and splashback behind hob",
+          "Quality Bosch appliances throughout, including induction hob",
+          "Integrated single oven, microwave, dishwasher and fridge/freezer",
+          "Integrated cooker hood",
+          "Stainless steel undermounted sink with contemporary brushed steel mixer tap",
+          "LED feature lighting to wall units",
+          "Washer/dryer, freestanding in hallway cupboard"
+        ],
+        "note": "Kitchen designs and layouts vary; please speak to our Sales Executives for further information."
+      },
+      {
+        "k": "sg_bathroom",
+        "img": "https://www.dagenhamgreen.co.uk/sites/dagenhamgreen.co.uk/files/styles/plot_spec_main_landscape/public/images/2026-08/DSC_5922%20-%20LR.jpg.webp?h=73bcf7eb&itok=n6pdrb3n",
+        "items": [
+          "En-suite: low profile shower tray with glass shower door",
+          "Bathroom: bath with shower and glass screen",
+          "Feature framed mirror with shelf to match vanity tops",
+          "Large format wall and floor tiles",
+          "Heated chrome towel rail to bathroom and en-suite"
+        ]
+      },
+      {
+        "k": "sg_heating",
+        "img": "https://www.dagenhamgreen.co.uk/sites/dagenhamgreen.co.uk/files/styles/plot_spec_main_landscape/public/images/2024-10/4318_DAGENHAM_GREEN_BATHROOM_IA.jpg.webp?h=5c58e747&itok=CWb035ex",
+        "items": [
+          "Underfloor heating throughout each apartment",
+          "Heated chrome towel rails to bathroom and en-suite",
+          "Heating via site-wide district heating generated by air source heat pumps"
+        ]
+      },
+      {
+        "k": "sg_electrical",
+        "img": "https://www.dagenhamgreen.co.uk/sites/dagenhamgreen.co.uk/files/styles/plot_spec_main_landscape/public/images/2026-08/DSC_5931%20-%20LR.jpg.webp?h=55f3e0fc&itok=mySM_RAp",
+        "items": [
+          "Downlights to entrance hall, kitchen/dining/living room, bathroom and en-suite",
+          "Pendant fittings to all bedrooms; LED feature lighting to kitchen wall units",
+          "Video entry system to every apartment, linked to the main entrance door",
+          "TV, BT and data points; BT & Hyperoptic fibre to all properties, pre-wired for Sky Q",
+          "Hard-wired smoke and heat detectors, plus a sprinkler system to all apartments",
+          "Spur for your own security alarm panel installation"
+        ]
+      },
+      {
+        "k": "sg_finishes",
+        "img": "https://www.dagenhamgreen.co.uk/sites/dagenhamgreen.co.uk/files/styles/plot_spec_main_landscape/public/images/2026-08/ChatGPT%20Image%20Jun%208%2C%202026%2C%2002_02_51%20PM.png.webp?h=3d46a77d&itok=qudfgI_A",
+        "items": [
+          "Front entrance door with multi-point locking system",
+          "High efficiency double glazed aluminium/timber composite windows",
+          "White painted flush internal doors with contemporary dual finish ironmongery",
+          "Built-in mirrored wardrobe with sliding doors to principal bedroom",
+          "Walls and smooth ceilings painted in white emulsion",
+          "Amtico flooring to entrance hall and kitchen/dining/living room; carpet to bedrooms",
+          "Large format tiles to bathroom and en-suite"
+        ]
+      }
+    ],
+    "travel": [],
+    "hours": [
+      [
+        "d_mon",
+        "10:00 – 17:30"
+      ],
+      [
+        "d_tue",
+        "10:00 – 17:30"
+      ],
+      [
+        "d_wed",
+        "10:00 – 17:30"
+      ],
+      [
+        "d_thu",
+        "10:00 – 17:30"
+      ],
+      [
+        "d_fri",
+        "10:00 – 17:30"
+      ],
+      [
+        "d_sat",
+        "10:00 – 17:30"
+      ],
+      [
+        "d_sun",
+        "10:00 – 17:30"
+      ]
+    ],
+    "amenities": {
+      "cat_transport": [
+        {
+          "name": "Becontree station, District line",
+          "d": "<1 mi"
+        },
+        {
+          "name": "Dagenham Heathway station, District line",
+          "d": ""
+        },
+        {
+          "name": "Dagenham Dock station, c2c to Fenchurch St (20 min)",
+          "d": ""
+        }
+      ],
+      "cat_schools": [
+        {
+          "name": "Godwin Primary School, Ofsted Good",
+          "d": ""
+        },
+        {
+          "name": "Jo Richardson Community School, Ofsted Outstanding",
+          "d": ""
+        },
+        {
+          "name": "Dagenham Park Church of England School, Ofsted Good",
+          "d": ""
+        }
+      ],
+      "cat_food": [
+        {
+          "name": "Chequers Corner Brewers Fayre",
+          "d": "0.8 mi"
+        },
+        {
+          "name": "The Cross Keys pub",
+          "d": "1.2 mi"
+        },
+        {
+          "name": "The Admiral Vernon",
+          "d": "1.4 mi"
+        },
+        {
+          "name": "The Pipe Major pub",
+          "d": "1.5 mi"
+        },
+        {
+          "name": "Lara Grill, Turkish",
+          "d": ""
+        },
+        {
+          "name": "Sip House Coffee",
+          "d": ""
+        }
+      ],
+      "cat_green": [
+        {
+          "name": "Mayesbrook Park",
+          "d": ""
+        },
+        {
+          "name": "Valence Park",
+          "d": ""
+        },
+        {
+          "name": "Beam Valley Country Park",
+          "d": ""
+        },
+        {
+          "name": "Eastbrookend Country Park",
+          "d": ""
+        },
+        {
+          "name": "Parsloes Park",
+          "d": ""
+        }
+      ],
+      "cat_fitness": [
+        {
+          "name": "Becontree Heath Leisure Centre, gym & pool",
+          "d": ""
+        },
+        {
+          "name": "The Gym Group, Dagenham Heathway",
+          "d": ""
+        },
+        {
+          "name": "Dagenham & Redbridge FC",
+          "d": ""
+        }
+      ],
+      "cat_shops": [
+        {
+          "name": "Local high street shops & supermarkets",
+          "d": ""
+        },
+        {
+          "name": "Romford town centre",
+          "d": ""
+        },
+        {
+          "name": "Beckton retail",
+          "d": ""
+        },
+        {
+          "name": "Stratford (Westfield)",
+          "d": ""
+        }
+      ]
+    },
+    "suite": {
+      "line1": "Dagenham Green Sales Suite",
+      "line2": "Kent Avenue",
+      "line3": "Dagenham, London RM9 6PE",
+      "phone": "",
+      "email": "",
+      "maps": "https://www.google.com/maps/search/?api=1&query=Kent+Avenue+Dagenham+RM9+6PE"
+    },
+    "plots": [
+      {
+        "plot": "The Empire, Apartment 922",
+        "building": "The Empire",
+        "floor": "-",
+        "beds": 1,
+        "baths": 1,
+        "size": 552,
+        "price": 317000,
+        "avail": true
+      },
+      {
+        "plot": "The Liberty, Number 622",
+        "building": "The Liberty",
+        "floor": "-",
+        "beds": 1,
+        "baths": 1,
+        "size": 556,
+        "price": 375000,
+        "avail": true
+      },
+      {
+        "plot": "The Liberty, Number 602",
+        "building": "The Liberty",
+        "floor": "-",
+        "beds": 1,
+        "baths": 1,
+        "size": 556,
+        "price": 380000,
+        "avail": true
+      },
+      {
+        "plot": "The Liberty, Number 563",
+        "building": "The Liberty",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 801,
+        "price": 405000,
+        "avail": true
+      },
+      {
+        "plot": "The Liberty, Number 567",
+        "building": "The Liberty",
+        "floor": "-",
+        "beds": 2,
+        "baths": 2,
+        "size": 806,
+        "price": 430000,
+        "avail": true
+      },
+      {
+        "plot": "The Liberty, Number 599",
+        "building": "The Liberty",
+        "floor": "-",
+        "beds": 2,
+        "baths": 2,
+        "size": 802,
+        "price": 452000,
+        "avail": true
+      },
+      {
+        "plot": "The Liberty, Number 640",
+        "building": "The Liberty",
+        "floor": "-",
+        "beds": 2,
+        "baths": 2,
+        "size": 799,
+        "price": 480000,
+        "avail": true
+      },
+      {
+        "plot": "The Empire, Apartment 931",
+        "building": "The Empire",
+        "floor": "-",
+        "beds": 3,
+        "baths": 2,
+        "size": 934,
+        "price": 515000,
+        "avail": true
+      }
+    ],
+    "nearby": [
+      "lampton-parkside",
+      "kew-bridge-rise",
+      "north-gate-park"
+    ]
+  },
+  "wembley": {
+    "auto": true,
+    "hero": "uploads/opt/wembley-cgi.jpg",
+    "gallery": [
+      {
+        "src": "uploads/opt/wembley-cgi.jpg",
+        "cap": "cap_exterior"
+      }
+    ],
+    "facts": [],
+    "spec": [],
+    "travel": [],
+    "hours": [],
+    "amenities": {},
+    "suite": null,
+    "plots": [],
+    "nearby": [
+      "lampton-parkside",
+      "kew-bridge-rise",
+      "north-gate-park"
+    ]
+  },
+  "dollis-hill": {
+    "auto": true,
+    "hero": "uploads/opt/dollis-hill-cgi.jpg",
+    "gallery": [
+      {
+        "src": "uploads/opt/dollis-hill-cgi.jpg",
+        "cap": "cap_exterior"
+      }
+    ],
+    "facts": [],
+    "spec": [],
+    "travel": [],
+    "hours": [],
+    "amenities": {},
+    "suite": null,
+    "plots": [],
+    "nearby": [
+      "lampton-parkside",
+      "kew-bridge-rise",
+      "north-gate-park"
+    ]
+  },
+  "ham-richmond": {
+    "auto": true,
+    "hero": "uploads/opt/ham-richmond-cgi.jpg",
+    "gallery": [
+      {
+        "src": "uploads/opt/ham-richmond-cgi.jpg",
+        "cap": "cap_exterior"
+      }
+    ],
+    "facts": [],
+    "spec": [],
+    "travel": [],
+    "hours": [],
+    "amenities": {},
+    "suite": null,
+    "plots": [],
+    "nearby": [
+      "lampton-parkside",
+      "kew-bridge-rise",
+      "north-gate-park"
+    ]
+  },
+  "woolwich": {
+    "auto": true,
+    "hero": "uploads/opt/woolwich-cgi.jpg",
+    "gallery": [
+      {
+        "src": "uploads/opt/woolwich-cgi.jpg",
+        "cap": "cap_exterior"
+      }
+    ],
+    "facts": [],
+    "spec": [],
+    "travel": [],
+    "hours": [],
+    "amenities": {},
+    "suite": null,
+    "plots": [],
+    "nearby": [
+      "lampton-parkside",
+      "kew-bridge-rise",
+      "north-gate-park"
+    ]
+  },
+  "colindale": {
+    "auto": true,
+    "hero": "uploads/opt/colindale-cgi.jpg",
+    "gallery": [
+      {
+        "src": "uploads/opt/colindale-cgi.jpg",
+        "cap": "cap_exterior"
+      }
+    ],
+    "facts": [],
+    "spec": [],
+    "travel": [],
+    "hours": [],
+    "amenities": {},
+    "suite": null,
+    "plots": [],
+    "nearby": [
+      "lampton-parkside",
+      "kew-bridge-rise",
+      "north-gate-park"
+    ]
+  },
+  "langdon-park": {
+    "auto": true,
+    "hero": "uploads/opt/langdon-park-cgi.jpg",
+    "gallery": [
+      {
+        "src": "uploads/opt/langdon-park-cgi.jpg",
+        "cap": "cap_exterior"
+      }
+    ],
+    "facts": [],
+    "spec": [],
+    "travel": [],
+    "hours": [],
+    "amenities": {},
+    "suite": null,
+    "plots": [],
+    "nearby": [
+      "lampton-parkside",
+      "kew-bridge-rise",
+      "north-gate-park"
+    ]
+  },
+  "barnet": {
+    "auto": true,
+    "hero": "uploads/opt/honeywood-cgi.jpg",
+    "gallery": [
+      {
+        "src": "uploads/opt/honeywood-cgi.jpg",
+        "cap": "cap_exterior"
+      }
+    ],
+    "facts": [],
+    "spec": [],
+    "travel": [],
+    "hours": [],
+    "amenities": {},
+    "suite": null,
+    "plots": [],
+    "nearby": [
+      "lampton-parkside",
+      "kew-bridge-rise",
+      "north-gate-park"
+    ]
+  },
+  "hoxton": {
+    "auto": true,
+    "hero": "uploads/opt/hoxton-cgi.jpg",
+    "gallery": [
+      {
+        "src": "uploads/opt/hoxton-cgi.jpg",
+        "cap": "cap_exterior"
+      }
+    ],
+    "facts": [],
+    "spec": [],
+    "travel": [],
+    "hours": [],
+    "amenities": {},
+    "suite": null,
+    "plots": [],
+    "nearby": [
+      "lampton-parkside",
+      "kew-bridge-rise",
+      "north-gate-park"
+    ]
+  },
+  "little-chalfont-park": {
+    "auto": true,
+    "hero": "uploads/opt/little-chalfont-park-meadow.jpg",
+    "gallery": [
+      {
+        "src": "uploads/opt/little-chalfont-park-meadow.jpg",
+        "cap": "The meadow at Little Chalfont Park"
+      },
+      {
+        "src": "https://www.hill.co.uk/sites/default/files/styles/text_image_panel/public/images/2026-06/02215_View%201_241129_RT.jpg.webp?h=5ae4ceff&itok=w_nqvj0C",
+        "cap": "CGI, street scene view 1"
+      },
+      {
+        "src": "https://www.hill.co.uk/sites/default/files/styles/text_image_panel/public/images/2026-06/Copy%20of%2002215_View%202_241129_RT.jpg.webp?h=5ae4ceff&itok=D6Oy5QL5",
+        "cap": "CGI, street scene view 2"
+      }
+    ],
+    "facts": [],
+    "spec": [],
+    "travel": [],
+    "hours": [
+      [
+        "d_mon",
+        "10:00 – 17:30"
+      ],
+      [
+        "d_tue",
+        "10:00 – 17:30"
+      ],
+      [
+        "d_wed",
+        "10:00 – 17:30"
+      ],
+      [
+        "d_thu",
+        "10:00 – 17:30"
+      ],
+      [
+        "d_fri",
+        "10:00 – 17:30"
+      ],
+      [
+        "d_sat",
+        "10:00 – 17:30"
+      ],
+      [
+        "d_sun",
+        "10:00 – 17:30"
+      ]
+    ],
+    "amenities": {
+      "cat_schools": [
+        {
+          "name": "Little Chalfont Primary School",
+          "d": "0.8 mi"
+        },
+        {
+          "name": "Dr Challoner's High School",
+          "d": "1.0 mi"
+        },
+        {
+          "name": "Amersham School",
+          "d": "1.9 mi"
+        }
+      ],
+      "cat_transport": [
+        {
+          "name": "Chalfont & Latimer station",
+          "d": "0.9 mi"
+        }
+      ],
+      "cat_green": [
+        {
+          "name": "Little Chalfont Nature Park",
+          "d": "0.9 mi"
+        },
+        {
+          "name": "Harewood Downs Golf Club",
+          "d": "0.9 mi"
+        }
+      ],
+      "cat_food": [
+        {
+          "name": "The Ivy House",
+          "d": "1.1 mi"
+        },
+        {
+          "name": "Nena Craft Bakery",
+          "d": "2.7 mi"
+        }
+      ],
+      "cat_fitness": [
+        {
+          "name": "Chilterns Lifestyle Centre",
+          "d": "2.5 mi"
+        }
+      ],
+      "cat_shops": [
+        {
+          "name": "Tesco",
+          "d": "2.5 mi"
+        }
+      ]
+    },
+    "suite": {
+      "line1": "Little Chalfont Park",
+      "line2": "Burtons Lane",
+      "line3": "Little Chalfont, Buckinghamshire HP8 4BA",
+      "phone": "01494 412374",
+      "email": "hello@hill.co.uk",
+      "maps": "https://www.google.com/maps/search/?api=1&query=51.655946,-0.55407"
+    },
+    "plots": [],
+    "nearby": [
+      "lampton-parkside",
+      "kew-bridge-rise",
+      "north-gate-park"
+    ]
+  },
+  "nexus": {
+    "hero": "uploads/opt/nexus-photo.jpg",
+    "gallery": [
+      {
+        "src": "uploads/opt/nexus-photo.jpg",
+        "cap": "cap_exterior"
+      },
+      {
+        "src": "uploads/NEXUS_LIVING (1).png.webp",
+        "cap": "cap_living"
+      },
+      {
+        "src": "uploads/4371_NEXUS_KITCHEN_CAM001_DRAFT04_LTI.jpg.webp",
+        "cap": "cap_kitchen"
+      },
+      {
+        "src": "uploads/NEXUS_BEDROOM 2_VIGNETTE_.jpg.webp",
+        "cap": "cap_bedroom"
+      }
+    ],
+    "facts": [
+      {
+        "k": "f_homes",
+        "v": "118"
+      },
+      {
+        "k": "f_types",
+        "v": "1, 2 & 3"
+      },
+      {
+        "k": "f_tenure",
+        "v": "999"
+      },
+      {
+        "k": "f_completion",
+        "v": "Q3 2027"
+      },
+      {
+        "k": "f_price",
+        "v": "£267,500"
+      },
+      {
+        "k": "f_travel",
+        "v": "22 min"
+      },
+      {
+        "k": "f_epc",
+        "v": "B"
+      },
+      {
+        "k": "f_parking",
+        "v": "✓"
+      }
+    ],
+    "spec": [
+      {
+        "k": "sg_kitchen",
+        "img": "uploads/4371_NEXUS_KITCHEN_CAM001_DRAFT04_LTI.jpg.webp",
+        "items": [
+          "Matt finish handleless units with soft close doors and drawers",
+          "Caesarstone worktop with matching upstand and splashback behind hob",
+          "Induction hob with integrated Bosch cooker hood",
+          "Integrated Bosch single oven and microwave",
+          "Integrated Bosch dishwasher and fridge/freezer",
+          "Stainless steel undermounted sink with brushed steel mixer tap",
+          "LED feature lighting to wall units",
+          "Washer/dryer in hallway cupboard"
+        ],
+        "note": "Kitchen designs and layouts vary by home type."
+      },
+      {
+        "k": "sg_bathroom",
+        "img": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-02/4371_NEXUS_BATHROOM_CAM009_DRAFT04_LTI.jpg.webp?h=944f54a0&itok=3uNnPf91",
+        "items": [
+          "Bath with shower over and glass screen",
+          "Low profile shower tray with glass door to en-suite",
+          "Framed feature mirror with shelf to match vanity tops",
+          "Large format wall and floor tiles",
+          "Heated chrome towel rail to bathroom and en-suite"
+        ]
+      },
+      {
+        "k": "sg_heating",
+        "img": "uploads/NEXUS_LIVING (1).png.webp",
+        "items": [
+          "Underfloor heating throughout each apartment",
+          "Heating and hot water via communal air source heat pump",
+          "Heated chrome towel rails to bathroom and en-suite"
+        ]
+      },
+      {
+        "k": "sg_electrical",
+        "img": "uploads/NEXUS_BEDROOM 2_VIGNETTE_.jpg.webp",
+        "items": [
+          "Downlights to hall, kitchen/dining/living, bathroom and en-suite",
+          "Pendant fittings to all bedrooms",
+          "Openreach and Hyperoptic fibre to every apartment",
+          "TV, BT and data points to selected locations",
+          "Video entry system linked to the main entrance door",
+          "Hard-wired smoke and heat detectors, plus sprinkler system",
+          "Spur for your own security alarm panel"
+        ]
+      },
+      {
+        "k": "sg_communal",
+        "img": "uploads/opt/nexus-photo.jpg",
+        "items": [
+          "Fob controlled access to the entrance lobby",
+          "Lift access to all floors",
+          "Cycle and bin storage",
+          "Letterboxes within the communal entrance lobby"
+        ]
+      },
+      {
+        "k": "sg_finishes",
+        "img": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-03/Nexus%20Show%20Apartment%20Principal%20Bedroom%20%2810%29.jpg.webp?h=be52466e&itok=CD9E-fOy",
+        "items": [
+          "Painted front entrance door with multi-point locking system",
+          "High efficiency double glazed aluminium timber composite windows",
+          "Built-in mirrored wardrobe with sliding doors to principal bedroom",
+          "Amtico flooring to hall and kitchen/dining/living, carpet to bedrooms",
+          "Large format tiles to bathroom and en-suite",
+          "Aluminium decking to balconies, paved terraces to ground floor homes"
+        ]
+      },
+      {
+        "k": "sg_additional",
+        "img": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-03/4371_NEXUS_VIEW%204_FINAL_02.jpg.webp?h=4fe57aec&itok=LnxVjb_G",
+        "items": [
+          "10 year NHBC warranty",
+          "999 year leasehold",
+          "Service charge payable for shared facilities and communal areas"
+        ]
+      }
+    ],
+    "plots": [
+      {
+        "plot": "E1.02.04",
+        "building": "Nexus East",
+        "floor": "2",
+        "beds": 1,
+        "baths": 1,
+        "size": 538,
+        "price": 267500,
+        "avail": true
+      },
+      {
+        "plot": "E1.03.01",
+        "building": "Nexus East",
+        "floor": "3",
+        "beds": 1,
+        "baths": 1,
+        "size": 552,
+        "price": 275000,
+        "avail": true
+      },
+      {
+        "plot": "W2.01.03",
+        "building": "Nexus West",
+        "floor": "1",
+        "beds": 2,
+        "baths": 1,
+        "size": 704,
+        "price": 329000,
+        "avail": true
+      },
+      {
+        "plot": "W2.02.05",
+        "building": "Nexus West",
+        "floor": "2",
+        "beds": 2,
+        "baths": 2,
+        "size": 736,
+        "price": 342500,
+        "avail": false
+      },
+      {
+        "plot": "E1.04.02",
+        "building": "Nexus East",
+        "floor": "4",
+        "beds": 2,
+        "baths": 2,
+        "size": 748,
+        "price": 355000,
+        "avail": true
+      },
+      {
+        "plot": "W2.05.01",
+        "building": "Nexus West",
+        "floor": "5",
+        "beds": 2,
+        "baths": 2,
+        "size": 761,
+        "price": 368000,
+        "avail": true
+      },
+      {
+        "plot": "E1.06.03",
+        "building": "Nexus East",
+        "floor": "6",
+        "beds": 3,
+        "baths": 2,
+        "size": 936,
+        "price": 419000,
+        "avail": true
+      },
+      {
+        "plot": "W2.07.01",
+        "building": "Nexus West",
+        "floor": "7",
+        "beds": 3,
+        "baths": 2,
+        "size": 981,
+        "price": 445000,
+        "avail": false
+      }
+    ],
+    "travel": [
+      {
+        "to": "Stevenage station",
+        "n": "8",
+        "mode": "mode_walk"
+      },
+      {
+        "to": "London King’s Cross",
+        "n": "22",
+        "mode": "mode_train"
+      },
+      {
+        "to": "Finsbury Park",
+        "n": "18",
+        "mode": "mode_train"
+      },
+      {
+        "to": "Cambridge",
+        "n": "27",
+        "mode": "mode_train"
+      },
+      {
+        "to": "Luton Airport",
+        "n": "30",
+        "mode": "mode_car"
+      }
+    ],
+    "amenities": {
+      "cat_transport": [
+        {
+          "name": "Stevenage rail station",
+          "d": "0.4 mi"
+        },
+        {
+          "name": "A1(M) Junction 7",
+          "d": "1.1 mi"
+        },
+        {
+          "name": "Car club bay, Six Hills Way",
+          "d": "0.1 mi"
+        },
+        {
+          "name": "Luton Airport",
+          "d": "14 mi"
+        }
+      ],
+      "cat_food": [
+        {
+          "name": "Old Town high street restaurants",
+          "d": "0.9 mi"
+        },
+        {
+          "name": "The Mulberry Tree",
+          "d": "0.6 mi"
+        },
+        {
+          "name": "Roebuck Inn",
+          "d": "1.8 mi"
+        },
+        {
+          "name": "Independent coffee, Market Square",
+          "d": "0.3 mi"
+        }
+      ],
+      "cat_green": [
+        {
+          "name": "Fairlands Valley Park",
+          "d": "1.2 mi"
+        },
+        {
+          "name": "St Nicholas Recreation Ground",
+          "d": "0.7 mi"
+        },
+        {
+          "name": "Knebworth House parkland",
+          "d": "3.4 mi"
+        },
+        {
+          "name": "Chilterns AONB",
+          "d": "11 mi"
+        }
+      ],
+      "cat_fitness": [
+        {
+          "name": "Stevenage Arts & Leisure Centre",
+          "d": "0.5 mi"
+        },
+        {
+          "name": "Fairlands Valley sailing centre",
+          "d": "1.3 mi"
+        },
+        {
+          "name": "PureGym Stevenage",
+          "d": "0.8 mi"
+        },
+        {
+          "name": "Stevenage Golf Centre",
+          "d": "2.6 mi"
+        }
+      ],
+      "cat_shops": [
+        {
+          "name": "Westgate Shopping Centre",
+          "d": "0.4 mi"
+        },
+        {
+          "name": "Sainsbury’s superstore",
+          "d": "0.6 mi"
+        },
+        {
+          "name": "Roaring Meg retail park",
+          "d": "1.5 mi"
+        },
+        {
+          "name": "Cineworld Stevenage",
+          "d": "1.4 mi"
+        }
+      ],
+      "cat_schools": [
+        {
+          "name": "Round Diamond Primary",
+          "d": "1.0 mi"
+        },
+        {
+          "name": "The Thomas Alleyne Academy",
+          "d": "0.9 mi"
+        },
+        {
+          "name": "North Herts College",
+          "d": "1.7 mi"
+        },
+        {
+          "name": "University of Hertfordshire",
+          "d": "9 mi"
+        }
+      ]
+    },
+    "suite": {
+      "line1": "Nexus Marketing Suite",
+      "line2": "Six Hills Way",
+      "line3": "Stevenage SG1 2FQ",
+      "phone": "+44 (0)1438 200 118",
+      "email": "nexus@hill.co.uk",
+      "maps": "https://www.google.com/maps/search/?api=1&query=Six+Hills+Way+Stevenage"
+    },
+    "hours": [
+      [
+        "d_mon",
+        "closed"
+      ],
+      [
+        "d_tue",
+        "10:00 – 17:00"
+      ],
+      [
+        "d_wed",
+        "10:00 – 17:00"
+      ],
+      [
+        "d_thu",
+        "10:00 – 17:00"
+      ],
+      [
+        "d_fri",
+        "10:00 – 17:00"
+      ],
+      [
+        "d_sat",
+        "10:00 – 17:00"
+      ],
+      [
+        "d_sun",
+        "11:00 – 16:00"
+      ]
+    ],
+    "nearby": [
+      "hartmere",
+      "little-chalfont-park",
+      "city-reach"
+    ]
+  },
+  "mulberry-rise": {
+    "auto": true,
+    "hero": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-03/Lucas%20Lane%20-%20Hitchin%20Town%20Centre%20%28200%29.jpg.webp?h=53772638&itok=JrI-5fmS",
+    "gallery": [
+      {
+        "src": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-03/Lucas%20Lane%20-%20Hitchin%20Town%20Centre%20%28200%29.jpg.webp?h=53772638&itok=JrI-5fmS",
+        "cap": "Hitchin town centre"
+      },
+      {
+        "src": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-03/Lucas%20Lane%20-%20Hitchin%20Town%20Centre%20%28101%29.jpg.webp?h=587c505d&itok=w5MwDs0a",
+        "cap": "Hitchin town centre"
+      },
+      {
+        "src": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-03/Lucas%20Lane%20-%20Hitchin%20Town%20Centre%20%2865%29.jpg.webp?h=fa21cbc3&itok=ZorLPCeN",
+        "cap": "Hitchin town centre"
+      },
+      {
+        "src": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2025-08/Lucas%20Lane%20-%20Hitchin%20Town%20Centre%20%2880%29.jpg.webp?h=06ac0d8c&itok=zDYoJmQK",
+        "cap": "Hitchin town centre"
+      },
+      {
+        "src": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2025-08/Lucas%20Lane%20-%20Hitchin%20Town%20Centre%20%28161%29.jpg.webp?h=06ac0d8c&itok=uMSoPBjQ",
+        "cap": "Hitchin town centre signage"
+      },
+      {
+        "src": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-03/Lucas%20Lane%20-%20Hitchin%20Town%20Centre%20%28197%29.jpg.webp?h=fa5f4214&itok=h9TpLgMK",
+        "cap": "Hitchin town centre"
+      },
+      {
+        "src": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2024-09/SJH_9807-Edit.jpg.webp?h=a1e1a043&itok=QkLU8NGo",
+        "cap": "Hollymead Square show home, The Shadwell — living room"
+      },
+      {
+        "src": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2024-09/SJH_0305-Edit.jpg.webp?h=a1e1a043&itok=fI6ESf8A",
+        "cap": "Hollymead Square show home, The Shadwell — principal bedroom"
+      },
+      {
+        "src": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2024-09/SJH_0218-Edit.jpg.webp?h=a1e1a043&itok=sVI2icth",
+        "cap": "Hollymead Square show home, The Shadwell — bedroom 2"
+      },
+      {
+        "src": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2024-09/SJH_0036-Edit.jpg.webp?h=a1e1a043&itok=mFOwkz6M",
+        "cap": "Hollymead Square show home, The Shadwell — family area"
+      },
+      {
+        "src": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2024-09/SJH_0288-Edit.jpg.webp?h=a1e1a043&itok=upJdk4ev",
+        "cap": "Hollymead Square show home, The Shadwell — principal bedroom"
+      },
+      {
+        "src": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2024-09/SJH_0088-Edit.jpg.webp?h=a1e1a043&itok=s6SxuBA2",
+        "cap": "Hollymead Square show home, The Shadwell — bedroom 3"
+      },
+      {
+        "src": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2024-09/SJH_0125-Edit.jpg.webp?h=a1e1a043&itok=w-Cux06M",
+        "cap": "Hollymead Square show home, The Shadwell — study"
+      },
+      {
+        "src": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2024-09/SJH_0261-Edit.jpg.webp?h=a1e1a043&itok=7CwXqz7G",
+        "cap": "Hollymead Square show home, The Shadwell — bathroom"
+      },
+      {
+        "src": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2024-09/SJH_0166-Edit.jpg.webp?h=a1e1a043&itok=k72A-jyY",
+        "cap": "Hollymead Square show home, The Shadwell — bedroom 4"
+      },
+      {
+        "src": "https://www.hill.co.uk/sites/default/files/styles/siteplan/public/2026-07/Gray-Lanes-Site-Plan-4000x2929px.jpg?itok=QUTXV3Ka",
+        "cap": "Site plan"
+      }
+    ],
+    "facts": [],
+    "spec": [],
+    "travel": [],
+    "hours": [],
+    "amenities": {
+      "cat_transport": [
+        {
+          "name": "Hitchin Railway Station",
+          "d": "1.3 mi"
+        },
+        {
+          "name": "London Luton Airport",
+          "d": "5.9 mi"
+        }
+      ],
+      "cat_schools": [
+        {
+          "name": "Samuel Lucas Junior Mixed and Infant School",
+          "d": "0.3 mi"
+        },
+        {
+          "name": "Oughton Primary and Nursery School",
+          "d": "0.5 mi"
+        },
+        {
+          "name": "Hitchin Boy’s School",
+          "d": "0.6 mi"
+        },
+        {
+          "name": "Wilshere-Dacre Junior Academy",
+          "d": "0.6 mi"
+        },
+        {
+          "name": "Hitchin Girl’s School",
+          "d": "0.9 mi"
+        },
+        {
+          "name": "The Priory School",
+          "d": "1.0 mi"
+        }
+      ],
+      "cat_shops": [
+        {
+          "name": "Waitrose & Partners",
+          "d": "0.4 mi"
+        },
+        {
+          "name": "M&S Simply Food",
+          "d": "0.6 mi"
+        },
+        {
+          "name": "Asda Hitchin Supermarket",
+          "d": "0.7 mi"
+        },
+        {
+          "name": "Sainsbury’s",
+          "d": "0.7 mi"
+        }
+      ]
+    },
+    "suite": null,
+    "plots": [],
+    "nearby": [
+      "nexus",
+      "millside-grange",
+      "lampton-parkside"
+    ]
+  },
+  "farehurst-park": {
+    "auto": true,
+    "hero": "uploads/Screenshot 2026-08-28 104844.png",
+    "gallery": [
+      {
+        "src": "uploads/Screenshot 2026-08-28 104844.png",
+        "cap": "Footbridge over the stream to the homes"
+      },
+      {
+        "src": "uploads/Screenshot 2026-08-28 104855.png",
+        "cap": "Homes overlooking the stream and play area"
+      },
+      {
+        "src": "uploads/Screenshot 2026-08-28 104906.png",
+        "cap": "Street scene"
+      },
+      {
+        "src": "uploads/Screenshot 2026-08-28 104918.png",
+        "cap": "Show home living and dining room"
+      },
+      {
+        "src": "uploads/Screenshot 2026-08-28 104939.png",
+        "cap": "Show home bathroom"
+      }
+    ],
+    "facts": [],
+    "spec": [
+      {
+        "k": "sg_kitchen",
+        "img": "https://www.hill.co.uk/sites/default/files/styles/plot_spec_main_landscape/public/images/2025-05/SJH_1253-Edit.jpg.webp?h=7362792e&itok=F7cTKq6-",
+        "items": [
+          "Matt finish shaker-style kitchen units with soft close to doors and drawers",
+          "Caesarstone worktops with matching upstand and splashback behind hob",
+          "Induction hob",
+          "Integrated single oven, microwave, fridge/freezer, dishwasher and cooker hood",
+          "Stainless steel under-mounted sink with contemporary brushed steel mixer tap",
+          "LED feature lighting to wall units",
+          "Integrated washer/dryer",
+          "Utility: slimline laminate worktop with matching upstand and stainless steel sink"
+        ],
+        "note": "Kitchen and utility room design and layouts vary; please speak to our Sales Executives for further information."
+      },
+      {
+        "k": "sg_bathroom",
+        "img": "https://www.hill.co.uk/sites/default/files/styles/plot_spec_main_landscape/public/images/2025-11/HBW_0642.jpg.webp?h=ada05aa9&itok=Zf0f1FH8",
+        "items": [
+          "Bath with shower over and glass screen, or separate shower enclosure",
+          "Bath panel to match vanity top",
+          "Low profile shower tray with glass shower door to en-suite",
+          "Framed feature mirror with shelf to match vanity top to en-suites (where layout allows)",
+          "Large format wall and floor tiles to bathroom & en-suite",
+          "Heated chrome towel rail to bathroom & en-suite"
+        ]
+      },
+      {
+        "k": "sg_heating",
+        "img": "https://www.hill.co.uk/sites/default/files/styles/plot_spec_main_landscape/public/images/2025-08/hill-farehurst-park-why-new-build-smarter-homes-1313x875.jpg.webp?h=59aff2be&itok=gzzXUS2O",
+        "items": [
+          "Underfloor heating to ground floor, radiators to upper floor",
+          "Heated towel rails to bathroom and en-suite",
+          "Air source heat pump",
+          "Hot water storage tank"
+        ]
+      },
+      {
+        "k": "sg_electrical",
+        "img": "https://www.hill.co.uk/sites/default/files/styles/plot_spec_main_landscape/public/images/2025-11/WED_3318.jpg.webp?h=659c3479&itok=9-ZDDamc",
+        "items": [
+          "Downlights to entrance hall, kitchen, open plan kitchen/dining/living area, bathroom, en-suite and WC",
+          "Pendant fittings to separate living room, dining room, study, landing and other bedrooms",
+          "Shaver sockets to bathroom and en-suite",
+          "TV, BT and data points to selected locations",
+          "BT & Hyperoptic fibre connection for your choice of broadband provider",
+          "Pre-wired for your own Sky Q connection",
+          "External lighting to front and rear of property; light and power to garage",
+          "Hard-wired smoke and heat detectors",
+          "Spur for your own security alarm panel",
+          "Provision for your own electric car charging point"
+        ]
+      },
+      {
+        "k": "sg_finishes",
+        "img": "https://www.hill.co.uk/sites/default/files/styles/plot_spec_main_landscape/public/images/2025-05/hill_FP_QE_0014.jpg.webp?h=e29ca264&itok=WhcUmNgJ",
+        "items": [
+          "Timber staircase with carpeted treads and risers",
+          "White painted single panel moulded internal doors with contemporary dual finish ironmongery",
+          "Built-in mirrored wardrobe with sliding doors to principal bedroom",
+          "Amtico flooring throughout ground floor; carpet to stairs, landing and bedrooms",
+          "Aluminium bi-fold patio doors",
+          "Landscaping to front garden, turf to rear garden and paved patios",
+          "High-efficiency double-glazed uPVC windows",
+          "Composite front door with multi-point locking system"
+        ]
+      },
+      {
+        "k": "sg_additional",
+        "img": "https://www.hill.co.uk/sites/default/files/styles/plot_spec_main_landscape/public/images/2025-07/The%20Cuckoo%2C%20Number%2020%20at%20Farehurst%20Park..jpg.webp?h=4ed63de5&itok=smFoL9eP",
+        "items": [
+          "10 year NHBC warranty",
+          "2 year Hill warranty",
+          "Management company formed for shared services and communal areas; annual estate charge payable"
+        ]
+      }
+    ],
+    "travel": [],
+    "hours": [],
+    "amenities": {
+      "cat_transport": [
+        {
+          "name": "Cambridge South Train Station",
+          "d": "3.4 mi"
+        }
+      ],
+      "cat_food": [
+        {
+          "name": "Hat and Rabbit Public House",
+          "d": "0.1 mi"
+        },
+        {
+          "name": "The Gog Farm Shop",
+          "d": "2.3 mi"
+        }
+      ],
+      "cat_green": [
+        {
+          "name": "Fulbourn Recreational Ground",
+          "d": "0.9 mi"
+        }
+      ],
+      "cat_shops": [
+        {
+          "name": "Co-Op, Fulbourn",
+          "d": "0.6 mi"
+        }
+      ],
+      "cat_schools": [
+        {
+          "name": "Fulbourn Primary School",
+          "d": "0.6 mi"
+        },
+        {
+          "name": "Fulbourn PreSchool",
+          "d": "0.6 mi"
+        }
+      ]
+    },
+    "suite": null,
+    "plots": [
+      {
+        "plot": "The Robin, Number 99",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 2,
+        "size": 918,
+        "price": 489950,
+        "avail": true
+      },
+      {
+        "plot": "The Robin, Number 74",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 2,
+        "size": 918,
+        "price": 499950,
+        "avail": true
+      },
+      {
+        "plot": "The Jay, Number 70",
+        "building": "-",
+        "floor": "-",
+        "beds": 3,
+        "baths": 2,
+        "size": 1176,
+        "price": 659950,
+        "avail": true
+      },
+      {
+        "plot": "The Jay, Number 76",
+        "building": "-",
+        "floor": "-",
+        "beds": 3,
+        "baths": 2,
+        "size": 1176,
+        "price": 669950,
+        "avail": true
+      },
+      {
+        "plot": "The Dove, Number 103",
+        "building": "-",
+        "floor": "-",
+        "beds": 4,
+        "baths": 2,
+        "size": 1305,
+        "price": 739950,
+        "avail": true
+      },
+      {
+        "plot": "The Owl, Number 81",
+        "building": "-",
+        "floor": "-",
+        "beds": 4,
+        "baths": 2,
+        "size": 1468,
+        "price": 799950,
+        "avail": true
+      },
+      {
+        "plot": "The Kite, Number 98",
+        "building": "-",
+        "floor": "-",
+        "beds": 5,
+        "baths": 2,
+        "size": 1977,
+        "price": 999950,
+        "avail": true
+      }
+    ],
+    "nearby": [
+      "the-icon",
+      "city-reach",
+      "hartmere"
+    ]
+  },
+  "the-icon": {
+    "auto": true,
+    "hero": "uploads/Screenshot 2026-08-28 103148.png",
+    "gallery": [
+      {
+        "src": "uploads/Screenshot 2026-08-28 103148.png",
+        "cap": "cap_exterior"
+      },
+      {
+        "src": "uploads/Version-4_Dusk (1).jpg",
+        "cap": "cap_living"
+      },
+      {
+        "src": "uploads/03_LowRes_ICON-Roof-Terrace_DJI_0016_D-HDR.jpg",
+        "cap": "cap_kitchen"
+      },
+      {
+        "src": "https://www.hill.co.uk/sites/default/files/styles/hero_mobile/public/images/2026-03/Bike%20Path_Spring%20%282%29.jpg.webp?h=37b6d6bb&itok=6bDyuCov",
+        "cap": "cap_bedroom"
+      }
+    ],
+    "facts": [],
+    "spec": [],
+    "travel": [],
+    "hours": [],
+    "amenities": {
+      "cat_transport": [
+        {
+          "name": "Park and Ride",
+          "d": "0.6 mi"
+        }
+      ],
+      "cat_food": [
+        {
+          "name": "La Pizzica",
+          "d": "0.3 mi"
+        },
+        {
+          "name": "Dulcedo Social",
+          "d": "0.3 mi"
+        }
+      ],
+      "cat_green": [
+        {
+          "name": "Eddington Cricket Field",
+          "d": "0.3 mi"
+        },
+        {
+          "name": "Brook Leys",
+          "d": "0.4 mi"
+        }
+      ],
+      "cat_shops": [
+        {
+          "name": "Sainsburys",
+          "d": "0.3 mi"
+        }
+      ],
+      "cat_schools": [
+        {
+          "name": "University of Cambridge Primary School",
+          "d": "0.2 mi"
+        }
+      ]
+    },
+    "suite": null,
+    "plots": [
+      {
+        "plot": "Number 37",
+        "building": "Icon",
+        "floor": "2",
+        "beds": 1,
+        "baths": 1,
+        "size": 428,
+        "price": 449950,
+        "avail": true
+      },
+      {
+        "plot": "Number 82",
+        "building": "Icon",
+        "floor": "1",
+        "beds": 1,
+        "baths": 1,
+        "size": 631,
+        "price": 479950,
+        "avail": true
+      },
+      {
+        "plot": "Number 44",
+        "building": "Icon",
+        "floor": "Ground",
+        "beds": 2,
+        "baths": 1,
+        "size": 709,
+        "price": 499950,
+        "avail": true
+      },
+      {
+        "plot": "Number 88",
+        "building": "Icon",
+        "floor": "2",
+        "beds": 2,
+        "baths": 2,
+        "size": 1010,
+        "price": 659950,
+        "avail": true
+      },
+      {
+        "plot": "Number 2",
+        "building": "Icon",
+        "floor": "Ground",
+        "beds": 3,
+        "baths": 2,
+        "size": 971,
+        "price": 699950,
+        "avail": true
+      },
+      {
+        "plot": "Number 12",
+        "building": "Icon",
+        "floor": "Ground",
+        "beds": 3,
+        "baths": 2,
+        "size": 984,
+        "price": 719950,
+        "avail": true
+      },
+      {
+        "plot": "Number 18",
+        "building": "Icon",
+        "floor": "2",
+        "beds": 3,
+        "baths": 2,
+        "size": 1157,
+        "price": 989950,
+        "avail": true
+      },
+      {
+        "plot": "Number 39",
+        "building": "Icon",
+        "floor": "3",
+        "beds": 3,
+        "baths": 2,
+        "size": 1340,
+        "price": 1274950,
+        "avail": true
+      }
+    ],
+    "nearby": [
+      "farehurst-park",
+      "city-reach",
+      "hartmere"
+    ]
+  },
+  "millside-grange": {
+    "auto": true,
+    "hero": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2025-11/Plot%202%20Kitchen%2C%20Dining%2C%20Living.jpg.webp?h=790be497&itok=PfhAuEzo",
+    "gallery": [
+      {
+        "src": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2025-11/Plot%202%20Kitchen%2C%20Dining%2C%20Living.jpg.webp?h=790be497&itok=PfhAuEzo",
+        "cap": "cap_exterior"
+      },
+      {
+        "src": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2025-11/MILLSIDE%20GRANGE_EXTERNALS-%20%2872%29.jpg.webp?h=bae7209c&itok=8I9zqtX2",
+        "cap": "cap_living"
+      },
+      {
+        "src": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2025-11/Millside%20Grange%20Play%20Area.JPG.webp?h=9202a37b&itok=wr4ggiMh",
+        "cap": "cap_kitchen"
+      },
+      {
+        "src": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-01/Advanced%20Edit_2%20%281%29.jpg.webp?h=3189ad10&itok=3GSi0uGO",
+        "cap": "cap_bedroom"
+      }
+    ],
+    "facts": [],
+    "spec": [
+      {
+        "k": "sg_kitchen",
+        "img": "https://www.hill.co.uk/sites/default/files/styles/plot_spec_main_landscape/public/images/2025-11/vb2331843__SJH4454-Edit-Edit_800x533%20%281%29.jpg.webp?h=c9f93661&itok=DRYAN5va",
+        "items": [
+          "Matt finish shaker-style kitchen units with soft close to doors and drawers",
+          "Caesarstone worktop with matching upstand and splashback behind hob",
+          "Induction hob, with built-in extractor to 4 & 5 bed homes",
+          "Integrated single oven; compact combi oven/microwave to 4 & 5 bed homes",
+          "Integrated fridge/freezer and dishwasher",
+          "Integrated cooker hood to 2 & 3 bed homes",
+          "Stainless steel under-mounted sink with contemporary brushed steel mixer tap",
+          "LED feature lighting to wall units",
+          "Integrated washer/dryer to 2 & 3 bed homes"
+        ],
+        "note": "Kitchen designs and layouts vary; please speak to our Sales Executives for further information."
+      },
+      {
+        "k": "sg_bathroom",
+        "img": "https://www.hill.co.uk/sites/default/files/styles/plot_spec_main_landscape/public/images/2025-11/Millside%20Grange%2C%20Number%2087-35%20%281%29.jpg.webp?h=8c1344d8&itok=UIEttonL",
+        "items": [
+          "Bath with shower over and glass screen, or separate shower enclosure",
+          "Bath panel to match vanity top",
+          "Low profile shower tray with glass shower door to en-suite",
+          "Feature mirror cabinet with LED lighting to bathroom and principal en-suite, 4 & 5 bed homes (where layout allows)",
+          "Framed feature mirror with shelf to match vanity top to en-suites, 2 & 3 bed homes (where layout allows)",
+          "Large format wall and floor tiles to bathroom & en-suite",
+          "Heated chrome towel rail to bathroom & en-suite"
+        ]
+      },
+      {
+        "k": "sg_heating",
+        "img": "https://www.hill.co.uk/sites/default/files/styles/plot_spec_main_landscape/public/images/2025-11/Millside%20Grange%2C%20Number%2087%2C%20Bedroom%202_2.jpg.webp?h=8c9d1d26&itok=gI4cZTjP",
+        "items": [
+          "Underfloor heating to ground floor, radiators to upper floor",
+          "Heated chrome towel rails to bathroom and en-suite",
+          "Air source heat pump",
+          "Hot water storage tank to 2 & 3 bed homes"
+        ]
+      },
+      {
+        "k": "sg_electrical",
+        "img": "https://www.hill.co.uk/sites/default/files/styles/plot_spec_main_landscape/public/images/2025-11/Millside%20Grange%2C%20Number%2087%2C%20Reception_1%20%281%29.jpg.webp?h=7f2f6fbb&itok=0rBFVnW3",
+        "items": [
+          "Downlights to entrance hall, kitchen, open-plan kitchen/living/dining area, bathroom, en-suite and WC",
+          "Downlights to utility room and principal bedroom, 4 & 5 bed homes",
+          "Pendant fittings to landing and bedrooms",
+          "Selected sockets with integrated USB port, 4 & 5 bed homes",
+          "Shaver sockets to bathroom and en-suite",
+          "TV, BT and data points to selected locations",
+          "BT & Hyperoptic fibre connection for your choice of broadband provider",
+          "Pre-wired for your own Sky Q connection",
+          "External lighting to front and rear of property",
+          "Hard-wired smoke and heat detectors",
+          "Spur for your own security alarm panel",
+          "Provision for your own electric car charging point",
+          "Light and power to garage, 4 & 5 bed homes"
+        ]
+      },
+      {
+        "k": "sg_finishes",
+        "img": "https://www.hill.co.uk/sites/default/files/styles/plot_spec_main_landscape/public/images/2025-11/Millside%20Grange%2C%20Number%2087%2C%20Bedroom%201_2%20%281%29.jpg.webp?h=8c1344d8&itok=n7lkG0Cx",
+        "items": [
+          "Timber staircase with carpeted treads and risers",
+          "White painted single panel moulded internal doors with contemporary dual finish ironmongery",
+          "Built-in mirrored wardrobe with sliding doors to principal bedroom",
+          "Built-in hinged wardrobe or walk-in dressing room with LED lighting to principal bedroom, 4 & 5 bed homes",
+          "Amtico flooring throughout ground floor; carpet to stairs, landing and bedrooms",
+          "Large format tiles to bathroom and en-suite",
+          "Composite front door with multi-point locking system",
+          "High-efficiency double-glazed uPVC windows",
+          "Aluminium bi-fold patio doors"
+        ]
+      },
+      {
+        "k": "sg_additional",
+        "img": "https://www.hill.co.uk/sites/default/files/styles/plot_spec_main_landscape/public/images/2023-09/vb2298307_www.andrewhendry.com7_.jpg.webp?h=81464aaa&itok=IRPY-jMo",
+        "items": [
+          "10 year NHBC warranty",
+          "Management company formed for shared services and communal areas; annual estate charge payable"
+        ]
+      }
+    ],
+    "travel": [],
+    "hours": [],
+    "amenities": {
+      "cat_transport": [
+        {
+          "name": "Croxley Underground Station",
+          "d": "0.8 mi"
+        },
+        {
+          "name": "Rickmansworth Station",
+          "d": "1.5 mi"
+        }
+      ],
+      "cat_food": [
+        {
+          "name": "The Artichoke",
+          "d": "0.6 mi"
+        },
+        {
+          "name": "Prime Steak & Grill",
+          "d": "1.2 mi"
+        }
+      ],
+      "cat_green": [
+        {
+          "name": "Cassiobury Park",
+          "d": "1.8 mi"
+        },
+        {
+          "name": "Rickmansworth Aquadrome",
+          "d": "1.9 mi"
+        }
+      ],
+      "cat_fitness": [
+        {
+          "name": "David Lloyd Gym & Spa",
+          "d": "3.1 mi"
+        }
+      ],
+      "cat_shops": [
+        {
+          "name": "Waitrose",
+          "d": "1.3 mi"
+        },
+        {
+          "name": "Watersmeet",
+          "d": "1.4 mi"
+        },
+        {
+          "name": "M&S Foodhall",
+          "d": "1.5 mi"
+        },
+        {
+          "name": "Tesco",
+          "d": "1.8 mi"
+        },
+        {
+          "name": "Atrium Watford",
+          "d": "2.5 mi"
+        },
+        {
+          "name": "Warner Bros. Studio Tour London",
+          "d": "2.8 mi"
+        }
+      ],
+      "cat_schools": [
+        {
+          "name": "Little Green Junior School",
+          "d": "0.3 mi"
+        },
+        {
+          "name": "York House School",
+          "d": "0.5 mi"
+        },
+        {
+          "name": "Malvern Way Infant School",
+          "d": "0.7 mi"
+        },
+        {
+          "name": "Rickmansworth Secondary School",
+          "d": "0.8 mi"
+        },
+        {
+          "name": "Croxley Danes Secondary School",
+          "d": "0.9 mi"
+        }
+      ]
+    },
+    "suite": null,
+    "plots": [
+      {
+        "plot": "The Lawrence, Number 153",
+        "building": "-",
+        "floor": "-",
+        "beds": 5,
+        "baths": 3,
+        "size": 2166,
+        "price": 1649950,
+        "avail": true
+      },
+      {
+        "plot": "The Lawrence, Number 2",
+        "building": "-",
+        "floor": "-",
+        "beds": 5,
+        "baths": 3,
+        "size": 2166,
+        "price": 1695000,
+        "avail": true
+      }
+    ],
+    "nearby": [
+      "nexus",
+      "mulberry-rise",
+      "lampton-parkside"
+    ]
+  },
+  "city-reach": {
+    "auto": true,
+    "hero": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-02/City%20Reach%20-%20Apartment%20Street%20Scene.jpg.webp?h=790be497&itok=CXQ7yJI9",
+    "gallery": [
+      {
+        "src": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-02/City%20Reach%20-%20Apartment%20Street%20Scene.jpg.webp?h=790be497&itok=CXQ7yJI9",
+        "cap": "cap_exterior"
+      },
+      {
+        "src": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-02/City%20Reach%20-Ida%20Court%20Block%20E1.jpg.webp?h=790be497&itok=H8GJ4l-A",
+        "cap": "cap_living"
+      },
+      {
+        "src": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-02/City%20Reach%20-%20Florence%20Court%20Block%20W2.jpg.webp?h=790be497&itok=Q_n0tvFF",
+        "cap": "cap_kitchen"
+      },
+      {
+        "src": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-02/City%20Reach%20-%20Aerial%20Drone%20CGI%20-%20Outline.jpg.webp?h=21cd0a81&itok=gPANke4Q",
+        "cap": "cap_bedroom"
+      }
+    ],
+    "facts": [],
+    "spec": [
+      {
+        "k": "sg_kitchen",
+        "img": "https://www.hill.co.uk/sites/default/files/styles/plot_spec_main_landscape/public/images/2025-04/25_04_01_Hill_MarleighPark_012.jpg.webp?h=78c0e47d&itok=Cu2Hoy39",
+        "items": [
+          "Matt finish handleless units with soft close to doors and drawers",
+          "Caesarstone worktop with matching upstand and splashback behind hob",
+          "Induction hob",
+          "Integrated single oven, microwave, dishwasher and fridge/freezer",
+          "Integrated cooker hood",
+          "Stainless steel undermounted sink with contemporary brushed steel mixer tap",
+          "LED feature lighting to wall units",
+          "Washer/dryer, freestanding in hallway cupboard"
+        ],
+        "note": "Kitchen designs and layouts vary; please speak to our Sales Executives for further information."
+      },
+      {
+        "k": "sg_bathroom",
+        "img": "https://www.hill.co.uk/sites/default/files/styles/plot_spec_main_landscape/public/images/2025-04/25_04_01_Hill_MarleighPark_028.jpg.webp?h=db0f16ec&itok=oAlcuLm2",
+        "items": [
+          "Bathroom: bath with shower over and glass screen",
+          "En-suite: low profile shower tray with glass shower door",
+          "Framed feature mirror with shelf to match vanity tops",
+          "Large format wall and floor tiles",
+          "Heated chrome towel rail to bathroom and en-suite"
+        ]
+      },
+      {
+        "k": "sg_heating",
+        "img": "https://www.hill.co.uk/sites/default/files/styles/plot_spec_main_landscape/public/images/2025-04/25_04_01_Hill_MarleighPark_004.jpg.webp?h=301d74dc&itok=OeTR3LSj",
+        "items": [
+          "Combined ventilation and heating system providing filtered fresh air, heating, hot water and naturally reduced humidity",
+          "Heated chrome towel rails to bathroom and en-suite"
+        ]
+      },
+      {
+        "k": "sg_electrical",
+        "img": "https://www.hill.co.uk/sites/default/files/styles/plot_spec_main_landscape/public/images/2025-04/25_04_01_Hill_MarleighPark_012.jpg.webp?h=78c0e47d&itok=Cu2Hoy39",
+        "items": [
+          "Downlights to entrance hall, kitchen/dining/living room, bathroom and en-suite; pendant fittings to all bedrooms",
+          "LED feature lighting to kitchen wall units",
+          "TV, BT and data points to selected locations; high level TV point to kitchen/dining/living room",
+          "BT & Hyperoptic fibre connection to all properties for choice of broadband provider",
+          "Video entry system to every apartment, linked to the main entrance door",
+          "External lighting to balcony/terrace",
+          "Hard-wired smoke and heat detectors, plus a sprinkler system to all apartments",
+          "Spur for own security alarm panel installation"
+        ]
+      },
+      {
+        "k": "sg_finishes",
+        "img": "https://www.hill.co.uk/sites/default/files/styles/plot_spec_main_landscape/public/images/2025-04/25_04_01_Hill_MarleighPark_009.jpg.webp?h=59d5115c&itok=Y_Yr5RUE",
+        "items": [
+          "Painted front entrance door with multi-point locking system",
+          "High efficiency triple glazed aluminium timber composite windows",
+          "White painted flush internal doors with contemporary dual finish ironmongery",
+          "Built-in mirrored wardrobe with sliding doors to principal bedroom",
+          "Walls and smooth ceilings painted in white emulsion",
+          "Amtico flooring to entrance hall and kitchen/dining/living room; carpet to bedrooms",
+          "Large format tiles to bathroom and en-suite"
+        ]
+      },
+      {
+        "k": "sg_communal",
+        "img": "https://www.hill.co.uk/sites/default/files/styles/plot_spec_main_landscape/public/images/2026-02/City%20Reach%20-%20Florence%20Court%20Block%20W2.jpg.webp?h=790be497&itok=wrZJNVdl",
+        "items": [
+          "Fob controlled access system to entrance lobby",
+          "Lift access to all floors",
+          "Cycle and bin storage space",
+          "Letterboxes provided for all apartments within communal entrance lobby",
+          "Parking including to all houses; apartment parking available to purchase on request"
+        ]
+      },
+      {
+        "k": "sg_additional",
+        "img": "https://www.hill.co.uk/sites/default/files/styles/plot_spec_main_landscape/public/images/2026-02/City%20Reach%20-%20Aerial%20Drone%20CGI%20-%20Outline.jpg.webp?h=21cd0a81&itok=ZIt31H6v",
+        "items": [
+          "10 year NHBC warranty"
+        ]
+      }
+    ],
+    "travel": [],
+    "hours": [],
+    "amenities": {},
+    "suite": null,
+    "plots": [
+      {
+        "plot": "Florence Court, Number 4",
+        "building": "Florence Court",
+        "floor": "-",
+        "beds": 1,
+        "baths": 1,
+        "size": 560,
+        "price": 349950,
+        "avail": true
+      },
+      {
+        "plot": "Ida Court, Number 50",
+        "building": "Ida Court",
+        "floor": "-",
+        "beds": 2,
+        "baths": 2,
+        "size": 760,
+        "price": 459950,
+        "avail": true
+      },
+      {
+        "plot": "Florence Court, Number 13",
+        "building": "Florence Court",
+        "floor": "-",
+        "beds": 2,
+        "baths": 2,
+        "size": 820,
+        "price": 464950,
+        "avail": true
+      },
+      {
+        "plot": "Ida Court, Number 56",
+        "building": "Ida Court",
+        "floor": "-",
+        "beds": 2,
+        "baths": 2,
+        "size": 786,
+        "price": 474950,
+        "avail": true
+      },
+      {
+        "plot": "Ida Court, Number 57",
+        "building": "Ida Court",
+        "floor": "-",
+        "beds": 2,
+        "baths": 2,
+        "size": 776,
+        "price": 499950,
+        "avail": true
+      }
+    ],
+    "nearby": [
+      "farehurst-park",
+      "the-icon",
+      "hartmere"
+    ]
+  },
+  "hartmere": {
+    "auto": true,
+    "hero": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-05/Hartmere%20Externals_AE2-11%20%281%29.jpg.webp?h=d668167d&itok=4OaqI7zi",
+    "gallery": [
+      {
+        "src": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-05/Hartmere%20Externals_AE2-11%20%281%29.jpg.webp?h=d668167d&itok=4OaqI7zi",
+        "cap": "cap_exterior"
+      },
+      {
+        "src": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-05/Hartmere%20Externals_AE2-4.jpg.webp?h=d668167d&itok=KP-MbHEl",
+        "cap": "cap_living"
+      },
+      {
+        "src": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-04/Hartmere%20Show%20Home_Internals-31.jpg.webp?h=8c1344d8&itok=h8nHbKMm",
+        "cap": "cap_kitchen"
+      },
+      {
+        "src": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-04/Hartmere%20Show%20Home_Internals-28.jpg.webp?h=8c1344d8&itok=2VpblEWo",
+        "cap": "cap_bedroom"
+      }
+    ],
+    "facts": [],
+    "spec": [
+      {
+        "k": "sg_kitchen",
+        "img": "https://www.hill.co.uk/sites/default/files/styles/plot_spec_main_landscape/public/images/2025-12/Marleigh%20-%20Plot%20158%20-%20Open%20Kitchen_Dining%20%281%29.jpg.webp?h=8c1344d8&itok=H0IyzYFb",
+        "items": [
+          "Matt finish handleless units with contemporary black trim and soft close to doors and drawers",
+          "Caesarstone worktop with matching upstand and splashback behind hob",
+          "Induction hob",
+          "Integrated single oven, compact combi oven/microwave, dishwasher and cooker hood",
+          "Stainless steel undermounted sink with contemporary brushed steel mixer tap",
+          "LED feature lighting to wall units",
+          "Integrated washer/dryer (where no utility room)",
+          "Utility: matching units, worktop and sink, with freestanding washing machine and condenser dryer"
+        ],
+        "note": "Kitchen and utility room designs and layouts vary; please speak to our Sales Executives for further information."
+      },
+      {
+        "k": "sg_bathroom",
+        "img": "https://www.hill.co.uk/sites/default/files/styles/plot_spec_main_landscape/public/images/2025-10/Marleigh%20-%20Plot%20158%20-%20Bathroom.jpg.webp?h=8c1344d8&itok=RHlM5gtN",
+        "items": [
+          "Bath with shower over and glass screen, or separate shower enclosure",
+          "En-suite: low profile shower tray with glass shower door",
+          "Feature mirror cabinet with LED lighting where layout allows",
+          "Large format wall and floor tiles",
+          "Heated chrome towel rail to bathroom and en-suite"
+        ]
+      },
+      {
+        "k": "sg_heating",
+        "img": "https://www.hill.co.uk/sites/default/files/styles/plot_spec_main_landscape/public/images/2025-10/Marleigh%20-%20Plot%20158%20-%20Bedroom.jpg.webp?h=8c1344d8&itok=ruOswvfE",
+        "items": [
+          "Underfloor heating to ground floor, radiators to upper floor",
+          "Heated chrome towel rails to bathroom, en-suite and shower room",
+          "Air source heat pump with hot water storage tank"
+        ]
+      },
+      {
+        "k": "sg_electrical",
+        "img": "https://www.hill.co.uk/sites/default/files/styles/plot_spec_main_landscape/public/images/2025-10/Marleigh%20-%20Plot%20158%20-%20Bedroom%20%283%29.jpg.webp?h=f9a0e95c&itok=RZuQ6Ek8",
+        "items": [
+          "Downlights to entrance hall, kitchen, open plan kitchen/dining/living, bathroom, en-suites and principal bedroom",
+          "Pendant fittings to living/family room, dining room, study and other bedrooms",
+          "Selected sockets with integrated USB port",
+          "TV, BT and data points to selected locations; Openreach & Hyperoptic fibre connection",
+          "External lighting to front and rear of property, plus external power socket",
+          "Light and power to garage; electric car charging point",
+          "Hard-wired smoke and heat detectors",
+          "Spur for own security alarm panel installation"
+        ]
+      },
+      {
+        "k": "sg_finishes",
+        "img": "https://www.hill.co.uk/sites/default/files/styles/plot_spec_main_landscape/public/images/2026-02/7753_3210.jpeg.webp?h=1108bf17&itok=jsW0EPn1",
+        "items": [
+          "Timber staircase with carpeted treads and risers",
+          "White painted flush internal doors with contemporary dual finish ironmongery",
+          "Built-in hinged wardrobe with LED lighting to principal bedroom",
+          "Walls and smooth ceilings painted in white emulsion",
+          "Amtico flooring throughout ground floor; carpet to stairs, landings and bedrooms",
+          "Large format tiles to bathroom and en-suite",
+          "Landscaped front garden, turfed rear garden and paved patios"
+        ]
+      },
+      {
+        "k": "sg_additional",
+        "img": "https://www.hill.co.uk/sites/default/files/styles/plot_spec_main_landscape/public/images/2026-03/Hartmere%20Street%20Scene.jpg.webp?h=832a653d&itok=d08yJbnn",
+        "items": [
+          "10 year NHBC warranty"
+        ]
+      }
+    ],
+    "travel": [],
+    "hours": [],
+    "amenities": {},
+    "suite": null,
+    "plots": [
+      {
+        "plot": "The Byron, Number 8",
+        "building": "-",
+        "floor": "-",
+        "beds": 4,
+        "baths": 2,
+        "size": 1985,
+        "price": 1249950,
+        "avail": true
+      },
+      {
+        "plot": "The Lewis, Number 11",
+        "building": "-",
+        "floor": "-",
+        "beds": 6,
+        "baths": 3,
+        "size": 2383,
+        "price": 1499950,
+        "avail": true
+      },
+      {
+        "plot": "The Milne, Number 7",
+        "building": "-",
+        "floor": "-",
+        "beds": 5,
+        "baths": 2,
+        "size": 2508,
+        "price": 1579950,
+        "avail": true
+      },
+      {
+        "plot": "The Milne, Number 6",
+        "building": "-",
+        "floor": "-",
+        "beds": 5,
+        "baths": 2,
+        "size": 2508,
+        "price": 1599950,
+        "avail": true
+      }
+    ],
+    "nearby": [
+      "farehurst-park",
+      "the-icon",
+      "city-reach"
+    ]
+  },
+  "knights-park": {
+    "auto": true,
+    "hero": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-04/Athena%20External%20Image.jpg.webp?h=c44fcfa1&itok=klQfAypd",
+    "gallery": [
+      {
+        "src": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-04/Athena%20External%20Image.jpg.webp?h=c44fcfa1&itok=klQfAypd",
+        "cap": "cap_exterior"
+      },
+      {
+        "src": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-04/Athena%2C%20Plot%207%20External.jpg.webp?h=e42c87bc&itok=WybNm5fH",
+        "cap": "cap_living"
+      },
+      {
+        "src": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-04/Athena%2C%20Plot%207%2C%20Living%20Room.jpg.webp?h=303de691&itok=Vc44EVU0",
+        "cap": "cap_kitchen"
+      },
+      {
+        "src": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-04/Athena%2C%20Plot%207-%20Kitchen%20Island.jpg.webp?h=8c9d1d26&itok=mw_pDFJj",
+        "cap": "cap_bedroom"
+      }
+    ],
+    "facts": [],
+    "spec": [],
+    "travel": [],
+    "hours": [],
+    "amenities": {},
+    "suite": null,
+    "plots": [
+      {
+        "plot": "The Morgan C, Number 10",
+        "building": "Athena",
+        "floor": "-",
+        "beds": 3,
+        "baths": 2,
+        "size": 1493,
+        "price": 949950,
+        "avail": true
+      },
+      {
+        "plot": "The Morgan C, Number 6",
+        "building": "Athena",
+        "floor": "-",
+        "beds": 3,
+        "baths": 2,
+        "size": 1493,
+        "price": 899950,
+        "avail": true
+      },
+      {
+        "plot": "The Morgan A, Number 3",
+        "building": "Athena",
+        "floor": "-",
+        "beds": 3,
+        "baths": 2,
+        "size": 1471,
+        "price": 899950,
+        "avail": true
+      },
+      {
+        "plot": "Fusion, Apartment 88",
+        "building": "Fusion, Building B",
+        "floor": "3",
+        "beds": 2,
+        "baths": 2,
+        "size": 792,
+        "price": 539950,
+        "avail": true
+      },
+      {
+        "plot": "Fusion, Apartment 47",
+        "building": "Fusion",
+        "floor": "2",
+        "beds": 2,
+        "baths": 2,
+        "size": 792,
+        "price": 539950,
+        "avail": true
+      },
+      {
+        "plot": "Fusion, Apartment 69",
+        "building": "Fusion, Building B",
+        "floor": "1",
+        "beds": 2,
+        "baths": 2,
+        "size": 793,
+        "price": 519950,
+        "avail": true
+      },
+      {
+        "plot": "Fusion, Number 32",
+        "building": "Fusion, Building A",
+        "floor": "Ground",
+        "beds": 2,
+        "baths": 2,
+        "size": 786,
+        "price": 489950,
+        "avail": true
+      },
+      {
+        "plot": "Fusion, Apartment 62",
+        "building": "Fusion, Building B",
+        "floor": "Ground",
+        "beds": 2,
+        "baths": 2,
+        "size": 792,
+        "price": 479950,
+        "avail": true
+      }
+    ],
+    "nearby": [
+      "farehurst-park",
+      "the-icon",
+      "city-reach"
+    ]
+  },
+  "fitzwilliam-gate": {
+    "auto": true,
+    "hero": "https://www.hill.co.uk/sites/default/files/styles/text_image_panel/public/images/2026-08/View%202%20Plots%2009-12.jpg.webp?h=9eb0d413&itok=nZ6WOF9Z",
+    "gallery": [
+      {
+        "src": "https://www.hill.co.uk/sites/default/files/styles/text_image_panel/public/images/2026-08/View%202%20Plots%2009-12.jpg.webp?h=9eb0d413&itok=nZ6WOF9Z",
+        "cap": "cap_exterior"
+      },
+      {
+        "src": "https://www.hill.co.uk/sites/default/files/styles/text_image_panel/public/images/2026-08/View%206%20Plots%2013-14_0.jpg.webp?h=9eb0d413&itok=gAIBX-JP",
+        "cap": "cap_living"
+      }
+    ],
+    "facts": [],
+    "spec": [],
+    "travel": [],
+    "hours": [],
+    "amenities": {},
+    "suite": null,
+    "plots": [],
+    "nearby": [
+      "farehurst-park",
+      "the-icon",
+      "city-reach"
+    ]
+  },
+  "marleigh-park": {
+    "auto": true,
+    "hero": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-01/rsz_marleigh_park_externals_part_2-44_2.jpg.webp?h=0a365b51&itok=Om075b3Z",
+    "gallery": [
+      {
+        "src": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-01/rsz_marleigh_park_externals_part_2-44_2.jpg.webp?h=0a365b51&itok=Om075b3Z",
+        "cap": "Exterior, houses overlooking the park"
+      },
+      {
+        "src": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-02/Marleigh%20Park%20-%20The%20Lime%20Housetype.jpg.webp?h=de2fe499&itok=0Go38ptV",
+        "cap": "The Lime housetype"
+      },
+      {
+        "src": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-01/25_04_01_Hill_MarleighPark_017_0.jpg.webp?h=78739331&itok=9Fm3KqXf",
+        "cap": "Show home interior"
+      },
+      {
+        "src": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-01/25_04_01_Hill_MarleighPark_013.jpg.webp?h=111611c5&itok=o3kVCfJA",
+        "cap": "Show home interior"
+      },
+      {
+        "src": "https://www.marleighpark.co.uk/sites/marleigh-cambridge.co.uk/files/styles/media_gallery/public/images/2025-04/25_04_01_Hill_MarleighPark_025_0.jpg.webp?h=ab5c2332&itok=5oj3TgvL",
+        "cap": "Franklin Building, living area"
+      },
+      {
+        "src": "https://www.marleighpark.co.uk/sites/marleigh-cambridge.co.uk/files/styles/media_gallery/public/images/2025-01/DSC_9041-%20HR.jpg.webp?h=4325b425&itok=b0EScTej",
+        "cap": "The Willow, kitchen/dining"
+      },
+      {
+        "src": "https://www.marleighpark.co.uk/sites/marleigh-cambridge.co.uk/files/styles/media_gallery/public/images/2025-01/DSC_8444-%20HR.jpg.webp?h=b6589297&itok=HMp9N3Jz",
+        "cap": "The Mulberry, living room"
+      },
+      {
+        "src": "https://www.marleighpark.co.uk/sites/marleigh-cambridge.co.uk/files/styles/media_gallery/public/images/2025-10/Marleigh%20-%20Plot%20158%20-%20Living%20Room%20%281%29.jpg.webp?h=8c1344d8&itok=8IKDmU77",
+        "cap": "Show home living room"
+      },
+      {
+        "src": "https://www.marleighpark.co.uk/sites/marleigh-cambridge.co.uk/files/styles/media_gallery/public/images/2025-04/25_04_01_Hill_MarleighPark_006_0.jpg.webp?h=e3455c55&itok=7CeAiNpO",
+        "cap": "Franklin Building, principal bedroom"
+      },
+      {
+        "src": "https://www.marleighpark.co.uk/sites/marleigh-cambridge.co.uk/files/styles/media_gallery/public/images/2025-01/DSC_8533-%20HR.jpg.webp?h=1f9982bc&itok=T4Ha23H9",
+        "cap": "The Mulberry, bathroom"
+      }
+    ],
+    "facts": [],
+    "spec": [],
+    "travel": [],
+    "hours": [],
+    "amenities": {},
+    "suite": null,
+    "plots": [
+      {
+        "plot": "Franklin Building, Apartment A10",
+        "building": "Franklin Building",
+        "floor": "-",
+        "beds": 2,
+        "baths": 2,
+        "size": 662,
+        "price": 389950,
+        "avail": true
+      },
+      {
+        "plot": "Franklin Building, Apartment A22",
+        "building": "Franklin Building",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 668,
+        "price": 399950,
+        "avail": true
+      },
+      {
+        "plot": "Kestrel Building, Apartment D11",
+        "building": "Kestrel Building",
+        "floor": "-",
+        "beds": 2,
+        "baths": 2,
+        "size": 757,
+        "price": 399950,
+        "avail": true
+      },
+      {
+        "plot": "Franklin Building, Apartment B13",
+        "building": "Franklin Building",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 681,
+        "price": 399950,
+        "avail": true
+      },
+      {
+        "plot": "Kestrel Building, Apartment D06",
+        "building": "Kestrel Building",
+        "floor": "-",
+        "beds": 2,
+        "baths": 2,
+        "size": 761,
+        "price": 399950,
+        "avail": true
+      },
+      {
+        "plot": "Franklin Building, Apartment A11",
+        "building": "Franklin Building",
+        "floor": "-",
+        "beds": 2,
+        "baths": 2,
+        "size": 772,
+        "price": 399950,
+        "avail": true
+      },
+      {
+        "plot": "Franklin Building, Apartment A16",
+        "building": "Franklin Building",
+        "floor": "-",
+        "beds": 2,
+        "baths": 2,
+        "size": 762,
+        "price": 424950,
+        "avail": true
+      },
+      {
+        "plot": "The Cherry, Number 458",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 2,
+        "size": 898,
+        "price": 499950,
+        "avail": true
+      }
+    ],
+    "nearby": [
+      "farehurst-park",
+      "the-icon",
+      "city-reach"
+    ]
+  },
+  "cambium-square": {
+    "auto": true,
+    "hero": "uploads/Screenshot 2026-08-28 130141.png",
+    "gallery": [
+      {
+        "src": "uploads/Screenshot 2026-08-28 130141.png",
+        "cap": "Playground vignette, AI"
+      },
+      {
+        "src": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-08/1498%20Cambium%20Square%20Cam%2027%20Street%20B19-B30%2004%20Low%20Res.jpg.webp?h=af97b938&itok=lsO0WSgu",
+        "cap": "Street scene, The Orchard & Evergreen"
+      },
+      {
+        "src": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-08/1498%20Cambium%20Square%20Cam%2026%20Street%20H1-H5%2003%20Low%20Res.jpg.webp?h=af97b938&itok=-A3iR6-n",
+        "cap": "Street scene, The Greenways"
+      },
+      {
+        "src": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-08/1498%20Cambium%20Square%20Cam%2028%20Playground%2003%20Low%20Res.jpg.webp?h=af97b938&itok=KIG2otj2",
+        "cap": "Playground"
+      },
+      {
+        "src": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-08/1498%20Cambium%20Square%20Cam%2002%20MS3D%20Plot%20B24%20%2841%29%20The%20Orchard%20Vignette%2001.jpg.webp?h=b008cc0d&itok=SdTwEWd8",
+        "cap": "The Orchard, exterior AI"
+      }
+    ],
+    "facts": [],
+    "spec": [],
+    "travel": [],
+    "hours": [],
+    "amenities": {
+      "cat_transport": [
+        {
+          "name": "St Neots station – trains to London in under 50 min",
+          "d": ""
+        },
+        {
+          "name": "A428 to Cambridge, St Neots & the A1",
+          "d": ""
+        },
+        {
+          "name": "A14 and M11 for East Anglia, London & Stansted",
+          "d": ""
+        },
+        {
+          "name": "London Stansted Airport",
+          "d": "35 min drive"
+        },
+        {
+          "name": "London Luton Airport",
+          "d": "1 hr drive"
+        },
+        {
+          "name": "London Heathrow Airport",
+          "d": "1 hr 30 min drive"
+        }
+      ],
+      "cat_food": [
+        {
+          "name": "The Monkfield Arms",
+          "d": "0.6 mi"
+        },
+        {
+          "name": "Chutney Joe’s Cambridge",
+          "d": "0.5 mi"
+        },
+        {
+          "name": "The Cambridge Belfry – Bridge Restaurant & Lounge Bar",
+          "d": "0.5 mi"
+        },
+        {
+          "name": "Greens Cambourne",
+          "d": "0.6 mi"
+        }
+      ],
+      "cat_green": [
+        {
+          "name": "Cambourne Nature Reserve",
+          "d": ""
+        },
+        {
+          "name": "Wimpole Estate",
+          "d": ""
+        },
+        {
+          "name": "The Gog Magog Hills",
+          "d": ""
+        },
+        {
+          "name": "Grantchester Meadows",
+          "d": ""
+        }
+      ],
+      "cat_fitness": [
+        {
+          "name": "Cambourne Sports & Social Club",
+          "d": ""
+        },
+        {
+          "name": "PureGym Cambourne",
+          "d": ""
+        },
+        {
+          "name": "Outdoor gym equipment at local parks",
+          "d": ""
+        },
+        {
+          "name": "Village college sports halls & floodlit pitches",
+          "d": ""
+        }
+      ],
+      "cat_shops": [
+        {
+          "name": "The Hub & Town Square, Great Cambourne",
+          "d": ""
+        },
+        {
+          "name": "Morrisons supermarket",
+          "d": ""
+        },
+        {
+          "name": "Pharmacy, dry cleaners, barbers & beauty salon",
+          "d": ""
+        },
+        {
+          "name": "Cambridge Business Park",
+          "d": ""
+        }
+      ],
+      "cat_schools": [
+        {
+          "name": "Schools in Great Cambourne",
+          "d": ""
+        },
+        {
+          "name": "Medical centre, dentists & veterinary practice",
+          "d": ""
+        }
+      ]
+    },
+    "suite": null,
+    "plots": [],
+    "nearby": [
+      "farehurst-park",
+      "the-icon",
+      "city-reach"
+    ]
+  },
+  "canalside-quarter": {
+    "auto": true,
+    "hero": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-06/Copy%20of%20CANALSIDE%20QUARTER_AREIL%20EDIT-1.jpg.webp?h=b75339e9&itok=ZhluVH4G",
+    "gallery": [
+      {
+        "src": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-06/Copy%20of%20CANALSIDE%20QUARTER_AREIL%20EDIT-1.jpg.webp?h=b75339e9&itok=ZhluVH4G",
+        "cap": "cap_exterior"
+      },
+      {
+        "src": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2025-11/CANALSIDE.jpg.webp?h=4ca9cb25&itok=009x8LT9",
+        "cap": "cap_living"
+      },
+      {
+        "src": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2025-03/EDIT%20Canalside%20Quarter%2C%20The%20Villas%2C%20Externals%20%289%29%20dp.jpg.webp?h=790be497&itok=vu3gy5g2",
+        "cap": "cap_kitchen"
+      },
+      {
+        "src": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2024-09/Plot%2093%20Living%2C%20Dining%2C%20Kitchen%20%283%29.jpg.webp?h=790be497&itok=5MTdgoKp",
+        "cap": "cap_bedroom"
+      }
+    ],
+    "facts": [],
+    "spec": [
+      {
+        "k": "sg_kitchen",
+        "img": "https://www.hill.co.uk/sites/default/files/styles/plot_spec_main_landscape/public/images/2026-01/Canalside%20Quarter%2C%20number%20197%2C%203%20bed%20apartment%2C%20Kitchen.JPG.webp?h=790be497&itok=v5j8HJiy",
+        "items": [
+          "Matt finish handleless units with soft close to doors and drawers",
+          "Caesarstone worktop with matching upstand and splashback behind hob (where applicable)",
+          "AEG induction hob, integrated single oven and integrated microwave",
+          "Electrolux integrated dishwasher, fridge/freezer and cooker hood (or ceiling hood where hob is on a peninsula)",
+          "Stainless steel undermounted sink with contemporary brushed steel mixer tap",
+          "LED feature lighting to wall units",
+          "Electrolux washer/dryer, freestanding in hallway cupboard",
+          "Utility: matt finish handleless units with soft close doors and matching Caesarstone worktop to the villas",
+          "Utility: freestanding washing machine and condenser dryer to the villas"
+        ],
+        "note": "Kitchen and utility room designs and layouts vary; please speak to our Sales Executives for further information."
+      },
+      {
+        "k": "sg_bathroom",
+        "img": "https://www.hill.co.uk/sites/default/files/styles/plot_spec_main_landscape/public/images/2026-04/86_55537.jpg.webp?h=790be497&itok=CNd15HlB",
+        "items": [
+          "Bathroom: bath with shower over and glass screen",
+          "Bathroom: feature framed mirror with shelf and bath panel to match vanity tops",
+          "En-suite: low profile shower tray with glass shower door",
+          "En-suite: framed feature mirror with shelf to match vanity tops",
+          "Large format wall and floor tiles",
+          "Heated chrome towel rail to bathroom and en-suite"
+        ]
+      },
+      {
+        "k": "sg_heating",
+        "img": "https://www.hill.co.uk/sites/default/files/styles/plot_spec_main_landscape/public/images/2026-04/Plot%2093%20Living%20Room%20Ground%20Floor.jpg.webp?h=790be497&itok=jObF7G1a",
+        "items": [
+          "Underfloor heating throughout each apartment",
+          "Underfloor heating to ground and lower ground floors, radiators to upper floors in houses and villas",
+          "Heating via communal air source heat pump",
+          "Mechanical Ventilation with Heat Recovery (MVHR)",
+          "Heated chrome towel rails to bathroom and en-suite",
+          "Hot water storage tank to houses and villas"
+        ]
+      },
+      {
+        "k": "sg_electrical",
+        "img": "https://www.hill.co.uk/sites/default/files/styles/plot_spec_main_landscape/public/images/2026-04/CANALSIDE%20QUARTER_INTERNALS-%20%2839%29.jpg.webp?h=d668167d&itok=Ll4USMDa",
+        "items": [
+          "Downlights to entrance hall, kitchen/dining/living area, bathroom and en-suite",
+          "Pendant fittings to all bedrooms, plus living/family room, landing and study in houses and villas",
+          "TV, BT and data points to selected locations",
+          "BT and Hyperoptic fibre connection for your choice of broadband provider",
+          "Pre-wired for your own Sky Q connection",
+          "Video entry system linked to the main entrance door",
+          "Hard-wired smoke and heat detectors, plus a sprinkler system to all apartments",
+          "Spur for your own security alarm panel",
+          "Electric car charging point to houses and villas"
+        ]
+      },
+      {
+        "k": "sg_communal",
+        "img": "https://www.hill.co.uk/sites/default/files/styles/plot_spec_main_landscape/public/images/2026-04/Advanced%20Edit%20%283%29_0.jpg.webp?h=b0f75702&itok=1asKXtHY",
+        "items": [
+          "Fob controlled access to the entrance lobby",
+          "Lift access to all floors",
+          "Cycle and bin storage space",
+          "Letterboxes within the communal entrance lobby"
+        ]
+      },
+      {
+        "k": "sg_finishes",
+        "img": "https://www.hill.co.uk/sites/default/files/styles/plot_spec_main_landscape/public/images/2026-04/Plot%2093%20Dining%20%283%29.jpg.webp?h=790be497&itok=ewBQRS7S",
+        "items": [
+          "Painted front entrance door with multi-point locking system",
+          "High efficiency double glazed aluminium timber composite windows",
+          "White painted flush internal doors with contemporary dual finish ironmongery",
+          "Built-in mirrored wardrobe with sliding doors to principal bedroom",
+          "Amtico flooring to entrance hall and kitchen/dining/living area; carpet to bedrooms",
+          "Large format tiles to bathroom and en-suite",
+          "Porcelain tiles to balcony/terrace",
+          "Timber staircase with carpeted treads and risers to houses and villas"
+        ]
+      },
+      {
+        "k": "sg_additional",
+        "img": "https://www.hill.co.uk/sites/default/files/styles/plot_spec_main_landscape/public/images/2026-04/Plot%2093%20Dining%20%282%29%20%281%29.jpg.webp?h=790be497&itok=k5QJJSgf",
+        "items": [
+          "10 year NHBC warranty",
+          "999 year lease to apartments",
+          "Service charge payable for maintenance of shared facilities and communal areas to apartments"
+        ]
+      }
+    ],
+    "travel": [],
+    "hours": [],
+    "amenities": {},
+    "suite": null,
+    "plots": [
+      {
+        "plot": "The Brenner, Number 219",
+        "building": "The Brenner",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 908,
+        "price": 469950,
+        "avail": true
+      },
+      {
+        "plot": "The Sherrington, Number 270",
+        "building": "The Sherrington",
+        "floor": "-",
+        "beds": 2,
+        "baths": 2,
+        "size": 748,
+        "price": 529950,
+        "avail": true
+      },
+      {
+        "plot": "The Brenner, Number 228",
+        "building": "The Brenner",
+        "floor": "-",
+        "beds": 3,
+        "baths": 2,
+        "size": 843,
+        "price": 554950,
+        "avail": true
+      },
+      {
+        "plot": "The Sherrington, Number 271",
+        "building": "The Sherrington",
+        "floor": "-",
+        "beds": 3,
+        "baths": 2,
+        "size": 1103,
+        "price": 649950,
+        "avail": true
+      },
+      {
+        "plot": "The Eliot, Number 14",
+        "building": "-",
+        "floor": "-",
+        "beds": 4,
+        "baths": 3,
+        "size": 1485,
+        "price": 910000,
+        "avail": true
+      },
+      {
+        "plot": "The Cornforth, Number 82",
+        "building": "-",
+        "floor": "-",
+        "beds": 4,
+        "baths": 3,
+        "size": 2443,
+        "price": 1345000,
+        "avail": true
+      },
+      {
+        "plot": "The Florey, Number 89",
+        "building": "-",
+        "floor": "-",
+        "beds": 5,
+        "baths": 3,
+        "size": 2669,
+        "price": 1495000,
+        "avail": true
+      },
+      {
+        "plot": "The Florey, Number 85",
+        "building": "-",
+        "floor": "-",
+        "beds": 5,
+        "baths": 3,
+        "size": 2669,
+        "price": 1550000,
+        "avail": true
+      }
+    ],
+    "nearby": [
+      "lampton-parkside",
+      "kew-bridge-rise",
+      "north-gate-park"
+    ]
+  },
+  "clifton-collection": {
+    "auto": true,
+    "hero": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2025-08/7607_1400_250709_xfer_0.jpg.webp?h=995d1b92&itok=6sSbmmN7",
+    "gallery": [
+      {
+        "src": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2025-08/7607_1400_250709_xfer_0.jpg.webp?h=995d1b92&itok=6sSbmmN7",
+        "cap": "cap_exterior"
+      },
+      {
+        "src": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2025-12/THE%20CLIFTON%20COLLECTION_SHOW%20HOME-22.jpg.webp?h=3bb6718d&itok=5YTpf1P6",
+        "cap": "cap_living"
+      },
+      {
+        "src": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2025-12/THE%20CLIFTON%20COLLECTION_SHOW%20HOME-1.jpg.webp?h=3bb6718d&itok=p0Inx0EK",
+        "cap": "cap_kitchen"
+      },
+      {
+        "src": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2025-08/7607_1200_250704_xfer.jpg.webp?h=67053b8b&itok=t_cL1hmu",
+        "cap": "cap_bedroom"
+      }
+    ],
+    "facts": [],
+    "spec": [
+      {
+        "k": "sg_kitchen",
+        "img": "https://www.hill.co.uk/sites/default/files/styles/plot_spec_main_landscape/public/images/2025-08/THE%20CLIFTON%20COLLECTION_SHOW%20HOME-4.jpg.webp?h=3bb6718d&itok=k8STfAXS",
+        "items": [
+          "Matt finish shaker-style handleless units with contemporary black trim and soft-close to doors and drawers",
+          "Caesarstone worktop with matching upstand and splashback behind hob",
+          "Induction hob, with integrated extractor where situated on an island or peninsula",
+          "Integrated single oven, microwave, dishwasher and fridge/freezer",
+          "Integrated wine cooler to 3 and 4 bed apartments only",
+          "Stainless steel undermounted sink with contemporary matt black mixer tap",
+          "LED feature lighting to wall units",
+          "Washer/dryer, freestanding in cupboard in hallway",
+          "Utility: matt finish shaker style handleless units with matching Caesarstone worktops to houses",
+          "Utility: freestanding washing machine and condenser dryer to houses"
+        ],
+        "note": "Kitchen and utility room designs and layouts vary; please speak to our Sales Executives for further information."
+      },
+      {
+        "k": "sg_bathroom",
+        "img": "https://www.hill.co.uk/sites/default/files/styles/plot_spec_main_landscape/public/images/2025-08/THE%20CLIFTON%20COLLECTION_SHOW%20HOME-40_0.jpg.webp?h=3bb6718d&itok=FLI6dVyB",
+        "items": [
+          "Bathroom: white sanitaryware with contemporary matt black brassware",
+          "Bathroom: bath with shower over and glass screen, bath panel to match vanity tops",
+          "En-suite: low profile shower tray with glass shower door",
+          "En-suite: feature mirror cabinet and shelf with LED lighting to principal en-suite only",
+          "Large format wall and floor tiles",
+          "Heated matt black towel rail"
+        ]
+      },
+      {
+        "k": "sg_heating",
+        "img": "https://www.hill.co.uk/sites/default/files/styles/plot_spec_main_landscape/public/images/2025-08/THE%20CLIFTON%20COLLECTION_SHOW%20HOME-20_0.jpg.webp?h=3bb6718d&itok=QoMiCUG0",
+        "items": [
+          "Combined ventilation and heating system providing filtered fresh air, heating, hot water and reduced humidity",
+          "Heated towel rails to bathroom and en-suites",
+          "Underfloor heating to ground floor, radiators to upper floor to houses only",
+          "Air source heat pump and hot water storage tank to houses only"
+        ]
+      },
+      {
+        "k": "sg_electrical",
+        "img": "https://www.hill.co.uk/sites/default/files/styles/plot_spec_main_landscape/public/images/2025-08/THE%20CLIFTON%20COLLECTION_SHOW%20HOME-27.jpg.webp?h=8c1344d8&itok=QW04NhSC",
+        "items": [
+          "Downlights to entrance hall, kitchen/dining/living room, bathroom, en-suites and principal bedroom",
+          "Pendant fittings to other bedrooms",
+          "Selected sockets with integrated USB port",
+          "Shaver sockets to bathroom and en-suites",
+          "TV, BT and data points to selected locations",
+          "Openreach & Hyperoptic fibre connection for your choice of broadband provider",
+          "Pre-wired for your own Sky connection",
+          "Video entry system to every apartment, linked to main entrance door",
+          "Hard-wired smoke and heat detectors, plus a sprinkler system to all apartments",
+          "Spur for your own security alarm panel"
+        ]
+      },
+      {
+        "k": "sg_communal",
+        "img": "https://www.hill.co.uk/sites/default/files/styles/plot_spec_main_landscape/public/images/2025-08/THE%20CLIFTON%20COLLECTION_SHOW%20HOME-20_0.jpg.webp?h=3bb6718d&itok=QoMiCUG0",
+        "items": [
+          "Fob controlled access system to the entrance lobby",
+          "Lift access to all floors",
+          "Cycle and bin storage space",
+          "Letterboxes within the communal entrance lobby",
+          "1 allocated parking space to all houses"
+        ]
+      },
+      {
+        "k": "sg_finishes",
+        "img": "https://www.hill.co.uk/sites/default/files/styles/plot_spec_main_landscape/public/images/2025-08/THE%20CLIFTON%20COLLECTION_SHOW%20HOME-3_0.jpg.webp?h=3bb6718d&itok=HKy5WNpu",
+        "items": [
+          "Amtico flooring to entrance hall and kitchen/dining/living room; Amtico herringbone parquet to 3 and 4 bed apartments",
+          "Carpet to bedrooms",
+          "Large format tiles to bathroom and en-suites",
+          "Timber staircase with carpeted treads and risers",
+          "White painted single panel moulded internal doors with contemporary matt black ironmongery",
+          "Built-in hinged or walk-in wardrobe with LED lighting to principal bedroom",
+          "Porcelain tiles to upper floor terraces; paving to ground floor terraces",
+          "Landscaping to front garden, turf to rear garden and paved patios to all houses"
+        ]
+      },
+      {
+        "k": "sg_additional",
+        "img": "https://www.hill.co.uk/sites/default/files/styles/plot_spec_main_landscape/public/images/2025-08/THE%20CLIFTON%20COLLECTION_SHOW%20HOME-4.jpg.webp?h=3bb6718d&itok=k8STfAXS",
+        "items": [
+          "10 year NHBC warranty",
+          "990 year lease",
+          "Service charge payable for maintenance of shared facilities and communal areas",
+          "Steel reinforced concrete frame with outer brick and stonework, cavity filled with insulation",
+          "PV panels serving communal areas"
+        ]
+      }
+    ],
+    "travel": [],
+    "hours": [],
+    "amenities": {},
+    "suite": null,
+    "plots": [
+      {
+        "plot": "The Legacy Apartments, Number 17",
+        "building": "The Legacy Apartments",
+        "floor": "-",
+        "beds": 1,
+        "baths": 1,
+        "size": 548,
+        "price": 399995,
+        "avail": true
+      },
+      {
+        "plot": "The Legacy Apartments, Number 42",
+        "building": "The Legacy Apartments",
+        "floor": "-",
+        "beds": 2,
+        "baths": 2,
+        "size": 781,
+        "price": 525000,
+        "avail": true
+      },
+      {
+        "plot": "The Legacy Apartments, Number 27",
+        "building": "The Legacy Apartments",
+        "floor": "-",
+        "beds": 2,
+        "baths": 2,
+        "size": 781,
+        "price": 550000,
+        "avail": true
+      },
+      {
+        "plot": "The Legacy Apartments, Number 4",
+        "building": "The Legacy Apartments",
+        "floor": "-",
+        "beds": 2,
+        "baths": 2,
+        "size": 869,
+        "price": 670000,
+        "avail": true
+      },
+      {
+        "plot": "The Legacy Apartments, Number 19",
+        "building": "The Legacy Apartments",
+        "floor": "-",
+        "beds": 2,
+        "baths": 2,
+        "size": 862,
+        "price": 700000,
+        "avail": true
+      },
+      {
+        "plot": "The Legacy Apartments, Number 10",
+        "building": "The Legacy Apartments",
+        "floor": "-",
+        "beds": 2,
+        "baths": 2,
+        "size": 865,
+        "price": 715000,
+        "avail": true
+      },
+      {
+        "plot": "The Legacy Apartment, Number 30",
+        "building": "The Legacy Apartments",
+        "floor": "-",
+        "beds": 3,
+        "baths": 2,
+        "size": 1266,
+        "price": 950000,
+        "avail": true
+      }
+    ],
+    "nearby": [
+      "baltic-wharf",
+      "southville-collection",
+      "lampton-parkside"
+    ]
+  },
+  "baltic-wharf": {
+    "auto": true,
+    "hero": "uploads/view from water-e__157,49,182.jpg.webp",
+    "gallery": [
+      {
+        "src": "uploads/view from water-e__157,49,182.jpg.webp",
+        "cap": "cap_exterior"
+      },
+      {
+        "src": "https://www.hill.co.uk/sites/default/files/styles/text_image_panel/public/images/2025-12/view%208%20_e__153%2CVIII%2C84%2C121.jpg.webp?h=8f74817f&itok=vSxFBu_0",
+        "cap": "cap_living"
+      },
+      {
+        "src": "https://www.hill.co.uk/sites/default/files/styles/text_image_panel/public/images/2025-12/Baltic%20Wharf%20Bristol_View01_Entrance%201.jpg.webp?h=f9ef42e2&itok=kvHzNlbL",
+        "cap": "cap_kitchen"
+      }
+    ],
+    "facts": [],
+    "spec": [],
+    "travel": [],
+    "hours": [],
+    "amenities": {},
+    "suite": null,
+    "plots": [],
+    "nearby": [
+      "clifton-collection",
+      "southville-collection",
+      "lampton-parkside"
+    ]
+  },
+  "southville-collection": {
+    "auto": true,
+    "hero": "uploads/Screenshot 2026-08-28 123629.png",
+    "gallery": [
+      {
+        "src": "uploads/Screenshot 2026-08-28 123629.png",
+        "cap": "cap_exterior"
+      },
+      {
+        "src": "uploads/Screenshot 2026-08-28 123649.png",
+        "cap": "cap_living"
+      },
+      {
+        "src": "uploads/Screenshot 2026-08-28 123706.png",
+        "cap": "cap_kitchen"
+      }
+    ],
+    "facts": [],
+    "spec": [],
+    "travel": [],
+    "hours": [],
+    "amenities": {},
+    "suite": null,
+    "plots": [],
+    "nearby": [
+      "clifton-collection",
+      "baltic-wharf",
+      "lampton-parkside"
+    ]
+  },
+  "ribbon-quarter": {
+    "auto": true,
+    "hero": "uploads/opt/screenshot-2026-07-08-180242.jpg",
+    "gallery": [
+      {
+        "src": "uploads/opt/screenshot-2026-07-08-180242.jpg",
+        "cap": "cap_exterior"
+      },
+      {
+        "src": "uploads/Screenshot 2026-08-28 124121.png",
+        "cap": "cap_living"
+      },
+      {
+        "src": "uploads/Screenshot 2026-08-28 124210.png",
+        "cap": "cap_kitchen"
+      },
+      {
+        "src": "uploads/Screenshot 2026-08-28 124226.png",
+        "cap": "cap_bedroom"
+      }
+    ],
+    "facts": [],
+    "spec": [],
+    "travel": [],
+    "hours": [],
+    "amenities": {},
+    "suite": null,
+    "plots": [],
+    "nearby": [
+      "lampton-parkside",
+      "kew-bridge-rise",
+      "north-gate-park"
+    ]
+  }
+}

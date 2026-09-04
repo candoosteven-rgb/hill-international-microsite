@@ -1,0 +1,44 @@
+[
+  {
+    "id": "tao-liu",
+    "photo": "uploads/opt/team-tao-liu.jpg",
+    "name": "Tao Liu",
+    "dept": "Residential",
+    "role": "Head of International Sales"
+  },
+  {
+    "id": "dora-luo",
+    "photo": "uploads/opt/team-dora-luo.jpg",
+    "name": "Dora Luo",
+    "dept": "Residential",
+    "role": "International Sales Manager"
+  },
+  {
+    "id": "rachel-pearl",
+    "photo": "uploads/opt/screenshot-2026-08-13-120159.jpg",
+    "name": "Rachel Pearl",
+    "dept": "Residential",
+    "role": "International Marketing Manager"
+  },
+  {
+    "id": "nicole-zhao",
+    "photo": "uploads/opt/team-nicole-zhao.jpg",
+    "name": "Nicole Zhao",
+    "dept": "Residential",
+    "role": "Senior International Sales"
+  },
+  {
+    "id": "merve-sirace",
+    "photo": "uploads/opt/team-merve-sirace.jpg",
+    "name": "Merve Sirace",
+    "dept": "Residential",
+    "role": "Senior International Sales"
+  },
+  {
+    "id": "chengri-qian",
+    "photo": "uploads/team-chengri-qian.png",
+    "name": "Chengri Qian",
+    "dept": "Residential",
+    "role": "Senior International Sales"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "code": "en",
+    "native": "English",
+    "dir": "ltr",
+    "flag": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f1ec-1f1e7.svg"
+  },
+  {
+    "code": "tr",
+    "native": "Türkçe",
+    "dir": "ltr",
+    "flag": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f1f9-1f1f7.svg"
+  },
+  {
+    "code": "zh",
+    "native": "中文",
+    "dir": "ltr",
+    "flag": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f1e8-1f1f3.svg"
+  },
+  {
+    "code": "ar",
+    "native": "العربية",
+    "dir": "rtl",
+    "flag": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f1f8-1f1e6.svg"
+  }
+]

@@ -1,0 +1,188 @@
+@import "tailwindcss";
+
+:root {
+  --hi-ink-900: #0e2028;
+  --hi-ink-950: #0d1214;
+  --hi-ink-800: #12262f;
+  --hi-ink-700: #16313d;
+  --hi-ink-600: #1f3a47;
+  --hi-off-white: #f9f5f3;
+  --hi-rust: #c1560f;
+  --hi-terracotta: #c98a6b;
+  --hi-blue: #6fa8d6;
+}
+
+@theme inline {
+  --font-sans: var(--font-inter);
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #ffffff;
+  color: var(--hi-ink-600);
+  font-family: var(--font-inter), Inter, -apple-system, sans-serif;
+}
+
+[dir="rtl"] {
+  text-align: right;
+}
+
+/* ---------- Reveal on scroll ---------- */
+@keyframes hi-rise {
+  from {
+    transform: translateY(18px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.hi-reveal {
+  opacity: 0;
+}
+.hi-reveal.hi-in {
+  animation: hi-rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+.hi-reveal-d1.hi-in {
+  animation-delay: 0.08s;
+}
+.hi-reveal-d2.hi-in {
+  animation-delay: 0.16s;
+}
+.hi-reveal-d3.hi-in {
+  animation-delay: 0.24s;
+}
+
+@keyframes hi-pop {
+  from {
+    transform: scale(0.94);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.hi-pop {
+  animation: hi-pop 0.32s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+@keyframes hi-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.hi-fade {
+  animation: hi-fade 0.22s ease both;
+}
+
+@keyframes hi-check {
+  from {
+    stroke-dashoffset: 24;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.hi-check {
+  stroke-dasharray: 24;
+  stroke-dashoffset: 24;
+  animation: hi-check 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) 0.15s forwards;
+}
+
+/* ---------- Card / pill interactions ---------- */
+.hi-card {
+  transition: transform 0.3s cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 0.3s ease;
+}
+.hi-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 48px rgba(20, 40, 50, 0.18);
+}
+.hi-pill {
+  transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  cursor: pointer;
+}
+.hi-pill:hover {
+  transform: translateY(-2px);
+}
+.hi-pill:active {
+  transform: translateY(0) scale(0.96);
+}
+.hi-link {
+  transition: opacity 0.2s ease;
+}
+.hi-link:hover {
+  opacity: 0.62;
+}
+
+/* ---------- Coming soon hatch ---------- */
+.hi-hatch {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(255, 255, 255, 0.06),
+    rgba(255, 255, 255, 0.06) 2px,
+    transparent 2px,
+    transparent 14px
+  );
+}
+
+/* ---------- Glass card (dark sections) ---------- */
+.hi-glass {
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 20px;
+}
+
+/* ---------- Eyebrow label ---------- */
+.hi-eyebrow {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+/* ---------- Section spacing ---------- */
+.hi-section {
+  padding-block: clamp(64px, 9vw, 130px);
+  padding-inline: clamp(22px, 4vw, 40px);
+}
+
+/* ---------- Scrollbar-less horizontal scroller ---------- */
+.hi-scroller {
+  scrollbar-width: none;
+}
+.hi-scroller::-webkit-scrollbar {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hi-reveal,
+  .hi-reveal.hi-in {
+    animation: none !important;
+    opacity: 1;
+  }
+}
