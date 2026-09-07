@@ -24,15 +24,3 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFARE_API_TOKEN }}
           wranglerVersion: "4"
-
-      - name: Diagnose live response
-        run: |
-          CSS_PATH=$(grep -o '/_next/static/chunks/[a-zA-Z0-9_.-]*\.css' out/index.html | head -1)
-          echo "CSS path in built HTML: $CSS_PATH"
-          echo "--- HEAD / ---"
-          curl -sI https://hillinternational.stevelees.workers.dev/
-          echo "--- HEAD on CSS file ---"
-          curl -sI "https://hillinternational.stevelees.workers.dev$CSS_PATH"
-          echo "--- first 300 bytes of CSS response body ---"
-          curl -s "https://hillinternational.stevelees.workers.dev$CSS_PATH" | head -c 300
-          echo
