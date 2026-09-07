@@ -24,30 +24,3 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFARE_API_TOKEN }}
           wranglerVersion: "4"
-
-      - name: Screenshot live site in a real browser
-        run: |
-          npm install -D playwright@1.55.1
-          npx playwright install --with-deps chromium
-          cat > ./shot.js <<'JS'
-          const { chromium } = require('playwright');
-          (async () => {
-            const browser = await chromium.launch();
-            const page = await browser.newPage({ viewport: { width: 1280, height: 900 } });
-            const errors = [];
-            page.on('pageerror', e => errors.push('PAGEERROR: ' + e.message));
-            page.on('console', m => { if (m.type() === 'error') errors.push('CONSOLE: ' + m.text()); });
-            page.on('requestfailed', r => errors.push('REQUESTFAILED: ' + r.url() + ' ' + (r.failure()?.errorText || '')));
-            page.on('response', r => { if (r.status() >= 400) errors.push('HTTP ' + r.status() + ': ' + r.url()); });
-            await page.goto('https://hillinternational.stevelees.workers.dev/', { waitUntil: 'networkidle', timeout: 30000 });
-            await page.screenshot({ path: '/tmp/live-site.png', fullPage: false });
-            console.log('ERRORS:', JSON.stringify(errors, null, 2));
-            await browser.close();
-          })();
-          JS
-          node ./shot.js
-
-      - uses: actions/upload-artifact@v4
-        with:
-          name: live-site-screenshot
-          path: /tmp/live-site.png
