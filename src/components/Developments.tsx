@@ -9,7 +9,12 @@ import DevCard from "@/components/DevCard";
 import Reveal from "@/components/Reveal";
 import Icon from "@/components/Icon";
 
-const REGION_BANNERS = new Set(["London", "Cambridge", "Oxford", "Bristol"]);
+const REGION_BANNERS: Record<string, string> = {
+  London: "uploads/opt/london-skyline.jpg",
+  Cambridge: "uploads/1912220.jpg",
+  Oxford: "uploads/opt/okford.jpg",
+  Bristol: "uploads/Screenshot 2026-08-28 123313.png",
+};
 
 export default function Developments() {
   const { t } = useLanguage();
@@ -135,14 +140,14 @@ export default function Developments() {
               (!activeSaved || liked.has(d.id))
           );
           if (!regionDevs.length) return null;
-          const hasBanner = REGION_BANNERS.has(region);
+          const hasBanner = region in REGION_BANNERS;
 
           return (
             <div key={region} className="mt-16 first:mt-0">
               {hasBanner ? (
                 <div className="relative mb-12 h-[280px] overflow-hidden rounded-[22px] md:h-[320px]">
                   <img
-                    src={resolveImage(`uploads/opt/${region}-banner.jpg`, region)}
+                    src={resolveImage(REGION_BANNERS[region], region)}
                     alt={region}
                     className="hi-banner-drift absolute inset-0 h-full w-full object-cover"
                   />

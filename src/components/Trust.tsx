@@ -7,9 +7,9 @@ import Reveal from "@/components/Reveal";
 import Icon from "@/components/Icon";
 
 const QUOTES = [
-  { q: "trust_q1", name: "trust_q1_name", place: "Kew Bridge Rise, Brentford", film: true },
-  { q: "trust_q2", name: null, staticName: "Mark Cortez", place: "Lampton Parkside, Hounslow" },
-  { q: "trust_q3", name: "trust_q3_name", place: "Knights Park, Eddington" },
+  { q: "trust_q1", name: "trust_q1_name", place: "Kew Bridge Rise, Brentford", film: true, img: null },
+  { q: "trust_q2", name: null, staticName: "Mark Cortez", place: "Lampton Parkside, Hounslow", img: null },
+  { q: "trust_q3", name: "trust_q3_name", place: "Knights Park, Eddington", img: "uploads/Screenshot 2026-09-04 131132.png" },
 ];
 
 export default function Trust() {
@@ -46,7 +46,7 @@ export default function Trust() {
             <div key={i} className="flex flex-col overflow-hidden rounded-2xl border border-[#DFE7EA] bg-white">
               <div
                 className="aspect-[9/16] max-h-[420px] w-full bg-cover bg-center"
-                style={{ backgroundImage: `url(${resolveImage(`uploads/trust-photo-${i + 1}.jpg`, item.place)})` }}
+                style={{ backgroundImage: `url(${resolveImage(item.img, item.place)})` }}
               />
               <div className="flex flex-1 flex-col gap-4 p-7">
                 <div className="flex items-center justify-between gap-4">

@@ -5,10 +5,10 @@ import { resolveImage } from "@/lib/image";
 import Reveal from "@/components/Reveal";
 import Icon from "@/components/Icon";
 
-const CARDS: { key: string; icon: Parameters<typeof Icon>[0]["name"] }[] = [
-  { key: "env_c1", icon: "arrowRight" },
-  { key: "env_c2", icon: "leaf" },
-  { key: "env_c3", icon: "building" },
+const CARDS: { key: string; icon: Parameters<typeof Icon>[0]["name"]; img: string }[] = [
+  { key: "env_c1", icon: "arrowRight", img: "uploads/opt/istock-1427519129.jpg" },
+  { key: "env_c2", icon: "leaf", img: "uploads/epd.webp" },
+  { key: "env_c3", icon: "building", img: "uploads/opt/screenshot-2026-08-13-114054.jpg" },
 ];
 
 export default function Environment() {
@@ -50,7 +50,7 @@ export default function Environment() {
             <div key={c.key} className="flex h-full flex-col overflow-hidden rounded-2xl border border-[#E3E9EC] bg-white">
               <div
                 className="h-[190px] bg-cover bg-center"
-                style={{ backgroundImage: `url(${resolveImage(`uploads/${c.key}.jpg`, t(`${c.key}_title`))})` }}
+                style={{ backgroundImage: `url(${resolveImage(c.img, t(`${c.key}_title`))})` }}
               />
               <div className="p-7">
                 <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-[#EDF2EC]">
