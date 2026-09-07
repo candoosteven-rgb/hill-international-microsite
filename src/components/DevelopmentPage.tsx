@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import { devById, epcColorsOf, epcOf, gbp, pageDataFor, priceLabelFor, statusMetaFor } from "@/lib/data";
 import { devBlurb, devBlurb2, devHeadline } from "@/lib/blurb";
 import { resolveImage } from "@/lib/image";
+import { resolveLogo } from "@/lib/logo";
 import { useLanguage } from "@/lib/i18n";
 import { useAppState } from "@/lib/app-state";
 import Icon from "@/components/Icon";
@@ -65,6 +66,7 @@ export default function DevelopmentPage() {
   const isLiked = liked.has(d.id);
   const priceLabel = priceLabelFor(d, t);
   const tagline = d.tagline || t("dev_tagline", { region: d.region });
+  const logoSrc = resolveLogo(d.logo, d.name);
   const locCats = Object.keys(pd.amenities);
 
   const goRegister = () => {
@@ -132,6 +134,11 @@ export default function DevelopmentPage() {
           className="absolute inset-0"
           style={{ background: "linear-gradient(4deg, rgba(11,26,33,0.92) 0%, rgba(11,26,33,0.5) 46%, rgba(11,26,33,0.12) 100%)" }}
         />
+        {logoSrc && (
+          <div className="hi-pop absolute left-5 top-24 md:left-8 md:top-28">
+            <img src={logoSrc} alt={`${d.name} logo`} className="h-10 w-auto md:h-12" />
+          </div>
+        )}
         <div className="absolute inset-x-0 bottom-0 px-5 pb-13 md:px-8">
           <div className="mx-auto max-w-[1400px]">
             <div className="mb-5 flex flex-wrap items-center gap-3">

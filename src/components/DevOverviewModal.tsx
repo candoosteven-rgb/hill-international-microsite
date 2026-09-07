@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { devById, statusMetaFor } from "@/lib/data";
 import { devBlurb } from "@/lib/blurb";
 import { resolveImage } from "@/lib/image";
+import { resolveLogo } from "@/lib/logo";
 import { useLanguage } from "@/lib/i18n";
 import { useAppState } from "@/lib/app-state";
 import Icon from "@/components/Icon";
@@ -24,6 +25,7 @@ export default function DevOverviewModal() {
   const status = statusMetaFor(d, t);
   const shots = d.images && d.images.length ? d.images : d.image ? [d.image] : [];
   const blurb = devBlurb(d, dp);
+  const logoSrc = resolveLogo(d.logo, d.name);
 
   return (
     <div
@@ -55,6 +57,11 @@ export default function DevOverviewModal() {
               <span className="max-w-[400px] text-[15px] leading-relaxed text-white/72">
                 We&rsquo;re working on it &mdash; the photographer beats us to the paint drying. New imagery lands here soon.
               </span>
+            </div>
+          )}
+          {logoSrc && (
+            <div className="hi-pop absolute bottom-4 left-4 rounded-lg bg-black/30 px-3 py-2 backdrop-blur-sm">
+              <img src={logoSrc} alt={`${d.name} logo`} className="h-6 w-auto" />
             </div>
           )}
         </div>
