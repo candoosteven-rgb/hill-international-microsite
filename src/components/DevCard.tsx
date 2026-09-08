@@ -3,7 +3,7 @@
 import { useState } from "react";
 import type { Development } from "@/lib/types";
 import { epcColorsOf, epcOf, priceLabelFor, statusMetaFor } from "@/lib/data";
-import { resolveImage } from "@/lib/image";
+import { resolveImage, buildShots } from "@/lib/image";
 import { useLanguage } from "@/lib/i18n";
 import { useAppState } from "@/lib/app-state";
 import Icon from "@/components/Icon";
@@ -35,7 +35,7 @@ export default function DevCard({ d }: { d: Development }) {
   const status = statusMetaFor(d, t);
   const priceLabel = priceLabelFor(d, t);
   const priceIsGuide = false;
-  const shots = (d.images && d.images.length ? d.images : d.image ? [d.image] : []).slice(0, 3);
+  const shots = buildShots(d).slice(0, 3);
   const isComing = d.status !== "live";
   const isLiked = liked.has(d.id);
   const isComparing = compareIds.includes(d.id);

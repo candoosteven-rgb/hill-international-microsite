@@ -15,10 +15,8 @@ export default function Footer() {
       <div className="mx-auto max-w-[1360px]">
         <div className="grid grid-cols-1 gap-10 border-b border-white/12 pb-11 sm:grid-cols-2 lg:grid-cols-4 lg:gap-14">
           <div>
-            <span className="text-[22px] font-extrabold tracking-tight text-[#F9F5F3]">Hill</span>
-            <span className="ml-1.5 text-[13px] font-semibold uppercase tracking-[0.14em] text-[#C1560F]">
-              International
-            </span>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/uploads/hill-logo-new.png" alt="Hill International" className="h-7 w-auto" />
           </div>
           <div>
             <div className="mb-4 text-[13px] font-semibold text-[#F9F5F3]">{t("footer_regions")}</div>

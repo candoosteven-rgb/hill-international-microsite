@@ -1,8 +1,12 @@
-// Design-handoff imagery referenced local `uploads/...` paths that were not
-// included in the asset bundle (see README: "should be re-sourced as owned
-// assets/CDN in production"). Hotlinked hill.co.uk/millerhare.com URLs are
-// real and used as-is; local-only references fall back to a generated brand
-// placeholder so every card/gallery still renders a picture.
+// Design-handoff imagery referenced local `uploads/...` paths. Real files for
+// those paths now live in public/uploads (see UPLOADS_MANIFEST.json, built
+// from what's actually on disk) and are served as-is; any reference without a
+// matching real file falls back to a generated brand placeholder so every
+// card/gallery still renders a picture.
+
+import uploadsManifest from "@/data/UPLOADS_MANIFEST.json";
+
+const UPLOADS: Set<string> = new Set(uploadsManifest as string[]);
 
 const PALETTE: [string, string][] = [
   ["#16313D", "#0E2028"],
@@ -46,5 +50,20 @@ export function placeholderFor(seed: string, label?: string): string {
 
 export function resolveImage(src: string | undefined | null, label?: string): string {
   if (isRemoteUrl(src)) return src as string;
+  if (src && UPLOADS.has(src)) return `/${src}`;
   return placeholderFor(src || label || "hill", label);
+}
+
+export function hasRealUpload(src?: string | null): boolean {
+  return !!src && (isRemoteUrl(src) || UPLOADS.has(src));
+}
+
+// Development photo galleries mix owned local uploads with hotlinked photos
+// from developments' own marketing sites; the latter can break (hotlink
+// protection, the site changing its asset paths) outside our control, so a
+// known-good local upload always leads the gallery when one exists.
+export function buildShots(d: { image?: string | null; images?: string[] | null }): string[] {
+  const rest = (d.images || []).filter((i) => i !== d.image);
+  if (d.image && UPLOADS.has(d.image)) return [d.image, ...rest];
+  return d.images && d.images.length ? d.images : d.image ? [d.image] : [];
 }

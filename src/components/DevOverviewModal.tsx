@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import { devById, statusMetaFor } from "@/lib/data";
 import { devBlurb } from "@/lib/blurb";
-import { resolveImage } from "@/lib/image";
+import { resolveImage, buildShots } from "@/lib/image";
 import { resolveLogo } from "@/lib/logo";
 import { useLanguage } from "@/lib/i18n";
 import { useAppState } from "@/lib/app-state";
@@ -23,7 +23,7 @@ export default function DevOverviewModal() {
   if (!d) return null;
 
   const status = statusMetaFor(d, t);
-  const shots = d.images && d.images.length ? d.images : d.image ? [d.image] : [];
+  const shots = buildShots(d);
   const blurb = devBlurb(d, dp);
   const logoSrc = resolveLogo(d.logo, d.name);
 

@@ -1,15 +1,16 @@
 import { isRemoteUrl } from "@/lib/image";
+import uploadsManifest from "@/data/UPLOADS_MANIFEST.json";
+
+const UPLOADS: Set<string> = new Set(uploadsManifest as string[]);
 
 // Per-development logo files referenced in the design source (`*-logo-white.png`,
-// `pasted-<timestamp>-0.png`, etc.) were generated as one-off images inside the
-// Claude Design canvas tool and were never saved as portable files — there is no
-// session or asset store this app can retrieve them from. Since they're simple
-// text wordmarks (not photography of a specific building or person), a generated
-// SVG wordmark is a reasonable stand-in rather than a placeholder box: swap
-// `resolveLogo()` for the real file the moment one exists.
+// `pasted-<timestamp>-0.png`, etc.). Real files now live in public/uploads for
+// most developments; any reference without a matching real file falls back to
+// a generated SVG wordmark so every card still shows a brand mark.
 export function resolveLogo(logo: string | undefined | null, name: string): string | null {
   if (!logo) return null;
   if (isRemoteUrl(logo)) return logo;
+  if (UPLOADS.has(logo)) return `/${logo}`;
 
   const safeName = name.replace(/[<>&]/g, "");
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="320" height="80" viewBox="0 0 320 80">
