@@ -55,7 +55,7 @@ export default function Standard() {
                 <div className="grid items-stretch sm:grid-cols-2">
                   <div
                     className="min-h-[220px] bg-cover bg-center"
-                    style={{ backgroundImage: `url(${resolveImage("uploads/SJH_0001.webp", "Kitchen")})` }}
+                    style={{ backgroundImage: `url("${resolveImage("uploads/SJH_0001.webp", "Kitchen")}")` }}
                   />
                   <div className="flex flex-col justify-center gap-3.5 p-9">
                     <FeatureIcon icon={f.icon} />

@@ -53,8 +53,12 @@ export default function Footer() {
           </div>
 
           <div className="flex flex-wrap items-center justify-between gap-6 border-t border-white/10 pt-8 sm:col-span-2 lg:col-span-4">
-            <div className="text-[13px] font-semibold text-white/60">
-              {t("trust_badge_title")} &middot; {t("trust_badge_sub")}
+            <div className="flex items-center gap-3">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/uploads/hbf-award-white.png" alt="" className="h-9 w-auto flex-none opacity-90" />
+              <div className="text-[13px] font-semibold text-white/60">
+                {t("trust_badge_title")} &middot; {t("trust_badge_sub")}
+              </div>
             </div>
             <div className="flex flex-wrap gap-2">
               <LangPills variant="dark" size="sm" />

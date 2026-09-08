@@ -8,7 +8,12 @@ import Icon from "@/components/Icon";
 
 const QUOTES = [
   { q: "trust_q1", name: "trust_q1_name", place: "Kew Bridge Rise, Brentford", film: true, img: null },
-  { q: "trust_q2", name: null, staticName: "Mark Cortez", place: "Lampton Parkside, Hounslow", img: null },
+  {
+    q: "trust_q2",
+    name: "trust_q2_name",
+    place: "Lampton Parkside, Hounslow",
+    img: "uploads/Daniele and Maira - Lampton Parkside 3.jpg.webp",
+  },
   { q: "trust_q3", name: "trust_q3_name", place: "Knights Park, Eddington", img: "uploads/Screenshot 2026-09-04 131132.png" },
 ];
 
@@ -46,7 +51,7 @@ export default function Trust() {
             <div key={i} className="flex flex-col overflow-hidden rounded-2xl border border-[#DFE7EA] bg-white">
               <div
                 className="aspect-[9/16] max-h-[420px] w-full bg-cover bg-center"
-                style={{ backgroundImage: `url(${resolveImage(item.img, item.place)})` }}
+                style={{ backgroundImage: `url("${resolveImage(item.img, item.place)}")` }}
               />
               <div className="flex flex-1 flex-col gap-4 p-7">
                 <div className="flex items-center justify-between gap-4">
@@ -63,9 +68,7 @@ export default function Trust() {
                 </div>
                 <p className="flex-1 text-[16.5px] leading-relaxed text-[#3E4E55]">{t(item.q)}</p>
                 <div>
-                  <div className="text-[14.5px] font-bold text-[#1F3A47]">
-                    {item.name ? t(item.name) : item.staticName}
-                  </div>
+                  <div className="text-[14.5px] font-bold text-[#1F3A47]">{t(item.name)}</div>
                   <div className="mt-0.5 text-[13.5px] text-[#8A969B]">{item.place}</div>
                 </div>
               </div>

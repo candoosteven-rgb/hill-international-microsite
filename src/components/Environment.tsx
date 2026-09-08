@@ -50,7 +50,7 @@ export default function Environment() {
             <div key={c.key} className="flex h-full flex-col overflow-hidden rounded-2xl border border-[#E3E9EC] bg-white">
               <div
                 className="h-[190px] bg-cover bg-center"
-                style={{ backgroundImage: `url(${resolveImage(c.img, t(`${c.key}_title`))})` }}
+                style={{ backgroundImage: `url("${resolveImage(c.img, t(`${c.key}_title`))}")` }}
               />
               <div className="p-7">
                 <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-[#EDF2EC]">

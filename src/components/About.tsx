@@ -52,6 +52,17 @@ export default function About() {
             </div>
           ))}
         </Reveal>
+
+        <Reveal delay={2} className="mx-auto mt-14 flex flex-wrap items-center justify-center gap-4">
+          {[
+            ["uploads/whathouse-award.png", "WhatHouse? Awards"],
+            ["uploads/hbf-award.png", "Home Builders Federation 5-star rating"],
+            ["uploads/trustpilot-49.png", "Trustpilot 4.9 rating"],
+          ].map(([src, alt]) => (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img key={src} src={resolveImage(src, alt)} alt={alt} className="h-16 rounded-xl bg-white/95 px-4 py-2.5" />
+          ))}
+        </Reveal>
       </div>
     </section>
   );
