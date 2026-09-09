@@ -53,10 +53,11 @@ export default function Hero() {
       <div className="absolute inset-x-0 bottom-0 z-[3] px-5 pb-14 md:px-10">
         <div className="mx-auto max-w-[1440px]">
           <h1
-            className="max-w-[1180px] font-bold text-[#F9F5F3]"
-            style={{ fontSize: "clamp(38px,6.4vw,92px)", lineHeight: 0.98, letterSpacing: "-0.035em" }}
+            className="font-bold text-[#F9F5F3]"
+            style={{ fontSize: "clamp(30px,5.1vw,74px)", lineHeight: 0.98, letterSpacing: "-0.035em" }}
           >
-            {t("hero_a_title_pre")} {t("hero_a_title_em")}
+            <span className="block">{t("hero_a_title_pre")}</span>
+            <span className="block">{t("hero_a_title_em")}</span>
           </h1>
 
           <div className="mt-9 flex flex-wrap items-center justify-between gap-6">
