@@ -32,6 +32,7 @@ export interface Development {
   accessNote?: string;
   place?: string;
   accessPoints?: AccessPoint[];
+  hasMap?: boolean;
 }
 
 export interface GalleryItem {

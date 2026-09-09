@@ -77,8 +77,18 @@ export default function DevelopmentPage({ id }: { id: string }) {
 
   if (!d || !pd) return null;
 
+  const tabOn: Record<TabKey, boolean> = {
+    overview: true,
+    gallery: pd.gallery.length > 0,
+    avail: pd.plots.length > 0,
+    spec: pd.spec.length > 0,
+    location: d.status !== "coming-soon" || !!d.hasMap,
+  };
+  const visibleTabs = TABS.filter((tb) => tabOn[tb.key]);
+
   const status = statusMetaFor(d, t);
-  const epc = epcOf(d);
+  // Pre-completion developments don't have a real EPC certificate yet.
+  const epc = d.status === "coming-soon" ? null : epcOf(d);
   const epcColors = epcColorsOf(epc);
   const isLiked = liked.has(d.id);
   const priceLabel = priceLabelFor(d, t);
@@ -114,7 +124,7 @@ export default function DevelopmentPage({ id }: { id: string }) {
             </span>
           </div>
           <nav className="hi-scroller flex max-w-full items-center gap-5 overflow-x-auto">
-            {TABS.map((tb) => (
+            {visibleTabs.map((tb) => (
               <button
                 key={tb.key}
                 onClick={() => setTab(tb.key)}
