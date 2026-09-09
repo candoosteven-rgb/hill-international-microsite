@@ -1,13 +1,15 @@
 "use client";
 
-import { useState } from "react";
+import { useRef } from "react";
 import { useLanguage } from "@/lib/i18n";
 import { resolveImage } from "@/lib/image";
 import Reveal from "@/components/Reveal";
 import Icon from "@/components/Icon";
 
+const DEVESH_VIDEO_SRC =
+  "uploads/Step into life at Kew Bridge Rise.Devesh, a London music producer, chose a two bed apartment wit.mp4";
+
 const QUOTES = [
-  { q: "trust_q1", name: "trust_q1_name", place: "Kew Bridge Rise, Brentford", film: true, img: null },
   {
     q: "trust_q2",
     name: "trust_q2_name",
@@ -19,7 +21,14 @@ const QUOTES = [
 
 export default function Trust() {
   const { t } = useLanguage();
-  const [filmOpen, setFilmOpen] = useState(false);
+  const deveshVideoRef = useRef<HTMLVideoElement>(null);
+
+  const toggleDeveshFilm = () => {
+    const v = deveshVideoRef.current;
+    if (!v) return;
+    if (v.paused) v.play();
+    else v.pause();
+  };
 
   return (
     <section id="hi-trust" className="hi-section bg-[#EEF3F5]">
@@ -47,6 +56,34 @@ export default function Trust() {
         </Reveal>
 
         <Reveal delay={1} className="grid grid-cols-1 items-stretch gap-6 lg:grid-cols-3">
+          <div className="flex flex-col overflow-hidden rounded-2xl border border-[#DFE7EA] bg-white">
+            <video
+              ref={deveshVideoRef}
+              src={resolveImage(DEVESH_VIDEO_SRC, "")}
+              controls
+              playsInline
+              preload="metadata"
+              className="block aspect-[9/16] max-h-[420px] w-full bg-[#1F3A47] object-cover"
+            />
+            <div className="flex flex-1 flex-col gap-4 p-7">
+              <div className="flex items-center justify-between gap-4">
+                <Icon name="quote" className="h-5 w-5 flex-none text-[#C98A6B]" />
+                <button
+                  onClick={toggleDeveshFilm}
+                  className="hi-link inline-flex flex-none items-center gap-2 text-[14px] font-semibold text-[#28567A]"
+                >
+                  {t("trust_watch_film")}
+                  <Icon name="play" className="h-4 w-4" />
+                </button>
+              </div>
+              <p className="flex-1 text-[16.5px] leading-relaxed text-[#3E4E55]">{t("trust_q1")}</p>
+              <div>
+                <div className="text-[14.5px] font-bold text-[#1F3A47]">{t("trust_q1_name")}</div>
+                <div className="mt-0.5 text-[13.5px] text-[#8A969B]">Kew Bridge Rise, Brentford</div>
+              </div>
+            </div>
+          </div>
+
           {QUOTES.map((item, i) => (
             <div key={i} className="flex flex-col overflow-hidden rounded-2xl border border-[#DFE7EA] bg-white">
               <div
@@ -56,15 +93,6 @@ export default function Trust() {
               <div className="flex flex-1 flex-col gap-4 p-7">
                 <div className="flex items-center justify-between gap-4">
                   <Icon name="quote" className="h-5 w-5 flex-none text-[#C98A6B]" />
-                  {item.film && (
-                    <button
-                      onClick={() => setFilmOpen(true)}
-                      className="hi-link inline-flex flex-none items-center gap-2 text-[14px] font-semibold text-[#28567A]"
-                    >
-                      {t("trust_watch_film")}
-                      <Icon name="play" className="h-4 w-4" />
-                    </button>
-                  )}
                 </div>
                 <p className="flex-1 text-[16.5px] leading-relaxed text-[#3E4E55]">{t(item.q)}</p>
                 <div>
@@ -76,31 +104,6 @@ export default function Trust() {
           ))}
         </Reveal>
       </div>
-
-      {filmOpen && (
-        <div
-          className="hi-fade fixed inset-0 z-[300] flex items-center justify-center p-6"
-          style={{ background: "rgba(15,25,30,0.72)", backdropFilter: "blur(6px)" }}
-          onClick={() => setFilmOpen(false)}
-        >
-          <div
-            className="hi-pop w-full max-w-[520px] rounded-3xl bg-[#16313D] p-10 text-center"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="mb-6 flex justify-end">
-              <button
-                onClick={() => setFilmOpen(false)}
-                aria-label={t("modal_close")}
-                className="flex h-9 w-9 items-center justify-center rounded-full bg-white/14 text-white"
-              >
-                <Icon name="close" className="h-4 w-4" />
-              </button>
-            </div>
-            <Icon name="play" className="mx-auto mb-4 h-10 w-10 text-[#C98A6B]" />
-            <p className="text-[15px] leading-relaxed text-white/78">The development film is in production &mdash; it will play here.</p>
-          </div>
-        </div>
-      )}
     </section>
   );
 }

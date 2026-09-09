@@ -266,50 +266,6 @@ export default function DevelopmentPage({ id }: { id: string }) {
             )}
           </div>
 
-          {!!pd.suite && (
-            <div className="mx-auto mt-16 max-w-[1400px] rounded-[22px] bg-[#16313D] p-8 md:p-10">
-              <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-                <div>
-                  <span className="hi-eyebrow mb-4 block text-[#C98A6B]">{dp("suite_title")}</span>
-                  <div className="mb-1 text-[19px] font-bold text-[#F9F5F3]">{pd.suite.line1}</div>
-                  <div className="text-[15px] text-white/70">{pd.suite.line2}</div>
-                  <div className="mb-5 text-[15px] text-white/70">{pd.suite.line3}</div>
-                  <div className="flex flex-wrap gap-3">
-                    <a href={`tel:${pd.suite.phone}`} className="hi-link inline-flex items-center gap-1.5 text-[14px] font-semibold text-[#F9F5F3]">
-                      <Icon name="phone" className="h-3.5 w-3.5" />
-                      {pd.suite.phone}
-                    </a>
-                    <a href={`mailto:${pd.suite.email}`} className="hi-link inline-flex items-center gap-1.5 text-[14px] font-semibold text-[#F9F5F3]">
-                      <Icon name="mail" className="h-3.5 w-3.5" />
-                      {pd.suite.email}
-                    </a>
-                    <a
-                      href={pd.suite.maps}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hi-pill inline-flex items-center gap-1.5 rounded-full border border-white/30 px-3.5 py-1.5 text-[13px] font-semibold text-[#F9F5F3]"
-                    >
-                      <Icon name="external" className="h-3.5 w-3.5" />
-                      {dp("suite_dir")}
-                    </a>
-                  </div>
-                </div>
-                {!!pd.hours.length && (
-                  <div>
-                    <div className="mb-4 text-[13px] font-semibold uppercase tracking-wide text-white/60">{dp("suite_hours")}</div>
-                    <div className="flex flex-col gap-2">
-                      {pd.hours.map(([day, hrs]) => (
-                        <div key={day} className="flex items-center justify-between border-b border-white/10 py-1.5 text-[14px]">
-                          <span className="text-white/70">{dp(day)}</span>
-                          <span className="font-semibold text-[#F9F5F3]">{hrs === "closed" ? dp("closed") : hrs}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </div>
-            </div>
-          )}
         </section>
       )}
 
@@ -586,31 +542,8 @@ function RegisterPanel({
     <section className="bg-white px-5 py-16 md:px-8 md:py-24">
       <div className="mx-auto grid max-w-[1400px] grid-cols-1 items-start gap-11 lg:grid-cols-2">
         <div>
-          {pd.suite ? (
-            <>
-              <h3 className="mb-6.5 text-[clamp(26px,3vw,36px)] font-extrabold tracking-tight text-[#1F3A47]">{dp("suite_title")}</h3>
-              <div className="mb-5.5 text-[16px] leading-relaxed text-[#5C6B71]">
-                <div className="font-bold text-[#1F3A47]">{pd.suite.line1}</div>
-                <div>{pd.suite.line2}</div>
-                <div>{pd.suite.line3}</div>
-              </div>
-              <a
-                href={pd.suite.maps}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hi-pill inline-flex items-center gap-2 rounded-full bg-[#1F3A47] px-6 py-3.5 text-[14px] font-bold text-white"
-              >
-                <Icon name="pin" className="h-4 w-4" />
-                {dp("suite_dir")}
-                <Icon name="arrowRight" className="h-3.5 w-3.5" />
-              </a>
-            </>
-          ) : (
-            <>
-              <h3 className="mb-4 text-[clamp(26px,3vw,36px)] font-extrabold tracking-tight text-[#1F3A47]">{d.name}</h3>
-              <p className="max-w-[400px] text-[16px] leading-relaxed text-[#5C6B71]">{dp("coming_soon_note")}</p>
-            </>
-          )}
+          <h3 className="mb-4 text-[clamp(26px,3vw,36px)] font-extrabold tracking-tight text-[#1F3A47]">{d.name}</h3>
+          <p className="max-w-[400px] text-[16px] leading-relaxed text-[#5C6B71]">{dp("coming_soon_note")}</p>
         </div>
 
         <div className="rounded-[20px] bg-[#122530] p-8">
