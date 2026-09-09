@@ -505,7 +505,7 @@ export default function DevelopmentPage() {
 
       <DownloadsGate d={d} gate={gate} setGate={setGate} dp={dp} t={t} lang={lang} />
 
-      <RegisterPanel d={d} dp={dp} t={t} lang={lang} />
+      <RegisterPanel d={d} pd={pd} dp={dp} t={t} lang={lang} />
 
       <NearbyDevs id={d.id} />
 
@@ -654,11 +654,13 @@ function DownloadsGate({
 
 function RegisterPanel({
   d,
+  pd,
   dp,
   t,
   lang,
 }: {
   d: ReturnType<typeof devById>;
+  pd: ReturnType<typeof pageDataFor>;
   dp: (key: string, vars?: Record<string, string | number>) => string;
   t: (key: string, vars?: Record<string, string | number>) => string;
   lang: string;
@@ -667,7 +669,7 @@ function RegisterPanel({
   const [error, setError] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-  if (!d) return null;
+  if (!d || !pd) return null;
 
   const submit = async () => {
     const emailOk = /\S+@\S+\.\S+/.test(form.email);
@@ -699,8 +701,31 @@ function RegisterPanel({
     <section className="bg-white px-5 py-16 md:px-8 md:py-24">
       <div className="mx-auto grid max-w-[1400px] grid-cols-1 items-start gap-11 lg:grid-cols-2">
         <div>
-          <h3 className="mb-4 text-[clamp(26px,3vw,36px)] font-extrabold tracking-tight text-[#1F3A47]">{d.name}</h3>
-          <p className="max-w-[400px] text-[16px] leading-relaxed text-[#5C6B71]">{dp("coming_soon_note")}</p>
+          {pd.suite ? (
+            <>
+              <h3 className="mb-6.5 text-[clamp(26px,3vw,36px)] font-extrabold tracking-tight text-[#1F3A47]">{dp("suite_title")}</h3>
+              <div className="mb-5.5 text-[16px] leading-relaxed text-[#5C6B71]">
+                <div className="font-bold text-[#1F3A47]">{pd.suite.line1}</div>
+                <div>{pd.suite.line2}</div>
+                <div>{pd.suite.line3}</div>
+              </div>
+              <a
+                href={pd.suite.maps}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hi-pill inline-flex items-center gap-2 rounded-full bg-[#1F3A47] px-6 py-3.5 text-[14px] font-bold text-white"
+              >
+                <Icon name="pin" className="h-4 w-4" />
+                {dp("suite_dir")}
+                <Icon name="arrowRight" className="h-3.5 w-3.5" />
+              </a>
+            </>
+          ) : (
+            <>
+              <h3 className="mb-4 text-[clamp(26px,3vw,36px)] font-extrabold tracking-tight text-[#1F3A47]">{d.name}</h3>
+              <p className="max-w-[400px] text-[16px] leading-relaxed text-[#5C6B71]">{dp("coming_soon_note")}</p>
+            </>
+          )}
         </div>
 
         <div className="rounded-[20px] bg-[#122530] p-8">
