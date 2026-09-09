@@ -6,9 +6,9 @@ import Reveal from "@/components/Reveal";
 import Icon from "@/components/Icon";
 
 const CARDS: { key: string; icon: Parameters<typeof Icon>[0]["name"]; img: string }[] = [
-  { key: "env_c1", icon: "arrowRight", img: "uploads/opt/istock-1427519129.jpg" },
-  { key: "env_c2", icon: "leaf", img: "uploads/epd.webp" },
-  { key: "env_c3", icon: "building", img: "uploads/opt/screenshot-2026-08-13-114054.jpg" },
+  { key: "env_c1", icon: "bolt", img: "uploads/opt/istock-1427519129.jpg" },
+  { key: "env_c2", icon: "sprout", img: "uploads/epd.webp" },
+  { key: "env_c3", icon: "crane", img: "uploads/opt/screenshot-2026-08-13-114054.jpg" },
 ];
 
 export default function Environment() {

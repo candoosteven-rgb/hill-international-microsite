@@ -59,8 +59,10 @@ export default function About() {
             ["uploads/hbf-award.png", "Home Builders Federation 5-star rating"],
             ["uploads/trustpilot-49.png", "Trustpilot 4.9 rating"],
           ].map(([src, alt]) => (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img key={src} src={resolveImage(src, alt)} alt={alt} className="h-16 rounded-xl bg-white/95 px-4 py-2.5" />
+            <div key={src} className="flex h-24 w-40 items-center justify-center rounded-xl bg-white/95 px-5 py-4">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={resolveImage(src, alt)} alt={alt} className="h-full w-full object-contain" />
+            </div>
           ))}
         </Reveal>
       </div>
