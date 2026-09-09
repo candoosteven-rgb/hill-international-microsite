@@ -242,7 +242,7 @@ export default function DevelopmentPage({ id }: { id: string }) {
             </div>
             <h1
               className="mb-4.5 font-bold text-[#F9F5F3]"
-              style={{ fontSize: "clamp(42px,9vw,110px)", lineHeight: 0.92, letterSpacing: "-0.045em" }}
+              style={{ fontSize: "clamp(21px,4.5vw,55px)", lineHeight: 0.92, letterSpacing: "-0.045em" }}
             >
               {d.name}
             </h1>
