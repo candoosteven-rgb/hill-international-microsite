@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo } from "react";
+import { useRouter } from "next/navigation";
 import { devData, regions } from "@/lib/data";
 import { resolveImage, buildShots } from "@/lib/image";
 import { useLanguage } from "@/lib/i18n";
@@ -18,6 +19,7 @@ const REGION_BANNERS: Record<string, string> = {
 
 export default function Developments() {
   const { t } = useLanguage();
+  const router = useRouter();
   const {
     liked,
     savedOnly,
@@ -28,7 +30,6 @@ export default function Developments() {
     setRegionFilter,
     zoneFilter,
     setZoneFilter,
-    openDevPage,
   } = useAppState();
 
   const londonZones = useMemo(
@@ -115,7 +116,7 @@ export default function Developments() {
               {recentDevs.map((d) => (
                 <div
                   key={d.id}
-                  onClick={() => openDevPage(d.id)}
+                  onClick={() => router.push(`/developments/${d.id}`)}
                   className="hi-card flex-none w-[220px] cursor-pointer overflow-hidden rounded-2xl bg-white shadow-[0_6px_18px_rgba(20,40,50,0.08)]"
                 >
                   <div className="relative h-[120px] overflow-hidden bg-[repeating-linear-gradient(45deg,#dfe3e2,#dfe3e2_10px,#eceeec_10px,#eceeec_20px)]">

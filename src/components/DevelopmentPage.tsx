@@ -1,6 +1,7 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { useRouter } from "next/navigation";
 import { devById, epcColorsOf, epcOf, gbp, pageDataFor, priceLabelFor, statusMetaFor } from "@/lib/data";
 import { devBlurb, devBlurb2, devHeadline, devText } from "@/lib/blurb";
 import { autoFacts } from "@/lib/facts";
@@ -40,16 +41,22 @@ const FACT_ICON_NAMES: Parameters<typeof Icon>[0]["name"][] = [
   "f_warranty",
 ];
 
-export default function DevelopmentPage() {
+export default function DevelopmentPage({ id }: { id: string }) {
   const { t, dp, lang } = useLanguage();
-  const { pageDevId, closeDevPage, liked, toggleLiked } = useAppState();
+  const router = useRouter();
+  const { liked, toggleLiked, addRecent } = useAppState();
   const [tab, setTab] = useState<TabKey>("overview");
   const [locCat, setLocCat] = useState("cat_transport");
   const [avBuilding, setAvBuilding] = useState("all");
   const [avBeds, setAvBeds] = useState("all");
 
-  const d = pageDevId ? devById(pageDevId) : null;
-  const pd = pageDevId ? pageDataFor(pageDevId) : undefined;
+  const d = devById(id);
+  const pd = pageDataFor(id);
+
+  useEffect(() => {
+    addRecent(id);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [id]);
 
   const buildings = useMemo(() => {
     if (!pd) return [];
@@ -68,7 +75,7 @@ export default function DevelopmentPage() {
     );
   }, [pd, avBuilding, avBeds]);
 
-  if (!pageDevId || !d || !pd) return null;
+  if (!d || !pd) return null;
 
   const status = statusMetaFor(d, t);
   const epc = epcOf(d);
@@ -80,18 +87,11 @@ export default function DevelopmentPage() {
   const locCats = Object.keys(pd.amenities);
   const facts = pd.facts.length ? pd.facts : autoFacts(d);
 
-  const goRegister = () => {
-    closeDevPage();
-    setTimeout(() => document.getElementById("hi-register")?.scrollIntoView({ behavior: "smooth" }), 60);
-  };
-
-  const goDevelopments = () => {
-    closeDevPage();
-    setTimeout(() => document.getElementById("hi-developments")?.scrollIntoView({ behavior: "smooth" }), 60);
-  };
+  const goRegister = () => router.push("/#hi-register");
+  const goDevelopments = () => router.push("/#hi-developments");
 
   return (
-    <div dir="auto" className="hi-fade fixed inset-0 z-[400] overflow-y-auto overflow-x-hidden bg-white text-[#1F3A47]">
+    <div dir="auto" className="hi-fade overflow-x-hidden bg-white text-[#1F3A47]">
       <div
         className="sticky top-0 z-30 shadow-[0_10px_26px_-12px_rgba(0,0,0,0.5)]"
         style={{ background: "rgba(14,32,40,0.97)", backdropFilter: "blur(14px)" }}
@@ -99,7 +99,7 @@ export default function DevelopmentPage() {
         <div className="mx-auto flex max-w-[1400px] flex-wrap items-center justify-between gap-4 px-5 py-3.5 md:px-8">
           <div className="flex min-w-0 items-center gap-4">
             <button
-              onClick={closeDevPage}
+              onClick={() => router.push("/")}
               className="hi-pill inline-flex items-center gap-2 rounded-full border border-white/24 bg-white/8 px-4 py-2 text-[13px] font-semibold text-[#F9F5F3]"
             >
               <Icon name="chevronLeft" className="h-3.5 w-3.5" />
@@ -664,7 +664,7 @@ function RegisterPanel({
 
 function NearbyDevs({ id }: { id: string }) {
   const { dp } = useLanguage();
-  const { openDevPage: goPage } = useAppState();
+  const router = useRouter();
   const d = devById(id);
   const pd = pageDataFor(id);
   if (!d || !pd || !pd.nearby.length) return null;
@@ -680,7 +680,7 @@ function NearbyDevs({ id }: { id: string }) {
           {devs.map((nd) => (
             <div
               key={nd.id}
-              onClick={() => goPage(nd.id)}
+              onClick={() => router.push(`/developments/${nd.id}`)}
               className="hi-card cursor-pointer overflow-hidden rounded-2xl bg-white shadow-[0_6px_18px_rgba(20,40,50,0.08)]"
             >
               <img

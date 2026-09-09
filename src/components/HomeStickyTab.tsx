@@ -7,7 +7,7 @@ import Icon from "@/components/Icon";
 
 export default function HomeStickyTab() {
   const { t, dir } = useLanguage();
-  const { pageDevId, compareOpen, riSubmitted } = useAppState();
+  const { compareOpen, riSubmitted } = useAppState();
   const [visible, setVisible] = useState(false);
   const [minimized, setMinimized] = useState(false);
 
@@ -32,7 +32,7 @@ export default function HomeStickyTab() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  if (pageDevId || compareOpen || riSubmitted || !visible) return null;
+  if (compareOpen || riSubmitted || !visible) return null;
 
   const minimize = () => {
     try {

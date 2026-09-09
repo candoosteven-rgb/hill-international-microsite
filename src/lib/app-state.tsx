@@ -18,6 +18,7 @@ interface AppStateContextValue {
   setSavedOnly: (v: boolean) => void;
 
   recentIds: string[];
+  addRecent: (id: string) => void;
   clearRecent: () => void;
 
   compareIds: string[];
@@ -31,10 +32,6 @@ interface AppStateContextValue {
   setRegionFilter: (v: string) => void;
   zoneFilter: number | "all";
   setZoneFilter: (v: number | "all") => void;
-
-  pageDevId: string | null;
-  openDevPage: (id: string) => void;
-  closeDevPage: () => void;
 
   riSubmitted: boolean;
   setRiSubmitted: (v: boolean) => void;
@@ -70,7 +67,6 @@ export function AppStateProvider({ children }: { children: React.ReactNode }) {
   const [compareOpen, setCompareOpen] = useState(false);
   const [regionFilter, setRegionFilterState] = useState("all");
   const [zoneFilter, setZoneFilter] = useState<number | "all">("all");
-  const [pageDevId, setPageDevId] = useState<string | null>(null);
   const [riSubmitted, setRiSubmitted] = useState(false);
   const [riDefaultRegion, setRiDefaultRegion] = useState<string | null>(null);
   const [hydrated, setHydrated] = useState(false);
@@ -92,8 +88,8 @@ export function AppStateProvider({ children }: { children: React.ReactNode }) {
   }, [recentIds, hydrated]);
 
   useEffect(() => {
-    document.body.style.overflow = menuOpen || pageDevId || compareOpen ? "hidden" : "";
-  }, [menuOpen, pageDevId, compareOpen]);
+    document.body.style.overflow = menuOpen || compareOpen ? "hidden" : "";
+  }, [menuOpen, compareOpen]);
 
   const value = useMemo<AppStateContextValue>(
     () => ({
@@ -110,6 +106,7 @@ export function AppStateProvider({ children }: { children: React.ReactNode }) {
       savedOnly,
       setSavedOnly,
       recentIds,
+      addRecent: (id) => setRecentIds((prev) => [id, ...prev.filter((x) => x !== id)].slice(0, RECENT_MAX)),
       clearRecent: () => setRecentIds([]),
       compareIds,
       toggleCompare: (id) =>
@@ -129,23 +126,16 @@ export function AppStateProvider({ children }: { children: React.ReactNode }) {
       },
       zoneFilter,
       setZoneFilter,
-      pageDevId,
-      openDevPage: (id) => {
-        setPageDevId(id);
-        setRecentIds((prev) => [id, ...prev.filter((x) => x !== id)].slice(0, RECENT_MAX));
-      },
-      closeDevPage: () => setPageDevId(null),
       riSubmitted,
       setRiSubmitted,
       riDefaultRegion,
       startPriority: (region) => {
         setRiDefaultRegion(region);
-        setPageDevId(null);
         const el = document.getElementById("hi-register");
         if (el) el.scrollIntoView({ behavior: "smooth" });
       },
     }),
-    [menuOpen, liked, savedOnly, recentIds, compareIds, compareOpen, regionFilter, zoneFilter, pageDevId, riSubmitted, riDefaultRegion]
+    [menuOpen, liked, savedOnly, recentIds, compareIds, compareOpen, regionFilter, zoneFilter, riSubmitted, riDefaultRegion]
   );
 
   return <AppStateContext.Provider value={value}>{children}</AppStateContext.Provider>;
