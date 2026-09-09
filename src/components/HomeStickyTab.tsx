@@ -7,12 +7,13 @@ import Icon from "@/components/Icon";
 
 export default function HomeStickyTab() {
   const { t, dir } = useLanguage();
-  const { pageDevId, devModalId, compareOpen, riSubmitted } = useAppState();
+  const { pageDevId, compareOpen, riSubmitted } = useAppState();
   const [visible, setVisible] = useState(false);
   const [minimized, setMinimized] = useState(false);
 
   useEffect(() => {
     try {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       if (sessionStorage.getItem("hi_sticky_minimized") === "1") setMinimized(true);
     } catch {
       // sessionStorage unavailable (private mode, etc.) - default to expanded
@@ -31,7 +32,7 @@ export default function HomeStickyTab() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  if (pageDevId || devModalId || compareOpen || riSubmitted || !visible) return null;
+  if (pageDevId || compareOpen || riSubmitted || !visible) return null;
 
   const minimize = () => {
     try {

@@ -2,7 +2,7 @@
 
 import { useMemo } from "react";
 import { devData, regions } from "@/lib/data";
-import { resolveImage } from "@/lib/image";
+import { resolveImage, buildShots } from "@/lib/image";
 import { useLanguage } from "@/lib/i18n";
 import { useAppState } from "@/lib/app-state";
 import DevCard from "@/components/DevCard";
@@ -28,7 +28,7 @@ export default function Developments() {
     setRegionFilter,
     zoneFilter,
     setZoneFilter,
-    openDevModal,
+    openDevPage,
   } = useAppState();
 
   const londonZones = useMemo(
@@ -115,11 +115,11 @@ export default function Developments() {
               {recentDevs.map((d) => (
                 <div
                   key={d.id}
-                  onClick={() => openDevModal(d.id)}
+                  onClick={() => openDevPage(d.id)}
                   className="hi-card flex-none w-[220px] cursor-pointer overflow-hidden rounded-2xl bg-white shadow-[0_6px_18px_rgba(20,40,50,0.08)]"
                 >
                   <div className="relative h-[120px] overflow-hidden bg-[repeating-linear-gradient(45deg,#dfe3e2,#dfe3e2_10px,#eceeec_10px,#eceeec_20px)]">
-                    <img src={resolveImage(d.image, d.name)} alt={d.name} className="h-full w-full object-cover" />
+                    <img src={resolveImage(buildShots(d)[0], d.name)} alt={d.name} className="h-full w-full object-cover" />
                   </div>
                   <div className="p-3.5">
                     <div className="mb-0.5 text-[15px] font-bold text-[#1F3A47]">{d.name}</div>

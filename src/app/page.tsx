@@ -10,7 +10,6 @@ import Environment from "@/components/Environment";
 import Team from "@/components/Team";
 import Register from "@/components/Register";
 import Footer from "@/components/Footer";
-import DevOverviewModal from "@/components/DevOverviewModal";
 import DevelopmentPage from "@/components/DevelopmentPage";
 import CompareBar from "@/components/CompareBar";
 import CompareModal from "@/components/CompareModal";
@@ -36,7 +35,6 @@ export default function Home() {
 
         <HomeStickyTab />
         <CompareBar />
-        <DevOverviewModal />
         <DevelopmentPage />
         <CompareModal />
         <ThankYouModal />

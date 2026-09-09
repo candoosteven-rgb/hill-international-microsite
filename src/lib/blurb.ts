@@ -30,3 +30,12 @@ export function devBlurb2(d: Development, dp: (key: string, vars?: Record<string
   if (custom !== key) return custom;
   return dp("auto_p2");
 }
+
+// Nexus is the hand-authored reference development; several dp() strings (video
+// title, "nearby developments" note, etc.) were written for it and reused
+// verbatim for every other dev, with the literal word "Nexus" standing in for
+// whichever development's page is actually open.
+export function devText(d: Development, dp: (key: string) => string, key: string): string {
+  const raw = dp(key);
+  return d.id === "nexus" ? raw : raw.split("Nexus").join(d.name);
+}

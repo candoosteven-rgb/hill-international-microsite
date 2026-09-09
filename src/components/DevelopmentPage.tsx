@@ -2,8 +2,10 @@
 
 import { useMemo, useState } from "react";
 import { devById, epcColorsOf, epcOf, gbp, pageDataFor, priceLabelFor, statusMetaFor } from "@/lib/data";
-import { devBlurb, devBlurb2, devHeadline } from "@/lib/blurb";
-import { resolveImage, placeholderFor } from "@/lib/image";
+import { devBlurb, devBlurb2, devHeadline, devText } from "@/lib/blurb";
+import { autoFacts } from "@/lib/facts";
+import { resolveImage, placeholderFor, buildShots } from "@/lib/image";
+import { VIDEO_EMBEDS, isYoutubeEmbed, youtubeWatchUrl } from "@/lib/video";
 import { resolveLogo } from "@/lib/logo";
 import { useLanguage } from "@/lib/i18n";
 import { useAppState } from "@/lib/app-state";
@@ -69,6 +71,7 @@ export default function DevelopmentPage() {
   const tagline = d.tagline || t("dev_tagline", { region: d.region });
   const logoSrc = resolveLogo(d.logo, d.name);
   const locCats = Object.keys(pd.amenities);
+  const facts = pd.facts.length ? pd.facts : autoFacts(d);
 
   const goRegister = () => {
     closeDevPage();
@@ -205,11 +208,11 @@ export default function DevelopmentPage() {
               <p className="text-[16.5px] leading-relaxed text-[#5C6B71]">{devBlurb2(d, dp)}</p>
             </div>
 
-            {!!pd.facts.length && (
+            {!!facts.length && (
               <div className="rounded-[22px] bg-[#F5F5F7] p-8 md:p-9">
                 <div className="mb-6.5 text-[19px] font-extrabold tracking-tight text-[#1F3A47]">{dp("facts_title")}</div>
                 <div className="grid grid-cols-2 gap-6 sm:grid-cols-3">
-                  {pd.facts.map((f) => (
+                  {facts.map((f) => (
                     <div key={f.k}>
                       <div className="mb-3 flex h-8 w-8 items-center justify-center rounded-full bg-[rgba(193,86,15,0.12)]">
                         <Icon name="check" className="h-4 w-4 text-[#C1560F]" />
@@ -269,6 +272,8 @@ export default function DevelopmentPage() {
           )}
         </section>
       )}
+
+      {tab === "overview" && <FilmSection d={d} pd={pd} dp={dp} />}
 
       {tab === "gallery" && (
         <section className="bg-white px-5 py-16 md:px-8 md:py-24">
@@ -610,8 +615,9 @@ function DownloadsGate({
 function NearbyDevs({ id }: { id: string }) {
   const { dp } = useLanguage();
   const { openDevPage: goPage } = useAppState();
+  const d = devById(id);
   const pd = pageDataFor(id);
-  if (!pd || !pd.nearby.length) return null;
+  if (!d || !pd || !pd.nearby.length) return null;
   const devs = pd.nearby.map((nid) => devById(nid)).filter(Boolean) as NonNullable<ReturnType<typeof devById>>[];
   if (!devs.length) return null;
 
@@ -619,7 +625,7 @@ function NearbyDevs({ id }: { id: string }) {
     <section className="bg-[#F5F5F7] px-5 py-16 md:px-8 md:py-24">
       <div className="mx-auto max-w-[1400px]">
         <h2 className="mb-1.5 text-[26px] font-extrabold tracking-tight text-[#1F3A47]">{dp("nearby_title")}</h2>
-        <p className="mb-8 text-[14.5px] text-[#8B979C]">{dp("nearby_sub")}</p>
+        <p className="mb-8 text-[14.5px] text-[#8B979C]">{devText(d, dp, "nearby_sub")}</p>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {devs.map((nd) => (
             <div
@@ -628,7 +634,7 @@ function NearbyDevs({ id }: { id: string }) {
               className="hi-card cursor-pointer overflow-hidden rounded-2xl bg-white shadow-[0_6px_18px_rgba(20,40,50,0.08)]"
             >
               <img
-                src={resolveImage(nd.image, nd.name)}
+                src={resolveImage(buildShots(nd)[0], nd.name)}
                 alt={nd.name}
                 className="h-[160px] w-full object-cover"
               />
@@ -640,6 +646,89 @@ function NearbyDevs({ id }: { id: string }) {
           ))}
         </div>
       </div>
+    </section>
+  );
+}
+
+function FilmSection({
+  d,
+  pd,
+  dp,
+}: {
+  d: ReturnType<typeof devById>;
+  pd: ReturnType<typeof pageDataFor>;
+  dp: (key: string, vars?: Record<string, string | number>) => string;
+}) {
+  const [open, setOpen] = useState(false);
+  if (!d || !pd) return null;
+  const embedUrl = VIDEO_EMBEDS[d.id];
+  if (!embedUrl) return null;
+
+  const isYoutube = isYoutubeEmbed(embedUrl);
+  const watchUrl = isYoutube ? youtubeWatchUrl(embedUrl) : null;
+
+  return (
+    <section style={{ background: "#0E2028" }}>
+      <div className="relative overflow-hidden" style={{ height: "clamp(340px,60vh,620px)" }}>
+        <img
+          src={resolveImage(pd.hero, d.name)}
+          alt=""
+          aria-hidden
+          className="absolute inset-0 h-full w-full object-cover"
+          style={{ filter: "saturate(0.9) brightness(0.62)" }}
+        />
+        <div className="absolute inset-0 flex flex-col items-center justify-center gap-5 p-8 text-center">
+          <div className="text-[12px] font-semibold uppercase tracking-[0.22em] text-white/66">{dp("vid_eyebrow")}</div>
+          <h2 className="text-[#F9F5F3]" style={{ fontFamily: "Inter,sans-serif", fontWeight: 800, fontSize: "clamp(28px,3.6vw,46px)", letterSpacing: "-0.03em" }}>
+            {devText(d, dp, "vid_title")}
+          </h2>
+          <button
+            onClick={() => setOpen(true)}
+            aria-label={devText(d, dp, "vid_title")}
+            className="hi-pulse mt-1.5 flex h-[76px] w-[76px] items-center justify-center rounded-full border border-white/40 bg-white/14 text-[#F9F5F3] backdrop-blur-sm"
+          >
+            <Icon name="play" className="h-6.5 w-6.5" style={{ marginInlineStart: 4 }} />
+          </button>
+        </div>
+      </div>
+
+      {open && (
+        <div
+          className="fixed inset-0 z-[400] flex items-center justify-center p-6"
+          style={{ background: "rgba(9,20,26,0.92)" }}
+          onClick={() => setOpen(false)}
+        >
+          <div className="relative w-full" style={{ maxWidth: 920, aspectRatio: "16/9" }} onClick={(e) => e.stopPropagation()}>
+            <iframe
+              src={embedUrl}
+              title={d.name}
+              referrerPolicy="strict-origin-when-cross-origin"
+              className="absolute inset-0 h-full w-full rounded-xl border-0"
+              allow="autoplay; fullscreen; picture-in-picture; encrypted-media"
+              allowFullScreen
+            />
+            <button
+              onClick={() => setOpen(false)}
+              aria-label="Close video"
+              className="absolute right-0 text-[14px] font-semibold text-white"
+              style={{ top: -44 }}
+            >
+              {"Close ✕"}
+            </button>
+            {isYoutube && watchUrl && (
+              <a
+                href={watchUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute left-0 text-[13px] text-white underline"
+                style={{ bottom: -32, opacity: 0.75 }}
+              >
+                Trouble playing? Watch on YouTube ↗
+              </a>
+            )}
+          </div>
+        </div>
+      )}
     </section>
   );
 }

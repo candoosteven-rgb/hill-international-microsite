@@ -1,7 +1,7 @@
 "use client";
 
 import { devById, epcOf, priceLabelFor, statusMetaFor } from "@/lib/data";
-import { resolveImage } from "@/lib/image";
+import { resolveImage, buildShots } from "@/lib/image";
 import { useLanguage } from "@/lib/i18n";
 import { useAppState } from "@/lib/app-state";
 import Icon from "@/components/Icon";
@@ -53,7 +53,7 @@ export default function CompareModal() {
                 {devs.map((d) => (
                   <th key={d.id} className="px-3 pb-4">
                     <div className="relative h-[110px] w-[150px] overflow-hidden rounded-xl">
-                      <img src={resolveImage(d.image, d.name)} alt={d.name} className="h-full w-full object-cover" />
+                      <img src={resolveImage(buildShots(d)[0], d.name)} alt={d.name} className="h-full w-full object-cover" />
                       <button
                         onClick={() => removeCompare(d.id)}
                         aria-label={t("compare_remove")}

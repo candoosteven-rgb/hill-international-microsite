@@ -27,7 +27,7 @@ const ICON_MAP: Record<string, Parameters<typeof Icon>[0]["name"]> = {
 
 export default function DevCard({ d }: { d: Development }) {
   const { t } = useLanguage();
-  const { liked, toggleLiked, compareIds, toggleCompare, openDevModal, startPriority } = useAppState();
+  const { liked, toggleLiked, compareIds, toggleCompare, openDevPage, startPriority } = useAppState();
   const [shot, setShot] = useState(0);
   const [shots, setShots] = useState(() => buildShots(d).slice(0, 3));
 
@@ -52,7 +52,7 @@ export default function DevCard({ d }: { d: Development }) {
   return (
     <div
       className="hi-card hi-in flex h-full flex-col overflow-hidden rounded-[18px] bg-white shadow-[0_8px_26px_rgba(20,40,50,0.08)] cursor-pointer"
-      onClick={() => openDevModal(d.id)}
+      onClick={() => openDevPage(d.id)}
     >
       <div className="relative h-[280px] md:h-[300px] overflow-hidden bg-[repeating-linear-gradient(45deg,#dfe3e2,#dfe3e2_10px,#eceeec_10px,#eceeec_20px)]">
         {shots.length ? (
