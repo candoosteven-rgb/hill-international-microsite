@@ -287,6 +287,13 @@ const paths: Record<string, React.ReactNode> = {
       <circle cx="12" cy="12" r="2.6" />
     </>
   ),
+  directions: (
+    <>
+      <circle cx="5.5" cy="18.5" r="2.6" />
+      <circle cx="18.5" cy="5.5" r="2.6" />
+      <path d="M8.4 17.4c3.2-.6 4.6-2.2 5.5-4.4.9-2.2 1.1-4 2.3-5.3" strokeDasharray="0.1 3.4" />
+    </>
+  ),
   sg_kitchen: (
     <>
       <rect x="4" y="3" width="16" height="18" rx="2" />
