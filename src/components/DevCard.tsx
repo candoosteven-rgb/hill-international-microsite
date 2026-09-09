@@ -130,7 +130,7 @@ export default function DevCard({ d }: { d: Development }) {
           >
             <Icon
               name={isLiked ? "heart-fill" : "heart"}
-              className="h-4 w-4"
+              className="h-4 w-4 text-[#C1560F]"
               strokeWidth={1.8}
             />
           </button>

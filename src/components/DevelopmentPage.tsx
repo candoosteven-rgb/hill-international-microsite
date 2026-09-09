@@ -141,9 +141,12 @@ export default function DevelopmentPage() {
               onClick={() => toggleLiked(d.id)}
               aria-pressed={isLiked}
               className="hi-icon-3d flex h-10 w-10 flex-none items-center justify-center rounded-full border"
-              style={{ borderColor: isLiked ? "#C1560F" : "rgba(255,255,255,0.24)", background: isLiked ? "rgba(193,86,15,0.15)" : "rgba(255,255,255,0.08)" }}
+              style={{ borderColor: isLiked ? "rgba(193,86,15,0.7)" : "rgba(255,255,255,0.24)", background: isLiked ? "rgba(193,86,15,0.18)" : "rgba(255,255,255,0.08)" }}
             >
-              <Icon name={isLiked ? "heart-fill" : "heart"} className="h-4 w-4 text-[#C1560F]" />
+              <Icon
+                name={isLiked ? "heart-fill" : "heart"}
+                className={`h-4 w-4 ${isLiked ? "text-[#C1560F]" : "text-[#F9F5F3]"}`}
+              />
             </button>
             <button
               onClick={goRegister}
