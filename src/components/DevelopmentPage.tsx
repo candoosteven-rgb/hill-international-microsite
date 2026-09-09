@@ -18,12 +18,30 @@ import Footer from "@/components/Footer";
 // forced to white on the hero image, matching the design's per-id filter table.
 const FORCE_WHITE_HERO_LOGO_IDS = new Set(["city-reach"]);
 
-// Real per-development local-area maps. Everywhere else the design leaves this
-// slot as an empty "drop a map here" placeholder - no synthetic map is drawn.
+// Real branded local-area map images, where we actually have one - kept in
+// preference to the generic embed below since they match the design exactly.
 const MAP_SRC: Record<string, string> = {
   "baltic-wharf": "uploads/Screenshot 2026-09-04 094937.png",
   "southville-collection": "uploads/Screenshot 2026-09-04 095321.png",
 };
+
+// Every other development gets a real, live Google Maps embed instead of no
+// map at all - built from the same address data already used for the "Get
+// directions" link where we have one, or the development's own place/
+// locationLabel/region otherwise. No API key needed for this embed form.
+function mapEmbedSrc(d: NonNullable<ReturnType<typeof devById>>, pd: NonNullable<ReturnType<typeof pageDataFor>>): string {
+  let query = `${d.place || d.locationLabel || d.region}, UK`;
+  const mapsUrl = pd.suite?.maps;
+  if (mapsUrl) {
+    try {
+      const q = new URL(mapsUrl).searchParams.get("query");
+      if (q) query = q;
+    } catch {
+      // malformed URL - fall back to the place-based query above
+    }
+  }
+  return `https://www.google.com/maps?q=${encodeURIComponent(query)}&output=embed`;
+}
 
 // Real, room-appropriate photos to fall back to if a spec group's own image
 // (often hotlinked from a development's marketing site) fails to load - a
@@ -620,8 +638,7 @@ export default function DevelopmentPage({ id }: { id: string }) {
               {d.id === "nexus" ? dp("loc_title") : d.place || d.locationLabel || d.region}
             </h2>
 
-            {(!!locCats.length || !!d.accessPoints?.length || MAP_SRC[d.id]) && (
-              <div className="mb-16 grid grid-cols-1 items-start gap-11 lg:grid-cols-[minmax(320px,1fr)_minmax(320px,1fr)]">
+            <div className="mb-16 grid grid-cols-1 items-start gap-11 lg:grid-cols-[minmax(320px,1fr)_minmax(320px,1fr)]">
                 <div>
                   {!!locCats.length && (
                     <>
@@ -665,17 +682,24 @@ export default function DevelopmentPage({ id }: { id: string }) {
                     </div>
                   )}
                 </div>
-                {MAP_SRC[d.id] && (
-                  <div className="overflow-hidden rounded-[20px]" style={{ height: "clamp(320px,46vh,460px)" }}>
+                <div className="overflow-hidden rounded-[20px]" style={{ height: "clamp(320px,46vh,460px)" }}>
+                  {MAP_SRC[d.id] ? (
                     <img
                       src={resolveImage(MAP_SRC[d.id], `${d.name} local area map`)}
                       alt={`${d.name} local area map`}
                       className="h-full w-full object-cover"
                     />
-                  </div>
-                )}
+                  ) : (
+                    <iframe
+                      src={mapEmbedSrc(d, pd)}
+                      title={`${d.name} local area map`}
+                      className="h-full w-full border-0"
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                    />
+                  )}
+                </div>
               </div>
-            )}
 
             {!!pd.travel.length && (
               <div>
