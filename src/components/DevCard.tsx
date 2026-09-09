@@ -136,7 +136,7 @@ export default function DevCard({ d }: { d: Development }) {
               {t("price_from")}
             </span>
           )}
-          <span className="text-[16px] font-bold tracking-tight text-[#C1560F]">{priceLabel}</span>
+          <bdi className="text-[16px] font-bold tracking-tight text-[#C1560F]">{priceLabel}</bdi>
         </div>
         {d.place && (
           <p className="mb-4.5 flex items-center gap-1.5 text-[13px] text-[#8B979C]">
@@ -146,7 +146,11 @@ export default function DevCard({ d }: { d: Development }) {
         )}
         <div className="mb-4 flex flex-col gap-1">
           {tagline.split("\n").map((line, i) => (
-            <p key={i} className="flex items-start gap-2 text-[14px] leading-snug text-[#5C6B71]">
+            <p
+              key={i}
+              className="flex items-start gap-2 text-[14px] leading-snug text-[#5C6B71]"
+              style={{ unicodeBidi: "plaintext" }}
+            >
               {d.showBedIcon && <Icon name="bed" className="mt-0.5 h-3.5 w-3.5 flex-none text-[#1F3A47]" />}
               {line}
             </p>
@@ -176,7 +180,11 @@ export default function DevCard({ d }: { d: Development }) {
             </div>
             <div className="my-3.5 grid grid-cols-2 gap-x-5 gap-y-3">
               {d.accessPoints.map((ap, i) => (
-                <span key={i} className="inline-flex items-center gap-2.5 text-[13.5px] font-medium leading-snug text-[#1F3A47]">
+                <span
+                  key={i}
+                  className="inline-flex items-center gap-2.5 text-[13.5px] font-medium leading-snug text-[#1F3A47]"
+                  style={{ unicodeBidi: "plaintext" }}
+                >
                   <Icon name={ICON_MAP[ap.icon] || "pin"} className="h-4 w-4 flex-none" />
                   {ap.label}
                 </span>

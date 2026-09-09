@@ -162,7 +162,7 @@ export default function DevelopmentPage() {
             <div className="flex flex-wrap items-center gap-6">
               <div className="flex items-baseline gap-2">
                 <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-white/60">{t("price_from")}</span>
-                <span className="text-[26px] font-extrabold tracking-tight text-[#F9F5F3]">{priceLabel}</span>
+                <bdi className="text-[26px] font-extrabold tracking-tight text-[#F9F5F3]">{priceLabel}</bdi>
               </div>
               {d.accessNote && (
                 <>
@@ -441,7 +441,7 @@ export default function DevelopmentPage() {
         </section>
       )}
 
-      <DownloadsGate d={d} gate={gate} setGate={setGate} dp={dp} />
+      <DownloadsGate d={d} gate={gate} setGate={setGate} dp={dp} t={t} />
 
       {isComingWithNote(d.status) && (
         <div className="bg-[#F5F5F7] px-5 py-12 text-center md:px-8">
@@ -492,11 +492,13 @@ function DownloadsGate({
   gate,
   setGate,
   dp,
+  t,
 }: {
   d: ReturnType<typeof devById>;
   gate: GateForm;
   setGate: (fn: (g: GateForm) => GateForm) => void;
   dp: (key: string, vars?: Record<string, string | number>) => string;
+  t: (key: string, vars?: Record<string, string | number>) => string;
 }) {
   const [error, setError] = useState("");
   if (!d) return null;
@@ -510,7 +512,7 @@ function DownloadsGate({
   const submit = () => {
     const emailOk = /\S+@\S+\.\S+/.test(gate.email);
     if (!gate.name.trim() || !emailOk || !gate.consent) {
-      setError(dp("modal_gate_error"));
+      setError(t("modal_gate_error"));
       return;
     }
     setError("");
@@ -541,19 +543,19 @@ function DownloadsGate({
               <input
                 value={gate.name}
                 onChange={(e) => setGate((g) => ({ ...g, name: e.target.value }))}
-                placeholder={dp("modal_gate_name")}
+                placeholder={t("modal_gate_name")}
                 className="rounded-xl border border-white/25 bg-white/8 px-4 py-3.5 text-[14.5px] text-[#F9F5F3] placeholder:text-white/45"
               />
               <input
                 value={gate.email}
                 onChange={(e) => setGate((g) => ({ ...g, email: e.target.value }))}
-                placeholder={dp("modal_gate_email")}
+                placeholder={t("modal_gate_email")}
                 className="rounded-xl border border-white/25 bg-white/8 px-4 py-3.5 text-[14.5px] text-[#F9F5F3] placeholder:text-white/45"
               />
               <input
                 value={gate.phone}
                 onChange={(e) => setGate((g) => ({ ...g, phone: e.target.value }))}
-                placeholder={dp("modal_gate_phone")}
+                placeholder={t("modal_gate_phone")}
                 className="rounded-xl border border-white/25 bg-white/8 px-4 py-3.5 text-[14.5px] text-[#F9F5F3] placeholder:text-white/45"
               />
             </div>
@@ -564,14 +566,14 @@ function DownloadsGate({
                 onChange={(e) => setGate((g) => ({ ...g, consent: e.target.checked }))}
                 className="mt-0.5"
               />
-              <span className="text-[13px] leading-relaxed text-white/68">{dp("modal_gate_consent")}</span>
+              <span className="text-[13px] leading-relaxed text-white/68">{t("modal_gate_consent")}</span>
             </label>
             {error && <div className="mb-4 text-[13px] text-[#E6A98C]">{error}</div>}
             <button
               onClick={submit}
               className="hi-pill w-full rounded-full bg-[#C1560F] py-3.5 text-[14.5px] font-bold text-white"
             >
-              {dp("modal_gate_submit")}
+              {t("modal_gate_submit")}
             </button>
           </div>
         )}

@@ -72,7 +72,7 @@ export default function CompareModal() {
                 <tr key={row.label} className="border-t border-[#E3E9EC]">
                   <td className="py-3.5 pr-4 text-[13px] font-semibold text-[#8B979C]">{row.label}</td>
                   {row.cells.map((c, i) => (
-                    <td key={i} className="px-3 py-3.5 text-[14px] text-[#1F3A47]">
+                    <td key={i} className="px-3 py-3.5 text-[14px] text-[#1F3A47]" style={{ unicodeBidi: "plaintext" }}>
                       {c}
                     </td>
                   ))}
