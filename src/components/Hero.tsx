@@ -17,6 +17,15 @@ export default function Hero() {
   const { t } = useLanguage();
   const [slide, setSlide] = useState(0);
 
+  // Break the second title line right after "&" where present (e.g. English
+  // "Home Counties & South of England." -> "Home Counties &" / "South of
+  // England.") so the hero reads as three short lines instead of one long
+  // one; languages without an "&" in this string just keep two lines.
+  const emText = t("hero_a_title_em");
+  const ampIdx = emText.indexOf("&");
+  const emLines =
+    ampIdx === -1 ? [emText] : [emText.slice(0, ampIdx + 1), emText.slice(ampIdx + 1).trim()];
+
   useEffect(() => {
     const id = setInterval(() => setSlide((s) => (s + 1) % SLIDES.length), SLIDE_MS);
     return () => clearInterval(id);
@@ -57,7 +66,11 @@ export default function Hero() {
             style={{ fontSize: "clamp(30px,5.1vw,74px)", lineHeight: 0.98, letterSpacing: "-0.035em" }}
           >
             <span className="block">{t("hero_a_title_pre")}</span>
-            <span className="block">{t("hero_a_title_em")}</span>
+            {emLines.map((line, i) => (
+              <span key={i} className="block">
+                {line}
+              </span>
+            ))}
           </h1>
 
           <div className="mt-9 flex flex-wrap items-center justify-between gap-6">
