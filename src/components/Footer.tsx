@@ -16,7 +16,7 @@ export default function Footer({ onDevelopmentsClick }: { onDevelopmentsClick?: 
         <div className="grid grid-cols-1 gap-10 border-b border-white/12 pb-11 sm:grid-cols-2 lg:grid-cols-4 lg:gap-14">
           <div>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/uploads/hill-logo-new.png" alt="Hill International" className="h-7 w-auto" />
+            <img src="/uploads/hill-logo-transparent.png" alt="Hill International" className="h-7 w-auto" />
           </div>
           <div>
             <div className="mb-4 text-[13px] font-semibold text-[#F9F5F3]">{t("footer_regions")}</div>

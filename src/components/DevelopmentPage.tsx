@@ -40,22 +40,11 @@ const FACT_ICON_NAMES: Parameters<typeof Icon>[0]["name"][] = [
   "f_warranty",
 ];
 
-interface GateForm {
-  name: string;
-  email: string;
-  phone: string;
-  consent: boolean;
-  submitted: boolean;
-}
-
-const EMPTY_GATE: GateForm = { name: "", email: "", phone: "", consent: false, submitted: false };
-
 export default function DevelopmentPage() {
   const { t, dp, lang } = useLanguage();
   const { pageDevId, closeDevPage, liked, toggleLiked } = useAppState();
   const [tab, setTab] = useState<TabKey>("overview");
   const [locCat, setLocCat] = useState("cat_transport");
-  const [gate, setGate] = useState<GateForm>(EMPTY_GATE);
   const [avBuilding, setAvBuilding] = useState("all");
   const [avBeds, setAvBeds] = useState("all");
 
@@ -214,10 +203,13 @@ export default function DevelopmentPage() {
                   className="inline-flex items-center gap-2.5 rounded-full py-2 pl-3 pr-4"
                   style={{ background: epcColors.bg, border: `1px solid ${epcColors.border}` }}
                 >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/uploads/APD_Energy_Ratings.png" alt="EPC rating scale" className="h-5.5 w-4.5 flex-none object-contain" />
                   <span className="text-[13px] font-bold" style={{ color: epcColors.fg }}>
                     {t("epc_label")} {epc}
                   </span>
                   <span className="h-3.5 w-px" style={{ background: epcColors.border }} />
+                  <Icon name="f_epc" className="h-3.5 w-3.5 flex-none" style={{ color: epcColors.fg }} />
                   <span className="text-[13px] font-medium" style={{ color: epcColors.soft }}>
                     {epc === "A" ? t("epc_benefit_lowest") : t("epc_benefit")}
                   </span>
@@ -503,8 +495,6 @@ export default function DevelopmentPage() {
         </section>
       )}
 
-      <DownloadsGate d={d} gate={gate} setGate={setGate} dp={dp} t={t} lang={lang} />
-
       <RegisterPanel d={d} pd={pd} dp={dp} t={t} lang={lang} />
 
       <NearbyDevs id={d.id} />
@@ -535,121 +525,6 @@ function Th({ children }: { children: React.ReactNode }) {
 }
 function Td({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   return <td className={`whitespace-nowrap px-4 py-3.5 ${className}`}>{children}</td>;
-}
-
-function DownloadsGate({
-  d,
-  gate,
-  setGate,
-  dp,
-  t,
-  lang,
-}: {
-  d: ReturnType<typeof devById>;
-  gate: GateForm;
-  setGate: (fn: (g: GateForm) => GateForm) => void;
-  dp: (key: string, vars?: Record<string, string | number>) => string;
-  t: (key: string, vars?: Record<string, string | number>) => string;
-  lang: string;
-}) {
-  const [error, setError] = useState("");
-  const [submitting, setSubmitting] = useState(false);
-  if (!d) return null;
-  const docs = [
-    d.docs.brochure && { key: "doc_brochure" },
-    d.docs.factsheet && { key: "doc_factsheet" },
-    d.docs.investor && { key: "doc_investor" },
-  ].filter(Boolean) as { key: string }[];
-  if (!docs.length) return null;
-
-  const submit = async () => {
-    const emailOk = /\S+@\S+\.\S+/.test(gate.email);
-    if (!gate.name.trim() || !emailOk || !gate.consent) {
-      setError(t("modal_gate_error"));
-      return;
-    }
-    setError("");
-    setSubmitting(true);
-    const ok = await submitEnquiry({
-      type: "download_gate",
-      name: gate.name.trim(),
-      email: gate.email.trim(),
-      phone: gate.phone.trim() || undefined,
-      developmentId: d.id,
-      developmentName: d.name,
-      consent: gate.consent,
-      pageLang: lang,
-    });
-    setSubmitting(false);
-    if (!ok) {
-      setError(t("form_submit_error"));
-      return;
-    }
-    setGate((g) => ({ ...g, submitted: true }));
-  };
-
-  return (
-    <section id="dp-downloads" className="bg-[#16313D] px-5 py-16 md:px-8 md:py-24">
-      <div className="mx-auto max-w-[680px] text-center">
-        <h2 className="mb-3 text-[30px] font-extrabold tracking-tight text-[#F9F5F3]">{dp("dl_title")}</h2>
-        <p className="mb-9 text-[15px] leading-relaxed text-white/72">{dp("dl_sub")}</p>
-
-        {gate.submitted ? (
-          <div className="flex flex-wrap justify-center gap-3">
-            {docs.map((doc) => (
-              <span
-                key={doc.key}
-                className="hi-pill inline-flex items-center gap-2 rounded-full bg-[#C1560F] px-6 py-3.5 text-[14px] font-bold text-white"
-              >
-                <Icon name="download" className="h-4 w-4" />
-                {dp(doc.key)}
-              </span>
-            ))}
-          </div>
-        ) : (
-          <div className="mx-auto max-w-[440px] text-left">
-            <div className="mb-4 grid grid-cols-1 gap-3.5">
-              <input
-                value={gate.name}
-                onChange={(e) => setGate((g) => ({ ...g, name: e.target.value }))}
-                placeholder={t("modal_gate_name")}
-                className="rounded-xl border border-white/25 bg-white/8 px-4 py-3.5 text-[14.5px] text-[#F9F5F3] placeholder:text-white/45"
-              />
-              <input
-                value={gate.email}
-                onChange={(e) => setGate((g) => ({ ...g, email: e.target.value }))}
-                placeholder={t("modal_gate_email")}
-                className="rounded-xl border border-white/25 bg-white/8 px-4 py-3.5 text-[14.5px] text-[#F9F5F3] placeholder:text-white/45"
-              />
-              <input
-                value={gate.phone}
-                onChange={(e) => setGate((g) => ({ ...g, phone: e.target.value }))}
-                placeholder={t("modal_gate_phone")}
-                className="rounded-xl border border-white/25 bg-white/8 px-4 py-3.5 text-[14.5px] text-[#F9F5F3] placeholder:text-white/45"
-              />
-            </div>
-            <label className="mb-5 flex cursor-pointer items-start gap-2.5">
-              <input
-                type="checkbox"
-                checked={gate.consent}
-                onChange={(e) => setGate((g) => ({ ...g, consent: e.target.checked }))}
-                className="mt-0.5"
-              />
-              <span className="text-[13px] leading-relaxed text-white/68">{t("modal_gate_consent")}</span>
-            </label>
-            {error && <div className="mb-4 text-[13px] text-[#E6A98C]">{error}</div>}
-            <button
-              onClick={submit}
-              disabled={submitting}
-              className="hi-pill w-full rounded-full bg-[#C1560F] py-3.5 text-[14.5px] font-bold text-white disabled:opacity-60"
-            >
-              {t("modal_gate_submit")}
-            </button>
-          </div>
-        )}
-      </div>
-    </section>
-  );
 }
 
 function RegisterPanel({

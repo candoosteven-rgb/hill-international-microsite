@@ -171,11 +171,13 @@ export default function DevCard({ d }: { d: Development }) {
             className="mb-4 inline-flex items-center gap-2.5 self-start rounded-full py-1.5 pl-2.5 pr-3.5"
             style={{ background: epcColors.bg, border: `1px solid ${epcColors.border}` }}
           >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/uploads/APD_Energy_Ratings.png" alt="EPC rating scale" className="h-5 w-4 flex-none object-contain" />
             <span className="text-[12px] font-bold tracking-wide" style={{ color: epcColors.fg }}>
               {t("epc_label")} {epc}
             </span>
             <span className="h-3 w-px" style={{ background: epcColors.border }} />
-            <Icon name="leaf" className="h-3.5 w-3.5 flex-none" style={{ color: epcColors.fg }} />
+            <Icon name="f_epc" className="h-3.5 w-3.5 flex-none" style={{ color: epcColors.fg }} />
             <span className="text-[12px] font-medium" style={{ color: epcColors.soft }}>
               {epc === "A" ? t("epc_benefit_lowest") : t("epc_benefit")}
             </span>

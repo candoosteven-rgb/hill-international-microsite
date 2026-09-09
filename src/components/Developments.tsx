@@ -178,6 +178,10 @@ export default function Developments() {
                   <span className="text-[12px] font-semibold uppercase tracking-[0.1em] text-[#8a9298]">
                     {t("zone_filter_prefix")}
                   </span>
+                  <svg width="20" height="20" viewBox="0 0 24 24" role="img" aria-label="London Underground" className="mr-0.5 flex-none">
+                    <circle cx="12" cy="12" r="8.6" fill="none" stroke="#DC241F" strokeWidth="2.8" />
+                    <rect x="1.6" y="10.35" width="20.8" height="3.3" fill="#1F3A47" />
+                  </svg>
                   {(["all", ...londonZones] as (number | "all")[]).map((z) => {
                     const active = zoneFilter === z;
                     return (
