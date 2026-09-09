@@ -30,14 +30,20 @@ const MAP_SRC: Record<string, string> = {
 // directions" link where we have one, or the development's own place/
 // locationLabel/region otherwise. No API key needed for this embed form.
 function mapEmbedSrc(d: NonNullable<ReturnType<typeof devById>>, pd: NonNullable<ReturnType<typeof pageDataFor>>): string {
-  let query = `${d.place || d.locationLabel || d.region}, UK`;
+  // Prefer the precise sales-suite address/coordinates already used for the
+  // "Get directions" link, where we have one - that's an exact pin. Otherwise
+  // search by the development's own name plus its area, since Hill's real
+  // developments are generally listed on Google Maps under that name and
+  // this resolves to the actual site far more often than an area name alone
+  // (which only centers the map on the general city/neighbourhood).
+  let query = `${d.name}, ${d.place || d.locationLabel || d.region}, UK`;
   const mapsUrl = pd.suite?.maps;
   if (mapsUrl) {
     try {
       const q = new URL(mapsUrl).searchParams.get("query");
       if (q) query = q;
     } catch {
-      // malformed URL - fall back to the place-based query above
+      // malformed URL - fall back to the name+place query above
     }
   }
   return `https://www.google.com/maps?q=${encodeURIComponent(query)}&output=embed`;
