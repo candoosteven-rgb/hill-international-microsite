@@ -102,7 +102,8 @@ export default function DevCard({ d }: { d: Development }) {
         {isComing && shots.length > 0 && (
           <div className="absolute inset-x-0 bottom-0 z-[3] px-4 pb-3.5 pt-11 bg-[linear-gradient(to_top,rgba(15,32,39,0.88)_0%,rgba(15,32,39,0.45)_55%,transparent_100%)]">
             <span className="inline-flex items-center gap-1.5 text-[12.5px] font-semibold text-[#F9F5F3]">
-              {t("teaser_first_look")}
+              <Icon name="eye" className="h-[15px] w-[15px] flex-none text-[#C98A6B]" strokeWidth={1.8} />
+              {d.id === "cambium-square" ? "Launching 20th September" : t("teaser_first_look")}
             </span>
           </div>
         )}

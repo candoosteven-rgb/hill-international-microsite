@@ -263,6 +263,12 @@ const paths: Record<string, React.ReactNode> = {
       <path d="M9.5 12l1.8 1.8L14.5 10" />
     </>
   ),
+  eye: (
+    <>
+      <path d="M2.5 12s3.6-6.2 9.5-6.2S21.5 12 21.5 12s-3.6 6.2-9.5 6.2S2.5 12 2.5 12z" />
+      <circle cx="12" cy="12" r="2.6" />
+    </>
+  ),
 };
 
 export default function Icon({
