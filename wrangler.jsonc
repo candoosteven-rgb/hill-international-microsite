@@ -1,8 +1,18 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "hillinternational",
+  "main": "worker/index.ts",
   "compatibility_date": "2026-09-07",
   "assets": {
-    "directory": "./out"
-  }
+    "directory": "./out",
+    "binding": "ASSETS"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "hillinternational-enquiries",
+      "database_id": "3adbbe20-40d1-405e-aa8a-a0c765b20516",
+      "migrations_dir": "migrations"
+    }
+  ]
 }

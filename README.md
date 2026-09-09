@@ -24,14 +24,19 @@ Open [http://localhost:3000](http://localhost:3000).
 
 All copy, development data, translations and interaction logic are extracted programmatically from the authoritative `.dc.html` design source (not retyped), so the four language dictionaries, the 29-development portfolio and every detail page are real content, not placeholders.
 
-## Known gap: imagery
+## Imagery
 
-The design handoff's local `uploads/...` image references were not included in the asset bundle (see the handoff's own README: *"should be re-sourced as owned assets/CDN in production, not hotlinked"*). Two kinds of image sources exist in the data:
+Real photos, per-development logos, and team headshots live in `public/uploads/`, matched to the `uploads/...` paths already referenced throughout `src/data/*.json` and a few components. `src/data/UPLOADS_MANIFEST.json` (generated from what's actually on disk) is checked by `resolveImage()`/`resolveLogo()` in `src/lib/image.ts` / `src/lib/logo.ts`: a real file is served as-is, anything still missing falls back to a deterministic brand-coloured placeholder SVG instead of a broken image. To add more real images, drop the file in `public/uploads/` under the exact path already referenced in the data, then regenerate the manifest (walk `public/uploads`, write relative paths to `UPLOADS_MANIFEST.json`).
 
-- **Hotlinked absolute URLs** (`hill.co.uk`, `millerhare.com`, Twemoji flag CDN) — used as-is.
-- **Local-only `uploads/...` paths** — no source file exists for these, so `src/lib/image.ts` renders a deterministic brand-coloured placeholder (an inline SVG, no network request) instead of a broken image.
+## Enquiry capture (Register interest / Downloads gate)
 
-Before shipping, swap `resolveImage()`/`placeholderFor()` calls for real, owned assets (ideally served from a CMS or CDN) using the same `uploads/...` paths as keys.
+The two lead-capture forms (`Register.tsx`, and the per-development "Downloads" gate in `DevelopmentPage.tsx`) POST to `/api/enquiry`, handled by a small Worker script (`worker/index.ts`) that runs alongside the static export — see `wrangler.jsonc`'s `main` + `assets` config. Requests that match a static file are served directly; everything else (just `/api/enquiry`) hits the Worker, which validates the payload and writes it to a Cloudflare D1 database (`hillinternational-enquiries`, binding `DB`).
+
+Schema lives in `migrations/`; the deploy workflow (`.github/workflows/deploy.yml`) runs `wrangler d1 migrations apply --remote` before every deploy, so schema changes ship automatically — add a new `NNNN_*.sql` file rather than editing an applied one.
+
+For local development: `npx wrangler dev` runs the Worker + a local D1 emulation together (`npx wrangler d1 migrations apply hillinternational-enquiries --local` first, once). Plain `next dev` / `next build` + static file serving won't have `/api/enquiry` available, since that only exists inside the Worker runtime.
+
+**Not yet wired up:** email notifications on new enquiries. Submissions are reliably stored in D1, but nobody is notified when one comes in — someone needs to query the database (`npx wrangler d1 execute hillinternational-enquiries --remote --command "SELECT * FROM enquiries ORDER BY created_at DESC"`) to see them. Adding email requires either Cloudflare's own Email Service (needs the site's domain onboarded to Cloudflare DNS) or a third-party sender like Resend/Postmark (needs an account + API key).
 
 ## Design tokens
 

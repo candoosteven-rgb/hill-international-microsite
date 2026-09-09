@@ -7,6 +7,7 @@ import { resolveImage } from "@/lib/image";
 import { resolveLogo } from "@/lib/logo";
 import { useLanguage } from "@/lib/i18n";
 import { useAppState } from "@/lib/app-state";
+import { submitEnquiry } from "@/lib/enquiry";
 import Icon from "@/components/Icon";
 
 const TABS = [
@@ -30,7 +31,7 @@ interface GateForm {
 const EMPTY_GATE: GateForm = { name: "", email: "", phone: "", consent: false, submitted: false };
 
 export default function DevelopmentPage() {
-  const { t, dp } = useLanguage();
+  const { t, dp, lang } = useLanguage();
   const { pageDevId, closeDevPage, liked, toggleLiked, startPriority } = useAppState();
   const [tab, setTab] = useState<TabKey>("overview");
   const [locCat, setLocCat] = useState("cat_transport");
@@ -441,7 +442,7 @@ export default function DevelopmentPage() {
         </section>
       )}
 
-      <DownloadsGate d={d} gate={gate} setGate={setGate} dp={dp} t={t} />
+      <DownloadsGate d={d} gate={gate} setGate={setGate} dp={dp} t={t} lang={lang} />
 
       {isComingWithNote(d.status) && (
         <div className="bg-[#F5F5F7] px-5 py-12 text-center md:px-8">
@@ -493,14 +494,17 @@ function DownloadsGate({
   setGate,
   dp,
   t,
+  lang,
 }: {
   d: ReturnType<typeof devById>;
   gate: GateForm;
   setGate: (fn: (g: GateForm) => GateForm) => void;
   dp: (key: string, vars?: Record<string, string | number>) => string;
   t: (key: string, vars?: Record<string, string | number>) => string;
+  lang: string;
 }) {
   const [error, setError] = useState("");
+  const [submitting, setSubmitting] = useState(false);
   if (!d) return null;
   const docs = [
     d.docs.brochure && { key: "doc_brochure" },
@@ -509,13 +513,29 @@ function DownloadsGate({
   ].filter(Boolean) as { key: string }[];
   if (!docs.length) return null;
 
-  const submit = () => {
+  const submit = async () => {
     const emailOk = /\S+@\S+\.\S+/.test(gate.email);
     if (!gate.name.trim() || !emailOk || !gate.consent) {
       setError(t("modal_gate_error"));
       return;
     }
     setError("");
+    setSubmitting(true);
+    const ok = await submitEnquiry({
+      type: "download_gate",
+      name: gate.name.trim(),
+      email: gate.email.trim(),
+      phone: gate.phone.trim() || undefined,
+      developmentId: d.id,
+      developmentName: d.name,
+      consent: gate.consent,
+      pageLang: lang,
+    });
+    setSubmitting(false);
+    if (!ok) {
+      setError(t("form_submit_error"));
+      return;
+    }
     setGate((g) => ({ ...g, submitted: true }));
   };
 
@@ -571,7 +591,8 @@ function DownloadsGate({
             {error && <div className="mb-4 text-[13px] text-[#E6A98C]">{error}</div>}
             <button
               onClick={submit}
-              className="hi-pill w-full rounded-full bg-[#C1560F] py-3.5 text-[14.5px] font-bold text-white"
+              disabled={submitting}
+              className="hi-pill w-full rounded-full bg-[#C1560F] py-3.5 text-[14.5px] font-bold text-white disabled:opacity-60"
             >
               {t("modal_gate_submit")}
             </button>

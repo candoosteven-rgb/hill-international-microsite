@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { budgetLabels, budgets, langs, regions } from "@/lib/data";
 import { useLanguage } from "@/lib/i18n";
 import { useAppState } from "@/lib/app-state";
+import { submitEnquiry } from "@/lib/enquiry";
 
 interface RiForm {
   name: string;
@@ -36,10 +37,11 @@ function pillStyle(active: boolean) {
 }
 
 export default function Register() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const { riSubmitted, setRiSubmitted, riDefaultRegion } = useAppState();
   const [form, setForm] = useState<RiForm>(EMPTY_FORM);
   const [error, setError] = useState("");
+  const [submitting, setSubmitting] = useState(false);
 
   useEffect(() => {
     if (!riDefaultRegion) return;
@@ -60,7 +62,7 @@ export default function Register() {
     });
   };
 
-  const submit = () => {
+  const submit = async () => {
     const emailOk = /\S+@\S+\.\S+/.test(form.email);
     const valid = form.name.trim() && emailOk && form.regions.length && form.motivation && form.budget && form.language && form.consent;
     if (!valid) {
@@ -68,6 +70,24 @@ export default function Register() {
       return;
     }
     setError("");
+    setSubmitting(true);
+    const ok = await submitEnquiry({
+      type: "register",
+      name: form.name.trim(),
+      email: form.email.trim(),
+      phone: form.phone.trim() || undefined,
+      regions: form.regions,
+      motivation: form.motivation,
+      budget: form.budget,
+      preferredLanguage: form.language,
+      consent: form.consent,
+      pageLang: lang,
+    });
+    setSubmitting(false);
+    if (!ok) {
+      setError(t("form_submit_error"));
+      return;
+    }
     setRiSubmitted(true);
   };
 
@@ -198,7 +218,8 @@ export default function Register() {
 
         <button
           onClick={submit}
-          className="hi-pill inline-flex items-center gap-2.5 rounded-full bg-[#C1560F] px-8 py-4 text-[15.5px] font-bold text-white shadow-[0_14px_30px_rgba(46,125,100,0.4)]"
+          disabled={submitting}
+          className="hi-pill inline-flex items-center gap-2.5 rounded-full bg-[#C1560F] px-8 py-4 text-[15.5px] font-bold text-white shadow-[0_14px_30px_rgba(46,125,100,0.4)] disabled:opacity-60"
         >
           {t("register_submit")}
         </button>
