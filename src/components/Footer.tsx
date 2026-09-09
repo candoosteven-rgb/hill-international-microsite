@@ -60,7 +60,7 @@ export default function Footer({ onDevelopmentsClick }: { onDevelopmentsClick?: 
               <img
                 src="/uploads/linkedin-logo-linkedin-icon-transparent-free-png.webp"
                 alt=""
-                className="h-4 w-4 flex-none object-contain"
+                className="h-6 w-6 flex-none object-contain"
               />
               LinkedIn
             </a>
