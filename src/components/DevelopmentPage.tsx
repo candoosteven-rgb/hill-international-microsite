@@ -732,6 +732,174 @@ export default function DevelopmentPage({ id }: { id: string }) {
       <NearbyDevs id={d.id} />
 
       <Footer onDevelopmentsClick={goDevelopments} />
+
+      <DevStickyPanel d={d} dp={dp} t={t} lang={lang} />
+    </div>
+  );
+}
+
+function DevStickyPanel({
+  d,
+  dp,
+  t,
+  lang,
+}: {
+  d: NonNullable<ReturnType<typeof devById>>;
+  dp: (key: string, vars?: Record<string, string | number>) => string;
+  t: (key: string, vars?: Record<string, string | number>) => string;
+  lang: string;
+}) {
+  const [visible, setVisible] = useState(false);
+  const [minimized, setMinimized] = useState(false);
+  const [form, setForm] = useState({ name: "", email: "", phone: "", consent: false });
+  const [error, setError] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+
+  useEffect(() => {
+    try {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      if (sessionStorage.getItem("hi_pg_sticky_minimized") === "1") setMinimized(true);
+    } catch {
+      // sessionStorage unavailable (private mode, etc.) - default to expanded
+    }
+  }, []);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const avail = document.getElementById("dp-availability");
+      const show = avail ? window.scrollY > avail.offsetTop : window.scrollY > 700;
+      setVisible(show);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  if (!visible) return null;
+
+  const minimize = () => {
+    try {
+      sessionStorage.setItem("hi_pg_sticky_minimized", "1");
+    } catch {
+      // ignore
+    }
+    setMinimized(true);
+  };
+
+  const expand = () => {
+    try {
+      sessionStorage.removeItem("hi_pg_sticky_minimized");
+    } catch {
+      // ignore
+    }
+    setMinimized(false);
+  };
+
+  const submit = async () => {
+    const emailOk = /\S+@\S+\.\S+/.test(form.email);
+    if (!form.name.trim() || !emailOk || !form.consent) {
+      setError(t("modal_gate_error"));
+      return;
+    }
+    setError("");
+    setSubmitting(true);
+    const ok = await submitEnquiry({
+      type: "register",
+      name: form.name.trim(),
+      email: form.email.trim(),
+      phone: form.phone.trim() || undefined,
+      developmentId: d.id,
+      developmentName: d.name,
+      consent: form.consent,
+      pageLang: lang,
+    });
+    setSubmitting(false);
+    if (!ok) {
+      setError(t("form_submit_error"));
+      return;
+    }
+    setSubmitted(true);
+  };
+
+  if (minimized) {
+    return (
+      <button
+        onClick={expand}
+        aria-label={dp("cta_register")}
+        title={dp("cta_register")}
+        className="hi-pop fixed top-1/2 right-0 z-[150] hidden -translate-y-1/2 flex-col items-center gap-2 rounded-l-[14px] bg-[#C1560F] px-2.5 py-4 text-white shadow-[-8px_0_24px_rgba(10,20,25,0.3)] lg:flex"
+      >
+        <Icon name="message" className="h-4 w-4" strokeWidth={2} />
+        <span className="text-[12px] font-bold" style={{ writingMode: "vertical-rl", textOrientation: "mixed" }}>
+          {dp("cta_register")}
+        </span>
+      </button>
+    );
+  }
+
+  return (
+    <div className="hi-in fixed top-1/2 right-[30px] z-[150] hidden max-h-[calc(100vh-130px)] w-[320px] -translate-y-1/2 overflow-auto lg:block">
+      <div className="relative rounded-[20px] bg-[#122530] p-6.5 shadow-[0_24px_50px_rgba(10,20,25,0.4)]">
+        <button
+          onClick={minimize}
+          aria-label="Minimise"
+          title="Minimise"
+          className="absolute right-3.5 top-3.5 flex h-6.5 w-6.5 items-center justify-center rounded-full bg-white/10 text-white/70"
+        >
+          <Icon name="minus" className="h-3 w-3" strokeWidth={2.4} />
+        </button>
+        <div className="mb-0.5 pr-5 text-[20px] font-bold tracking-tight text-[#F9F5F3]">{dp("sticky_title")}</div>
+        <div className="mb-5 text-[12.5px] font-semibold text-white/55">{d.name}</div>
+        {submitted ? (
+          <div className="hi-in flex items-start gap-3">
+            <span className="flex h-8.5 w-8.5 flex-none items-center justify-center rounded-full bg-[rgba(31,164,92,0.18)]">
+              <Icon name="check" className="hi-check h-4 w-4 text-[#5FD39A]" strokeWidth={2.4} />
+            </span>
+            <p className="text-[13.5px] leading-relaxed text-white/82">{dp("reg_thanks")}</p>
+          </div>
+        ) : (
+          <>
+            <div className="mb-3.5 flex flex-col gap-2.5">
+              <input
+                value={form.name}
+                onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
+                placeholder={t("modal_gate_name")}
+                className="w-full rounded-[10px] border border-white/22 bg-white/6 px-3.5 py-3 text-[13.5px] text-[#F9F5F3] placeholder:text-white/45"
+              />
+              <input
+                value={form.email}
+                onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
+                placeholder={t("modal_gate_email")}
+                className="w-full rounded-[10px] border border-white/22 bg-white/6 px-3.5 py-3 text-[13.5px] text-[#F9F5F3] placeholder:text-white/45"
+              />
+              <input
+                value={form.phone}
+                onChange={(e) => setForm((f) => ({ ...f, phone: e.target.value }))}
+                placeholder={t("modal_gate_phone")}
+                className="w-full rounded-[10px] border border-white/22 bg-white/6 px-3.5 py-3 text-[13.5px] text-[#F9F5F3] placeholder:text-white/45"
+              />
+            </div>
+            <label className="mb-3.5 flex cursor-pointer items-start gap-2.5">
+              <input
+                type="checkbox"
+                checked={form.consent}
+                onChange={(e) => setForm((f) => ({ ...f, consent: e.target.checked }))}
+                className="hi-checkbox mt-0.5"
+              />
+              <span className="text-[12px] leading-relaxed text-white/60">{t("modal_gate_consent")}</span>
+            </label>
+            {error && <div className="mb-3 text-[12.5px] text-[#E6A98C]">{error}</div>}
+            <button
+              onClick={submit}
+              disabled={submitting}
+              className="hi-pill flex w-full items-center justify-center rounded-full bg-[#C1560F] py-3.5 text-[14px] font-bold text-white shadow-[0_12px_26px_rgba(193,86,15,0.34)] disabled:opacity-60"
+            >
+              {dp("cta_register")}
+            </button>
+          </>
+        )}
+      </div>
     </div>
   );
 }
