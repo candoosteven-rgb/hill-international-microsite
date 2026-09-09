@@ -1,5 +1,12 @@
 /// <reference path="./worker-configuration.d.ts" />
 
+declare global {
+  interface Env {
+    // Secret - set via `wrangler secret put BREVO_API_KEY`, never committed.
+    BREVO_API_KEY?: string;
+  }
+}
+
 type EnquiryBody = {
   type?: string;
   name?: string;
@@ -18,11 +25,76 @@ type EnquiryBody = {
 const EMAIL_RE = /^\S+@\S+\.\S+$/;
 const ALLOWED_TYPES = new Set(["register", "download_gate"]);
 
+const NOTIFY_TO = "InternationalEnquiries@hill.co.uk";
+const NOTIFY_FROM = { email: "sales@email.hill.co.uk", name: "Hill International Microsite" };
+
 function badRequest(message: string): Response {
   return Response.json({ ok: false, error: message }, { status: 400 });
 }
 
-async function handleEnquiry(request: Request, env: Env): Promise<Response> {
+function escapeHtml(s: string): string {
+  return s.replace(/[<>&"]/g, (c) => ({ "<": "&lt;", ">": "&gt;", "&": "&amp;", '"': "&quot;" })[c] as string);
+}
+
+function buildEmail(body: EnquiryBody): { subject: string; text: string; html: string } {
+  const rows: [string, string][] = [
+    ["Name", body.name || ""],
+    ["Email", body.email || ""],
+    ["Phone", body.phone || "-"],
+  ];
+
+  if (body.type === "download_gate") {
+    rows.push(["Development", body.developmentName || body.developmentId || "-"]);
+  } else {
+    rows.push(["Regions", (body.regions || []).join(", ") || "-"]);
+    rows.push(["Looking to", body.motivation || "-"]);
+    rows.push(["Budget", body.budget || "-"]);
+    rows.push(["Preferred language", body.preferredLanguage || "-"]);
+  }
+  rows.push(["Site language", body.pageLang || "-"]);
+
+  const subject =
+    body.type === "download_gate"
+      ? `New downloads enquiry: ${body.name} - ${body.developmentName || body.developmentId || ""}`
+      : `New register-interest enquiry: ${body.name}`;
+
+  const text = rows.map(([k, v]) => `${k}: ${v}`).join("\n");
+  const html = `<table cellpadding="6" cellspacing="0">${rows
+    .map(([k, v]) => `<tr><td><strong>${escapeHtml(k)}</strong></td><td>${escapeHtml(v)}</td></tr>`)
+    .join("")}</table>`;
+
+  return { subject, text, html };
+}
+
+async function sendNotificationEmail(body: EnquiryBody, env: Env): Promise<void> {
+  if (!env.BREVO_API_KEY) return;
+  const { subject, text, html } = buildEmail(body);
+  try {
+    const res = await fetch("https://api.brevo.com/v3/smtp/email", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        "api-key": env.BREVO_API_KEY,
+      },
+      body: JSON.stringify({
+        sender: NOTIFY_FROM,
+        to: [{ email: NOTIFY_TO }],
+        replyTo: body.email ? { email: body.email, name: body.name } : undefined,
+        subject,
+        textContent: text,
+        htmlContent: html,
+      }),
+    });
+    if (!res.ok) {
+      console.error("Brevo send failed", res.status, await res.text());
+    }
+  } catch (err) {
+    console.error("Brevo send threw", err);
+  }
+}
+
+async function handleEnquiry(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
   let body: EnquiryBody;
   try {
     body = await request.json();
@@ -61,11 +133,15 @@ async function handleEnquiry(request: Request, env: Env): Promise<Response> {
     )
     .run();
 
+  // Don't make the visitor wait on (or fail because of) the notification email -
+  // the submission is already safely stored in D1 either way.
+  ctx.waitUntil(sendNotificationEmail({ ...body, name, email }, env));
+
   return Response.json({ ok: true });
 }
 
 export default {
-  async fetch(request: Request, env: Env): Promise<Response> {
+  async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
     const url = new URL(request.url);
 
     if (url.pathname === "/api/enquiry") {
@@ -73,7 +149,7 @@ export default {
         return new Response("Method Not Allowed", { status: 405, headers: { Allow: "POST" } });
       }
       try {
-        return await handleEnquiry(request, env);
+        return await handleEnquiry(request, env, ctx);
       } catch (err) {
         console.error("enquiry insert failed", err);
         return Response.json({ ok: false, error: "Server error" }, { status: 500 });
