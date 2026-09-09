@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { devById, statusMetaFor } from "@/lib/data";
 import { devBlurb } from "@/lib/blurb";
 import { resolveImage, buildShots } from "@/lib/image";
@@ -12,18 +12,33 @@ import Icon from "@/components/Icon";
 export default function DevOverviewModal() {
   const { t, dp } = useLanguage();
   const { devModalId, closeDevModal, openDevPage, addRecent } = useAppState();
+  const [shotList, setShotList] = useState<string[]>([]);
+  const [shotIdx, setShotIdx] = useState(0);
 
   useEffect(() => {
     if (devModalId) addRecent(devModalId);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [devModalId]);
 
+  useEffect(() => {
+    const dev = devModalId ? devById(devModalId) : undefined;
+    setShotList(dev ? buildShots(dev) : []);
+    setShotIdx(0);
+  }, [devModalId]);
+
   if (!devModalId) return null;
   const d = devById(devModalId);
   if (!d) return null;
 
+  const dropBrokenShot = () => {
+    setShotList((list) => {
+      const next = list.filter((_, i) => i !== shotIdx);
+      setShotIdx((i) => Math.min(i, Math.max(0, next.length - 1)));
+      return next;
+    });
+  };
+
   const status = statusMetaFor(d, t);
-  const shots = buildShots(d);
   const blurb = devBlurb(d, dp);
   const logoSrc = resolveLogo(d.logo, d.name);
 
@@ -46,8 +61,13 @@ export default function DevOverviewModal() {
         </button>
 
         <div className="relative h-[220px] overflow-hidden rounded-t-[22px] bg-[repeating-linear-gradient(45deg,#dfe3e2,#dfe3e2_10px,#eceeec_10px,#eceeec_20px)] md:h-[280px]">
-          {shots.length ? (
-            <img src={resolveImage(shots[0], d.name)} alt={d.name} className="h-full w-full object-cover" />
+          {shotList.length ? (
+            <img
+              src={resolveImage(shotList[shotIdx], d.name)}
+              alt={d.name}
+              onError={dropBrokenShot}
+              className="h-full w-full object-cover"
+            />
           ) : (
             <div className="hi-hatch absolute inset-0 flex flex-col items-center justify-center gap-4 bg-[linear-gradient(158deg,#27454F_0%,#162C35_62%,#101F26_100%)] p-10 text-center">
               <Icon name="building" className="h-10 w-10 text-[#C98A6B]" />

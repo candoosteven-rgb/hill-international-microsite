@@ -1,31 +1,47 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { useLanguage } from "@/lib/i18n";
-import { regions } from "@/lib/data";
-import { useAppState } from "@/lib/app-state";
+import { resolveImage } from "@/lib/image";
+
+const SLIDES = [
+  "uploads/opt/london-skyline.jpg",
+  "uploads/canalside-quarter-dusk.png",
+  "uploads/opt/north-gate-park-211a2098.jpg",
+  "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2024-09/Plot%2093%20Living%2C%20Dining%2C%20Kitchen%20%283%29.jpg.webp?h=790be497&itok=5MTdgoKp",
+];
+
+const SLIDE_MS = 6500;
 
 export default function Hero() {
   const { t } = useLanguage();
-  const { setRegionFilter } = useAppState();
+  const [slide, setSlide] = useState(0);
 
-  const goRegion = (region: string) => {
-    setRegionFilter(region);
-    document.getElementById("hi-developments")?.scrollIntoView({ behavior: "smooth" });
-  };
+  useEffect(() => {
+    const id = setInterval(() => setSlide((s) => (s + 1) % SLIDES.length), SLIDE_MS);
+    return () => clearInterval(id);
+  }, []);
 
   return (
     <section
       className="relative overflow-hidden"
       style={{ height: "min(880px,92vh)", minHeight: 560, background: "#0E2028" }}
     >
-      <div
-        aria-hidden
-        className="absolute inset-0"
-        style={{
-          backgroundImage:
-            "radial-gradient(1100px 620px at 82% 8%, rgba(111,168,214,0.22), transparent 60%), radial-gradient(900px 700px at 8% 92%, rgba(193,86,15,0.22), transparent 60%), linear-gradient(160deg,#12262F 0%,#0E2028 55%,#0D1214 100%)",
-        }}
-      />
+      {SLIDES.map((src, i) => (
+        <div
+          key={src}
+          aria-hidden
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `url("${resolveImage(src, "Hill International")}")`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            opacity: i === slide ? 1 : 0,
+            transition: "opacity 1.1s ease",
+            zIndex: i === slide ? 1 : 0,
+          }}
+        />
+      ))}
       <div
         aria-hidden
         className="absolute inset-0 z-[2]"
@@ -36,14 +52,12 @@ export default function Hero() {
       />
       <div className="absolute inset-x-0 bottom-0 z-[3] px-5 pb-14 md:px-10">
         <div className="mx-auto max-w-[1440px]">
-          <span className="hi-eyebrow mb-4 block text-[#C98A6B]">{t("hero_a_eyebrow")}</span>
           <h1
             className="max-w-[1180px] font-extrabold text-[#F9F5F3]"
             style={{ fontSize: "clamp(38px,6.4vw,92px)", lineHeight: 0.98, letterSpacing: "-0.035em" }}
           >
             {t("hero_a_title_pre")} <em className="not-italic text-[#C1560F]">{t("hero_a_title_em")}</em>
           </h1>
-          <p className="mt-6 max-w-[640px] text-[17px] leading-relaxed text-white/75">{t("hero_a_sub")}</p>
 
           <div className="mt-9 flex flex-wrap items-center justify-between gap-6">
             <div className="flex flex-wrap items-center gap-4">
@@ -60,15 +74,15 @@ export default function Hero() {
                 {t("hero_cta2")}
               </a>
             </div>
-            <div className="flex flex-wrap items-center gap-2">
-              {regions.map((r) => (
+            <div className="flex items-center gap-2">
+              {SLIDES.map((src, i) => (
                 <button
-                  key={r}
-                  onClick={() => goRegion(r)}
-                  className="hi-pill rounded-full border border-white/25 bg-white/8 px-4 py-2 text-[13px] font-semibold text-white/85"
-                >
-                  {r}
-                </button>
+                  key={src}
+                  onClick={() => setSlide(i)}
+                  aria-label={`Show slide ${i + 1}`}
+                  className="h-2 rounded-full transition-all"
+                  style={{ width: i === slide ? 22 : 8, background: i === slide ? "#F9F5F3" : "rgba(249,245,243,0.4)" }}
+                />
               ))}
             </div>
           </div>

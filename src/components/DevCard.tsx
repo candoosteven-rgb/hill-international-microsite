@@ -29,13 +29,21 @@ export default function DevCard({ d }: { d: Development }) {
   const { t } = useLanguage();
   const { liked, toggleLiked, compareIds, toggleCompare, openDevModal, startPriority } = useAppState();
   const [shot, setShot] = useState(0);
+  const [shots, setShots] = useState(() => buildShots(d).slice(0, 3));
+
+  const dropBrokenShot = () => {
+    setShots((list) => {
+      const next = list.filter((_, i) => i !== shot);
+      setShot((s) => Math.min(s, Math.max(0, next.length - 1)));
+      return next;
+    });
+  };
 
   const epc = epcOf(d);
   const epcColors = epcColorsOf(epc);
   const status = statusMetaFor(d, t);
   const priceLabel = priceLabelFor(d, t);
   const priceIsGuide = false;
-  const shots = buildShots(d).slice(0, 3);
   const isComing = d.status !== "live";
   const isLiked = liked.has(d.id);
   const isComparing = compareIds.includes(d.id);
@@ -53,6 +61,7 @@ export default function DevCard({ d }: { d: Development }) {
               src={resolveImage(shots[shot], d.name)}
               alt={d.name}
               loading="lazy"
+              onError={dropBrokenShot}
               className="absolute inset-0 h-full w-full object-cover"
             />
             {shots.length > 1 && (

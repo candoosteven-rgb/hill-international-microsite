@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 import { devById, epcColorsOf, epcOf, gbp, pageDataFor, priceLabelFor, statusMetaFor } from "@/lib/data";
 import { devBlurb, devBlurb2, devHeadline } from "@/lib/blurb";
-import { resolveImage } from "@/lib/image";
+import { resolveImage, placeholderFor } from "@/lib/image";
 import { resolveLogo } from "@/lib/logo";
 import { useLanguage } from "@/lib/i18n";
 import { useAppState } from "@/lib/app-state";
@@ -282,6 +282,10 @@ export default function DevelopmentPage() {
                   <img
                     src={resolveImage(g.src, dp(g.cap))}
                     alt={dp(g.cap)}
+                    onError={(e) => {
+                      e.currentTarget.onerror = null;
+                      e.currentTarget.src = placeholderFor(g.src, dp(g.cap));
+                    }}
                     className="aspect-[4/3] w-full object-cover"
                   />
                   <div className="bg-[#F5F5F7] px-4 py-2.5 text-[13px] font-medium text-[#5C6B71]">{dp(g.cap)}</div>

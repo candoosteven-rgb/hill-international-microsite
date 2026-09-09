@@ -24,6 +24,8 @@ const paths: Record<string, React.ReactNode> = {
       <path d="M6 6l12 12M18 6L6 18" />
     </>
   ),
+  minus: <path d="M6 12h12" />,
+  message: <path d="M4 4h16v12H7l-3 3z" strokeLinejoin="round" />,
   chevronDown: <path d="M6 9l6 6 6-6" />,
   chevronLeft: <path d="M15 18l-6-6 6-6" />,
   chevronRight: <path d="M9 18l6-6-6-6" />,
