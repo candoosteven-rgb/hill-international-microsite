@@ -56,7 +56,12 @@ export default function Footer({ onDevelopmentsClick }: { onDevelopmentsClick?: 
               rel="noopener"
               className="hi-link flex items-center gap-1.5 text-[14px] text-white/68"
             >
-              <Icon name="external" className="h-4 w-4 flex-none" />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/uploads/linkedin-logo-linkedin-icon-transparent-free-png.webp"
+                alt=""
+                className="h-4 w-4 flex-none object-contain"
+              />
               LinkedIn
             </a>
           </div>
