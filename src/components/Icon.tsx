@@ -125,6 +125,77 @@ const paths: Record<string, React.ReactNode> = {
     <path d="M5 19c9 0 14-5 14-14C10 5 5 10 5 19z" />
   ),
   shield: <path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z" />,
+  landmark: (
+    <>
+      <circle cx="12" cy="12" r="8.5" />
+      <path d="M12 3.5v2.2M12 18.3v2.2M3.5 12h2.2M18.3 12h2.2M6 6l1.6 1.6M16.4 16.4L18 18M18 6l-1.6 1.6M7.6 16.4L6 18" />
+      <circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none" />
+    </>
+  ),
+  towers: (
+    <>
+      <path d="M3 21h18" />
+      <path d="M6 21V13l3-2 3 2v8" />
+      <path d="M13 21V8l3-3 3 3v13" />
+    </>
+  ),
+  gym: (
+    <>
+      <path d="M6 7v10M18 7v10" />
+      <path d="M2 10v4M22 10v4" />
+      <path d="M6 12h12" />
+    </>
+  ),
+  nursery: (
+    <>
+      <circle cx="12" cy="12.5" r="7" />
+      <path d="M9.3 9c.4-1.3 1.4-2 2.4-2" />
+      <path d="M9.2 14.3c.8.7 1.8 1.1 2.8 1.1s2-.4 2.8-1.1" />
+      <circle cx="12" cy="12.6" r="1" fill="currentColor" stroke="none" />
+    </>
+  ),
+  school: (
+    <>
+      <path d="M12 3.5 2.5 8 12 12.5 21.5 8 12 3.5z" />
+      <path d="M6.5 10.2V15c0 1.7 2.5 3 5.5 3s5.5-1.3 5.5-3v-4.8" />
+      <path d="M21.5 8v5" />
+    </>
+  ),
+  woodland: (
+    <>
+      <path d="M8 3.5 3.6 10h2.1L3 14.6h10L10.3 10h2.1L8 3.5z" />
+      <path d="M8 14.6V20.5" />
+      <path d="M17.5 7.5 14.6 12h1.5l-1.9 3.2h6.6L18.9 12h1.5L17.5 7.5z" />
+      <path d="M17.5 15.2V20.5" />
+    </>
+  ),
+  supermarket: (
+    <>
+      <path d="M3 4h2l2.4 10.4a2 2 0 0 0 2 1.6h7.3a2 2 0 0 0 2-1.55L20.5 8H6.2" />
+      <circle cx="10" cy="20" r="1.4" />
+      <circle cx="17" cy="20" r="1.4" />
+    </>
+  ),
+  terrace: (
+    <>
+      <rect x="3" y="3" width="18" height="8" rx="1.5" />
+      <path d="M3 15h18M6 15v5M12 15v5M18 15v5" />
+    </>
+  ),
+  yield: (
+    <>
+      <path d="M4 19h16" />
+      <path d="M5 15l4.5-4.5 3.5 3L19 7" />
+      <path d="M15 7h4v4" />
+    </>
+  ),
+  stadium: (
+    <>
+      <ellipse cx="12" cy="17.2" rx="9" ry="3.3" />
+      <path d="M4.6 15.6A8 8 0 0 1 19.4 15.6" />
+      <path d="M4.6 15.6v1.6M19.4 15.6v1.6" />
+    </>
+  ),
   f_homes: (
     <>
       <path d="M3 11l9-8 9 8" />
