@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
-import { devById, epcColorsOf, epcOf, gbp, pageDataFor, priceLabelFor, statusMetaFor } from "@/lib/data";
+import { devById, gbp, pageDataFor, priceLabelFor, statusMetaFor } from "@/lib/data";
 import { devBlurb, devBlurb2, devHeadline, devText } from "@/lib/blurb";
 import { autoFacts } from "@/lib/facts";
 import { resolveImage, placeholderFor, buildShots } from "@/lib/image";
@@ -55,15 +55,19 @@ const LOC_CAT_ICON_NAMES = new Set(["cat_transport", "cat_food", "cat_green", "c
 const locCatIconName = (k: string) =>
   (LOC_CAT_ICON_NAMES.has(k) ? k : "cat_transport") as Parameters<typeof Icon>[0]["name"];
 
-const TABS = [
-  { key: "overview", nav: "nav_overview" },
-  { key: "gallery", nav: "nav_gallery" },
-  { key: "avail", nav: "nav_avail" },
-  { key: "spec", nav: "nav_spec" },
-  { key: "location", nav: "nav_location" },
+// A jump-menu, not a tab switcher - every section below is always rendered
+// (when it has content) and stacked on the page; nav links just scroll to the
+// matching section id. The nav's own order doesn't need to match the section
+// order on the page (it doesn't, exactly, in the design either).
+const NAV_LINKS = [
+  { key: "overview", id: "dp-overview", nav: "nav_overview" },
+  { key: "gallery", id: "dp-gallery", nav: "nav_gallery" },
+  { key: "avail", id: "dp-availability", nav: "nav_avail" },
+  { key: "spec", id: "dp-spec", nav: "nav_spec" },
+  { key: "location", id: "dp-location", nav: "nav_location" },
 ] as const;
 
-type TabKey = (typeof TABS)[number]["key"];
+type SectionKey = (typeof NAV_LINKS)[number]["key"];
 
 const FACT_ICON_NAMES: Parameters<typeof Icon>[0]["name"][] = [
   "f_homes",
@@ -82,7 +86,6 @@ export default function DevelopmentPage({ id }: { id: string }) {
   const { t, dp, lang } = useLanguage();
   const router = useRouter();
   const { liked, toggleLiked, addRecent } = useAppState();
-  const [tab, setTab] = useState<TabKey>("overview");
   const [locCat, setLocCat] = useState("cat_transport");
   const [avBuilding, setAvBuilding] = useState("all");
   const [avBeds, setAvBeds] = useState("all");
@@ -129,19 +132,21 @@ export default function DevelopmentPage({ id }: { id: string }) {
 
   if (!d || !pd) return null;
 
-  const tabOn: Record<TabKey, boolean> = {
+  const sectionOn: Record<SectionKey, boolean> = {
     overview: true,
     gallery: pd.gallery.length > 0,
     avail: pd.plots.length > 0,
     spec: pd.spec.length > 0,
     location: d.status !== "coming-soon" || !!d.hasMap,
   };
-  const visibleTabs = TABS.filter((tb) => tabOn[tb.key]);
+  const navLinks = NAV_LINKS.filter((n) => sectionOn[n.key]);
+
+  const scrollToSection = (elId: string) => {
+    const el = document.getElementById(elId);
+    if (el) window.scrollTo({ top: el.offsetTop - 74, behavior: "smooth" });
+  };
 
   const status = statusMetaFor(d, t);
-  // Pre-completion developments don't have a real EPC certificate yet.
-  const epc = d.status === "coming-soon" ? null : epcOf(d);
-  const epcColors = epcColorsOf(epc);
   const isLiked = liked.has(d.id);
   const priceLabel = priceLabelFor(d, t);
   const tagline = d.tagline || t("dev_tagline", { region: d.region });
@@ -176,14 +181,13 @@ export default function DevelopmentPage({ id }: { id: string }) {
             </span>
           </div>
           <nav className="hi-scroller flex max-w-full items-center gap-5 overflow-x-auto">
-            {visibleTabs.map((tb) => (
+            {navLinks.map((n) => (
               <button
-                key={tb.key}
-                onClick={() => setTab(tb.key)}
-                className="whitespace-nowrap text-[13.5px] font-semibold"
-                style={{ color: tab === tb.key ? "#F9F5F3" : "rgba(249,245,243,0.6)" }}
+                key={n.key}
+                onClick={() => scrollToSection(n.id)}
+                className="whitespace-nowrap text-[13.5px] font-semibold text-[rgba(249,245,243,0.68)] hover:text-[#F9F5F3]"
               >
-                {dp(tb.nav)}
+                {dp(n.nav)}
               </button>
             ))}
           </nav>
@@ -260,30 +264,12 @@ export default function DevelopmentPage({ id }: { id: string }) {
                   <span className="text-[14.5px] font-bold text-[#C98A6B]">{d.accessNote}</span>
                 </>
               )}
-              {epc && (
-                <span
-                  className="inline-flex items-center gap-2.5 rounded-full py-2 pl-3 pr-4"
-                  style={{ background: epcColors.bg, border: `1px solid ${epcColors.border}` }}
-                >
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/uploads/APD_Energy_Ratings.png" alt="EPC rating scale" className="h-5.5 w-4.5 flex-none object-contain" />
-                  <span className="text-[13px] font-bold" style={{ color: epcColors.fg }}>
-                    {t("epc_label")} {epc}
-                  </span>
-                  <span className="h-3.5 w-px" style={{ background: epcColors.border }} />
-                  <Icon name="f_epc" className="h-3.5 w-3.5 flex-none" style={{ color: epcColors.fg }} />
-                  <span className="text-[13px] font-medium" style={{ color: epcColors.soft }}>
-                    {epc === "A" ? t("epc_benefit_lowest") : t("epc_benefit")}
-                  </span>
-                </span>
-              )}
             </div>
           </div>
         </div>
       </div>
 
-      {tab === "overview" && (
-        <section className="bg-white px-5 py-16 md:px-8 md:py-24">
+      <section id="dp-overview" className="bg-white px-5 py-16 md:px-8 md:py-24">
           <div className="mx-auto grid max-w-[1400px] grid-cols-1 items-start gap-14 lg:grid-cols-2 lg:gap-20">
             <div>
               <span className="hi-eyebrow mb-5.5 block text-[#C1560F]">{dp("ov_eyebrow")}</span>
@@ -318,106 +304,11 @@ export default function DevelopmentPage({ id }: { id: string }) {
             )}
           </div>
 
-        </section>
-      )}
+      </section>
 
-      {tab === "overview" && <FilmSection d={d} pd={pd} dp={dp} />}
+      <FilmSection d={d} pd={pd} dp={dp} />
 
-      {tab === "gallery" && (
-        <section id="dp-gallery" style={{ background: "#0E2028" }} className="pb-19 pt-22">
-          <div className="mx-auto max-w-[1400px] px-5 pb-8.5 md:px-8">
-            <span className="hi-eyebrow mb-3 block text-[#C98A6B]">{dp("gal_eyebrow")}</span>
-            <h2 className="text-[clamp(28px,3.2vw,40px)] font-bold tracking-tight text-[#F9F5F3]">{dp("gal_title")}</h2>
-          </div>
-          <div className="relative mx-auto flex max-w-[1400px] items-stretch gap-4 px-5 md:px-8">
-            <div className="relative min-w-0 flex-1">
-              <div className="relative overflow-hidden rounded-[20px] bg-[#16313D]" style={{ height: "clamp(300px,58vh,620px)" }}>
-                <img
-                  src={resolveImage(pd.gallery[galIdx].src, dp(pd.gallery[galIdx].cap))}
-                  alt={dp(pd.gallery[galIdx].cap)}
-                  onError={(e) => {
-                    e.currentTarget.onerror = null;
-                    e.currentTarget.src = placeholderFor(pd.gallery[galIdx].src, dp(pd.gallery[galIdx].cap));
-                  }}
-                  className="absolute inset-0 h-full w-full object-cover"
-                />
-                <span className="absolute bottom-4.5 left-5 rounded-full bg-[rgba(11,26,33,0.72)] px-4 py-2 text-[12.5px] font-semibold text-[#F9F5F3] backdrop-blur-sm">
-                  {dp(pd.gallery[galIdx].cap)}
-                </span>
-              </div>
-              {pd.gallery.length > 1 && (
-                <>
-                  <button
-                    onClick={() => setGalIdx((i) => (i - 1 + pd.gallery.length) % pd.gallery.length)}
-                    aria-label="Previous"
-                    className="hi-icon-3d absolute left-11 top-1/2 z-[4] flex h-10.5 w-10.5 -translate-y-1/2 items-center justify-center rounded-full bg-white/82 text-[#1F3A47] shadow-[0_2px_8px_rgba(20,40,50,0.22)]"
-                  >
-                    <Icon name="chevronLeft" className="h-4 w-4" strokeWidth={2.2} />
-                  </button>
-                  <button
-                    onClick={() => setGalIdx((i) => (i + 1) % pd.gallery.length)}
-                    aria-label="Next"
-                    className="hi-icon-3d absolute right-11 top-1/2 z-[4] flex h-10.5 w-10.5 -translate-y-1/2 items-center justify-center rounded-full bg-white/82 text-[#1F3A47] shadow-[0_2px_8px_rgba(20,40,50,0.22)]"
-                  >
-                    <Icon name="chevronRight" className="h-4 w-4" strokeWidth={2.2} />
-                  </button>
-                  <div className="absolute bottom-6 left-1/2 z-[4] flex -translate-x-1/2 items-center gap-1 rounded-full bg-[rgba(15,32,39,0.55)] px-2.5 py-1.5 backdrop-blur-sm">
-                    {pd.gallery.map((_, i) => (
-                      <button
-                        key={i}
-                        onClick={() => setGalIdx(i)}
-                        aria-label={`Photo ${i + 1}`}
-                        className="flex h-4 w-4 items-center justify-center p-1"
-                      >
-                        <span
-                          className="block h-1.5 w-1.5 rounded-full"
-                          style={{ background: i === galIdx ? "#fff" : "rgba(255,255,255,0.5)" }}
-                        />
-                      </button>
-                    ))}
-                  </div>
-                </>
-              )}
-            </div>
-            {pd.gallery.length > 1 && (
-              <div
-                className="hi-scroller flex flex-none flex-col gap-2.5 overflow-y-auto"
-                style={{ width: 90, maxHeight: "clamp(300px,58vh,620px)" }}
-              >
-                {pd.gallery.map((g, i) => (
-                  <button
-                    key={i}
-                    onClick={() => setGalIdx(i)}
-                    aria-label={dp(g.cap)}
-                    className="flex-none overflow-hidden rounded-[10px]"
-                    style={{
-                      width: 90,
-                      height: 64,
-                      border: `2px solid ${i === galIdx ? "#C1560F" : "transparent"}`,
-                      opacity: i === galIdx ? 1 : 0.62,
-                    }}
-                  >
-                    <img
-                      src={resolveImage(g.src, dp(g.cap))}
-                      alt={dp(g.cap)}
-                      onError={(e) => {
-                        e.currentTarget.onerror = null;
-                        e.currentTarget.src = placeholderFor(g.src, dp(g.cap));
-                      }}
-                      className="h-full w-full object-cover"
-                    />
-                  </button>
-                ))}
-              </div>
-            )}
-          </div>
-          <div className="mx-auto max-w-[1400px] px-5 pt-5.5 md:px-8">
-            <span className="text-[12.5px] text-white/50">{dp("gal_note")}</span>
-          </div>
-        </section>
-      )}
-
-      {tab === "avail" && (
+      {sectionOn.avail && (
         <section id="dp-availability" className="bg-white px-5 py-16 md:px-8 md:py-24">
           <div className="mx-auto max-w-[1400px]">
             <div className="mb-7.5 flex flex-wrap items-end justify-between gap-7">
@@ -531,7 +422,7 @@ export default function DevelopmentPage({ id }: { id: string }) {
         </section>
       )}
 
-      {tab === "spec" && (
+      {sectionOn.spec && (
         <section
           id="dp-spec"
           className="px-5 py-16 md:px-8 md:py-24"
@@ -627,7 +518,101 @@ export default function DevelopmentPage({ id }: { id: string }) {
         </section>
       )}
 
-      {tab === "location" && (
+      {sectionOn.gallery && (
+        <section id="dp-gallery" style={{ background: "#0E2028" }} className="pb-19 pt-22">
+          <div className="mx-auto max-w-[1400px] px-5 pb-8.5 md:px-8">
+            <span className="hi-eyebrow mb-3 block text-[#C98A6B]">{dp("gal_eyebrow")}</span>
+            <h2 className="text-[clamp(28px,3.2vw,40px)] font-bold tracking-tight text-[#F9F5F3]">{dp("gal_title")}</h2>
+          </div>
+          <div className="relative mx-auto flex max-w-[1400px] items-stretch gap-4 px-5 md:px-8">
+            <div className="relative min-w-0 flex-1">
+              <div className="relative overflow-hidden rounded-[20px] bg-[#16313D]" style={{ height: "clamp(300px,58vh,620px)" }}>
+                <img
+                  src={resolveImage(pd.gallery[galIdx].src, dp(pd.gallery[galIdx].cap))}
+                  alt={dp(pd.gallery[galIdx].cap)}
+                  onError={(e) => {
+                    e.currentTarget.onerror = null;
+                    e.currentTarget.src = placeholderFor(pd.gallery[galIdx].src, dp(pd.gallery[galIdx].cap));
+                  }}
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
+                <span className="absolute bottom-4.5 left-5 rounded-full bg-[rgba(11,26,33,0.72)] px-4 py-2 text-[12.5px] font-semibold text-[#F9F5F3] backdrop-blur-sm">
+                  {dp(pd.gallery[galIdx].cap)}
+                </span>
+              </div>
+              {pd.gallery.length > 1 && (
+                <>
+                  <button
+                    onClick={() => setGalIdx((i) => (i - 1 + pd.gallery.length) % pd.gallery.length)}
+                    aria-label="Previous"
+                    className="hi-icon-3d absolute left-11 top-1/2 z-[4] flex h-10.5 w-10.5 -translate-y-1/2 items-center justify-center rounded-full bg-white/82 text-[#1F3A47] shadow-[0_2px_8px_rgba(20,40,50,0.22)]"
+                  >
+                    <Icon name="chevronLeft" className="h-4 w-4" strokeWidth={2.2} />
+                  </button>
+                  <button
+                    onClick={() => setGalIdx((i) => (i + 1) % pd.gallery.length)}
+                    aria-label="Next"
+                    className="hi-icon-3d absolute right-11 top-1/2 z-[4] flex h-10.5 w-10.5 -translate-y-1/2 items-center justify-center rounded-full bg-white/82 text-[#1F3A47] shadow-[0_2px_8px_rgba(20,40,50,0.22)]"
+                  >
+                    <Icon name="chevronRight" className="h-4 w-4" strokeWidth={2.2} />
+                  </button>
+                  <div className="absolute bottom-6 left-1/2 z-[4] flex -translate-x-1/2 items-center gap-1 rounded-full bg-[rgba(15,32,39,0.55)] px-2.5 py-1.5 backdrop-blur-sm">
+                    {pd.gallery.map((_, i) => (
+                      <button
+                        key={i}
+                        onClick={() => setGalIdx(i)}
+                        aria-label={`Photo ${i + 1}`}
+                        className="flex h-4 w-4 items-center justify-center p-1"
+                      >
+                        <span
+                          className="block h-1.5 w-1.5 rounded-full"
+                          style={{ background: i === galIdx ? "#fff" : "rgba(255,255,255,0.5)" }}
+                        />
+                      </button>
+                    ))}
+                  </div>
+                </>
+              )}
+            </div>
+            {pd.gallery.length > 1 && (
+              <div
+                className="hi-scroller flex flex-none flex-col gap-2.5 overflow-y-auto"
+                style={{ width: 90, maxHeight: "clamp(300px,58vh,620px)" }}
+              >
+                {pd.gallery.map((g, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setGalIdx(i)}
+                    aria-label={dp(g.cap)}
+                    className="flex-none overflow-hidden rounded-[10px]"
+                    style={{
+                      width: 90,
+                      height: 64,
+                      border: `2px solid ${i === galIdx ? "#C1560F" : "transparent"}`,
+                      opacity: i === galIdx ? 1 : 0.62,
+                    }}
+                  >
+                    <img
+                      src={resolveImage(g.src, dp(g.cap))}
+                      alt={dp(g.cap)}
+                      onError={(e) => {
+                        e.currentTarget.onerror = null;
+                        e.currentTarget.src = placeholderFor(g.src, dp(g.cap));
+                      }}
+                      className="h-full w-full object-cover"
+                    />
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+          <div className="mx-auto max-w-[1400px] px-5 pt-5.5 md:px-8">
+            <span className="text-[12.5px] text-white/50">{dp("gal_note")}</span>
+          </div>
+        </section>
+      )}
+
+      {sectionOn.location && (
         <section id="dp-location" className="bg-white px-5 py-16 md:px-8 md:py-24">
           <div className="mx-auto max-w-[1400px]">
             <span className="hi-eyebrow mb-3 block text-[#C1560F]">{dp("loc_eyebrow")}</span>
