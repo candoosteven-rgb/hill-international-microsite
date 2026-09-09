@@ -90,7 +90,7 @@ export default function DevCard({ d }: { d: Development }) {
         ) : (
           <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 overflow-hidden bg-[linear-gradient(158deg,#27454F_0%,#162C35_62%,#101F26_100%)] p-8 text-center hi-hatch">
             <Icon name="building" className="relative h-8 w-8 text-[#C98A6B]" />
-            <span className="relative text-[25px] font-extrabold leading-tight tracking-tight text-[#F9F5F3]">
+            <span className="relative text-[25px] font-bold leading-tight tracking-tight text-[#F9F5F3]">
               {d.name}
             </span>
             <span className="relative max-w-[250px] text-[13px] leading-snug text-white/72">
@@ -140,7 +140,7 @@ export default function DevCard({ d }: { d: Development }) {
       </div>
 
       <div className="flex flex-1 flex-col p-6 pt-7 md:px-7">
-        <h4 className="mb-2 text-[21px] font-extrabold leading-tight tracking-tight text-[#1F3A47]">{d.name}</h4>
+        <h4 className="mb-2 text-[21px] font-bold leading-tight tracking-tight text-[#1F3A47]">{d.name}</h4>
         <div className="mb-3.5 flex items-baseline gap-1.5">
           {priceIsGuide && (
             <span className="text-[11px] font-semibold uppercase tracking-wide text-[#8B979C]">

@@ -59,7 +59,7 @@ export default function Developments() {
               {t("regions_eyebrow")}
             </div>
             <h2
-              className="mb-5 font-extrabold tracking-tight text-[#1F3A47]"
+              className="mb-5 font-bold tracking-tight text-[#1F3A47]"
               style={{ fontSize: "clamp(34px,4.6vw,54px)", lineHeight: 1.01, letterSpacing: "-0.03em" }}
             >
               {t("regions_title")}
@@ -160,7 +160,7 @@ export default function Developments() {
                     }}
                   />
                   <div className="absolute inset-x-6 bottom-6 flex flex-wrap items-end justify-between gap-4">
-                    <h3 className="text-[32px] font-extrabold tracking-tight text-[#F9F5F3] md:text-[38px]">
+                    <h3 className="text-[32px] font-bold tracking-tight text-[#F9F5F3] md:text-[38px]">
                       {region}
                     </h3>
                     <span className="rounded-full bg-black/28 px-4 py-2 text-[13px] font-semibold text-white/85">
@@ -169,7 +169,7 @@ export default function Developments() {
                   </div>
                 </div>
               ) : (
-                <h3 className="mb-6 border-b border-[#D7DEE2] pb-3.5 text-[28px] font-extrabold tracking-tight text-[#1F3A47]">
+                <h3 className="mb-6 border-b border-[#D7DEE2] pb-3.5 text-[28px] font-bold tracking-tight text-[#1F3A47]">
                   {region}
                 </h3>
               )}

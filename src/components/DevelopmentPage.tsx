@@ -115,7 +115,7 @@ export default function DevelopmentPage({ id }: { id: string }) {
               <Icon name="chevronLeft" className="h-3.5 w-3.5" />
               {dp("back")}
             </button>
-            <span className="whitespace-nowrap text-[17px] font-extrabold tracking-tight text-[#F9F5F3]">{d.name}</span>
+            <span className="whitespace-nowrap text-[17px] font-bold tracking-tight text-[#F9F5F3]">{d.name}</span>
             <span
               className="flex-none whitespace-nowrap rounded-full px-3 py-1 text-[10.5px] font-bold"
               style={{ background: status.bg, color: status.color }}
@@ -200,7 +200,7 @@ export default function DevelopmentPage({ id }: { id: string }) {
             <div className="flex flex-wrap items-center gap-6">
               <div className="flex items-baseline gap-2">
                 <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-white/60">{t("price_from")}</span>
-                <bdi className="text-[26px] font-extrabold tracking-tight text-[#F9F5F3]">{priceLabel}</bdi>
+                <bdi className="text-[26px] font-bold tracking-tight text-[#F9F5F3]">{priceLabel}</bdi>
               </div>
               {d.accessNote && (
                 <>
@@ -236,7 +236,7 @@ export default function DevelopmentPage({ id }: { id: string }) {
             <div>
               <span className="hi-eyebrow mb-5.5 block text-[#C1560F]">{dp("ov_eyebrow")}</span>
               <h2
-                className="mb-6.5 font-extrabold text-[#1F3A47]"
+                className="mb-6.5 font-bold text-[#1F3A47]"
                 style={{ fontSize: "clamp(30px,3.6vw,46px)", lineHeight: 1.04, letterSpacing: "-0.035em" }}
               >
                 {devHeadline(d, dp)}
@@ -247,7 +247,7 @@ export default function DevelopmentPage({ id }: { id: string }) {
 
             {!!facts.length && (
               <div className="rounded-[22px] bg-[#F5F5F7] p-8 md:p-9">
-                <div className="mb-6.5 text-[19px] font-extrabold tracking-tight text-[#1F3A47]">{dp("facts_title")}</div>
+                <div className="mb-6.5 text-[19px] font-bold tracking-tight text-[#1F3A47]">{dp("facts_title")}</div>
                 <div className="grid grid-cols-2 gap-6 sm:grid-cols-3">
                   {facts.map((f) => {
                     const factIcon = FACT_ICON_NAMES.find((n) => n === f.k);
@@ -256,7 +256,7 @@ export default function DevelopmentPage({ id }: { id: string }) {
                         <div className="mb-3 flex h-8 w-8 items-center justify-center rounded-full bg-[rgba(193,86,15,0.12)]">
                           {factIcon && <Icon name={factIcon} className="h-4 w-4 text-[#C1560F]" />}
                         </div>
-                        <div className="mb-1.5 text-[24px] font-extrabold tracking-tight text-[#1F3A47]">{f.v || "—"}</div>
+                        <div className="mb-1.5 text-[24px] font-bold tracking-tight text-[#1F3A47]">{f.v || "—"}</div>
                         <div className="text-[13px] font-medium leading-snug text-[#6E7B80]">{dp(f.k)}</div>
                       </div>
                     );
@@ -275,7 +275,7 @@ export default function DevelopmentPage({ id }: { id: string }) {
         <section className="bg-white px-5 py-16 md:px-8 md:py-24">
           <div className="mx-auto max-w-[1400px]">
             <span className="hi-eyebrow mb-3 block text-[#C1560F]">{dp("gal_eyebrow")}</span>
-            <h2 className="mb-2.5 text-[32px] font-extrabold tracking-tight text-[#1F3A47]">{dp("gal_title")}</h2>
+            <h2 className="mb-2.5 text-[32px] font-bold tracking-tight text-[#1F3A47]">{dp("gal_title")}</h2>
             <p className="mb-9 text-[14.5px] text-[#8B979C]">{dp("gal_note")}</p>
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {pd.gallery.map((g, i) => (
@@ -301,7 +301,7 @@ export default function DevelopmentPage({ id }: { id: string }) {
         <section className="bg-white px-5 py-16 md:px-8 md:py-24">
           <div className="mx-auto max-w-[1400px]">
             <span className="hi-eyebrow mb-3 block text-[#C1560F]">{dp("av_eyebrow")}</span>
-            <h2 className="mb-2.5 text-[32px] font-extrabold tracking-tight text-[#1F3A47]">{dp("av_title")}</h2>
+            <h2 className="mb-2.5 text-[32px] font-bold tracking-tight text-[#1F3A47]">{dp("av_title")}</h2>
             <p className="mb-8 max-w-[560px] text-[15px] leading-relaxed text-[#8B979C]">{dp("av_sub")}</p>
 
             {!!buildings.length && (
@@ -386,7 +386,7 @@ export default function DevelopmentPage({ id }: { id: string }) {
         >
           <div className="mx-auto max-w-[1400px]">
             <span className="hi-eyebrow mb-3 block text-[#C98A6B]">{dp("spec_eyebrow")}</span>
-            <h2 className="mb-10 max-w-[720px] text-[32px] font-extrabold tracking-tight text-[#F9F5F3]">
+            <h2 className="mb-10 max-w-[720px] text-[32px] font-bold tracking-tight text-[#F9F5F3]">
               {dp("spec_title")}
             </h2>
             <div className="flex flex-col gap-14">
@@ -397,7 +397,7 @@ export default function DevelopmentPage({ id }: { id: string }) {
                 >
                   <img src={resolveImage(g.img, dp(g.k))} alt={dp(g.k)} className="h-[260px] w-full rounded-2xl object-cover" />
                   <div>
-                    <h3 className="mb-4 text-[22px] font-extrabold tracking-tight text-[#F9F5F3]">{dp(g.k)}</h3>
+                    <h3 className="mb-4 text-[22px] font-bold tracking-tight text-[#F9F5F3]">{dp(g.k)}</h3>
                     <ul className="flex flex-col gap-2.5">
                       {g.items.map((item, i) => (
                         <li key={i} className="flex items-start gap-2.5 text-[15px] leading-relaxed text-white/82">
@@ -419,7 +419,7 @@ export default function DevelopmentPage({ id }: { id: string }) {
         <section className="bg-white px-5 py-16 md:px-8 md:py-24">
           <div className="mx-auto max-w-[1400px]">
             <span className="hi-eyebrow mb-3 block text-[#C1560F]">{dp("loc_eyebrow")}</span>
-            <h2 className="mb-8 max-w-[720px] text-[32px] font-extrabold tracking-tight text-[#1F3A47]">
+            <h2 className="mb-8 max-w-[720px] text-[32px] font-bold tracking-tight text-[#1F3A47]">
               {dp("loc_title")}
             </h2>
 
@@ -443,7 +443,7 @@ export default function DevelopmentPage({ id }: { id: string }) {
 
             {!!pd.travel.length && (
               <div>
-                <h3 className="mb-1.5 text-[20px] font-extrabold tracking-tight text-[#1F3A47]">{dp("travel_title")}</h3>
+                <h3 className="mb-1.5 text-[20px] font-bold tracking-tight text-[#1F3A47]">{dp("travel_title")}</h3>
                 <p className="mb-6 text-[13.5px] text-[#8B979C]">{dp("travel_note")}</p>
                 <div className="flex flex-col gap-2.5">
                   {pd.travel.map((tr, i) => (
@@ -542,12 +542,12 @@ function RegisterPanel({
     <section className="bg-white px-5 py-16 md:px-8 md:py-24">
       <div className="mx-auto grid max-w-[1400px] grid-cols-1 items-start gap-11 lg:grid-cols-2">
         <div>
-          <h3 className="mb-4 text-[clamp(26px,3vw,36px)] font-extrabold tracking-tight text-[#1F3A47]">{d.name}</h3>
+          <h3 className="mb-4 text-[clamp(26px,3vw,36px)] font-bold tracking-tight text-[#1F3A47]">{d.name}</h3>
           <p className="max-w-[400px] text-[16px] leading-relaxed text-[#5C6B71]">{dp("coming_soon_note")}</p>
         </div>
 
         <div className="rounded-[20px] bg-[#122530] p-8">
-          <h3 className="mb-3 text-[clamp(19px,2vw,22px)] font-extrabold tracking-tight text-[#F9F5F3]">
+          <h3 className="mb-3 text-[clamp(19px,2vw,22px)] font-bold tracking-tight text-[#F9F5F3]">
             {devText(d, dp, "reg_title")}
           </h3>
           {submitted ? (
@@ -617,7 +617,7 @@ function NearbyDevs({ id }: { id: string }) {
   return (
     <section className="bg-[#F5F5F7] px-5 py-16 md:px-8 md:py-24">
       <div className="mx-auto max-w-[1400px]">
-        <h2 className="mb-1.5 text-[26px] font-extrabold tracking-tight text-[#1F3A47]">{dp("nearby_title")}</h2>
+        <h2 className="mb-1.5 text-[26px] font-bold tracking-tight text-[#1F3A47]">{dp("nearby_title")}</h2>
         <p className="mb-8 text-[14.5px] text-[#8B979C]">{devText(d, dp, "nearby_sub")}</p>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {devs.map((nd) => (

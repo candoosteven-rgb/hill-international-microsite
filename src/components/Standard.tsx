@@ -35,7 +35,7 @@ export default function Standard() {
           <div className="max-w-[720px] flex-[1_1_620px]">
             <span className="hi-eyebrow mb-6 block text-[#C98A6B]">{t("std_eyebrow")}</span>
             <h2
-              className="font-extrabold text-[#F9F5F3]"
+              className="font-bold text-[#F9F5F3]"
               style={{ fontSize: "clamp(30px,3.6vw,46px)", lineHeight: 1.04, letterSpacing: "-0.035em" }}
             >
               {t("std_title")}
@@ -62,14 +62,14 @@ export default function Standard() {
                   />
                   <div className="flex flex-col justify-center gap-3.5 p-9">
                     <FeatureIcon kind={f.kind} />
-                    <h3 className="text-[24px] font-extrabold tracking-tight text-[#F9F5F3]">{t(`${f.key}_title`)}</h3>
+                    <h3 className="text-[24px] font-bold tracking-tight text-[#F9F5F3]">{t(`${f.key}_title`)}</h3>
                     <p className="max-w-[460px] text-[16px] leading-relaxed text-white/72">{t(`${f.key}_body`)}</p>
                   </div>
                 </div>
               ) : (
                 <div className="flex h-full flex-col gap-3.5 p-8">
                   <FeatureIcon kind={f.kind} />
-                  <h3 className="text-[19.5px] font-extrabold tracking-tight text-[#F9F5F3]">{t(`${f.key}_title`)}</h3>
+                  <h3 className="text-[19.5px] font-bold tracking-tight text-[#F9F5F3]">{t(`${f.key}_title`)}</h3>
                   <p className="text-[15.5px] leading-relaxed text-white/68">{t(`${f.key}_body`)}</p>
                 </div>
               )}

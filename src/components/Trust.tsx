@@ -36,7 +36,7 @@ export default function Trust() {
         <Reveal className="mb-12 max-w-[660px]">
           <span className="hi-eyebrow mb-6 block text-[#C98A6B]">{t("trust_eyebrow")}</span>
           <h2
-            className="font-extrabold text-[#1F3A47]"
+            className="font-bold text-[#1F3A47]"
             style={{ fontSize: "clamp(30px,3.6vw,46px)", lineHeight: 1.04, letterSpacing: "-0.035em" }}
           >
             {t("trust_title")}
@@ -47,7 +47,7 @@ export default function Trust() {
         <Reveal delay={1} className="mb-14 grid grid-cols-1 gap-7 border-y border-[#E3E9EC] py-8 sm:grid-cols-3">
           {["trust_stat1", "trust_stat2", "trust_stat3"].map((k, i) => (
             <div key={k}>
-              <div className="font-extrabold tracking-tight text-[#1F3A47]" style={{ fontSize: 44, fontVariantNumeric: "tabular-nums" }}>
+              <div className="font-bold tracking-tight text-[#1F3A47]" style={{ fontSize: 44, fontVariantNumeric: "tabular-nums" }}>
                 {["95%", "9", "4,000+"][i]}
               </div>
               <div className="mt-2.5 text-[14.5px] leading-snug text-[#6E7B80]">{t(k)}</div>

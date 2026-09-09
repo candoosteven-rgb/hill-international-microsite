@@ -40,7 +40,7 @@ export default function CompareModal() {
         >
           <Icon name="close" className="h-4.5 w-4.5" />
         </button>
-        <h2 className="mb-2 text-[26px] font-extrabold tracking-tight text-[#1F3A47] md:text-[30px]">
+        <h2 className="mb-2 text-[26px] font-bold tracking-tight text-[#1F3A47] md:text-[30px]">
           {t("compare_modal_title")}
         </h2>
         <p className="mb-8 text-[14.5px] text-[#6E7B80]">{t("compare_modal_sub")}</p>

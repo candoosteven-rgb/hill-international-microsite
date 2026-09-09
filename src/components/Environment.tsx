@@ -37,7 +37,7 @@ export default function Environment() {
             {t("env_eyebrow")}
           </div>
           <h2
-            className="font-extrabold text-[#1F3A47]"
+            className="font-bold text-[#1F3A47]"
             style={{ fontSize: "clamp(30px,3.6vw,46px)", lineHeight: 1.04, letterSpacing: "-0.035em" }}
           >
             {t("env_title")}
@@ -56,7 +56,7 @@ export default function Environment() {
                 <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-[#EDF2EC]">
                   <Icon name={c.icon} className="h-5 w-5 text-[#1F3A47]" />
                 </div>
-                <h3 className="mb-2.5 text-[20px] font-extrabold tracking-tight text-[#1F3A47]">
+                <h3 className="mb-2.5 text-[20px] font-bold tracking-tight text-[#1F3A47]">
                   {t(`${c.key}_title`)}
                 </h3>
                 <p className="text-[15.5px] leading-relaxed text-[#6E7B80]">{t(`${c.key}_body`)}</p>

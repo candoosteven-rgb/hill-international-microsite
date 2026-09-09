@@ -87,7 +87,7 @@ export default function HomeStickyTab() {
         >
           <Icon name="minus" className="h-3 w-3" strokeWidth={2.4} />
         </button>
-        <div className="mb-1.5 pr-5 text-[19px] font-extrabold tracking-tight text-[#F9F5F3]">{t("register_eyebrow")}</div>
+        <div className="mb-1.5 pr-5 text-[19px] font-bold tracking-tight text-[#F9F5F3]">{t("register_eyebrow")}</div>
         <div className="mb-5 text-[13px] leading-relaxed text-white/60">{t("home_sticky_sub")}</div>
         <button
           onClick={goRegister}

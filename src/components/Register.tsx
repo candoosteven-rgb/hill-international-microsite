@@ -98,7 +98,7 @@ export default function Register() {
       <div className="hi-reveal hi-in mx-auto max-w-[1180px] rounded-[32px] bg-[#16313D] px-6 py-14 md:px-16 md:py-20">
         <span className="hi-eyebrow mb-6 block text-[#C98A6B]">{t("register_eyebrow")}</span>
         <h2
-          className="max-w-[600px] font-extrabold text-[#F9F5F3]"
+          className="max-w-[600px] font-bold text-[#F9F5F3]"
           style={{ fontSize: "clamp(32px,4.2vw,50px)", lineHeight: 1.02, letterSpacing: "-0.03em" }}
         >
           {t("register_title")}

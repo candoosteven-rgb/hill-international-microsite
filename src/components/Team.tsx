@@ -38,7 +38,7 @@ export default function Team() {
         <Reveal>
           <span className="hi-eyebrow mb-6 block text-[#C98A6B]">{t("why_eyebrow")}</span>
           <h2
-            className="font-extrabold text-[#F5F7F8]"
+            className="font-bold text-[#F5F7F8]"
             style={{ fontSize: "clamp(34px,4.6vw,54px)", lineHeight: 1.02, letterSpacing: "-0.035em" }}
           >
             {t("why_title")}
@@ -47,7 +47,7 @@ export default function Team() {
           <div>
             {items.map((w) => (
               <div key={w.num} className="border-t border-white/14 py-6">
-                <h3 className="mb-2 text-[24px] font-extrabold tracking-tight text-[#F5F7F8]">{w.title}</h3>
+                <h3 className="mb-2 text-[24px] font-bold tracking-tight text-[#F5F7F8]">{w.title}</h3>
                 <p className="text-[15.5px] leading-relaxed text-white/58">{w.body}</p>
               </div>
             ))}
@@ -56,7 +56,7 @@ export default function Team() {
         <div>
           <span className="hi-eyebrow mb-5 block text-[#C98A6B]">Got any questions?</span>
           <h2
-            className="mb-3 font-extrabold text-[#F5F7F8]"
+            className="mb-3 font-bold text-[#F5F7F8]"
             style={{ fontSize: "clamp(32px,4.2vw,50px)", lineHeight: 1.02, letterSpacing: "-0.035em" }}
           >
             {t("team_title")}

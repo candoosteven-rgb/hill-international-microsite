@@ -74,7 +74,7 @@ export default function ThankYouModal() {
           </span>
         </div>
 
-        <h2 className="mb-3.5 text-[28px] font-extrabold tracking-tight text-[#F9F5F3]">{t("confirm_title")}</h2>
+        <h2 className="mb-3.5 text-[28px] font-bold tracking-tight text-[#F9F5F3]">{t("confirm_title")}</h2>
         <p className="mb-7 text-[16px] leading-relaxed text-white/78">{t("confirm_body")}</p>
 
         <div className="mb-7 rounded-2xl bg-[#F9F5F3] p-6 text-left">
