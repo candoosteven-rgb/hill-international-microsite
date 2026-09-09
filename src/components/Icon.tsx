@@ -287,6 +287,91 @@ const paths: Record<string, React.ReactNode> = {
       <circle cx="12" cy="12" r="2.6" />
     </>
   ),
+  sg_kitchen: (
+    <>
+      <rect x="4" y="3" width="16" height="18" rx="2" />
+      <path d="M4 10h16" />
+      <path d="M8 6.5h3" />
+      <path d="M12 14v3" />
+    </>
+  ),
+  sg_bathroom: (
+    <>
+      <path d="M4 12h16v3a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z" />
+      <path d="M7 12V6.5A2.5 2.5 0 0 1 12 6" />
+      <path d="M6 19l-1 2M18 19l1 2" />
+    </>
+  ),
+  sg_heating: (
+    <>
+      <path d="M8 4v6" />
+      <path d="M12 4v6" />
+      <path d="M16 4v6" />
+      <path d="M4 15h16" />
+      <path d="M4 19h16" />
+    </>
+  ),
+  sg_electrical: <path d="M13 2 5 13h6l-1 9 8-11h-6z" />,
+  sg_communal: (
+    <>
+      <path d="M3 21V8l6-4 6 4v13" />
+      <path d="M15 21V11l6 3v7" />
+      <path d="M8 21v-5h3v5" />
+    </>
+  ),
+  sg_finishes: (
+    <>
+      <path d="M4 20h5l10-10a2.5 2.5 0 0 0-3.5-3.5L5 17z" />
+      <path d="M13.5 6.5 17 10" />
+    </>
+  ),
+  sg_additional: (
+    <>
+      <path d="M9 3h6l4 4v14H5V3z" />
+      <path d="M9 11h6M9 15h4" />
+    </>
+  ),
+  cat_transport: (
+    <>
+      <rect x="5" y="3" width="14" height="14" rx="2" />
+      <path d="M5 9h14" />
+      <path d="M8 21l1.5-4M16 21l-1.5-4" />
+      <path d="M9 13h.01M15 13h.01" />
+    </>
+  ),
+  cat_food: (
+    <>
+      <path d="M6 3v8a2.5 2.5 0 0 0 5 0V3" />
+      <path d="M8.5 11v10" />
+      <path d="M17 3c-1.5 2-2 3.5-2 5.5A2.5 2.5 0 0 0 17.5 11h.5" />
+      <path d="M17 11v10" />
+    </>
+  ),
+  cat_green: (
+    <>
+      <path d="M12 3c3 2.5 4.5 5.2 4.5 8a4.5 4.5 0 0 1-9 0c0-2.8 1.5-5.5 4.5-8z" />
+      <path d="M12 15v6" />
+    </>
+  ),
+  cat_fitness: (
+    <>
+      <path d="M4 9v6M20 9v6" />
+      <path d="M7 6v12M17 6v12" />
+      <path d="M7 12h10" />
+    </>
+  ),
+  cat_shops: (
+    <>
+      <path d="M4 8h16l-1.4 12H5.4z" />
+      <path d="M9 8V6a3 3 0 0 1 6 0v2" />
+    </>
+  ),
+  cat_schools: (
+    <>
+      <path d="M3 9l9-4 9 4-9 4z" />
+      <path d="M7 11.5V16c0 1.4 2.2 2.5 5 2.5s5-1.1 5-2.5v-4.5" />
+    </>
+  ),
 };
 
 export default function Icon({

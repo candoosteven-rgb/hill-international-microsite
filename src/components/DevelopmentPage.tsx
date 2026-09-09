@@ -18,6 +18,43 @@ import Footer from "@/components/Footer";
 // forced to white on the hero image, matching the design's per-id filter table.
 const FORCE_WHITE_HERO_LOGO_IDS = new Set(["city-reach"]);
 
+// Real per-development local-area maps. Everywhere else the design leaves this
+// slot as an empty "drop a map here" placeholder - no synthetic map is drawn.
+const MAP_SRC: Record<string, string> = {
+  "baltic-wharf": "uploads/Screenshot 2026-09-04 094937.png",
+  "southville-collection": "uploads/Screenshot 2026-09-04 095321.png",
+};
+
+// Real, room-appropriate photos to fall back to if a spec group's own image
+// (often hotlinked from a development's marketing site) fails to load - a
+// broken-photo placeholder should still look like the room it's describing,
+// not an abstract colour gradient.
+const SPEC_FALLBACK_PHOTO: Record<string, string> = {
+  sg_kitchen: "uploads/SJH_0001.webp",
+  sg_bathroom: "uploads/DSC_0447 - HR.jpg",
+  sg_heating: "uploads/DSC_0447 - HR.jpg",
+  sg_electrical: "uploads/NEXUS_BEDROOM 2_VIGNETTE_.jpg.webp",
+  sg_communal: "uploads/0223_001_46_H2.jpg.webp",
+  sg_finishes: "uploads/North Gate Park - Plot 2 The Ash -bifolding doors.jpg.webp",
+  sg_additional: "uploads/DSC_0787 - HR.jpg",
+};
+
+const SPEC_ICON_NAMES = new Set([
+  "sg_kitchen",
+  "sg_bathroom",
+  "sg_heating",
+  "sg_electrical",
+  "sg_communal",
+  "sg_finishes",
+  "sg_additional",
+]);
+const specIconName = (k: string) =>
+  (SPEC_ICON_NAMES.has(k) ? k : "sg_additional") as Parameters<typeof Icon>[0]["name"];
+
+const LOC_CAT_ICON_NAMES = new Set(["cat_transport", "cat_food", "cat_green", "cat_fitness", "cat_shops", "cat_schools"]);
+const locCatIconName = (k: string) =>
+  (LOC_CAT_ICON_NAMES.has(k) ? k : "cat_transport") as Parameters<typeof Icon>[0]["name"];
+
 const TABS = [
   { key: "overview", nav: "nav_overview" },
   { key: "gallery", nav: "nav_gallery" },
@@ -49,6 +86,9 @@ export default function DevelopmentPage({ id }: { id: string }) {
   const [locCat, setLocCat] = useState("cat_transport");
   const [avBuilding, setAvBuilding] = useState("all");
   const [avBeds, setAvBeds] = useState("all");
+  const [avPrice, setAvPrice] = useState<"all" | "under" | "mid" | "over">("all");
+  const [specCat, setSpecCat] = useState(0);
+  const [galIdx, setGalIdx] = useState(0);
 
   const d = devById(id);
   const pd = pageDataFor(id);
@@ -68,12 +108,24 @@ export default function DevelopmentPage({ id }: { id: string }) {
     return Array.from(new Set(pd.plots.map((p) => p.beds))).sort((a, b) => a - b);
   }, [pd]);
 
+  const inPriceBand = (price?: number) => {
+    if (avPrice === "all") return true;
+    const p = price ?? 0;
+    if (avPrice === "under") return p < 300000;
+    if (avPrice === "mid") return p >= 300000 && p < 400000;
+    return p >= 400000;
+  };
+
   const filteredPlots = useMemo(() => {
     if (!pd) return [];
     return pd.plots.filter(
-      (p) => (avBuilding === "all" || p.building === avBuilding) && (avBeds === "all" || p.beds === Number(avBeds))
+      (p) =>
+        (avBuilding === "all" || p.building === avBuilding) &&
+        (avBeds === "all" || p.beds === Number(avBeds)) &&
+        inPriceBand(p.price)
     );
-  }, [pd, avBuilding, avBeds]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pd, avBuilding, avBeds, avPrice]);
 
   if (!d || !pd) return null;
 
@@ -272,107 +324,216 @@ export default function DevelopmentPage({ id }: { id: string }) {
       {tab === "overview" && <FilmSection d={d} pd={pd} dp={dp} />}
 
       {tab === "gallery" && (
-        <section className="bg-white px-5 py-16 md:px-8 md:py-24">
-          <div className="mx-auto max-w-[1400px]">
-            <span className="hi-eyebrow mb-3 block text-[#C1560F]">{dp("gal_eyebrow")}</span>
-            <h2 className="mb-2.5 text-[32px] font-bold tracking-tight text-[#1F3A47]">{dp("gal_title")}</h2>
-            <p className="mb-9 text-[14.5px] text-[#8B979C]">{dp("gal_note")}</p>
-            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {pd.gallery.map((g, i) => (
-                <div key={i} className="overflow-hidden rounded-2xl">
-                  <img
-                    src={resolveImage(g.src, dp(g.cap))}
-                    alt={dp(g.cap)}
-                    onError={(e) => {
-                      e.currentTarget.onerror = null;
-                      e.currentTarget.src = placeholderFor(g.src, dp(g.cap));
-                    }}
-                    className="aspect-[4/3] w-full object-cover"
-                  />
-                  <div className="bg-[#F5F5F7] px-4 py-2.5 text-[13px] font-medium text-[#5C6B71]">{dp(g.cap)}</div>
-                </div>
-              ))}
+        <section id="dp-gallery" style={{ background: "#0E2028" }} className="pb-19 pt-22">
+          <div className="mx-auto max-w-[1400px] px-5 pb-8.5 md:px-8">
+            <span className="hi-eyebrow mb-3 block text-[#C98A6B]">{dp("gal_eyebrow")}</span>
+            <h2 className="text-[clamp(28px,3.2vw,40px)] font-bold tracking-tight text-[#F9F5F3]">{dp("gal_title")}</h2>
+          </div>
+          <div className="relative mx-auto flex max-w-[1400px] items-stretch gap-4 px-5 md:px-8">
+            <div className="relative min-w-0 flex-1">
+              <div className="relative overflow-hidden rounded-[20px] bg-[#16313D]" style={{ height: "clamp(300px,58vh,620px)" }}>
+                <img
+                  src={resolveImage(pd.gallery[galIdx].src, dp(pd.gallery[galIdx].cap))}
+                  alt={dp(pd.gallery[galIdx].cap)}
+                  onError={(e) => {
+                    e.currentTarget.onerror = null;
+                    e.currentTarget.src = placeholderFor(pd.gallery[galIdx].src, dp(pd.gallery[galIdx].cap));
+                  }}
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
+                <span className="absolute bottom-4.5 left-5 rounded-full bg-[rgba(11,26,33,0.72)] px-4 py-2 text-[12.5px] font-semibold text-[#F9F5F3] backdrop-blur-sm">
+                  {dp(pd.gallery[galIdx].cap)}
+                </span>
+              </div>
+              {pd.gallery.length > 1 && (
+                <>
+                  <button
+                    onClick={() => setGalIdx((i) => (i - 1 + pd.gallery.length) % pd.gallery.length)}
+                    aria-label="Previous"
+                    className="hi-icon-3d absolute left-11 top-1/2 z-[4] flex h-10.5 w-10.5 -translate-y-1/2 items-center justify-center rounded-full bg-white/82 text-[#1F3A47] shadow-[0_2px_8px_rgba(20,40,50,0.22)]"
+                  >
+                    <Icon name="chevronLeft" className="h-4 w-4" strokeWidth={2.2} />
+                  </button>
+                  <button
+                    onClick={() => setGalIdx((i) => (i + 1) % pd.gallery.length)}
+                    aria-label="Next"
+                    className="hi-icon-3d absolute right-11 top-1/2 z-[4] flex h-10.5 w-10.5 -translate-y-1/2 items-center justify-center rounded-full bg-white/82 text-[#1F3A47] shadow-[0_2px_8px_rgba(20,40,50,0.22)]"
+                  >
+                    <Icon name="chevronRight" className="h-4 w-4" strokeWidth={2.2} />
+                  </button>
+                  <div className="absolute bottom-6 left-1/2 z-[4] flex -translate-x-1/2 items-center gap-1 rounded-full bg-[rgba(15,32,39,0.55)] px-2.5 py-1.5 backdrop-blur-sm">
+                    {pd.gallery.map((_, i) => (
+                      <button
+                        key={i}
+                        onClick={() => setGalIdx(i)}
+                        aria-label={`Photo ${i + 1}`}
+                        className="flex h-4 w-4 items-center justify-center p-1"
+                      >
+                        <span
+                          className="block h-1.5 w-1.5 rounded-full"
+                          style={{ background: i === galIdx ? "#fff" : "rgba(255,255,255,0.5)" }}
+                        />
+                      </button>
+                    ))}
+                  </div>
+                </>
+              )}
             </div>
+            {pd.gallery.length > 1 && (
+              <div
+                className="hi-scroller flex flex-none flex-col gap-2.5 overflow-y-auto"
+                style={{ width: 90, maxHeight: "clamp(300px,58vh,620px)" }}
+              >
+                {pd.gallery.map((g, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setGalIdx(i)}
+                    aria-label={dp(g.cap)}
+                    className="flex-none overflow-hidden rounded-[10px]"
+                    style={{
+                      width: 90,
+                      height: 64,
+                      border: `2px solid ${i === galIdx ? "#C1560F" : "transparent"}`,
+                      opacity: i === galIdx ? 1 : 0.62,
+                    }}
+                  >
+                    <img
+                      src={resolveImage(g.src, dp(g.cap))}
+                      alt={dp(g.cap)}
+                      onError={(e) => {
+                        e.currentTarget.onerror = null;
+                        e.currentTarget.src = placeholderFor(g.src, dp(g.cap));
+                      }}
+                      className="h-full w-full object-cover"
+                    />
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+          <div className="mx-auto max-w-[1400px] px-5 pt-5.5 md:px-8">
+            <span className="text-[12.5px] text-white/50">{dp("gal_note")}</span>
           </div>
         </section>
       )}
 
       {tab === "avail" && (
-        <section className="bg-white px-5 py-16 md:px-8 md:py-24">
+        <section id="dp-availability" className="bg-white px-5 py-16 md:px-8 md:py-24">
           <div className="mx-auto max-w-[1400px]">
-            <span className="hi-eyebrow mb-3 block text-[#C1560F]">{dp("av_eyebrow")}</span>
-            <h2 className="mb-2.5 text-[32px] font-bold tracking-tight text-[#1F3A47]">{dp("av_title")}</h2>
-            <p className="mb-8 max-w-[560px] text-[15px] leading-relaxed text-[#8B979C]">{dp("av_sub")}</p>
+            <div className="mb-7.5 flex flex-wrap items-end justify-between gap-7">
+              <div>
+                <span className="hi-eyebrow mb-3 block text-[#C1560F]">{dp("av_eyebrow")}</span>
+                <h2 className="mb-2.5 text-[32px] font-bold tracking-tight text-[#1F3A47]">{dp("av_title")}</h2>
+                <p className="max-w-[520px] text-[15px] leading-relaxed text-[#5C6B71]">{dp("av_sub")}</p>
+              </div>
+              <span className="text-[13px] font-bold tabular-nums text-[#28567A]">
+                {dp("showing", { n: filteredPlots.length, m: pd.plots.length })}
+              </span>
+            </div>
 
             {!!buildings.length && (
-              <div className="mb-8 flex flex-wrap gap-2">
-                <FilterPill active={avBuilding === "all"} onClick={() => setAvBuilding("all")} label={dp("all_buildings")} />
-                {buildings.map((b) => (
-                  <FilterPill key={b} active={avBuilding === b} onClick={() => setAvBuilding(b)} label={b} />
-                ))}
-                <span className="mx-2 w-px bg-[#D7DEE2]" />
-                <FilterPill active={avBeds === "all"} onClick={() => setAvBeds("all")} label={dp("all_beds")} />
-                {bedsOptions.map((b) => (
-                  <FilterPill key={b} active={avBeds === String(b)} onClick={() => setAvBeds(String(b))} label={dp("beds_n", { n: b })} />
-                ))}
+              <div className="mb-6 flex flex-wrap gap-3">
+                <select
+                  value={avBuilding}
+                  onChange={(e) => setAvBuilding(e.target.value)}
+                  className="hi-input-light cursor-pointer rounded-full border border-[#D7DEE2] bg-white px-4 py-3 text-[14px] font-semibold text-[#1F3A47]"
+                >
+                  <option value="all">{dp("all_buildings")}</option>
+                  {buildings.map((b) => (
+                    <option key={b} value={b}>
+                      {b}
+                    </option>
+                  ))}
+                </select>
+                <select
+                  value={avBeds}
+                  onChange={(e) => setAvBeds(e.target.value)}
+                  className="hi-input-light cursor-pointer rounded-full border border-[#D7DEE2] bg-white px-4 py-3 text-[14px] font-semibold text-[#1F3A47]"
+                >
+                  <option value="all">{dp("all_beds")}</option>
+                  {bedsOptions.map((b) => (
+                    <option key={b} value={String(b)}>
+                      {dp("beds_n", { n: b })}
+                    </option>
+                  ))}
+                </select>
+                <select
+                  value={avPrice}
+                  onChange={(e) => setAvPrice(e.target.value as typeof avPrice)}
+                  className="hi-input-light cursor-pointer rounded-full border border-[#D7DEE2] bg-white px-4 py-3 text-[14px] font-semibold text-[#1F3A47]"
+                >
+                  <option value="all">{dp("all_prices")}</option>
+                  <option value="under">{dp("under")}</option>
+                  <option value="mid">{dp("mid")}</option>
+                  <option value="over">{dp("over")}</option>
+                </select>
               </div>
             )}
 
-            {!filteredPlots.length ? (
-              <p className="rounded-2xl bg-[#F5F5F7] p-8 text-[15px] text-[#6E7B80]">{dp("av_demo") || dp("av_none")}</p>
-            ) : (
-              <div className="overflow-x-auto rounded-2xl border border-[#E3E9EC]">
-                <table className="w-full min-w-[720px] border-collapse text-left text-[14px]">
-                  <thead>
-                    <tr className="bg-[#F5F5F7] text-[12px] font-semibold uppercase tracking-wide text-[#6E7B80]">
-                      <Th>{dp("c_plot")}</Th>
-                      <Th>{dp("c_building")}</Th>
-                      <Th>{dp("c_beds")}</Th>
-                      <Th>{dp("c_baths")}</Th>
-                      <Th>{dp("c_size")}</Th>
-                      <Th>{dp("c_price")}</Th>
-                      <Th>{dp("c_status")}</Th>
-                      <Th> </Th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {filteredPlots.map((p) => (
-                      <tr key={p.plot} className="border-t border-[#E3E9EC]">
-                        <Td className="font-semibold text-[#1F3A47]">{p.plot}</Td>
-                        <Td>{p.building || "—"}</Td>
-                        <Td>{p.beds}</Td>
-                        <Td>{p.baths ?? "—"}</Td>
-                        <Td>{p.size ? `${p.size} sq ft` : "—"}</Td>
-                        <Td className="font-semibold text-[#C1560F]">{p.price ? gbp(p.price) : "—"}</Td>
-                        <Td>
-                          <span
-                            className="rounded-full px-2.5 py-1 text-[11px] font-bold"
-                            style={
-                              p.avail
-                                ? { background: "rgba(46,134,216,0.12)", color: "#1A5A96" }
-                                : { background: "rgba(201,138,107,0.2)", color: "#8a5636" }
-                            }
-                          >
-                            {p.avail ? dp("s_available") : dp("s_reserved")}
-                          </span>
-                        </Td>
-                        <Td>
-                          <button onClick={goRegister} className="hi-link text-[13px] font-semibold text-[#28567A]">
-                            {dp("enquire")}
-                          </button>
-                        </Td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
+            <div className="overflow-x-auto rounded-[18px] border border-[#E3E9EC]">
+              <div className="min-w-[860px]">
+                <div className="grid grid-cols-[1.2fr_1.3fr_0.7fr_0.7fr_0.8fr_1fr_1.1fr_1.6fr] gap-3.5 bg-[#F5F5F7] px-6 py-4 text-[11.5px] font-bold uppercase tracking-wide text-[#6E7B80]">
+                  <span>{dp("c_plot")}</span>
+                  <span>{dp("c_building")}</span>
+                  <span>{dp("c_floor")}</span>
+                  <span>{dp("c_beds")}</span>
+                  <span>{dp("c_baths")}</span>
+                  <span>{dp("c_size")}</span>
+                  <span>{dp("c_price")}</span>
+                  <span>{dp("c_status")}</span>
+                </div>
+                {filteredPlots.map((p) => (
+                  <div
+                    key={p.plot}
+                    className="grid grid-cols-[1.2fr_1.3fr_0.7fr_0.7fr_0.8fr_1fr_1.1fr_1.6fr] items-center gap-3.5 border-t border-[#EEF1F1] px-6 py-4.5 text-[14.5px] text-[#1F3A47]"
+                    style={{ opacity: p.avail ? 1 : 0.55 }}
+                  >
+                    <span className="font-bold">{p.plot}</span>
+                    <span className="text-[#5C6B71]">{p.building || "—"}</span>
+                    <span className="text-[#5C6B71]">{p.floor || "—"}</span>
+                    <span className="text-[#5C6B71]">{p.beds}</span>
+                    <span className="text-[#5C6B71]">{p.baths ?? "—"}</span>
+                    <span className="whitespace-nowrap text-[#5C6B71]">
+                      {p.size ? `${p.size.toLocaleString("en-GB")} sq ft` : "—"}
+                    </span>
+                    <span className="whitespace-nowrap font-bold text-[#C1560F]">{p.price ? gbp(p.price) : "—"}</span>
+                    <span className="flex flex-wrap items-center gap-2.5">
+                      <span
+                        className="whitespace-nowrap rounded-full px-2.5 py-1 text-[11px] font-bold"
+                        style={
+                          p.avail
+                            ? { background: "rgba(31,164,92,0.12)", color: "#137A42" }
+                            : { background: "rgba(31,58,71,0.08)", color: "#6E7B80" }
+                        }
+                      >
+                        {p.avail ? dp("s_available") : dp("s_reserved")}
+                      </span>
+                      {p.avail && (
+                        <button
+                          onClick={goRegister}
+                          className="hi-pill inline-flex items-center gap-1.5 whitespace-nowrap rounded-full bg-[#28567A] px-3.5 py-2 text-[12.5px] font-bold text-white"
+                        >
+                          {dp("enquire")}
+                          <Icon name="chevronRight" className="h-3 w-3" strokeWidth={2.6} />
+                        </button>
+                      )}
+                    </span>
+                  </div>
+                ))}
+                {!filteredPlots.length && (
+                  <div className="border-t border-[#EEF1F1] px-6 py-9 text-center text-[14.5px] text-[#6E7B80]">
+                    {dp("av_none")}
+                  </div>
+                )}
               </div>
-            )}
+            </div>
           </div>
         </section>
       )}
 
       {tab === "spec" && (
         <section
+          id="dp-spec"
           className="px-5 py-16 md:px-8 md:py-24"
           style={{
             backgroundColor: "#122530",
@@ -386,59 +547,149 @@ export default function DevelopmentPage({ id }: { id: string }) {
         >
           <div className="mx-auto max-w-[1400px]">
             <span className="hi-eyebrow mb-3 block text-[#C98A6B]">{dp("spec_eyebrow")}</span>
-            <h2 className="mb-10 max-w-[720px] text-[32px] font-bold tracking-tight text-[#F9F5F3]">
+            <h2 className="mb-11.5 max-w-[720px] text-[32px] font-bold tracking-tight text-[#F9F5F3]">
               {dp("spec_title")}
             </h2>
-            <div className="flex flex-col gap-14">
-              {pd.spec.map((g) => (
-                <div
-                  key={g.k}
-                  className="grid grid-cols-1 gap-8 rounded-[22px] border border-white/14 bg-white/[0.045] p-7 lg:grid-cols-[1fr_1.2fr]"
-                >
-                  <img src={resolveImage(g.img, dp(g.k))} alt={dp(g.k)} className="h-[260px] w-full rounded-2xl object-cover" />
-                  <div>
-                    <h3 className="mb-4 text-[22px] font-bold tracking-tight text-[#F9F5F3]">{dp(g.k)}</h3>
-                    <ul className="flex flex-col gap-2.5">
-                      {g.items.map((item, i) => (
-                        <li key={i} className="flex items-start gap-2.5 text-[15px] leading-relaxed text-white/82">
-                          <Icon name="check" className="mt-1 h-3.5 w-3.5 flex-none text-[#C98A6B]" />
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                    {g.note && <p className="mt-4 text-[13px] italic text-white/50">{g.note}</p>}
+            {(() => {
+              const specIdx = Math.min(specCat, pd.spec.length - 1);
+              const active = pd.spec[specIdx];
+              return (
+                <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-[minmax(220px,272px)_1fr]">
+                  <div className="flex flex-col gap-2">
+                    {pd.spec.map((g, i) => {
+                      const isActive = i === specIdx;
+                      return (
+                        <button
+                          key={g.k}
+                          onClick={() => setSpecCat(i)}
+                          className="hi-pill flex w-full items-center gap-3 rounded-2xl px-4.5 py-4 text-left text-[14.5px] font-bold tracking-tight"
+                          style={{
+                            background: isActive ? "#F9F5F3" : "rgba(255,255,255,0.05)",
+                            color: isActive ? "#122530" : "rgba(249,245,243,0.78)",
+                            border: `1px solid ${isActive ? "#F9F5F3" : "rgba(255,255,255,0.16)"}`,
+                          }}
+                        >
+                          <Icon
+                            name={specIconName(g.k)}
+                            className="h-4.5 w-4.5 flex-none"
+                            style={{ color: isActive ? "#C1560F" : "#C98A6B" }}
+                          />
+                          <span className="flex-1">{dp(g.k)}</span>
+                          <span
+                            className="text-[11.5px] font-semibold tabular-nums"
+                            style={{ color: isActive ? "rgba(18,37,48,0.55)" : "rgba(249,245,243,0.45)" }}
+                          >
+                            {g.items.length}
+                          </span>
+                        </button>
+                      );
+                    })}
+                  </div>
+                  <div className="grid grid-cols-1 overflow-hidden rounded-[22px] border border-white/14 bg-white/[0.045] md:grid-cols-[1fr_34%]">
+                    <div className="min-w-0 p-8">
+                      <h3 className="mb-6 text-[clamp(21px,2.2vw,27px)] font-bold tracking-tight text-[#F9F5F3]">
+                        {dp(active.k)}
+                      </h3>
+                      <div className="flex flex-col gap-3">
+                        {active.items.map((item, i) => (
+                          <span
+                            key={i}
+                            className="flex items-start gap-3 border-b border-white/8 pb-3 text-[15.5px] leading-relaxed text-white/82"
+                          >
+                            <Icon name="check" className="mt-0.5 h-3.5 w-3.5 flex-none text-[#C98A6B]" strokeWidth={2.4} />
+                            {item}
+                          </span>
+                        ))}
+                      </div>
+                      {active.note && <p className="mt-5 text-[13px] italic text-white/50">{active.note}</p>}
+                    </div>
+                    <div className="relative min-h-[320px] bg-[#16313D]">
+                      <img
+                        src={resolveImage(active.img, dp(active.k))}
+                        alt={dp(active.k)}
+                        onError={(e) => {
+                          e.currentTarget.onerror = null;
+                          e.currentTarget.src = resolveImage(SPEC_FALLBACK_PHOTO[active.k] || active.img, dp(active.k));
+                        }}
+                        className="absolute inset-0 h-full w-full object-cover"
+                      />
+                      <div
+                        className="absolute inset-0"
+                        style={{ background: "linear-gradient(90deg, rgba(18,37,48,0.55) 0%, rgba(18,37,48,0) 42%)" }}
+                      />
+                    </div>
                   </div>
                 </div>
-              ))}
-            </div>
+              );
+            })()}
+            <p className="mt-6.5 max-w-[760px] text-[12.5px] leading-relaxed text-white/45">{t("std_disclaimer")}</p>
           </div>
         </section>
       )}
 
       {tab === "location" && (
-        <section className="bg-white px-5 py-16 md:px-8 md:py-24">
+        <section id="dp-location" className="bg-white px-5 py-16 md:px-8 md:py-24">
           <div className="mx-auto max-w-[1400px]">
             <span className="hi-eyebrow mb-3 block text-[#C1560F]">{dp("loc_eyebrow")}</span>
-            <h2 className="mb-8 max-w-[720px] text-[32px] font-bold tracking-tight text-[#1F3A47]">
-              {dp("loc_title")}
+            <h2 className="mb-10 max-w-[720px] text-[32px] font-bold tracking-tight text-[#1F3A47]">
+              {d.id === "nexus" ? dp("loc_title") : d.place || d.locationLabel || d.region}
             </h2>
 
-            {!!locCats.length && (
-              <>
-                <div className="mb-7 flex flex-wrap gap-2">
-                  {locCats.map((c) => (
-                    <FilterPill key={c} active={locCat === c} onClick={() => setLocCat(c)} label={dp(c)} />
-                  ))}
-                </div>
-                <div className="mb-16 grid grid-cols-1 gap-3 sm:grid-cols-2">
-                  {(pd.amenities[locCat] || []).map((a, i) => (
-                    <div key={i} className="flex items-center justify-between rounded-xl border border-[#E3E9EC] px-5 py-3.5">
-                      <span className="text-[14.5px] font-medium text-[#1F3A47]">{a.name}</span>
-                      <span className="text-[13px] font-semibold text-[#8B979C]">{a.d}</span>
+            {(!!locCats.length || !!d.accessPoints?.length || MAP_SRC[d.id]) && (
+              <div className="mb-16 grid grid-cols-1 items-start gap-11 lg:grid-cols-[minmax(320px,1fr)_minmax(320px,1fr)]">
+                <div>
+                  {!!locCats.length && (
+                    <>
+                      <div className="mb-6.5 flex flex-wrap gap-2">
+                        {locCats.map((c) => (
+                          <FilterPill
+                            key={c}
+                            active={locCat === c}
+                            onClick={() => setLocCat(c)}
+                            label={dp(c)}
+                            icon={locCatIconName(c)}
+                            count={String((pd.amenities[c] || []).length)}
+                          />
+                        ))}
+                      </div>
+                      <div className="flex flex-col">
+                        {(pd.amenities[locCat] || []).map((a, i) => (
+                          <div key={i} className="flex items-center justify-between gap-5 border-b border-[#EEF1F1] py-4">
+                            <span className="flex items-center gap-3 text-[15px] font-medium text-[#1F3A47]">
+                              <span className="flex h-8.5 w-8.5 flex-none items-center justify-center rounded-full bg-[#F2F6F8]">
+                                <Icon name={locCatIconName(locCat)} className="h-4 w-4 text-[#28567A]" strokeWidth={1.7} />
+                              </span>
+                              {a.name}
+                            </span>
+                            <span className="whitespace-nowrap text-[13px] font-bold tabular-nums text-[#28567A]">{a.d}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </>
+                  )}
+                  {!locCats.length && !!d.accessPoints?.length && (
+                    <div className="flex flex-col">
+                      {d.accessPoints.map((a, i) => (
+                        <div key={i} className="flex items-center gap-3 border-b border-[#EEF1F1] py-4 text-[15px] font-medium text-[#1F3A47]">
+                          <span className="flex h-8.5 w-8.5 flex-none items-center justify-center rounded-full bg-[#F2F6F8]">
+                            <Icon name={a.icon as Parameters<typeof Icon>[0]["name"]} className="h-4 w-4 text-[#28567A]" strokeWidth={1.7} />
+                          </span>
+                          {a.label}
+                        </div>
+                      ))}
                     </div>
-                  ))}
+                  )}
                 </div>
-              </>
+                {MAP_SRC[d.id] && (
+                  <div className="overflow-hidden rounded-[20px]" style={{ height: "clamp(320px,46vh,460px)" }}>
+                    <img
+                      src={resolveImage(MAP_SRC[d.id], `${d.name} local area map`)}
+                      alt={`${d.name} local area map`}
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
+                )}
+              </div>
             )}
 
             {!!pd.travel.length && (
@@ -470,27 +721,34 @@ export default function DevelopmentPage({ id }: { id: string }) {
   );
 }
 
-function FilterPill({ active, onClick, label }: { active: boolean; onClick: () => void; label: string }) {
+function FilterPill({
+  active,
+  onClick,
+  label,
+  icon,
+  count,
+}: {
+  active: boolean;
+  onClick: () => void;
+  label: string;
+  icon?: Parameters<typeof Icon>[0]["name"];
+  count?: string;
+}) {
   return (
     <button
       onClick={onClick}
-      className="hi-pill rounded-full px-4 py-2 text-[13px] font-semibold"
+      className="hi-pill inline-flex items-center gap-2 rounded-full px-4.5 py-2.5 text-[13.5px] font-semibold"
       style={{
-        border: `1px solid ${active ? "#16313D" : "#D7DEE2"}`,
-        background: active ? "#16313D" : "#fff",
-        color: active ? "#fff" : "#28567A",
+        border: `1px solid ${active ? "#1F3A47" : "#D7DEE2"}`,
+        background: active ? "#1F3A47" : "#fff",
+        color: active ? "#F9F5F3" : "#1F3A47",
       }}
     >
+      {icon && <Icon name={icon} className="h-3.5 w-3.5 flex-none" style={{ color: active ? "#F2CDB9" : "#C1560F" }} strokeWidth={1.8} />}
       {label}
+      {count !== undefined && <span style={{ fontSize: 11, opacity: 0.6 }}>{count}</span>}
     </button>
   );
-}
-
-function Th({ children }: { children: React.ReactNode }) {
-  return <th className="whitespace-nowrap px-4 py-3">{children}</th>;
-}
-function Td({ children, className = "" }: { children: React.ReactNode; className?: string }) {
-  return <td className={`whitespace-nowrap px-4 py-3.5 ${className}`}>{children}</td>;
 }
 
 function RegisterPanel({
