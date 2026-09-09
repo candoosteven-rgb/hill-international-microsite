@@ -15,7 +15,7 @@ import Footer from "@/components/Footer";
 
 // Dev logos that are dark line-art marks (not pre-colored for a dark backdrop) —
 // forced to white on the hero image, matching the design's per-id filter table.
-const FORCE_WHITE_HERO_LOGO_IDS = new Set(["city-reach", "cambium-square"]);
+const FORCE_WHITE_HERO_LOGO_IDS = new Set(["city-reach"]);
 
 const TABS = [
   { key: "overview", nav: "nav_overview" },
@@ -52,7 +52,7 @@ const EMPTY_GATE: GateForm = { name: "", email: "", phone: "", consent: false, s
 
 export default function DevelopmentPage() {
   const { t, dp, lang } = useLanguage();
-  const { pageDevId, closeDevPage, liked, toggleLiked, startPriority } = useAppState();
+  const { pageDevId, closeDevPage, liked, toggleLiked } = useAppState();
   const [tab, setTab] = useState<TabKey>("overview");
   const [locCat, setLocCat] = useState("cat_transport");
   const [gate, setGate] = useState<GateForm>(EMPTY_GATE);
@@ -149,7 +149,7 @@ export default function DevelopmentPage() {
               onClick={goRegister}
               className="hi-pill rounded-full bg-[#C1560F] px-5 py-2.5 text-[13px] font-bold text-white shadow-[0_10px_22px_rgba(193,86,15,0.34)]"
             >
-              {dp("cta_register")}
+              {d.id === "cambium-square" ? "Attend the launch" : dp("cta_register")}
             </button>
           </div>
         </div>
@@ -166,7 +166,7 @@ export default function DevelopmentPage() {
             <img
               src={logoSrc}
               alt={`${d.name} logo`}
-              className="h-16 max-w-[160px] object-contain md:h-20 md:max-w-[230px]"
+              className="h-[77px] max-w-[190px] object-contain md:h-24 md:max-w-[280px]"
               style={{
                 filter: FORCE_WHITE_HERO_LOGO_IDS.has(d.id)
                   ? "brightness(0) invert(1) drop-shadow(0 6px 18px rgba(0,0,0,0.35))"
@@ -502,27 +502,13 @@ export default function DevelopmentPage() {
 
       <DownloadsGate d={d} gate={gate} setGate={setGate} dp={dp} t={t} lang={lang} />
 
-      {isComingWithNote(d.status) && (
-        <div className="bg-[#F5F5F7] px-5 py-12 text-center md:px-8">
-          <p className="mx-auto max-w-[560px] text-[14.5px] leading-relaxed text-[#6E7B80]">{dp("coming_soon_note")}</p>
-          <button
-            onClick={() => startPriority(d.region)}
-            className="hi-pill mt-5 inline-flex items-center gap-2 rounded-full bg-[#1F3A47] px-6 py-3.5 text-[14px] font-bold text-white"
-          >
-            {t("cta_priority")}
-          </button>
-        </div>
-      )}
+      <RegisterPanel d={d} dp={dp} t={t} lang={lang} />
 
       <NearbyDevs id={d.id} />
 
       <Footer onDevelopmentsClick={goDevelopments} />
     </div>
   );
-}
-
-function isComingWithNote(status: string) {
-  return status !== "live";
 }
 
 function FilterPill({ active, onClick, label }: { active: boolean; onClick: () => void; label: string }) {
@@ -658,6 +644,116 @@ function DownloadsGate({
             </button>
           </div>
         )}
+      </div>
+    </section>
+  );
+}
+
+function RegisterPanel({
+  d,
+  dp,
+  t,
+  lang,
+}: {
+  d: ReturnType<typeof devById>;
+  dp: (key: string, vars?: Record<string, string | number>) => string;
+  t: (key: string, vars?: Record<string, string | number>) => string;
+  lang: string;
+}) {
+  const [form, setForm] = useState({ name: "", email: "", phone: "", consent: false });
+  const [error, setError] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  if (!d) return null;
+
+  const submit = async () => {
+    const emailOk = /\S+@\S+\.\S+/.test(form.email);
+    if (!form.name.trim() || !emailOk || !form.consent) {
+      setError(t("modal_gate_error"));
+      return;
+    }
+    setError("");
+    setSubmitting(true);
+    const ok = await submitEnquiry({
+      type: "register",
+      name: form.name.trim(),
+      email: form.email.trim(),
+      phone: form.phone.trim() || undefined,
+      developmentId: d.id,
+      developmentName: d.name,
+      consent: form.consent,
+      pageLang: lang,
+    });
+    setSubmitting(false);
+    if (!ok) {
+      setError(t("form_submit_error"));
+      return;
+    }
+    setSubmitted(true);
+  };
+
+  return (
+    <section className="bg-white px-5 py-16 md:px-8 md:py-24">
+      <div className="mx-auto grid max-w-[1400px] grid-cols-1 items-start gap-11 lg:grid-cols-2">
+        <div>
+          <h3 className="mb-4 text-[clamp(26px,3vw,36px)] font-extrabold tracking-tight text-[#1F3A47]">{d.name}</h3>
+          <p className="max-w-[400px] text-[16px] leading-relaxed text-[#5C6B71]">{dp("coming_soon_note")}</p>
+        </div>
+
+        <div className="rounded-[20px] bg-[#122530] p-8">
+          <h3 className="mb-3 text-[clamp(19px,2vw,22px)] font-extrabold tracking-tight text-[#F9F5F3]">
+            {devText(d, dp, "reg_title")}
+          </h3>
+          {submitted ? (
+            <div className="hi-in mt-3.5 flex items-start gap-3.5">
+              <span className="flex h-10 w-10 flex-none items-center justify-center rounded-full bg-[rgba(31,164,92,0.18)]">
+                <Icon name="check" className="hi-check h-5 w-5 text-[#5FD39A]" strokeWidth={2.4} />
+              </span>
+              <p className="text-[15.5px] leading-relaxed text-white/82">{dp("reg_thanks")}</p>
+            </div>
+          ) : (
+            <>
+              <p className="mb-5 text-[14px] leading-relaxed text-white/70">{dp("reg_sub")}</p>
+              <div className="mb-4 flex flex-col gap-3">
+                <input
+                  value={form.name}
+                  onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
+                  placeholder={t("modal_gate_name")}
+                  className="rounded-[10px] border border-white/22 bg-white/6 px-4 py-3.5 text-[14.5px] text-[#F9F5F3] placeholder:text-white/45"
+                />
+                <input
+                  value={form.email}
+                  onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
+                  placeholder={t("modal_gate_email")}
+                  className="rounded-[10px] border border-white/22 bg-white/6 px-4 py-3.5 text-[14.5px] text-[#F9F5F3] placeholder:text-white/45"
+                />
+                <input
+                  value={form.phone}
+                  onChange={(e) => setForm((f) => ({ ...f, phone: e.target.value }))}
+                  placeholder={t("modal_gate_phone")}
+                  className="rounded-[10px] border border-white/22 bg-white/6 px-4 py-3.5 text-[14.5px] text-[#F9F5F3] placeholder:text-white/45"
+                />
+              </div>
+              <label className="mb-4.5 flex cursor-pointer items-start gap-2.5">
+                <input
+                  type="checkbox"
+                  checked={form.consent}
+                  onChange={(e) => setForm((f) => ({ ...f, consent: e.target.checked }))}
+                  className="hi-checkbox mt-0.5"
+                />
+                <span className="text-[13px] leading-relaxed text-white/66">{t("modal_gate_consent")}</span>
+              </label>
+              {error && <div className="mb-3.5 text-[13px] text-[#E6A98C]">{error}</div>}
+              <button
+                onClick={submit}
+                disabled={submitting}
+                className="hi-pill inline-flex items-center rounded-full bg-[#C1560F] px-7 py-3.5 text-[14.5px] font-bold text-white shadow-[0_12px_26px_rgba(193,86,15,0.34)] disabled:opacity-60"
+              >
+                {dp("reg_submit")}
+              </button>
+            </>
+          )}
+        </div>
       </div>
     </section>
   );

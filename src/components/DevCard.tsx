@@ -226,7 +226,7 @@ export default function DevCard({ d }: { d: Development }) {
               className="hi-pill inline-flex items-center gap-2 rounded-full border border-[#1F3A47] px-4 py-2 text-[13px] font-bold text-[#1F3A47]"
             >
               <Icon name="clock" className="h-3.5 w-3.5" />
-              {t("cta_priority")}
+              {d.id === "cambium-square" ? "Attend the launch" : t("cta_priority")}
             </button>
           )}
           <button

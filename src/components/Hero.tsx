@@ -56,7 +56,7 @@ export default function Hero() {
             className="max-w-[1180px] font-extrabold text-[#F9F5F3]"
             style={{ fontSize: "clamp(38px,6.4vw,92px)", lineHeight: 0.98, letterSpacing: "-0.035em" }}
           >
-            {t("hero_a_title_pre")} <em className="not-italic text-[#C1560F]">{t("hero_a_title_em")}</em>
+            {t("hero_a_title_pre")} {t("hero_a_title_em")}
           </h1>
 
           <div className="mt-9 flex flex-wrap items-center justify-between gap-6">

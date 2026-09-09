@@ -39,7 +39,7 @@ export default function Trust() {
           {["trust_stat1", "trust_stat2", "trust_stat3"].map((k, i) => (
             <div key={k}>
               <div className="font-extrabold tracking-tight text-[#1F3A47]" style={{ fontSize: 44, fontVariantNumeric: "tabular-nums" }}>
-                {["4.9/5", "6", "1,200+"][i]}
+                {["95%", "9", "4,000+"][i]}
               </div>
               <div className="mt-2.5 text-[14.5px] leading-snug text-[#6E7B80]">{t(k)}</div>
             </div>
