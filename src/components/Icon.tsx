@@ -38,7 +38,9 @@ const paths: Record<string, React.ReactNode> = {
   bed: (
     <>
       <path d="M3 18v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6" />
-      <path d="M3 21v-3M21 21v-3M3 13V7a1 1 0 0 1 1-1h6v6" />
+      <path d="M3 18v2M21 18v2" />
+      <path d="M3 12V7a1 1 0 0 1 1-1h6v4" />
+      <path d="M13 10V6h5a2 2 0 0 1 2 2v2" />
     </>
   ),
   check: <path d="M5 13l4 4L19 7" />,
