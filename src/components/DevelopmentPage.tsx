@@ -11,6 +11,11 @@ import { useLanguage } from "@/lib/i18n";
 import { useAppState } from "@/lib/app-state";
 import { submitEnquiry } from "@/lib/enquiry";
 import Icon from "@/components/Icon";
+import Footer from "@/components/Footer";
+
+// Dev logos that are dark line-art marks (not pre-colored for a dark backdrop) —
+// forced to white on the hero image, matching the design's per-id filter table.
+const FORCE_WHITE_HERO_LOGO_IDS = new Set(["city-reach", "cambium-square"]);
 
 const TABS = [
   { key: "overview", nav: "nav_overview" },
@@ -21,6 +26,19 @@ const TABS = [
 ] as const;
 
 type TabKey = (typeof TABS)[number]["key"];
+
+const FACT_ICON_NAMES: Parameters<typeof Icon>[0]["name"][] = [
+  "f_homes",
+  "f_types",
+  "f_tenure",
+  "f_completion",
+  "f_price",
+  "f_travel",
+  "f_epc",
+  "f_parking",
+  "f_zone",
+  "f_warranty",
+];
 
 interface GateForm {
   name: string;
@@ -76,6 +94,11 @@ export default function DevelopmentPage() {
   const goRegister = () => {
     closeDevPage();
     setTimeout(() => document.getElementById("hi-register")?.scrollIntoView({ behavior: "smooth" }), 60);
+  };
+
+  const goDevelopments = () => {
+    closeDevPage();
+    setTimeout(() => document.getElementById("hi-developments")?.scrollIntoView({ behavior: "smooth" }), 60);
   };
 
   return (
@@ -139,8 +162,17 @@ export default function DevelopmentPage() {
           style={{ background: "linear-gradient(4deg, rgba(11,26,33,0.92) 0%, rgba(11,26,33,0.5) 46%, rgba(11,26,33,0.12) 100%)" }}
         />
         {logoSrc && (
-          <div className="hi-pop absolute left-5 top-24 md:left-8 md:top-28">
-            <img src={logoSrc} alt={`${d.name} logo`} className="h-10 w-auto md:h-12" />
+          <div className="hi-pop absolute left-1/2 top-9 -translate-x-1/2">
+            <img
+              src={logoSrc}
+              alt={`${d.name} logo`}
+              className="h-16 max-w-[160px] object-contain md:h-20 md:max-w-[230px]"
+              style={{
+                filter: FORCE_WHITE_HERO_LOGO_IDS.has(d.id)
+                  ? "brightness(0) invert(1) drop-shadow(0 6px 18px rgba(0,0,0,0.35))"
+                  : "drop-shadow(0 6px 18px rgba(0,0,0,0.35))",
+              }}
+            />
           </div>
         )}
         <div className="absolute inset-x-0 bottom-0 px-5 pb-13 md:px-8">
@@ -212,15 +244,18 @@ export default function DevelopmentPage() {
               <div className="rounded-[22px] bg-[#F5F5F7] p-8 md:p-9">
                 <div className="mb-6.5 text-[19px] font-extrabold tracking-tight text-[#1F3A47]">{dp("facts_title")}</div>
                 <div className="grid grid-cols-2 gap-6 sm:grid-cols-3">
-                  {facts.map((f) => (
-                    <div key={f.k}>
-                      <div className="mb-3 flex h-8 w-8 items-center justify-center rounded-full bg-[rgba(193,86,15,0.12)]">
-                        <Icon name="check" className="h-4 w-4 text-[#C1560F]" />
+                  {facts.map((f) => {
+                    const factIcon = FACT_ICON_NAMES.find((n) => n === f.k);
+                    return (
+                      <div key={f.k}>
+                        <div className="mb-3 flex h-8 w-8 items-center justify-center rounded-full bg-[rgba(193,86,15,0.12)]">
+                          {factIcon && <Icon name={factIcon} className="h-4 w-4 text-[#C1560F]" />}
+                        </div>
+                        <div className="mb-1.5 text-[24px] font-extrabold tracking-tight text-[#1F3A47]">{f.v || "—"}</div>
+                        <div className="text-[13px] font-medium leading-snug text-[#6E7B80]">{dp(f.k)}</div>
                       </div>
-                      <div className="mb-1.5 text-[24px] font-extrabold tracking-tight text-[#1F3A47]">{f.v || "—"}</div>
-                      <div className="text-[13px] font-medium leading-snug text-[#6E7B80]">{dp(f.k)}</div>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
               </div>
             )}
@@ -376,27 +411,41 @@ export default function DevelopmentPage() {
       )}
 
       {tab === "spec" && (
-        <section className="bg-white px-5 py-16 md:px-8 md:py-24">
+        <section
+          className="px-5 py-16 md:px-8 md:py-24"
+          style={{
+            backgroundColor: "#122530",
+            backgroundImage: `radial-gradient(1200px 640px at 8% -12%, rgba(201,138,107,0.22), transparent 62%), linear-gradient(180deg, rgba(18,37,48,0.90) 0%, rgba(12,28,37,0.93) 55%, rgba(16,34,45,0.91) 100%), url("${resolveImage("uploads/marble-texture-background_38679-1053.avif", "")}")`,
+            backgroundSize: "auto, auto, cover",
+            backgroundPosition: "center, center, center",
+            backgroundRepeat: "no-repeat, no-repeat, no-repeat",
+            backgroundBlendMode: "screen, multiply, normal",
+            boxShadow: "inset 0 1px 0 rgba(201,138,107,0.42), inset 0 -1px 0 rgba(255,255,255,0.06)",
+          }}
+        >
           <div className="mx-auto max-w-[1400px]">
-            <span className="hi-eyebrow mb-3 block text-[#C1560F]">{dp("spec_eyebrow")}</span>
-            <h2 className="mb-10 max-w-[720px] text-[32px] font-extrabold tracking-tight text-[#1F3A47]">
+            <span className="hi-eyebrow mb-3 block text-[#C98A6B]">{dp("spec_eyebrow")}</span>
+            <h2 className="mb-10 max-w-[720px] text-[32px] font-extrabold tracking-tight text-[#F9F5F3]">
               {dp("spec_title")}
             </h2>
             <div className="flex flex-col gap-14">
               {pd.spec.map((g) => (
-                <div key={g.k} className="grid grid-cols-1 gap-8 lg:grid-cols-[1fr_1.2fr]">
+                <div
+                  key={g.k}
+                  className="grid grid-cols-1 gap-8 rounded-[22px] border border-white/14 bg-white/[0.045] p-7 lg:grid-cols-[1fr_1.2fr]"
+                >
                   <img src={resolveImage(g.img, dp(g.k))} alt={dp(g.k)} className="h-[260px] w-full rounded-2xl object-cover" />
                   <div>
-                    <h3 className="mb-4 text-[22px] font-extrabold tracking-tight text-[#1F3A47]">{dp(g.k)}</h3>
+                    <h3 className="mb-4 text-[22px] font-extrabold tracking-tight text-[#F9F5F3]">{dp(g.k)}</h3>
                     <ul className="flex flex-col gap-2.5">
                       {g.items.map((item, i) => (
-                        <li key={i} className="flex items-start gap-2.5 text-[15px] leading-relaxed text-[#5C6B71]">
-                          <Icon name="check" className="mt-1 h-3.5 w-3.5 flex-none text-[#C1560F]" />
+                        <li key={i} className="flex items-start gap-2.5 text-[15px] leading-relaxed text-white/82">
+                          <Icon name="check" className="mt-1 h-3.5 w-3.5 flex-none text-[#C98A6B]" />
                           {item}
                         </li>
                       ))}
                     </ul>
-                    {g.note && <p className="mt-4 text-[13px] text-[#8B979C]">{g.note}</p>}
+                    {g.note && <p className="mt-4 text-[13px] italic text-white/50">{g.note}</p>}
                   </div>
                 </div>
               ))}
@@ -466,6 +515,8 @@ export default function DevelopmentPage() {
       )}
 
       <NearbyDevs id={d.id} />
+
+      <Footer onDevelopmentsClick={goDevelopments} />
     </div>
   );
 }

@@ -6,7 +6,7 @@ import { useLanguage } from "@/lib/i18n";
 import LangPills from "@/components/LangPills";
 import Icon from "@/components/Icon";
 
-export default function Footer() {
+export default function Footer({ onDevelopmentsClick }: { onDevelopmentsClick?: () => void }) {
   const { t, dp } = useLanguage();
   const [discOpen, setDiscOpen] = useState(false);
 
@@ -28,9 +28,18 @@ export default function Footer() {
           </div>
           <div>
             <div className="mb-4 text-[13px] font-semibold text-[#F9F5F3]">{t("footer_developments")}</div>
-            <a href="#hi-developments" className="hi-link mb-2.5 block text-[14px] text-white/68">
-              {t("nav_developments")} ({devData.length})
-            </a>
+            {onDevelopmentsClick ? (
+              <button
+                onClick={onDevelopmentsClick}
+                className="hi-link mb-2.5 block text-start text-[14px] text-white/68"
+              >
+                {t("nav_developments")} ({devData.length})
+              </button>
+            ) : (
+              <a href="#hi-developments" className="hi-link mb-2.5 block text-[14px] text-white/68">
+                {t("nav_developments")} ({devData.length})
+              </a>
+            )}
           </div>
           <div>
             <div className="mb-4 text-[13px] font-semibold text-[#F9F5F3]">{t("footer_contact")}</div>

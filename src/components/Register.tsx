@@ -219,7 +219,7 @@ export default function Register() {
         <button
           onClick={submit}
           disabled={submitting}
-          className="hi-pill inline-flex items-center gap-2.5 rounded-full bg-[#C1560F] px-8 py-4 text-[15.5px] font-bold text-white shadow-[0_14px_30px_rgba(46,125,100,0.4)] disabled:opacity-60"
+          className="hi-pill hi-waggle inline-flex items-center gap-2.5 rounded-full bg-[#C1560F] px-8 py-4 text-[15.5px] font-bold text-white shadow-[0_14px_30px_rgba(46,125,100,0.4)] disabled:opacity-60"
         >
           {t("register_submit")}
         </button>

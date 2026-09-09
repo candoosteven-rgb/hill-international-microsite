@@ -5,6 +5,16 @@ import { useAppState } from "@/lib/app-state";
 import { emailTranslations, langs } from "@/lib/data";
 import Icon from "@/components/Icon";
 
+const SPARK_ANGLES = [0, 36, 72, 108, 144, 180, 216, 252, 288, 324];
+const CELEBRATION_SPARKS = SPARK_ANGLES.map((angle, i) => ({
+  angle,
+  size: i % 3 === 0 ? 7 : 5,
+  offset: i % 3 === 0 ? -3.5 : -2.5,
+  radius: i % 2 === 0 ? "100px" : "2px",
+  color: i % 3 === 0 ? "#C1560F" : i % 3 === 1 ? "#C98A6B" : "#F9F5F3",
+  delay: 0.16 + (i % 4) * 0.05,
+}));
+
 export default function ThankYouModal() {
   const { t, lang } = useLanguage();
   const { riSubmitted, setRiSubmitted } = useAppState();
@@ -35,8 +45,33 @@ export default function ThankYouModal() {
           <Icon name="close" className="h-4 w-4" />
         </button>
 
-        <div className="mx-auto mb-6 flex h-15 w-15 items-center justify-center rounded-full bg-[rgba(193,86,15,0.18)]">
-          <Icon name="check" className="hi-check h-6.5 w-6.5 text-[#C1560F]" strokeWidth={2} />
+        <div className="relative mx-auto mb-6 h-15 w-15">
+          <span aria-hidden className="hi-ring absolute inset-0 rounded-full border-2 border-[#C1560F]" />
+          <span aria-hidden className="hi-ring hi-ring-2 absolute inset-0 rounded-full border-2 border-[#C98A6B]" />
+          <div aria-hidden className="pointer-events-none absolute inset-0">
+            {CELEBRATION_SPARKS.map((sp, i) => (
+              <span
+                key={i}
+                className="absolute left-1/2 top-1/2 h-0 w-0"
+                style={{ transform: `rotate(${sp.angle}deg)` }}
+              >
+                <span
+                  className="hi-spark block"
+                  style={{
+                    width: sp.size,
+                    height: sp.size,
+                    marginLeft: sp.offset,
+                    borderRadius: sp.radius,
+                    background: sp.color,
+                    animationDelay: `${sp.delay}s`,
+                  }}
+                />
+              </span>
+            ))}
+          </div>
+          <span className="hi-badge-pop absolute inset-0 flex items-center justify-center rounded-full bg-[rgba(193,86,15,0.18)]">
+            <Icon name="check" className="hi-check h-6.5 w-6.5 text-[#C1560F]" strokeWidth={2} />
+          </span>
         </div>
 
         <h2 className="mb-3.5 text-[28px] font-extrabold tracking-tight text-[#F9F5F3]">{t("confirm_title")}</h2>

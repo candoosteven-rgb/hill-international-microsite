@@ -5,12 +5,12 @@ import { resolveImage } from "@/lib/image";
 import Reveal from "@/components/Reveal";
 import Icon from "@/components/Icon";
 
-const FEATURES: { key: string; icon: Parameters<typeof Icon>[0]["name"]; wide?: boolean }[] = [
-  { key: "std_i1", icon: "building", wide: true },
-  { key: "std_i2", icon: "compare" },
-  { key: "std_i3", icon: "leaf" },
-  { key: "std_i4", icon: "building" },
-  { key: "std_i6", icon: "shield" },
+const FEATURES: { key: string; kind: "spec" | "glazing" | "heating" | "wardrobe" | "lock"; wide?: boolean }[] = [
+  { key: "std_i1", kind: "spec", wide: true },
+  { key: "std_i2", kind: "glazing" },
+  { key: "std_i3", kind: "heating" },
+  { key: "std_i4", kind: "wardrobe" },
+  { key: "std_i6", kind: "lock" },
 ];
 
 export default function Standard() {
@@ -22,8 +22,11 @@ export default function Standard() {
       className="hi-section relative"
       style={{
         backgroundColor: "#16313D",
-        backgroundImage:
-          "radial-gradient(1200px 640px at 8% -12%, rgba(201,138,107,0.22), transparent 62%), linear-gradient(180deg, rgba(21,47,60,0.90) 0%, rgba(14,33,42,0.93) 55%, rgba(18,40,51,0.91) 100%)",
+        backgroundImage: `radial-gradient(1200px 640px at 8% -12%, rgba(201,138,107,0.22), transparent 62%), linear-gradient(180deg, rgba(21,47,60,0.90) 0%, rgba(14,33,42,0.93) 55%, rgba(18,40,51,0.91) 100%), url("${resolveImage("uploads/marble-texture-background_38679-1053.avif", "")}")`,
+        backgroundSize: "auto, auto, cover",
+        backgroundPosition: "center, center, center",
+        backgroundRepeat: "no-repeat, no-repeat, no-repeat",
+        backgroundBlendMode: "screen, multiply, normal",
         boxShadow: "inset 0 1px 0 rgba(201,138,107,0.42), inset 0 -1px 0 rgba(255,255,255,0.06)",
       }}
     >
@@ -58,14 +61,14 @@ export default function Standard() {
                     style={{ backgroundImage: `url("${resolveImage("uploads/SJH_0001.webp", "Kitchen")}")` }}
                   />
                   <div className="flex flex-col justify-center gap-3.5 p-9">
-                    <FeatureIcon icon={f.icon} />
+                    <FeatureIcon kind={f.kind} />
                     <h3 className="text-[24px] font-extrabold tracking-tight text-[#F9F5F3]">{t(`${f.key}_title`)}</h3>
                     <p className="max-w-[460px] text-[16px] leading-relaxed text-white/72">{t(`${f.key}_body`)}</p>
                   </div>
                 </div>
               ) : (
                 <div className="flex h-full flex-col gap-3.5 p-8">
-                  <FeatureIcon icon={f.icon} />
+                  <FeatureIcon kind={f.kind} />
                   <h3 className="text-[19.5px] font-extrabold tracking-tight text-[#F9F5F3]">{t(`${f.key}_title`)}</h3>
                   <p className="text-[15.5px] leading-relaxed text-white/68">{t(`${f.key}_body`)}</p>
                 </div>
@@ -82,10 +85,78 @@ export default function Standard() {
   );
 }
 
-function FeatureIcon({ icon }: { icon: Parameters<typeof Icon>[0]["name"] }) {
+const svgProps = {
+  width: 20,
+  height: 20,
+  viewBox: "0 0 24 24",
+  fill: "none",
+  stroke: "#C98A6B",
+  strokeWidth: 1.7,
+  strokeLinecap: "round" as const,
+  strokeLinejoin: "round" as const,
+  "aria-hidden": true,
+};
+
+function FeatureIcon({ kind }: { kind: "spec" | "glazing" | "heating" | "wardrobe" | "lock" }) {
   return (
-    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[rgba(201,138,107,0.16)]">
-      <Icon name={icon} className="h-5 w-5 text-[#C98A6B]" strokeWidth={1.7} />
+    <div
+      className={`flex h-10 w-10 items-center justify-center rounded-full bg-[rgba(201,138,107,0.16)] ${
+        kind === "heating" ? "hi-heatpod" : kind === "lock" ? "hi-lockpod" : ""
+      }`}
+    >
+      {kind === "spec" && (
+        <svg {...svgProps}>
+          <rect x="4" y="3" width="16" height="18" rx="2" />
+          <path d="M4 10h16" />
+          <path d="M8 6.5h3" />
+          <path d="M12 14v3" />
+        </svg>
+      )}
+      {kind === "glazing" && (
+        <svg {...svgProps}>
+          <rect x="3" y="4" width="18" height="16" rx="2" />
+          <path d="M3 12h18" />
+          <path d="M9 4v8" />
+          <path d="M15 12v8" />
+          <path className="hi-stitch" d="M3 12h18" stroke="#F2CDB9" strokeWidth={2.1} />
+          <path className="hi-seam" d="M4 16.5h16" stroke="#F2CDB9" strokeWidth={1.4} opacity={0.85} />
+        </svg>
+      )}
+      {kind === "heating" && (
+        <svg {...svgProps}>
+          <path className="hi-heat1" d="M8 4v6" stroke="#F0A86E" />
+          <path className="hi-heat2" d="M12 4v6" stroke="#F0A86E" />
+          <path className="hi-heat3" d="M16 4v6" stroke="#F0A86E" />
+          <path d="M4 15h16" />
+          <path d="M4 19h16" />
+        </svg>
+      )}
+      {kind === "wardrobe" && (
+        <svg {...svgProps}>
+          <rect x="4" y="3" width="16" height="18" rx="2" />
+          <g className="hi-wardrobe-in" stroke="#F2CDB9">
+            <path d="M7 7h10" />
+            <path d="M9.5 7v3.4" />
+            <path d="M12 7v4" />
+            <path d="M14.5 7v3.4" />
+          </g>
+          <g className="hi-doorL">
+            <path d="M4.6 3.6h7.4v16.8H4.6z" strokeWidth={1.5} />
+            <path d="M10 11h.01" strokeWidth={2.2} />
+          </g>
+          <g className="hi-doorR">
+            <path d="M12 3.6h7.4v16.8H12z" strokeWidth={1.5} />
+            <path d="M14 11h.01" strokeWidth={2.2} />
+          </g>
+        </svg>
+      )}
+      {kind === "lock" && (
+        <svg {...svgProps}>
+          <path className="hi-shackle" d="M12 3a4 4 0 0 1 4 4v3H8V7a4 4 0 0 1 4-4Z" />
+          <rect x="5" y="10" width="14" height="11" rx="2" />
+          <path className="hi-keyhole" d="M12 14.4v2.6" stroke="#F2CDB9" strokeWidth={2.2} />
+        </svg>
+      )}
     </div>
   );
 }

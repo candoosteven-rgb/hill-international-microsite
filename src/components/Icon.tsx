@@ -125,6 +125,71 @@ const paths: Record<string, React.ReactNode> = {
     <path d="M5 19c9 0 14-5 14-14C10 5 5 10 5 19z" />
   ),
   shield: <path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z" />,
+  f_homes: (
+    <>
+      <path d="M3 11l9-8 9 8" />
+      <path d="M5 10v10h14V10" />
+    </>
+  ),
+  f_types: (
+    <>
+      <path d="M3 18v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6" />
+      <path d="M3 18v2M21 18v2" />
+      <path d="M5 10V7a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v3" />
+      <path d="M13 10V8a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2" />
+    </>
+  ),
+  f_tenure: (
+    <>
+      <path d="M9 3h6l4 4v14H5V3z" />
+      <path d="M9 11h6M9 15h4" />
+    </>
+  ),
+  f_completion: (
+    <>
+      <rect x="4" y="5" width="16" height="16" rx="2" />
+      <path d="M4 10h16M8 3v4M16 3v4" />
+    </>
+  ),
+  f_price: (
+    <>
+      <path d="M9 20V9a4 4 0 0 1 7.2-2.4" />
+      <path d="M6 13h7" />
+      <path d="M5 20h11" />
+    </>
+  ),
+  f_travel: (
+    <>
+      <rect x="5" y="3" width="14" height="14" rx="2" />
+      <path d="M5 9h14" />
+      <path d="M8 21l1.5-4M16 21l-1.5-4" />
+    </>
+  ),
+  f_epc: (
+    <>
+      <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z" />
+      <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
+    </>
+  ),
+  f_parking: (
+    <>
+      <rect x="3" y="9" width="18" height="10" rx="2" />
+      <path d="M7 19v2M17 19v2" />
+      <path d="M7 14h4a2 2 0 1 0 0-4H7v7" />
+    </>
+  ),
+  f_zone: (
+    <>
+      <path d="M12 21s-7-6.1-7-11a7 7 0 1 1 14 0c0 4.9-7 11-7 11Z" />
+      <circle cx="12" cy="10" r="2.6" />
+    </>
+  ),
+  f_warranty: (
+    <>
+      <path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z" />
+      <path d="M9.5 12l1.8 1.8L14.5 10" />
+    </>
+  ),
 };
 
 export default function Icon({
