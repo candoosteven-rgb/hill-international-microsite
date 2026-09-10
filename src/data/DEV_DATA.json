@@ -10,7 +10,6 @@
       "factsheet": true,
       "investor": false
     },
-    "siteUrl": "https://lamptonparkside.millerhare.com/",
     "image": "uploads/opt/screenshot-2026-08-28-081144.jpg",
     "logo": "uploads/lampton-parkside-logo-white.png",
     "locationLabel": "Hounslow, West London · Zone 4",
@@ -60,7 +59,6 @@
       "factsheet": true,
       "investor": true
     },
-    "siteUrl": "https://kewbridgerise.millerhare.com/",
     "image": "uploads/opt/kew-bridge-rise-photo.jpg",
     "images": [
       "https://kewbridgerise.co.uk/sites/kewbridgerise.co.uk/files/styles/media_gallery/public/images/2024-01/vb2310794_4192_Brentford_Ext_102%20Cantilever_Final_AB%20%281%29.jpg.webp?h=07f5f294&itok=IVDkfkKo",
@@ -115,7 +113,6 @@
       "factsheet": true,
       "investor": false
     },
-    "siteUrl": "https://tekuchiapps.com/northgatepark/home",
     "images": [
       "uploads/opt/ngp-foxtail-street.jpg",
       "uploads/opt/ngp-foxtail-elevation.jpg",
@@ -157,7 +154,6 @@
       "factsheet": true,
       "investor": true
     },
-    "siteUrl": "https://tekuchiapps.com/dagenhamgreen/login",
     "image": "uploads/DJI_20260122175944_0182_D.jpg.webp",
     "images": [
       "uploads/opt/dagenham-green-balcony.jpg",
@@ -517,7 +513,6 @@
       "factsheet": true,
       "investor": true
     },
-    "siteUrl": "https://tekuchiapps.com/nexus",
     "tagline": "1, 2 & 3 bed apartments",
     "showBedIcon": true,
     "images": [
@@ -774,7 +769,6 @@
       "factsheet": true,
       "investor": false
     },
-    "siteUrl": "https://hartmere.millerhare.com/",
     "locationLabel": "Huntingdon, Cambridgeshire",
     "tagline": "2, 3, 4 & 5 bed houses",
     "showBedIcon": true,
@@ -815,7 +809,6 @@
       "factsheet": true,
       "investor": false
     },
-    "siteUrl": "https://knightspark.millerhare.com/",
     "locationLabel": "Eddington, Cambridge",
     "tagline": "1, 2 & 3 bed apartments and 3 & 4 bed houses",
     "showBedIcon": true,
@@ -886,7 +879,6 @@
       "factsheet": true,
       "investor": true
     },
-    "siteUrl": "https://marleigh.millerhare.com/",
     "locationLabel": "Cambridge, Cambridgeshire",
     "tagline": "1, 2 & 3 bed apartments and 3 & 4 bed houses",
     "showBedIcon": true,
@@ -979,7 +971,6 @@
       "factsheet": true,
       "investor": true
     },
-    "siteUrl": "https://canalside-overseas.netlify.app/",
     "locationLabel": "Jericho, Oxford",
     "tagline": "1, 2 & 3 bedroom apartments,\n3, 4 & 5 bedroom freehold houses",
     "showBedIcon": true,
@@ -1024,7 +1015,6 @@
       "factsheet": true,
       "investor": true
     },
-    "siteUrl": "https://thecliftoncollection.millerhare.com/",
     "logo": "uploads/pasted-1788511212003-0.png",
     "locationLabel": "Clifton, Bristol",
     "tagline": "1, 2, 3 & 4 bed apartments,\n4 bedroom freehold mews houses",
