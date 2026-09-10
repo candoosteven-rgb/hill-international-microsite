@@ -603,8 +603,8 @@ export default function DevelopmentPage({ id }: { id: string }) {
             <span className="hi-eyebrow mb-3 block text-[#C98A6B]">{dp("gal_eyebrow")}</span>
             <h2 className="text-[clamp(28px,3.2vw,40px)] font-bold tracking-tight text-[#F9F5F3]">{dp("gal_title")}</h2>
           </div>
-          <div className="relative mx-auto flex max-w-[1400px] items-stretch gap-4 px-5 md:px-8">
-            <div className="relative min-w-0 flex-1">
+          <div className="relative mx-auto flex max-w-[1400px] flex-col items-stretch gap-4 px-5 md:flex-row md:px-8">
+            <div className="relative min-w-0 md:flex-1">
               <div className="relative overflow-hidden rounded-[20px] bg-[#16313D]" style={{ height: "clamp(300px,58vh,620px)" }}>
                 <img
                   src={resolveImage(pd.gallery[galIdx].src, dp(pd.gallery[galIdx].cap))}
@@ -655,8 +655,8 @@ export default function DevelopmentPage({ id }: { id: string }) {
             </div>
             {pd.gallery.length > 1 && (
               <div
-                className="hi-scroller flex flex-none flex-col gap-2.5 overflow-y-auto"
-                style={{ width: 90, maxHeight: "clamp(300px,58vh,620px)" }}
+                className="hi-scroller flex flex-none flex-row gap-2.5 overflow-x-auto overflow-y-visible md:w-[90px] md:flex-col md:overflow-x-visible md:overflow-y-auto"
+                style={{ maxHeight: "clamp(300px,58vh,620px)" }}
               >
                 {pd.gallery.map((g, i) => (
                   <button
