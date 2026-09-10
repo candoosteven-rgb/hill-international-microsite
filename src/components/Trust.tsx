@@ -8,6 +8,7 @@ import Icon from "@/components/Icon";
 
 const DEVESH_VIDEO_SRC =
   "uploads/Step into life at Kew Bridge Rise.Devesh, a London music producer, chose a two bed apartment wit.mp4";
+const DEVESH_VIDEO_POSTER = "uploads/devesh-video-poster.jpg.webp";
 
 const QUOTES = [
   {
@@ -60,6 +61,7 @@ export default function Trust() {
             <video
               ref={deveshVideoRef}
               src={resolveImage(DEVESH_VIDEO_SRC, "")}
+              poster={resolveImage(DEVESH_VIDEO_POSTER, "Devesh, Kew Bridge Rise resident")}
               controls
               playsInline
               preload="metadata"
