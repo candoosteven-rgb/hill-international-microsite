@@ -30,7 +30,7 @@ export default function About() {
         <Reveal delay={1} className="mx-auto mt-14">
           <div className="h-[340px] overflow-hidden rounded-[28px] md:h-[520px]">
             <img
-              src={resolveImage("uploads/North Gate Park - Plot 2 The Ash -bifolding doors.jpg.webp", "Hill International")}
+              src={resolveImage("uploads/number-92-dining-kitchen.jpg.webp", "Hill International")}
               alt="Hill International development"
               className="h-full w-full object-cover"
             />
