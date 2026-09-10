@@ -385,7 +385,8 @@ export default function DevelopmentPage({ id }: { id: string }) {
               </div>
             )}
 
-            <div className="overflow-x-auto rounded-[18px] border border-[#E3E9EC]">
+            {/* Desktop/tablet: full data-grid table */}
+            <div className="hidden overflow-x-auto rounded-[18px] border border-[#E3E9EC] md:block">
               <div className="min-w-[860px]">
                 <div className="grid grid-cols-[1.2fr_1.3fr_0.7fr_0.7fr_0.8fr_1fr_1.1fr_1.6fr] gap-3.5 bg-[#F5F5F7] px-6 py-4 text-[11.5px] font-bold uppercase tracking-wide text-[#6E7B80]">
                   <span>{dp("c_plot")}</span>
@@ -441,6 +442,60 @@ export default function DevelopmentPage({ id }: { id: string }) {
                   </div>
                 )}
               </div>
+            </div>
+
+            {/* Mobile: one card per plot instead of a table that needs a sideways scroll */}
+            <div className="flex flex-col gap-3 md:hidden">
+              {filteredPlots.map((p) => (
+                <div
+                  key={p.plot}
+                  className="rounded-2xl border border-[#E3E9EC] p-4"
+                  style={{ opacity: p.avail ? 1 : 0.55 }}
+                >
+                  <div className="mb-3.5 flex items-start justify-between gap-3">
+                    <span className="text-[15.5px] font-bold text-[#1F3A47]">{p.plot}</span>
+                    <span
+                      className="whitespace-nowrap rounded-full px-2.5 py-1 text-[11px] font-bold"
+                      style={
+                        p.avail
+                          ? { background: "rgba(31,164,92,0.12)", color: "#137A42" }
+                          : { background: "rgba(31,58,71,0.08)", color: "#6E7B80" }
+                      }
+                    >
+                      {p.avail ? dp("s_available") : dp("s_reserved")}
+                    </span>
+                  </div>
+                  <div className="grid grid-cols-2 gap-x-4 gap-y-3 text-[13.5px]">
+                    {[
+                      [dp("c_building"), p.building || "—", false],
+                      [dp("c_floor"), p.floor || "—", false],
+                      [dp("c_beds"), String(p.beds), false],
+                      [dp("c_baths"), p.baths != null ? String(p.baths) : "—", false],
+                      [dp("c_size"), p.size ? `${p.size.toLocaleString("en-GB")} sq ft` : "—", false],
+                      [dp("c_price"), p.price ? gbp(p.price) : "—", true],
+                    ].map(([label, value, isPrice], i) => (
+                      <div key={i}>
+                        <div className="text-[10.5px] font-bold uppercase tracking-wide text-[#8A969B]">{label}</div>
+                        <div className={`mt-0.5 ${isPrice ? "font-bold text-[#C1560F]" : "text-[#1F3A47]"}`}>{value}</div>
+                      </div>
+                    ))}
+                  </div>
+                  {p.avail && (
+                    <button
+                      onClick={goRegister}
+                      className="hi-pill mt-4 inline-flex w-full items-center justify-center gap-1.5 rounded-full bg-[#28567A] px-3.5 py-3 text-[13px] font-bold text-white"
+                    >
+                      {dp("enquire")}
+                      <Icon name="chevronRight" className="h-3 w-3" strokeWidth={2.6} />
+                    </button>
+                  )}
+                </div>
+              ))}
+              {!filteredPlots.length && (
+                <div className="rounded-2xl border border-[#EEF1F1] px-6 py-9 text-center text-[14.5px] text-[#6E7B80]">
+                  {dp("av_none")}
+                </div>
+              )}
             </div>
           </div>
         </section>
