@@ -47,7 +47,9 @@ export default function Footer({ onDevelopmentsClick }: { onDevelopmentsClick?: 
               href="mailto:InternationalEnquiries@hill.co.uk"
               className="hi-link mb-2.5 flex items-center gap-1.5 text-[14px] text-white/68"
             >
-              <Icon name="mail" className="h-4 w-4 flex-none" />
+              <span className="flex h-5 w-5 flex-none items-center justify-center">
+                <Icon name="mail" className="h-4 w-4" />
+              </span>
               InternationalEnquiries@hill.co.uk
             </a>
             <a
@@ -56,13 +58,15 @@ export default function Footer({ onDevelopmentsClick }: { onDevelopmentsClick?: 
               rel="noopener"
               className="hi-link flex items-center gap-1.5 text-[14px] text-white/68"
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/uploads/linkedin-logo-cropped.webp"
-                alt=""
-                loading="lazy"
-                className="h-5 w-5 flex-none object-contain"
-              />
+              <span className="flex h-5 w-5 flex-none items-center justify-center">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/uploads/linkedin-logo-cropped.webp"
+                  alt=""
+                  loading="lazy"
+                  className="h-5 w-5 object-contain"
+                />
+              </span>
               LinkedIn
             </a>
           </div>
