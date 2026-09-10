@@ -189,7 +189,7 @@ export default function DevelopmentPage({ id }: { id: string }) {
   const goDevelopments = () => router.push("/#hi-developments");
 
   return (
-    <div dir="auto" className="hi-fade overflow-x-hidden bg-white text-[#1F3A47]">
+    <div dir="auto" className="hi-fade overflow-x-clip bg-white text-[#1F3A47]">
       <div
         className="sticky top-0 z-30 shadow-[0_10px_26px_-12px_rgba(0,0,0,0.5)]"
         style={{ background: "rgba(14,32,40,0.97)", backdropFilter: "blur(14px)" }}
@@ -198,12 +198,16 @@ export default function DevelopmentPage({ id }: { id: string }) {
           <div className="flex min-w-0 items-center gap-4">
             <button
               onClick={() => router.push("/")}
-              className="hi-pill inline-flex items-center gap-2 rounded-full border border-white/24 bg-white/8 px-4 py-2 text-[13px] font-semibold text-[#F9F5F3]"
+              aria-label={dp("back")}
+              className="hi-pill flex h-10 w-10 flex-none items-center justify-center rounded-full border border-white/24 bg-white/8 text-[#F9F5F3] md:h-auto md:w-auto md:gap-2 md:px-4 md:py-2 md:text-[13px] md:font-semibold"
             >
               <Icon name="chevronLeft" className="h-3.5 w-3.5" />
-              {dp("back")}
+              <span className="hidden md:inline">{dp("back")}</span>
             </button>
-            <span className="whitespace-nowrap text-[17px] font-bold tracking-tight text-[#F9F5F3]">{d.name}</span>
+            {/* Already shown large in the hero right below - repeating it here just crowds the mobile bar. */}
+            <span className="hidden whitespace-nowrap text-[17px] font-bold tracking-tight text-[#F9F5F3] md:inline">
+              {d.name}
+            </span>
           </div>
           <nav className="hi-scroller hidden max-w-full items-center gap-5 overflow-x-auto md:flex">
             {navLinks.map((n) => (
@@ -217,14 +221,6 @@ export default function DevelopmentPage({ id }: { id: string }) {
             ))}
           </nav>
           <div className="flex items-center gap-2.5">
-            <button
-              onClick={() => setNavOpen((v) => !v)}
-              aria-label="Section menu"
-              aria-expanded={navOpen}
-              className="flex h-10 w-10 flex-none items-center justify-center rounded-full border border-white/24 bg-white/8 md:hidden"
-            >
-              <Icon name={navOpen ? "close" : "menu"} className="h-4 w-4 text-[#F9F5F3]" />
-            </button>
             <button
               onClick={() => toggleLiked(d.id)}
               aria-pressed={isLiked}
@@ -241,6 +237,15 @@ export default function DevelopmentPage({ id }: { id: string }) {
               className="hi-pill rounded-full bg-[#C1560F] px-5 py-2.5 text-[13px] font-bold text-white shadow-[0_10px_22px_rgba(193,86,15,0.34)]"
             >
               {d.id === "cambium-square" ? "Attend the launch" : dp("cta_register")}
+            </button>
+            {/* Rightmost on mobile so it sits at the screen edge, closest to thumb reach. */}
+            <button
+              onClick={() => setNavOpen((v) => !v)}
+              aria-label="Section menu"
+              aria-expanded={navOpen}
+              className="flex h-10 w-10 flex-none items-center justify-center rounded-full border border-white/24 bg-white/8 md:hidden"
+            >
+              <Icon name={navOpen ? "close" : "menu"} className="h-4 w-4 text-[#F9F5F3]" />
             </button>
           </div>
         </div>
