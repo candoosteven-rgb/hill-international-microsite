@@ -22,8 +22,8 @@ const FORCE_WHITE_HERO_LOGO_IDS = new Set(["city-reach"]);
 // Real branded local-area map images, where we actually have one - kept in
 // preference to the generic embed below since they match the design exactly.
 const MAP_SRC: Record<string, string> = {
-  "baltic-wharf": "uploads/Screenshot 2026-09-04 094937.png.webp",
-  "southville-collection": "uploads/Screenshot 2026-09-04 095321.png.webp",
+  "baltic-wharf": "uploads/baltic-wharf-map.png.webp",
+  "southville-collection": "uploads/southville-collection-map.png.webp",
 };
 
 // Every other development gets a real, live Google Maps embed instead of no
@@ -55,13 +55,13 @@ function mapEmbedSrc(d: NonNullable<ReturnType<typeof devById>>, pd: NonNullable
 // broken-photo placeholder should still look like the room it's describing,
 // not an abstract colour gradient.
 const SPEC_FALLBACK_PHOTO: Record<string, string> = {
-  sg_kitchen: "uploads/SJH_0001.webp",
-  sg_bathroom: "uploads/DSC_0447 - HR.jpg",
-  sg_heating: "uploads/DSC_0447 - HR.jpg",
-  sg_electrical: "uploads/NEXUS_BEDROOM 2_VIGNETTE_.jpg.webp",
-  sg_communal: "uploads/0223_001_46_H2.jpg.webp",
-  sg_finishes: "uploads/North Gate Park - Plot 2 The Ash -bifolding doors.jpg.webp",
-  sg_additional: "uploads/DSC_0787 - HR.jpg",
+  sg_kitchen: "uploads/spec-fallback-kitchen.webp",
+  sg_bathroom: "uploads/dagenham-green-bathroom.jpg",
+  sg_heating: "uploads/dagenham-green-bathroom.jpg",
+  sg_electrical: "uploads/nexus-bedroom-vignette.jpg.webp",
+  sg_communal: "uploads/north-gate-park-communal-lounge.jpg.webp",
+  sg_finishes: "uploads/north-gate-park-bifolding-doors.jpg.webp",
+  sg_additional: "uploads/dagenham-green-interior-detail.jpg",
 };
 
 const SPEC_ICON_NAMES = new Set([
@@ -553,7 +553,7 @@ export default function DevelopmentPage({ id }: { id: string }) {
           className="px-5 py-16 md:px-8 md:py-24"
           style={{
             backgroundColor: "#122530",
-            backgroundImage: `radial-gradient(1200px 640px at 8% -12%, rgba(201,138,107,0.22), transparent 62%), linear-gradient(180deg, rgba(18,37,48,0.90) 0%, rgba(12,28,37,0.93) 55%, rgba(16,34,45,0.91) 100%), url("${resolveImage("uploads/marble-texture-background_38679-1053.avif", "")}")`,
+            backgroundImage: `radial-gradient(1200px 640px at 8% -12%, rgba(201,138,107,0.22), transparent 62%), linear-gradient(180deg, rgba(18,37,48,0.90) 0%, rgba(12,28,37,0.93) 55%, rgba(16,34,45,0.91) 100%), url("${resolveImage("uploads/marble-texture-background.avif", "")}")`,
             backgroundSize: "auto, auto, cover",
             backgroundPosition: "center, center, center",
             backgroundRepeat: "no-repeat, no-repeat, no-repeat",

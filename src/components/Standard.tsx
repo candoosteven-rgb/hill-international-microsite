@@ -22,7 +22,7 @@ export default function Standard() {
       className="hi-section relative"
       style={{
         backgroundColor: "#16313D",
-        backgroundImage: `radial-gradient(1200px 640px at 8% -12%, rgba(201,138,107,0.22), transparent 62%), linear-gradient(180deg, rgba(21,47,60,0.90) 0%, rgba(14,33,42,0.93) 55%, rgba(18,40,51,0.91) 100%), url("${resolveImage("uploads/marble-texture-background_38679-1053.avif", "")}")`,
+        backgroundImage: `radial-gradient(1200px 640px at 8% -12%, rgba(201,138,107,0.22), transparent 62%), linear-gradient(180deg, rgba(21,47,60,0.90) 0%, rgba(14,33,42,0.93) 55%, rgba(18,40,51,0.91) 100%), url("${resolveImage("uploads/marble-texture-background.avif", "")}")`,
         backgroundSize: "auto, auto, cover",
         backgroundPosition: "center, center, center",
         backgroundRepeat: "no-repeat, no-repeat, no-repeat",
@@ -58,7 +58,7 @@ export default function Standard() {
                 <div className="grid items-stretch sm:grid-cols-2">
                   <div
                     className="min-h-[220px] bg-cover bg-center"
-                    style={{ backgroundImage: `url("${resolveImage("uploads/SJH_0001.webp", "Kitchen")}")` }}
+                    style={{ backgroundImage: `url("${resolveImage("uploads/spec-fallback-kitchen.webp", "Kitchen")}")` }}
                   />
                   <div className="flex flex-col justify-center gap-3.5 p-9">
                     <FeatureIcon kind={f.kind} />

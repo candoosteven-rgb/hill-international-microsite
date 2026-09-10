@@ -20,7 +20,7 @@
       "uploads/opt/screenshot-2026-08-28-081906.jpg",
       "uploads/opt/screenshot-2026-08-28-082149.jpg",
       "uploads/opt/screenshot-2026-08-28-082600.jpg",
-      "uploads/Lampton Parkside - External - Block E1 (23).jpg.webp",
+      "uploads/lampton-parkside-block-e1-external.jpg.webp",
       "https://www.lamptonparkside.co.uk/sites/lamptonparkside.co.uk/files/styles/media_gallery/public/images/2025-10/DSC_8518-%20LR.jpg.webp?h=a9fd4dc1&itok=OxfT3K5B",
       "https://www.lamptonparkside.co.uk/sites/lamptonparkside.co.uk/files/styles/media_gallery/public/images/2025-09/To%20use%20%283%29.jpg.webp?h=a0e56f0f&itok=jCSwZ8iB",
       "https://www.lamptonparkside.co.uk/sites/lamptonparkside.co.uk/files/styles/media_gallery/public/images/2025-09/To%20use%20%282%29.jpg.webp?h=b81a5b26&itok=yvcu2q0k",
@@ -53,7 +53,7 @@
     "region": "London",
     "zone": 3,
     "status": "live",
-    "logo": "uploads/vb2292160_KBR_White_RGB.png",
+    "logo": "uploads/kew-bridge-rise-logo-white.png",
     "docs": {
       "brochure": true,
       "factsheet": true,
@@ -107,7 +107,7 @@
     "region": "London",
     "zone": 3,
     "status": "live",
-    "logo": "uploads/NGP_Logo_WHITE.png",
+    "logo": "uploads/north-gate-park-logo-white.png",
     "docs": {
       "brochure": true,
       "factsheet": true,
@@ -116,8 +116,8 @@
     "images": [
       "uploads/opt/ngp-foxtail-street.jpg",
       "uploads/opt/ngp-foxtail-elevation.jpg",
-      "uploads/North Gate Park - Plot 2 The Ash -bifolding doors.jpg.webp",
-      "uploads/opt/north-gate-park-211a2098.jpg"
+      "uploads/north-gate-park-bifolding-doors.jpg.webp",
+      "uploads/opt/north-gate-park-exterior.jpg"
     ],
     "locationLabel": "Harringay, North London · Zone 3",
     "place": "Harringay, North London",
@@ -154,14 +154,14 @@
       "factsheet": true,
       "investor": true
     },
-    "image": "uploads/DJI_20260122175944_0182_D.jpg.webp",
+    "image": "uploads/dagenham-green-aerial.jpg.webp",
     "images": [
       "uploads/opt/dagenham-green-balcony.jpg",
-      "uploads/DSC_0447 - HR.jpg",
-      "uploads/DSC_0787 - HR.jpg",
-      "uploads/Dagenham Green_BlockC_Humming_bird.jpg",
-      "uploads/Dagenham Green_B_Market_Square.jpg",
-      "uploads/DJI_20260122175944_0182_D.jpg.webp"
+      "uploads/dagenham-green-bathroom.jpg",
+      "uploads/dagenham-green-interior-detail.jpg",
+      "uploads/dagenham-green-block-c-hummingbird.jpg",
+      "uploads/dagenham-green-market-square.jpg",
+      "uploads/dagenham-green-aerial.jpg.webp"
     ],
     "logo": "uploads/dagenham-green-logo-yellow.png",
     "flowerLeft": "uploads/opt/dagenham-green-flower-left.jpg",
@@ -507,7 +507,7 @@
     "locationLabel": "Stevenage, Hertfordshire",
     "status": "live",
     "epc": "B",
-    "logo": "uploads/pasted-1788518197730-0.png",
+    "logo": "uploads/nexus-logo.png",
     "docs": {
       "brochure": true,
       "factsheet": true,
@@ -516,9 +516,9 @@
     "tagline": "1, 2 & 3 bed apartments",
     "showBedIcon": true,
     "images": [
-      "uploads/NEXUS_LIVING (1).png.webp",
-      "uploads/4371_NEXUS_KITCHEN_CAM001_DRAFT04_LTI.jpg.webp",
-      "uploads/NEXUS_BEDROOM 2_VIGNETTE_.jpg.webp",
+      "uploads/nexus-living.png.webp",
+      "uploads/nexus-kitchen.jpg.webp",
+      "uploads/nexus-bedroom-vignette.jpg.webp",
       "uploads/opt/nexus-photo.jpg"
     ],
     "accessNote": "22 minutes by train to London King’s Cross",
@@ -597,7 +597,7 @@
     "region": "Cambridge",
     "locationLabel": "Fulbourn, Cambridgeshire",
     "status": "live",
-    "logo": "uploads/pasted-1788517996366-0.png",
+    "logo": "uploads/farehurst-park-logo.png",
     "docs": {
       "brochure": true,
       "factsheet": true,
@@ -608,11 +608,11 @@
     "showBedIcon": true,
     "place": "Fulbourn, Cambridgeshire",
     "images": [
-      "uploads/Screenshot 2026-08-28 104844.png.webp",
-      "uploads/Screenshot 2026-08-28 104855.png.webp",
-      "uploads/Screenshot 2026-08-28 104906.png.webp",
-      "uploads/Screenshot 2026-08-28 104918.png.webp",
-      "uploads/Screenshot 2026-08-28 104939.png.webp"
+      "uploads/farehurst-park-photo-1.png.webp",
+      "uploads/farehurst-park-photo-2.png.webp",
+      "uploads/farehurst-park-photo-3.png.webp",
+      "uploads/farehurst-park-photo-4.png.webp",
+      "uploads/farehurst-park-photo-5.png.webp"
     ],
     "accessNote": "4 miles from Cambridge city centre",
     "accessPoints": [
@@ -636,7 +636,7 @@
     "region": "Cambridge",
     "locationLabel": "Eddington, Cambridge",
     "status": "live",
-    "logo": "uploads/pasted-1788517248362-0.png",
+    "logo": "uploads/the-icon-logo.png",
     "docs": {
       "brochure": true,
       "factsheet": true,
@@ -647,8 +647,8 @@
     "showBedIcon": true,
     "place": "Eddington, Cambridge",
     "images": [
-      "uploads/Screenshot 2026-08-28 103148.png.webp",
-      "uploads/Version-4_Dusk (1).jpg",
+      "uploads/the-icon-photo.png.webp",
+      "uploads/the-icon-dusk.jpg",
       "uploads/03_LowRes_ICON-Roof-Terrace_DJI_0016_D-HDR.jpg",
       "https://www.hill.co.uk/sites/default/files/styles/hero_mobile/public/images/2026-03/Bike%20Path_Spring%20%282%29.jpg.webp?h=37b6d6bb&itok=6bDyuCov"
     ],
@@ -726,7 +726,7 @@
     "name": "City Reach",
     "region": "Cambridge",
     "status": "live",
-    "logo": "uploads/pasted-1788517409870-0.png",
+    "logo": "uploads/city-reach-logo.png",
     "docs": {
       "brochure": true,
       "factsheet": true,
@@ -803,7 +803,7 @@
     "name": "Knights Park",
     "region": "Cambridge",
     "status": "live",
-    "logo": "uploads/pasted-1788517318272-0.png",
+    "logo": "uploads/knights-park-logo.png",
     "docs": {
       "brochure": true,
       "factsheet": true,
@@ -923,7 +923,7 @@
     "name": "Cambium Square",
     "region": "Cambridge",
     "status": "coming-soon",
-    "image": "uploads/Screenshot 2026-08-28 130141.png.webp",
+    "image": "uploads/cambium-square-photo.png.webp",
     "logo": "uploads/cambium-square-logo-white.png",
     "docs": {
       "brochure": true,
@@ -935,7 +935,7 @@
     "tagline": "2, 3, 4 & 5 bed houses",
     "showBedIcon": true,
     "images": [
-      "uploads/Screenshot 2026-08-28 130141.png.webp",
+      "uploads/cambium-square-photo.png.webp",
       "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-08/1498%20Cambium%20Square%20Cam%2027%20Street%20B19-B30%2004%20Low%20Res.jpg.webp?h=af97b938&itok=lsO0WSgu",
       "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-08/1498%20Cambium%20Square%20Cam%2026%20Street%20H1-H5%2003%20Low%20Res.jpg.webp?h=af97b938&itok=-A3iR6-n",
       "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-08/1498%20Cambium%20Square%20Cam%2028%20Playground%2003%20Low%20Res.jpg.webp?h=af97b938&itok=KIG2otj2",
@@ -974,7 +974,7 @@
     "locationLabel": "Jericho, Oxford",
     "tagline": "1, 2 & 3 bedroom apartments,\n3, 4 & 5 bedroom freehold houses",
     "showBedIcon": true,
-    "logo": "uploads/pasted-1788510616692-0.png",
+    "logo": "uploads/canalside-quarter-logo.png",
     "images": [
       "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-06/Copy%20of%20CANALSIDE%20QUARTER_AREIL%20EDIT-1.jpg.webp?h=b75339e9&itok=ZhluVH4G",
       "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2025-11/CANALSIDE.jpg.webp?h=4ca9cb25&itok=009x8LT9",
@@ -1015,7 +1015,7 @@
       "factsheet": true,
       "investor": true
     },
-    "logo": "uploads/pasted-1788511212003-0.png",
+    "logo": "uploads/clifton-collection-logo.png",
     "locationLabel": "Clifton, Bristol",
     "tagline": "1, 2, 3 & 4 bed apartments,\n4 bedroom freehold mews houses",
     "showBedIcon": true,
@@ -1065,7 +1065,7 @@
     "tagline": "1, 2 & 3 bed apartments",
     "showBedIcon": true,
     "images": [
-      "uploads/view from water-e__157,49,182.jpg.webp",
+      "uploads/baltic-wharf-view-from-water.jpg.webp",
       "https://www.hill.co.uk/sites/default/files/styles/text_image_panel/public/images/2025-12/view%208%20_e__153%2CVIII%2C84%2C121.jpg.webp?h=8f74817f&itok=vSxFBu_0",
       "https://www.hill.co.uk/sites/default/files/styles/text_image_panel/public/images/2025-12/Baltic%20Wharf%20Bristol_View01_Entrance%201.jpg.webp?h=f9ef42e2&itok=kvHzNlbL"
     ],
@@ -1087,7 +1087,7 @@
     "region": "Bristol",
     "status": "coming-soon",
     "hasMap": true,
-    "logo": "uploads/pasted-1788513060181-0.png",
+    "logo": "uploads/southville-collection-logo.png",
     "docs": {
       "brochure": true,
       "factsheet": true,
@@ -1098,9 +1098,9 @@
     "tagline": "1 & 2 bed apartments",
     "showBedIcon": true,
     "images": [
-      "uploads/Screenshot 2026-08-28 123629.png.webp",
-      "uploads/Screenshot 2026-08-28 123649.png.webp",
-      "uploads/Screenshot 2026-08-28 123706.png.webp"
+      "uploads/southville-collection-photo-1.png.webp",
+      "uploads/southville-collection-photo-2.png.webp",
+      "uploads/southville-collection-photo-3.png.webp"
     ],
     "accessNote": "Walk to North Street independents",
     "accessPoints": [
@@ -1129,9 +1129,9 @@
     "image": "uploads/opt/screenshot-2026-07-08-180242.jpg",
     "images": [
       "uploads/opt/screenshot-2026-07-08-180242.jpg",
-      "uploads/Screenshot 2026-08-28 124121.png.webp",
-      "uploads/Screenshot 2026-08-28 124210.png.webp",
-      "uploads/Screenshot 2026-08-28 124226.png.webp"
+      "uploads/ribbon-quarter-photo-1.png.webp",
+      "uploads/ribbon-quarter-photo-2.png.webp",
+      "uploads/ribbon-quarter-photo-3.png.webp"
     ],
     "tagline": "15.7-acre city-centre regeneration",
     "accessNote": "Less than 1 hour to London by train",

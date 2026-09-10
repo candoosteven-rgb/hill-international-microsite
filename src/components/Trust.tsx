@@ -7,7 +7,7 @@ import Reveal from "@/components/Reveal";
 import Icon from "@/components/Icon";
 
 const DEVESH_VIDEO_SRC =
-  "uploads/Step into life at Kew Bridge Rise.Devesh, a London music producer, chose a two bed apartment wit.mp4";
+  "uploads/kew-bridge-rise-devesh-testimonial.mp4";
 const DEVESH_VIDEO_POSTER = "uploads/devesh-video-poster.jpg.webp";
 
 // Counts the stat row up from 0 once it scrolls into view, instead of just
@@ -65,9 +65,9 @@ const QUOTES = [
     q: "trust_q2",
     name: "trust_q2_name",
     place: "Lampton Parkside, Hounslow",
-    img: "uploads/Daniele and Maira - Lampton Parkside 3.jpg.webp",
+    img: "uploads/trust-testimonial-lampton-parkside.jpg.webp",
   },
-  { q: "trust_q3", name: "trust_q3_name", place: "Knights Park, Eddington", img: "uploads/Screenshot 2026-09-04 131132.png.webp" },
+  { q: "trust_q3", name: "trust_q3_name", place: "Knights Park, Eddington", img: "uploads/trust-testimonial-knights-park.png.webp" },
 ];
 
 export default function Trust() {

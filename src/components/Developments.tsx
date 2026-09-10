@@ -12,9 +12,9 @@ import Icon from "@/components/Icon";
 
 const REGION_BANNERS: Record<string, string> = {
   London: "uploads/opt/london-skyline.jpg",
-  Cambridge: "uploads/1912220.jpg",
-  Oxford: "uploads/opt/okford.jpg",
-  Bristol: "uploads/Screenshot 2026-08-28 123313.png.webp",
+  Cambridge: "uploads/cambridge-region-banner.jpg",
+  Oxford: "uploads/opt/oxford-region-banner.jpg",
+  Bristol: "uploads/bristol-region-banner.png.webp",
 };
 
 export default function Developments() {

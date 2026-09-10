@@ -20,7 +20,7 @@
         "cap": "cap_bedroom"
       },
       {
-        "src": "uploads/Lampton Parkside - External - Block E1 (23).jpg.webp",
+        "src": "uploads/lampton-parkside-block-e1-external.jpg.webp",
         "cap": "cap_exterior"
       },
       {
@@ -535,7 +535,7 @@
     ]
   },
   "north-gate-park": {
-    "hero": "uploads/0223_001_46_H2.jpg.webp",
+    "hero": "uploads/north-gate-park-communal-lounge.jpg.webp",
     "gallery": [
       {
         "src": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-03/DSC_6976-%20LR.jpg.webp?h=8d3c5a9f&itok=FBAy9H2Z",
@@ -908,23 +908,23 @@
         "cap": "cap_exterior"
       },
       {
-        "src": "uploads/DSC_0447 - HR.jpg",
+        "src": "uploads/dagenham-green-bathroom.jpg",
         "cap": "cap_living"
       },
       {
-        "src": "uploads/DSC_0787 - HR.jpg",
+        "src": "uploads/dagenham-green-interior-detail.jpg",
         "cap": "cap_kitchen"
       },
       {
-        "src": "uploads/Dagenham Green_BlockC_Humming_bird.jpg",
+        "src": "uploads/dagenham-green-block-c-hummingbird.jpg",
         "cap": "cap_bedroom"
       },
       {
-        "src": "uploads/Dagenham Green_B_Market_Square.jpg",
+        "src": "uploads/dagenham-green-market-square.jpg",
         "cap": "cap_exterior"
       },
       {
-        "src": "uploads/DJI_20260122175944_0182_D.jpg.webp",
+        "src": "uploads/dagenham-green-aerial.jpg.webp",
         "cap": "cap_living"
       }
     ],
@@ -1531,15 +1531,15 @@
         "cap": "cap_exterior"
       },
       {
-        "src": "uploads/NEXUS_LIVING (1).png.webp",
+        "src": "uploads/nexus-living.png.webp",
         "cap": "cap_living"
       },
       {
-        "src": "uploads/4371_NEXUS_KITCHEN_CAM001_DRAFT04_LTI.jpg.webp",
+        "src": "uploads/nexus-kitchen.jpg.webp",
         "cap": "cap_kitchen"
       },
       {
-        "src": "uploads/NEXUS_BEDROOM 2_VIGNETTE_.jpg.webp",
+        "src": "uploads/nexus-bedroom-vignette.jpg.webp",
         "cap": "cap_bedroom"
       }
     ],
@@ -1580,7 +1580,7 @@
     "spec": [
       {
         "k": "sg_kitchen",
-        "img": "uploads/4371_NEXUS_KITCHEN_CAM001_DRAFT04_LTI.jpg.webp",
+        "img": "uploads/nexus-kitchen.jpg.webp",
         "items": [
           "Matt finish handleless units with soft close doors and drawers",
           "Caesarstone worktop with matching upstand and splashback behind hob",
@@ -1606,7 +1606,7 @@
       },
       {
         "k": "sg_heating",
-        "img": "uploads/NEXUS_LIVING (1).png.webp",
+        "img": "uploads/nexus-living.png.webp",
         "items": [
           "Underfloor heating throughout each apartment",
           "Heating and hot water via communal air source heat pump",
@@ -1615,7 +1615,7 @@
       },
       {
         "k": "sg_electrical",
-        "img": "uploads/NEXUS_BEDROOM 2_VIGNETTE_.jpg.webp",
+        "img": "uploads/nexus-bedroom-vignette.jpg.webp",
         "items": [
           "Downlights to hall, kitchen/dining/living, bathroom and en-suite",
           "Pendant fittings to all bedrooms",
@@ -2060,26 +2060,26 @@
   },
   "farehurst-park": {
     "auto": true,
-    "hero": "uploads/Screenshot 2026-08-28 104844.png.webp",
+    "hero": "uploads/farehurst-park-photo-1.png.webp",
     "gallery": [
       {
-        "src": "uploads/Screenshot 2026-08-28 104844.png.webp",
+        "src": "uploads/farehurst-park-photo-1.png.webp",
         "cap": "Footbridge over the stream to the homes"
       },
       {
-        "src": "uploads/Screenshot 2026-08-28 104855.png.webp",
+        "src": "uploads/farehurst-park-photo-2.png.webp",
         "cap": "Homes overlooking the stream and play area"
       },
       {
-        "src": "uploads/Screenshot 2026-08-28 104906.png.webp",
+        "src": "uploads/farehurst-park-photo-3.png.webp",
         "cap": "Street scene"
       },
       {
-        "src": "uploads/Screenshot 2026-08-28 104918.png.webp",
+        "src": "uploads/farehurst-park-photo-4.png.webp",
         "cap": "Show home living and dining room"
       },
       {
-        "src": "uploads/Screenshot 2026-08-28 104939.png.webp",
+        "src": "uploads/farehurst-park-photo-5.png.webp",
         "cap": "Show home bathroom"
       }
     ],
@@ -2285,14 +2285,14 @@
   },
   "the-icon": {
     "auto": true,
-    "hero": "uploads/Screenshot 2026-08-28 103148.png.webp",
+    "hero": "uploads/the-icon-photo.png.webp",
     "gallery": [
       {
-        "src": "uploads/Screenshot 2026-08-28 103148.png.webp",
+        "src": "uploads/the-icon-photo.png.webp",
         "cap": "cap_exterior"
       },
       {
-        "src": "uploads/Version-4_Dusk (1).jpg",
+        "src": "uploads/the-icon-dusk.jpg",
         "cap": "cap_living"
       },
       {
@@ -3251,10 +3251,10 @@
   },
   "cambium-square": {
     "auto": true,
-    "hero": "uploads/Screenshot 2026-08-28 130141.png.webp",
+    "hero": "uploads/cambium-square-photo.png.webp",
     "gallery": [
       {
-        "src": "uploads/Screenshot 2026-08-28 130141.png.webp",
+        "src": "uploads/cambium-square-photo.png.webp",
         "cap": "Playground vignette, AI"
       },
       {
@@ -3799,10 +3799,10 @@
   },
   "baltic-wharf": {
     "auto": true,
-    "hero": "uploads/view from water-e__157,49,182.jpg.webp",
+    "hero": "uploads/baltic-wharf-view-from-water.jpg.webp",
     "gallery": [
       {
-        "src": "uploads/view from water-e__157,49,182.jpg.webp",
+        "src": "uploads/baltic-wharf-view-from-water.jpg.webp",
         "cap": "cap_exterior"
       },
       {
@@ -3829,18 +3829,18 @@
   },
   "southville-collection": {
     "auto": true,
-    "hero": "uploads/Screenshot 2026-08-28 123629.png.webp",
+    "hero": "uploads/southville-collection-photo-1.png.webp",
     "gallery": [
       {
-        "src": "uploads/Screenshot 2026-08-28 123629.png.webp",
+        "src": "uploads/southville-collection-photo-1.png.webp",
         "cap": "cap_exterior"
       },
       {
-        "src": "uploads/Screenshot 2026-08-28 123649.png.webp",
+        "src": "uploads/southville-collection-photo-2.png.webp",
         "cap": "cap_living"
       },
       {
-        "src": "uploads/Screenshot 2026-08-28 123706.png.webp",
+        "src": "uploads/southville-collection-photo-3.png.webp",
         "cap": "cap_kitchen"
       }
     ],
@@ -3866,15 +3866,15 @@
         "cap": "cap_exterior"
       },
       {
-        "src": "uploads/Screenshot 2026-08-28 124121.png.webp",
+        "src": "uploads/ribbon-quarter-photo-1.png.webp",
         "cap": "cap_living"
       },
       {
-        "src": "uploads/Screenshot 2026-08-28 124210.png.webp",
+        "src": "uploads/ribbon-quarter-photo-2.png.webp",
         "cap": "cap_kitchen"
       },
       {
-        "src": "uploads/Screenshot 2026-08-28 124226.png.webp",
+        "src": "uploads/ribbon-quarter-photo-3.png.webp",
         "cap": "cap_bedroom"
       }
     ],
