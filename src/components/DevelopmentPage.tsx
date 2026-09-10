@@ -250,7 +250,7 @@ export default function DevelopmentPage({ id }: { id: string }) {
             <img
               src={logoSrc}
               alt={`${d.name} logo`}
-              className="h-[77px] max-w-[190px] object-contain md:h-24 md:max-w-[280px]"
+              className="h-[100px] max-w-[240px] object-contain md:h-24 md:max-w-[280px]"
               style={{
                 filter: FORCE_WHITE_HERO_LOGO_IDS.has(d.id)
                   ? "brightness(0) invert(1) drop-shadow(0 6px 18px rgba(0,0,0,0.35))"
