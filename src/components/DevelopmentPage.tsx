@@ -187,7 +187,7 @@ export default function DevelopmentPage({ id }: { id: string }) {
         className="sticky top-0 z-30 shadow-[0_10px_26px_-12px_rgba(0,0,0,0.5)]"
         style={{ background: "rgba(14,32,40,0.97)", backdropFilter: "blur(14px)" }}
       >
-        <div className="mx-auto flex max-w-[1400px] flex-wrap items-center justify-between gap-4 px-5 py-3.5 md:px-8">
+        <div className="mx-auto flex max-w-[1400px] flex-wrap items-center justify-between gap-2 px-5 py-2.5 md:gap-4 md:py-3.5 md:px-8">
           <div className="flex min-w-0 items-center gap-4">
             <button
               onClick={() => router.push("/")}
@@ -257,9 +257,9 @@ export default function DevelopmentPage({ id }: { id: string }) {
             />
           </div>
         )}
-        <div className="absolute inset-x-0 bottom-0 px-5 pb-13 md:px-8">
+        <div className="absolute inset-x-0 bottom-0 px-5 pb-7 md:px-8 md:pb-13">
           <div className="mx-auto max-w-[1400px]">
-            <div className="mb-5 flex flex-wrap items-center gap-3">
+            <div className="mb-2.5 flex flex-wrap items-center gap-2 md:mb-5 md:gap-3">
               <span className="hi-eyebrow inline-flex items-center gap-1.5 text-white/82">
                 <Icon name="pin" className="h-3.5 w-3.5 text-[#C98A6B]" />
                 {d.locationLabel || d.region}
@@ -269,22 +269,22 @@ export default function DevelopmentPage({ id }: { id: string }) {
               </span>
             </div>
             <h1
-              className="mb-4.5 font-bold text-[#F9F5F3]"
+              className="mb-2 font-bold text-[#F9F5F3] md:mb-4.5"
               style={{ fontSize: "clamp(21px,4.5vw,55px)", lineHeight: 0.92, letterSpacing: "-0.045em" }}
             >
               {d.name}
             </h1>
-            <p className="mb-6.5 max-w-[640px] whitespace-pre-line text-[clamp(17px,2vw,21px)] leading-snug text-white/86">
+            <p className="mb-3.5 max-w-[640px] whitespace-pre-line text-[clamp(17px,2vw,21px)] leading-snug text-white/86 md:mb-6.5">
               {tagline}
             </p>
-            <div className="flex flex-wrap items-center gap-6">
+            <div className="flex flex-col items-start gap-1.5 md:flex-row md:items-center md:gap-6">
               <div className="flex items-baseline gap-2">
                 <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-white/60">{t("price_from")}</span>
                 <bdi className="text-[26px] font-bold tracking-tight text-[#F9F5F3]">{priceLabel}</bdi>
               </div>
               {d.accessNote && (
                 <>
-                  <span className="h-6.5 w-px bg-white/20" />
+                  <span className="hidden h-6.5 w-px bg-white/20 md:block" />
                   <span className="text-[14.5px] font-bold text-[#C98A6B]">{d.accessNote}</span>
                 </>
               )}
