@@ -39,7 +39,7 @@ export default function Team() {
           <span className="hi-eyebrow mb-6 block text-[#C98A6B]">{t("why_eyebrow")}</span>
           <h2
             className="font-bold text-[#F5F7F8]"
-            style={{ fontSize: "clamp(34px,4.6vw,54px)", lineHeight: 1.02, letterSpacing: "-0.035em" }}
+            style={{ fontSize: "clamp(26px,3.4vw,40px)", lineHeight: 1.02, letterSpacing: "-0.035em" }}
           >
             {t("why_title")}
           </h2>
@@ -57,7 +57,7 @@ export default function Team() {
           <span className="hi-eyebrow mb-5 block text-[#C98A6B]">Got any questions?</span>
           <h2
             className="mb-3 font-bold text-[#F5F7F8]"
-            style={{ fontSize: "clamp(32px,4.2vw,50px)", lineHeight: 1.02, letterSpacing: "-0.035em" }}
+            style={{ fontSize: "clamp(24px,3.1vw,37px)", lineHeight: 1.02, letterSpacing: "-0.035em" }}
           >
             {t("team_title")}
           </h2>
