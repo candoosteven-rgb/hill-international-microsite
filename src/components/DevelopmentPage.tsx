@@ -197,12 +197,6 @@ export default function DevelopmentPage({ id }: { id: string }) {
               {dp("back")}
             </button>
             <span className="whitespace-nowrap text-[17px] font-bold tracking-tight text-[#F9F5F3]">{d.name}</span>
-            <span
-              className="flex-none whitespace-nowrap rounded-full px-3 py-1 text-[10.5px] font-bold"
-              style={{ background: status.bg, color: status.color }}
-            >
-              {status.label}
-            </span>
           </div>
           <nav className="hi-scroller flex max-w-full items-center gap-5 overflow-x-auto">
             {navLinks.map((n) => (
