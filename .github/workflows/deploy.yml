@@ -24,3 +24,4 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFARE_API_TOKEN }}
           wranglerVersion: "4"
+          preCommands: wrangler d1 migrations apply hillinternational-enquiries --remote
