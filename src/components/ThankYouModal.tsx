@@ -2,7 +2,7 @@
 
 import { useLanguage } from "@/lib/i18n";
 import { useAppState } from "@/lib/app-state";
-import { emailTranslations, langs } from "@/lib/data";
+import { langs } from "@/lib/data";
 import Icon from "@/components/Icon";
 
 const SPARK_ANGLES = [0, 36, 72, 108, 144, 180, 216, 252, 288, 324];
@@ -22,10 +22,7 @@ export default function ThankYouModal() {
   if (!riSubmitted) return null;
 
   const close = () => setRiSubmitted(false);
-  const email = emailTranslations[lang] || emailTranslations.en;
   const languageName = langs.find((l) => l.code === lang)?.native || "English";
-  const subject = email.subject;
-  const body = email.body.replace("{name}", "there").replace("{language}", languageName);
 
   return (
     <div
@@ -75,15 +72,7 @@ export default function ThankYouModal() {
         </div>
 
         <h2 className="mb-3.5 text-[28px] font-bold tracking-tight text-[#F9F5F3]">{t("confirm_title")}</h2>
-        <p className="mb-7 text-[16px] leading-relaxed text-white/78">{t("confirm_body")}</p>
-
-        <div className="mb-7 rounded-2xl bg-[#F9F5F3] p-6 text-left">
-          <div className="mb-3.5 text-[11.5px] font-bold uppercase tracking-wide text-[#8a9298]">
-            {t("confirm_email_label")}
-          </div>
-          <div className="mb-2.5 text-[15px] font-bold text-[#1F3A47]">{subject}</div>
-          <div className="whitespace-pre-line text-[14px] leading-relaxed text-[#5C6B71]">{body}</div>
-        </div>
+        <p className="mb-7 text-[16px] leading-relaxed text-white/78">{t("confirm_body", { language: languageName })}</p>
 
         <div className="flex flex-wrap justify-center gap-3">
           <a
