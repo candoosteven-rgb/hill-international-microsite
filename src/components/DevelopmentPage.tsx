@@ -11,6 +11,7 @@ import { resolveLogo } from "@/lib/logo";
 import { useLanguage } from "@/lib/i18n";
 import { useAppState } from "@/lib/app-state";
 import { submitEnquiry } from "@/lib/enquiry";
+import { useSwipe } from "@/lib/useSwipe";
 import Icon from "@/components/Icon";
 import Footer from "@/components/Footer";
 
@@ -116,9 +117,15 @@ export default function DevelopmentPage({ id }: { id: string }) {
   const [avPrice, setAvPrice] = useState<"all" | "under" | "mid" | "over">("all");
   const [specCat, setSpecCat] = useState(0);
   const [galIdx, setGalIdx] = useState(0);
+  const [navOpen, setNavOpen] = useState(false);
 
   const d = devById(id);
   const pd = pageDataFor(id);
+
+  const gallerySwipe = useSwipe(
+    () => pd && setGalIdx((i) => (i + 1) % pd.gallery.length),
+    () => pd && setGalIdx((i) => (i - 1 + pd.gallery.length) % pd.gallery.length)
+  );
 
   useEffect(() => {
     addRecent(id);
@@ -198,7 +205,7 @@ export default function DevelopmentPage({ id }: { id: string }) {
             </button>
             <span className="whitespace-nowrap text-[17px] font-bold tracking-tight text-[#F9F5F3]">{d.name}</span>
           </div>
-          <nav className="hi-scroller flex max-w-full items-center gap-5 overflow-x-auto">
+          <nav className="hi-scroller hidden max-w-full items-center gap-5 overflow-x-auto md:flex">
             {navLinks.map((n) => (
               <button
                 key={n.key}
@@ -210,6 +217,14 @@ export default function DevelopmentPage({ id }: { id: string }) {
             ))}
           </nav>
           <div className="flex items-center gap-2.5">
+            <button
+              onClick={() => setNavOpen((v) => !v)}
+              aria-label="Section menu"
+              aria-expanded={navOpen}
+              className="flex h-10 w-10 flex-none items-center justify-center rounded-full border border-white/24 bg-white/8 md:hidden"
+            >
+              <Icon name={navOpen ? "close" : "menu"} className="h-4 w-4 text-[#F9F5F3]" />
+            </button>
             <button
               onClick={() => toggleLiked(d.id)}
               aria-pressed={isLiked}
@@ -229,6 +244,22 @@ export default function DevelopmentPage({ id }: { id: string }) {
             </button>
           </div>
         </div>
+        {navOpen && (
+          <nav className="hi-in flex flex-col gap-0.5 border-t border-white/12 px-5 pb-3 pt-1 md:hidden">
+            {navLinks.map((n) => (
+              <button
+                key={n.key}
+                onClick={() => {
+                  scrollToSection(n.id);
+                  setNavOpen(false);
+                }}
+                className="border-b border-white/8 py-3.5 text-left text-[15px] font-semibold text-[#F9F5F3]"
+              >
+                {dp(n.nav)}
+              </button>
+            ))}
+          </nav>
+        )}
       </div>
 
       <div className="relative h-[clamp(430px,74vh,760px)] overflow-hidden bg-[#0E2028]">
@@ -610,7 +641,12 @@ export default function DevelopmentPage({ id }: { id: string }) {
           </div>
           <div className="relative mx-auto flex max-w-[1400px] flex-col items-stretch gap-4 px-5 md:flex-row md:px-8">
             <div className="relative min-w-0 md:flex-1">
-              <div className="relative overflow-hidden rounded-[20px] bg-[#16313D]" style={{ height: "clamp(300px,58vh,620px)" }}>
+              <div
+                className="relative overflow-hidden rounded-[20px] bg-[#16313D]"
+                style={{ height: "clamp(300px,58vh,620px)" }}
+                onTouchStart={gallerySwipe.onTouchStart}
+                onTouchEnd={gallerySwipe.onTouchEnd}
+              >
                 <img
                   src={resolveImage(pd.gallery[galIdx].src, dp(pd.gallery[galIdx].cap))}
                   alt={dp(pd.gallery[galIdx].cap)}

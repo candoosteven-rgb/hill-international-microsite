@@ -7,6 +7,7 @@ import { epcColorsOf, epcOf, priceLabelFor, statusMetaFor } from "@/lib/data";
 import { resolveImage, buildShots } from "@/lib/image";
 import { useLanguage } from "@/lib/i18n";
 import { useAppState } from "@/lib/app-state";
+import { useSwipe } from "@/lib/useSwipe";
 import Icon from "@/components/Icon";
 
 const ICON_MAP: Record<string, Parameters<typeof Icon>[0]["name"]> = {
@@ -41,6 +42,11 @@ export default function DevCard({ d }: { d: Development }) {
     });
   };
 
+  const shotSwipe = useSwipe(
+    () => setShot((i) => (i + 1) % shots.length),
+    () => setShot((i) => (i - 1 + shots.length) % shots.length)
+  );
+
   const epc = epcOf(d);
   const epcColors = epcColorsOf(epc);
   const status = statusMetaFor(d, t);
@@ -56,7 +62,11 @@ export default function DevCard({ d }: { d: Development }) {
       className="hi-card hi-in flex h-full flex-col overflow-hidden rounded-[18px] bg-white shadow-[0_8px_26px_rgba(20,40,50,0.08)] cursor-pointer"
       onClick={() => router.push(`/developments/${d.id}`)}
     >
-      <div className="relative h-[280px] md:h-[300px] overflow-hidden bg-[repeating-linear-gradient(45deg,#dfe3e2,#dfe3e2_10px,#eceeec_10px,#eceeec_20px)]">
+      <div
+        className="relative h-[280px] md:h-[300px] overflow-hidden bg-[repeating-linear-gradient(45deg,#dfe3e2,#dfe3e2_10px,#eceeec_10px,#eceeec_20px)]"
+        onTouchStart={shots.length > 1 ? shotSwipe.onTouchStart : undefined}
+        onTouchEnd={shots.length > 1 ? shotSwipe.onTouchEnd : undefined}
+      >
         {shots.length ? (
           <>
             <img
