@@ -58,9 +58,9 @@ export default function Footer({ onDevelopmentsClick }: { onDevelopmentsClick?: 
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/uploads/linkedin-logo-linkedin-icon-transparent-free-png.webp"
+                src="/uploads/linkedin-logo-cropped.webp"
                 alt=""
-                className="h-6 w-6 flex-none object-contain"
+                className="h-5 w-5 flex-none object-contain"
               />
               LinkedIn
             </a>
