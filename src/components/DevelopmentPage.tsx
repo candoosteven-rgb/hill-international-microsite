@@ -237,6 +237,14 @@ export default function DevelopmentPage({ id }: { id: string }) {
           className="absolute inset-0"
           style={{ background: "linear-gradient(4deg, rgba(11,26,33,0.92) 0%, rgba(11,26,33,0.5) 46%, rgba(11,26,33,0.12) 100%)" }}
         />
+        <div className="absolute right-4 top-4 z-[5] md:hidden">
+          <span
+            className="rounded-full px-3 py-1.5 text-[11px] font-bold"
+            style={{ background: status.bg, color: status.color }}
+          >
+            {status.label}
+          </span>
+        </div>
         {logoSrc && (
           <div className="hi-pop absolute left-1/2 top-9 -translate-x-1/2">
             <img
@@ -258,7 +266,10 @@ export default function DevelopmentPage({ id }: { id: string }) {
                 <Icon name="pin" className="h-3.5 w-3.5 text-[#C98A6B]" />
                 {d.locationLabel || d.region}
               </span>
-              <span className="rounded-full px-3 py-1.5 text-[11px] font-bold" style={{ background: status.bg, color: status.color }}>
+              <span
+                className="hidden rounded-full px-3 py-1.5 text-[11px] font-bold md:inline-flex"
+                style={{ background: status.bg, color: status.color }}
+              >
                 {status.label}
               </span>
             </div>
