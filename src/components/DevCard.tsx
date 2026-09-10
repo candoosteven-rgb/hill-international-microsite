@@ -185,7 +185,12 @@ export default function DevCard({ d }: { d: Development }) {
             style={{ background: epcColors.bg, border: `1px solid ${epcColors.border}` }}
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/uploads/APD_Energy_Ratings.png" alt="EPC rating scale" className="h-5 w-4 flex-none object-contain" />
+            <img
+              src="/uploads/APD_Energy_Ratings.png"
+              alt="EPC rating scale"
+              loading="lazy"
+              className="h-5 w-4 flex-none object-contain"
+            />
             <span className="text-[12px] font-bold tracking-wide" style={{ color: epcColors.fg }}>
               {t("epc_label")} {epc}
             </span>

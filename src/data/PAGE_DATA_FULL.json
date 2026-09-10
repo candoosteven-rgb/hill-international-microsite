@@ -2060,26 +2060,26 @@
   },
   "farehurst-park": {
     "auto": true,
-    "hero": "uploads/Screenshot 2026-08-28 104844.png",
+    "hero": "uploads/Screenshot 2026-08-28 104844.png.webp",
     "gallery": [
       {
-        "src": "uploads/Screenshot 2026-08-28 104844.png",
+        "src": "uploads/Screenshot 2026-08-28 104844.png.webp",
         "cap": "Footbridge over the stream to the homes"
       },
       {
-        "src": "uploads/Screenshot 2026-08-28 104855.png",
+        "src": "uploads/Screenshot 2026-08-28 104855.png.webp",
         "cap": "Homes overlooking the stream and play area"
       },
       {
-        "src": "uploads/Screenshot 2026-08-28 104906.png",
+        "src": "uploads/Screenshot 2026-08-28 104906.png.webp",
         "cap": "Street scene"
       },
       {
-        "src": "uploads/Screenshot 2026-08-28 104918.png",
+        "src": "uploads/Screenshot 2026-08-28 104918.png.webp",
         "cap": "Show home living and dining room"
       },
       {
-        "src": "uploads/Screenshot 2026-08-28 104939.png",
+        "src": "uploads/Screenshot 2026-08-28 104939.png.webp",
         "cap": "Show home bathroom"
       }
     ],
@@ -2285,10 +2285,10 @@
   },
   "the-icon": {
     "auto": true,
-    "hero": "uploads/Screenshot 2026-08-28 103148.png",
+    "hero": "uploads/Screenshot 2026-08-28 103148.png.webp",
     "gallery": [
       {
-        "src": "uploads/Screenshot 2026-08-28 103148.png",
+        "src": "uploads/Screenshot 2026-08-28 103148.png.webp",
         "cap": "cap_exterior"
       },
       {
@@ -3251,10 +3251,10 @@
   },
   "cambium-square": {
     "auto": true,
-    "hero": "uploads/Screenshot 2026-08-28 130141.png",
+    "hero": "uploads/Screenshot 2026-08-28 130141.png.webp",
     "gallery": [
       {
-        "src": "uploads/Screenshot 2026-08-28 130141.png",
+        "src": "uploads/Screenshot 2026-08-28 130141.png.webp",
         "cap": "Playground vignette, AI"
       },
       {
@@ -3829,18 +3829,18 @@
   },
   "southville-collection": {
     "auto": true,
-    "hero": "uploads/Screenshot 2026-08-28 123629.png",
+    "hero": "uploads/Screenshot 2026-08-28 123629.png.webp",
     "gallery": [
       {
-        "src": "uploads/Screenshot 2026-08-28 123629.png",
+        "src": "uploads/Screenshot 2026-08-28 123629.png.webp",
         "cap": "cap_exterior"
       },
       {
-        "src": "uploads/Screenshot 2026-08-28 123649.png",
+        "src": "uploads/Screenshot 2026-08-28 123649.png.webp",
         "cap": "cap_living"
       },
       {
-        "src": "uploads/Screenshot 2026-08-28 123706.png",
+        "src": "uploads/Screenshot 2026-08-28 123706.png.webp",
         "cap": "cap_kitchen"
       }
     ],
@@ -3866,15 +3866,15 @@
         "cap": "cap_exterior"
       },
       {
-        "src": "uploads/Screenshot 2026-08-28 124121.png",
+        "src": "uploads/Screenshot 2026-08-28 124121.png.webp",
         "cap": "cap_living"
       },
       {
-        "src": "uploads/Screenshot 2026-08-28 124210.png",
+        "src": "uploads/Screenshot 2026-08-28 124210.png.webp",
         "cap": "cap_kitchen"
       },
       {
-        "src": "uploads/Screenshot 2026-08-28 124226.png",
+        "src": "uploads/Screenshot 2026-08-28 124226.png.webp",
         "cap": "cap_bedroom"
       }
     ],

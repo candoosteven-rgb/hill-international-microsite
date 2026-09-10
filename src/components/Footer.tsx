@@ -16,7 +16,7 @@ export default function Footer({ onDevelopmentsClick }: { onDevelopmentsClick?: 
         <div className="grid grid-cols-1 gap-10 border-b border-white/12 pb-11 sm:grid-cols-2 lg:grid-cols-4 lg:gap-14">
           <div>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/uploads/hill-logo-transparent.png" alt="Hill International" className="h-7 w-auto" />
+            <img src="/uploads/hill-logo-transparent.png" alt="Hill International" loading="lazy" className="h-7 w-auto" />
           </div>
           <div>
             <div className="mb-4 text-[13px] font-semibold text-[#F9F5F3]">{t("footer_regions")}</div>
@@ -60,6 +60,7 @@ export default function Footer({ onDevelopmentsClick }: { onDevelopmentsClick?: 
               <img
                 src="/uploads/linkedin-logo-cropped.webp"
                 alt=""
+                loading="lazy"
                 className="h-5 w-5 flex-none object-contain"
               />
               LinkedIn
@@ -72,17 +73,24 @@ export default function Footer({ onDevelopmentsClick }: { onDevelopmentsClick?: 
               <img
                 src="/uploads/hbf-award-white.png"
                 alt="HBF 5-star Customer Satisfaction 2026"
+                loading="lazy"
                 className="h-[58px] w-auto flex-none"
               />
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/uploads/whathouse-award-white.png"
                 alt="What House? Awards - Three Times Housebuilder of the Year"
+                loading="lazy"
                 className="h-[62px] w-auto flex-none"
               />
               <div className="hidden self-stretch bg-white/12 sm:block" style={{ width: 1 }} />
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/uploads/trustpilot-white.png" alt="Trustpilot 4.9 rating" className="h-11 w-auto flex-none" />
+              <img
+                src="/uploads/trustpilot-white.png"
+                alt="Trustpilot 4.9 rating"
+                loading="lazy"
+                className="h-11 w-auto flex-none"
+              />
             </div>
             <div className="flex flex-wrap gap-2">
               <LangPills variant="dark" size="sm" />

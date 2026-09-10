@@ -14,7 +14,7 @@ const REGION_BANNERS: Record<string, string> = {
   London: "uploads/opt/london-skyline.jpg",
   Cambridge: "uploads/1912220.jpg",
   Oxford: "uploads/opt/okford.jpg",
-  Bristol: "uploads/Screenshot 2026-08-28 123313.png",
+  Bristol: "uploads/Screenshot 2026-08-28 123313.png.webp",
 };
 
 export default function Developments() {
@@ -120,7 +120,12 @@ export default function Developments() {
                   className="hi-card flex-none w-[220px] cursor-pointer overflow-hidden rounded-2xl bg-white shadow-[0_6px_18px_rgba(20,40,50,0.08)]"
                 >
                   <div className="relative h-[120px] overflow-hidden bg-[repeating-linear-gradient(45deg,#dfe3e2,#dfe3e2_10px,#eceeec_10px,#eceeec_20px)]">
-                    <img src={resolveImage(buildShots(d)[0], d.name)} alt={d.name} className="h-full w-full object-cover" />
+                    <img
+                      src={resolveImage(buildShots(d)[0], d.name)}
+                      alt={d.name}
+                      loading="lazy"
+                      className="h-full w-full object-cover"
+                    />
                   </div>
                   <div className="p-3.5">
                     <div className="mb-0.5 text-[15px] font-bold text-[#1F3A47]">{d.name}</div>
@@ -150,6 +155,7 @@ export default function Developments() {
                   <img
                     src={resolveImage(REGION_BANNERS[region], region)}
                     alt={region}
+                    loading="lazy"
                     className="hi-banner-drift absolute inset-0 h-full w-full object-cover"
                   />
                   <div

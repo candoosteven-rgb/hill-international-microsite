@@ -22,8 +22,8 @@ const FORCE_WHITE_HERO_LOGO_IDS = new Set(["city-reach"]);
 // Real branded local-area map images, where we actually have one - kept in
 // preference to the generic embed below since they match the design exactly.
 const MAP_SRC: Record<string, string> = {
-  "baltic-wharf": "uploads/Screenshot 2026-09-04 094937.png",
-  "southville-collection": "uploads/Screenshot 2026-09-04 095321.png",
+  "baltic-wharf": "uploads/Screenshot 2026-09-04 094937.png.webp",
+  "southville-collection": "uploads/Screenshot 2026-09-04 095321.png.webp",
 };
 
 // Every other development gets a real, live Google Maps embed instead of no
@@ -263,7 +263,12 @@ export default function DevelopmentPage({ id }: { id: string }) {
       </div>
 
       <div className="relative h-[clamp(430px,74vh,760px)] overflow-hidden bg-[#0E2028]">
-        <img src={resolveImage(pd.hero, d.name)} alt={d.name} className="hi-ken absolute inset-0 h-full w-full object-cover" />
+        <img
+          src={resolveImage(pd.hero, d.name)}
+          alt={d.name}
+          fetchPriority="high"
+          className="hi-ken absolute inset-0 h-full w-full object-cover"
+        />
         <div
           className="absolute inset-0"
           style={{ background: "linear-gradient(4deg, rgba(11,26,33,0.92) 0%, rgba(11,26,33,0.5) 46%, rgba(11,26,33,0.12) 100%)" }}
@@ -613,6 +618,7 @@ export default function DevelopmentPage({ id }: { id: string }) {
                       <img
                         src={resolveImage(active.img, dp(active.k))}
                         alt={dp(active.k)}
+                        loading="lazy"
                         onError={(e) => {
                           e.currentTarget.onerror = null;
                           e.currentTarget.src = resolveImage(SPEC_FALLBACK_PHOTO[active.k] || active.img, dp(active.k));
@@ -650,6 +656,7 @@ export default function DevelopmentPage({ id }: { id: string }) {
                 <img
                   src={resolveImage(pd.gallery[galIdx].src, dp(pd.gallery[galIdx].cap))}
                   alt={dp(pd.gallery[galIdx].cap)}
+                  loading="lazy"
                   onError={(e) => {
                     e.currentTarget.onerror = null;
                     e.currentTarget.src = placeholderFor(pd.gallery[galIdx].src, dp(pd.gallery[galIdx].cap));
@@ -715,6 +722,7 @@ export default function DevelopmentPage({ id }: { id: string }) {
                     <img
                       src={resolveImage(g.src, dp(g.cap))}
                       alt={dp(g.cap)}
+                      loading="lazy"
                       onError={(e) => {
                         e.currentTarget.onerror = null;
                         e.currentTarget.src = placeholderFor(g.src, dp(g.cap));
@@ -789,6 +797,7 @@ export default function DevelopmentPage({ id }: { id: string }) {
                     <img
                       src={resolveImage(MAP_SRC[d.id], `${d.name} local area map`)}
                       alt={`${d.name} local area map`}
+                      loading="lazy"
                       className="h-full w-full object-cover"
                     />
                   ) : (
@@ -1191,6 +1200,7 @@ function NearbyDevs({ id }: { id: string }) {
               <img
                 src={resolveImage(buildShots(nd)[0], nd.name)}
                 alt={nd.name}
+                loading="lazy"
                 className="h-[160px] w-full object-cover"
               />
               <div className="p-5">
@@ -1229,6 +1239,7 @@ function FilmSection({
           src={resolveImage(pd.hero, d.name)}
           alt=""
           aria-hidden
+          loading="lazy"
           className="absolute inset-0 h-full w-full object-cover"
           style={{ filter: "saturate(0.9) brightness(0.62)" }}
         />

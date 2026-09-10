@@ -17,7 +17,7 @@ const QUOTES = [
     place: "Lampton Parkside, Hounslow",
     img: "uploads/Daniele and Maira - Lampton Parkside 3.jpg.webp",
   },
-  { q: "trust_q3", name: "trust_q3_name", place: "Knights Park, Eddington", img: "uploads/Screenshot 2026-09-04 131132.png" },
+  { q: "trust_q3", name: "trust_q3_name", place: "Knights Park, Eddington", img: "uploads/Screenshot 2026-09-04 131132.png.webp" },
 ];
 
 export default function Trust() {

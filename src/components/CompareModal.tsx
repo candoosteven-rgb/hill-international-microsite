@@ -53,7 +53,12 @@ export default function CompareModal() {
                 {devs.map((d) => (
                   <th key={d.id} className="px-3 pb-4">
                     <div className="relative h-[110px] w-[150px] overflow-hidden rounded-xl">
-                      <img src={resolveImage(buildShots(d)[0], d.name)} alt={d.name} className="h-full w-full object-cover" />
+                      <img
+                        src={resolveImage(buildShots(d)[0], d.name)}
+                        alt={d.name}
+                        loading="lazy"
+                        className="h-full w-full object-cover"
+                      />
                       <button
                         onClick={() => removeCompare(d.id)}
                         aria-label={t("compare_remove")}

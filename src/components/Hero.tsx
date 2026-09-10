@@ -6,7 +6,7 @@ import { resolveImage } from "@/lib/image";
 
 const SLIDES = [
   "uploads/opt/london-skyline.jpg",
-  "uploads/canalside-quarter-dusk.png",
+  "uploads/canalside-quarter-dusk.png.webp",
   "uploads/opt/north-gate-park-211a2098.jpg",
   "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2024-09/Plot%2093%20Living%2C%20Dining%2C%20Kitchen%20%283%29.jpg.webp?h=790be497&itok=5MTdgoKp",
 ];

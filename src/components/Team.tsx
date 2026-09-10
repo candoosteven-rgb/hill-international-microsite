@@ -68,6 +68,7 @@ export default function Team() {
                 <img
                   src={resolveImage(m.photo, m.name)}
                   alt={m.name}
+                  loading="lazy"
                   className="h-14 w-14 flex-none rounded-full object-cover"
                 />
                 <div>

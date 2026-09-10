@@ -20,6 +20,7 @@ export default function Environment() {
         src={resolveImage("uploads/opt/sky-zero-forest-aerial.jpg", "Forest")}
         alt=""
         aria-hidden
+        loading="lazy"
         className="absolute inset-0 h-full w-full object-cover opacity-[0.5]"
       />
       <div

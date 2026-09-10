@@ -32,6 +32,7 @@ export default function About() {
             <img
               src={resolveImage("uploads/number-92-dining-kitchen.jpg.webp", "Hill International")}
               alt="Hill International development"
+              loading="lazy"
               className="h-full w-full object-cover"
             />
           </div>
@@ -61,7 +62,7 @@ export default function About() {
           ].map(([src, alt]) => (
             <div key={src} className="flex h-24 w-40 items-center justify-center rounded-xl bg-white/95 px-5 py-4">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={resolveImage(src, alt)} alt={alt} className="h-full w-full object-contain" />
+              <img src={resolveImage(src, alt)} alt={alt} loading="lazy" className="h-full w-full object-contain" />
             </div>
           ))}
         </Reveal>
