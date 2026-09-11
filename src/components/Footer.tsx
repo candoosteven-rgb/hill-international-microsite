@@ -122,7 +122,7 @@ export default function Footer({ onDevelopmentsClick }: { onDevelopmentsClick?: 
         </div>
 
         <div className="flex flex-wrap items-center gap-4 pt-1">
-          <span className="text-[12.5px] text-white/45">&copy; 2026 Hill International</span>
+          <span className="text-[12.5px] text-white/45">&copy; 2026 Hill International. All Rights Reserved</span>
           <a
             href="https://www.hill.co.uk/privacy-and-cookies-0"
             target="_blank"
