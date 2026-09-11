@@ -2,7 +2,7 @@
 // site. Developments not listed here have no available film.
 export const VIDEO_EMBEDS: Record<string, string> = {
   "farehurst-park": "https://www.youtube.com/embed/kvWEBzmX0UQ?si=DjV7OxRy_tkdJQw3",
-  "lampton-parkside": "https://player.vimeo.com/video/684180992?autoplay=1&title=0&byline=0&portrait=0",
+  "lampton-parkside": "https://www.youtube.com/embed/kmuaUhU88y8?si=gVJTk1f2Wf0frLiO&autoplay=1",
   "kew-bridge-rise": "https://player.vimeo.com/video/1095855145?autoplay=1&title=0&byline=0&portrait=0",
   "dagenham-green": "https://player.vimeo.com/video/1088308056?autoplay=1&title=0&byline=0&portrait=0",
   "knights-park": "https://player.vimeo.com/video/1098526803?h=eb4e31cebc&autoplay=1&title=0&byline=0&portrait=0",
