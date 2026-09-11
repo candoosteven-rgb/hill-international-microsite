@@ -105,7 +105,7 @@ export default function Register() {
         </h2>
         <p className="my-5 max-w-[560px] text-[16.5px] leading-relaxed text-white/75">{t("register_body")}</p>
 
-        <Field label={t("register_where")}>
+        <Field label={t("register_where")} required>
           <div className="flex flex-wrap gap-2">
             {["all", ...regions].map((r) => (
               <button
@@ -121,7 +121,7 @@ export default function Register() {
         </Field>
 
         <div className="mb-8 grid grid-cols-1 gap-7 sm:grid-cols-2">
-          <Field label={t("register_what")}>
+          <Field label={t("register_what")} required>
             <div className="flex flex-wrap gap-2">
               {[
                 { key: "selfuse", label: t("opt_selfuse") },
@@ -138,7 +138,7 @@ export default function Register() {
               ))}
             </div>
           </Field>
-          <Field label={t("register_howmuch")}>
+          <Field label={t("register_howmuch")} required>
             <select
               value={form.budget}
               onChange={(e) => setForm((f) => ({ ...f, budget: e.target.value }))}
@@ -156,7 +156,7 @@ export default function Register() {
           </Field>
         </div>
 
-        <Field label={t("register_language")}>
+        <Field label={t("register_language")} required>
           <div className="flex flex-wrap items-center gap-2">
             {langs.map((l) => (
               <button
@@ -172,17 +172,18 @@ export default function Register() {
           </div>
         </Field>
 
+        <p className="mb-2.5 text-[12px] text-white/50">{t("required_note")}</p>
         <div className="mb-5.5 grid grid-cols-1 gap-4.5 sm:grid-cols-3">
           <input
             value={form.name}
             onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
-            placeholder={t("register_name")}
+            placeholder={`${t("register_name")} *`}
             className="rounded-xl border border-white/25 bg-white/8 px-4 py-3.5 text-[14.5px] text-[#F9F5F3] placeholder:text-white/45"
           />
           <input
             value={form.email}
             onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
-            placeholder={t("register_email")}
+            placeholder={`${t("register_email")} *`}
             className="rounded-xl border border-white/25 bg-white/8 px-4 py-3.5 text-[14.5px] text-[#F9F5F3] placeholder:text-white/45"
           />
           <input
@@ -201,6 +202,7 @@ export default function Register() {
             className="mt-0.5"
           />
           <span className="text-[13.5px] leading-relaxed text-white/72">
+            <span className="text-[#E6A98C]">* </span>
             {t("register_consent")}{" "}
             <a
               href="https://www.hill.co.uk/privacy-and-cookies-0"
@@ -228,10 +230,21 @@ export default function Register() {
   );
 }
 
-function Field({ label, children }: { label: string; children: React.ReactNode }) {
+function Field({
+  label,
+  required,
+  children,
+}: {
+  label: string;
+  required?: boolean;
+  children: React.ReactNode;
+}) {
   return (
     <div className="mb-7">
-      <div className="mb-3 text-[13.5px] font-semibold text-[#F9F5F3]">{label}</div>
+      <div className="mb-3 text-[13.5px] font-semibold text-[#F9F5F3]">
+        {label}
+        {required && <span className="text-[#E6A98C]"> *</span>}
+      </div>
       {children}
     </div>
   );

@@ -993,17 +993,18 @@ function DevStickyPanel({
           </div>
         ) : (
           <>
+            <p className="mb-2.5 text-[11px] text-white/50">{t("required_note")}</p>
             <div className="mb-3.5 flex flex-col gap-2.5">
               <input
                 value={form.name}
                 onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
-                placeholder={t("modal_gate_name")}
+                placeholder={`${t("modal_gate_name")} *`}
                 className="w-full rounded-[10px] border border-white/22 bg-white/6 px-3.5 py-3 text-[13.5px] text-[#F9F5F3] placeholder:text-white/45"
               />
               <input
                 value={form.email}
                 onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
-                placeholder={t("modal_gate_email")}
+                placeholder={`${t("modal_gate_email")} *`}
                 className="w-full rounded-[10px] border border-white/22 bg-white/6 px-3.5 py-3 text-[13.5px] text-[#F9F5F3] placeholder:text-white/45"
               />
               <input
@@ -1020,7 +1021,10 @@ function DevStickyPanel({
                 onChange={(e) => setForm((f) => ({ ...f, consent: e.target.checked }))}
                 className="hi-checkbox mt-0.5"
               />
-              <span className="text-[12px] leading-relaxed text-white/60">{t("modal_gate_consent")}</span>
+              <span className="text-[12px] leading-relaxed text-white/60">
+                <span className="text-[#E6A98C]">* </span>
+                {t("modal_gate_consent")}
+              </span>
             </label>
             {error && <div className="mb-3 text-[12.5px] text-[#E6A98C]">{error}</div>}
             <button
@@ -1159,17 +1163,18 @@ function RegisterPanel({
           ) : (
             <>
               <p className="mb-5 text-[14px] leading-relaxed text-white/70">{dp("reg_sub")}</p>
+              <p className="mb-2.5 text-[12px] text-white/50">{t("required_note")}</p>
               <div className="mb-4 flex flex-col gap-3">
                 <input
                   value={form.name}
                   onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
-                  placeholder={t("modal_gate_name")}
+                  placeholder={`${t("modal_gate_name")} *`}
                   className="rounded-[10px] border border-white/22 bg-white/6 px-4 py-3.5 text-[14.5px] text-[#F9F5F3] placeholder:text-white/45"
                 />
                 <input
                   value={form.email}
                   onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
-                  placeholder={t("modal_gate_email")}
+                  placeholder={`${t("modal_gate_email")} *`}
                   className="rounded-[10px] border border-white/22 bg-white/6 px-4 py-3.5 text-[14.5px] text-[#F9F5F3] placeholder:text-white/45"
                 />
                 <input
@@ -1186,7 +1191,10 @@ function RegisterPanel({
                   onChange={(e) => setForm((f) => ({ ...f, consent: e.target.checked }))}
                   className="hi-checkbox mt-0.5"
                 />
-                <span className="text-[13px] leading-relaxed text-white/66">{t("modal_gate_consent")}</span>
+                <span className="text-[13px] leading-relaxed text-white/66">
+                  <span className="text-[#E6A98C]">* </span>
+                  {t("modal_gate_consent")}
+                </span>
               </label>
               {error && <div className="mb-3.5 text-[13px] text-[#E6A98C]">{error}</div>}
               <button
