@@ -1019,7 +1019,7 @@ function DevStickyPanel({
                 type="checkbox"
                 checked={form.consent}
                 onChange={(e) => setForm((f) => ({ ...f, consent: e.target.checked }))}
-                className="hi-checkbox mt-0.5"
+                className="mt-0.5 h-[18px] w-[18px] flex-none cursor-pointer accent-[#C1560F]"
               />
               <span className="text-[12px] leading-relaxed text-white/60">
                 <span className="text-[#E6A98C]">* </span>
@@ -1189,7 +1189,7 @@ function RegisterPanel({
                   type="checkbox"
                   checked={form.consent}
                   onChange={(e) => setForm((f) => ({ ...f, consent: e.target.checked }))}
-                  className="hi-checkbox mt-0.5"
+                  className="mt-0.5 h-[18px] w-[18px] flex-none cursor-pointer accent-[#C1560F]"
                 />
                 <span className="text-[13px] leading-relaxed text-white/66">
                   <span className="text-[#E6A98C]">* </span>

@@ -199,7 +199,7 @@ export default function Register() {
             type="checkbox"
             checked={form.consent}
             onChange={(e) => setForm((f) => ({ ...f, consent: e.target.checked }))}
-            className="mt-0.5"
+            className="mt-0.5 h-[18px] w-[18px] flex-none cursor-pointer accent-[#C1560F]"
           />
           <span className="text-[13.5px] leading-relaxed text-white/72">
             <span className="text-[#E6A98C]">* </span>
