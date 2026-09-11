@@ -29,7 +29,7 @@ export default function Nav() {
       <div className="mx-auto flex max-w-[1440px] flex-wrap items-center justify-between gap-6 px-5 py-6 md:px-10">
         <a href="#" className="flex-none leading-none" aria-label="Hill International">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/uploads/hill-logo-transparent.png" alt="Hill International" className="h-7 w-auto" />
+          <img src="/uploads/hill-logo-transparent.png" alt="Hill International" className="h-[36.4px] w-auto" />
         </a>
 
         <button
