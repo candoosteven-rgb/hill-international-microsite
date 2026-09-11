@@ -1,6 +1,6 @@
 {
   "en": {
-    "privacy": "Privacy policy",
+    "privacy": "Privacy & Cookie Policy",
     "disc_title": "Disclaimer",
     "disc_open": "Read the full disclaimer",
     "disc_close": "Hide disclaimer",
@@ -134,7 +134,7 @@
     "nexus_p2": "Stevenage station sits an eight minute walk away, putting King’s Cross within 22 minutes and Cambridge within half an hour — the reason Nexus consistently achieves rental yields of up to 6.6% (Putterills Estate Agent, predicted yields for 2027)."
   },
   "tr": {
-    "privacy": "Gizlilik politikası",
+    "privacy": "Gizlilik ve Çerez Politikası",
     "disc_title": "Yasal uyarı",
     "disc_open": "Yasal uyarının tamamını okuyun",
     "disc_close": "Yasal uyarıyı gizle",
@@ -261,7 +261,7 @@
     "nexus_p2": "Stevenage istasyonu sekiz dakika yürüme mesafesinde; King’s Cross 22 dakika, Cambridge yarım saat uzaklıkta. Nexus’un %6,6’ya varan kira getirisi elde etmesinin nedeni de bu."
   },
   "zh": {
-    "privacy": "隐私政策",
+    "privacy": "隐私与Cookie政策",
     "disc_title": "免责声明",
     "disc_open": "阅读完整声明",
     "disc_close": "收起声明",
@@ -388,7 +388,7 @@
     "nexus_p2": "Stevenage 车站步行八分钟可达，至 King’s Cross 22 分钟，至剑桥半小时——这也是 Nexus 租金回报率可达 6.6% 的原因。"
   },
   "ar": {
-    "privacy": "سياسة الخصوصية",
+    "privacy": "سياسة الخصوصية وملفات تعريف الارتباط",
     "disc_title": "إخلاء مسؤولية",
     "disc_open": "اقرأ الإخلاء الكامل",
     "disc_close": "إخفاء الإخلاء",
