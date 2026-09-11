@@ -127,8 +127,9 @@ export default function Footer({ onDevelopmentsClick }: { onDevelopmentsClick?: 
             href="https://www.hill.co.uk/privacy-and-cookies-0"
             target="_blank"
             rel="noopener"
-            className="hi-link text-[12.5px] text-white/68"
+            className="hi-link inline-flex items-center gap-1.5 text-[12.5px] text-white/68"
           >
+            <Icon name="lock" className="h-3.5 w-3.5 flex-none" />
             {dp("privacy")}
           </a>
           <button onClick={() => setDiscOpen((v) => !v)} className="hi-link text-[12.5px] font-medium text-white/68">

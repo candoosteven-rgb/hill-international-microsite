@@ -53,6 +53,12 @@ const paths: Record<string, React.ReactNode> = {
       <path d="M3 7l9 6 9-6" />
     </>
   ),
+  lock: (
+    <>
+      <rect x="4.5" y="10.5" width="15" height="10" rx="2" />
+      <path d="M7.5 10.5V7a4.5 4.5 0 0 1 9 0v3.5" />
+    </>
+  ),
   star: (
     <path
       d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.1 6.6L12 17.6l-5.8 3 1.1-6.6L2.5 9.4l6.6-.9z"
