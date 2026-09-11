@@ -10,10 +10,26 @@ const inter = Inter({
   weight: ["400", "500", "600", "700", "800"],
 });
 
+const SITE_TITLE = "Hill International | New homes across the UK";
+const SITE_DESCRIPTION =
+  "Explore Hill International's portfolio of new-home developments across London, Cambridge, Oxford and Bristol, with support in your language.";
+
 export const metadata: Metadata = {
-  title: "Hill International | New homes across the UK",
-  description:
-    "Explore Hill International's portfolio of new-home developments across London, Cambridge, Oxford and Bristol, with support in your language.",
+  metadataBase: new URL("https://hill-intl.com"),
+  title: SITE_TITLE,
+  description: SITE_DESCRIPTION,
+  openGraph: {
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    siteName: "Hill International",
+    type: "website",
+    locale: "en_GB",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
