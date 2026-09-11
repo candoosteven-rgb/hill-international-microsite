@@ -132,6 +132,29 @@ export default function DevelopmentPage({ id }: { id: string }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
+  // Arriving via a #section link (e.g. a "View overview" card link from the
+  // homepage) - the caller passes { scroll: false } to router.push so Next
+  // doesn't fight this. Scroll instantly (global CSS sets scroll-behavior:
+  // smooth, which would otherwise animate and race image-driven layout
+  // shifts) to the same offset scrollToSection uses for in-page nav clicks,
+  // once layout has settled (double rAF).
+  useEffect(() => {
+    const hash = window.location.hash.slice(1);
+    if (!hash) return;
+    let raf1 = 0;
+    let raf2 = 0;
+    raf1 = requestAnimationFrame(() => {
+      raf2 = requestAnimationFrame(() => {
+        const el = document.getElementById(hash);
+        if (el) window.scrollTo({ top: el.offsetTop - 74, behavior: "instant" });
+      });
+    });
+    return () => {
+      cancelAnimationFrame(raf1);
+      cancelAnimationFrame(raf2);
+    };
+  }, [id]);
+
   const buildings = useMemo(() => {
     if (!pd) return [];
     return Array.from(new Set(pd.plots.map((p) => p.building).filter(Boolean))) as string[];

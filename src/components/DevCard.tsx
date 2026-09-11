@@ -226,19 +226,17 @@ export default function DevCard({ d }: { d: Development }) {
 
         <div className="mt-auto -mx-6 -mb-6 mt-6 flex items-center justify-between gap-3 rounded-b-[18px] border-t border-[#BCCDD7] bg-[#D2DFE6] px-6 py-4.5 md:-mx-7 md:px-7">
           {status.isLive ? (
-            d.siteUrl ? (
-              <a
-                href={d.siteUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={(e) => e.stopPropagation()}
-                className="inline-flex items-center gap-2 text-[14px] font-semibold text-[#28567A]"
-              >
-                {t("dev_view")} <Icon name="arrowRight" className="h-3.5 w-3.5" />
-              </a>
-            ) : (
-              <span className="text-[14px] font-semibold text-[#28567A]">{t("dev_view")}</span>
-            )
+            <a
+              href={`/developments/${d.id}#dp-overview`}
+              onClick={(e) => {
+                e.stopPropagation();
+                e.preventDefault();
+                router.push(`/developments/${d.id}#dp-overview`, { scroll: false });
+              }}
+              className="inline-flex items-center gap-2 text-[14px] font-semibold text-[#28567A]"
+            >
+              {t("dev_view")} <Icon name="arrowRight" className="h-3.5 w-3.5" />
+            </a>
           ) : (
             <button
               onClick={(e) => {

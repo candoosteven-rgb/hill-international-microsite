@@ -201,7 +201,6 @@
       "factsheet": true,
       "investor": false
     },
-    "siteUrl": "https://hill.co.uk",
     "image": "uploads/opt/wembley-cgi.jpg",
     "locationLabel": "Wembley, North West London",
     "tagline": "1, 2 & 3 bed apartments",
@@ -232,7 +231,6 @@
       "factsheet": true,
       "investor": false
     },
-    "siteUrl": "https://hill.co.uk",
     "image": "uploads/opt/dollis-hill-cgi.jpg",
     "locationLabel": "Dollis Hill, North West London",
     "tagline": "1, 2 & 3 bed apartments",
@@ -263,7 +261,6 @@
       "factsheet": true,
       "investor": false
     },
-    "siteUrl": "https://hill.co.uk",
     "image": "uploads/opt/ham-richmond-cgi.jpg",
     "locationLabel": "Ham, South West London",
     "tagline": "2, 3 & 4 bed houses and apartments",
@@ -302,7 +299,6 @@
       "factsheet": true,
       "investor": false
     },
-    "siteUrl": "https://hill.co.uk",
     "image": "uploads/opt/woolwich-cgi.jpg",
     "locationLabel": "Woolwich, South East London",
     "tagline": "1, 2 & 3 bed apartments",
@@ -333,7 +329,6 @@
       "factsheet": true,
       "investor": false
     },
-    "siteUrl": "https://hill.co.uk",
     "image": "uploads/opt/colindale-cgi.jpg",
     "locationLabel": "Colindale, North West London",
     "tagline": "Studios, 1, 2 & 3 bed apartments",
@@ -368,7 +363,6 @@
       "factsheet": true,
       "investor": false
     },
-    "siteUrl": "https://hill.co.uk",
     "image": "uploads/opt/langdon-park-cgi.jpg",
     "locationLabel": "Poplar, East London",
     "tagline": "1, 2 & 3 bed apartments",
@@ -404,7 +398,6 @@
       "factsheet": true,
       "investor": false
     },
-    "siteUrl": "https://www.hill.co.uk/honeywood",
     "image": "uploads/opt/honeywood-cgi.jpg",
     "locationLabel": "Barnet, North London",
     "tagline": "2, 3 & 4 bed houses",
@@ -439,7 +432,6 @@
       "factsheet": true,
       "investor": false
     },
-    "siteUrl": "https://hill.co.uk",
     "image": "uploads/opt/hoxton-cgi.jpg",
     "locationLabel": "Hoxton, East London",
     "tagline": "1, 2 & 3 bed apartments",
@@ -473,7 +465,6 @@
       "factsheet": true,
       "investor": false
     },
-    "siteUrl": "https://www.hill.co.uk/little-chalfont-park",
     "locationLabel": "Little Chalfont, Buckinghamshire",
     "image": "uploads/opt/little-chalfont-park-meadow.jpg",
     "images": [
@@ -553,7 +544,6 @@
       "factsheet": true,
       "investor": false
     },
-    "siteUrl": "https://www.hill.co.uk/mulberry-rise",
     "tagline": "2, 3 & 4 bed homes",
     "showBedIcon": true,
     "place": "Hitchin, Hertfordshire",
@@ -603,7 +593,6 @@
       "factsheet": true,
       "investor": false
     },
-    "siteUrl": "https://www.hill.co.uk/farehurst-park",
     "tagline": "2-5 bed homes",
     "showBedIcon": true,
     "place": "Fulbourn, Cambridgeshire",
@@ -642,7 +631,6 @@
       "factsheet": true,
       "investor": false
     },
-    "siteUrl": "https://www.hill.co.uk/all-developments/cambridgeshire/the-icon",
     "tagline": "1, 2 & 3 bed apartments & duplexes",
     "showBedIcon": true,
     "place": "Eddington, Cambridge",
@@ -691,7 +679,6 @@
       "factsheet": true,
       "investor": false
     },
-    "siteUrl": "https://www.hill.co.uk/millside-grange",
     "tagline": "Last two 5 bed detached homes",
     "showBedIcon": true,
     "place": "Croxley Green, Rickmansworth",
@@ -732,7 +719,6 @@
       "factsheet": true,
       "investor": true
     },
-    "siteUrl": "https://www.hill.co.uk/city-reach",
     "locationLabel": "Cambridge, Cambridgeshire",
     "tagline": "1, 2 & 3 bed apartments",
     "showBedIcon": true,
@@ -840,7 +826,6 @@
       "factsheet": true,
       "investor": true
     },
-    "siteUrl": "https://www.hill.co.uk/fitzwilliam-gate",
     "locationLabel": "Cambridge, Cambridgeshire",
     "tagline": "1 & 2 bed apartments",
     "showBedIcon": true,
@@ -930,7 +915,6 @@
       "factsheet": true,
       "investor": true
     },
-    "siteUrl": "https://www.hill.co.uk/cambium-square",
     "locationLabel": "Cambourne, Cambridgeshire",
     "tagline": "2, 3, 4 & 5 bed houses",
     "showBedIcon": true,
@@ -1060,7 +1044,6 @@
       "factsheet": true,
       "investor": true
     },
-    "siteUrl": "https://www.hill.co.uk/all-developments/avon/baltic-wharf-0",
     "locationLabel": "Harbourside, Bristol",
     "tagline": "1, 2 & 3 bed apartments",
     "showBedIcon": true,
@@ -1093,7 +1076,6 @@
       "factsheet": true,
       "investor": false
     },
-    "siteUrl": "https://hill.co.uk",
     "locationLabel": "Southville, Bristol",
     "tagline": "1 & 2 bed apartments",
     "showBedIcon": true,
@@ -1124,7 +1106,6 @@
       "factsheet": true,
       "investor": false
     },
-    "siteUrl": "https://hill.co.uk",
     "locationLabel": "Coventry, West Midlands",
     "image": "uploads/opt/screenshot-2026-07-08-180242.jpg",
     "images": [

@@ -22,7 +22,6 @@ export interface Development {
   status: DevStatus;
   epc?: string;
   docs: { brochure: boolean; factsheet: boolean; investor: boolean };
-  siteUrl?: string;
   image?: string;
   logo?: string;
   locationLabel?: string;
