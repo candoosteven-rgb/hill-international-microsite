@@ -171,9 +171,9 @@ const paths: Record<string, React.ReactNode> = {
   ),
   bridge: (
     <>
-      <path d="M2 10h20" />
-      <path d="M5.5 10v9M18.5 10v9" />
-      <path d="M2 19h20" />
+      <path d="M2 8.5h20" />
+      <path d="M5.5 8.5l2 10M18.5 8.5l-2 10" />
+      <path d="M2 18.5h20" />
     </>
   ),
   towers: (
@@ -192,8 +192,12 @@ const paths: Record<string, React.ReactNode> = {
   ),
   nursery: (
     <>
-      <circle cx="12" cy="6" r="2.6" />
-      <path d="M7.5 9.5h9a1 1 0 0 1 1 1.15c-.5 3.3-2.9 6.35-5.5 6.35s-5-3.05-5.5-6.35a1 1 0 0 1 1-1.15Z" />
+      <circle cx="8" cy="6.3" r="1.7" />
+      <circle cx="16" cy="6.3" r="1.7" />
+      <circle cx="12" cy="11.5" r="5.5" />
+      <circle cx="9.7" cy="11" r=".55" fill="currentColor" stroke="none" />
+      <circle cx="14.3" cy="11" r=".55" fill="currentColor" stroke="none" />
+      <path d="M10.2 13.5c.55.5 1.15.75 1.8.75s1.25-.25 1.8-.75" />
     </>
   ),
   school: (
