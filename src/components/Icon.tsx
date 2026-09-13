@@ -37,10 +37,9 @@ const paths: Record<string, React.ReactNode> = {
   ),
   bed: (
     <>
-      <path d="M4 18.5v-5A2.5 2.5 0 0 1 6.5 11H20" />
-      <path d="M3 18.5h18" />
-      <rect x="5.5" y="12.2" width="4.6" height="2.8" rx="1.1" fill="currentColor" stroke="none" />
-      <path d="M4 18.5v2M21 18.5v2" />
+      <rect x="3" y="10" width="18" height="8" rx="2" />
+      <rect x="5" y="12" width="5" height="4" rx="1.3" fill="currentColor" stroke="none" />
+      <path d="M3 18v2M21 18v2" />
     </>
   ),
   check: <path d="M5 13l4 4L19 7" />,
@@ -87,11 +86,10 @@ const paths: Record<string, React.ReactNode> = {
   ),
   car: (
     <>
-      <path d="M3 16.5v-1a1.8 1.8 0 0 1 1.3-1.7l1.9-.55L8 9.6A2 2 0 0 1 9.8 8.5h4.4A2 2 0 0 1 16 9.6l1.8 3.15 1.9.55a1.8 1.8 0 0 1 1.3 1.7v1" />
-      <path d="M2.5 16.5h19" />
-      <path d="M2.5 16.5v1.8M21.5 16.5v1.8" />
-      <circle cx="7" cy="18.3" r="1.7" fill="currentColor" stroke="none" />
-      <circle cx="17" cy="18.3" r="1.7" fill="currentColor" stroke="none" />
+      <path d="M9 4h6a1.3 1.3 0 0 1 1.2.85L18 9.5H6l1.8-4.65A1.3 1.3 0 0 1 9 4Z" />
+      <rect x="3.5" y="9.5" width="17" height="7" rx="3" />
+      <circle cx="7" cy="16.7" r="1.9" fill="currentColor" stroke="none" />
+      <circle cx="17" cy="16.7" r="1.9" fill="currentColor" stroke="none" />
     </>
   ),
   park: (
@@ -171,9 +169,11 @@ const paths: Record<string, React.ReactNode> = {
   ),
   bridge: (
     <>
-      <path d="M2 8.5h20" />
-      <path d="M5.5 8.5l2 10M18.5 8.5l-2 10" />
-      <path d="M2 18.5h20" />
+      <path d="M1 19.5h22" />
+      <path d="M3 19.5V6a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v13.5" />
+      <path d="M18 19.5V6a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v13.5" />
+      <path d="M5 7q7 8.5 14 0" />
+      <path d="M7.3 9.7v9.8M9.7 11.5v8M12 12.2v7.3M14.3 11.5v8M16.7 9.7v9.8" strokeWidth={1.1} />
     </>
   ),
   towers: (
@@ -257,11 +257,10 @@ const paths: Record<string, React.ReactNode> = {
   ),
   f_types: (
     <>
-      <path d="M3 18.5v-5A2.5 2.5 0 0 1 5.5 11H19a2 2 0 0 1 2 2v5.5" />
-      <path d="M3 18.5h18" />
-      <rect x="5" y="12" width="4" height="2.8" rx="1.1" fill="currentColor" stroke="none" />
-      <rect x="10.2" y="12" width="4" height="2.8" rx="1.1" fill="currentColor" stroke="none" />
-      <path d="M3 18.5v2M21 18.5v2" />
+      <rect x="3" y="10" width="18" height="8" rx="2" />
+      <rect x="5" y="12" width="4" height="4" rx="1.2" fill="currentColor" stroke="none" />
+      <rect x="10.2" y="12" width="4" height="4" rx="1.2" fill="currentColor" stroke="none" />
+      <path d="M3 18v2M21 18v2" />
     </>
   ),
   f_tenure: (
