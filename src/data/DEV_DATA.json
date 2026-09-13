@@ -93,7 +93,7 @@
       },
       {
         "label": "Co-working space",
-        "icon": "concierge"
+        "icon": "building"
       },
       {
         "label": "Riverside, near Kew Gardens",
@@ -135,7 +135,7 @@
       },
       {
         "label": "Freehold houses",
-        "icon": "pin"
+        "icon": "f_tenure"
       },
       {
         "label": "Private garden or balcony",
@@ -186,7 +186,7 @@
       },
       {
         "label": "34 mins to Canary Wharf by train",
-        "icon": "pin"
+        "icon": "train"
       }
     ]
   },
@@ -216,7 +216,7 @@
       },
       {
         "label": "Designer outlet shopping nearby",
-        "icon": "supermarket"
+        "icon": "cat_shops"
       }
     ]
   },
@@ -246,7 +246,7 @@
       },
       {
         "label": "Village shops and cafés",
-        "icon": "supermarket"
+        "icon": "cat_shops"
       }
     ]
   },
@@ -272,7 +272,7 @@
     "accessPoints": [
       {
         "label": "Thames riverside walks",
-        "icon": "woodland"
+        "icon": "river"
       },
       {
         "label": "Well-regarded local schools",
@@ -280,7 +280,7 @@
       },
       {
         "label": "Freehold Houses",
-        "icon": "pin"
+        "icon": "f_tenure"
       },
       {
         "label": "Walking distance to Richmond Park, the River Thames and Ham Common",
@@ -310,11 +310,11 @@
     "accessPoints": [
       {
         "label": "2 minutes’ walk to Woolwich Arsenal station, serviced by the DLR and Elizabeth Line (Zone 4)",
-        "icon": "pin"
+        "icon": "train"
       },
       {
         "label": "Fast links to City and Canary Wharf",
-        "icon": "pin"
+        "icon": "landmark"
       }
     ]
   },
@@ -348,7 +348,7 @@
       },
       {
         "label": "Located between Colindale underground station and Mill Hill Broadway overground station",
-        "icon": "pin"
+        "icon": "train"
       }
     ]
   },
@@ -382,7 +382,7 @@
       },
       {
         "label": "10 minutes by train to Bank Station",
-        "icon": "pin"
+        "icon": "train"
       }
     ]
   },
@@ -413,7 +413,7 @@
       },
       {
         "label": "Northern line into the West End",
-        "icon": "pin"
+        "icon": "train"
       },
       {
         "label": "Queen Elizabeth’s School (QE Boys) less than a mile away",
@@ -487,7 +487,7 @@
       },
       {
         "label": "Harewood Downs Golf Club",
-        "icon": "pin"
+        "icon": "landmark"
       }
     ]
   },
@@ -524,7 +524,7 @@
       },
       {
         "label": "Town centre and station a short walk",
-        "icon": "supermarket"
+        "icon": "cat_shops"
       },
       {
         "label": "Estimated rental yields of up to 6.6%*",
@@ -577,7 +577,7 @@
       },
       {
         "label": "Hitchin town centre shops and cafés",
-        "icon": "landmark"
+        "icon": "cat_shops"
       }
     ]
   },
@@ -611,11 +611,11 @@
       },
       {
         "label": "1.3km pathway for walking and cycling",
-        "icon": "pin"
+        "icon": "directions"
       },
       {
         "label": "60% sold",
-        "icon": "pin"
+        "icon": "yield"
       }
     ]
   },
@@ -648,7 +648,7 @@
       },
       {
         "label": "Sustainable design",
-        "icon": "park"
+        "icon": "leaf"
       },
       {
         "label": "Award-winning Eddington location",
@@ -656,7 +656,7 @@
       },
       {
         "label": "12-minute cycle to Cambridge city centre",
-        "icon": "pin"
+        "icon": "clock"
       },
       {
         "label": "Cambridge University Primary School on site",
@@ -700,7 +700,7 @@
       },
       {
         "label": "Croxley Underground Station, 0.8 miles",
-        "icon": "car"
+        "icon": "train"
       },
       {
         "label": "Cassiobury Park, 1.8 miles",
@@ -736,7 +736,7 @@
       },
       {
         "label": "16-minute walk to Cambridge station",
-        "icon": "pin"
+        "icon": "train"
       },
       {
         "label": "Top schools nearby: The Leys, The Perse, Abbey College & Hills Road",
@@ -772,7 +772,7 @@
       },
       {
         "label": "Close to Cambridge Biomedical Campus",
-        "icon": "pin"
+        "icon": "landmark"
       },
       {
         "label": "Top schools nearby: The Leys, The Perse, Abbey College & Hills Road",
@@ -780,7 +780,7 @@
       },
       {
         "label": "Walk to Cambridge South Station, with direct links to London",
-        "icon": "pin"
+        "icon": "train"
       }
     ]
   },
@@ -808,7 +808,7 @@
     "accessPoints": [
       {
         "label": "Eddington parkland and lakes",
-        "icon": "woodland"
+        "icon": "park"
       },
       {
         "label": "University of Cambridge nearby",
@@ -845,11 +845,11 @@
       },
       {
         "label": "High-quality new homes",
-        "icon": "pin"
+        "icon": "star"
       },
       {
         "label": "Walk to the city centre & employment hubs",
-        "icon": "pin"
+        "icon": "clock"
       }
     ]
   },
@@ -887,7 +887,7 @@
       },
       {
         "label": "Freehold houses",
-        "icon": "pin"
+        "icon": "f_tenure"
       },
       {
         "label": "Pilates, café & Co-op on site",
@@ -899,7 +899,7 @@
       },
       {
         "label": "15-minute cycle to Cambridge",
-        "icon": "pin"
+        "icon": "clock"
       }
     ]
   },
@@ -941,7 +941,7 @@
       },
       {
         "label": "Freehold Houses",
-        "icon": "pin"
+        "icon": "f_tenure"
       }
     ]
   },
@@ -973,15 +973,15 @@
       },
       {
         "label": "Next to Oxford North innovation district",
-        "icon": "pin"
+        "icon": "landmark"
       },
       {
         "label": "Close to Summertown & Oxford Canal",
-        "icon": "woodland"
+        "icon": "river"
       },
       {
         "label": "16 minutes to Oxford city centre",
-        "icon": "pin"
+        "icon": "clock"
       },
       {
         "label": "12-minute drive to Bicester Village",
@@ -1021,11 +1021,11 @@
       },
       {
         "label": "Rare brand-new homes in Clifton",
-        "icon": "pin"
+        "icon": "star"
       },
       {
         "label": "Walk to Bristol city centre",
-        "icon": "pin"
+        "icon": "clock"
       },
       {
         "label": "Close to Clifton Suspension Bridge",
@@ -1056,7 +1056,7 @@
     "accessPoints": [
       {
         "label": "Walk into the city centre",
-        "icon": "pin"
+        "icon": "clock"
       },
       {
         "label": "SS Great Britain on the waterfront",
@@ -1092,7 +1092,7 @@
       },
       {
         "label": "Easy reach of the harbourside",
-        "icon": "pin"
+        "icon": "river"
       }
     ]
   },
@@ -1123,15 +1123,15 @@
       },
       {
         "label": "1,500+ new homes",
-        "icon": "pin"
+        "icon": "towers"
       },
       {
         "label": "Walk to Coventry Station",
-        "icon": "pin"
+        "icon": "train"
       },
       {
         "label": "Under 1 hour to London",
-        "icon": "pin"
+        "icon": "clock"
       },
       {
         "label": "Coventry & Warwick Universities nearby",
@@ -1139,7 +1139,7 @@
       },
       {
         "label": "Home of iconic British brand Jaguar Land Rover",
-        "icon": "car"
+        "icon": "landmark"
       }
     ]
   }

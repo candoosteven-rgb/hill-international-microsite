@@ -25,6 +25,15 @@ const ICON_MAP: Record<string, Parameters<typeof Icon>[0]["name"]> = {
   towers: "towers",
   woodland: "woodland",
   yield: "yield",
+  train: "train",
+  clock: "clock",
+  f_tenure: "f_tenure",
+  star: "star",
+  directions: "directions",
+  leaf: "leaf",
+  building: "building",
+  cat_shops: "cat_shops",
+  river: "river",
 };
 
 export default function DevCard({ d }: { d: Development }) {
