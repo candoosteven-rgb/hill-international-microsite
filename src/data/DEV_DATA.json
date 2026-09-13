@@ -5,6 +5,7 @@
     "region": "London",
     "zone": 4,
     "status": "live",
+    "epc": "B",
     "docs": {
       "brochure": true,
       "factsheet": true,
@@ -53,6 +54,7 @@
     "region": "London",
     "zone": 3,
     "status": "live",
+    "epc": "B",
     "logo": "uploads/kew-bridge-rise-logo-white.png",
     "docs": {
       "brochure": true,
@@ -196,6 +198,7 @@
     "region": "London",
     "zone": 4,
     "status": "coming-soon",
+    "epc": "B",
     "docs": {
       "brochure": true,
       "factsheet": true,
@@ -226,6 +229,7 @@
     "region": "London",
     "zone": 3,
     "status": "coming-soon",
+    "epc": "B",
     "docs": {
       "brochure": true,
       "factsheet": true,
@@ -256,6 +260,7 @@
     "region": "London",
     "zone": 4,
     "status": "coming-soon",
+    "epc": "B",
     "docs": {
       "brochure": true,
       "factsheet": true,
@@ -294,6 +299,7 @@
     "region": "London",
     "zone": 4,
     "status": "coming-soon",
+    "epc": "B",
     "docs": {
       "brochure": true,
       "factsheet": true,
@@ -324,6 +330,7 @@
     "region": "London",
     "zone": 4,
     "status": "coming-soon",
+    "epc": "B",
     "docs": {
       "brochure": true,
       "factsheet": true,
@@ -358,6 +365,7 @@
     "region": "London",
     "zone": 2,
     "status": "coming-soon",
+    "epc": "B",
     "docs": {
       "brochure": true,
       "factsheet": true,
@@ -392,6 +400,7 @@
     "region": "London",
     "zone": 5,
     "status": "coming-soon",
+    "epc": "B",
     "logo": "uploads/honeywood-logo-white.png",
     "docs": {
       "brochure": true,
@@ -427,6 +436,7 @@
     "region": "London",
     "zone": 2,
     "status": "coming-soon",
+    "epc": "B",
     "docs": {
       "brochure": true,
       "factsheet": true,
@@ -542,6 +552,7 @@
     "region": "Hertfordshire",
     "locationLabel": "Hitchin, Hertfordshire",
     "status": "coming-soon",
+    "epc": "B",
     "logo": "uploads/mulberry-rise-logo-white.png",
     "docs": {
       "brochure": true,
@@ -591,6 +602,7 @@
     "region": "Cambridge",
     "locationLabel": "Fulbourn, Cambridgeshire",
     "status": "live",
+    "epc": "B",
     "logo": "uploads/farehurst-park-logo.png",
     "docs": {
       "brochure": true,
@@ -629,6 +641,7 @@
     "region": "Cambridge",
     "locationLabel": "Eddington, Cambridge",
     "status": "live",
+    "epc": "B",
     "logo": "uploads/the-icon-logo.png",
     "docs": {
       "brochure": true,
@@ -678,6 +691,7 @@
     "region": "Hertfordshire",
     "locationLabel": "Croxley Green, Rickmansworth",
     "status": "live",
+    "epc": "B",
     "docs": {
       "brochure": true,
       "factsheet": true,
@@ -824,6 +838,7 @@
     "name": "Fitzwilliam Gate",
     "region": "Cambridge",
     "status": "coming-soon",
+    "epc": "B",
     "docs": {
       "brochure": true,
       "factsheet": true,
@@ -997,6 +1012,7 @@
     "name": "The Clifton Collection",
     "region": "Bristol",
     "status": "live",
+    "epc": "B",
     "docs": {
       "brochure": true,
       "factsheet": true,
@@ -1041,6 +1057,7 @@
     "name": "Baltic Wharf",
     "region": "Bristol",
     "status": "coming-soon",
+    "epc": "B",
     "hasMap": true,
     "docs": {
       "brochure": true,
@@ -1077,6 +1094,7 @@
     "name": "The Southville Collection",
     "region": "Bristol",
     "status": "coming-soon",
+    "epc": "B",
     "hasMap": true,
     "logo": "uploads/southville-collection-logo.png",
     "docs": {
@@ -1109,6 +1127,7 @@
     "name": "The Ribbon Quarter",
     "region": "West Midlands",
     "status": "coming-soon",
+    "epc": "B",
     "docs": {
       "brochure": true,
       "factsheet": true,
