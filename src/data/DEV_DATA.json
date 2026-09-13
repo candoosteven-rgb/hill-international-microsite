@@ -34,11 +34,11 @@
         "icon": "terrace"
       },
       {
-        "label": "40 acre park",
+        "label": "Adjacent to 40 acre park",
         "icon": "park"
       },
       {
-        "label": "Concierge, 12hrs a day",
+        "label": "Concierge",
         "icon": "concierge"
       },
       {
@@ -96,7 +96,7 @@
         "icon": "laptop"
       },
       {
-        "label": "Riverside, near Kew Gardens",
+        "label": "Riverside setting",
         "icon": "park"
       }
     ]
@@ -423,7 +423,7 @@
   },
   {
     "id": "hoxton",
-    "name": "Shoreditch Heights",
+    "name": "Hoxton",
     "region": "London",
     "zone": 2,
     "status": "coming-soon",
@@ -488,6 +488,10 @@
       {
         "label": "Harewood Downs Golf Club",
         "icon": "golf"
+      },
+      {
+        "label": "4-minute walk to Chalfont & Latimer Underground station (Zone 8)",
+        "icon": "train"
       }
     ]
   },
@@ -679,7 +683,7 @@
       "factsheet": true,
       "investor": false
     },
-    "tagline": "Last two 5 bedroom detached homes",
+    "tagline": "Last 5 bedroom detached home",
     "showBedIcon": true,
     "place": "Croxley Green, Rickmansworth",
     "images": [
@@ -695,8 +699,8 @@
         "icon": "school"
       },
       {
-        "label": "The Artichoke pub, 0.6 miles",
-        "icon": "landmark"
+        "label": "York House School, 16-minute walk",
+        "icon": "school"
       },
       {
         "label": "Croxley Underground Station, 0.8 miles",
@@ -725,8 +729,7 @@
     "images": [
       "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-02/City%20Reach%20-%20Apartment%20Street%20Scene.jpg.webp?h=790be497&itok=CXQ7yJI9",
       "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-02/City%20Reach%20-Ida%20Court%20Block%20E1.jpg.webp?h=790be497&itok=H8GJ4l-A",
-      "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-02/City%20Reach%20-%20Florence%20Court%20Block%20W2.jpg.webp?h=790be497&itok=Q_n0tvFF",
-      "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-02/City%20Reach%20-%20Aerial%20Drone%20CGI%20-%20Outline.jpg.webp?h=21cd0a81&itok=gPANke4Q"
+      "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-02/City%20Reach%20-%20Florence%20Court%20Block%20W2.jpg.webp?h=790be497&itok=Q_n0tvFF"
     ],
     "accessNote": "Walk to Cambridge North station",
     "accessPoints": [
@@ -955,7 +958,7 @@
       "factsheet": true,
       "investor": true
     },
-    "locationLabel": "Jericho, Oxford",
+    "locationLabel": "Oxford North, Oxford",
     "tagline": "1, 2 & 3 bedroom apartments,\n3, 4 & 5 bedroom freehold houses",
     "showBedIcon": true,
     "logo": "uploads/canalside-quarter-logo.png",
@@ -1045,6 +1048,7 @@
       "investor": true
     },
     "locationLabel": "Harbourside, Bristol",
+    "place": "Spike Island, Bristol",
     "tagline": "1, 2 & 3 bedroom apartments",
     "showBedIcon": true,
     "images": [
@@ -1054,6 +1058,10 @@
     ],
     "accessNote": "Harbourside marina setting",
     "accessPoints": [
+      {
+        "label": "Harbourside location",
+        "icon": "pin"
+      },
       {
         "label": "Walk into the city centre",
         "icon": "clock"
