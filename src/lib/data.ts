@@ -69,7 +69,7 @@ export function priceLabelFor(d: Development, t: Translate): string {
 export function statusMetaFor(d: Development, t: Translate) {
   const base =
     d.status === "live"
-      ? { label: t("status_live"), dot: "#2E86D8", bg: "rgba(46,134,216,0.12)", color: "#1A5A96", isComing: false, isLive: true }
+      ? { label: t("status_live"), dot: "#2E86D8", bg: "#2E86D8", color: "#fff", isComing: false, isLive: true }
       : { label: t("status_coming"), dot: "#C98A6B", bg: "rgba(201,138,107,0.2)", color: "#8a5636", isComing: true, isLive: false };
   if (d.id === "cambium-square") {
     return { ...base, label: "About to launch", bg: "#C1560F", color: "#fff" };

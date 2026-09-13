@@ -303,7 +303,7 @@ export default function DevelopmentPage({ id }: { id: string }) {
         />
         <div className="absolute right-4 top-4 z-[5] md:hidden">
           <span
-            className="rounded-full px-3 py-1.5 text-[11px] font-bold"
+            className="rounded-full px-3 py-1.5 text-[11px] font-bold shadow-[0_3px_10px_rgba(0,0,0,0.3)]"
             style={{ background: status.bg, color: status.color }}
           >
             {status.label}
@@ -331,7 +331,7 @@ export default function DevelopmentPage({ id }: { id: string }) {
                 {d.locationLabel || d.region}
               </span>
               <span
-                className="hidden rounded-full px-3 py-1.5 text-[11px] font-bold md:inline-flex"
+                className="hidden rounded-full px-3 py-1.5 text-[11px] font-bold shadow-[0_3px_10px_rgba(0,0,0,0.3)] md:inline-flex"
                 style={{ background: status.bg, color: status.color }}
               >
                 {status.label}

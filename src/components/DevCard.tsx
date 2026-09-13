@@ -127,10 +127,10 @@ export default function DevCard({ d }: { d: Development }) {
           <div className="flex flex-none items-center gap-2">
             {status.isLive && (
               <span
-                className="inline-flex flex-none items-center gap-1.5 whitespace-nowrap rounded-full px-3 py-1.5 text-[11px] font-bold"
+                className="inline-flex flex-none items-center gap-1.5 whitespace-nowrap rounded-full px-3 py-1.5 text-[11px] font-bold shadow-[0_3px_10px_rgba(46,134,216,0.45)]"
                 style={{ background: status.bg, color: status.color }}
               >
-                <span className="h-1.5 w-1.5 flex-none rounded-full bg-[#1FA45C] shadow-[0_0_0_3px_rgba(31,164,92,0.22)]" />
+                <span className="hi-pulse h-1.5 w-1.5 flex-none rounded-full bg-[#7CFFB2]" />
                 {status.label}
               </span>
             )}
