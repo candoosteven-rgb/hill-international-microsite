@@ -58,10 +58,12 @@ export function devById(id: string): Development | undefined {
 
 type Translate = (key: string, vars?: Record<string, string | number>) => string;
 
+export const LAUNCHING_SOON = new Set(["cambium-square", "mulberry-rise", "fitzwilliam-gate"]);
+
 export function priceLabelFor(d: Development, t: Translate): string {
   const p = devPrices[d.id];
   if (!p) {
-    return d.id === "cambium-square" ? "About to launch" : d.status === "live" ? t("price_on_request") : t("status_coming");
+    return LAUNCHING_SOON.has(d.id) ? "About to launch" : d.status === "live" ? t("price_on_request") : t("status_coming");
   }
   return p.length > 1 ? `${gbp(p[0])} – ${gbp(p[1])}` : `${t("price_from")} ${gbp(p[0])}`;
 }
@@ -71,7 +73,7 @@ export function statusMetaFor(d: Development, t: Translate) {
     d.status === "live"
       ? { label: t("status_live"), dot: "#2E86D8", bg: "#2E86D8", color: "#fff", isComing: false, isLive: true }
       : { label: t("status_coming"), dot: "#C98A6B", bg: "rgba(201,138,107,0.2)", color: "#8a5636", isComing: true, isLive: false };
-  if (d.id === "cambium-square") {
+  if (LAUNCHING_SOON.has(d.id)) {
     return { ...base, label: "About to launch", bg: "#C1560F", color: "#fff" };
   }
   return base;

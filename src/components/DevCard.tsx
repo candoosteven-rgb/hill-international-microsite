@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import type { Development } from "@/lib/types";
-import { epcColorsOf, epcOf, priceLabelFor, statusMetaFor } from "@/lib/data";
+import { epcColorsOf, epcOf, LAUNCHING_SOON, priceLabelFor, statusMetaFor } from "@/lib/data";
 import { resolveImage, buildShots } from "@/lib/image";
 import { useLanguage } from "@/lib/i18n";
 import { useAppState } from "@/lib/app-state";
@@ -39,8 +39,6 @@ const ICON_MAP: Record<string, Parameters<typeof Icon>[0]["name"]> = {
   ev: "ev",
   laptop: "laptop",
 };
-
-const LAUNCHING_SOON = new Set(["cambium-square", "mulberry-rise", "fitzwilliam-gate"]);
 
 export default function DevCard({ d }: { d: Development }) {
   const { t } = useLanguage();
