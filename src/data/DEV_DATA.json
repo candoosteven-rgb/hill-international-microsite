@@ -13,7 +13,7 @@
     "image": "uploads/opt/screenshot-2026-08-28-081144.jpg",
     "logo": "uploads/lampton-parkside-logo-white.png",
     "locationLabel": "Hounslow, West London · Zone 4",
-    "tagline": "1, 2 & 3 bed apartments and duplexes",
+    "tagline": "1, 2 & 3 bedroom apartments and duplexes",
     "showBedIcon": true,
     "images": [
       "uploads/opt/screenshot-2026-08-28-081144.jpg",
@@ -74,7 +74,7 @@
     "flowerLeft": "uploads/opt/kew-bridge-rise-pattern.jpg",
     "flowerRight": "uploads/opt/kew-bridge-rise-pattern.jpg",
     "locationLabel": "Brentford, West London · Zone 3",
-    "tagline": "Studios & 2 bed apartments",
+    "tagline": "Studios & 2 bedroom apartments",
     "showBedIcon": true,
     "place": "Brentford, London",
     "accessNote": "2 min walk to Kew Bridge station",
@@ -121,7 +121,7 @@
     ],
     "locationLabel": "Harringay, North London · Zone 3",
     "place": "Harringay, North London",
-    "tagline": "1 & 2 bed apartments and 3 & 4 bed houses",
+    "tagline": "1 & 2 bedroom apartments and 3 & 4 bedroom houses",
     "showBedIcon": true,
     "accessNote": "30 mins to King’s Cross",
     "accessPoints": [
@@ -166,7 +166,7 @@
     "logo": "uploads/dagenham-green-logo-yellow.png",
     "flowerLeft": "uploads/opt/dagenham-green-flower-left.jpg",
     "flowerRight": "uploads/opt/dagenham-green-flower-right.jpg",
-    "tagline": "1, 2 & 3 bed apartments from £317,000",
+    "tagline": "1, 2 & 3 bedroom apartments from £317,000",
     "locationLabel": "Dagenham, East London · Zone 5",
     "place": "Dagenham, East London",
     "showBedIcon": true,
@@ -203,7 +203,7 @@
     },
     "image": "uploads/opt/wembley-cgi.jpg",
     "locationLabel": "Wembley, North West London",
-    "tagline": "1, 2 & 3 bed apartments",
+    "tagline": "1, 2 & 3 bedroom apartments",
     "showBedIcon": true,
     "images": [
       "uploads/opt/wembley-cgi.jpg"
@@ -233,7 +233,7 @@
     },
     "image": "uploads/opt/dollis-hill-cgi.jpg",
     "locationLabel": "Dollis Hill, North West London",
-    "tagline": "1, 2 & 3 bed apartments",
+    "tagline": "1, 2 & 3 bedroom apartments",
     "showBedIcon": true,
     "images": [
       "uploads/opt/dollis-hill-cgi.jpg"
@@ -263,7 +263,7 @@
     },
     "image": "uploads/opt/ham-richmond-cgi.jpg",
     "locationLabel": "Ham, South West London",
-    "tagline": "2, 3 & 4 bed houses and apartments",
+    "tagline": "2, 3 & 4 bedroom houses and apartments",
     "showBedIcon": true,
     "images": [
       "uploads/opt/ham-richmond-cgi.jpg"
@@ -301,7 +301,7 @@
     },
     "image": "uploads/opt/woolwich-cgi.jpg",
     "locationLabel": "Woolwich, South East London",
-    "tagline": "1, 2 & 3 bed apartments",
+    "tagline": "1, 2 & 3 bedroom apartments",
     "showBedIcon": true,
     "images": [
       "uploads/opt/woolwich-cgi.jpg"
@@ -331,7 +331,7 @@
     },
     "image": "uploads/opt/colindale-cgi.jpg",
     "locationLabel": "Colindale, North West London",
-    "tagline": "Studios, 1, 2 & 3 bed apartments",
+    "tagline": "Studios, 1, 2 & 3 bedroom apartments",
     "showBedIcon": true,
     "images": [
       "uploads/opt/colindale-cgi.jpg"
@@ -365,7 +365,7 @@
     },
     "image": "uploads/opt/langdon-park-cgi.jpg",
     "locationLabel": "Poplar, East London",
-    "tagline": "1, 2 & 3 bed apartments",
+    "tagline": "1, 2 & 3 bedroom apartments",
     "showBedIcon": true,
     "images": [
       "uploads/opt/langdon-park-cgi.jpg"
@@ -400,7 +400,7 @@
     },
     "image": "uploads/opt/honeywood-cgi.jpg",
     "locationLabel": "Barnet, North London",
-    "tagline": "2, 3 & 4 bed houses",
+    "tagline": "2, 3 & 4 bedroom houses",
     "showBedIcon": true,
     "images": [
       "uploads/opt/honeywood-cgi.jpg"
@@ -434,7 +434,7 @@
     },
     "image": "uploads/opt/hoxton-cgi.jpg",
     "locationLabel": "Hoxton, East London",
-    "tagline": "1, 2 & 3 bed apartments",
+    "tagline": "1, 2 & 3 bedroom apartments",
     "showBedIcon": true,
     "images": [
       "uploads/opt/hoxton-cgi.jpg"
@@ -472,7 +472,7 @@
       "https://www.hill.co.uk/sites/default/files/styles/text_image_panel/public/images/2026-06/02215_View%201_241129_RT.jpg.webp?h=5ae4ceff&itok=w_nqvj0C",
       "https://www.hill.co.uk/sites/default/files/styles/text_image_panel/public/images/2026-06/Copy%20of%2002215_View%202_241129_RT.jpg.webp?h=5ae4ceff&itok=D6Oy5QL5"
     ],
-    "tagline": "3, 4 & 5 bed houses",
+    "tagline": "3, 4 & 5 bedroom houses",
     "showBedIcon": true,
     "place": "Little Chalfont, Buckinghamshire",
     "accessNote": "0.9 miles to Chalfont & Latimer station",
@@ -504,7 +504,7 @@
       "factsheet": true,
       "investor": true
     },
-    "tagline": "1, 2 & 3 bed apartments",
+    "tagline": "1, 2 & 3 bedroom apartments",
     "showBedIcon": true,
     "images": [
       "uploads/nexus-living.png.webp",
@@ -544,7 +544,7 @@
       "factsheet": true,
       "investor": false
     },
-    "tagline": "2, 3 & 4 bed homes",
+    "tagline": "2, 3 & 4 bedroom homes",
     "showBedIcon": true,
     "place": "Hitchin, Hertfordshire",
     "images": [
@@ -593,7 +593,7 @@
       "factsheet": true,
       "investor": false
     },
-    "tagline": "2-5 bed homes",
+    "tagline": "2-5 bedroom homes",
     "showBedIcon": true,
     "place": "Fulbourn, Cambridgeshire",
     "images": [
@@ -631,7 +631,7 @@
       "factsheet": true,
       "investor": false
     },
-    "tagline": "1, 2 & 3 bed apartments & duplexes",
+    "tagline": "1, 2 & 3 bedroom apartments & duplexes",
     "showBedIcon": true,
     "place": "Eddington, Cambridge",
     "images": [
@@ -679,7 +679,7 @@
       "factsheet": true,
       "investor": false
     },
-    "tagline": "Last two 5 bed detached homes",
+    "tagline": "Last two 5 bedroom detached homes",
     "showBedIcon": true,
     "place": "Croxley Green, Rickmansworth",
     "images": [
@@ -720,7 +720,7 @@
       "investor": true
     },
     "locationLabel": "Cambridge, Cambridgeshire",
-    "tagline": "1, 2 & 3 bed apartments",
+    "tagline": "1, 2 & 3 bedroom apartments",
     "showBedIcon": true,
     "images": [
       "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-02/City%20Reach%20-%20Apartment%20Street%20Scene.jpg.webp?h=790be497&itok=CXQ7yJI9",
@@ -756,7 +756,7 @@
       "investor": false
     },
     "locationLabel": "Huntingdon, Cambridgeshire",
-    "tagline": "2, 3, 4 & 5 bed houses",
+    "tagline": "2, 3, 4 & 5 bedroom houses",
     "showBedIcon": true,
     "images": [
       "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-05/Hartmere%20Externals_AE2-11%20%281%29.jpg.webp?h=d668167d&itok=4OaqI7zi",
@@ -796,7 +796,7 @@
       "investor": false
     },
     "locationLabel": "Eddington, Cambridge",
-    "tagline": "1, 2 & 3 bed apartments and 3 & 4 bed houses",
+    "tagline": "1, 2 & 3 bedroom apartments and 3 & 4 bedroom houses",
     "showBedIcon": true,
     "images": [
       "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-04/Athena%20External%20Image.jpg.webp?h=c44fcfa1&itok=klQfAypd",
@@ -827,7 +827,7 @@
       "investor": true
     },
     "locationLabel": "Cambridge, Cambridgeshire",
-    "tagline": "1 & 2 bed apartments",
+    "tagline": "1 & 2 bedroom apartments",
     "showBedIcon": true,
     "images": [
       "https://www.hill.co.uk/sites/default/files/styles/text_image_panel/public/images/2026-08/View%202%20Plots%2009-12.jpg.webp?h=9eb0d413&itok=nZ6WOF9Z",
@@ -865,7 +865,7 @@
       "investor": true
     },
     "locationLabel": "Cambridge, Cambridgeshire",
-    "tagline": "1, 2 & 3 bed apartments and 3 & 4 bed houses",
+    "tagline": "1, 2 & 3 bedroom apartments and 3 & 4 bedroom houses",
     "showBedIcon": true,
     "images": [
       "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-01/rsz_marleigh_park_externals_part_2-44_2.jpg.webp?h=0a365b51&itok=Om075b3Z",
@@ -916,7 +916,7 @@
       "investor": true
     },
     "locationLabel": "Cambourne, Cambridgeshire",
-    "tagline": "2, 3, 4 & 5 bed houses",
+    "tagline": "2, 3, 4 & 5 bedroom houses",
     "showBedIcon": true,
     "images": [
       "uploads/cambium-square-photo.png.webp",
@@ -1001,7 +1001,7 @@
     },
     "logo": "uploads/clifton-collection-logo.png",
     "locationLabel": "Clifton, Bristol",
-    "tagline": "1, 2, 3 & 4 bed apartments,\n4 bedroom freehold mews houses",
+    "tagline": "1, 2, 3 & 4 bedroom apartments,\n4 bedroom freehold mews houses",
     "showBedIcon": true,
     "images": [
       "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2025-08/7607_1400_250709_xfer_0.jpg.webp?h=995d1b92&itok=6sSbmmN7",
@@ -1045,7 +1045,7 @@
       "investor": true
     },
     "locationLabel": "Harbourside, Bristol",
-    "tagline": "1, 2 & 3 bed apartments",
+    "tagline": "1, 2 & 3 bedroom apartments",
     "showBedIcon": true,
     "images": [
       "uploads/baltic-wharf-view-from-water.jpg.webp",
@@ -1077,7 +1077,7 @@
       "investor": false
     },
     "locationLabel": "Southville, Bristol",
-    "tagline": "1 & 2 bed apartments",
+    "tagline": "1 & 2 bedroom apartments",
     "showBedIcon": true,
     "images": [
       "uploads/southville-collection-photo-1.png.webp",
