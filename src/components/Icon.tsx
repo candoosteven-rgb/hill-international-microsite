@@ -36,13 +36,7 @@ const paths: Record<string, React.ReactNode> = {
     </>
   ),
   check: <path d="M5 13l4 4L19 7" />,
-  ev: (
-    <>
-      <path d="M4 20c0-3.2 1.6-5.4 4-6.4" />
-      <circle cx="9.2" cy="12.3" r="1.5" fill="currentColor" stroke="none" />
-      <path d="M14.2 4 9 12h3.6L11 20l7-9.5h-3.6z" fill="currentColor" stroke="none" />
-    </>
-  ),
+  ev: <path d="M13 2 4.5 13.5H11l-1 8.5 8.5-11.5H12l1-8.5Z" fill="currentColor" stroke="none" />,
   laptop: (
     <>
       <rect x="5" y="4.5" width="14" height="9.5" rx="1.3" />
