@@ -87,10 +87,12 @@ const paths: Record<string, React.ReactNode> = {
   ),
   car: (
     <>
-      <path d="M8 11 9.2 8.4A2 2 0 0 1 11 7.3h2a2 2 0 0 1 1.8 1.1L16 11" />
-      <rect x="3" y="11" width="18" height="6" rx="2" />
-      <circle cx="7.5" cy="19" r="1.6" fill="currentColor" stroke="none" />
-      <circle cx="16.5" cy="19" r="1.6" fill="currentColor" stroke="none" />
+      <path d="M4 16.5 5.3 12a2.2 2.2 0 0 1 2.1-1.6h9.2a2.2 2.2 0 0 1 2.1 1.6l1.3 4.5" />
+      <path d="M2.5 16.5h19" />
+      <path d="M2.5 16.5v1.8M21.5 16.5v1.8" />
+      <path d="M7.5 10.4h9" />
+      <circle cx="7" cy="18.3" r="1.7" fill="currentColor" stroke="none" />
+      <circle cx="17" cy="18.3" r="1.7" fill="currentColor" stroke="none" />
     </>
   ),
   park: (
@@ -170,10 +172,9 @@ const paths: Record<string, React.ReactNode> = {
   ),
   bridge: (
     <>
-      <path d="M3 18h18" />
-      <path d="M7 18V6M17 18V6" />
-      <path d="M3 10c4-4 14-4 18 0" />
-      <path d="M7 12v6M12 13v5M17 12v6" />
+      <path d="M2 10h20" />
+      <path d="M5.5 10v9M18.5 10v9" />
+      <path d="M2 19h20" />
     </>
   ),
   towers: (
@@ -192,10 +193,8 @@ const paths: Record<string, React.ReactNode> = {
   ),
   nursery: (
     <>
-      <circle cx="12" cy="12.5" r="7" />
-      <path d="M9.3 9c.4-1.3 1.4-2 2.4-2" />
-      <path d="M9.2 14.3c.8.7 1.8 1.1 2.8 1.1s2-.4 2.8-1.1" />
-      <circle cx="12" cy="12.6" r="1" fill="currentColor" stroke="none" />
+      <circle cx="12" cy="6" r="2.6" />
+      <path d="M7.5 9.5h9a1 1 0 0 1 1 1.15c-.5 3.3-2.9 6.35-5.5 6.35s-5-3.05-5.5-6.35a1 1 0 0 1 1-1.15Z" />
     </>
   ),
   school: (
@@ -264,8 +263,9 @@ const paths: Record<string, React.ReactNode> = {
   ),
   f_tenure: (
     <>
-      <path d="M9 3h6l4 4v14H5V3z" />
-      <path d="M9 11h6M9 15h4" />
+      <circle cx="8" cy="8" r="4.2" />
+      <path d="M11 11l9.5 9.5" />
+      <path d="M17 17l2-2M19.5 19.5l2-2" />
     </>
   ),
   f_completion: (
