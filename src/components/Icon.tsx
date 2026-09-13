@@ -87,10 +87,9 @@ const paths: Record<string, React.ReactNode> = {
   ),
   car: (
     <>
-      <path d="M4 16.5 5.3 12a2.2 2.2 0 0 1 2.1-1.6h9.2a2.2 2.2 0 0 1 2.1 1.6l1.3 4.5" />
+      <path d="M3 16.5v-1a1.8 1.8 0 0 1 1.3-1.7l1.9-.55L8 9.6A2 2 0 0 1 9.8 8.5h4.4A2 2 0 0 1 16 9.6l1.8 3.15 1.9.55a1.8 1.8 0 0 1 1.3 1.7v1" />
       <path d="M2.5 16.5h19" />
       <path d="M2.5 16.5v1.8M21.5 16.5v1.8" />
-      <path d="M7.5 10.4h9" />
       <circle cx="7" cy="18.3" r="1.7" fill="currentColor" stroke="none" />
       <circle cx="17" cy="18.3" r="1.7" fill="currentColor" stroke="none" />
     </>
@@ -103,9 +102,9 @@ const paths: Record<string, React.ReactNode> = {
   ),
   concierge: (
     <>
-      <path d="M4 20a8 8 0 0 1 16 0" />
-      <path d="M4 20h16" />
-      <circle cx="12" cy="8" r="4" />
+      <path d="M4 16.5a8 8 0 0 1 16 0" />
+      <path d="M2.5 16.5h19" />
+      <circle cx="12" cy="7.3" r="1" fill="currentColor" stroke="none" />
     </>
   ),
   train: (
