@@ -3,12 +3,20 @@
 import { useState } from "react";
 import { devData, disclaimer, regions } from "@/lib/data";
 import { useLanguage } from "@/lib/i18n";
+import { useAppState } from "@/lib/app-state";
 import LangPills from "@/components/LangPills";
 import Icon from "@/components/Icon";
 
 export default function Footer({ onDevelopmentsClick }: { onDevelopmentsClick?: () => void }) {
   const { t, dp } = useLanguage();
+  const { setRegionFilter } = useAppState();
   const [discOpen, setDiscOpen] = useState(false);
+
+  const goRegion = (r: string) => {
+    setRegionFilter(r);
+    if (onDevelopmentsClick) onDevelopmentsClick();
+    else document.getElementById("hi-developments")?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <footer className="hi-section bg-[#1F3A47]" style={{ paddingTop: 70, paddingBottom: 56 }}>
@@ -21,9 +29,13 @@ export default function Footer({ onDevelopmentsClick }: { onDevelopmentsClick?: 
           <div>
             <div className="mb-4 text-[13px] font-semibold text-[#F9F5F3]">{t("footer_regions")}</div>
             {regions.map((r) => (
-              <div key={r} className="mb-2.5 text-[14px] text-white/68">
+              <button
+                key={r}
+                onClick={() => goRegion(r)}
+                className="hi-link mb-2.5 block text-start text-[14px] text-white/68"
+              >
                 {r}
-              </div>
+              </button>
             ))}
           </div>
           <div>
