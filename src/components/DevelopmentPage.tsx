@@ -961,7 +961,7 @@ function DevStickyPanel({
         onClick={expand}
         aria-label={dp("cta_register")}
         title={dp("cta_register")}
-        className="hi-pop fixed top-1/2 right-0 z-[150] hidden -translate-y-1/2 flex-col items-center gap-2 rounded-l-[14px] bg-[#C1560F] px-2.5 py-4 text-white shadow-[-8px_0_24px_rgba(10,20,25,0.3)] lg:flex"
+        className="hi-pop fixed bottom-8 right-0 z-[150] hidden flex-col items-center gap-2 rounded-l-[14px] bg-[#C1560F] px-2.5 py-4 text-white shadow-[-8px_0_24px_rgba(10,20,25,0.3)] lg:flex"
       >
         <Icon name="message" className="h-4 w-4" strokeWidth={2} />
         <span className="text-[12px] font-bold" style={{ writingMode: "vertical-rl", textOrientation: "mixed" }}>
@@ -972,7 +972,7 @@ function DevStickyPanel({
   }
 
   return (
-    <div className="hi-in fixed top-1/2 right-[30px] z-[150] hidden max-h-[calc(100vh-130px)] w-[320px] -translate-y-1/2 overflow-auto lg:block">
+    <div className="hi-in fixed bottom-8 right-[30px] z-[150] hidden max-h-[calc(100vh-130px)] w-[320px] overflow-auto lg:block">
       <div className="relative rounded-[20px] bg-[#122530] p-6.5 shadow-[0_24px_50px_rgba(10,20,25,0.4)]">
         <button
           onClick={minimize}

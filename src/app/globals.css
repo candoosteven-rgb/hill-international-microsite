@@ -47,6 +47,16 @@ body {
   text-align: right;
 }
 
+/* The browser default focus outline is near-black and disappears against
+   this site's dark surfaces (nav, footer, sticky panels). #2E86D8 (the
+   same blue used for the "Live" status pill) clears the WCAG 3:1 minimum
+   for UI indicators against every surface in the site, light and dark -
+   --hi-blue doesn't (2.5:1 on white). :focus-visible keeps it keyboard-only. */
+:focus-visible {
+  outline: 2px solid #2e86d8;
+  outline-offset: 2px;
+}
+
 /* ---------- Reveal on scroll ---------- */
 @keyframes hi-rise {
   from {

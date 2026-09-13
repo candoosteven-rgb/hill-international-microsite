@@ -65,7 +65,7 @@ export default function HomeStickyTab() {
         onClick={expand}
         aria-label={t("register_submit")}
         title={t("register_submit")}
-        className="hi-pop fixed top-1/2 z-[150] hidden -translate-y-1/2 flex-col items-center gap-2 bg-[#C1560F] px-2.5 py-4 text-white shadow-[-8px_0_24px_rgba(10,20,25,0.3)] lg:flex"
+        className="hi-pop fixed bottom-8 z-[150] hidden flex-col items-center gap-2 bg-[#C1560F] px-2.5 py-4 text-white shadow-[-8px_0_24px_rgba(10,20,25,0.3)] lg:flex"
         style={{ [side]: 0, borderRadius: dir === "rtl" ? "0 14px 14px 0" : "14px 0 0 14px" }}
       >
         <Icon name="message" className="h-4 w-4" strokeWidth={2} />
@@ -77,7 +77,7 @@ export default function HomeStickyTab() {
   }
 
   return (
-    <div className="hi-in fixed top-1/2 z-[150] hidden w-[300px] -translate-y-1/2 lg:block" style={{ [side]: 30 }}>
+    <div className="hi-in fixed bottom-8 z-[150] hidden w-[300px] lg:block" style={{ [side]: 30 }}>
       <div className="relative rounded-[20px] bg-[#122530] p-6.5 shadow-[0_24px_50px_rgba(10,20,25,0.4)]">
         <button
           onClick={minimize}
