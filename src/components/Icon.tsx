@@ -244,9 +244,10 @@ const paths: Record<string, React.ReactNode> = {
   ),
   stadium: (
     <>
-      <ellipse cx="12" cy="17.2" rx="9" ry="3.3" />
-      <path d="M4.6 15.6A8 8 0 0 1 19.4 15.6" />
-      <path d="M4.6 15.6v1.6M19.4 15.6v1.6" />
+      <ellipse cx="12" cy="12" rx="9.5" ry="6.3" />
+      <path d="M12 5.7v2.6M12 18.3v-2.6" />
+      <path d="M4.3 8.8l1.9 1.3M19.7 8.8l-1.9 1.3M4.3 15.2l1.9-1.3M19.7 15.2l-1.9-1.3" />
+      <ellipse cx="12" cy="12" rx="2.6" ry="1.6" />
     </>
   ),
   f_homes: (
