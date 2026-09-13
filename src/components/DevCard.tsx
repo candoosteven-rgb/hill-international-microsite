@@ -37,6 +37,7 @@ const ICON_MAP: Record<string, Parameters<typeof Icon>[0]["name"]> = {
   golf: "golf",
   bridge: "bridge",
   ev: "ev",
+  laptop: "laptop",
 };
 
 export default function DevCard({ d }: { d: Development }) {

@@ -43,6 +43,12 @@ const paths: Record<string, React.ReactNode> = {
       <path d="M14.2 4 9 12h3.6L11 20l7-9.5h-3.6z" fill="currentColor" stroke="none" />
     </>
   ),
+  laptop: (
+    <>
+      <rect x="5" y="4.5" width="14" height="9.5" rx="1.3" />
+      <path d="M2.5 19h19l-2-3.5h-15z" />
+    </>
+  ),
   phone: (
     <path d="M6 3h3l2 5-2.5 1.5a11 11 0 0 0 5 5L15 12l5 2v3a2 2 0 0 1-2 2C10.5 19 5 13.5 5 6a2 2 0 0 1 1-3z" />
   ),
