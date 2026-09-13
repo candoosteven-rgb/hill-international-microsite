@@ -36,6 +36,7 @@ const ICON_MAP: Record<string, Parameters<typeof Icon>[0]["name"]> = {
   river: "river",
   golf: "golf",
   bridge: "bridge",
+  ev: "ev",
 };
 
 export default function DevCard({ d }: { d: Development }) {
@@ -186,7 +187,6 @@ export default function DevCard({ d }: { d: Development }) {
               className="flex items-start gap-2 text-[14px] leading-snug text-[#5C6B71]"
               style={{ unicodeBidi: "plaintext" }}
             >
-              {d.showBedIcon && <Icon name="bed" className="mt-0.5 h-3.5 w-3.5 flex-none text-[#1F3A47]" />}
               {line}
             </p>
           ))}

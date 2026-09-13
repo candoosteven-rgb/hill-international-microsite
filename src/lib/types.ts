@@ -26,7 +26,6 @@ export interface Development {
   logo?: string;
   locationLabel?: string;
   tagline?: string;
-  showBedIcon?: boolean;
   images?: string[];
   accessNote?: string;
   place?: string;

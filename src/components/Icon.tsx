@@ -35,14 +35,14 @@ const paths: Record<string, React.ReactNode> = {
       <circle cx="12" cy="9.5" r="2.4" />
     </>
   ),
-  bed: (
+  check: <path d="M5 13l4 4L19 7" />,
+  ev: (
     <>
-      <rect x="3" y="10" width="18" height="8" rx="2" />
-      <rect x="5" y="12" width="5" height="4" rx="1.3" fill="currentColor" stroke="none" />
-      <path d="M3 18v2M21 18v2" />
+      <path d="M4 20c0-3.2 1.6-5.4 4-6.4" />
+      <circle cx="9.2" cy="12.3" r="1.5" fill="currentColor" stroke="none" />
+      <path d="M14.2 4 9 12h3.6L11 20l7-9.5h-3.6z" fill="currentColor" stroke="none" />
     </>
   ),
-  check: <path d="M5 13l4 4L19 7" />,
   phone: (
     <path d="M6 3h3l2 5-2.5 1.5a11 11 0 0 0 5 5L15 12l5 2v3a2 2 0 0 1-2 2C10.5 19 5 13.5 5 6a2 2 0 0 1 1-3z" />
   ),
@@ -258,10 +258,8 @@ const paths: Record<string, React.ReactNode> = {
   ),
   f_types: (
     <>
-      <rect x="3" y="10" width="18" height="8" rx="2" />
-      <rect x="5" y="12" width="4" height="4" rx="1.2" fill="currentColor" stroke="none" />
-      <rect x="10.2" y="12" width="4" height="4" rx="1.2" fill="currentColor" stroke="none" />
-      <path d="M3 18v2M21 18v2" />
+      <rect x="4" y="5" width="16" height="14" rx="2" />
+      <path d="M12 5v14" />
     </>
   ),
   f_tenure: (
