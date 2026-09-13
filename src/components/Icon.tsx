@@ -153,9 +153,12 @@ const paths: Record<string, React.ReactNode> = {
   shield: <path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z" />,
   landmark: (
     <>
-      <circle cx="12" cy="12" r="8.5" />
-      <path d="M12 3.5v2.2M12 18.3v2.2M3.5 12h2.2M18.3 12h2.2M6 6l1.6 1.6M16.4 16.4L18 18M18 6l-1.6 1.6M7.6 16.4L6 18" />
-      <circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none" />
+      <path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z" />
+      <path
+        d="M12 6.7l1.1 2.25 2.45.36-1.78 1.74.42 2.45L12 12.28l-2.19 1.22.42-2.45-1.78-1.74 2.45-.36z"
+        fill="currentColor"
+        stroke="none"
+      />
     </>
   ),
   golf: (
@@ -163,6 +166,14 @@ const paths: Record<string, React.ReactNode> = {
       <path d="M6 21V4" />
       <path d="M6 4l9 3.5L6 11" />
       <ellipse cx="6" cy="21" rx="4" ry="1.2" />
+    </>
+  ),
+  bridge: (
+    <>
+      <path d="M3 18h18" />
+      <path d="M7 18V6M17 18V6" />
+      <path d="M3 10c4-4 14-4 18 0" />
+      <path d="M7 12v6M12 13v5M17 12v6" />
     </>
   ),
   towers: (
