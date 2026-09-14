@@ -1,5 +1,6 @@
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
+import LaunchingSpotlight from "@/components/LaunchingSpotlight";
 import Developments from "@/components/Developments";
 import Standard from "@/components/Standard";
 import Trust from "@/components/Trust";
@@ -19,6 +20,7 @@ export default function Home() {
       <div style={{ background: "#f5f5f7" }}>
         <Nav />
         <Hero />
+        <LaunchingSpotlight />
         <Developments />
         <Standard />
         <Trust />
