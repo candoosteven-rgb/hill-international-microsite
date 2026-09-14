@@ -1120,7 +1120,7 @@ function RegisterPanel({
     <section className="bg-white px-5 py-16 md:px-8 md:py-24">
       <div className="mx-auto grid max-w-[1400px] grid-cols-1 items-start gap-11 lg:grid-cols-2">
         <div>
-          {pd.suite ? (
+          {pd.suite && d.status === "live" ? (
             <>
               <h3 className="mb-6.5 text-[clamp(26px,3vw,36px)] font-bold tracking-tight text-[#1F3A47]">
                 {dp("suite_title")}
