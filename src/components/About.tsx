@@ -13,7 +13,7 @@ export default function About() {
     <section id="hi-about" className="hi-section bg-black" style={{ paddingTop: 130 }}>
       <div className="mx-auto max-w-[1040px] text-center">
         <Reveal>
-          <div className="mb-3.5 text-[19px] font-semibold tracking-tight text-[#6FA8D6]">
+          <div className="mb-3.5 text-[19px] font-semibold tracking-tight text-[#00ACE5]">
             Foundations you can lean on
           </div>
           <h2
