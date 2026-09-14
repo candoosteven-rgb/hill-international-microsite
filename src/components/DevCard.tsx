@@ -282,8 +282,8 @@ export default function DevCard({ d }: { d: Development }) {
             }}
             className="hi-pill inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[12px] font-semibold"
             style={{
-              border: `1px solid ${isComparing ? "#16313D" : "#B7C6CD"}`,
-              background: isComparing ? "#16313D" : "transparent",
+              border: `1px solid ${isComparing ? "#16313D" : "#8FA6B0"}`,
+              background: isComparing ? "#16313D" : "#fff",
               color: isComparing ? "#fff" : "#28567A",
             }}
           >

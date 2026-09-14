@@ -21,6 +21,14 @@ export default function Footer({ onDevelopmentsClick }: { onDevelopmentsClick?: 
   return (
     <footer className="hi-section bg-[#1F3A47]" style={{ paddingTop: 70, paddingBottom: 56 }}>
       <div className="mx-auto max-w-[1360px]">
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          className="hi-link mx-auto mb-11 flex flex-col items-center gap-1.5 text-white/55"
+        >
+          <Icon name="arrowUp" className="h-4 w-4" strokeWidth={1.8} />
+          <span className="text-[12.5px] font-medium">{t("footer_scroll_up")}</span>
+        </button>
+
         <div className="grid grid-cols-1 gap-10 border-b border-white/12 pb-11 sm:grid-cols-2 lg:grid-cols-4 lg:gap-14">
           <div>
             {/* eslint-disable-next-line @next/next/no-img-element */}

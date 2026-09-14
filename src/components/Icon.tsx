@@ -130,6 +130,7 @@ const paths: Record<string, React.ReactNode> = {
     </>
   ),
   arrowRight: <path d="M4 12h16M13 5l7 7-7 7" />,
+  arrowUp: <path d="M12 20V4M5 11l7-7 7 7" />,
   quote: (
     <path
       d="M9 7c-3 1.5-4 4-4 6.5A3.5 3.5 0 0 0 8.5 17 3 3 0 0 0 11 14 2.6 2.6 0 0 0 8.5 11.4c.2-1.6 1.2-3 3-4zm9 0c-3 1.5-4 4-4 6.5a3.5 3.5 0 0 0 3.5 3.5A3 3 0 0 0 20 14a2.6 2.6 0 0 0-2.5-2.6c.2-1.6 1.2-3 3-4z"
