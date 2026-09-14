@@ -23,7 +23,7 @@ export default function Footer({ onDevelopmentsClick }: { onDevelopmentsClick?: 
       <div className="mx-auto max-w-[1360px]">
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="hi-link mx-auto mb-11 flex flex-col items-center gap-1.5 text-white/55"
+          className="hi-link mx-auto mb-16 flex flex-col items-center gap-1.5 text-white/55"
         >
           <Icon name="arrowUp" className="h-4 w-4" strokeWidth={1.8} />
           <span className="text-[12.5px] font-medium">{t("footer_scroll_up")}</span>
