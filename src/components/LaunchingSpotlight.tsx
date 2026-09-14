@@ -6,7 +6,10 @@ import { devData, LAUNCHING_SOON } from "@/lib/data";
 import { useLanguage } from "@/lib/i18n";
 import { useAppState } from "@/lib/app-state";
 import { resolveImage } from "@/lib/image";
+import { useSwipe } from "@/lib/useSwipe";
 import Icon from "@/components/Icon";
+
+const ROTATE_MS = 5000;
 
 // Only Cambium Square has a confirmed launch date - the countdown is
 // specific to it rather than every LAUNCHING_SOON entry.
@@ -41,6 +44,20 @@ export default function LaunchingSpotlight() {
     .filter((d) => LAUNCHING_SOON.has(d.id))
     .sort((a, b) => (a.id === "cambium-square" ? -1 : b.id === "cambium-square" ? 1 : 0));
 
+  // Below `sm` the 3 tall tiles stacked one per row made this section the
+  // longest thing on the page - rotate through them one at a time instead,
+  // same as DevCard's photo carousel (swipe + auto-advance + dots).
+  const [active, setActive] = useState(0);
+  useEffect(() => {
+    if (devs.length < 2) return;
+    const id = setInterval(() => setActive((i) => (i + 1) % devs.length), ROTATE_MS);
+    return () => clearInterval(id);
+  }, [devs.length]);
+  const swipe = useSwipe(
+    () => setActive((i) => (i + 1) % devs.length),
+    () => setActive((i) => (i - 1 + devs.length) % devs.length)
+  );
+
   if (!devs.length) return null;
 
   return (
@@ -53,11 +70,20 @@ export default function LaunchingSpotlight() {
           {t("launch_spotlight_title")}
         </h2>
 
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-3">
-          {devs.map((d) => {
+        <div
+          className="grid grid-cols-1 gap-5 sm:grid-cols-3"
+          onTouchStart={devs.length > 1 ? swipe.onTouchStart : undefined}
+          onTouchEnd={devs.length > 1 ? swipe.onTouchEnd : undefined}
+        >
+          {devs.map((d, i) => {
             const isCambium = d.id === "cambium-square";
             return (
-              <div key={d.id} className="hi-card group relative aspect-[3/4] overflow-hidden rounded-[18px]">
+              <div
+                key={d.id}
+                className={`hi-card group relative aspect-[3/4] overflow-hidden rounded-[18px] ${
+                  i === active ? "block" : "hidden"
+                } sm:block`}
+              >
                 <a
                   href={`/developments/${d.id}`}
                   onClick={(e) => {
@@ -102,6 +128,24 @@ export default function LaunchingSpotlight() {
             );
           })}
         </div>
+
+        {devs.length > 1 && (
+          <div className="mt-5 flex items-center justify-center gap-2 sm:hidden">
+            {devs.map((d, i) => (
+              <button
+                key={d.id}
+                onClick={() => setActive(i)}
+                aria-label={d.name}
+                className="flex h-4 w-4 items-center justify-center p-1"
+              >
+                <span
+                  className="block h-1.5 w-1.5 rounded-full"
+                  style={{ background: i === active ? "#1F3A47" : "rgba(31,58,71,0.25)" }}
+                />
+              </button>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );
