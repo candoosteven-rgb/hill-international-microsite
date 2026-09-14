@@ -54,6 +54,8 @@ export default function About() {
           ))}
         </Reveal>
 
+        <div className="mx-auto mt-14 h-px w-full max-w-[640px] bg-white/15" />
+
         <Reveal delay={2} className="mx-auto mt-14 flex flex-wrap items-center justify-center gap-x-14 gap-y-8">
           {[
             ["uploads/whathouse-award-white.png", "WhatHouse? Awards", "h-24 md:h-28"],
