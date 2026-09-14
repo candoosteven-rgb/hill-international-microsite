@@ -142,9 +142,9 @@ export default function DevCard({ d }: { d: Development }) {
         )}
 
         <div className="absolute inset-x-3.5 top-3.5 z-[5] flex items-start justify-between gap-2">
-          <span className="inline-flex min-w-0 items-center gap-1.5 rounded-full bg-[rgba(31,58,71,0.85)] px-3 py-1.5 text-[11px] font-semibold uppercase tracking-wide text-white">
-            <Icon name="pin" className="h-2.5 w-2.5 flex-none" />
-            <span className="truncate">{d.locationLabel || d.region}</span>
+          <span className="inline-flex min-w-0 items-start gap-1.5 rounded-full bg-[rgba(31,58,71,0.85)] px-3 py-1.5 text-[11px] font-semibold uppercase tracking-wide text-white">
+            <Icon name="pin" className="mt-0.5 h-2.5 w-2.5 flex-none" />
+            <span>{d.locationLabel || d.region}</span>
           </span>
 
           <div className="flex flex-none items-center gap-2">
