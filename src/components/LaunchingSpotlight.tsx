@@ -16,9 +16,8 @@ export default function LaunchingSpotlight() {
   return (
     <section className="hi-section" style={{ background: "#F5F5F7" }}>
       <div className="mx-auto max-w-[1280px]">
-        <span className="hi-eyebrow mb-3 block text-[#C1560F]">{t("launch_spotlight_eyebrow")}</span>
         <h2
-          className="mb-9 max-w-[640px] font-bold text-[#1F3A47]"
+          className="mb-9 font-bold text-[#1F3A47]"
           style={{ fontSize: "clamp(26px,3vw,40px)", lineHeight: 1.06, letterSpacing: "-0.03em" }}
         >
           {t("launch_spotlight_title")}
