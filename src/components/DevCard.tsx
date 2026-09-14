@@ -187,22 +187,24 @@ export default function DevCard({ d }: { d: Development }) {
           )}
           <bdi className="text-[16px] font-bold tracking-tight text-[#C1560F]">{priceLabel}</bdi>
         </div>
-        {d.place && (
-          <p className="mb-4.5 flex items-center gap-1.5 text-[13px] text-[#8B979C]">
-            <Icon name="pin" className="h-3.5 w-3.5 flex-none text-[#1F3A47]" />
-            {d.place}
-          </p>
-        )}
-        <div className="mb-4 flex flex-col gap-1">
-          {tagline.split("\n").map((line, i) => (
-            <p
-              key={i}
-              className="flex items-start gap-2 text-[14px] leading-snug text-[#5C6B71]"
-              style={{ unicodeBidi: "plaintext" }}
-            >
-              {line}
+        <div className="mb-4" style={{ minHeight: 92 }}>
+          {d.place && (
+            <p className="mb-1.5 flex items-center gap-1.5 text-[13px] text-[#8B979C]">
+              <Icon name="pin" className="h-3.5 w-3.5 flex-none text-[#1F3A47]" />
+              {d.place}
             </p>
-          ))}
+          )}
+          <div className="flex flex-col gap-1">
+            {tagline.split("\n").map((line, i) => (
+              <p
+                key={i}
+                className="flex items-start gap-2 text-[14px] leading-snug text-[#5C6B71]"
+                style={{ unicodeBidi: "plaintext" }}
+              >
+                {line}
+              </p>
+            ))}
+          </div>
         </div>
 
         {epc && (
