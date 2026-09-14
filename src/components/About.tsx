@@ -56,12 +56,12 @@ export default function About() {
 
         <Reveal delay={2} className="mx-auto mt-14 flex flex-wrap items-center justify-center gap-x-14 gap-y-8">
           {[
-            ["uploads/whathouse-award-white.png", "WhatHouse? Awards"],
-            ["uploads/hbf-award-white.png", "Home Builders Federation 5-star rating"],
-            ["uploads/trustpilot-white.png", "Trustpilot 4.9 rating"],
-          ].map(([src, alt]) => (
+            ["uploads/whathouse-award-white.png", "WhatHouse? Awards", "h-24 md:h-28"],
+            ["uploads/hbf-award-white.png", "Home Builders Federation 5-star rating", "h-24 md:h-28"],
+            ["uploads/trustpilot-white.png", "Trustpilot 4.9 rating", "h-16 md:h-20"],
+          ].map(([src, alt, size]) => (
             // eslint-disable-next-line @next/next/no-img-element
-            <img key={src} src={resolveImage(src, alt)} alt={alt} loading="lazy" className="h-16 w-auto object-contain md:h-20" />
+            <img key={src} src={resolveImage(src, alt)} alt={alt} loading="lazy" className={`${size} w-auto object-contain`} />
           ))}
         </Reveal>
       </div>
