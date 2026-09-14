@@ -54,16 +54,14 @@ export default function About() {
           ))}
         </Reveal>
 
-        <Reveal delay={2} className="mx-auto mt-14 flex flex-wrap items-center justify-center gap-4">
+        <Reveal delay={2} className="mx-auto mt-14 flex flex-wrap items-center justify-center gap-x-14 gap-y-8">
           {[
-            ["uploads/whathouse-award.png", "WhatHouse? Awards"],
-            ["uploads/hbf-award.png", "Home Builders Federation 5-star rating"],
-            ["uploads/trustpilot-49.png", "Trustpilot 4.9 rating"],
+            ["uploads/whathouse-award-white.png", "WhatHouse? Awards"],
+            ["uploads/hbf-award-white.png", "Home Builders Federation 5-star rating"],
+            ["uploads/trustpilot-white.png", "Trustpilot 4.9 rating"],
           ].map(([src, alt]) => (
-            <div key={src} className="flex h-24 w-40 items-center justify-center rounded-xl bg-white/95 px-5 py-4">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={resolveImage(src, alt)} alt={alt} loading="lazy" className="h-full w-full object-contain" />
-            </div>
+            // eslint-disable-next-line @next/next/no-img-element
+            <img key={src} src={resolveImage(src, alt)} alt={alt} loading="lazy" className="h-16 w-auto object-contain md:h-20" />
           ))}
         </Reveal>
       </div>
