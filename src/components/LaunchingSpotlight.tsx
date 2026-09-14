@@ -17,19 +17,19 @@ function useCountdown(target: number) {
   useEffect(() => {
     const update = () => setMsLeft(Math.max(0, target - Date.now()));
     update();
-    const id = setInterval(update, 30000);
+    const id = setInterval(update, 1000);
     return () => clearInterval(id);
   }, [target]);
   return msLeft;
 }
 
 function formatCountdown(ms: number): string {
+  const pad = (n: number) => String(n).padStart(2, "0");
   const days = Math.floor(ms / 86400000);
   const hours = Math.floor((ms % 86400000) / 3600000);
   const minutes = Math.floor((ms % 3600000) / 60000);
-  if (days >= 1) return `${days}d ${hours}h`;
-  if (hours >= 1) return `${hours}h ${minutes}m`;
-  return `${minutes}m`;
+  const seconds = Math.floor((ms % 60000) / 1000);
+  return `${days}d ${pad(hours)}h ${pad(minutes)}m ${pad(seconds)}s`;
 }
 
 export default function LaunchingSpotlight() {
