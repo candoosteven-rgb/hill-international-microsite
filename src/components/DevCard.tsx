@@ -91,26 +91,6 @@ export default function DevCard({ d }: { d: Development }) {
                 LAUNCHING_SOON.has(d.id) ? "grayscale group-hover:grayscale-0" : ""
               }`}
             />
-            {shots.length > 1 && (
-              <div className="absolute bottom-2.5 left-1/2 z-[4] flex -translate-x-1/2 items-center gap-1 rounded-full bg-[rgba(15,32,39,0.55)] px-2.5 py-1.5 backdrop-blur-sm">
-                {shots.map((_, i) => (
-                  <button
-                    key={i}
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setShot(i);
-                    }}
-                    aria-label={`Photo ${i + 1}`}
-                    className="flex h-4 w-4 items-center justify-center p-1"
-                  >
-                    <span
-                      className="block h-1.5 w-1.5 rounded-full"
-                      style={{ background: i === shot ? "#fff" : "rgba(255,255,255,0.5)" }}
-                    />
-                  </button>
-                ))}
-              </div>
-            )}
           </>
         ) : (
           <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 overflow-hidden bg-[linear-gradient(158deg,#27454F_0%,#162C35_62%,#101F26_100%)] p-8 text-center hi-hatch">
@@ -126,7 +106,7 @@ export default function DevCard({ d }: { d: Development }) {
 
         {isComing && shots.length > 0 && (
           <div className="absolute inset-x-0 bottom-0 z-[3] px-4 pb-3.5 pt-11 bg-[linear-gradient(to_top,rgba(15,32,39,0.88)_0%,rgba(15,32,39,0.45)_55%,transparent_100%)]">
-            <span className="flex max-w-[38%] items-start gap-1.5 text-[12.5px] font-semibold text-[#F9F5F3]">
+            <span className="flex items-start gap-1.5 text-[12.5px] font-semibold text-[#F9F5F3]">
               <Icon
                 name={LAUNCHING_SOON.has(d.id) ? "rocket" : "eye"}
                 className="mt-0.5 h-[15px] w-[15px] flex-none text-[#C98A6B]"
@@ -176,6 +156,27 @@ export default function DevCard({ d }: { d: Development }) {
           </div>
         </div>
       </div>
+
+      {shots.length > 1 && (
+        <div className="flex items-center justify-center gap-1.5 border-b border-[#EEF1F2] py-2.5">
+          {shots.map((_, i) => (
+            <button
+              key={i}
+              onClick={(e) => {
+                e.stopPropagation();
+                setShot(i);
+              }}
+              aria-label={`Photo ${i + 1}`}
+              className="flex h-4 w-4 items-center justify-center p-1"
+            >
+              <span
+                className="block h-1.5 w-1.5 rounded-full"
+                style={{ background: i === shot ? "#1F3A47" : "#D7DEE1" }}
+              />
+            </button>
+          ))}
+        </div>
+      )}
 
       <div className="flex flex-1 flex-col p-6 pt-7 md:px-7">
         <h4 className="mb-2 text-[21px] font-bold leading-tight tracking-tight text-[#1F3A47]">{d.name}</h4>
