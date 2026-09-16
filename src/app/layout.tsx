@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 import { LanguageProvider } from "@/lib/i18n";
 import { AppStateProvider } from "@/lib/app-state";
 import "./globals.css";
+
+const GA_MEASUREMENT_ID = "G-HT2ZY63WG4";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -36,6 +39,18 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${inter.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="ga4-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_MEASUREMENT_ID}');
+          `}
+        </Script>
         <LanguageProvider>
           <AppStateProvider>{children}</AppStateProvider>
         </LanguageProvider>
