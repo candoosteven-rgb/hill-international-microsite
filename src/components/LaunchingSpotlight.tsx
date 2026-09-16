@@ -80,9 +80,9 @@ export default function LaunchingSpotlight() {
             return (
               <div
                 key={d.id}
-                className={`hi-card group relative aspect-[3/4] overflow-hidden rounded-[18px] ${
+                className={`hi-card group relative aspect-[4/3] overflow-hidden rounded-[18px] ${
                   i === active ? "block" : "hidden"
-                } sm:block`}
+                } sm:block sm:aspect-[3/4]`}
               >
                 <a
                   href={`/developments/${d.id}`}
