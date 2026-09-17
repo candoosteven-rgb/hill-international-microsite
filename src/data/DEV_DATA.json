@@ -598,7 +598,7 @@
       "factsheet": true,
       "investor": false
     },
-    "tagline": "1, 2 & 3 bedroom apartments & duplexes",
+    "tagline": "1, 2 & 3 bedroom apartments, duplexes & penthouses",
     "showBedIcon": true,
     "place": "Eddington, Cambridge",
     "images": [
@@ -722,8 +722,8 @@
       "factsheet": true,
       "investor": false
     },
-    "locationLabel": "Huntingdon, Cambridgeshire",
-    "tagline": "2, 3, 4 & 5 bedroom houses",
+    "locationLabel": "Cambridge, Cambridgeshire",
+    "tagline": "3 to 6 bedroom homes",
     "showBedIcon": true,
     "images": [
       "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-05/Hartmere%20Externals_AE2-11%20%281%29.jpg.webp?h=d668167d&itok=4OaqI7zi",
@@ -763,7 +763,7 @@
       "investor": false
     },
     "locationLabel": "Eddington, Cambridge",
-    "tagline": "1, 2 & 3 bedroom apartments and 3 & 4 bedroom houses",
+    "tagline": "1, 2 & 3 bedroom apartments and 3 bedroom houses",
     "showBedIcon": true,
     "images": [
       "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-04/Athena%20External%20Image.jpg.webp?h=c44fcfa1&itok=klQfAypd",

@@ -27,6 +27,11 @@ function bedsFromTagline(tagline?: string | null): number[] {
   return found.length ? found : [1, 2];
 }
 
+function bedsRangeFromTagline(tagline?: string | null): string | null {
+  const m = (tagline || "").match(/(\d+)\s*-\s*(\d+)\s*bedroom/i);
+  return m ? `${m[1]} to ${m[2]}` : null;
+}
+
 function joinList(arr: (string | number)[]): string {
   if (arr.length <= 1) return String(arr[0]);
   return arr.slice(0, -1).join(", ") + " & " + arr[arr.length - 1];
@@ -36,8 +41,13 @@ function joinList(arr: (string | number)[]): string {
 // derived from the same data already shown elsewhere (price, EPC, zone, beds).
 export function autoFacts(d: Development): { k: string; v: string }[] {
   const facts: { k: string; v: string }[] = [];
-  const beds = bedsFromTagline(d.tagline);
-  facts.push({ k: "f_types", v: joinList(beds) });
+  const bedsRange = bedsRangeFromTagline(d.tagline);
+  if (bedsRange) {
+    facts.push({ k: "f_types", v: bedsRange });
+  } else {
+    const beds = bedsFromTagline(d.tagline);
+    facts.push({ k: "f_types", v: joinList(beds) });
+  }
   const price = devPrices[d.id];
   if (price) facts.push({ k: "f_price", v: gbp(price[0]) });
   const epc = epcOf(d);
