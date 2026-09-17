@@ -16,7 +16,7 @@ const AUTO_FACTS: Record<string, { k: string; v: string }[]> = {
   ],
   "cambium-square": [
     { k: "f_launch", v: "26th Sept" },
-    { k: "f_homes", v: "256 low-carbon homes" },
+    { k: "f_homes", v: "154 low-carbon homes" },
   ],
 };
 

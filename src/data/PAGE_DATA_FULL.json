@@ -3241,6 +3241,36 @@
         "size": 898,
         "price": 499950,
         "avail": true
+      },
+      {
+        "plot": "The Lime, Plot 112",
+        "building": "-",
+        "floor": "-",
+        "beds": 3,
+        "baths": 2,
+        "size": 1050,
+        "price": 549950,
+        "avail": true
+      },
+      {
+        "plot": "The Birch, Plot 47",
+        "building": "-",
+        "floor": "-",
+        "beds": 4,
+        "baths": 3,
+        "size": 1280,
+        "price": 599950,
+        "avail": true
+      },
+      {
+        "plot": "The Elm, Plot 8",
+        "building": "-",
+        "floor": "-",
+        "beds": 5,
+        "baths": 3,
+        "size": 1450,
+        "price": 639950,
+        "avail": true
       }
     ],
     "nearby": [

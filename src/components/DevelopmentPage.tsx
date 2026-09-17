@@ -771,7 +771,7 @@ export default function DevelopmentPage({ id }: { id: string }) {
       {sectionOn.location && (
         <section id="dp-location" className="bg-white px-5 py-16 md:px-8 md:py-24">
           <div className="mx-auto max-w-[1400px]">
-            <span className="hi-eyebrow mb-3 block text-[#C1560F]">{dp("loc_eyebrow")}</span>
+            <span className="hi-eyebrow mb-3 block text-[#C1560F]">{devText(d, dp, "loc_eyebrow")}</span>
             <h2 className="mb-10 max-w-[720px] text-[32px] font-bold tracking-tight text-[#1F3A47]">
               {d.id === "nexus" ? dp("loc_title") : d.place || d.locationLabel || d.region}
             </h2>
@@ -1141,11 +1141,13 @@ function RegisterPanel({
                 <Icon name="arrowRight" className="h-4 w-4 flex-none" strokeWidth={2.2} />
               </a>
             </>
-          ) : (
+          ) : d.status !== "live" ? (
             <>
               <h3 className="mb-4 text-[clamp(26px,3vw,36px)] font-bold tracking-tight text-[#1F3A47]">{d.name}</h3>
               <p className="max-w-[400px] text-[16px] leading-relaxed text-[#5C6B71]">{dp("coming_soon_note")}</p>
             </>
+          ) : (
+            <h3 className="mb-4 text-[clamp(26px,3vw,36px)] font-bold tracking-tight text-[#1F3A47]">{d.name}</h3>
           )}
         </div>
 
@@ -1162,7 +1164,9 @@ function RegisterPanel({
             </div>
           ) : (
             <>
-              <p className="mb-5 text-[14px] leading-relaxed text-white/70">{dp("reg_sub")}</p>
+              {d.status !== "live" && (
+                <p className="mb-5 text-[14px] leading-relaxed text-white/70">{dp("reg_sub")}</p>
+              )}
               <p className="mb-2.5 text-[12px] text-white/50">{t("required_note")}</p>
               <div className="mb-4 flex flex-col gap-3">
                 <input

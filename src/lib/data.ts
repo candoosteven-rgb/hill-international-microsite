@@ -58,7 +58,7 @@ export function devById(id: string): Development | undefined {
 
 type Translate = (key: string, vars?: Record<string, string | number>) => string;
 
-export const LAUNCHING_SOON = new Set(["cambium-square", "mulberry-rise", "fitzwilliam-gate"]);
+export const LAUNCHING_SOON = new Set(["cambium-square", "fitzwilliam-gate"]);
 
 export function priceLabelFor(d: Development, t: Translate): string {
   const p = devPrices[d.id];
