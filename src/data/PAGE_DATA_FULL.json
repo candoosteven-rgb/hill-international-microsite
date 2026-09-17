@@ -2698,6 +2698,10 @@
       {
         "src": "uploads/city-reach-show-apartment-bathroom.webp",
         "cap": "cap_bathroom"
+      },
+      {
+        "src": "uploads/city-reach-show-apartment-bedroom.webp",
+        "cap": "cap_bedroom"
       }
     ],
     "facts": [],
