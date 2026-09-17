@@ -2293,15 +2293,15 @@
       },
       {
         "src": "uploads/the-icon-dusk.jpg",
-        "cap": "cap_living"
+        "cap": "cap_amenity"
       },
       {
         "src": "uploads/03_LowRes_ICON-Roof-Terrace_DJI_0016_D-HDR.jpg",
-        "cap": "cap_kitchen"
+        "cap": "cap_aerial"
       },
       {
         "src": "https://www.hill.co.uk/sites/default/files/styles/hero_mobile/public/images/2026-03/Bike%20Path_Spring%20%282%29.jpg.webp?h=37b6d6bb&itok=6bDyuCov",
-        "cap": "cap_bedroom"
+        "cap": "cap_ext_photo"
       }
     ],
     "facts": [],
@@ -2871,7 +2871,7 @@
       },
       {
         "src": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-05/Hartmere%20Externals_AE2-4.jpg.webp?h=d668167d&itok=KP-MbHEl",
-        "cap": "cap_living"
+        "cap": "cap_exterior"
       },
       {
         "src": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-04/Hartmere%20Show%20Home_Internals-31.jpg.webp?h=8c1344d8&itok=h8nHbKMm",
@@ -3016,15 +3016,15 @@
       },
       {
         "src": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-04/Athena%2C%20Plot%207%20External.jpg.webp?h=e42c87bc&itok=WybNm5fH",
-        "cap": "cap_living"
+        "cap": "cap_exterior"
       },
       {
         "src": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-04/Athena%2C%20Plot%207%2C%20Living%20Room.jpg.webp?h=303de691&itok=Vc44EVU0",
-        "cap": "cap_kitchen"
+        "cap": "cap_living"
       },
       {
         "src": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-04/Athena%2C%20Plot%207-%20Kitchen%20Island.jpg.webp?h=8c9d1d26&itok=mw_pDFJj",
-        "cap": "cap_bedroom"
+        "cap": "cap_kitchen"
       }
     ],
     "facts": [],
@@ -3131,7 +3131,7 @@
       },
       {
         "src": "https://www.hill.co.uk/sites/default/files/styles/text_image_panel/public/images/2026-08/View%206%20Plots%2013-14_0.jpg.webp?h=9eb0d413&itok=gAIBX-JP",
-        "cap": "cap_living"
+        "cap": "cap_ext_photo"
       }
     ],
     "facts": [],
