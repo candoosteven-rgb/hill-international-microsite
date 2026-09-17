@@ -795,13 +795,13 @@
       "investor": true
     },
     "locationLabel": "Cambridge, Cambridgeshire",
-    "tagline": "1 & 2 bedroom apartments",
+    "tagline": "3 & 4 bedroom freehold houses",
     "showBedIcon": true,
     "images": [
       "https://www.hill.co.uk/sites/default/files/styles/text_image_panel/public/images/2026-08/View%202%20Plots%2009-12.jpg.webp?h=9eb0d413&itok=nZ6WOF9Z",
       "https://www.hill.co.uk/sites/default/files/styles/text_image_panel/public/images/2026-08/View%206%20Plots%2013-14_0.jpg.webp?h=9eb0d413&itok=gAIBX-JP"
     ],
-    "accessNote": "Walk to Cambridge station in 10 mins",
+    "accessNote": "Cycle to Cambridge city centre in 8 mins",
     "accessPoints": [
       {
         "label": "Prime central Cambridge CB4 location",
@@ -812,11 +812,11 @@
         "icon": "school"
       },
       {
-        "label": "High-quality new homes",
-        "icon": "star"
+        "label": "Freehold houses",
+        "icon": "f_tenure"
       },
       {
-        "label": "Walk to the city centre & employment hubs",
+        "label": "Cycle to Cambridge city centre in 8 mins",
         "icon": "clock"
       }
     ]
