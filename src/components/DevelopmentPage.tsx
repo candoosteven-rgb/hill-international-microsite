@@ -22,6 +22,12 @@ const FORCE_WHITE_HERO_LOGO_IDS = new Set(["city-reach"]);
 // Dev logos shown 25% larger on the hero image than the default size.
 const LARGE_HERO_LOGO_IDS = new Set(["cambium-square"]);
 
+// Per-dev hero image crop overrides, for photos whose default center crop
+// hides too much of the view.
+const HERO_IMAGE_OBJECT_POSITION: Record<string, string> = {
+  "the-icon": "center top",
+};
+
 // Real branded local-area map images, where we actually have one - kept in
 // preference to the generic embed below since they match the design exactly.
 const MAP_SRC: Record<string, string> = {
@@ -299,6 +305,7 @@ export default function DevelopmentPage({ id }: { id: string }) {
           alt={d.name}
           fetchPriority="high"
           className="hi-ken absolute inset-0 h-full w-full object-cover"
+          style={{ objectPosition: HERO_IMAGE_OBJECT_POSITION[d.id] || "center" }}
         />
         <div
           className="absolute inset-0"
@@ -1306,7 +1313,10 @@ function FilmSection({
           aria-hidden
           loading="lazy"
           className="absolute inset-0 h-full w-full object-cover"
-          style={{ filter: "saturate(0.9) brightness(0.62)" }}
+          style={{
+            filter: "saturate(0.9) brightness(0.62)",
+            objectPosition: HERO_IMAGE_OBJECT_POSITION[d.id] || "center",
+          }}
         />
         <div className="absolute inset-0 flex flex-col items-center justify-center gap-5 p-8 text-center">
           <div className="text-[12px] font-semibold uppercase tracking-[0.22em] text-white/66">{dp("vid_eyebrow")}</div>

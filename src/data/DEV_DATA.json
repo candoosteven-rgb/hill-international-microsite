@@ -602,10 +602,14 @@
     "showBedIcon": true,
     "place": "Eddington, Cambridge",
     "images": [
+      "uploads/the-icon-balcony-view.webp",
       "uploads/the-icon-photo.png.webp",
       "uploads/the-icon-dusk.jpg",
       "uploads/03_LowRes_ICON-Roof-Terrace_DJI_0016_D-HDR.jpg",
-      "uploads/the-icon-concierge-desk.webp"
+      "uploads/the-icon-concierge-desk.webp",
+      "uploads/the-icon-living-room.webp",
+      "uploads/the-icon-living-room-detail.webp",
+      "uploads/the-icon-bedroom.webp"
     ],
     "accessNote": "Rooftop garden with city views",
     "accessPoints": [

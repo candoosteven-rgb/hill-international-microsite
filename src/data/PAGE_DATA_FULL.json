@@ -2285,8 +2285,12 @@
   },
   "the-icon": {
     "auto": true,
-    "hero": "uploads/the-icon-photo.png.webp",
+    "hero": "uploads/the-icon-balcony-view.webp",
     "gallery": [
+      {
+        "src": "uploads/the-icon-balcony-view.webp",
+        "cap": "cap_balcony"
+      },
       {
         "src": "uploads/the-icon-photo.png.webp",
         "cap": "cap_exterior"
@@ -2302,6 +2306,18 @@
       {
         "src": "uploads/the-icon-concierge-desk.webp",
         "cap": "cap_concierge"
+      },
+      {
+        "src": "uploads/the-icon-living-room.webp",
+        "cap": "cap_living"
+      },
+      {
+        "src": "uploads/the-icon-living-room-detail.webp",
+        "cap": "cap_living"
+      },
+      {
+        "src": "uploads/the-icon-bedroom.webp",
+        "cap": "cap_bedroom"
       }
     ],
     "facts": [],
