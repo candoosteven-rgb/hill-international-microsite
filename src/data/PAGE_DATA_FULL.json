@@ -3149,15 +3149,11 @@
   },
   "marleigh-park": {
     "auto": true,
-    "hero": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-01/rsz_marleigh_park_externals_part_2-44_2.jpg.webp?h=0a365b51&itok=Om075b3Z",
+    "hero": "uploads/marleigh-park-exterior-hero.webp",
     "gallery": [
       {
         "src": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-01/rsz_marleigh_park_externals_part_2-44_2.jpg.webp?h=0a365b51&itok=Om075b3Z",
         "cap": "Exterior, houses overlooking the park"
-      },
-      {
-        "src": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-02/Marleigh%20Park%20-%20The%20Lime%20Housetype.jpg.webp?h=de2fe499&itok=0Go38ptV",
-        "cap": "The Lime housetype"
       },
       {
         "src": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-01/25_04_01_Hill_MarleighPark_017_0.jpg.webp?h=78739331&itok=9Fm3KqXf",
