@@ -2678,6 +2678,10 @@
       {
         "src": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-02/City%20Reach%20-%20Aerial%20Drone%20CGI%20-%20Outline.jpg.webp?h=21cd0a81&itok=gPANke4Q",
         "cap": "cap_bedroom"
+      },
+      {
+        "src": "uploads/city-reach-show-apartment-living.webp",
+        "cap": "cap_living"
       }
     ],
     "facts": [],
