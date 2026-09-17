@@ -1130,6 +1130,24 @@ function RegisterPanel({
                 <div>{pd.suite.line2}</div>
                 <div>{pd.suite.line3}</div>
               </div>
+              {!!pd.hours?.length && (
+                <div className="mb-6.5 max-w-[320px]">
+                  <div className="mb-3 text-[13px] font-bold uppercase tracking-wide text-[#1F3A47]">
+                    {dp("suite_hours")}
+                  </div>
+                  <div className="flex flex-col gap-1.5">
+                    {pd.hours.map(([dayKey, time]) => (
+                      <div
+                        key={dayKey}
+                        className="flex items-center justify-between gap-4 text-[14px] text-[#5C6B71]"
+                      >
+                        <span>{dp(dayKey)}</span>
+                        <span className="font-semibold text-[#1F3A47]">{time}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
               <a
                 href={pd.suite.maps}
                 target="_blank"

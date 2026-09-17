@@ -2681,6 +2681,21 @@
       }
     ],
     "facts": [],
+    "suite": {
+      "line1": "City Reach Sales Suite",
+      "line2": "Fanshawe Road",
+      "line3": "Cambridge, Cambridgeshire CB1 3QX",
+      "maps": "https://www.google.com/maps/search/?api=1&query=City+Reach+Sales+Suite+Fanshawe+Road+Cambridge+CB1+3QX"
+    },
+    "hours": [
+      ["d_sun", "10:00 – 17:30"],
+      ["d_mon", "10:00 – 17:30"],
+      ["d_tue", "Closed"],
+      ["d_wed", "Closed"],
+      ["d_thu", "10:00 – 17:30"],
+      ["d_fri", "10:00 – 17:30"],
+      ["d_sat", "10:00 – 17:30"]
+    ],
     "spec": [
       {
         "k": "sg_kitchen",
@@ -2763,9 +2778,7 @@
       }
     ],
     "travel": [],
-    "hours": [],
     "amenities": {},
-    "suite": null,
     "plots": [
       {
         "plot": "Florence Court, Number 4",
