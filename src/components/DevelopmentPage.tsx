@@ -381,7 +381,7 @@ export default function DevelopmentPage({ id }: { id: string }) {
                 <div className="mb-6.5 text-[19px] font-bold tracking-tight text-[#1F3A47]">{dp("facts_title")}</div>
                 <div className="grid grid-cols-2 gap-6 sm:grid-cols-3">
                   {facts.map((f) => {
-                    const factIcon = FACT_ICON_NAMES.find((n) => n === f.k);
+                    const factIcon = f.k === "f_launch" ? "rocket" : FACT_ICON_NAMES.find((n) => n === f.k);
                     return (
                       <div key={f.k}>
                         <div className="mb-3 flex h-8 w-8 items-center justify-center rounded-full bg-[rgba(193,86,15,0.12)]">
