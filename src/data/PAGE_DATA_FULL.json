@@ -2694,6 +2694,10 @@
       {
         "src": "uploads/city-reach-show-apartment-open-plan.webp",
         "cap": "cap_living"
+      },
+      {
+        "src": "uploads/city-reach-show-apartment-bathroom.webp",
+        "cap": "cap_bathroom"
       }
     ],
     "facts": [],
