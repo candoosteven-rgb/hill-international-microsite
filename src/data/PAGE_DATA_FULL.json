@@ -2690,6 +2690,10 @@
       {
         "src": "uploads/city-reach-show-apartment-window-view.webp",
         "cap": "cap_living"
+      },
+      {
+        "src": "uploads/city-reach-show-apartment-open-plan.webp",
+        "cap": "cap_living"
       }
     ],
     "facts": [],
