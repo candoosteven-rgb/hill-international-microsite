@@ -2909,6 +2909,26 @@
       {
         "src": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-04/Hartmere%20Show%20Home_Internals-28.jpg.webp?h=8c1344d8&itok=2VpblEWo",
         "cap": "cap_bedroom"
+      },
+      {
+        "src": "uploads/hartmere-kitchen-dining.webp",
+        "cap": "cap_living"
+      },
+      {
+        "src": "uploads/hartmere-kitchen-island.webp",
+        "cap": "cap_kitchen"
+      },
+      {
+        "src": "uploads/hartmere-bathroom.webp",
+        "cap": "cap_bathroom"
+      },
+      {
+        "src": "uploads/hartmere-kids-bedroom.webp",
+        "cap": "cap_kids_bedroom"
+      },
+      {
+        "src": "uploads/hartmere-bedroom-detail.webp",
+        "cap": "cap_bedroom"
       }
     ],
     "facts": [],
