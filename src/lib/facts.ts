@@ -18,6 +18,10 @@ const AUTO_FACTS: Record<string, { k: string; v: string }[]> = {
     { k: "f_launch", v: "26th Sept" },
     { k: "f_homes", v: "154 low-carbon homes" },
   ],
+  "southville-collection": [
+    { k: "f_parking", v: "Available" },
+    { k: "f_ev", v: "Available" },
+  ],
 };
 
 function bedsFromTagline(tagline?: string | null): number[] {
