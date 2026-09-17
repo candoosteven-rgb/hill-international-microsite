@@ -2661,7 +2661,7 @@
   },
   "city-reach": {
     "auto": true,
-    "hero": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-02/City%20Reach%20-%20Apartment%20Street%20Scene.jpg.webp?h=790be497&itok=CXQ7yJI9",
+    "hero": "uploads/city-reach-exterior-hero.webp",
     "gallery": [
       {
         "src": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-02/City%20Reach%20-%20Apartment%20Street%20Scene.jpg.webp?h=790be497&itok=CXQ7yJI9",
