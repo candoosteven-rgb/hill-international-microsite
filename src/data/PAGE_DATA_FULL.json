@@ -2984,10 +2984,53 @@
       }
     ],
     "travel": [],
-    "hours": [],
+    "hours": [
+      ["d_sun", "10:00 – 17:30"],
+      ["d_mon", "10:00 – 17:30"],
+      ["d_tue", "Closed"],
+      ["d_wed", "Closed"],
+      ["d_thu", "10:00 – 17:30"],
+      ["d_fri", "10:00 – 17:30"],
+      ["d_sat", "10:00 – 17:30"]
+    ],
     "amenities": {},
-    "suite": null,
+    "suite": {
+      "line1": "Hartmere Sales Suite",
+      "line2": "3 Woden Way",
+      "line3": "Cambridge, Cambridgeshire CB2 0RB",
+      "maps": "https://www.google.com/maps/search/?api=1&query=Hartmere+Sales+Suite+3+Woden+Way+Cambridge+CB2+0RB"
+    },
     "plots": [
+      {
+        "plot": "The Darwin, Number 35",
+        "building": "-",
+        "floor": "-",
+        "beds": 3,
+        "baths": 2,
+        "size": 1306,
+        "price": 749950,
+        "avail": true
+      },
+      {
+        "plot": "The Ernest, Number 16",
+        "building": "-",
+        "floor": "-",
+        "beds": 3,
+        "baths": 2,
+        "size": 1363,
+        "price": 829950,
+        "avail": true
+      },
+      {
+        "plot": "The Rosalind, Number 24",
+        "building": "-",
+        "floor": "-",
+        "beds": 4,
+        "baths": 2,
+        "size": 1485,
+        "price": 899950,
+        "avail": true
+      },
       {
         "plot": "The Byron, Number 8",
         "building": "-",
@@ -2999,6 +3042,26 @@
         "avail": true
       },
       {
+        "plot": "The Mallory, Number 12",
+        "building": "-",
+        "floor": "-",
+        "beds": 5,
+        "baths": 2,
+        "size": 2017,
+        "price": 1279950,
+        "avail": true
+      },
+      {
+        "plot": "The Herring, Number 18",
+        "building": "-",
+        "floor": "-",
+        "beds": 5,
+        "baths": 2,
+        "size": 2117,
+        "price": 1299950,
+        "avail": true
+      },
+      {
         "plot": "The Lewis, Number 11",
         "building": "-",
         "floor": "-",
@@ -3006,16 +3069,6 @@
         "baths": 3,
         "size": 2383,
         "price": 1499950,
-        "avail": true
-      },
-      {
-        "plot": "The Milne, Number 7",
-        "building": "-",
-        "floor": "-",
-        "beds": 5,
-        "baths": 2,
-        "size": 2508,
-        "price": 1579950,
         "avail": true
       },
       {
