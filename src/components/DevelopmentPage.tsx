@@ -19,6 +19,9 @@ import Footer from "@/components/Footer";
 // forced to white on the hero image, matching the design's per-id filter table.
 const FORCE_WHITE_HERO_LOGO_IDS = new Set(["city-reach"]);
 
+// Dev logos shown 25% larger on the hero image than the default size.
+const LARGE_HERO_LOGO_IDS = new Set(["cambium-square"]);
+
 // Real branded local-area map images, where we actually have one - kept in
 // preference to the generic embed below since they match the design exactly.
 const MAP_SRC: Record<string, string> = {
@@ -314,7 +317,11 @@ export default function DevelopmentPage({ id }: { id: string }) {
             <img
               src={logoSrc}
               alt={`${d.name} logo`}
-              className="h-[100px] max-w-[240px] object-contain md:h-24 md:max-w-[280px]"
+              className={
+                LARGE_HERO_LOGO_IDS.has(d.id)
+                  ? "h-[125px] max-w-[300px] object-contain md:h-[120px] md:max-w-[350px]"
+                  : "h-[100px] max-w-[240px] object-contain md:h-24 md:max-w-[280px]"
+              }
               style={{
                 filter: FORCE_WHITE_HERO_LOGO_IDS.has(d.id)
                   ? "brightness(0) invert(1) drop-shadow(0 6px 18px rgba(0,0,0,0.35))"
