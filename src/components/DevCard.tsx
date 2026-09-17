@@ -40,6 +40,12 @@ const ICON_MAP: Record<string, Parameters<typeof Icon>[0]["name"]> = {
   laptop: "laptop",
 };
 
+// Specific launch-date copy for the "about to launch" teaser badge, where known.
+const LAUNCH_DATE_LABELS: Record<string, string> = {
+  "cambium-square": "Launching 26th September",
+  "southville-collection": "Launching late Autumn 2026",
+};
+
 export default function DevCard({ d }: { d: Development }) {
   const { t } = useLanguage();
   const router = useRouter();
@@ -113,11 +119,10 @@ export default function DevCard({ d }: { d: Development }) {
                 strokeWidth={1.8}
               />
               <span>
-                {d.id === "cambium-square"
-                  ? "Launching 26th September"
-                  : LAUNCHING_SOON.has(d.id)
+                {LAUNCH_DATE_LABELS[d.id]
+                  ?? (LAUNCHING_SOON.has(d.id)
                     ? t("teaser_launching_soon")
-                    : t("teaser_first_look")}
+                    : t("teaser_first_look"))}
               </span>
             </span>
           </div>

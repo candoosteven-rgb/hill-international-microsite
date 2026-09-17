@@ -981,7 +981,7 @@
     },
     "logo": "uploads/clifton-collection-logo.png",
     "locationLabel": "Clifton, Bristol",
-    "tagline": "1, 2, 3 & 4 bedroom apartments,\n4 bedroom freehold mews houses",
+    "tagline": "1, 2 & 3 bedroom apartments,\n4 bedroom freehold mews houses",
     "showBedIcon": true,
     "images": [
       "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2025-08/7607_1400_250709_xfer_0.jpg.webp?h=995d1b92&itok=6sSbmmN7",
@@ -1064,15 +1064,23 @@
       "investor": false
     },
     "locationLabel": "Southville, Bristol",
-    "tagline": "1 & 2 bedroom apartments",
+    "tagline": "1 & 2 bedroom apartments,\n3, 4 & 5 bedroom townhouses",
     "showBedIcon": true,
     "images": [
       "uploads/southville-collection-photo-1.png.webp",
       "uploads/southville-collection-photo-2.png.webp",
       "uploads/southville-collection-photo-3.png.webp"
     ],
-    "accessNote": "Walk to North Street independents",
+    "accessNote": "Launching late Autumn 2026",
     "accessPoints": [
+      {
+        "label": "Walking distance to highly rated schools",
+        "icon": "school"
+      },
+      {
+        "label": "30 seconds from North Street, Southville's hub of independent shops",
+        "icon": "clock"
+      },
       {
         "label": "Greville Smyth Park nearby",
         "icon": "park"
