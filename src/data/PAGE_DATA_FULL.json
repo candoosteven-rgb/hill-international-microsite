@@ -3193,11 +3193,24 @@
       }
     ],
     "facts": [],
+    "suite": {
+      "line1": "Marleigh Park Sales Suite",
+      "line2": "Newmarket Road",
+      "line3": "Cambridge, Cambridgeshire CB5 8AA",
+      "maps": "https://www.google.com/maps/search/?api=1&query=Marleigh+Park+Sales+Suite+Newmarket+Road+Cambridge+CB5+8AA"
+    },
+    "hours": [
+      ["d_sun", "10:00 – 17:30"],
+      ["d_mon", "10:00 – 17:30"],
+      ["d_tue", "10:00 – 17:30"],
+      ["d_wed", "10:00 – 17:30"],
+      ["d_thu", "10:00 – 17:30"],
+      ["d_fri", "10:00 – 17:30"],
+      ["d_sat", "10:00 – 17:30"]
+    ],
     "spec": [],
     "travel": [],
-    "hours": [],
     "amenities": {},
-    "suite": null,
     "plots": [
       {
         "plot": "The Franklin Building, Apartment A10",
