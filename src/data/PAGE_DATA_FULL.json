@@ -4110,7 +4110,12 @@
     "travel": [],
     "hours": [],
     "amenities": {},
-    "suite": null,
+    "suite": {
+      "line1": "The Southville Collection",
+      "line2": "Raleigh Road",
+      "line3": "Bristol, BS3 1QN",
+      "maps": "https://www.google.com/maps/search/?api=1&query=Raleigh+Road+Bristol+BS3+1QN"
+    },
     "plots": [],
     "nearby": [
       "clifton-collection",
