@@ -3163,8 +3163,8 @@
     "suite": null,
     "plots": [
       {
-        "plot": "Franklin Building, Apartment A10",
-        "building": "Franklin Building",
+        "plot": "The Franklin Building, Apartment A10",
+        "building": "The Franklin Building",
         "floor": "-",
         "beds": 2,
         "baths": 2,
@@ -3173,8 +3173,8 @@
         "avail": true
       },
       {
-        "plot": "Franklin Building, Apartment A22",
-        "building": "Franklin Building",
+        "plot": "The Franklin Building, Apartment A22",
+        "building": "The Franklin Building",
         "floor": "-",
         "beds": 2,
         "baths": 1,
@@ -3183,18 +3183,8 @@
         "avail": true
       },
       {
-        "plot": "Kestrel Building, Apartment D11",
-        "building": "Kestrel Building",
-        "floor": "-",
-        "beds": 2,
-        "baths": 2,
-        "size": 757,
-        "price": 399950,
-        "avail": true
-      },
-      {
-        "plot": "Franklin Building, Apartment B13",
-        "building": "Franklin Building",
+        "plot": "The Franklin Building, Apartment B13",
+        "building": "The Franklin Building",
         "floor": "-",
         "beds": 2,
         "baths": 1,
@@ -3203,18 +3193,18 @@
         "avail": true
       },
       {
-        "plot": "Kestrel Building, Apartment D06",
-        "building": "Kestrel Building",
+        "plot": "The Kestrel Building, Apartment D11",
+        "building": "The Kestrel Building",
         "floor": "-",
         "beds": 2,
         "baths": 2,
-        "size": 761,
+        "size": 757,
         "price": 399950,
         "avail": true
       },
       {
-        "plot": "Franklin Building, Apartment A11",
-        "building": "Franklin Building",
+        "plot": "The Franklin Building, Apartment A11",
+        "building": "The Franklin Building",
         "floor": "-",
         "beds": 2,
         "baths": 2,
@@ -3223,8 +3213,8 @@
         "avail": true
       },
       {
-        "plot": "Franklin Building, Apartment A16",
-        "building": "Franklin Building",
+        "plot": "The Franklin Building, Apartment A16",
+        "building": "The Franklin Building",
         "floor": "-",
         "beds": 2,
         "baths": 2,
@@ -3243,33 +3233,53 @@
         "avail": true
       },
       {
-        "plot": "The Lime, Plot 112",
+        "plot": "The Cherry, Number 457",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 2,
+        "size": 898,
+        "price": 509950,
+        "avail": true
+      },
+      {
+        "plot": "The Willow, Number 519",
         "building": "-",
         "floor": "-",
         "beds": 3,
         "baths": 2,
-        "size": 1050,
-        "price": 549950,
+        "size": 1132,
+        "price": 649950,
         "avail": true
       },
       {
-        "plot": "The Birch, Plot 47",
+        "plot": "The Oak, Number 342",
+        "building": "-",
+        "floor": "-",
+        "beds": 3,
+        "baths": 2,
+        "size": 1217,
+        "price": 679950,
+        "avail": true
+      },
+      {
+        "plot": "The Sycamore, Number 521",
+        "building": "-",
+        "floor": "-",
+        "beds": 4,
+        "baths": 2,
+        "size": 1420,
+        "price": 749950,
+        "avail": true
+      },
+      {
+        "plot": "The Beech, Number 448",
         "building": "-",
         "floor": "-",
         "beds": 4,
         "baths": 3,
-        "size": 1280,
-        "price": 599950,
-        "avail": true
-      },
-      {
-        "plot": "The Elm, Plot 8",
-        "building": "-",
-        "floor": "-",
-        "beds": 5,
-        "baths": 3,
-        "size": 1450,
-        "price": 639950,
+        "size": 1692,
+        "price": 849950,
         "avail": true
       }
     ],
