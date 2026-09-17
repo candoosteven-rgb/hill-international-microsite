@@ -2682,6 +2682,10 @@
       {
         "src": "uploads/city-reach-show-apartment-living.webp",
         "cap": "cap_living"
+      },
+      {
+        "src": "uploads/city-reach-show-apartment-tv-wall.webp",
+        "cap": "cap_living"
       }
     ],
     "facts": [],
