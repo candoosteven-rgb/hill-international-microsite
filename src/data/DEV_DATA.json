@@ -1088,16 +1088,20 @@
         "icon": "school"
       },
       {
-        "label": "30 seconds from North Street, Southville's hub of independent shops",
+        "label": "30 seconds from North Street — Southville's high street of independent shops, cafés and restaurants",
         "icon": "clock"
+      },
+      {
+        "label": "Parking available to purchase for apartments, allocated for every house",
+        "icon": "car"
+      },
+      {
+        "label": "EV charging points",
+        "icon": "ev"
       },
       {
         "label": "Greville Smyth Park nearby",
         "icon": "park"
-      },
-      {
-        "label": "Easy reach of the harbourside",
-        "icon": "river"
       }
     ]
   },
