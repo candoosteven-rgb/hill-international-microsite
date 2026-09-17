@@ -2307,7 +2307,15 @@
     "facts": [],
     "spec": [],
     "travel": [],
-    "hours": [],
+    "hours": [
+      ["d_sun", "10:00 – 17:30"],
+      ["d_mon", "10:00 – 17:30"],
+      ["d_tue", "10:00 – 17:30"],
+      ["d_wed", "10:00 – 17:30"],
+      ["d_thu", "10:00 – 17:30"],
+      ["d_fri", "10:00 – 17:30"],
+      ["d_sat", "10:00 – 17:30"]
+    ],
     "amenities": {
       "cat_transport": [
         {
@@ -2348,7 +2356,12 @@
         }
       ]
     },
-    "suite": null,
+    "suite": {
+      "line1": "Knights Park Sales Suite",
+      "line2": "Eddington Avenue",
+      "line3": "Cambridge, Cambridgeshire CB3 1SE",
+      "maps": "https://www.google.com/maps/search/?api=1&query=Knights+Park+Sales+Suite+Eddington+Avenue+Cambridge+CB3+1SE"
+    },
     "plots": [
       {
         "plot": "Number 37",
@@ -3028,11 +3041,24 @@
       }
     ],
     "facts": [],
+    "suite": {
+      "line1": "Knights Park Sales Suite",
+      "line2": "Eddington Avenue",
+      "line3": "Cambridge, Cambridgeshire CB3 1SE",
+      "maps": "https://www.google.com/maps/search/?api=1&query=Knights+Park+Sales+Suite+Eddington+Avenue+Cambridge+CB3+1SE"
+    },
+    "hours": [
+      ["d_sun", "10:00 – 17:30"],
+      ["d_mon", "10:00 – 17:30"],
+      ["d_tue", "10:00 – 17:30"],
+      ["d_wed", "10:00 – 17:30"],
+      ["d_thu", "10:00 – 17:30"],
+      ["d_fri", "10:00 – 17:30"],
+      ["d_sat", "10:00 – 17:30"]
+    ],
     "spec": [],
     "travel": [],
-    "hours": [],
     "amenities": {},
-    "suite": null,
     "plots": [
       {
         "plot": "The Morgan C, Number 10",
