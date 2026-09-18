@@ -16,6 +16,7 @@ export const VIDEO_EMBEDS: Record<string, string> = {
   "marleigh-park": "https://www.youtube.com/embed/hvSAtokI5gY?si=927wu3rKgUUAFd74&autoplay=1",
   "canalside-quarter": "https://www.youtube.com/embed/RXpdjepJX1k?si=i8u-2gztB1YyLwY2&autoplay=1",
   "clifton-collection": "https://www.youtube.com/embed/At2zd9YnzsM?si=dEKnh4HJBC1vSXu8&autoplay=1",
+  "fitzwilliam-gate": "https://www.youtube.com/embed/NntmOOaay7U?si=asFT1lhlVtpMZ1c3&autoplay=1",
 };
 
 export function isYoutubeEmbed(url: string): boolean {
