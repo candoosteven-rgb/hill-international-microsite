@@ -6,6 +6,7 @@ import { AppStateProvider } from "@/lib/app-state";
 import "./globals.css";
 
 const GA_MEASUREMENT_ID = "G-HT2ZY63WG4";
+const GTM_CONTAINER_ID = "GTM-NPH8PVX6";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -39,6 +40,28 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${inter.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
+        {/* Google Tag Manager. Next.js hoists beforeInteractive scripts into
+            <head> of the static export itself - this must NOT be wrapped in a
+            manual <head> tag in the App Router root layout, which breaks that
+            static injection and leaves the script trapped in the client-side
+            hydration payload instead. */}
+        <Script id="gtm-script" strategy="beforeInteractive">
+          {`
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','${GTM_CONTAINER_ID}');
+          `}
+        </Script>
+        <noscript>
+          <iframe
+            src={`https://www.googletagmanager.com/ns.html?id=${GTM_CONTAINER_ID}`}
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
           strategy="afterInteractive"
