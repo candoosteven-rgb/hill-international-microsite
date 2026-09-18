@@ -11,19 +11,21 @@ import Icon from "@/components/Icon";
 
 const ROTATE_MS = 5000;
 
-// Only Cambium Square has a confirmed launch date - the countdown is
-// specific to it rather than every LAUNCHING_SOON entry.
-const CAMBIUM_LAUNCH = new Date(2026, 8, 26).getTime();
+// Only developments with a confirmed launch date get a countdown badge.
+const LAUNCH_DATES: Record<string, number> = {
+  "cambium-square": new Date(2026, 8, 26).getTime(),
+  "fitzwilliam-gate": new Date(2026, 8, 26).getTime(),
+};
 
-function useCountdown(target: number) {
-  const [msLeft, setMsLeft] = useState<number | null>(null);
+function useNow() {
+  const [now, setNow] = useState<number | null>(null);
   useEffect(() => {
-    const update = () => setMsLeft(Math.max(0, target - Date.now()));
+    const update = () => setNow(Date.now());
     update();
     const id = setInterval(update, 1000);
     return () => clearInterval(id);
-  }, [target]);
-  return msLeft;
+  }, []);
+  return now;
 }
 
 function formatCountdown(ms: number): string {
@@ -39,7 +41,7 @@ export default function LaunchingSpotlight() {
   const { t } = useLanguage();
   const router = useRouter();
   const { startPriority } = useAppState();
-  const msLeft = useCountdown(CAMBIUM_LAUNCH);
+  const now = useNow();
   const devs = devData
     .filter((d) => LAUNCHING_SOON.has(d.id))
     .sort((a, b) => (a.id === "cambium-square" ? -1 : b.id === "cambium-square" ? 1 : 0));
@@ -76,7 +78,8 @@ export default function LaunchingSpotlight() {
           onTouchEnd={devs.length > 1 ? swipe.onTouchEnd : undefined}
         >
           {devs.map((d, i) => {
-            const isCambium = d.id === "cambium-square";
+            const launchTarget = LAUNCH_DATES[d.id];
+            const msLeft = launchTarget !== undefined && now !== null ? Math.max(0, launchTarget - now) : null;
             return (
               <div
                 key={d.id}
@@ -108,7 +111,7 @@ export default function LaunchingSpotlight() {
                   />
                 </a>
 
-                {isCambium && msLeft !== null && (
+                {msLeft !== null && (
                   <div className="pointer-events-none absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-[rgba(15,32,39,0.55)] px-2.5 py-1.5 text-[12px] font-semibold tabular-nums text-white backdrop-blur-sm">
                     <Icon name="rocket" className="h-3.5 w-3.5 flex-none text-[#C98A6B]" strokeWidth={1.8} />
                     {formatCountdown(msLeft)}
