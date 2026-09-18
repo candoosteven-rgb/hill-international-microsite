@@ -44,6 +44,7 @@ const ICON_MAP: Record<string, Parameters<typeof Icon>[0]["name"]> = {
 const LAUNCH_DATE_LABELS: Record<string, string> = {
   "cambium-square": "Launching 26th September",
   "southville-collection": "Launching late Autumn 2026",
+  "fitzwilliam-gate": "Launching Saturday 26th September",
 };
 
 export default function DevCard({ d }: { d: Development }) {
