@@ -3238,8 +3238,12 @@
   },
   "fitzwilliam-gate": {
     "auto": true,
-    "hero": "https://www.hill.co.uk/sites/default/files/styles/text_image_panel/public/images/2026-08/View%202%20Plots%2009-12.jpg.webp?h=9eb0d413&itok=nZ6WOF9Z",
+    "hero": "uploads/fitzwilliam-gate-aerial-cgi.webp",
     "gallery": [
+      {
+        "src": "uploads/fitzwilliam-gate-aerial-cgi.webp",
+        "cap": "cap_aerial"
+      },
       {
         "src": "https://www.hill.co.uk/sites/default/files/styles/text_image_panel/public/images/2026-08/View%202%20Plots%2009-12.jpg.webp?h=9eb0d413&itok=nZ6WOF9Z",
         "cap": "cap_exterior"

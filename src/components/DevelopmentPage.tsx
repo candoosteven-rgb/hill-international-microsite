@@ -26,6 +26,7 @@ const LARGE_HERO_LOGO_IDS = new Set(["cambium-square"]);
 // hides too much of the view.
 const HERO_IMAGE_OBJECT_POSITION: Record<string, string> = {
   "the-icon": "center top",
+  "fitzwilliam-gate": "center bottom",
 };
 
 // Per-dev override for the "walk through" film section's background poster,
