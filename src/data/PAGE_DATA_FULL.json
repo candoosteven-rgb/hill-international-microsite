@@ -3267,7 +3267,68 @@
     "hours": [],
     "amenities": {},
     "suite": null,
-    "plots": [],
+    "plots": [
+      {
+        "plot": "The Carlton, Number 3",
+        "building": "-",
+        "floor": "-",
+        "beds": 3,
+        "baths": 2,
+        "size": 1291,
+        "price": 699950,
+        "avail": true
+      },
+      {
+        "plot": "The Carlton, Number 5",
+        "building": "-",
+        "floor": "-",
+        "beds": 3,
+        "baths": 2,
+        "size": 1291,
+        "price": 719950,
+        "avail": true
+      },
+      {
+        "plot": "The Meridian, Number 34",
+        "building": "-",
+        "floor": "-",
+        "beds": 3,
+        "baths": 2,
+        "size": 1523,
+        "price": 899950,
+        "avail": true
+      },
+      {
+        "plot": "The Belmont, Number 39",
+        "building": "-",
+        "floor": "-",
+        "beds": 4,
+        "baths": 3,
+        "size": 1722,
+        "price": 969950,
+        "avail": true
+      },
+      {
+        "plot": "The Belmont, Number 40",
+        "building": "-",
+        "floor": "-",
+        "beds": 4,
+        "baths": 3,
+        "size": 1706,
+        "price": 989950,
+        "avail": true
+      },
+      {
+        "plot": "The Belmont, Number 33",
+        "building": "-",
+        "floor": "-",
+        "beds": 4,
+        "baths": 3,
+        "size": 1706,
+        "price": 999950,
+        "avail": true
+      }
+    ],
     "nearby": [
       "farehurst-park",
       "the-icon",
