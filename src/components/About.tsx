@@ -3,6 +3,7 @@
 import { useLanguage } from "@/lib/i18n";
 import { resolveImage } from "@/lib/image";
 import Reveal from "@/components/Reveal";
+import Icon from "@/components/Icon";
 
 const STATS = ["about_stat1", "about_stat2", "about_stat3", "about_stat4"];
 
@@ -30,11 +31,21 @@ export default function About() {
         <Reveal delay={1} className="mx-auto mt-14">
           <div className="h-[340px] overflow-hidden rounded-[28px] md:h-[520px]">
             <img
-              src={resolveImage("uploads/number-92-dining-kitchen.jpg.webp", "Hill International")}
-              alt="Hill International development"
+              src={resolveImage("uploads/andy-hill-obe.webp", "Andy Hill OBE, founder and Group Chief Executive")}
+              alt="Andy Hill OBE, founder and Group Chief Executive"
               loading="lazy"
               className="h-full w-full object-cover"
             />
+          </div>
+          <p className="mx-auto mt-8 max-w-[620px] text-[16px] leading-relaxed text-[#A1A1A6]">
+            {t("about_founder_body")}
+          </p>
+          <div className="mx-auto mt-10 max-w-[620px]">
+            <Icon name="quote" className="mx-auto mb-4 h-6 w-6 text-[#C98A6B]" />
+            <p className="text-[19px] font-semibold leading-snug tracking-tight text-[#F5F5F7]">
+              {t("about_founder_quote")}
+            </p>
+            <p className="mt-3 text-[14px] text-[#C98A6B]">{t("about_founder_name")}</p>
           </div>
         </Reveal>
 
