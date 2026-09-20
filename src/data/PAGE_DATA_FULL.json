@@ -2285,8 +2285,12 @@
   },
   "the-icon": {
     "auto": true,
-    "hero": "uploads/the-icon-balcony-view.webp",
+    "hero": "uploads/the-icon-street-view-cgi.webp",
     "gallery": [
+      {
+        "src": "uploads/the-icon-street-view-cgi.webp",
+        "cap": "cap_exterior"
+      },
       {
         "src": "uploads/the-icon-balcony-view.webp",
         "cap": "cap_balcony"
