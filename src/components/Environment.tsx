@@ -6,7 +6,7 @@ import Reveal from "@/components/Reveal";
 import Icon from "@/components/Icon";
 
 const CARDS: { key: string; icon: Parameters<typeof Icon>[0]["name"]; img: string }[] = [
-  { key: "env_c1", icon: "bolt", img: "uploads/opt/environment-energy-card.jpg" },
+  { key: "env_c1", icon: "bolt", img: "uploads/environment-energy-features-cgi.webp" },
   { key: "env_c2", icon: "sprout", img: "uploads/wildflower-meadow-cycle-path.webp" },
   { key: "env_c3", icon: "crane", img: "uploads/opt/environment-construction-card.jpg" },
 ];
