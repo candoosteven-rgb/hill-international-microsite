@@ -17,7 +17,7 @@ export default function Environment() {
   return (
     <section id="hi-environment" className="hi-section relative overflow-hidden bg-[#EDF2EC]" style={{ paddingBottom: 130 }}>
       <img
-        src={resolveImage("uploads/opt/sky-zero-forest-aerial.jpg", "Forest")}
+        src={resolveImage("uploads/wildflower-meadow-cycle-path.webp", "Wildflower meadow cycle path")}
         alt=""
         aria-hidden
         loading="lazy"
