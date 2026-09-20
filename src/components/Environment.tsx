@@ -44,6 +44,7 @@ export default function Environment() {
             {t("env_title")}
           </h2>
           <p className="mt-6 text-[17px] leading-relaxed text-[#5C6B71]">{t("env_body")}</p>
+          <p className="mt-4 text-[17px] leading-relaxed text-[#5C6B71]">{t("env_body2")}</p>
         </Reveal>
 
         <Reveal delay={1} className="grid grid-cols-1 items-stretch gap-7 sm:grid-cols-2 lg:grid-cols-3">
