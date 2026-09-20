@@ -3,7 +3,6 @@
 import { useLanguage } from "@/lib/i18n";
 import { resolveImage } from "@/lib/image";
 import Reveal from "@/components/Reveal";
-import Icon from "@/components/Icon";
 
 const STATS = ["about_stat1", "about_stat2", "about_stat3", "about_stat4"];
 
@@ -29,9 +28,8 @@ export default function About() {
         </Reveal>
 
         <Reveal delay={1} className="mx-auto mt-14 max-w-[620px]">
-          <Icon name="quote" className="mx-auto mb-4 h-6 w-6 text-[#C98A6B]" />
           <p className="text-[19px] font-semibold leading-snug tracking-tight text-[#F5F5F7]">
-            {t("about_founder_quote")}
+            &ldquo;{t("about_founder_quote")}&rdquo;
           </p>
           <p className="mt-3 text-[14px] text-[#C98A6B]">{t("about_founder_name")}</p>
         </Reveal>
