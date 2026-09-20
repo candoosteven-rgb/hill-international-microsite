@@ -31,9 +31,7 @@ const HERO_IMAGE_OBJECT_POSITION: Record<string, string> = {
 // Per-dev override for the "walk through" film section's background poster,
 // where the hero image isn't the best fit (e.g. it's better used elsewhere
 // on the page and a gallery shot suits the video backdrop better).
-const VIDEO_POSTER_OVERRIDE: Record<string, string> = {
-  "the-icon": "uploads/the-icon-photo.png.webp",
-};
+const VIDEO_POSTER_OVERRIDE: Record<string, string> = {};
 
 // Real branded local-area map images, where we actually have one - kept in
 // preference to the generic embed below since they match the design exactly.
