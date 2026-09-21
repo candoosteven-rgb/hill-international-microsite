@@ -15,16 +15,20 @@ export type EnquiryPayload = {
   preferredLanguage?: string;
   developmentId?: string;
   developmentName?: string;
+  formPlacement?: "sticky" | "panel";
   consent: boolean;
   pageLang: string;
 };
 
 // Distinguishes conversion points for GTM: the homepage form has no
-// developmentId, the two dev-page forms (sticky card + inline panel) share
-// one name since they're the same conversion action on the same URL.
+// developmentId; the two dev-page forms (sticky card + inline panel) are
+// split via formPlacement since they're different UI entry points.
 function formNameFor(payload: EnquiryPayload): string {
   if (payload.type === "download_gate") return "download_gate";
-  return payload.developmentId ? "register_development" : "register_interest_general";
+  if (!payload.developmentId) return "register_interest_general";
+  if (payload.formPlacement === "sticky") return "register_development_sticky";
+  if (payload.formPlacement === "panel") return "register_development_panel";
+  return "register_development";
 }
 
 function pushConversionEvent(payload: EnquiryPayload): void {

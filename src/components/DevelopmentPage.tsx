@@ -965,6 +965,7 @@ function DevStickyPanel({
       phone: form.phone.trim() || undefined,
       developmentId: d.id,
       developmentName: d.name,
+      formPlacement: "sticky",
       consent: form.consent,
       pageLang: lang,
     });
@@ -1126,6 +1127,7 @@ function RegisterPanel({
       phone: form.phone.trim() || undefined,
       developmentId: d.id,
       developmentName: d.name,
+      formPlacement: "panel",
       consent: form.consent,
       pageLang: lang,
     });
