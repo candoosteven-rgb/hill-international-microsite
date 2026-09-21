@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import { useLanguage } from "@/lib/i18n";
 import { useAppState } from "@/lib/app-state";
 import Icon from "@/components/Icon";
@@ -14,6 +15,28 @@ const links: { href: string; key: string }[] = [
 export default function Nav() {
   const { t } = useLanguage();
   const { menuOpen, setMenuOpen, liked, setSavedOnly } = useAppState();
+  const progressRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    let raf: number | null = null;
+    const onScroll = () => {
+      if (raf) return;
+      raf = requestAnimationFrame(() => {
+        raf = null;
+        const y = window.scrollY || 0;
+        const max = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+        if (progressRef.current) {
+          progressRef.current.style.width = `${Math.min(100, (y / max) * 100).toFixed(2)}%`;
+        }
+      });
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (raf) cancelAnimationFrame(raf);
+    };
+  }, []);
 
   const goToSaved = () => {
     setSavedOnly(true);
@@ -101,6 +124,10 @@ export default function Nav() {
           </a>
         </div>
       )}
+
+      <div aria-hidden className="relative h-[3px]" style={{ background: "rgba(255,255,255,0.08)" }}>
+        <div ref={progressRef} className="h-full origin-left" style={{ width: "0%", background: "#C1560F" }} />
+      </div>
     </div>
   );
 }
