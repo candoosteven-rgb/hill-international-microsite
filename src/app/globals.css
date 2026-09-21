@@ -137,6 +137,32 @@ body {
   animation: hi-check 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) 0.15s forwards;
 }
 
+/* ---------- Split-flap / destination-board text ---------- */
+@keyframes hi-flap-turn {
+  0% {
+    transform: rotateX(-90deg);
+    opacity: 0.35;
+  }
+  60% {
+    transform: rotateX(6deg);
+    opacity: 1;
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+.hi-flap-cell {
+  display: inline-block;
+  perspective: 240px;
+}
+.hi-flap-cell > span {
+  display: inline-block;
+  transform-origin: 50% 50%;
+}
+.hi-flap-cell > span.hi-flap-turn {
+  animation: hi-flap-turn 0.07s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
 @keyframes hi-waggle {
   0%, 64%, 100% { transform: rotate(0deg) translateY(0); }
   68% { transform: rotate(-1.6deg) translateY(-2px); }
@@ -417,7 +443,8 @@ body {
   .hi-wardrobe-in,
   .hi-shackle,
   .hi-keyhole,
-  .hi-lockpod {
+  .hi-lockpod,
+  .hi-flap-turn {
     animation: none !important;
   }
   .hi-check {

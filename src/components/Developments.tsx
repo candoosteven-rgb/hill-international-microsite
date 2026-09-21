@@ -9,6 +9,7 @@ import { useAppState } from "@/lib/app-state";
 import DevCard from "@/components/DevCard";
 import Reveal from "@/components/Reveal";
 import Icon from "@/components/Icon";
+import DestinationBoard from "@/components/DestinationBoard";
 
 const REGION_BANNERS: Record<string, string> = {
   London: "uploads/opt/london-skyline.jpg",
@@ -167,7 +168,7 @@ export default function Developments() {
                   />
                   <div className="absolute inset-x-6 bottom-6 flex flex-wrap items-end justify-between gap-4">
                     <h3 className="text-[32px] font-bold tracking-tight text-[#F9F5F3] md:text-[38px]">
-                      {region}
+                      <DestinationBoard text={region} />
                     </h3>
                     <span className="rounded-full bg-black/28 px-4 py-2 text-[13px] font-semibold text-white/85">
                       {regionDevs.length} {regionDevs.length === 1 ? t("dev_count_one") : t("dev_count_many")}
