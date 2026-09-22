@@ -3570,6 +3570,26 @@
       {
         "src": "uploads/cambium-square-lifestyle-picnic.webp",
         "cap": "Picnic on the green"
+      },
+      {
+        "src": "uploads/cambium-square-lifestyle-groceries.webp",
+        "cap": "Unloading the shopping"
+      },
+      {
+        "src": "uploads/cambium-square-lifestyle-balcony.webp",
+        "cap": "Evening on the balcony"
+      },
+      {
+        "src": "uploads/cambium-square-lifestyle-car-wash.webp",
+        "cap": "Washing the car"
+      },
+      {
+        "src": "uploads/cambium-square-lifestyle-jogging.webp",
+        "cap": "Morning run"
+      },
+      {
+        "src": "uploads/cambium-square-lifestyle-gardening.webp",
+        "cap": "Tending the garden"
       }
     ],
     "facts": [],
