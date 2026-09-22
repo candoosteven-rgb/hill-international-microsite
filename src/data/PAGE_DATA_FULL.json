@@ -3255,6 +3255,10 @@
       {
         "src": "uploads/fitzwilliam-gate-courtyard-cgi.webp",
         "cap": "cap_exterior"
+      },
+      {
+        "src": "uploads/fitzwilliam-gate-aerial-wide.webp",
+        "cap": "Aerial view"
       }
     ],
     "facts": [],
