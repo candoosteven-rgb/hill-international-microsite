@@ -3533,8 +3533,12 @@
   },
   "cambium-square": {
     "auto": true,
-    "hero": "uploads/cambium-square-hero-park.webp",
+    "hero": "uploads/cambium-square-hero-street.webp",
     "gallery": [
+      {
+        "src": "uploads/cambium-square-lifestyle-cycling.webp",
+        "cap": "Cycling through the neighbourhood"
+      },
       {
         "src": "uploads/cambium-square-photo.png.webp",
         "cap": "Playground vignette, AI"
@@ -3554,10 +3558,6 @@
       {
         "src": "uploads/cambium-square-street-scene-cgi.webp",
         "cap": "Street scene"
-      },
-      {
-        "src": "uploads/cambium-square-lifestyle-cycling.webp",
-        "cap": "Cycling through the neighbourhood"
       },
       {
         "src": "uploads/cambium-square-lifestyle-dog-walk.webp",
