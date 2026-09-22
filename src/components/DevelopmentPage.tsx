@@ -125,7 +125,7 @@ const FACT_ICON_NAMES: Parameters<typeof Icon>[0]["name"][] = [
 export default function DevelopmentPage({ id }: { id: string }) {
   const { t, dp, lang } = useLanguage();
   const router = useRouter();
-  const { liked, toggleLiked, addRecent } = useAppState();
+  const { liked, toggleLiked, addRecent, setSavedOnly } = useAppState();
   const [locCat, setLocCat] = useState("cat_transport");
   const [avBuilding, setAvBuilding] = useState("all");
   const [avBeds, setAvBeds] = useState("all");
@@ -225,6 +225,10 @@ export default function DevelopmentPage({ id }: { id: string }) {
 
   const goRegister = () => router.push("/#hi-register");
   const goDevelopments = () => router.push("/#hi-developments");
+  const goSaved = () => {
+    setSavedOnly(true);
+    router.push("/#hi-developments");
+  };
 
   return (
     <div dir="auto" className="hi-fade overflow-x-clip bg-white text-[#1F3A47]">
@@ -259,6 +263,16 @@ export default function DevelopmentPage({ id }: { id: string }) {
             ))}
           </nav>
           <div className="flex items-center gap-2.5">
+            {liked.size > 0 && (
+              <button
+                onClick={goSaved}
+                aria-label={`${t("filter_saved")} (${liked.size})`}
+                className="hi-pill hidden items-center gap-1.5 rounded-full border border-white/28 bg-white/8 px-3 py-1.5 text-xs font-semibold text-[#F9F5F3] md:inline-flex"
+              >
+                <Icon name="heart-fill" className="h-3.5 w-3.5 flex-none text-[#C1560F]" />
+                {liked.size}
+              </button>
+            )}
             <button
               onClick={() => toggleLiked(d.id)}
               aria-pressed={isLiked}
@@ -301,6 +315,18 @@ export default function DevelopmentPage({ id }: { id: string }) {
                 {dp(n.nav)}
               </button>
             ))}
+            {liked.size > 0 && (
+              <button
+                onClick={() => {
+                  setNavOpen(false);
+                  goSaved();
+                }}
+                className="flex items-center gap-2 border-b border-white/8 py-3.5 text-left text-[15px] font-semibold text-[#F9F5F3]"
+              >
+                <Icon name="heart-fill" className="h-4 w-4 flex-none text-[#C1560F]" />
+                {t("filter_saved")} ({liked.size})
+              </button>
+            )}
           </nav>
         )}
       </div>

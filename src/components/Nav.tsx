@@ -74,6 +74,7 @@ export default function Nav() {
             {liked.size > 0 && (
               <button
                 onClick={goToSaved}
+                aria-label={`${t("filter_saved")} (${liked.size})`}
                 className="hi-pill mr-1 inline-flex items-center gap-1.5 rounded-full border border-white/28 bg-white/8 px-3 py-1.5 text-xs font-semibold text-[#F9F5F3]"
               >
                 <Icon name="heart-fill" className="h-3.5 w-3.5 flex-none text-[#C1560F]" />
