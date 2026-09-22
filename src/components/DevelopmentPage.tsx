@@ -27,6 +27,7 @@ const LARGE_HERO_LOGO_IDS = new Set(["cambium-square"]);
 const HERO_IMAGE_OBJECT_POSITION: Record<string, string> = {
   "the-icon": "center top",
   "canalside-quarter": "center bottom",
+  "cambium-square": "center 75%",
 };
 
 // Per-dev override for the "walk through" film section's background poster,
