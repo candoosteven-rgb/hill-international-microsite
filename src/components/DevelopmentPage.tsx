@@ -37,6 +37,17 @@ const VIDEO_POSTER_OVERRIDE: Record<string, string> = {
   "cambium-square": "uploads/cambium-square-lifestyle-dog-walk.webp",
 };
 
+// Per-dev bullet highlights shown under the overview copy, where provided.
+const OVERVIEW_HIGHLIGHTS: Record<string, string[]> = {
+  "fitzwilliam-gate": [
+    "Rare opportunity to own a freehold house close to central Cambridge",
+    "Ideally positioned adjacent to Histon Road Park",
+    "Within walking distance of leading University of Cambridge colleges, including Fitzwilliam, Murray Edwards and Churchill",
+    "Excellent connectivity – cycle to Cambridge city centre in around 13 minutes and Cambridge Station in just 15 minutes",
+    "Every home benefits from a private garden and off-road parking",
+  ],
+};
+
 // Real branded local-area map images, where we actually have one - kept in
 // preference to the generic embed below since they match the design exactly.
 const MAP_SRC: Record<string, string> = {
@@ -423,6 +434,16 @@ export default function DevelopmentPage({ id }: { id: string }) {
               </h2>
               <p className="mb-4.5 text-[16.5px] leading-relaxed text-[#5C6B71]">{devBlurb(d, dp)}</p>
               <p className="text-[16.5px] leading-relaxed text-[#5C6B71]">{devBlurb2(d, dp)}</p>
+              {!!OVERVIEW_HIGHLIGHTS[d.id]?.length && (
+                <ul className="mt-4.5 flex flex-col gap-2.5">
+                  {OVERVIEW_HIGHLIGHTS[d.id].map((h, i) => (
+                    <li key={i} className="flex items-start gap-2.5 text-[16.5px] leading-relaxed text-[#5C6B71]">
+                      <span className="mt-2.5 h-1.5 w-1.5 flex-none rounded-full bg-[#C1560F]" />
+                      {h}
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
 
             {!!facts.length && (
