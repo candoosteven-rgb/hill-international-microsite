@@ -47,6 +47,11 @@ const LAUNCH_DATE_LABELS: Record<string, string> = {
   "fitzwilliam-gate": "Launching Saturday 26th September",
 };
 
+// Postcode district shown after the name on the card, where requested.
+const CARD_NAME_SUFFIX: Record<string, string> = {
+  "fitzwilliam-gate": "CB4",
+};
+
 export default function DevCard({ d }: { d: Development }) {
   const { t } = useLanguage();
   const router = useRouter();
@@ -185,7 +190,10 @@ export default function DevCard({ d }: { d: Development }) {
       )}
 
       <div className="flex flex-1 flex-col p-6 pt-7 md:px-7">
-        <h4 className="mb-2 text-[21px] font-bold leading-tight tracking-tight text-[#1F3A47]">{d.name}</h4>
+        <h4 className="mb-2 text-[21px] font-bold leading-tight tracking-tight text-[#1F3A47]">
+          {d.name}
+          {CARD_NAME_SUFFIX[d.id] && <>, {CARD_NAME_SUFFIX[d.id]}</>}
+        </h4>
         <div className="mb-3.5 flex items-baseline gap-1.5">
           {priceIsGuide && (
             <span className="text-[11px] font-semibold uppercase tracking-wide text-[#8B979C]">
