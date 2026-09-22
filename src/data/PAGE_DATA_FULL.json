@@ -3262,7 +3262,111 @@
       }
     ],
     "facts": [],
-    "spec": [],
+    "spec": [
+      {
+        "k": "sg_kitchen",
+        "img": "uploads/spec-fallback-kitchen.webp",
+        "items": [
+          "Matt finish handleless units with soft close to doors and drawers",
+          "Caesarstone worktops with matching upstand and splashback behind hob",
+          "Induction hob, with built-in extractor where on an island",
+          "Integrated single oven",
+          "Integrated microwave",
+          "Integrated compact combi oven/microwave to the gold specification",
+          "Integrated fridge/freezer",
+          "Integrated dishwasher",
+          "Integrated cooker hood",
+          "Stainless steel undermounted sink with contemporary brushed steel mixer tap",
+          "LED feature lighting to wall units",
+          "Integrated washer/dryer, or freestanding where in a cupboard",
+          "Utility: matt finish handleless units with contemporary black trim and soft close doors",
+          "Utility: Caesarstone worktops with matching upstand",
+          "Utility: stainless steel undermounted sink with contemporary brushed steel mixer tap",
+          "Utility: freestanding washing machine",
+          "Utility: freestanding condenser dryer"
+        ],
+        "note": "Kitchen and utility room designs and layouts vary; please speak to our Sales Executives for further information."
+      },
+      {
+        "k": "sg_bathroom",
+        "img": "uploads/dagenham-green-bathroom.jpg",
+        "items": [
+          "Bathroom: bath with shower over and glass screen",
+          "Bathroom: bath panel to match vanity top",
+          "Bathroom: feature mirror cabinet with LED lighting to the gold specification",
+          "En-suite: low profile shower tray with glass shower door",
+          "En-suite: recessed shower shelf to the gold specification",
+          "Framed feature mirror with shelf to match vanity top, to bathroom and en-suite",
+          "Large format wall and floor tiles to bathroom and en-suite",
+          "Heated chrome towel rail to bathroom and en-suite"
+        ]
+      },
+      {
+        "k": "sg_heating",
+        "img": "uploads/dagenham-green-bathroom.jpg",
+        "items": [
+          "Underfloor heating to ground floor, radiators to upper floor",
+          "Heated chrome towel rails to bathroom and en-suites",
+          "Air source heat pump",
+          "Hot water storage tank"
+        ]
+      },
+      {
+        "k": "sg_electrical",
+        "img": "uploads/nexus-bedroom-vignette.jpg.webp",
+        "items": [
+          "Downlights to entrance hall, kitchen, open plan kitchen/dining/living room, bathroom, en-suite and WCs",
+          "Pendant fittings to separate living room, study, landing and all bedrooms",
+          "LED feature lighting to wall units in kitchen",
+          "Selected sockets with integrated USB port to the gold specification",
+          "Shaver sockets to bathroom and en-suite",
+          "TV and data points to selected locations",
+          "Openreach & Hyperoptic fibre connection to all properties for customer's choice of broadband provider",
+          "External lighting to front and rear of property",
+          "External power socket",
+          "Light and power to garage",
+          "Hard-wired smoke and heat detectors",
+          "Spur for customer's own installation of security alarm panel",
+          "Electric car charging point"
+        ]
+      },
+      {
+        "k": "sg_finishes",
+        "img": "uploads/north-gate-park-bifolding-doors.jpg.webp",
+        "items": [
+          "Timber staircase with carpeted treads and risers",
+          "White painted flush internal doors with contemporary dual finish ironmongery",
+          "Built in mirrored wardrobe with sliding doors to principal bedroom",
+          "Square cut skirting and architrave",
+          "Walls painted in white emulsion",
+          "Smooth ceilings in white emulsion",
+          "Amtico flooring throughout ground floor",
+          "Carpet to stairs, landings, upper floor living room, study and bedrooms",
+          "Large format tiles to bathroom, en-suite and first floor WC",
+          "Composite front door with multi-point locking system",
+          "High efficiency triple glazed aluminium timber composite windows with matching doors to patio and terrace where applicable",
+          "Bifold doors where shown on plan",
+          "Electrically operated roller garage door where applicable",
+          "Landscaping to front garden",
+          "Turf to rear garden",
+          "Paved patios",
+          "External tap",
+          "Porcelain tiles to terrace where applicable",
+          "Dedicated cycle store to each property"
+        ]
+      },
+      {
+        "k": "sg_additional",
+        "img": "uploads/dagenham-green-interior-detail.jpg",
+        "items": [
+          "Traditionally constructed brick and block outer walls, cavity filled with insulation",
+          "Concrete floor to ground floors with timber to upper floors",
+          "Exterior treatments are a combination of grey or red facing bricks, with wood effect cladding to selected plots and grey or red roof tiles",
+          "Aluminium rain-water goods",
+          "Every home is covered by a 10-year NHBC warranty, giving you long-term peace of mind. In the first 2 years, our Hill team is on hand to support you directly, after which the NHBC warranty continues for the remaining period."
+        ]
+      }
+    ],
     "travel": [],
     "hours": [],
     "amenities": {},
