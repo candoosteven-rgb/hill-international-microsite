@@ -794,6 +794,7 @@
     "region": "Cambridge",
     "status": "coming-soon",
     "epc": "B",
+    "logo": "uploads/fitzwilliam-gate-logo.png",
     "docs": {
       "brochure": true,
       "factsheet": true,

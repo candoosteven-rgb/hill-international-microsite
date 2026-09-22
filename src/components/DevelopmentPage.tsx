@@ -17,7 +17,7 @@ import Footer from "@/components/Footer";
 
 // Dev logos that are dark line-art marks (not pre-colored for a dark backdrop) —
 // forced to white on the hero image, matching the design's per-id filter table.
-const FORCE_WHITE_HERO_LOGO_IDS = new Set(["city-reach"]);
+const FORCE_WHITE_HERO_LOGO_IDS = new Set(["city-reach", "fitzwilliam-gate"]);
 
 // Dev logos shown 25% larger on the hero image than the default size.
 const LARGE_HERO_LOGO_IDS = new Set(["cambium-square"]);
