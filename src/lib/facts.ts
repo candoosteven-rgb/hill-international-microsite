@@ -18,6 +18,10 @@ const AUTO_FACTS: Record<string, { k: string; v: string }[]> = {
     { k: "f_launch", v: "26th Sept" },
     { k: "f_homes", v: "154 Private Freehold Houses" },
   ],
+  "fitzwilliam-gate": [
+    { k: "f_homes", v: "42 Private Freehold Houses" },
+    { k: "f_completion", v: "Spring 2027" },
+  ],
   "southville-collection": [
     { k: "f_parking", v: "Available" },
     { k: "f_ev", v: "Available" },
