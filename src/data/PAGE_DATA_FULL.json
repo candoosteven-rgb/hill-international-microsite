@@ -1562,7 +1562,7 @@
       },
       {
         "k": "f_price",
-        "v": "£267,500"
+        "v": "£235,000"
       },
       {
         "k": "f_travel",
@@ -1660,84 +1660,84 @@
     ],
     "plots": [
       {
-        "plot": "E1.02.04",
-        "building": "Nexus East",
-        "floor": "2",
+        "plot": "Maxima, Apartment 228",
+        "building": "-",
+        "floor": "-",
         "beds": 1,
         "baths": 1,
-        "size": 538,
-        "price": 267500,
+        "size": 420,
+        "price": 235000,
         "avail": true
       },
       {
-        "plot": "E1.03.01",
-        "building": "Nexus East",
-        "floor": "3",
+        "plot": "Maxima, Apartment 167",
+        "building": "-",
+        "floor": "-",
         "beds": 1,
         "baths": 1,
-        "size": 552,
-        "price": 275000,
+        "size": 542,
+        "price": 250000,
         "avail": true
       },
       {
-        "plot": "W2.01.03",
-        "building": "Nexus West",
-        "floor": "1",
+        "plot": "Maxima, Apartment 178",
+        "building": "-",
+        "floor": "-",
+        "beds": 1,
+        "baths": 1,
+        "size": 584,
+        "price": 265000,
+        "avail": true
+      },
+      {
+        "plot": "Maxima, Apartment 245",
+        "building": "-",
+        "floor": "-",
+        "beds": 1,
+        "baths": 1,
+        "size": 551,
+        "price": 280000,
+        "avail": true
+      },
+      {
+        "plot": "Maxima, Apartment 166",
+        "building": "-",
+        "floor": "-",
         "beds": 2,
         "baths": 1,
-        "size": 704,
-        "price": 329000,
+        "size": 662,
+        "price": 319995,
         "avail": true
       },
       {
-        "plot": "W2.02.05",
-        "building": "Nexus West",
-        "floor": "2",
+        "plot": "Maxima, Apartment 172",
+        "building": "-",
+        "floor": "-",
         "beds": 2,
-        "baths": 2,
-        "size": 736,
-        "price": 342500,
-        "avail": false
+        "baths": 1,
+        "size": 765,
+        "price": 345000,
+        "avail": true
       },
       {
-        "plot": "E1.04.02",
-        "building": "Nexus East",
-        "floor": "4",
+        "plot": "Maxima, Apartment 185",
+        "building": "-",
+        "floor": "-",
         "beds": 2,
         "baths": 2,
-        "size": 748,
+        "size": 796,
         "price": 355000,
         "avail": true
       },
       {
-        "plot": "W2.05.01",
-        "building": "Nexus West",
-        "floor": "5",
-        "beds": 2,
-        "baths": 2,
-        "size": 761,
-        "price": 368000,
-        "avail": true
-      },
-      {
-        "plot": "E1.06.03",
-        "building": "Nexus East",
-        "floor": "6",
+        "plot": "Maxima, Apartment 170",
+        "building": "-",
+        "floor": "-",
         "beds": 3,
         "baths": 2,
-        "size": 936,
-        "price": 419000,
+        "size": 942,
+        "price": 410000,
         "avail": true
-      },
-      {
-        "plot": "W2.07.01",
-        "building": "Nexus West",
-        "floor": "7",
-        "beds": 3,
-        "baths": 2,
-        "size": 981,
-        "price": 445000,
-        "avail": false
       }
     ],
     "travel": [
