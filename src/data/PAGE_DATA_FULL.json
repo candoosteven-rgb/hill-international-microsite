@@ -3707,7 +3707,58 @@
       ]
     },
     "suite": null,
-    "plots": [],
+    "plots": [
+      {
+        "plot": "The Orchard, Number 55",
+        "building": "-",
+        "floor": "-",
+        "beds": 4,
+        "baths": 2,
+        "size": 1496,
+        "price": 559950,
+        "avail": true
+      },
+      {
+        "plot": "The Orchard, Number 56",
+        "building": "-",
+        "floor": "-",
+        "beds": 4,
+        "baths": 2,
+        "size": 1496,
+        "price": 559950,
+        "avail": true
+      },
+      {
+        "plot": "The Greenway, Number 97",
+        "building": "-",
+        "floor": "-",
+        "beds": 4,
+        "baths": 3,
+        "size": 1585,
+        "price": 619950,
+        "avail": true
+      },
+      {
+        "plot": "The Eden, Number 29",
+        "building": "-",
+        "floor": "-",
+        "beds": 4,
+        "baths": 2,
+        "size": 1826,
+        "price": 649950,
+        "avail": true
+      },
+      {
+        "plot": "The Eden, Number 27",
+        "building": "-",
+        "floor": "-",
+        "beds": 4,
+        "baths": 2,
+        "size": 1826,
+        "price": 669950,
+        "avail": true
+      }
+    ],
     "nearby": [
       "farehurst-park",
       "the-icon",
