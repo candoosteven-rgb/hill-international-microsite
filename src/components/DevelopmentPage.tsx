@@ -86,8 +86,8 @@ function mapEmbedSrc(d: NonNullable<ReturnType<typeof devById>>, pd: NonNullable
 // not an abstract colour gradient.
 const SPEC_FALLBACK_PHOTO: Record<string, string> = {
   sg_kitchen: "uploads/spec-fallback-kitchen.webp",
-  sg_bathroom: "uploads/dagenham-green-bathroom.jpg",
-  sg_heating: "uploads/dagenham-green-bathroom.jpg",
+  sg_bathroom: "uploads/city-reach-show-apartment-bathroom.webp",
+  sg_heating: "uploads/hartmere-bathroom.webp",
   sg_electrical: "uploads/nexus-bedroom-vignette.jpg.webp",
   sg_communal: "uploads/north-gate-park-communal-lounge.jpg.webp",
   sg_finishes: "uploads/north-gate-park-bifolding-doors.jpg.webp",
