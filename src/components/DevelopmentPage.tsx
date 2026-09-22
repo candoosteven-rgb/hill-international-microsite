@@ -226,7 +226,7 @@ export default function DevelopmentPage({ id }: { id: string }) {
   const locCats = Object.keys(pd.amenities);
   const facts = pd.facts.length ? pd.facts : autoFacts(d);
 
-  const goRegister = () => router.push("/#hi-register");
+  const goRegister = () => scrollToSection("dp-register");
   const goDevelopments = () => router.push("/#hi-developments");
   const goSaved = () => {
     setSavedOnly(true);
@@ -1169,7 +1169,7 @@ function RegisterPanel({
   };
 
   return (
-    <section className="bg-white px-5 py-16 md:px-8 md:py-24">
+    <section id="dp-register" className="bg-white px-5 py-16 md:px-8 md:py-24">
       <div className="mx-auto grid max-w-[1400px] grid-cols-1 items-start gap-11 lg:grid-cols-2">
         <div>
           {pd.suite && d.status === "live" ? (
