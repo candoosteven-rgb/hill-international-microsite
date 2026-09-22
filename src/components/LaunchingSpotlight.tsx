@@ -17,6 +17,13 @@ const LAUNCH_DATES: Record<string, number> = {
   "fitzwilliam-gate": new Date(2026, 8, 26).getTime(),
 };
 
+// Some photos are much wider than this tile's portrait aspect-[3/4] crop,
+// so the default centred position cuts off the part that shows the
+// development itself - override per dev where needed.
+const SPOTLIGHT_IMAGE_POSITION: Record<string, string> = {
+  "fitzwilliam-gate": "80% center",
+};
+
 function useNow() {
   const [now, setNow] = useState<number | null>(null);
   useEffect(() => {
@@ -98,8 +105,11 @@ export default function LaunchingSpotlight() {
                 >
                   <span
                     aria-hidden
-                    className="hi-card-img absolute inset-0 bg-cover bg-center"
-                    style={{ backgroundImage: `url("${resolveImage(d.image || d.images?.[0], d.name)}")` }}
+                    className="hi-card-img absolute inset-0 bg-cover"
+                    style={{
+                      backgroundImage: `url("${resolveImage(d.image || d.images?.[0], d.name)}")`,
+                      backgroundPosition: SPOTLIGHT_IMAGE_POSITION[d.id] || "center",
+                    }}
                   />
                   <span
                     aria-hidden

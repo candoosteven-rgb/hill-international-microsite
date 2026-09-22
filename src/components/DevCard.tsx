@@ -52,6 +52,13 @@ const CARD_NAME_SUFFIX: Record<string, string> = {
   "fitzwilliam-gate": "CB4",
 };
 
+// Some card photos are much wider than the card's portrait crop, so the
+// default centred object-position cuts off the part of the shot that
+// actually shows the development - override per source image where needed.
+const CARD_IMAGE_OBJECT_POSITION: Record<string, string> = {
+  "uploads/fitzwilliam-gate-aerial-wide.webp": "80% center",
+};
+
 export default function DevCard({ d }: { d: Development }) {
   const { t } = useLanguage();
   const router = useRouter();
@@ -102,6 +109,7 @@ export default function DevCard({ d }: { d: Development }) {
               className={`absolute inset-0 h-full w-full object-cover transition-[filter] duration-500 ${
                 LAUNCHING_SOON.has(d.id) ? "grayscale group-hover:grayscale-0" : ""
               }`}
+              style={{ objectPosition: CARD_IMAGE_OBJECT_POSITION[shots[shot]] }}
             />
           </>
         ) : (
