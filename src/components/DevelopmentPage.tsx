@@ -28,6 +28,7 @@ const HERO_IMAGE_OBJECT_POSITION: Record<string, string> = {
   "the-icon": "center top",
   "canalside-quarter": "center bottom",
   "cambium-square": "center 75%",
+  "fitzwilliam-gate": "center bottom",
 };
 
 // Per-dev override for the "walk through" film section's background poster,
