@@ -1,0 +1,68 @@
+name: Sync availability from hill.co.uk
+
+on:
+  schedule:
+    # Every 6 hours. Adjust to taste (availability doesn't need
+    # minute-level freshness) - this is a reasonable default per the
+    # "hourly/daily rebuild is fine" call made when this was set up.
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run (report only, no commit/deploy)"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: claude/new-session-ofu25o
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - run: npm ci
+
+      - name: Run availability sync
+        run: |
+          if [ "${{ inputs.dry_run }}" = "true" ]; then
+            node scripts/sync-availability.mjs
+          else
+            node scripts/sync-availability.mjs --write
+          fi
+
+      - name: Commit changes if any
+        id: commit
+        run: |
+          git config user.name "hill-availability-bot"
+          git config user.email "actions@users.noreply.github.com"
+          if ! git diff --quiet -- src/data/PAGE_DATA_FULL.json; then
+            git add src/data/PAGE_DATA_FULL.json
+            git commit -m "Sync plot availability from hill.co.uk"
+            git push origin HEAD:claude/new-session-ofu25o
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "No availability changes to commit."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      # Deploys directly here (rather than relying on the push above to
+      # trigger deploy.yml) since a push made with the default GITHUB_TOKEN
+      # does not trigger other workflows.
+      - name: Build
+        if: steps.commit.outputs.changed == 'true'
+        run: npm run build
+
+      - name: Deploy
+        if: steps.commit.outputs.changed == 'true'
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFARE_API_TOKEN }}
+          wranglerVersion: "4"

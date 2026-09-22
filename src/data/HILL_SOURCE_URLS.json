@@ -1,0 +1,65 @@
+{
+  "_readme": "Fill in the \"url\" for each development with its live hill.co.uk page (the one showing its plot/availability list). Leave url empty (\"\") to skip that development in scripts/sync-availability.mjs - it will be logged as skipped, not treated as an error.",
+  "developments": {
+    "lampton-parkside": {
+      "name": "Lampton Parkside",
+      "url": ""
+    },
+    "kew-bridge-rise": {
+      "name": "Kew Bridge Rise",
+      "url": ""
+    },
+    "north-gate-park": {
+      "name": "North Gate Park",
+      "url": ""
+    },
+    "dagenham-green": {
+      "name": "Dagenham Green",
+      "url": ""
+    },
+    "nexus": {
+      "name": "Nexus",
+      "url": ""
+    },
+    "farehurst-park": {
+      "name": "Farehurst Park",
+      "url": ""
+    },
+    "the-icon": {
+      "name": "The Icon",
+      "url": ""
+    },
+    "millside-grange": {
+      "name": "Millside Grange",
+      "url": ""
+    },
+    "city-reach": {
+      "name": "City Reach",
+      "url": ""
+    },
+    "hartmere": {
+      "name": "Hartmere",
+      "url": ""
+    },
+    "knights-park": {
+      "name": "Knights Park",
+      "url": ""
+    },
+    "fitzwilliam-gate": {
+      "name": "Fitzwilliam Gate",
+      "url": ""
+    },
+    "marleigh-park": {
+      "name": "Marleigh Park",
+      "url": ""
+    },
+    "canalside-quarter": {
+      "name": "Canalside Quarter",
+      "url": ""
+    },
+    "clifton-collection": {
+      "name": "The Clifton Collection",
+      "url": ""
+    }
+  }
+}
