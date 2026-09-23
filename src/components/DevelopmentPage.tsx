@@ -20,7 +20,7 @@ import Footer from "@/components/Footer";
 const FORCE_WHITE_HERO_LOGO_IDS = new Set(["city-reach", "fitzwilliam-gate"]);
 
 // Dev logos shown 25% larger on the hero image than the default size.
-const LARGE_HERO_LOGO_IDS = new Set(["cambium-square"]);
+const LARGE_HERO_LOGO_IDS = new Set(["cambium-square", "kew-bridge-rise"]);
 
 // Per-dev hero image crop overrides, for photos whose default center crop
 // hides too much of the view.
