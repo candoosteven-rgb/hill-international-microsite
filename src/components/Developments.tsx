@@ -35,7 +35,7 @@ export default function Developments() {
 
   const londonZones = useMemo(
     () =>
-      Array.from(new Set(devData.filter((d) => d.region === "London" && d.zone).map((d) => d.zone!))).sort(
+      Array.from(new Set([1, ...devData.filter((d) => d.region === "London" && d.zone).map((d) => d.zone!)])).sort(
         (a, b) => a - b
       ),
     []
