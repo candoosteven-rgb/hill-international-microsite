@@ -42,9 +42,7 @@ const ICON_MAP: Record<string, Parameters<typeof Icon>[0]["name"]> = {
 
 // Specific launch-date copy for the "about to launch" teaser badge, where known.
 const LAUNCH_DATE_LABELS: Record<string, string> = {
-  "cambium-square": "Launching 26th September",
   "southville-collection": "Launching late Autumn 2026",
-  "fitzwilliam-gate": "Launching Saturday 26th September",
 };
 
 // Postcode district shown after the name on the card, where requested.
@@ -295,7 +293,7 @@ export default function DevCard({ d }: { d: Development }) {
               className="hi-pill inline-flex items-center gap-2 rounded-full border border-[#1F3A47] px-4 py-2 text-[13px] font-bold text-[#1F3A47]"
             >
               <Icon name="clock" className="h-3.5 w-3.5" />
-              {d.id === "cambium-square" ? "Attend the launch" : t("cta_priority")}
+              {t("cta_priority")}
             </button>
           )}
           <button

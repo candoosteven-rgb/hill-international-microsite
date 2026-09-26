@@ -792,7 +792,7 @@
     "id": "fitzwilliam-gate",
     "name": "Fitzwilliam Gate",
     "region": "Cambridge",
-    "status": "coming-soon",
+    "status": "live",
     "epc": "B",
     "logo": "uploads/fitzwilliam-gate-logo.png",
     "docs": {
@@ -809,7 +809,7 @@
       "uploads/fitzwilliam-gate-corner-house-cgi.webp",
       "uploads/fitzwilliam-gate-courtyard-cgi.webp"
     ],
-    "accessNote": "Launching Saturday 26th September",
+    "accessNote": "Just launched",
     "accessPoints": [
       {
         "label": "Prime central Cambridge CB4 location",
@@ -884,7 +884,7 @@
     "id": "cambium-square",
     "name": "Cambium Square",
     "region": "Cambridge",
-    "status": "coming-soon",
+    "status": "live",
     "image": "uploads/cambium-square-photo.png.webp",
     "logo": "uploads/cambium-square-logo-white.png",
     "docs": {
@@ -903,7 +903,7 @@
       "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-08/1498%20Cambium%20Square%20Cam%2026%20Street%20H1-H5%2003%20Low%20Res.jpg.webp?h=af97b938&itok=-A3iR6-n",
       "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-08/1498%20Cambium%20Square%20Cam%2028%20Playground%2003%20Low%20Res.jpg.webp?h=af97b938&itok=KIG2otj2"
     ],
-    "accessNote": "Launching 26th September 2026",
+    "accessNote": "Just launched",
     "accessPoints": [
       {
         "label": "Next to Cambourne Business Park",

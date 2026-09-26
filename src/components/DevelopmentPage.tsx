@@ -303,7 +303,7 @@ export default function DevelopmentPage({ id }: { id: string }) {
               onClick={goRegister}
               className="hi-pill rounded-full bg-[#C1560F] px-5 py-2.5 text-[13px] font-bold text-white shadow-[0_10px_22px_rgba(193,86,15,0.34)]"
             >
-              {d.id === "cambium-square" ? "Attend the launch" : dp("cta_register")}
+              {dp("cta_register")}
             </button>
             {/* Rightmost on mobile so it sits at the screen edge, closest to thumb reach. */}
             <button

@@ -12,17 +12,12 @@ import Icon from "@/components/Icon";
 const ROTATE_MS = 5000;
 
 // Only developments with a confirmed launch date get a countdown badge.
-const LAUNCH_DATES: Record<string, number> = {
-  "cambium-square": new Date(2026, 8, 26).getTime(),
-  "fitzwilliam-gate": new Date(2026, 8, 26).getTime(),
-};
+const LAUNCH_DATES: Record<string, number> = {};
 
 // Some photos are much wider than this tile's portrait aspect-[3/4] crop,
 // so the default centred position cuts off the part that shows the
 // development itself - override per dev where needed.
-const SPOTLIGHT_IMAGE_POSITION: Record<string, string> = {
-  "fitzwilliam-gate": "80% center",
-};
+const SPOTLIGHT_IMAGE_POSITION: Record<string, string> = {};
 
 function useNow() {
   const [now, setNow] = useState<number | null>(null);
@@ -49,9 +44,7 @@ export default function LaunchingSpotlight() {
   const router = useRouter();
   const { startPriority } = useAppState();
   const now = useNow();
-  const devs = devData
-    .filter((d) => LAUNCHING_SOON.has(d.id))
-    .sort((a, b) => (a.id === "cambium-square" ? -1 : b.id === "cambium-square" ? 1 : 0));
+  const devs = devData.filter((d) => LAUNCHING_SOON.has(d.id));
 
   // Below `sm` the 3 tall tiles stacked one per row made this section the
   // longest thing on the page - rotate through them one at a time instead,

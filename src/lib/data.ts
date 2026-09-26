@@ -58,7 +58,12 @@ export function devById(id: string): Development | undefined {
 
 type Translate = (key: string, vars?: Record<string, string | number>) => string;
 
-export const LAUNCHING_SOON = new Set(["cambium-square", "fitzwilliam-gate", "southville-collection"]);
+export const LAUNCHING_SOON = new Set(["southville-collection"]);
+
+// Recently launched: full live listing (colour photos, real price, normal
+// CTAs) but still flagged with a "Just Launched" badge instead of blending
+// into the plain "Live" pill.
+export const JUST_LAUNCHED = new Set(["cambium-square", "fitzwilliam-gate"]);
 
 export function priceLabelFor(d: Development, t: Translate): string {
   const p = devPrices[d.id];
@@ -75,6 +80,9 @@ export function statusMetaFor(d: Development, t: Translate) {
       : { label: t("status_coming"), dot: "#C98A6B", bg: "rgba(201,138,107,0.2)", color: "#8a5636", isComing: true, isLive: false };
   if (LAUNCHING_SOON.has(d.id)) {
     return { ...base, label: "About to launch", bg: "#C1560F", color: "#fff" };
+  }
+  if (JUST_LAUNCHED.has(d.id)) {
+    return { ...base, label: "Just Launched", bg: "#C1560F", color: "#fff" };
   }
   return base;
 }
