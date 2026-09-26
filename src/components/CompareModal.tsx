@@ -1,6 +1,6 @@
 "use client";
 
-import { devById, epcOf, priceLabelFor, statusMetaFor } from "@/lib/data";
+import { devById, priceLabelFor, statusMetaFor } from "@/lib/data";
 import { resolveImage, buildShots } from "@/lib/image";
 import { useLanguage } from "@/lib/i18n";
 import { useAppState } from "@/lib/app-state";
@@ -20,7 +20,6 @@ export default function CompareModal() {
     { label: t("compare_row_status"), cells: devs.map((d) => statusMetaFor(d, t).label) },
     { label: t("compare_row_homes"), cells: devs.map((d) => d.tagline || t("dev_tagline", { region: d.region })) },
     { label: t("offers_label"), cells: devs.map((d) => (d.accessPoints || []).map((a) => a.label).join(" · ") || "—") },
-    { label: t("compare_row_epc"), cells: devs.map((d) => (epcOf(d) ? `EPC ${epcOf(d)}` : "—")) },
   ];
 
   return (

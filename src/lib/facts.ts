@@ -1,4 +1,4 @@
-import { devPrices, epcOf, gbp } from "@/lib/data";
+import { devPrices, gbp } from "@/lib/data";
 import type { Development } from "@/lib/types";
 
 // Per-development extras that don't derive from core data (matches the design
@@ -58,8 +58,6 @@ export function autoFacts(d: Development): { k: string; v: string }[] {
   }
   const price = devPrices[d.id];
   if (price) facts.push({ k: "f_price", v: gbp(price[0]) });
-  const epc = epcOf(d);
-  if (epc) facts.push({ k: "f_epc", v: epc });
   if (d.zone) facts.push({ k: "f_zone", v: `Zone ${d.zone}` });
   return facts.concat(AUTO_FACTS[d.id] || []);
 }
