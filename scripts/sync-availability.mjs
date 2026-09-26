@@ -170,6 +170,36 @@ function extractPlotsFromHtml(html) {
   return { plots: [], strategy: "none" };
 }
 
+// When neither parsing strategy finds anything, guessing a third strategy
+// blind (again) isn't useful - this instead reports concrete signals from
+// the actual response so the real fix (different URL, headless-browser
+// render, a third-party widget's own API) can be picked with evidence
+// instead of another guess.
+function diagnosePage(html) {
+  const $ = cheerio.load(html);
+  const bodyText = $("body").text().replace(/\s+/g, " ").trim();
+  const iframeSrcs = $("iframe")
+    .map((_, el) => $(el).attr("src"))
+    .get()
+    .filter(Boolean);
+  const scriptSrcs = $("script[src]")
+    .map((_, el) => $(el).attr("src"))
+    .get()
+    .filter((src) => /widget|plot|embed|search|rightmove|onthemarket|nplan|vendor/i.test(src));
+  const frameworkMarkers = ["__NEXT_DATA__", "data-reactroot", "ng-version", "__NUXT__", "window.__INITIAL_STATE__"].filter(
+    (marker) => html.includes(marker)
+  );
+
+  return {
+    title: $("title").text().trim(),
+    bodyTextLength: bodyText.length,
+    bodyTextSample: bodyText.slice(0, 200),
+    iframeSrcs,
+    thirdPartyScriptSrcs: scriptSrcs,
+    frameworkMarkers,
+  };
+}
+
 // Merges scraped plots onto the existing array, keyed by plot name, so a
 // field this script can't reliably read (building/floor/baths) keeps its
 // last known value instead of being blanked out.
@@ -242,6 +272,7 @@ async function main() {
         name,
         status: changed ? "updated" : "unchanged",
         note: `${note} (strategy: ${strategy})`,
+        diagnostics: strategy === "none" ? diagnosePage(html) : null,
       });
 
       if (changed) pendingWrites.push({ devId, plots });
@@ -253,6 +284,14 @@ async function main() {
   console.log("\nAvailability sync report:");
   for (const r of report) {
     console.log(`  [${r.status}] ${r.name} (${r.devId}) - ${r.note}`);
+    if (r.diagnostics) {
+      console.log(`    title: ${JSON.stringify(r.diagnostics.title)}`);
+      console.log(`    body text length: ${r.diagnostics.bodyTextLength}`);
+      console.log(`    body text sample: ${JSON.stringify(r.diagnostics.bodyTextSample)}`);
+      console.log(`    iframe srcs: ${JSON.stringify(r.diagnostics.iframeSrcs)}`);
+      console.log(`    third-party widget script srcs: ${JSON.stringify(r.diagnostics.thirdPartyScriptSrcs)}`);
+      console.log(`    JS framework markers found: ${JSON.stringify(r.diagnostics.frameworkMarkers)}`);
+    }
   }
 
   if (pendingWrites.length && WRITE) {
