@@ -150,7 +150,16 @@ function extractPlotsFromHtml(html) {
   });
   if (plots.length) return { plots, strategy: "table" };
 
-  for (const sel of ["[class*='plot']", "[class*='unit']", "[class*='card']"]) {
+  for (const sel of [
+    "article",
+    "[class*='plot']",
+    "[class*='unit']",
+    "[class*='card']",
+    "[class*='property']",
+    "[class*='listing']",
+    "[class*='home-item']",
+    "[class*='house-type']",
+  ]) {
     $(sel).each((_, el) => {
       const text = $(el).text().trim();
       const price = parseMoney(text);
