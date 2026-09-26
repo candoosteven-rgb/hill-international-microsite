@@ -199,6 +199,18 @@ function diagnosePage(html) {
     (marker) => html.includes(marker)
   );
 
+  // Ground truth check: does price text exist anywhere in the raw markup at
+  // all? If not, no selector will ever find it and the fix is a different
+  // URL/data source, not a better selector.
+  const poundIndexes = [];
+  let idx = html.indexOf("£");
+  while (idx !== -1 && poundIndexes.length < 5) {
+    poundIndexes.push(idx);
+    idx = html.indexOf("£", idx + 1);
+  }
+  const poundContexts = poundIndexes.map((i) => html.slice(Math.max(0, i - 80), i + 80).replace(/\s+/g, " "));
+  const poundOccurrences = (html.match(/£/g) || []).length;
+
   return {
     title: $("title").text().trim(),
     bodyTextLength: bodyText.length,
@@ -206,6 +218,8 @@ function diagnosePage(html) {
     iframeSrcs,
     thirdPartyScriptSrcs: scriptSrcs,
     frameworkMarkers,
+    poundOccurrences,
+    poundContexts,
   };
 }
 
@@ -300,6 +314,8 @@ async function main() {
       console.log(`    iframe srcs: ${JSON.stringify(r.diagnostics.iframeSrcs)}`);
       console.log(`    third-party widget script srcs: ${JSON.stringify(r.diagnostics.thirdPartyScriptSrcs)}`);
       console.log(`    JS framework markers found: ${JSON.stringify(r.diagnostics.frameworkMarkers)}`);
+      console.log(`    £ occurrences in raw HTML: ${r.diagnostics.poundOccurrences}`);
+      for (const ctx of r.diagnostics.poundContexts) console.log(`      ...${ctx}...`);
     }
   }
 
