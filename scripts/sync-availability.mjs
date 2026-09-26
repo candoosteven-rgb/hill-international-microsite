@@ -108,6 +108,15 @@ function guessAvailability(text) {
   return null; // unknown - caller decides the default
 }
 
+// The plot-name column on these pages combines a photo thumbnail with the
+// plot name in one <td>. The thumbnail has no alt text of its own, so all
+// that's left in .text() is a responsive "mobile label" duplicating the
+// column header ("Image") followed by a wall of blank lines where the
+// picture would visually sit, then the real name. Strip that off.
+function cleanPlotName(text) {
+  return text.replace(/^Image\s+/i, "").trim();
+}
+
 // Tries a couple of common listing-page shapes, in order, and returns as
 // soon as one yields results:
 //
@@ -140,7 +149,7 @@ function extractPlotsFromHtml(html) {
         const price = parseMoney(rowText);
         if (price === null) return; // not a plot row
         plots.push({
-          plot: cells[0] || "",
+          plot: cleanPlotName(cells[0] || ""),
           beds: parseBeds(rowText),
           size: parseSize(rowText),
           price,
