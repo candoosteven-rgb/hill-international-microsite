@@ -159,6 +159,19 @@ function extractPlotsFromHtml(html) {
   });
   if (plots.length) return { plots, strategy: "table" };
 
+  // cheerio's plain .text() concatenates every descendant text node with no
+  // separator, so adjacent block-level fragments run together with no
+  // space ("Number 37" + "Apartment" -> "Number 37Apartment"). Inserting a
+  // space around every descendant element before reading .text() keeps
+  // fragments apart without altering which text is present.
+  function textWithSpaces(el) {
+    const clone = $(el).clone();
+    clone.find("*").each((_, child) => {
+      $(child).before(" ").after(" ");
+    });
+    return clone.text().replace(/\s+/g, " ").trim();
+  }
+
   for (const sel of [
     "article",
     "[class*='plot']",
@@ -169,20 +182,29 @@ function extractPlotsFromHtml(html) {
     "[class*='home-item']",
     "[class*='house-type']",
   ]) {
-    $(sel).each((_, el) => {
-      const text = $(el).text().trim();
+    const matches = $(sel).toArray();
+    // A wrapper card and its own inner sub-elements (price badge, mobile
+    // duplicate, etc.) can each independently match a broad selector like
+    // [class*='card']. Keep only the outermost match per nesting chain, or
+    // the same physical listing is counted once per matching descendant.
+    const outermost = matches.filter((el) => !matches.some((other) => other !== el && $.contains(other, el)));
+
+    let sampleRawHtml = null;
+    outermost.forEach((el) => {
+      const text = textWithSpaces(el);
       const price = parseMoney(text);
       if (price === null) return;
+      if (sampleRawHtml === null) sampleRawHtml = $.html(el).slice(0, 600);
       const heading = $(el).find("h1,h2,h3,h4,h5,strong").first().text().trim();
       plots.push({
-        plot: heading || text.slice(0, 40),
+        plot: heading || text.slice(0, 60),
         beds: parseBeds(text),
         size: parseSize(text),
         price,
         avail: guessAvailability(text) ?? true,
       });
     });
-    if (plots.length) return { plots, strategy: `cards:${sel}` };
+    if (plots.length) return { plots, strategy: `cards:${sel}`, sampleRawHtml };
   }
 
   return { plots: [], strategy: "none" };
@@ -295,7 +317,7 @@ async function main() {
         continue;
       }
       const html = await res.text();
-      const { plots: scraped, strategy } = extractPlotsFromHtml(html);
+      const { plots: scraped, strategy, sampleRawHtml } = extractPlotsFromHtml(html);
       const existing = pageData[devId].plots || [];
       const { plots, changed, note } = mergePlots(existing, scraped);
 
@@ -305,6 +327,7 @@ async function main() {
         status: changed ? "updated" : "unchanged",
         note: `${note} (strategy: ${strategy})`,
         diagnostics: strategy === "none" ? diagnosePage(html) : null,
+        sampleRawHtml: strategy?.startsWith("cards:") ? sampleRawHtml : null,
       });
 
       if (changed) pendingWrites.push({ devId, plots });
@@ -325,6 +348,9 @@ async function main() {
       console.log(`    JS framework markers found: ${JSON.stringify(r.diagnostics.frameworkMarkers)}`);
       console.log(`    £ occurrences in raw HTML: ${r.diagnostics.poundOccurrences}`);
       for (const ctx of r.diagnostics.poundContexts) console.log(`      ...${ctx}...`);
+    }
+    if (r.sampleRawHtml) {
+      console.log(`    sample matched card HTML: ${JSON.stringify(r.sampleRawHtml)}`);
     }
   }
 
