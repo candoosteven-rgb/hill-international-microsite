@@ -332,6 +332,7 @@ async function main() {
         note: `${note} (strategy: ${strategy})`,
         diagnostics: strategy === "none" ? diagnosePage(html) : null,
         sampleRawHtml: strategy?.startsWith("cards:") ? sampleRawHtml : null,
+        rawScraped: strategy?.startsWith("cards:") ? scraped : null,
       });
 
       if (changed) pendingWrites.push({ devId, plots });
@@ -355,6 +356,9 @@ async function main() {
     }
     if (r.sampleRawHtml) {
       console.log(`    sample matched card HTML: ${JSON.stringify(r.sampleRawHtml)}`);
+    }
+    if (r.rawScraped) {
+      console.log(`    raw scraped plots: ${JSON.stringify(r.rawScraped)}`);
     }
   }
 
