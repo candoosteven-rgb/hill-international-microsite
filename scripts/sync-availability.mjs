@@ -195,7 +195,11 @@ function extractPlotsFromHtml(html) {
       const price = parseMoney(text);
       if (price === null) return;
       if (sampleRawHtml === null) sampleRawHtml = $.html(el).slice(0, 600);
-      const heading = $(el).find("h1,h2,h3,h4,h5,strong").first().text().trim();
+      const heading = $(el)
+        .find("h1,h2,h3,h4,h5,strong,[class*='name'],[class*='title']")
+        .first()
+        .text()
+        .trim();
       plots.push({
         plot: heading || text.slice(0, 60),
         beds: parseBeds(text),
