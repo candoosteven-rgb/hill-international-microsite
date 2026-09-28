@@ -458,33 +458,13 @@
         "avail": true
       },
       {
-        "plot": "Starling House, Apartment 70",
+        "plot": "Starling House, Apartment 78",
         "building": "-",
         "floor": "-",
         "beds": 1,
         "baths": 1,
         "size": 429,
-        "price": 425000,
-        "avail": true
-      },
-      {
-        "plot": "Starling House, Apartment 25",
-        "building": "-",
-        "floor": "-",
-        "beds": 2,
-        "baths": 1,
-        "size": 668,
-        "price": 555000,
-        "avail": true
-      },
-      {
-        "plot": "Starling House, Apartment 20",
-        "building": "-",
-        "floor": "-",
-        "beds": 2,
-        "baths": 1,
-        "size": 846,
-        "price": 599000,
+        "price": 435000,
         "avail": true
       },
       {
@@ -498,23 +478,23 @@
         "avail": true
       },
       {
-        "plot": "Wren House, Apartment 135",
+        "plot": "Wren House, Apartment 149",
         "building": "-",
         "floor": "-",
         "beds": 2,
         "baths": 1,
         "size": 830,
-        "price": 635000,
+        "price": 645000,
         "avail": true
       },
       {
-        "plot": "Starling House, Apartment 85",
+        "plot": "Starling House, Apartment 96",
         "building": "-",
         "floor": "-",
         "beds": 2,
         "baths": 1,
-        "size": 806,
-        "price": 675000,
+        "size": 801,
+        "price": 690000,
         "avail": true
       },
       {
@@ -1148,16 +1128,6 @@
         "avail": true
       },
       {
-        "plot": "The Liberty, Number 562",
-        "building": "-",
-        "floor": "-",
-        "beds": 1,
-        "baths": 1,
-        "size": 556,
-        "price": 352500,
-        "avail": true
-      },
-      {
         "plot": "The Liberty, Number 606",
         "building": "-",
         "floor": "-",
@@ -1185,16 +1155,6 @@
         "baths": 1,
         "size": 799,
         "price": 410000,
-        "avail": true
-      },
-      {
-        "plot": "The Liberty, Number 591",
-        "building": "-",
-        "floor": "-",
-        "beds": 2,
-        "baths": 1,
-        "size": 801,
-        "price": 445000,
         "avail": true
       },
       {
@@ -3834,7 +3794,7 @@
         "floor": "-",
         "beds": 4,
         "baths": 1,
-        "size": 1496,
+        "size": 1491,
         "price": 559950,
         "avail": true
       },
@@ -3844,7 +3804,7 @@
         "floor": "-",
         "beds": 4,
         "baths": 1,
-        "size": 1496,
+        "size": 1491,
         "price": 559950,
         "avail": true
       },
@@ -3864,7 +3824,7 @@
         "floor": "-",
         "beds": 4,
         "baths": 1,
-        "size": 1826,
+        "size": 1954,
         "price": 649950,
         "avail": true
       },
@@ -3874,7 +3834,7 @@
         "floor": "-",
         "beds": 4,
         "baths": 1,
-        "size": 1826,
+        "size": 1954,
         "price": 669950,
         "avail": true
       }
@@ -4003,23 +3963,23 @@
     "suite": null,
     "plots": [
       {
-        "plot": "£13,497 Stamp Duty Paid",
+        "plot": "£10,497 Stamp Duty Paid*",
         "building": "-",
         "floor": "-",
         "beds": 0,
         "baths": 1,
         "size": 0,
-        "price": 13497,
+        "price": 10497,
         "avail": true
       },
       {
-        "plot": "The Brenner, Number 219",
+        "plot": "The Brenner, Number 225",
         "building": "-",
         "floor": "-",
-        "beds": 2,
+        "beds": 1,
         "baths": 1,
-        "size": 904,
-        "price": 469950,
+        "size": 582,
+        "price": 409950,
         "avail": true
       },
       {
@@ -4060,6 +4020,16 @@
         "baths": 1,
         "size": 1103,
         "price": 649950,
+        "avail": true
+      },
+      {
+        "plot": "The Meade, Number 3",
+        "building": "-",
+        "floor": "-",
+        "beds": 3,
+        "baths": 1,
+        "size": 1335,
+        "price": 830000,
         "avail": true
       },
       {
@@ -4110,16 +4080,6 @@
         "baths": 1,
         "size": 2669,
         "price": 1495000,
-        "avail": true
-      },
-      {
-        "plot": "The Florey, Number 93",
-        "building": "-",
-        "floor": "-",
-        "beds": 5,
-        "baths": 1,
-        "size": 2669,
-        "price": 1635000,
         "avail": true
       }
     ],
