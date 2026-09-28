@@ -829,6 +829,16 @@
         "size": 835,
         "price": 595000,
         "avail": true
+      },
+      {
+        "plot": "Marram House, Apartment 103",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 835,
+        "price": 615000,
+        "avail": true
       }
     ],
     "suite": {
@@ -1138,6 +1148,16 @@
         "avail": true
       },
       {
+        "plot": "The Liberty, Number 566",
+        "building": "-",
+        "floor": "-",
+        "beds": 1,
+        "baths": 1,
+        "size": 556,
+        "price": 377000,
+        "avail": true
+      },
+      {
         "plot": "The Liberty, Number 563",
         "building": "-",
         "floor": "-",
@@ -1155,6 +1175,16 @@
         "baths": 1,
         "size": 799,
         "price": 410000,
+        "avail": true
+      },
+      {
+        "plot": "The Liberty, Number 572",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 806,
+        "price": 415000,
         "avail": true
       },
       {
@@ -2826,6 +2856,16 @@
         "avail": true
       },
       {
+        "plot": "Ida Court, Number 52",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 786,
+        "price": 469950,
+        "avail": true
+      },
+      {
         "plot": "5% Deposit Boost Up to £23,497*",
         "building": "-",
         "floor": "-",
@@ -2852,16 +2892,6 @@
         "beds": 2,
         "baths": 1,
         "size": 755,
-        "price": 469950,
-        "avail": true
-      },
-      {
-        "plot": "Ida Court, Number 52",
-        "building": "-",
-        "floor": "-",
-        "beds": 2,
-        "baths": 1,
-        "size": 786,
         "price": 469950,
         "avail": true
       },
