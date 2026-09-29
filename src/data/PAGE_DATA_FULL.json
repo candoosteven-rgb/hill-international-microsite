@@ -468,6 +468,16 @@
         "avail": true
       },
       {
+        "plot": "Starling House, Apartment 33",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 668,
+        "price": 590000,
+        "avail": true
+      },
+      {
         "plot": "Wren House, Apartment 119",
         "building": "-",
         "floor": "-",
@@ -475,6 +485,16 @@
         "baths": 1,
         "size": 781,
         "price": 610000,
+        "avail": true
+      },
+      {
+        "plot": "Starling House, Apartment 28",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 846,
+        "price": 635000,
         "avail": true
       },
       {
@@ -495,16 +515,6 @@
         "baths": 1,
         "size": 801,
         "price": 690000,
-        "avail": true
-      },
-      {
-        "plot": "Starling House, Apartment 101",
-        "building": "-",
-        "floor": "-",
-        "beds": 2,
-        "baths": 1,
-        "size": 801,
-        "price": 700000,
         "avail": true
       }
     ],
@@ -3545,6 +3555,16 @@
     "amenities": {},
     "plots": [
       {
+        "plot": "The Franklin Building, Apartment A14",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 661,
+        "price": 389950,
+        "avail": true
+      },
+      {
         "plot": "The Franklin Building, Apartment A10",
         "building": "-",
         "floor": "-",
@@ -3552,36 +3572,6 @@
         "baths": 1,
         "size": 662,
         "price": 389950,
-        "avail": true
-      },
-      {
-        "plot": "5% Deposit Boost available up to £19,997*",
-        "building": "-",
-        "floor": "-",
-        "beds": 0,
-        "baths": 1,
-        "size": 0,
-        "price": 19997,
-        "avail": true
-      },
-      {
-        "plot": "The Franklin Building, Apartment A22",
-        "building": "-",
-        "floor": "-",
-        "beds": 2,
-        "baths": 1,
-        "size": 668,
-        "price": 399950,
-        "avail": true
-      },
-      {
-        "plot": "The Franklin Building, Apartment B13",
-        "building": "-",
-        "floor": "-",
-        "beds": 2,
-        "baths": 1,
-        "size": 681,
-        "price": 399950,
         "avail": true
       },
       {
@@ -3605,23 +3595,23 @@
         "avail": true
       },
       {
-        "plot": "The Franklin Building, Apartment A16",
+        "plot": "The Franklin Building, Number B22",
         "building": "-",
         "floor": "-",
         "beds": 2,
         "baths": 1,
-        "size": 762,
-        "price": 424950,
+        "size": 681,
+        "price": 399950,
         "avail": true
       },
       {
-        "plot": "The Cherry, Number 458",
+        "plot": "The Franklin Building, Number B20",
         "building": "-",
         "floor": "-",
         "beds": 2,
         "baths": 1,
-        "size": 898,
-        "price": 499950,
+        "size": 681,
+        "price": 399950,
         "avail": true
       },
       {
@@ -3632,6 +3622,16 @@
         "baths": 1,
         "size": 898,
         "price": 509950,
+        "avail": true
+      },
+      {
+        "plot": "The Oak, Number 342",
+        "building": "-",
+        "floor": "-",
+        "beds": 3,
+        "baths": 1,
+        "size": 1217,
+        "price": 679950,
         "avail": true
       }
     ],
