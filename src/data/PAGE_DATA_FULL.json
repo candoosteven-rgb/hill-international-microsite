@@ -2826,16 +2826,6 @@
     "amenities": {},
     "plots": [
       {
-        "plot": "Florence Court, Number 4",
-        "building": "-",
-        "floor": "-",
-        "beds": 1,
-        "baths": 1,
-        "size": 560,
-        "price": 349950,
-        "avail": true
-      },
-      {
         "plot": "Ida Court, Number 46",
         "building": "-",
         "floor": "-",
@@ -2846,22 +2836,22 @@
         "avail": true
       },
       {
-        "plot": "5% Deposit paid worth £24,275*",
+        "plot": "5% DEPOSIT CONTRIBUTION UP TO £23,247*",
         "building": "-",
         "floor": "-",
         "beds": 0,
         "baths": 1,
         "size": 0,
-        "price": 24275,
+        "price": 23247,
         "avail": true
       },
       {
-        "plot": "Florence Court, Number 13",
+        "plot": "Florence Court, Number 10",
         "building": "-",
         "floor": "-",
         "beds": 2,
         "baths": 1,
-        "size": 757,
+        "size": 758,
         "price": 464950,
         "avail": true
       },
@@ -2876,32 +2866,12 @@
         "avail": true
       },
       {
-        "plot": "5% Deposit Boost Up to £23,497*",
-        "building": "-",
-        "floor": "-",
-        "beds": 0,
-        "baths": 1,
-        "size": 0,
-        "price": 23497,
-        "avail": true
-      },
-      {
-        "plot": "Florence Court, Number 7",
+        "plot": "Florence Court, Number 14",
         "building": "-",
         "floor": "-",
         "beds": 2,
         "baths": 1,
         "size": 820,
-        "price": 469950,
-        "avail": true
-      },
-      {
-        "plot": "Florence Court, Number 17",
-        "building": "-",
-        "floor": "-",
-        "beds": 2,
-        "baths": 1,
-        "size": 755,
         "price": 469950,
         "avail": true
       },
@@ -2913,6 +2883,16 @@
         "baths": 1,
         "size": 786,
         "price": 474950,
+        "avail": true
+      },
+      {
+        "plot": "Florence Court, Number 15",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 820,
+        "price": 479950,
         "avail": true
       },
       {
@@ -3625,13 +3605,13 @@
         "avail": true
       },
       {
-        "plot": "The Oak, Number 342",
+        "plot": "The Perrin, Number 69",
         "building": "-",
         "floor": "-",
         "beds": 3,
         "baths": 1,
-        "size": 1217,
-        "price": 679950,
+        "size": 1347,
+        "price": 599950,
         "avail": true
       }
     ],
