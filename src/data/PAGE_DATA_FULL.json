@@ -2836,6 +2836,16 @@
         "avail": true
       },
       {
+        "plot": "Ida Court, Number 50",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 760,
+        "price": 459950,
+        "avail": true
+      },
+      {
         "plot": "5% DEPOSIT CONTRIBUTION UP TO £23,247*",
         "building": "-",
         "floor": "-",
@@ -2853,6 +2863,16 @@
         "baths": 1,
         "size": 758,
         "price": 464950,
+        "avail": true
+      },
+      {
+        "plot": "Ida Court, Number 58",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 760,
+        "price": 469950,
         "avail": true
       },
       {
