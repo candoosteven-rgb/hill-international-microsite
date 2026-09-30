@@ -2412,16 +2412,6 @@
         "avail": true
       },
       {
-        "plot": "The Icon, Number 2",
-        "building": "-",
-        "floor": "-",
-        "beds": 0,
-        "baths": 1,
-        "size": 0,
-        "price": 699950,
-        "avail": true
-      },
-      {
         "plot": "The Icon, Number 12",
         "building": "-",
         "floor": "-",
@@ -2442,7 +2432,17 @@
         "avail": true
       },
       {
-        "plot": "The Icon, Number 39",
+        "plot": "The Icon, Apartment 25",
+        "building": "-",
+        "floor": "-",
+        "beds": 0,
+        "baths": 1,
+        "size": 0,
+        "price": 1115000,
+        "avail": true
+      },
+      {
+        "plot": "The Icon, Number 40",
         "building": "-",
         "floor": "-",
         "beds": 0,
@@ -2856,16 +2856,6 @@
         "avail": true
       },
       {
-        "plot": "Ida Court, Number 52",
-        "building": "-",
-        "floor": "-",
-        "beds": 2,
-        "baths": 1,
-        "size": 786,
-        "price": 469950,
-        "avail": true
-      },
-      {
         "plot": "Florence Court, Number 14",
         "building": "-",
         "floor": "-",
@@ -2876,16 +2866,6 @@
         "avail": true
       },
       {
-        "plot": "Ida Court, Number 60",
-        "building": "-",
-        "floor": "-",
-        "beds": 2,
-        "baths": 1,
-        "size": 786,
-        "price": 474950,
-        "avail": true
-      },
-      {
         "plot": "Florence Court, Number 15",
         "building": "-",
         "floor": "-",
@@ -2893,16 +2873,6 @@
         "baths": 1,
         "size": 820,
         "price": 479950,
-        "avail": true
-      },
-      {
-        "plot": "Ida Court, Number 57",
-        "building": "-",
-        "floor": "-",
-        "beds": 2,
-        "baths": 1,
-        "size": 776,
-        "price": 499950,
         "avail": true
       }
     ],
@@ -3535,16 +3505,6 @@
     "amenities": {},
     "plots": [
       {
-        "plot": "The Franklin Building, Apartment A14",
-        "building": "-",
-        "floor": "-",
-        "beds": 2,
-        "baths": 1,
-        "size": 661,
-        "price": 389950,
-        "avail": true
-      },
-      {
         "plot": "The Franklin Building, Apartment A10",
         "building": "-",
         "floor": "-",
@@ -3555,12 +3515,32 @@
         "avail": true
       },
       {
-        "plot": "The Kestrel Building, Apartment D11",
+        "plot": "The Franklin Building, Number A14",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 661,
+        "price": 389950,
+        "avail": true
+      },
+      {
+        "plot": "The Kestrel Building, Number D11",
         "building": "-",
         "floor": "-",
         "beds": 2,
         "baths": 1,
         "size": 757,
+        "price": 399950,
+        "avail": true
+      },
+      {
+        "plot": "The Franklin Building, Number A12",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 762,
         "price": 399950,
         "avail": true
       },
@@ -3602,16 +3582,6 @@
         "baths": 1,
         "size": 898,
         "price": 509950,
-        "avail": true
-      },
-      {
-        "plot": "The Perrin, Number 69",
-        "building": "-",
-        "floor": "-",
-        "beds": 3,
-        "baths": 1,
-        "size": 1347,
-        "price": 599950,
         "avail": true
       }
     ],
