@@ -2846,6 +2846,16 @@
         "avail": true
       },
       {
+        "plot": "Ida Court, Number 55",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 783,
+        "price": 464950,
+        "avail": true
+      },
+      {
         "plot": "5% DEPOSIT CONTRIBUTION UP TO £23,247*",
         "building": "-",
         "floor": "-",
@@ -2866,6 +2876,16 @@
         "avail": true
       },
       {
+        "plot": "Florence Court, Number 14",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 820,
+        "price": 469950,
+        "avail": true
+      },
+      {
         "plot": "Ida Court, Number 58",
         "building": "-",
         "floor": "-",
@@ -2876,13 +2896,13 @@
         "avail": true
       },
       {
-        "plot": "Florence Court, Number 14",
+        "plot": "Ida Court, Number 47",
         "building": "-",
         "floor": "-",
-        "beds": 2,
+        "beds": 1,
         "baths": 1,
-        "size": 820,
-        "price": 469950,
+        "size": 561,
+        "price": 474950,
         "avail": true
       },
       {
@@ -3525,6 +3545,16 @@
     "amenities": {},
     "plots": [
       {
+        "plot": "The Franklin Building, Number A14",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 661,
+        "price": 389950,
+        "avail": true
+      },
+      {
         "plot": "The Franklin Building, Apartment A10",
         "building": "-",
         "floor": "-",
@@ -3535,13 +3565,13 @@
         "avail": true
       },
       {
-        "plot": "The Franklin Building, Number A14",
+        "plot": "The Franklin Building, Number B20",
         "building": "-",
         "floor": "-",
         "beds": 2,
         "baths": 1,
-        "size": 661,
-        "price": 389950,
+        "size": 681,
+        "price": 399950,
         "avail": true
       },
       {
@@ -3576,16 +3606,6 @@
       },
       {
         "plot": "The Franklin Building, Number B22",
-        "building": "-",
-        "floor": "-",
-        "beds": 2,
-        "baths": 1,
-        "size": 681,
-        "price": 399950,
-        "avail": true
-      },
-      {
-        "plot": "The Franklin Building, Number B20",
         "building": "-",
         "floor": "-",
         "beds": 2,
