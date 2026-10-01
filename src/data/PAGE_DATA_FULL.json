@@ -2846,16 +2846,6 @@
         "avail": true
       },
       {
-        "plot": "Ida Court, Number 55",
-        "building": "-",
-        "floor": "-",
-        "beds": 2,
-        "baths": 1,
-        "size": 783,
-        "price": 464950,
-        "avail": true
-      },
-      {
         "plot": "5% DEPOSIT CONTRIBUTION UP TO £23,247*",
         "building": "-",
         "floor": "-",
@@ -2872,6 +2862,16 @@
         "beds": 2,
         "baths": 1,
         "size": 758,
+        "price": 464950,
+        "avail": true
+      },
+      {
+        "plot": "Ida Court, Number 55",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 783,
         "price": 464950,
         "avail": true
       },
@@ -4290,7 +4290,7 @@
         "avail": true
       },
       {
-        "plot": "The Legacy Apartment, Number 30",
+        "plot": "The Legacy Apartments, Number 30",
         "building": "-",
         "floor": "-",
         "beds": 3,
