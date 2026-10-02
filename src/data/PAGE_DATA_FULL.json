@@ -3809,6 +3809,36 @@
     "suite": null,
     "plots": [
       {
+        "plot": "The Freshwood, Number 117",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 880,
+        "price": 384950,
+        "avail": true
+      },
+      {
+        "plot": "The Birchfield, Number 118",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 880,
+        "price": 389950,
+        "avail": true
+      },
+      {
+        "plot": "The Brook. Number 109",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 864,
+        "price": 399950,
+        "avail": true
+      },
+      {
         "plot": "The Orchard, Number 55",
         "building": "-",
         "floor": "-",
