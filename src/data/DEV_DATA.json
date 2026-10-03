@@ -1067,7 +1067,7 @@
       "investor": false
     },
     "locationLabel": "Southville, Bristol",
-    "tagline": "1 & 2 bedroom apartments,\n3, 4 & 5 bedroom townhouses",
+    "tagline": "3, 4 & 5 bedroom townhouses",
     "showBedIcon": true,
     "images": [
       "uploads/southville-collection-photo-1.png.webp",
@@ -1095,7 +1095,7 @@
         "icon": "clock"
       },
       {
-        "label": "Parking available to purchase for apartments, allocated for every house",
+        "label": "Parking allocated for every house",
         "icon": "car"
       },
       {
