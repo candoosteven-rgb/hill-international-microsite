@@ -213,12 +213,12 @@
         "avail": true
       },
       {
-        "plot": "Forest View, Apartment F1.28",
+        "plot": "Forest View, Apartment F1.19",
         "building": "-",
         "floor": "-",
         "beds": 1,
         "baths": 1,
-        "size": 549,
+        "size": 546,
         "price": 355000,
         "avail": true
       },
@@ -243,23 +243,23 @@
         "avail": true
       },
       {
-        "plot": "Forest View, Apartment F1.27",
+        "plot": "Forest View, Apartment F1.51",
         "building": "-",
         "floor": "-",
         "beds": 2,
         "baths": 1,
         "size": 769,
-        "price": 462500,
+        "price": 467500,
         "avail": true
       },
       {
-        "plot": "Forest View, Apartment F1.36",
+        "plot": "Forest View, Apartment F1.24",
         "building": "-",
         "floor": "-",
         "beds": 2,
         "baths": 1,
         "size": 704,
-        "price": 470000,
+        "price": 467500,
         "avail": true
       },
       {
@@ -3425,16 +3425,6 @@
         "avail": true
       },
       {
-        "plot": "The Meridian, Number 34",
-        "building": "-",
-        "floor": "-",
-        "beds": 3,
-        "baths": 1,
-        "size": 1523,
-        "price": 899950,
-        "avail": true
-      },
-      {
         "plot": "The Belmont, Number 39",
         "building": "-",
         "floor": "-",
@@ -3545,22 +3535,22 @@
     "amenities": {},
     "plots": [
       {
-        "plot": "The Franklin Building, Number A14",
-        "building": "-",
-        "floor": "-",
-        "beds": 2,
-        "baths": 1,
-        "size": 661,
-        "price": 389950,
-        "avail": true
-      },
-      {
         "plot": "The Franklin Building, Apartment A10",
         "building": "-",
         "floor": "-",
         "beds": 2,
         "baths": 1,
         "size": 662,
+        "price": 389950,
+        "avail": true
+      },
+      {
+        "plot": "The Franklin Building, Number A14",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 661,
         "price": 389950,
         "avail": true
       },
