@@ -243,22 +243,22 @@
         "avail": true
       },
       {
-        "plot": "Forest View, Apartment F1.51",
-        "building": "-",
-        "floor": "-",
-        "beds": 2,
-        "baths": 1,
-        "size": 769,
-        "price": 467500,
-        "avail": true
-      },
-      {
         "plot": "Forest View, Apartment F1.24",
         "building": "-",
         "floor": "-",
         "beds": 2,
         "baths": 1,
         "size": 704,
+        "price": 467500,
+        "avail": true
+      },
+      {
+        "plot": "Forest View, Apartment F1.51",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 769,
         "price": 467500,
         "avail": true
       },
@@ -458,63 +458,73 @@
         "avail": true
       },
       {
-        "plot": "Starling House, Apartment 78",
+        "plot": "Starling House, Apartment 70",
         "building": "-",
         "floor": "-",
         "beds": 1,
         "baths": 1,
         "size": 429,
-        "price": 435000,
+        "price": 425000,
         "avail": true
       },
       {
-        "plot": "Starling House, Apartment 33",
+        "plot": "Starling House, Apartment 25",
         "building": "-",
         "floor": "-",
         "beds": 2,
         "baths": 1,
         "size": 668,
-        "price": 590000,
+        "price": 555000,
         "avail": true
       },
       {
-        "plot": "Wren House, Apartment 119",
+        "plot": "Wren House, Apartment 113",
         "building": "-",
         "floor": "-",
         "beds": 2,
         "baths": 1,
-        "size": 781,
+        "size": 782,
         "price": 610000,
         "avail": true
       },
       {
-        "plot": "Starling House, Apartment 28",
+        "plot": "Starling House, Apartment 13",
         "building": "-",
         "floor": "-",
         "beds": 2,
         "baths": 1,
-        "size": 846,
-        "price": 635000,
+        "size": 806,
+        "price": 620000,
         "avail": true
       },
       {
-        "plot": "Wren House, Apartment 149",
+        "plot": "Wren House, Apartment 135",
         "building": "-",
         "floor": "-",
         "beds": 2,
         "baths": 1,
         "size": 830,
-        "price": 645000,
+        "price": 635000,
         "avail": true
       },
       {
-        "plot": "Starling House, Apartment 96",
+        "plot": "Starling House, Apartment 60",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 846,
+        "price": 655000,
+        "avail": true
+      },
+      {
+        "plot": "Starling House, Apartment 91",
         "building": "-",
         "floor": "-",
         "beds": 2,
         "baths": 1,
         "size": 801,
-        "price": 690000,
+        "price": 680000,
         "avail": true
       }
     ],
@@ -1148,23 +1158,23 @@
         "avail": true
       },
       {
+        "plot": "The Liberty, Number 562",
+        "building": "-",
+        "floor": "-",
+        "beds": 1,
+        "baths": 1,
+        "size": 556,
+        "price": 352500,
+        "avail": true
+      },
+      {
         "plot": "The Liberty, Number 606",
         "building": "-",
         "floor": "-",
         "beds": 1,
         "baths": 1,
         "size": 556,
-        "price": 365000,
-        "avail": true
-      },
-      {
-        "plot": "The Liberty, Number 566",
-        "building": "-",
-        "floor": "-",
-        "beds": 1,
-        "baths": 1,
-        "size": 556,
-        "price": 377000,
+        "price": 387000,
         "avail": true
       },
       {
@@ -1188,13 +1198,13 @@
         "avail": true
       },
       {
-        "plot": "The Liberty, Number 572",
+        "plot": "The Liberty, Number 591",
         "building": "-",
         "floor": "-",
         "beds": 2,
         "baths": 1,
-        "size": 806,
-        "price": 415000,
+        "size": 801,
+        "price": 445000,
         "avail": true
       },
       {
@@ -2893,6 +2903,16 @@
         "baths": 1,
         "size": 760,
         "price": 469950,
+        "avail": true
+      },
+      {
+        "plot": "5% deposit contribution up to £23,747*",
+        "building": "-",
+        "floor": "-",
+        "beds": 0,
+        "baths": 1,
+        "size": 0,
+        "price": 23747,
         "avail": true
       },
       {
