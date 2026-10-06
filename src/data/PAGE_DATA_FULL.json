@@ -2856,6 +2856,16 @@
         "avail": true
       },
       {
+        "plot": "Ida Court, Number 55",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 783,
+        "price": 464950,
+        "avail": true
+      },
+      {
         "plot": "5% DEPOSIT CONTRIBUTION UP TO £23,247*",
         "building": "-",
         "floor": "-",
@@ -2876,13 +2886,13 @@
         "avail": true
       },
       {
-        "plot": "Ida Court, Number 55",
+        "plot": "Ida Court, Number 58",
         "building": "-",
         "floor": "-",
         "beds": 2,
         "baths": 1,
-        "size": 783,
-        "price": 464950,
+        "size": 760,
+        "price": 469950,
         "avail": true
       },
       {
@@ -2892,16 +2902,6 @@
         "beds": 2,
         "baths": 1,
         "size": 820,
-        "price": 469950,
-        "avail": true
-      },
-      {
-        "plot": "Ida Court, Number 58",
-        "building": "-",
-        "floor": "-",
-        "beds": 2,
-        "baths": 1,
-        "size": 760,
         "price": 469950,
         "avail": true
       },
@@ -3555,16 +3555,6 @@
     "amenities": {},
     "plots": [
       {
-        "plot": "The Franklin Building, Apartment A10",
-        "building": "-",
-        "floor": "-",
-        "beds": 2,
-        "baths": 1,
-        "size": 662,
-        "price": 389950,
-        "avail": true
-      },
-      {
         "plot": "The Franklin Building, Number A14",
         "building": "-",
         "floor": "-",
@@ -3572,6 +3562,26 @@
         "baths": 1,
         "size": 661,
         "price": 389950,
+        "avail": true
+      },
+      {
+        "plot": "Stamp duty contribution up to the value of £4,997*",
+        "building": "-",
+        "floor": "-",
+        "beds": 0,
+        "baths": 1,
+        "size": 0,
+        "price": 4997,
+        "avail": true
+      },
+      {
+        "plot": "The Franklin Building, Number B22",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 681,
+        "price": 399950,
         "avail": true
       },
       {
@@ -3605,26 +3615,6 @@
         "avail": true
       },
       {
-        "plot": "The Franklin Building, Apartment A11",
-        "building": "-",
-        "floor": "-",
-        "beds": 2,
-        "baths": 1,
-        "size": 772,
-        "price": 399950,
-        "avail": true
-      },
-      {
-        "plot": "The Franklin Building, Number B22",
-        "building": "-",
-        "floor": "-",
-        "beds": 2,
-        "baths": 1,
-        "size": 681,
-        "price": 399950,
-        "avail": true
-      },
-      {
         "plot": "The Cherry, Number 457",
         "building": "-",
         "floor": "-",
@@ -3632,6 +3622,26 @@
         "baths": 1,
         "size": 898,
         "price": 509950,
+        "avail": true
+      },
+      {
+        "plot": "The Perrin, Number 69",
+        "building": "-",
+        "floor": "-",
+        "beds": 3,
+        "baths": 1,
+        "size": 1347,
+        "price": 599950,
+        "avail": true
+      },
+      {
+        "plot": "The Oak, Number 342",
+        "building": "-",
+        "floor": "-",
+        "beds": 3,
+        "baths": 1,
+        "size": 1217,
+        "price": 679950,
         "avail": true
       }
     ],
