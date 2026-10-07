@@ -243,22 +243,22 @@
         "avail": true
       },
       {
-        "plot": "Forest View, Apartment F1.24",
-        "building": "-",
-        "floor": "-",
-        "beds": 2,
-        "baths": 1,
-        "size": 704,
-        "price": 467500,
-        "avail": true
-      },
-      {
         "plot": "Forest View, Apartment F1.51",
         "building": "-",
         "floor": "-",
         "beds": 2,
         "baths": 1,
         "size": 769,
+        "price": 467500,
+        "avail": true
+      },
+      {
+        "plot": "Forest View, Apartment F1.24",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 704,
         "price": 467500,
         "avail": true
       },
@@ -2856,16 +2856,6 @@
         "avail": true
       },
       {
-        "plot": "Ida Court, Number 55",
-        "building": "-",
-        "floor": "-",
-        "beds": 2,
-        "baths": 1,
-        "size": 783,
-        "price": 464950,
-        "avail": true
-      },
-      {
         "plot": "5% DEPOSIT CONTRIBUTION UP TO £23,247*",
         "building": "-",
         "floor": "-",
@@ -2886,13 +2876,13 @@
         "avail": true
       },
       {
-        "plot": "Ida Court, Number 58",
+        "plot": "Ida Court, Number 55",
         "building": "-",
         "floor": "-",
         "beds": 2,
         "baths": 1,
-        "size": 760,
-        "price": 469950,
+        "size": 783,
+        "price": 464950,
         "avail": true
       },
       {
@@ -2902,6 +2892,16 @@
         "beds": 2,
         "baths": 1,
         "size": 820,
+        "price": 469950,
+        "avail": true
+      },
+      {
+        "plot": "Ida Court, Number 58",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 760,
         "price": 469950,
         "avail": true
       },
@@ -4053,16 +4053,6 @@
         "avail": true
       },
       {
-        "plot": "The Sherrington, Number 270",
-        "building": "-",
-        "floor": "-",
-        "beds": 2,
-        "baths": 1,
-        "size": 748,
-        "price": 529950,
-        "avail": true
-      },
-      {
         "plot": "£17,750 Stamp Duty Paid*",
         "building": "-",
         "floor": "-",
@@ -4150,6 +4140,16 @@
         "baths": 1,
         "size": 2669,
         "price": 1495000,
+        "avail": true
+      },
+      {
+        "plot": "The Florey, Number 93",
+        "building": "-",
+        "floor": "-",
+        "beds": 5,
+        "baths": 1,
+        "size": 2669,
+        "price": 1635000,
         "avail": true
       }
     ],
