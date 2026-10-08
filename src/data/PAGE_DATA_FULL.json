@@ -243,22 +243,22 @@
         "avail": true
       },
       {
-        "plot": "Forest View, Apartment F1.51",
-        "building": "-",
-        "floor": "-",
-        "beds": 2,
-        "baths": 1,
-        "size": 769,
-        "price": 467500,
-        "avail": true
-      },
-      {
         "plot": "Forest View, Apartment F1.24",
         "building": "-",
         "floor": "-",
         "beds": 2,
         "baths": 1,
         "size": 704,
+        "price": 467500,
+        "avail": true
+      },
+      {
+        "plot": "Forest View, Apartment F1.51",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 769,
         "price": 467500,
         "avail": true
       },
@@ -791,13 +791,13 @@
         "avail": true
       },
       {
-        "plot": "Marram House, Apartment 79",
+        "plot": "Marram House, Apartment 104",
         "building": "-",
         "floor": "-",
-        "beds": 2,
+        "beds": 1,
         "baths": 1,
-        "size": 796,
-        "price": 545000,
+        "size": 556,
+        "price": 415000,
         "avail": true
       },
       {
@@ -808,6 +808,16 @@
         "baths": 1,
         "size": 797,
         "price": 550000,
+        "avail": true
+      },
+      {
+        "plot": "Foxtail House, Apartment 55",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 797,
+        "price": 560000,
         "avail": true
       },
       {
@@ -838,16 +848,6 @@
         "baths": 1,
         "size": 791,
         "price": 585000,
-        "avail": true
-      },
-      {
-        "plot": "Foxtail House, Apartment 66",
-        "building": "-",
-        "floor": "-",
-        "beds": 2,
-        "baths": 1,
-        "size": 835,
-        "price": 595000,
         "avail": true
       },
       {
@@ -2856,6 +2856,16 @@
         "avail": true
       },
       {
+        "plot": "Ida Court, Number 55",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 783,
+        "price": 464950,
+        "avail": true
+      },
+      {
         "plot": "5% DEPOSIT CONTRIBUTION UP TO £23,247*",
         "building": "-",
         "floor": "-",
@@ -2876,13 +2886,13 @@
         "avail": true
       },
       {
-        "plot": "Ida Court, Number 55",
+        "plot": "Ida Court, Number 58",
         "building": "-",
         "floor": "-",
         "beds": 2,
         "baths": 1,
-        "size": 783,
-        "price": 464950,
+        "size": 760,
+        "price": 469950,
         "avail": true
       },
       {
@@ -2892,16 +2902,6 @@
         "beds": 2,
         "baths": 1,
         "size": 820,
-        "price": 469950,
-        "avail": true
-      },
-      {
-        "plot": "Ida Court, Number 58",
-        "building": "-",
-        "floor": "-",
-        "beds": 2,
-        "baths": 1,
-        "size": 760,
         "price": 469950,
         "avail": true
       },
@@ -3081,16 +3081,6 @@
         "baths": 1,
         "size": 1306,
         "price": 749950,
-        "avail": true
-      },
-      {
-        "plot": "The Ernest, Number 16",
-        "building": "-",
-        "floor": "-",
-        "beds": 3,
-        "baths": 1,
-        "size": 1363,
-        "price": 829950,
         "avail": true
       },
       {
