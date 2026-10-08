@@ -243,22 +243,22 @@
         "avail": true
       },
       {
-        "plot": "Forest View, Apartment F1.24",
-        "building": "-",
-        "floor": "-",
-        "beds": 2,
-        "baths": 1,
-        "size": 704,
-        "price": 467500,
-        "avail": true
-      },
-      {
         "plot": "Forest View, Apartment F1.51",
         "building": "-",
         "floor": "-",
         "beds": 2,
         "baths": 1,
         "size": 769,
+        "price": 467500,
+        "avail": true
+      },
+      {
+        "plot": "Forest View, Apartment F1.24",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 704,
         "price": 467500,
         "avail": true
       },
@@ -2856,16 +2856,6 @@
         "avail": true
       },
       {
-        "plot": "Ida Court, Number 55",
-        "building": "-",
-        "floor": "-",
-        "beds": 2,
-        "baths": 1,
-        "size": 783,
-        "price": 464950,
-        "avail": true
-      },
-      {
         "plot": "5% DEPOSIT CONTRIBUTION UP TO £23,247*",
         "building": "-",
         "floor": "-",
@@ -2886,13 +2876,13 @@
         "avail": true
       },
       {
-        "plot": "Ida Court, Number 58",
+        "plot": "Ida Court, Number 55",
         "building": "-",
         "floor": "-",
         "beds": 2,
         "baths": 1,
-        "size": 760,
-        "price": 469950,
+        "size": 783,
+        "price": 464950,
         "avail": true
       },
       {
@@ -2902,6 +2892,16 @@
         "beds": 2,
         "baths": 1,
         "size": 820,
+        "price": 469950,
+        "avail": true
+      },
+      {
+        "plot": "Ida Court, Number 58",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 760,
         "price": 469950,
         "avail": true
       },
@@ -3555,6 +3555,26 @@
         "avail": true
       },
       {
+        "plot": "The Kestrel Building, Number D11",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 757,
+        "price": 399950,
+        "avail": true
+      },
+      {
+        "plot": "The Franklin Building, Number A12",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 762,
+        "price": 399950,
+        "avail": true
+      },
+      {
         "plot": "Stamp duty contribution up to the value of £4,997*",
         "building": "-",
         "floor": "-",
@@ -3581,26 +3601,6 @@
         "beds": 2,
         "baths": 1,
         "size": 681,
-        "price": 399950,
-        "avail": true
-      },
-      {
-        "plot": "The Kestrel Building, Number D11",
-        "building": "-",
-        "floor": "-",
-        "beds": 2,
-        "baths": 1,
-        "size": 757,
-        "price": 399950,
-        "avail": true
-      },
-      {
-        "plot": "The Franklin Building, Number A12",
-        "building": "-",
-        "floor": "-",
-        "beds": 2,
-        "baths": 1,
-        "size": 762,
         "price": 399950,
         "avail": true
       },
@@ -3849,6 +3849,16 @@
         "avail": true
       },
       {
+        "plot": "Available with Stamp Duty Paid up to the value of £17,997*",
+        "building": "-",
+        "floor": "-",
+        "beds": 0,
+        "baths": 1,
+        "size": 0,
+        "price": 17997,
+        "avail": true
+      },
+      {
         "plot": "The Orchard, Number 55",
         "building": "-",
         "floor": "-",
@@ -3856,6 +3866,16 @@
         "baths": 1,
         "size": 1491,
         "price": 559950,
+        "avail": true
+      },
+      {
+        "plot": "Available with Stamp Duty Paid up to the value of £17,997*",
+        "building": "-",
+        "floor": "-",
+        "beds": 0,
+        "baths": 1,
+        "size": 0,
+        "price": 17997,
         "avail": true
       },
       {
