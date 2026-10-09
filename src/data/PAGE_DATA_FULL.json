@@ -2836,6 +2836,26 @@
     "amenities": {},
     "plots": [
       {
+        "plot": "5% deposit contribution up to £23,747*",
+        "building": "-",
+        "floor": "-",
+        "beds": 0,
+        "baths": 1,
+        "size": 0,
+        "price": 23747,
+        "avail": true
+      },
+      {
+        "plot": "Ida Court, Number 47",
+        "building": "-",
+        "floor": "-",
+        "beds": 1,
+        "baths": 1,
+        "size": 561,
+        "price": 349950,
+        "avail": true
+      },
+      {
         "plot": "Ida Court, Number 46",
         "building": "-",
         "floor": "-",
@@ -2903,26 +2923,6 @@
         "baths": 1,
         "size": 760,
         "price": 469950,
-        "avail": true
-      },
-      {
-        "plot": "5% deposit contribution up to £23,747*",
-        "building": "-",
-        "floor": "-",
-        "beds": 0,
-        "baths": 1,
-        "size": 0,
-        "price": 23747,
-        "avail": true
-      },
-      {
-        "plot": "Ida Court, Number 47",
-        "building": "-",
-        "floor": "-",
-        "beds": 1,
-        "baths": 1,
-        "size": 561,
-        "price": 474950,
         "avail": true
       },
       {
