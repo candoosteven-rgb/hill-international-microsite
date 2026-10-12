@@ -458,13 +458,13 @@
         "avail": true
       },
       {
-        "plot": "Starling House, Apartment 70",
+        "plot": "Starling House, Apartment 99",
         "building": "-",
         "floor": "-",
         "beds": 1,
         "baths": 1,
-        "size": 429,
-        "price": 425000,
+        "size": 435,
+        "price": 465000,
         "avail": true
       },
       {
@@ -478,23 +478,23 @@
         "avail": true
       },
       {
-        "plot": "Wren House, Apartment 113",
+        "plot": "Wren House, Apartment 119",
         "building": "-",
         "floor": "-",
         "beds": 2,
         "baths": 1,
-        "size": 782,
+        "size": 758,
         "price": 610000,
         "avail": true
       },
       {
-        "plot": "Starling House, Apartment 13",
+        "plot": "Starling House, Apartment 21",
         "building": "-",
         "floor": "-",
         "beds": 2,
         "baths": 1,
         "size": 806,
-        "price": 620000,
+        "price": 625000,
         "avail": true
       },
       {
@@ -791,26 +791,6 @@
         "avail": true
       },
       {
-        "plot": "Marram House, Apartment 79",
-        "building": "-",
-        "floor": "-",
-        "beds": 2,
-        "baths": 1,
-        "size": 796,
-        "price": 545000,
-        "avail": true
-      },
-      {
-        "plot": "Foxtail House, Apartment 43",
-        "building": "-",
-        "floor": "-",
-        "beds": 2,
-        "baths": 1,
-        "size": 797,
-        "price": 550000,
-        "avail": true
-      },
-      {
         "plot": "Foxtail House, Apartment 44",
         "building": "-",
         "floor": "-",
@@ -821,23 +801,13 @@
         "avail": true
       },
       {
-        "plot": "Foxtail House, Apartment 55",
+        "plot": "Marram House, Apartment 78",
         "building": "-",
         "floor": "-",
         "beds": 2,
         "baths": 1,
-        "size": 797,
-        "price": 560000,
-        "avail": true
-      },
-      {
-        "plot": "Marram House, Apartment 75",
-        "building": "-",
-        "floor": "-",
-        "beds": 2,
-        "baths": 1,
-        "size": 835,
-        "price": 575000,
+        "size": 791,
+        "price": 570000,
         "avail": true
       },
       {
@@ -851,6 +821,26 @@
         "avail": true
       },
       {
+        "plot": "Marram House, Apartment 87",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 835,
+        "price": 585000,
+        "avail": true
+      },
+      {
+        "plot": "Foxtail House, Apartment 66",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 835,
+        "price": 595000,
+        "avail": true
+      },
+      {
         "plot": "Marram House, Apartment 103",
         "building": "-",
         "floor": "-",
@@ -858,6 +848,16 @@
         "baths": 1,
         "size": 835,
         "price": 615000,
+        "avail": true
+      },
+      {
+        "plot": "The Ash, Number 2",
+        "building": "-",
+        "floor": "-",
+        "beds": 3,
+        "baths": 1,
+        "size": 1289,
+        "price": 965000,
         "avail": true
       }
     ],
@@ -1168,16 +1168,6 @@
         "avail": true
       },
       {
-        "plot": "The Liberty, Number 606",
-        "building": "-",
-        "floor": "-",
-        "beds": 1,
-        "baths": 1,
-        "size": 556,
-        "price": 387000,
-        "avail": true
-      },
-      {
         "plot": "The Liberty, Number 563",
         "building": "-",
         "floor": "-",
@@ -1226,6 +1216,16 @@
         "size": 934,
         "price": 500000,
         "avail": true
+      },
+      {
+        "plot": "The Empire, Apartment 915",
+        "building": "-",
+        "floor": "-",
+        "beds": 1,
+        "baths": 1,
+        "size": 544,
+        "price": 312000,
+        "avail": false
       }
     ],
     "nearby": [
@@ -2836,26 +2836,6 @@
     "amenities": {},
     "plots": [
       {
-        "plot": "5% deposit contribution up to £23,747*",
-        "building": "-",
-        "floor": "-",
-        "beds": 0,
-        "baths": 1,
-        "size": 0,
-        "price": 23747,
-        "avail": true
-      },
-      {
-        "plot": "Ida Court, Number 47",
-        "building": "-",
-        "floor": "-",
-        "beds": 1,
-        "baths": 1,
-        "size": 561,
-        "price": 349950,
-        "avail": true
-      },
-      {
         "plot": "Ida Court, Number 46",
         "building": "-",
         "floor": "-",
@@ -3080,7 +3060,17 @@
         "beds": 3,
         "baths": 1,
         "size": 1306,
-        "price": 749950,
+        "price": 749995,
+        "avail": true
+      },
+      {
+        "plot": "The Ernest, Number 25",
+        "building": "-",
+        "floor": "-",
+        "beds": 3,
+        "baths": 1,
+        "size": 1363,
+        "price": 834950,
         "avail": true
       },
       {
@@ -3435,6 +3425,16 @@
         "avail": true
       },
       {
+        "plot": "The Meridian, Number 32",
+        "building": "-",
+        "floor": "-",
+        "beds": 3,
+        "baths": 1,
+        "size": 1523,
+        "price": 899950,
+        "avail": true
+      },
+      {
         "plot": "The Belmont, Number 39",
         "building": "-",
         "floor": "-",
@@ -3570,18 +3570,8 @@
         "floor": "-",
         "beds": 2,
         "baths": 1,
-        "size": 762,
+        "size": 668,
         "price": 399950,
-        "avail": true
-      },
-      {
-        "plot": "Stamp duty contribution up to the value of £4,997*",
-        "building": "-",
-        "floor": "-",
-        "beds": 0,
-        "baths": 1,
-        "size": 0,
-        "price": 4997,
         "avail": true
       },
       {
@@ -3600,8 +3590,8 @@
         "floor": "-",
         "beds": 2,
         "baths": 1,
-        "size": 681,
-        "price": 399950,
+        "size": 762,
+        "price": 404950,
         "avail": true
       },
       {
