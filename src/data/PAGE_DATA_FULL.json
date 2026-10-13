@@ -243,22 +243,22 @@
         "avail": true
       },
       {
-        "plot": "Forest View, Apartment F1.51",
-        "building": "-",
-        "floor": "-",
-        "beds": 2,
-        "baths": 1,
-        "size": 769,
-        "price": 467500,
-        "avail": true
-      },
-      {
         "plot": "Forest View, Apartment F1.24",
         "building": "-",
         "floor": "-",
         "beds": 2,
         "baths": 1,
         "size": 704,
+        "price": 467500,
+        "avail": true
+      },
+      {
+        "plot": "Forest View, Apartment F1.51",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 769,
         "price": 467500,
         "avail": true
       },
@@ -811,22 +811,22 @@
         "avail": true
       },
       {
-        "plot": "Marram House, Apartment 87",
-        "building": "-",
-        "floor": "-",
-        "beds": 2,
-        "baths": 1,
-        "size": 835,
-        "price": 585000,
-        "avail": true
-      },
-      {
         "plot": "Foxtail House, Apartment 57",
         "building": "-",
         "floor": "-",
         "beds": 2,
         "baths": 1,
         "size": 791,
+        "price": 585000,
+        "avail": true
+      },
+      {
+        "plot": "Marram House, Apartment 87",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 835,
         "price": 585000,
         "avail": true
       },
@@ -1688,33 +1688,23 @@
         "avail": true
       },
       {
-        "plot": "Maxima, Apartment 245",
+        "plot": "Maxima, Apartment 202",
         "building": "-",
         "floor": "-",
         "beds": 1,
         "baths": 1,
         "size": 551,
-        "price": 280000,
+        "price": 267500,
         "avail": true
       },
       {
-        "plot": "Maxima, Apartment 166",
+        "plot": "Maxima, Apartment 223",
         "building": "-",
         "floor": "-",
-        "beds": 2,
+        "beds": 1,
         "baths": 1,
-        "size": 662,
-        "price": 319995,
-        "avail": true
-      },
-      {
-        "plot": "Maxima, Apartment 172",
-        "building": "-",
-        "floor": "-",
-        "beds": 2,
-        "baths": 1,
-        "size": 765,
-        "price": 345000,
+        "size": 584,
+        "price": 277500,
         "avail": true
       },
       {
@@ -1728,13 +1718,23 @@
         "avail": true
       },
       {
-        "plot": "Maxima, Apartment 170",
+        "plot": "Maxima, Apartment 199",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 765,
+        "price": 360000,
+        "avail": true
+      },
+      {
+        "plot": "Maxima, Apartment 179",
         "building": "-",
         "floor": "-",
         "beds": 3,
         "baths": 1,
         "size": 942,
-        "price": 410000,
+        "price": 415000,
         "avail": true
       }
     ],
@@ -2886,22 +2886,22 @@
         "avail": true
       },
       {
-        "plot": "Ida Court, Number 58",
-        "building": "-",
-        "floor": "-",
-        "beds": 2,
-        "baths": 1,
-        "size": 760,
-        "price": 469950,
-        "avail": true
-      },
-      {
         "plot": "Florence Court, Number 14",
         "building": "-",
         "floor": "-",
         "beds": 2,
         "baths": 1,
         "size": 820,
+        "price": 469950,
+        "avail": true
+      },
+      {
+        "plot": "Ida Court, Number 58",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 760,
         "price": 469950,
         "avail": true
       },
