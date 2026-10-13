@@ -811,22 +811,22 @@
         "avail": true
       },
       {
-        "plot": "Foxtail House, Apartment 57",
-        "building": "-",
-        "floor": "-",
-        "beds": 2,
-        "baths": 1,
-        "size": 791,
-        "price": 585000,
-        "avail": true
-      },
-      {
         "plot": "Marram House, Apartment 87",
         "building": "-",
         "floor": "-",
         "beds": 2,
         "baths": 1,
         "size": 835,
+        "price": 585000,
+        "avail": true
+      },
+      {
+        "plot": "Foxtail House, Apartment 57",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 791,
         "price": 585000,
         "avail": true
       },
@@ -1668,6 +1668,16 @@
         "avail": true
       },
       {
+        "plot": "Maxima, Apartment 255",
+        "building": "-",
+        "floor": "-",
+        "beds": 1,
+        "baths": 1,
+        "size": 420,
+        "price": 242500,
+        "avail": true
+      },
+      {
         "plot": "Maxima, Apartment 167",
         "building": "-",
         "floor": "-",
@@ -1675,16 +1685,6 @@
         "baths": 1,
         "size": 542,
         "price": 250000,
-        "avail": true
-      },
-      {
-        "plot": "Maxima, Apartment 178",
-        "building": "-",
-        "floor": "-",
-        "beds": 1,
-        "baths": 1,
-        "size": 584,
-        "price": 265000,
         "avail": true
       },
       {
@@ -1718,13 +1718,13 @@
         "avail": true
       },
       {
-        "plot": "Maxima, Apartment 185",
+        "plot": "Maxima, Apartment 176",
         "building": "-",
         "floor": "-",
         "beds": 2,
         "baths": 1,
         "size": 796,
-        "price": 355000,
+        "price": 350000,
         "avail": true
       },
       {
@@ -2856,6 +2856,16 @@
         "avail": true
       },
       {
+        "plot": "Ida Court, Number 55",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 783,
+        "price": 464950,
+        "avail": true
+      },
+      {
         "plot": "5% DEPOSIT CONTRIBUTION UP TO £23,247*",
         "building": "-",
         "floor": "-",
@@ -2876,13 +2886,13 @@
         "avail": true
       },
       {
-        "plot": "Ida Court, Number 55",
+        "plot": "Ida Court, Number 58",
         "building": "-",
         "floor": "-",
         "beds": 2,
         "baths": 1,
-        "size": 783,
-        "price": 464950,
+        "size": 760,
+        "price": 469950,
         "avail": true
       },
       {
@@ -2892,16 +2902,6 @@
         "beds": 2,
         "baths": 1,
         "size": 820,
-        "price": 469950,
-        "avail": true
-      },
-      {
-        "plot": "Ida Court, Number 58",
-        "building": "-",
-        "floor": "-",
-        "beds": 2,
-        "baths": 1,
-        "size": 760,
         "price": 469950,
         "avail": true
       },
