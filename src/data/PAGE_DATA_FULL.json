@@ -243,22 +243,22 @@
         "avail": true
       },
       {
-        "plot": "Forest View, Apartment F1.51",
-        "building": "-",
-        "floor": "-",
-        "beds": 2,
-        "baths": 1,
-        "size": 769,
-        "price": 467500,
-        "avail": true
-      },
-      {
         "plot": "Forest View, Apartment F1.24",
         "building": "-",
         "floor": "-",
         "beds": 2,
         "baths": 1,
         "size": 704,
+        "price": 467500,
+        "avail": true
+      },
+      {
+        "plot": "Forest View, Apartment F1.51",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 769,
         "price": 467500,
         "avail": true
       },
@@ -1216,16 +1216,6 @@
         "size": 934,
         "price": 500000,
         "avail": true
-      },
-      {
-        "plot": "The Empire, Apartment 915",
-        "building": "-",
-        "floor": "-",
-        "beds": 1,
-        "baths": 1,
-        "size": 544,
-        "price": 312000,
-        "avail": false
       }
     ],
     "nearby": [
@@ -2856,6 +2846,16 @@
         "avail": true
       },
       {
+        "plot": "Ida Court, Number 55",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 783,
+        "price": 464950,
+        "avail": true
+      },
+      {
         "plot": "5% DEPOSIT CONTRIBUTION UP TO £23,247*",
         "building": "-",
         "floor": "-",
@@ -2872,16 +2872,6 @@
         "beds": 2,
         "baths": 1,
         "size": 758,
-        "price": 464950,
-        "avail": true
-      },
-      {
-        "plot": "Ida Court, Number 55",
-        "building": "-",
-        "floor": "-",
-        "beds": 2,
-        "baths": 1,
-        "size": 783,
         "price": 464950,
         "avail": true
       },
