@@ -243,22 +243,22 @@
         "avail": true
       },
       {
-        "plot": "Forest View, Apartment F1.24",
-        "building": "-",
-        "floor": "-",
-        "beds": 2,
-        "baths": 1,
-        "size": 704,
-        "price": 467500,
-        "avail": true
-      },
-      {
         "plot": "Forest View, Apartment F1.51",
         "building": "-",
         "floor": "-",
         "beds": 2,
         "baths": 1,
         "size": 769,
+        "price": 467500,
+        "avail": true
+      },
+      {
+        "plot": "Forest View, Apartment F1.24",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 704,
         "price": 467500,
         "avail": true
       },
@@ -811,22 +811,22 @@
         "avail": true
       },
       {
-        "plot": "Foxtail House, Apartment 57",
-        "building": "-",
-        "floor": "-",
-        "beds": 2,
-        "baths": 1,
-        "size": 791,
-        "price": 585000,
-        "avail": true
-      },
-      {
         "plot": "Marram House, Apartment 87",
         "building": "-",
         "floor": "-",
         "beds": 2,
         "baths": 1,
         "size": 835,
+        "price": 585000,
+        "avail": true
+      },
+      {
+        "plot": "Foxtail House, Apartment 57",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 791,
         "price": 585000,
         "avail": true
       },
@@ -1147,6 +1147,16 @@
       "maps": "https://www.google.com/maps/search/?api=1&query=Kent+Avenue+Dagenham+RM9+6PE"
     },
     "plots": [
+      {
+        "plot": "The Empire, Apartment 915",
+        "building": "-",
+        "floor": "-",
+        "beds": 1,
+        "baths": 1,
+        "size": 543,
+        "price": 312000,
+        "avail": true
+      },
       {
         "plot": "The Liberty, Number 537",
         "building": "-",
@@ -2432,7 +2442,7 @@
         "avail": true
       },
       {
-        "plot": "The Icon, Apartment 25",
+        "plot": "The Icon, Number 25",
         "building": "-",
         "floor": "-",
         "beds": 0,
@@ -3555,16 +3565,6 @@
         "avail": true
       },
       {
-        "plot": "The Franklin Building, Number B22",
-        "building": "-",
-        "floor": "-",
-        "beds": 2,
-        "baths": 1,
-        "size": 681,
-        "price": 399950,
-        "avail": true
-      },
-      {
         "plot": "The Kestrel Building, Number D11",
         "building": "-",
         "floor": "-",
@@ -3581,6 +3581,16 @@
         "beds": 2,
         "baths": 1,
         "size": 668,
+        "price": 399950,
+        "avail": true
+      },
+      {
+        "plot": "The Franklin Building, Number B22",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 681,
         "price": 399950,
         "avail": true
       },
