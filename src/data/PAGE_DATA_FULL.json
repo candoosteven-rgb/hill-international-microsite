@@ -243,22 +243,22 @@
         "avail": true
       },
       {
-        "plot": "Forest View, Apartment F1.51",
-        "building": "-",
-        "floor": "-",
-        "beds": 2,
-        "baths": 1,
-        "size": 769,
-        "price": 467500,
-        "avail": true
-      },
-      {
         "plot": "Forest View, Apartment F1.24",
         "building": "-",
         "floor": "-",
         "beds": 2,
         "baths": 1,
         "size": 704,
+        "price": 467500,
+        "avail": true
+      },
+      {
+        "plot": "Forest View, Apartment F1.51",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 769,
         "price": 467500,
         "avail": true
       },
@@ -448,13 +448,23 @@
     },
     "plots": [
       {
-        "plot": "Starling House, Apartment 54",
+        "plot": "Starling House, Apartment 70",
         "building": "-",
         "floor": "-",
         "beds": 1,
         "baths": 1,
         "size": 429,
-        "price": 385000,
+        "price": 425000,
+        "avail": true
+      },
+      {
+        "plot": "Starling House, Apartment 86",
+        "building": "-",
+        "floor": "-",
+        "beds": 1,
+        "baths": 1,
+        "size": 429,
+        "price": 445000,
         "avail": true
       },
       {
@@ -478,13 +488,13 @@
         "avail": true
       },
       {
-        "plot": "Wren House, Apartment 119",
+        "plot": "Starling House, Apartment 20",
         "building": "-",
         "floor": "-",
         "beds": 2,
         "baths": 1,
-        "size": 758,
-        "price": 610000,
+        "size": 846,
+        "price": 599000,
         "avail": true
       },
       {
@@ -498,13 +508,13 @@
         "avail": true
       },
       {
-        "plot": "Wren House, Apartment 135",
+        "plot": "Wren House, Apartment 149",
         "building": "-",
         "floor": "-",
         "beds": 2,
         "baths": 1,
         "size": 830,
-        "price": 635000,
+        "price": 645000,
         "avail": true
       },
       {
@@ -515,16 +525,6 @@
         "baths": 1,
         "size": 846,
         "price": 655000,
-        "avail": true
-      },
-      {
-        "plot": "Starling House, Apartment 91",
-        "building": "-",
-        "floor": "-",
-        "beds": 2,
-        "baths": 1,
-        "size": 801,
-        "price": 680000,
         "avail": true
       }
     ],
@@ -791,6 +791,26 @@
         "avail": true
       },
       {
+        "plot": "Marram House, Apartment 79",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 796,
+        "price": 545000,
+        "avail": true
+      },
+      {
+        "plot": "Foxtail House, Apartment 43",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 797,
+        "price": 550000,
+        "avail": true
+      },
+      {
         "plot": "Foxtail House, Apartment 44",
         "building": "-",
         "floor": "-",
@@ -801,23 +821,13 @@
         "avail": true
       },
       {
-        "plot": "Marram House, Apartment 78",
-        "building": "-",
-        "floor": "-",
-        "beds": 2,
-        "baths": 1,
-        "size": 791,
-        "price": 570000,
-        "avail": true
-      },
-      {
-        "plot": "Marram House, Apartment 87",
+        "plot": "Marram House, Apartment 75",
         "building": "-",
         "floor": "-",
         "beds": 2,
         "baths": 1,
         "size": 835,
-        "price": 585000,
+        "price": 575000,
         "avail": true
       },
       {
@@ -848,16 +858,6 @@
         "baths": 1,
         "size": 835,
         "price": 615000,
-        "avail": true
-      },
-      {
-        "plot": "The Ash, Number 2",
-        "building": "-",
-        "floor": "-",
-        "beds": 3,
-        "baths": 1,
-        "size": 1289,
-        "price": 965000,
         "avail": true
       }
     ],
@@ -2672,16 +2672,6 @@
         "size": 2166,
         "price": 1649950,
         "avail": true
-      },
-      {
-        "plot": "The Lawrence, Number 2",
-        "building": "-",
-        "floor": "-",
-        "beds": 5,
-        "baths": 1,
-        "size": 2166,
-        "price": 1695000,
-        "avail": true
       }
     ],
     "nearby": [
@@ -4297,6 +4287,16 @@
         "baths": 1,
         "size": 548,
         "price": 399995,
+        "avail": true
+      },
+      {
+        "plot": "The Legacy Apartments, Number 18",
+        "building": "-",
+        "floor": "-",
+        "beds": 1,
+        "baths": 1,
+        "size": 552,
+        "price": 410000,
         "avail": true
       },
       {
