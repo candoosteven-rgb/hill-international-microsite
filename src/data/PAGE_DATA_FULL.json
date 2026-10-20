@@ -243,22 +243,22 @@
         "avail": true
       },
       {
-        "plot": "Forest View, Apartment F1.24",
-        "building": "-",
-        "floor": "-",
-        "beds": 2,
-        "baths": 1,
-        "size": 704,
-        "price": 467500,
-        "avail": true
-      },
-      {
         "plot": "Forest View, Apartment F1.51",
         "building": "-",
         "floor": "-",
         "beds": 2,
         "baths": 1,
         "size": 769,
+        "price": 467500,
+        "avail": true
+      },
+      {
+        "plot": "Forest View, Apartment F1.24",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 704,
         "price": 467500,
         "avail": true
       },
@@ -273,12 +273,12 @@
         "avail": true
       },
       {
-        "plot": "The Evergreens, Duplex E2.4",
+        "plot": "The Evergreens, Duplex E2.3",
         "building": "-",
         "floor": "-",
         "beds": 3,
         "baths": 1,
-        "size": 1175,
+        "size": 1119,
         "price": 632500,
         "avail": true
       }
@@ -1158,7 +1158,7 @@
         "avail": true
       },
       {
-        "plot": "The Liberty, Number 537",
+        "plot": "The Liberty, Apartment 537",
         "building": "-",
         "floor": "-",
         "beds": 1,
@@ -1168,7 +1168,7 @@
         "avail": true
       },
       {
-        "plot": "The Liberty, Number 562",
+        "plot": "The Liberty, Apartment 562",
         "building": "-",
         "floor": "-",
         "beds": 1,
@@ -1178,7 +1178,7 @@
         "avail": true
       },
       {
-        "plot": "The Liberty, Number 563",
+        "plot": "The Liberty, Apartment 563",
         "building": "-",
         "floor": "-",
         "beds": 2,
@@ -1188,7 +1188,7 @@
         "avail": true
       },
       {
-        "plot": "The Liberty, Number 536",
+        "plot": "The Liberty, Apartment 536",
         "building": "-",
         "floor": "-",
         "beds": 2,
@@ -1198,7 +1198,7 @@
         "avail": true
       },
       {
-        "plot": "The Liberty, Number 591",
+        "plot": "The Liberty, Apartment 591",
         "building": "-",
         "floor": "-",
         "beds": 2,
@@ -1208,7 +1208,7 @@
         "avail": true
       },
       {
-        "plot": "The Liberty, Number 640",
+        "plot": "The Liberty, Apartment 640",
         "building": "-",
         "floor": "-",
         "beds": 2,
@@ -1218,7 +1218,7 @@
         "avail": true
       },
       {
-        "plot": "The Empire, Number 931",
+        "plot": "The Empire, Apartment 931",
         "building": "-",
         "floor": "-",
         "beds": 3,
@@ -2382,7 +2382,7 @@
     },
     "plots": [
       {
-        "plot": "The Icon, Number 37",
+        "plot": "The Icon, Apartment 37",
         "building": "-",
         "floor": "-",
         "beds": 0,
@@ -2392,7 +2392,7 @@
         "avail": true
       },
       {
-        "plot": "The Icon, Number 82",
+        "plot": "The Icon, Apartment 82",
         "building": "-",
         "floor": "-",
         "beds": 0,
@@ -2402,7 +2402,7 @@
         "avail": true
       },
       {
-        "plot": "The Icon, Number 44",
+        "plot": "The Icon, Apartment 44",
         "building": "-",
         "floor": "-",
         "beds": 0,
@@ -2412,7 +2412,7 @@
         "avail": true
       },
       {
-        "plot": "The Icon, Number 88",
+        "plot": "The Icon, Apartment 88",
         "building": "-",
         "floor": "-",
         "beds": 0,
@@ -2422,7 +2422,7 @@
         "avail": true
       },
       {
-        "plot": "The Icon, Number 12",
+        "plot": "The Icon, Apartment 12",
         "building": "-",
         "floor": "-",
         "beds": 0,
@@ -2432,7 +2432,7 @@
         "avail": true
       },
       {
-        "plot": "The Icon, Number 18",
+        "plot": "The Icon, Apartment 18",
         "building": "-",
         "floor": "-",
         "beds": 0,
@@ -2442,7 +2442,7 @@
         "avail": true
       },
       {
-        "plot": "The Icon, Number 25",
+        "plot": "The Icon, Apartment 25",
         "building": "-",
         "floor": "-",
         "beds": 0,
@@ -2452,7 +2452,7 @@
         "avail": true
       },
       {
-        "plot": "The Icon, Number 40",
+        "plot": "The Icon, Apartment 40",
         "building": "-",
         "floor": "-",
         "beds": 0,
@@ -2826,7 +2826,7 @@
     "amenities": {},
     "plots": [
       {
-        "plot": "Florence Court, Number 4",
+        "plot": "Florence Court, Apartment 4",
         "building": "-",
         "floor": "-",
         "beds": 1,
@@ -2836,7 +2836,7 @@
         "avail": true
       },
       {
-        "plot": "Ida Court, Number 46",
+        "plot": "Ida Court, Apartment 46",
         "building": "-",
         "floor": "-",
         "beds": 2,
@@ -2846,7 +2846,7 @@
         "avail": true
       },
       {
-        "plot": "Ida Court, Number 50",
+        "plot": "Ida Court, Apartment 50",
         "building": "-",
         "floor": "-",
         "beds": 2,
@@ -2856,7 +2856,7 @@
         "avail": true
       },
       {
-        "plot": "Ida Court, Number 55",
+        "plot": "Ida Court, Apartment 55",
         "building": "-",
         "floor": "-",
         "beds": 2,
@@ -2876,7 +2876,7 @@
         "avail": true
       },
       {
-        "plot": "Florence Court, Number 10",
+        "plot": "Florence Court, Apartment 10",
         "building": "-",
         "floor": "-",
         "beds": 2,
@@ -2886,7 +2886,7 @@
         "avail": true
       },
       {
-        "plot": "Florence Court, Number 14",
+        "plot": "Florence Court, Apartment 14",
         "building": "-",
         "floor": "-",
         "beds": 2,
@@ -2896,7 +2896,7 @@
         "avail": true
       },
       {
-        "plot": "Ida Court, Number 58",
+        "plot": "Ida Court, Apartment 58",
         "building": "-",
         "floor": "-",
         "beds": 2,
@@ -2906,7 +2906,7 @@
         "avail": true
       },
       {
-        "plot": "Florence Court, Number 15",
+        "plot": "Florence Court, Apartment 15",
         "building": "-",
         "floor": "-",
         "beds": 2,
@@ -3565,7 +3565,7 @@
         "avail": true
       },
       {
-        "plot": "The Franklin Building, Number A12",
+        "plot": "The Franklin Building, Apartment A12",
         "building": "-",
         "floor": "-",
         "beds": 2,
@@ -3575,7 +3575,7 @@
         "avail": true
       },
       {
-        "plot": "The Franklin Building, Number B22",
+        "plot": "The Franklin Building, Apartment B22",
         "building": "-",
         "floor": "-",
         "beds": 2,
@@ -3585,7 +3585,7 @@
         "avail": true
       },
       {
-        "plot": "The Franklin Building, Number B20",
+        "plot": "The Franklin Building, Apartment B20",
         "building": "-",
         "floor": "-",
         "beds": 2,
@@ -4043,7 +4043,7 @@
         "avail": true
       },
       {
-        "plot": "The Brenner, Number 225",
+        "plot": "The Brenner, Apartment 225",
         "building": "-",
         "floor": "-",
         "beds": 1,
@@ -4063,7 +4063,7 @@
         "avail": true
       },
       {
-        "plot": "The Brenner, Number 228",
+        "plot": "The Brenner, Apartment 228",
         "building": "-",
         "floor": "-",
         "beds": 3,
@@ -4073,7 +4073,7 @@
         "avail": true
       },
       {
-        "plot": "The Sherrington, Number 271",
+        "plot": "The Sherrington, Apartment 271",
         "building": "-",
         "floor": "-",
         "beds": 3,
