@@ -243,22 +243,22 @@
         "avail": true
       },
       {
-        "plot": "Forest View, Apartment F1.51",
-        "building": "-",
-        "floor": "-",
-        "beds": 2,
-        "baths": 1,
-        "size": 769,
-        "price": 467500,
-        "avail": true
-      },
-      {
         "plot": "Forest View, Apartment F1.24",
         "building": "-",
         "floor": "-",
         "beds": 2,
         "baths": 1,
         "size": 704,
+        "price": 467500,
+        "avail": true
+      },
+      {
+        "plot": "Forest View, Apartment F1.51",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 769,
         "price": 467500,
         "avail": true
       },
