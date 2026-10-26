@@ -243,22 +243,22 @@
         "avail": true
       },
       {
-        "plot": "Forest View, Apartment F1.24",
-        "building": "-",
-        "floor": "-",
-        "beds": 2,
-        "baths": 1,
-        "size": 704,
-        "price": 467500,
-        "avail": true
-      },
-      {
         "plot": "Forest View, Apartment F1.51",
         "building": "-",
         "floor": "-",
         "beds": 2,
         "baths": 1,
         "size": 769,
+        "price": 467500,
+        "avail": true
+      },
+      {
+        "plot": "Forest View, Apartment F1.24",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 704,
         "price": 467500,
         "avail": true
       },
@@ -458,22 +458,12 @@
         "avail": true
       },
       {
-        "plot": "Starling House, Apartment 86",
-        "building": "-",
-        "floor": "-",
-        "beds": 1,
-        "baths": 1,
-        "size": 429,
-        "price": 445000,
-        "avail": true
-      },
-      {
         "plot": "Starling House, Apartment 99",
         "building": "-",
         "floor": "-",
         "beds": 1,
         "baths": 1,
-        "size": 435,
+        "size": 429,
         "price": 465000,
         "avail": true
       },
@@ -498,33 +488,43 @@
         "avail": true
       },
       {
-        "plot": "Starling House, Apartment 21",
+        "plot": "Wren House, Apartment 113",
         "building": "-",
         "floor": "-",
         "beds": 2,
         "baths": 1,
-        "size": 806,
-        "price": 625000,
+        "size": 782,
+        "price": 610000,
         "avail": true
       },
       {
-        "plot": "Wren House, Apartment 149",
+        "plot": "Wren House, Apartment 135",
         "building": "-",
         "floor": "-",
         "beds": 2,
         "baths": 1,
         "size": 830,
-        "price": 645000,
+        "price": 635000,
         "avail": true
       },
       {
-        "plot": "Starling House, Apartment 60",
+        "plot": "Starling House, Apartment 52",
         "building": "-",
         "floor": "-",
         "beds": 2,
         "baths": 1,
         "size": 846,
-        "price": 655000,
+        "price": 650000,
+        "avail": true
+      },
+      {
+        "plot": "Starling House, Apartment 83",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 801,
+        "price": 670000,
         "avail": true
       }
     ],
@@ -801,23 +801,13 @@
         "avail": true
       },
       {
-        "plot": "Foxtail House, Apartment 43",
+        "plot": "Marram House, Apartment 78",
         "building": "-",
         "floor": "-",
         "beds": 2,
         "baths": 1,
-        "size": 797,
-        "price": 550000,
-        "avail": true
-      },
-      {
-        "plot": "Foxtail House, Apartment 44",
-        "building": "-",
-        "floor": "-",
-        "beds": 2,
-        "baths": 1,
-        "size": 797,
-        "price": 560000,
+        "size": 791,
+        "price": 570000,
         "avail": true
       },
       {
@@ -1158,13 +1148,13 @@
         "avail": true
       },
       {
-        "plot": "The Liberty, Apartment 537",
+        "plot": "The Liberty, Apartment 553",
         "building": "-",
         "floor": "-",
         "beds": 1,
         "baths": 1,
         "size": 556,
-        "price": 330000,
+        "price": 345000,
         "avail": true
       },
       {
@@ -1178,6 +1168,16 @@
         "avail": true
       },
       {
+        "plot": "The Liberty, Apartment 556",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 806,
+        "price": 395000,
+        "avail": true
+      },
+      {
         "plot": "The Liberty, Apartment 563",
         "building": "-",
         "floor": "-",
@@ -1185,16 +1185,6 @@
         "baths": 1,
         "size": 801,
         "price": 405000,
-        "avail": true
-      },
-      {
-        "plot": "The Liberty, Apartment 536",
-        "building": "-",
-        "floor": "-",
-        "beds": 2,
-        "baths": 1,
-        "size": 799,
-        "price": 410000,
         "avail": true
       },
       {
@@ -1678,13 +1668,23 @@
         "avail": true
       },
       {
-        "plot": "Maxima, Apartment 167",
+        "plot": "Maxima, Apartment 171",
         "building": "-",
         "floor": "-",
         "beds": 1,
         "baths": 1,
         "size": 542,
-        "price": 250000,
+        "price": 260000,
+        "avail": true
+      },
+      {
+        "plot": "Maxima, Apartment 178",
+        "building": "-",
+        "floor": "-",
+        "beds": 1,
+        "baths": 1,
+        "size": 584,
+        "price": 265000,
         "avail": true
       },
       {
@@ -1698,13 +1698,13 @@
         "avail": true
       },
       {
-        "plot": "Maxima, Apartment 223",
+        "plot": "Maxima, Apartment 166",
         "building": "-",
         "floor": "-",
-        "beds": 1,
+        "beds": 2,
         "baths": 1,
-        "size": 584,
-        "price": 277500,
+        "size": 662,
+        "price": 319995,
         "avail": true
       },
       {
@@ -1715,16 +1715,6 @@
         "baths": 1,
         "size": 796,
         "price": 350000,
-        "avail": true
-      },
-      {
-        "plot": "Maxima, Apartment 199",
-        "building": "-",
-        "floor": "-",
-        "beds": 2,
-        "baths": 1,
-        "size": 765,
-        "price": 360000,
         "avail": true
       },
       {
