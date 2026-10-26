@@ -6,7 +6,7 @@ import { devById, pageDataFor } from "@/lib/data";
 import { autoFacts } from "@/lib/facts";
 import { resolveImage, buildShots } from "@/lib/image";
 import Icon from "@/components/Icon";
-import { LOCATIONS, REGION_LABELS, REGION_BLOBS, type LocationPin } from "@/data/LOCATIONS_MAP";
+import { LOCATIONS, type LocationPin } from "@/data/LOCATIONS_MAP";
 
 const FACT_ICON_NAMES: Parameters<typeof Icon>[0]["name"][] = [
   "f_homes",
@@ -98,7 +98,17 @@ export default function LocationsMap() {
 
   return (
     <div className="mx-auto max-w-[1180px] px-4 py-8 md:px-8 md:py-10">
-      <p className="mb-6 max-w-[640px] text-[14.5px] leading-relaxed text-[#5C6B71]">
+      <div className="hi-eyebrow mb-6 flex items-center gap-3 text-[#C1560F]">
+        <Icon name="pin" className="h-4 w-4" />
+        OUR LOCATIONS
+      </div>
+      <h1
+        className="mb-5 font-bold tracking-tight text-[#1F3A47]"
+        style={{ fontSize: "clamp(30px,4.2vw,48px)", lineHeight: 1.03, letterSpacing: "-0.03em" }}
+      >
+        Discover where we are building
+      </h1>
+      <p className="mb-8 max-w-[640px] text-[17px] leading-snug text-[#5C6B71]">
         Hover over a development to explore further. Click on a number or development name to visit its dedicated
         page or interactive experience.
       </p>
@@ -107,33 +117,14 @@ export default function LocationsMap() {
         {/* Map */}
         <div
           className="relative w-full flex-none overflow-visible rounded-[22px] border border-[#E3E9EC] bg-[#F0ECE6] lg:w-[68%]"
-          style={{ aspectRatio: "1.65" }}
+          style={{ aspectRatio: "1824 / 968" }}
         >
-          {/* Soft region blobs give the pins visual landmass context without
-              claiming cartographic accuracy (no GIS data source available). */}
-          {REGION_BLOBS.map((b) => (
-            <div
-              key={b.label}
-              className="pointer-events-none absolute rounded-full bg-[rgba(31,58,71,0.07)]"
-              style={{
-                left: `${b.x * 100}%`,
-                top: `${b.y * 100}%`,
-                width: `${b.w * 100}%`,
-                height: `${b.h * 100}%`,
-                transform: "translate(-50%, -50%)",
-              }}
-            />
-          ))}
-
-          {REGION_LABELS.map((r) => (
-            <span
-              key={r.label}
-              className="pointer-events-none absolute select-none whitespace-nowrap text-[10.5px] font-bold uppercase tracking-wide text-[#8B979C]"
-              style={{ left: `${r.x * 100}%`, top: `${r.y * 100}%`, transform: "translate(-50%, -50%)" }}
-            >
-              {r.label}
-            </span>
-          ))}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/uploads/locations-map-background.png"
+            alt=""
+            className="pointer-events-none absolute inset-0 h-full w-full select-none rounded-[22px] object-cover"
+          />
 
           {LOCATIONS.map((pin, i) => {
             const d = devById(pin.id);
