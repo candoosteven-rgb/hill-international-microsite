@@ -13,11 +13,7 @@
 // calibrated against known real-world airport/city locations visible on
 // it (Heathrow, Luton, Stansted, London City) via a linear lat/lon -> pixel
 // fit, then converted to lat/lon for every development and back to pixel
-// fractions. Bristol's three developments fall right at/past this
-// particular crop's bottom-left edge (the image doesn't extend far enough
-// south-west to show Bristol itself, only the Severn Estuary mouth
-// leading to it) and are nudged to the visible corner rather than placed
-// at their literal (off-canvas) computed position.
+// fractions.
 
 export interface LocationPin {
   id: string;
@@ -60,10 +56,10 @@ export const LOCATIONS: LocationPin[] = [
   // Oxford
   { id: "canalside-quarter", x: 0.4871, y: 0.5832, href: "https://canalside-overseas.netlify.app/", external: true },
 
-  // Bristol (nudged onto the visible corner - see file header)
-  { id: "clifton-collection", x: 0.022, y: 0.890, href: "https://thecliftoncollection.millerhare.com/", external: true },
-  { id: "baltic-wharf", x: 0.030, y: 0.905, href: "/developments/baltic-wharf", external: false },
-  { id: "southville-collection", x: 0.038, y: 0.920, href: "/developments/southville-collection", external: false },
+  // Bristol
+  { id: "clifton-collection", x: 0.1134, y: 0.8142, href: "https://thecliftoncollection.millerhare.com/", external: true },
+  { id: "baltic-wharf", x: 0.1169, y: 0.8254, href: "/developments/baltic-wharf", external: false },
+  { id: "southville-collection", x: 0.1169, y: 0.8294, href: "/developments/southville-collection", external: false },
 
   // West Midlands
   { id: "ribbon-quarter", x: 0.4157, y: 0.1039, href: "/developments/ribbon-quarter", external: false },
