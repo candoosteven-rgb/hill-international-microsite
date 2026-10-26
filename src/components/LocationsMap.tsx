@@ -6,7 +6,7 @@ import { devById, pageDataFor } from "@/lib/data";
 import { autoFacts } from "@/lib/facts";
 import { resolveImage, buildShots } from "@/lib/image";
 import Icon from "@/components/Icon";
-import { LOCATIONS, REGION_LABELS, type LocationPin } from "@/data/LOCATIONS_MAP";
+import { LOCATIONS, REGION_LABELS, REGION_BLOBS, type LocationPin } from "@/data/LOCATIONS_MAP";
 
 const FACT_ICON_NAMES: Parameters<typeof Icon>[0]["name"][] = [
   "f_homes",
@@ -98,10 +98,6 @@ export default function LocationsMap() {
 
   return (
     <div className="mx-auto max-w-[1180px] px-4 py-8 md:px-8 md:py-10">
-      <div className="mb-5 flex items-center gap-3">
-        <img src="/uploads/hill-logo-transparent.png" alt="Hill International" className="h-9 w-auto" />
-      </div>
-
       <p className="mb-6 max-w-[640px] text-[14.5px] leading-relaxed text-[#5C6B71]">
         Hover over a development to explore further. Click on a number or development name to visit its dedicated
         page or interactive experience.
@@ -110,13 +106,29 @@ export default function LocationsMap() {
       <div className="flex flex-col gap-8 lg:flex-row">
         {/* Map */}
         <div
-          className="relative w-full flex-none overflow-visible rounded-[22px] bg-[#F5F5F7] lg:w-[68%]"
+          className="relative w-full flex-none overflow-visible rounded-[22px] border border-[#E3E9EC] bg-[#F0ECE6] lg:w-[68%]"
           style={{ aspectRatio: "1.65" }}
         >
+          {/* Soft region blobs give the pins visual landmass context without
+              claiming cartographic accuracy (no GIS data source available). */}
+          {REGION_BLOBS.map((b) => (
+            <div
+              key={b.label}
+              className="pointer-events-none absolute rounded-full bg-[rgba(31,58,71,0.07)]"
+              style={{
+                left: `${b.x * 100}%`,
+                top: `${b.y * 100}%`,
+                width: `${b.w * 100}%`,
+                height: `${b.h * 100}%`,
+                transform: "translate(-50%, -50%)",
+              }}
+            />
+          ))}
+
           {REGION_LABELS.map((r) => (
             <span
               key={r.label}
-              className="pointer-events-none absolute select-none whitespace-nowrap text-[10.5px] font-bold uppercase tracking-wide text-[#B6BEC2]"
+              className="pointer-events-none absolute select-none whitespace-nowrap text-[10.5px] font-bold uppercase tracking-wide text-[#8B979C]"
               style={{ left: `${r.x * 100}%`, top: `${r.y * 100}%`, transform: "translate(-50%, -50%)" }}
             >
               {r.label}
@@ -146,7 +158,7 @@ export default function LocationsMap() {
                 </PinLink>
 
                 {isActive && (
-                  <div className="absolute bottom-[calc(100%+8px)] left-1/2 z-30 -translate-x-1/2">
+                  <div className="absolute left-1/2 top-1/2 z-30 -translate-x-1/2 -translate-y-full">
                     <DevCardPreview pin={pin} />
                   </div>
                 )}

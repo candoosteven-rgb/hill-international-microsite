@@ -73,3 +73,17 @@ export const REGION_LABELS: { label: string; x: number; y: number }[] = [
   { label: "LONDON", x: 0.84, y: 0.965 },
   { label: "BRISTOL", x: 0.075, y: 0.875 },
 ];
+
+// Soft ellipses centred on each pin cluster, purely to give the schematic
+// map some visual landmass structure (see LocationsMap.tsx) - not a real
+// county boundary.
+export const REGION_BLOBS: { label: string; x: number; y: number; w: number; h: number }[] = [
+  { label: "west-midlands", x: 0.40, y: 0.085, w: 0.16, h: 0.14 },
+  { label: "cambridgeshire", x: 0.955, y: 0.26, w: 0.19, h: 0.14 },
+  { label: "oxfordshire", x: 0.488, y: 0.664, w: 0.14, h: 0.12 },
+  { label: "buckinghamshire", x: 0.74, y: 0.765, w: 0.17, h: 0.14 },
+  { label: "hertfordshire", x: 0.845, y: 0.544, w: 0.14, h: 0.12 },
+  { label: "london", x: 0.86, y: 0.88, w: 0.24, h: 0.22 },
+  { label: "bristol", x: 0.03, y: 0.952, w: 0.16, h: 0.14 },
+];
+
