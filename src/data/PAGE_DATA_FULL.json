@@ -213,13 +213,13 @@
         "avail": true
       },
       {
-        "plot": "Forest View, Apartment F1.19",
+        "plot": "Forest View, Apartment F1.31",
         "building": "-",
         "floor": "-",
         "beds": 1,
         "baths": 1,
         "size": 546,
-        "price": 355000,
+        "price": 357500,
         "avail": true
       },
       {
@@ -243,32 +243,32 @@
         "avail": true
       },
       {
-        "plot": "Forest View, Apartment F1.51",
+        "plot": "Forest View, Apartment F1.63",
         "building": "-",
         "floor": "-",
         "beds": 2,
         "baths": 1,
         "size": 769,
-        "price": 467500,
+        "price": 470000,
         "avail": true
       },
       {
-        "plot": "Forest View, Apartment F1.24",
+        "plot": "Forest View, Apartment F1.48",
         "building": "-",
         "floor": "-",
         "beds": 2,
         "baths": 1,
         "size": 704,
-        "price": 467500,
+        "price": 472500,
         "avail": true
       },
       {
-        "plot": "Forest View, Duplex F2.1",
+        "plot": "Forest View, Duplex F2.2",
         "building": "-",
         "floor": "-",
         "beds": 2,
         "baths": 1,
-        "size": 907,
+        "size": 921,
         "price": 535000,
         "avail": true
       },
