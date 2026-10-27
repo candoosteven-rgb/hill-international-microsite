@@ -11,7 +11,7 @@ import Reveal from "@/components/Reveal";
 import Icon from "@/components/Icon";
 import DestinationBoard from "@/components/DestinationBoard";
 
-const REGION_BANNERS: Record<string, string> = {
+export const REGION_BANNERS: Record<string, string> = {
   London: "uploads/opt/london-skyline.jpg",
   Cambridge: "uploads/cambridge-region-banner.jpg",
   Oxford: "uploads/opt/oxford-region-banner.jpg",

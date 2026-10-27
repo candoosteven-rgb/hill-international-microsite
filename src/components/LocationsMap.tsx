@@ -7,6 +7,8 @@ import { autoFacts } from "@/lib/facts";
 import { resolveImage, buildShots } from "@/lib/image";
 import { useLanguage } from "@/lib/i18n";
 import Icon from "@/components/Icon";
+import DestinationBoard from "@/components/DestinationBoard";
+import { REGION_BANNERS } from "@/components/Developments";
 import { LOCATIONS, type LocationPin } from "@/data/LOCATIONS_MAP";
 
 function factsFor(devId: string): { k: string; v: string }[] {
@@ -369,7 +371,34 @@ export default function LocationsMap() {
               .filter(([region]) => regionFilter === "all" || region === regionFilter)
               .map(([region, items]) => (
                 <div key={region} className="mb-6">
-                  <div className="mb-2.5 text-[11px] font-bold uppercase tracking-wide text-[#8B979C]">{region}</div>
+                  {region in REGION_BANNERS ? (
+                    <div className="relative mb-3 h-[108px] overflow-hidden rounded-[14px]">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={resolveImage(REGION_BANNERS[region], region)}
+                        alt={region}
+                        loading="lazy"
+                        className="hi-banner-drift absolute inset-0 h-full w-full object-cover"
+                      />
+                      <div
+                        className="absolute inset-0"
+                        style={{
+                          background:
+                            "linear-gradient(0deg, rgba(15,32,39,0.88) 0%, rgba(15,32,39,0.3) 55%, rgba(15,32,39,0.05) 100%)",
+                        }}
+                      />
+                      <div className="absolute inset-x-3.5 bottom-3 flex items-end justify-between gap-2">
+                        <h3 className="text-[19px] font-bold tracking-tight text-[#F9F5F3]">
+                          <DestinationBoard text={region} />
+                        </h3>
+                        <span className="rounded-full bg-black/28 px-2.5 py-1 text-[11px] font-semibold text-white/85">
+                          {items.length}
+                        </span>
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="mb-2.5 text-[11px] font-bold uppercase tracking-wide text-[#8B979C]">{region}</div>
+                  )}
                   <ul className="flex flex-col gap-1.5">
                     {items.map(({ pin, name, num }) => {
                       const d = devById(pin.id)!;
