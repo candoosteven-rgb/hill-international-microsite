@@ -21,6 +21,14 @@ const FACT_ICON_NAMES: Parameters<typeof Icon>[0]["name"][] = [
   "f_warranty",
 ];
 
+// Matches the colour this site already uses for the live/coming-soon
+// status pill elsewhere (see statusMetaFor in lib/data.ts).
+const LIVE_COLOR = "#2E86D8";
+const COMING_SOON_COLOR = "#C98A6B";
+function statusColorFor(status: string | undefined) {
+  return status === "live" ? LIVE_COLOR : COMING_SOON_COLOR;
+}
+
 function factIconFor(key: string) {
   if (key === "f_launch") return "rocket" as const;
   if (key === "f_ev") return "ev" as const;
@@ -31,22 +39,24 @@ function PinLink({
   pin,
   children,
   className,
+  style,
   onClick,
 }: {
   pin: LocationPin;
   children: React.ReactNode;
   className?: string;
+  style?: React.CSSProperties;
   onClick?: () => void;
 }) {
   if (pin.external) {
     return (
-      <a href={pin.href} target="_blank" rel="noopener noreferrer" className={className} onClick={onClick}>
+      <a href={pin.href} target="_blank" rel="noopener noreferrer" className={className} style={style} onClick={onClick}>
         {children}
       </a>
     );
   }
   return (
-    <Link href={pin.href} className={className} onClick={onClick}>
+    <Link href={pin.href} className={className} style={style} onClick={onClick}>
       {children}
     </Link>
   );
@@ -139,9 +149,10 @@ export default function LocationsMap() {
               >
                 <PinLink
                   pin={pin}
-                  className={`flex items-center justify-center rounded-full border-2 text-[11px] font-bold shadow-[0_2px_8px_rgba(15,32,39,0.25)] transition-transform duration-200 ${
-                    isActive ? "h-8 w-8 scale-110 border-white bg-[#C1560F] text-white" : "h-6 w-6 border-white bg-[#28567A] text-white"
+                  className={`flex items-center justify-center rounded-full border-2 border-white text-[11px] font-bold text-white shadow-[0_2px_8px_rgba(15,32,39,0.25)] transition-transform duration-200 ${
+                    isActive ? "h-8 w-8 scale-110" : "h-6 w-6"
                   }`}
+                  style={{ background: isActive ? "#C1560F" : statusColorFor(d.status) }}
                   onClick={() => setActive((cur) => (cur === pin.id ? null : pin.id))}
                 >
                   {i + 1}
@@ -159,24 +170,41 @@ export default function LocationsMap() {
 
         {/* List */}
         <div className="w-full flex-1 overflow-y-auto lg:max-h-[640px]">
+          <div className="mb-5 flex flex-wrap items-center gap-x-5 gap-y-2">
+            <span className="flex items-center gap-2 text-[13px] font-medium text-[#5C6B71]">
+              <span className="h-2.5 w-2.5 flex-none rounded-full" style={{ background: LIVE_COLOR }} />
+              Live
+            </span>
+            <span className="flex items-center gap-2 text-[13px] font-medium text-[#5C6B71]">
+              <span className="h-2.5 w-2.5 flex-none rounded-full" style={{ background: COMING_SOON_COLOR }} />
+              Coming soon
+            </span>
+          </div>
+
           {Object.entries(
-            LOCATIONS.reduce<Record<string, { pin: LocationPin; name: string; num: number }[]>>((groups, pin, i) => {
-              const d = devById(pin.id);
-              if (!d) return groups;
-              (groups[d.region] ||= []).push({ pin, name: d.name, num: i + 1 });
-              return groups;
-            }, {})
+            LOCATIONS.reduce<Record<string, { pin: LocationPin; name: string; num: number; status?: string }[]>>(
+              (groups, pin, i) => {
+                const d = devById(pin.id);
+                if (!d) return groups;
+                (groups[d.region] ||= []).push({ pin, name: d.name, num: i + 1, status: d.status });
+                return groups;
+              },
+              {}
+            )
           ).map(([region, items]) => (
             <div key={region} className="mb-6">
               <div className="mb-2.5 text-[11px] font-bold uppercase tracking-wide text-[#8B979C]">{region}</div>
               <ul className="flex flex-col gap-1.5">
-                {items.map(({ pin, name, num }) => (
+                {items.map(({ pin, name, num, status }) => (
                   <li key={pin.id}>
                     <PinLink
                       pin={pin}
                       className="flex items-center gap-3 rounded-[10px] px-2 py-2 text-[14px] text-[#1F3A47] transition-colors duration-150 hover:bg-[#F5F5F7]"
                     >
-                      <span className="flex h-6 w-6 flex-none items-center justify-center rounded-full bg-[#28567A] text-[11px] font-bold text-white">
+                      <span
+                        className="flex h-6 w-6 flex-none items-center justify-center rounded-full text-[11px] font-bold text-white"
+                        style={{ background: statusColorFor(status) }}
+                      >
                         {num}
                       </span>
                       <span className="font-medium">{name}</span>
