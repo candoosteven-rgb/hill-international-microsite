@@ -278,7 +278,7 @@
         "floor": "-",
         "beds": 3,
         "baths": 1,
-        "size": 1119,
+        "size": 1173,
         "price": 632500,
         "avail": true
       }
@@ -475,6 +475,16 @@
         "baths": 1,
         "size": 668,
         "price": 555000,
+        "avail": true
+      },
+      {
+        "plot": "£10,000 furniture pack* available",
+        "building": "-",
+        "floor": "-",
+        "beds": 0,
+        "baths": 1,
+        "size": 0,
+        "price": 10000,
         "avail": true
       },
       {
@@ -796,8 +806,18 @@
         "floor": "-",
         "beds": 2,
         "baths": 1,
-        "size": 796,
+        "size": 797,
         "price": 545000,
+        "avail": true
+      },
+      {
+        "plot": "Foxtail House, Apartment 45",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 791,
+        "price": 560000,
         "avail": true
       },
       {
@@ -821,17 +841,17 @@
         "avail": true
       },
       {
-        "plot": "Foxtail House, Apartment 57",
+        "plot": "Foxtail House, Apartment 66",
         "building": "-",
         "floor": "-",
         "beds": 2,
         "baths": 1,
-        "size": 791,
-        "price": 585000,
+        "size": 835,
+        "price": 595000,
         "avail": true
       },
       {
-        "plot": "Foxtail House, Apartment 66",
+        "plot": "Marram House, Apartment 96",
         "building": "-",
         "floor": "-",
         "beds": 2,
@@ -3545,16 +3565,6 @@
         "avail": true
       },
       {
-        "plot": "The Franklin Building, Apartment B22",
-        "building": "-",
-        "floor": "-",
-        "beds": 2,
-        "baths": 1,
-        "size": 681,
-        "price": 399950,
-        "avail": true
-      },
-      {
         "plot": "The Kestrel Building, Number D11",
         "building": "-",
         "floor": "-",
@@ -3571,6 +3581,16 @@
         "beds": 2,
         "baths": 1,
         "size": 668,
+        "price": 399950,
+        "avail": true
+      },
+      {
+        "plot": "The Franklin Building, Apartment B22",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 681,
         "price": 399950,
         "avail": true
       },
@@ -3595,33 +3615,23 @@
         "avail": true
       },
       {
-        "plot": "The Perrin, Number 69",
+        "plot": "The Willow, Number 519",
         "building": "-",
         "floor": "-",
         "beds": 3,
         "baths": 1,
-        "size": 1347,
-        "price": 599950,
+        "size": 1132,
+        "price": 649950,
         "avail": true
       },
       {
-        "plot": "5% Deposit Contribution up to the value of £33,998*",
-        "building": "-",
-        "floor": "-",
-        "beds": 0,
-        "baths": 1,
-        "size": 0,
-        "price": 33998,
-        "avail": true
-      },
-      {
-        "plot": "The Oak, Number 342",
+        "plot": "The Willow, Number 546",
         "building": "-",
         "floor": "-",
         "beds": 3,
         "baths": 1,
-        "size": 1217,
-        "price": 679950,
+        "size": 1132,
+        "price": 669950,
         "avail": true
       }
     ],
