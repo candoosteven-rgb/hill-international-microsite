@@ -29,7 +29,11 @@ const AUTO_FACTS: Record<string, { k: string; v: string }[]> = {
 };
 
 function bedsFromTagline(tagline?: string | null): number[] {
-  const found = Array.from(new Set(((tagline || "").match(/\d+/g) || []).map(Number)))
+  // Only treat digits in the tagline as bedroom counts if it actually
+  // mentions beds - otherwise an unrelated number (e.g. "15.7-acre" site
+  // size) gets misread as a bedroom count.
+  if (!tagline || !/bed/i.test(tagline)) return [1, 2];
+  const found = Array.from(new Set((tagline.match(/\d+/g) || []).map(Number)))
     .filter((n) => n > 0 && n < 8)
     .sort((a, b) => a - b);
   return found.length ? found : [1, 2];
