@@ -113,78 +113,80 @@ export default function LocationsMap() {
         page or interactive experience.
       </p>
 
-      <div
-        className="relative w-full overflow-visible rounded-[22px] border border-[#E3E9EC] bg-[#F0ECE6]"
-        style={{ aspectRatio: "1824 / 968" }}
-      >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/uploads/locations-map-background.png"
-          alt=""
-          className="pointer-events-none absolute inset-0 h-full w-full select-none rounded-[22px] object-cover"
-        />
+      <div className="flex flex-col gap-8 lg:flex-row">
+        <div
+          className="relative w-full flex-none overflow-visible rounded-[22px] border border-[#E3E9EC] bg-[#F0ECE6] lg:w-[72%]"
+          style={{ aspectRatio: "1824 / 968" }}
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/uploads/locations-map-background.png"
+            alt=""
+            className="pointer-events-none absolute inset-0 h-full w-full select-none rounded-[22px] object-cover"
+          />
 
-        {LOCATIONS.map((pin, i) => {
-          const d = devById(pin.id);
-          if (!d) return null;
-          const isActive = active === pin.id;
-          return (
-            <div
-              key={pin.id}
-              className={`absolute ${isActive ? "z-50" : "z-0"}`}
-              style={{ left: `${pin.x * 100}%`, top: `${pin.y * 100}%`, transform: "translate(-50%, -50%)" }}
-              onMouseEnter={() => setActive(pin.id)}
-              onMouseLeave={() => setActive((cur) => (cur === pin.id ? null : cur))}
-            >
-              <PinLink
-                pin={pin}
-                className={`flex items-center justify-center rounded-full border-2 text-[11px] font-bold shadow-[0_2px_8px_rgba(15,32,39,0.25)] transition-transform duration-200 ${
-                  isActive ? "h-8 w-8 scale-110 border-white bg-[#C1560F] text-white" : "h-6 w-6 border-white bg-[#28567A] text-white"
-                }`}
-                onClick={() => setActive((cur) => (cur === pin.id ? null : pin.id))}
-              >
-                {i + 1}
-              </PinLink>
-
-              {isActive && (
-                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-full">
-                  <DevCardPreview pin={pin} />
-                </div>
-              )}
-            </div>
-          );
-        })}
-      </div>
-
-      {/* List */}
-      <div className="mt-8 grid grid-cols-2 gap-x-8 gap-y-6 sm:grid-cols-3 lg:grid-cols-4">
-        {Object.entries(
-          LOCATIONS.reduce<Record<string, { pin: LocationPin; name: string; num: number }[]>>((groups, pin, i) => {
+          {LOCATIONS.map((pin, i) => {
             const d = devById(pin.id);
-            if (!d) return groups;
-            (groups[d.region] ||= []).push({ pin, name: d.name, num: i + 1 });
-            return groups;
-          }, {})
-        ).map(([region, items]) => (
-          <div key={region}>
-            <div className="mb-2.5 text-[11px] font-bold uppercase tracking-wide text-[#8B979C]">{region}</div>
-            <ul className="flex flex-col gap-1.5">
-              {items.map(({ pin, name, num }) => (
-                <li key={pin.id}>
-                  <PinLink
-                    pin={pin}
-                    className="flex items-center gap-3 rounded-[10px] px-2 py-2 text-[14px] text-[#1F3A47] transition-colors duration-150 hover:bg-[#F5F5F7]"
-                  >
-                    <span className="flex h-6 w-6 flex-none items-center justify-center rounded-full bg-[#28567A] text-[11px] font-bold text-white">
-                      {num}
-                    </span>
-                    <span className="font-medium">{name}</span>
-                  </PinLink>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
+            if (!d) return null;
+            const isActive = active === pin.id;
+            return (
+              <div
+                key={pin.id}
+                className={`absolute ${isActive ? "z-50" : "z-0"}`}
+                style={{ left: `${pin.x * 100}%`, top: `${pin.y * 100}%`, transform: "translate(-50%, -50%)" }}
+                onMouseEnter={() => setActive(pin.id)}
+                onMouseLeave={() => setActive((cur) => (cur === pin.id ? null : cur))}
+              >
+                <PinLink
+                  pin={pin}
+                  className={`flex items-center justify-center rounded-full border-2 text-[11px] font-bold shadow-[0_2px_8px_rgba(15,32,39,0.25)] transition-transform duration-200 ${
+                    isActive ? "h-8 w-8 scale-110 border-white bg-[#C1560F] text-white" : "h-6 w-6 border-white bg-[#28567A] text-white"
+                  }`}
+                  onClick={() => setActive((cur) => (cur === pin.id ? null : pin.id))}
+                >
+                  {i + 1}
+                </PinLink>
+
+                {isActive && (
+                  <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-full">
+                    <DevCardPreview pin={pin} />
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
+
+        {/* List */}
+        <div className="w-full flex-1 overflow-y-auto lg:max-h-[640px]">
+          {Object.entries(
+            LOCATIONS.reduce<Record<string, { pin: LocationPin; name: string; num: number }[]>>((groups, pin, i) => {
+              const d = devById(pin.id);
+              if (!d) return groups;
+              (groups[d.region] ||= []).push({ pin, name: d.name, num: i + 1 });
+              return groups;
+            }, {})
+          ).map(([region, items]) => (
+            <div key={region} className="mb-6">
+              <div className="mb-2.5 text-[11px] font-bold uppercase tracking-wide text-[#8B979C]">{region}</div>
+              <ul className="flex flex-col gap-1.5">
+                {items.map(({ pin, name, num }) => (
+                  <li key={pin.id}>
+                    <PinLink
+                      pin={pin}
+                      className="flex items-center gap-3 rounded-[10px] px-2 py-2 text-[14px] text-[#1F3A47] transition-colors duration-150 hover:bg-[#F5F5F7]"
+                    >
+                      <span className="flex h-6 w-6 flex-none items-center justify-center rounded-full bg-[#28567A] text-[11px] font-bold text-white">
+                        {num}
+                      </span>
+                      <span className="font-medium">{name}</span>
+                    </PinLink>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
