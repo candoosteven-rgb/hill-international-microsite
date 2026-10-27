@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import LocationsMap from "@/components/LocationsMap";
+import Footer from "@/components/Footer";
 
 // Intentionally not linked from Nav/Footer and excluded from indexing -
 // this is a standalone, unlisted page.
@@ -24,6 +25,7 @@ export default function LocationsPage() {
       </div>
 
       <LocationsMap />
+      <Footer />
     </div>
   );
 }
