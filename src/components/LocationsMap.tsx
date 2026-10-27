@@ -9,11 +9,18 @@ import { useLanguage } from "@/lib/i18n";
 import Icon from "@/components/Icon";
 import { LOCATIONS, type LocationPin } from "@/data/LOCATIONS_MAP";
 
-function completionFor(devId: string): string | null {
+function factsFor(devId: string): { k: string; v: string }[] {
   const pd = pageDataFor(devId);
   const d = devById(devId);
-  const facts = pd?.facts?.length ? pd.facts : d ? autoFacts(d) : [];
-  return facts.find((f) => f.k === "f_completion")?.v || null;
+  return pd?.facts?.length ? pd.facts : d ? autoFacts(d) : [];
+}
+
+function completionFor(devId: string): string | null {
+  return factsFor(devId).find((f) => f.k === "f_completion")?.v || null;
+}
+
+function homesFor(devId: string): string | null {
+  return factsFor(devId).find((f) => f.k === "f_types")?.v || null;
 }
 
 function PinButton({
@@ -119,6 +126,105 @@ function PreviewCard({ pin, onOpen }: { pin: LocationPin; onOpen: (id: string) =
   );
 }
 
+// Tap/click on a pin or list row opens this - a centered popover fixed over
+// the whole viewport (never anchored to the pin, so it can never land
+// off-screen or "below the fold" regardless of where on the map that pin
+// sits or how short the map is on a small screen), styled and animated
+// exactly like the main site's CompareModal/DevCard (hi-fade backdrop,
+// hi-pop card, hero + overlaid pills, rust price).
+function DevModal({ pin, onClose, onOpen }: { pin: LocationPin; onClose: () => void; onOpen: (id: string) => void }) {
+  const { t } = useLanguage();
+  const d = devById(pin.id);
+  if (!d) return null;
+
+  const status = statusMetaFor(d, t);
+  const price = priceLabelFor(d, t);
+  const completion = completionFor(d.id);
+  const homes = homesFor(d.id);
+  const hero = resolveImage(buildShots(d)[0], d.name);
+
+  const openDevelopment = () => {
+    if (pin.external) onOpen(pin.id);
+    onClose();
+  };
+
+  return (
+    <div
+      className="hi-fade fixed inset-0 z-[150] flex items-center justify-center p-4 md:p-6"
+      style={{ background: "rgba(15,25,30,0.72)", backdropFilter: "blur(6px)" }}
+      onClick={onClose}
+    >
+      <div
+        className="hi-pop relative max-h-[88vh] w-full max-w-[380px] overflow-y-auto rounded-[18px] bg-white shadow-[0_24px_60px_rgba(15,32,39,0.4)]"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <button
+          type="button"
+          onClick={onClose}
+          aria-label="Close"
+          className="absolute right-3.5 top-3.5 z-[2] flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-[#1F3A47] shadow-[0_2px_8px_rgba(15,32,39,0.25)]"
+        >
+          <Icon name="close" className="h-4 w-4" />
+        </button>
+
+        <div className="relative h-[180px] w-full overflow-hidden">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={hero} alt={d.name} className="h-full w-full object-cover" />
+          <div className="absolute inset-x-3.5 top-3.5 flex items-start gap-2">
+            <span className="inline-flex min-w-0 items-start gap-1.5 rounded-full bg-[rgba(31,58,71,0.85)] px-3 py-1.5 text-[11px] font-semibold uppercase tracking-wide text-white">
+              <Icon name="pin" className="mt-0.5 h-2.5 w-2.5 flex-none" />
+              <span>{d.locationLabel || d.region}</span>
+            </span>
+            <span
+              className="inline-flex flex-none items-center gap-1.5 whitespace-nowrap rounded-full px-3 py-1.5 text-[11px] font-bold"
+              style={{ background: status.bg, color: status.color }}
+            >
+              {status.isLive && <span className="hi-pulse h-1.5 w-1.5 flex-none rounded-full bg-[#7CFFB2]" />}
+              {status.label}
+            </span>
+          </div>
+        </div>
+
+        <div className="p-5">
+          <h3 className="mb-1.5 text-[19px] font-bold leading-tight tracking-tight text-[#1F3A47]">{d.name}</h3>
+          <bdi className="mb-4 block text-[16px] font-bold tracking-tight text-[#C1560F]">{price}</bdi>
+
+          <div className="grid grid-cols-2 gap-x-3 gap-y-3 border-t border-[#E3E9EC] pt-4">
+            {homes && (
+              <div>
+                <div className="text-[10px] font-semibold uppercase tracking-wide text-[#8B979C]">Homes</div>
+                <div className="text-[13.5px] font-semibold text-[#1F3A47]">{homes}</div>
+              </div>
+            )}
+            {completion && (
+              <div>
+                <div className="text-[10px] font-semibold uppercase tracking-wide text-[#8B979C]">Completion</div>
+                <div className="text-[13.5px] font-semibold text-[#1F3A47]">{completion}</div>
+              </div>
+            )}
+          </div>
+
+          <div className="mt-5 -mx-5 -mb-5 flex items-center justify-between gap-3 rounded-b-[18px] border-t border-[#BCCDD7] bg-[#D2DFE6] px-5 py-4">
+            {pin.external ? (
+              <button
+                type="button"
+                onClick={openDevelopment}
+                className="inline-flex items-center gap-2 text-[14px] font-semibold text-[#28567A]"
+              >
+                Open development <Icon name="arrowRight" className="h-3.5 w-3.5" />
+              </button>
+            ) : (
+              <Link href={pin.href} className="inline-flex items-center gap-2 text-[14px] font-semibold text-[#28567A]">
+                Open development <Icon name="arrowRight" className="h-3.5 w-3.5" />
+              </Link>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 // Order the region filter pills by first appearance in LOCATIONS, which is
 // already grouped region-by-region - avoids depending on the sitewide
 // `regions` list, which may include regions with no pins on this map.
@@ -133,12 +239,13 @@ export default function LocationsMap() {
   const [openDev, setOpenDev] = useState<string | null>(null);
   const [regionFilter, setRegionFilter] = useState<string>("all");
 
-  // Hover takes momentary precedence (mouse users get instant feedback);
-  // falls back to the tapped/clicked selection otherwise, so touch users
-  // (who never fire hover) still see the card they tapped for.
+  // Hover gives mouse users an instant at-pin glance; a tap/click opens the
+  // full centered popover (DevModal) independently of hover, so touch users
+  // (who never fire hover) still get the same result from a tap.
   const active = hovered ?? selected;
   const openPin = LOCATIONS.find((p) => p.id === openDev) || null;
   const openDevData = openPin ? devById(openPin.id) : null;
+  const selectedPin = LOCATIONS.find((p) => p.id === selected) || null;
 
   const select = (id: string) => setSelected((cur) => (cur === id ? cur : id));
   const changeRegion = (r: string) => {
@@ -223,7 +330,7 @@ export default function LocationsMap() {
                   {i + 1}
                 </PinButton>
 
-                {isActive && (
+                {hovered === pin.id && selected !== pin.id && (
                   <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-full">
                     <PreviewCard pin={pin} onOpen={setOpenDev} />
                   </div>
@@ -231,6 +338,10 @@ export default function LocationsMap() {
               </div>
             );
           })}
+
+          {selectedPin && (
+            <DevModal pin={selectedPin} onClose={() => setSelected(null)} onOpen={setOpenDev} />
+          )}
         </div>
 
         {/* List */}
