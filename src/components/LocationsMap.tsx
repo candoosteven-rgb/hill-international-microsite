@@ -169,8 +169,8 @@ export default function LocationsMap() {
         </div>
 
         {/* List */}
-        <div className="w-full flex-1 overflow-y-auto lg:max-h-[640px]">
-          <div className="mb-5 flex flex-wrap items-center gap-x-5 gap-y-2">
+        <div className="flex w-full flex-1 flex-col lg:max-h-[640px]">
+          <div className="mb-5 flex flex-none flex-wrap items-center gap-x-5 gap-y-2">
             <span className="flex items-center gap-2 text-[13px] font-medium text-[#5C6B71]">
               <span className="h-2.5 w-2.5 flex-none rounded-full" style={{ background: LIVE_COLOR }} />
               Live
@@ -181,6 +181,7 @@ export default function LocationsMap() {
             </span>
           </div>
 
+          <div className="overflow-y-auto">
           {Object.entries(
             LOCATIONS.reduce<Record<string, { pin: LocationPin; name: string; num: number; status?: string }[]>>(
               (groups, pin, i) => {
@@ -214,6 +215,7 @@ export default function LocationsMap() {
               </ul>
             </div>
           ))}
+          </div>
         </div>
       </div>
     </div>
