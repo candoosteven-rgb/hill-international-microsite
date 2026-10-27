@@ -61,7 +61,7 @@ function DevCardPreview({ pin }: { pin: LocationPin }) {
 
   return (
     <div
-      className="w-[260px] overflow-hidden rounded-[16px] bg-white shadow-[0_12px_32px_rgba(15,32,39,0.28)]"
+      className="hi-pop w-[260px] origin-bottom overflow-hidden rounded-[16px] bg-white shadow-[0_12px_32px_rgba(15,32,39,0.28)]"
       onClick={(e) => e.stopPropagation()}
     >
       <img src={hero} alt={d.name} className="h-[120px] w-full object-cover" />
