@@ -114,15 +114,27 @@ function SummaryPanel({ pin, onOpen }: { pin: LocationPin; onOpen: (id: string) 
   );
 }
 
+// Order the region filter pills by first appearance in LOCATIONS, which is
+// already grouped region-by-region - avoids depending on the sitewide
+// `regions` list, which may include regions with no pins on this map.
+const REGION_ORDER = Array.from(
+  new Set(LOCATIONS.map((p) => devById(p.id)?.region).filter((r): r is string => !!r))
+);
+
 export default function LocationsMap() {
   const { t } = useLanguage();
   const [selected, setSelected] = useState<string | null>(null);
   const [openDev, setOpenDev] = useState<string | null>(null);
+  const [regionFilter, setRegionFilter] = useState<string>("all");
   const selectedPin = LOCATIONS.find((p) => p.id === selected) || null;
   const openPin = LOCATIONS.find((p) => p.id === openDev) || null;
   const openDevData = openPin ? devById(openPin.id) : null;
 
   const select = (id: string) => setSelected((cur) => (cur === id ? cur : id));
+  const changeRegion = (r: string) => {
+    setRegionFilter(r);
+    setSelected(null);
+  };
 
   return (
     <div className="mx-auto max-w-[1440px] px-4 py-8 md:px-8 md:py-10">
@@ -136,6 +148,27 @@ export default function LocationsMap() {
       >
         Discover where we are building
       </h1>
+
+      <div className="mb-8 flex flex-wrap gap-2">
+        {["all", ...REGION_ORDER].map((r) => {
+          const isActive = regionFilter === r;
+          return (
+            <button
+              key={r}
+              type="button"
+              onClick={() => changeRegion(r)}
+              className="hi-pill rounded-full px-5 py-2.5 text-sm font-semibold"
+              style={{
+                border: `1px solid ${isActive ? "#16313D" : "#D7DEE2"}`,
+                background: isActive ? "#16313D" : "#fff",
+                color: isActive ? "#fff" : "#28567A",
+              }}
+            >
+              {r === "all" ? "All regions" : r}
+            </button>
+          );
+        })}
+      </div>
 
       <div className="flex flex-col gap-8 lg:flex-row">
         <div className="flex w-full flex-none flex-col gap-6 lg:w-[72%]">
@@ -154,12 +187,18 @@ export default function LocationsMap() {
               const d = devById(pin.id);
               if (!d) return null;
               const isSelected = selected === pin.id;
+              const matchesFilter = regionFilter === "all" || d.region === regionFilter;
               const status = statusMetaFor(d, t);
               return (
                 <div
                   key={pin.id}
-                  className={`absolute ${isSelected ? "z-50" : "z-0"}`}
-                  style={{ left: `${pin.x * 100}%`, top: `${pin.y * 100}%`, transform: "translate(-50%, -50%)" }}
+                  className={`absolute transition-opacity duration-200 ${isSelected ? "z-50" : "z-0"}`}
+                  style={{
+                    left: `${pin.x * 100}%`,
+                    top: `${pin.y * 100}%`,
+                    transform: "translate(-50%, -50%)",
+                    opacity: matchesFilter ? 1 : 0.22,
+                  }}
                 >
                   <PinButton
                     selected={isSelected}
@@ -201,7 +240,9 @@ export default function LocationsMap() {
                 (groups[d.region] ||= []).push({ pin, name: d.name, num: i + 1 });
                 return groups;
               }, {})
-            ).map(([region, items]) => (
+            )
+              .filter(([region]) => regionFilter === "all" || region === regionFilter)
+              .map(([region, items]) => (
               <div key={region} className="mb-6">
                 <div className="mb-2.5 text-[11px] font-bold uppercase tracking-wide text-[#8B979C]">{region}</div>
                 <ul className="flex flex-col gap-1.5">
