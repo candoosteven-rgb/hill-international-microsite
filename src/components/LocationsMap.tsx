@@ -301,28 +301,6 @@ export default function LocationsMap() {
             className="pointer-events-none absolute inset-0 h-full w-full select-none rounded-[22px] object-cover"
           />
 
-          {/* River Avon, shown as a simple decorative reference (not to
-              scale) so it's clear Clifton Collection sits across the water
-              from Baltic Wharf/Southville Collection - the three pins are
-              only a few pixels apart on an England-wide map, too close for
-              an accurately-traced river to read, so this is placed just
-              clear of the cluster rather than literally under the pins. */}
-          <div className="pointer-events-none absolute z-10" style={{ left: "12.3%", top: "81.0%" }}>
-            <svg width="30" height="36" viewBox="0 0 30 36" style={{ overflow: "visible" }}>
-              <path
-                d="M15 0 C 8 6, 20 11, 13 17 C 7 22, 18 27, 12 36"
-                stroke="#6fa8d6"
-                strokeWidth="2"
-                fill="none"
-                strokeLinecap="round"
-                opacity="0.85"
-              />
-            </svg>
-            <span className="absolute left-7 top-3.5 whitespace-nowrap text-[9px] font-semibold italic text-[#5a86ad]">
-              River Avon
-            </span>
-          </div>
-
           {LOCATIONS.map((pin, i) => {
             const d = devById(pin.id);
             if (!d) return null;
