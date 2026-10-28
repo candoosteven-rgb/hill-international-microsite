@@ -841,7 +841,7 @@
         "avail": true
       },
       {
-        "plot": "Foxtail House, Apartment 66",
+        "plot": "Marram House, Apartment 96",
         "building": "-",
         "floor": "-",
         "beds": 2,
@@ -851,7 +851,7 @@
         "avail": true
       },
       {
-        "plot": "Marram House, Apartment 96",
+        "plot": "Foxtail House, Apartment 66",
         "building": "-",
         "floor": "-",
         "beds": 2,
@@ -2866,6 +2866,16 @@
         "avail": true
       },
       {
+        "plot": "Ida Court, Apartment 55",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 783,
+        "price": 464950,
+        "avail": true
+      },
+      {
         "plot": "5% DEPOSIT CONTRIBUTION UP TO £23,247*",
         "building": "-",
         "floor": "-",
@@ -2882,16 +2892,6 @@
         "beds": 2,
         "baths": 1,
         "size": 758,
-        "price": 464950,
-        "avail": true
-      },
-      {
-        "plot": "Ida Court, Apartment 55",
-        "building": "-",
-        "floor": "-",
-        "beds": 2,
-        "baths": 1,
-        "size": 783,
         "price": 464950,
         "avail": true
       },
