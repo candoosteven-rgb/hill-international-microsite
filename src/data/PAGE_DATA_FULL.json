@@ -3605,13 +3605,23 @@
         "avail": true
       },
       {
-        "plot": "The Willow, Number 546",
+        "plot": "5% Deposit Contribution up to the value of £33,998*",
+        "building": "-",
+        "floor": "-",
+        "beds": 0,
+        "baths": 1,
+        "size": 0,
+        "price": 33998,
+        "avail": true
+      },
+      {
+        "plot": "The Oak, Number 342",
         "building": "-",
         "floor": "-",
         "beds": 3,
         "baths": 1,
-        "size": 1132,
-        "price": 669950,
+        "size": 1217,
+        "price": 679950,
         "avail": true
       }
     ],
