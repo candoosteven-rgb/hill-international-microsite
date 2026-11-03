@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { devById, gbp, pageDataFor, priceLabelFor, statusMetaFor } from "@/lib/data";
 import { devBlurb, devBlurb2, devHeadline, devText } from "@/lib/blurb";
 import { autoFacts } from "@/lib/facts";
+import { USPS } from "@/data/USPS";
 import { resolveImage, placeholderFor, buildShots } from "@/lib/image";
 import { VIDEO_EMBEDS, isYoutubeEmbed, youtubeWatchUrl } from "@/lib/video";
 import { resolveLogo } from "@/lib/logo";
@@ -237,6 +238,7 @@ export default function DevelopmentPage({ id }: { id: string }) {
   const logoSrc = resolveLogo(d.logo, d.name);
   const locCats = Object.keys(pd.amenities);
   const facts = pd.facts.length ? pd.facts : autoFacts(d);
+  const usp = USPS[d.id];
 
   const goRegister = () => scrollToSection("dp-register");
   const goDevelopments = () => router.push("/#hi-developments");
@@ -447,25 +449,48 @@ export default function DevelopmentPage({ id }: { id: string }) {
               )}
             </div>
 
-            {!!facts.length && (
+            {usp ? (
               <div className="rounded-[22px] bg-[#F5F5F7] p-8 md:p-9">
-                <div className="mb-6.5 text-[19px] font-bold tracking-tight text-[#1F3A47]">{dp("facts_title")}</div>
-                <div className="grid grid-cols-2 gap-6 sm:grid-cols-3">
-                  {facts.map((f) => {
-                    const factIcon =
-                      f.k === "f_launch" ? "rocket" : f.k === "f_ev" ? "ev" : FACT_ICON_NAMES.find((n) => n === f.k);
-                    return (
-                      <div key={f.k}>
-                        <div className="mb-3 flex h-8 w-8 items-center justify-center rounded-full bg-[rgba(193,86,15,0.12)]">
-                          {factIcon && <Icon name={factIcon} className="h-4 w-4 text-[#C1560F]" />}
-                        </div>
-                        <div className="mb-1.5 text-[24px] font-bold tracking-tight text-[#1F3A47]">{f.v || "—"}</div>
-                        <div className="text-[13px] font-medium leading-snug text-[#6E7B80]">{dp(f.k)}</div>
+                {usp.eyebrow && <div className="hi-eyebrow mb-5 text-[#C1560F]">{usp.eyebrow}</div>}
+                <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+                  {usp.items.map((item, i) => (
+                    <div key={i} className="flex items-start gap-3.5">
+                      <div className="mt-0.5 flex h-9 w-9 flex-none items-center justify-center rounded-full bg-[rgba(193,86,15,0.12)]">
+                        <Icon name={item.icon} className="h-4.5 w-4.5 text-[#C1560F]" />
                       </div>
-                    );
-                  })}
+                      <div>
+                        <div className="text-[14.5px] font-bold leading-snug text-[#1F3A47]">{item.title}</div>
+                        {item.lines?.map((l, j) => (
+                          <div key={j} className="text-[13px] leading-snug text-[#6E7B80]">
+                            {l}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
+            ) : (
+              !!facts.length && (
+                <div className="rounded-[22px] bg-[#F5F5F7] p-8 md:p-9">
+                  <div className="mb-6.5 text-[19px] font-bold tracking-tight text-[#1F3A47]">{dp("facts_title")}</div>
+                  <div className="grid grid-cols-2 gap-6 sm:grid-cols-3">
+                    {facts.map((f) => {
+                      const factIcon =
+                        f.k === "f_launch" ? "rocket" : f.k === "f_ev" ? "ev" : FACT_ICON_NAMES.find((n) => n === f.k);
+                      return (
+                        <div key={f.k}>
+                          <div className="mb-3 flex h-8 w-8 items-center justify-center rounded-full bg-[rgba(193,86,15,0.12)]">
+                            {factIcon && <Icon name={factIcon} className="h-4 w-4 text-[#C1560F]" />}
+                          </div>
+                          <div className="mb-1.5 text-[24px] font-bold tracking-tight text-[#1F3A47]">{f.v || "—"}</div>
+                          <div className="text-[13px] font-medium leading-snug text-[#6E7B80]">{dp(f.k)}</div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              )
             )}
           </div>
 

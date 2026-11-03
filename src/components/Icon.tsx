@@ -419,6 +419,61 @@ const paths: Record<string, React.ReactNode> = {
       <path d="M7 11.5V16c0 1.4 2.2 2.5 5 2.5s5-1.1 5-2.5v-4.5" />
     </>
   ),
+  walk: (
+    <>
+      <circle cx="12" cy="4.5" r="1.8" fill="currentColor" stroke="none" />
+      <path d="M12 7v4.5" />
+      <path d="M12 9l-3.5 2M12 9l3 2.8" />
+      <path d="M12 11.5l-2 3-2.5 4M12 11.5l2.5 2.5 1 4.5" />
+    </>
+  ),
+  medal: (
+    <>
+      <circle cx="12" cy="8" r="4.3" />
+      <path
+        d="M12 5.8l.9 1.9 2.1.3-1.5 1.5.35 2.1L12 10.6l-1.85 1-.35-2.1-1.5-1.5 2.1-.3z"
+        fill="currentColor"
+        stroke="none"
+      />
+      <path d="M9.3 11.5L7 20l5-2.2L17 20l-2.3-8.5" />
+    </>
+  ),
+  trophy: (
+    <>
+      <path d="M7 4h10v3a5 5 0 0 1-5 5 5 5 0 0 1-5-5z" />
+      <path d="M7 5H4v1a4 4 0 0 0 4 4M17 5h3v1a4 4 0 0 1-4 4" />
+      <path d="M12 12v4" />
+      <path d="M8.5 20h7l-1-2.5h-5z" />
+    </>
+  ),
+  diamond: (
+    <>
+      <path d="M6.5 4h11L21 9l-9 11L3 9z" />
+      <path d="M3 9h18M9 4l3 5 3-5M12 9l-3 11M12 9l3 11" strokeWidth={1.1} />
+    </>
+  ),
+  anchor: (
+    <>
+      <circle cx="12" cy="5" r="2" />
+      <path d="M12 7v13" />
+      <path d="M6 13a6 6 0 0 0 6 7 6 6 0 0 0 6-7" />
+      <path d="M8 10h8" />
+    </>
+  ),
+  sun: (
+    <>
+      <circle cx="12" cy="12" r="4" />
+      <path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1" />
+    </>
+  ),
+  bike: (
+    <>
+      <circle cx="6" cy="17" r="3.2" />
+      <circle cx="18" cy="17" r="3.2" />
+      <path d="M6 17l4-9h5l3 9" />
+      <path d="M10 8H8M9.5 8l3 5h4.5" />
+    </>
+  ),
 };
 
 export default function Icon({
