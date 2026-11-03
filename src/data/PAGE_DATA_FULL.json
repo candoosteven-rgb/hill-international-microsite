@@ -791,16 +791,6 @@
     },
     "plots": [
       {
-        "plot": "Marram House, Apartment 89",
-        "building": "-",
-        "floor": "-",
-        "beds": 1,
-        "baths": 1,
-        "size": 551,
-        "price": 395000,
-        "avail": true
-      },
-      {
         "plot": "Marram House, Apartment 79",
         "building": "-",
         "floor": "-",
