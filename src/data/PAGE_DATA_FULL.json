@@ -3829,7 +3829,17 @@
         "avail": true
       },
       {
-        "plot": "The Brook. Number 109",
+        "plot": "Stamp Duty Paid up to the value of £4,997*",
+        "building": "-",
+        "floor": "-",
+        "beds": 0,
+        "baths": 1,
+        "size": 0,
+        "price": 4997,
+        "avail": true
+      },
+      {
+        "plot": "The Brook, Number 109",
         "building": "-",
         "floor": "-",
         "beds": 2,
@@ -3846,16 +3856,6 @@
         "baths": 1,
         "size": 1491,
         "price": 549950,
-        "avail": true
-      },
-      {
-        "plot": "Available with Stamp Duty Paid up to the value of £17,997*",
-        "building": "-",
-        "floor": "-",
-        "beds": 0,
-        "baths": 1,
-        "size": 0,
-        "price": 17997,
         "avail": true
       },
       {
