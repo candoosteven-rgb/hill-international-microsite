@@ -3595,6 +3595,26 @@
         "avail": true
       },
       {
+        "plot": "5% Deposit Contribution up to the value of £29,998*",
+        "building": "-",
+        "floor": "-",
+        "beds": 0,
+        "baths": 1,
+        "size": 0,
+        "price": 29998,
+        "avail": true
+      },
+      {
+        "plot": "The Perrin, Number 62",
+        "building": "-",
+        "floor": "-",
+        "beds": 3,
+        "baths": 1,
+        "size": 1347,
+        "price": 599950,
+        "avail": true
+      },
+      {
         "plot": "The Willow, Number 519",
         "building": "-",
         "floor": "-",
@@ -3602,26 +3622,6 @@
         "baths": 1,
         "size": 1132,
         "price": 649950,
-        "avail": true
-      },
-      {
-        "plot": "5% Deposit Contribution up to the value of £33,998*",
-        "building": "-",
-        "floor": "-",
-        "beds": 0,
-        "baths": 1,
-        "size": 0,
-        "price": 33998,
-        "avail": true
-      },
-      {
-        "plot": "The Oak, Number 342",
-        "building": "-",
-        "floor": "-",
-        "beds": 3,
-        "baths": 1,
-        "size": 1217,
-        "price": 679950,
         "avail": true
       }
     ],
