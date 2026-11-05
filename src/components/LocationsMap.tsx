@@ -264,19 +264,15 @@ function DevStripCard({ pin, active, onSelect }: { pin: LocationPin; active: boo
   );
 }
 
-// Order the region filter pills by first appearance in LOCATIONS, which is
-// already grouped region-by-region - avoids depending on the sitewide
-// `regions` list, which may include regions with no pins on this map.
-const REGION_ORDER = Array.from(
-  new Set(LOCATIONS.map((p) => devById(p.id)?.region).filter((r): r is string => !!r))
-);
+// Only live developments are shown on this page - computed once at module
+// scope since it doesn't depend on component state.
+const LIVE_LOCATIONS = LOCATIONS.filter((p) => devById(p.id)?.status === "live");
 
 export default function LocationsMap() {
   const { t } = useLanguage();
   const [selected, setSelected] = useState<string | null>(null);
   const [hovered, setHovered] = useState<string | null>(null);
   const [openDev, setOpenDev] = useState<string | null>(null);
-  const [regionFilter, setRegionFilter] = useState<string>("all");
   const stripRef = useRef<HTMLDivElement | null>(null);
   const scrollStrip = (dir: 1 | -1) => stripRef.current?.scrollBy({ left: dir * 360, behavior: "smooth" });
 
@@ -284,50 +280,14 @@ export default function LocationsMap() {
   // full centered popover (DevModal) independently of hover, so touch users
   // (who never fire hover) still get the same result from a tap.
   const active = hovered ?? selected;
-  const openPin = LOCATIONS.find((p) => p.id === openDev) || null;
+  const openPin = LIVE_LOCATIONS.find((p) => p.id === openDev) || null;
   const openDevData = openPin ? devById(openPin.id) : null;
-  const selectedPin = LOCATIONS.find((p) => p.id === selected) || null;
+  const selectedPin = LIVE_LOCATIONS.find((p) => p.id === selected) || null;
 
   const select = (id: string) => setSelected((cur) => (cur === id ? cur : id));
-  const changeRegion = (r: string) => {
-    setRegionFilter(r);
-    setSelected(null);
-  };
 
   return (
-    <div className="mx-auto max-w-[1440px] px-4 py-8 md:px-8 md:py-10">
-      <div className="hi-eyebrow mb-6 flex items-center gap-3 text-[#C1560F]">
-        <Icon name="pin" className="h-4 w-4" />
-        OUR LOCATIONS
-      </div>
-      <h1
-        className="mb-8 font-bold tracking-tight text-[#1F3A47]"
-        style={{ fontSize: "clamp(30px,4.2vw,48px)", lineHeight: 1.03, letterSpacing: "-0.03em" }}
-      >
-        Discover where we are building
-      </h1>
-
-      <div className="mb-8 flex flex-wrap gap-2">
-        {["all", ...REGION_ORDER].map((r) => {
-          const isActive = regionFilter === r;
-          return (
-            <button
-              key={r}
-              type="button"
-              onClick={() => changeRegion(r)}
-              className="hi-pill rounded-full px-5 py-2.5 text-sm font-semibold"
-              style={{
-                border: `1px solid ${isActive ? "#16313D" : "#D7DEE2"}`,
-                background: isActive ? "#16313D" : "#fff",
-                color: isActive ? "#fff" : "#28567A",
-              }}
-            >
-              {r === "all" ? "All regions" : r}
-            </button>
-          );
-        })}
-      </div>
-
+    <div className="mx-auto max-w-[1440px] px-4 pb-8 pt-4 md:px-8 md:pb-10 md:pt-5">
       <div className="flex flex-col gap-8 lg:flex-row">
         <div
           className="relative w-full flex-none overflow-visible rounded-[22px] border border-[#E3E9EC] bg-[#F0ECE6] lg:w-[72%]"
@@ -340,11 +300,10 @@ export default function LocationsMap() {
             className="pointer-events-none absolute inset-0 h-full w-full select-none rounded-[22px] object-cover"
           />
 
-          {LOCATIONS.map((pin, i) => {
+          {LIVE_LOCATIONS.map((pin, i) => {
             const d = devById(pin.id);
             if (!d) return null;
             const isActive = active === pin.id;
-            const matchesFilter = regionFilter === "all" || d.region === regionFilter;
             const status = statusMetaFor(d, t);
             return (
               <div
@@ -354,7 +313,6 @@ export default function LocationsMap() {
                   left: `${pin.x * 100}%`,
                   top: `${pin.y * 100}%`,
                   transform: "translate(-50%, -50%)",
-                  opacity: matchesFilter ? 1 : 0.22,
                 }}
                 onMouseLeave={() => setHovered((cur) => (cur === pin.id ? null : cur))}
               >
@@ -387,28 +345,18 @@ export default function LocationsMap() {
 
         {/* List */}
         <div className="flex w-full flex-1 flex-col lg:max-h-[640px]">
-          <div className="mb-5 flex flex-none flex-wrap items-center gap-x-5 gap-y-2">
-            <span className="flex items-center gap-2 text-[13px] font-medium text-[#5C6B71]">
-              <span className="h-2.5 w-2.5 flex-none rounded-full" style={{ background: "#2E86D8" }} />
-              Live
-            </span>
-            <span className="flex items-center gap-2 text-[13px] font-medium text-[#5C6B71]">
-              <span className="h-2.5 w-2.5 flex-none rounded-full" style={{ background: "#C98A6B" }} />
-              Coming soon
-            </span>
-          </div>
-
           <div className="overflow-y-auto">
             {Object.entries(
-              LOCATIONS.reduce<Record<string, { pin: LocationPin; name: string; num: number }[]>>((groups, pin, i) => {
-                const d = devById(pin.id);
-                if (!d) return groups;
-                (groups[d.region] ||= []).push({ pin, name: d.name, num: i + 1 });
-                return groups;
-              }, {})
-            )
-              .filter(([region]) => regionFilter === "all" || region === regionFilter)
-              .map(([region, items]) => (
+              LIVE_LOCATIONS.reduce<Record<string, { pin: LocationPin; name: string; num: number }[]>>(
+                (groups, pin, i) => {
+                  const d = devById(pin.id);
+                  if (!d) return groups;
+                  (groups[d.region] ||= []).push({ pin, name: d.name, num: i + 1 });
+                  return groups;
+                },
+                {}
+              )
+            ).map(([region, items]) => (
                 <div key={region} className="mb-6">
                   {region in REGION_BANNERS ? (
                     <div className="relative mb-3 h-[108px] overflow-hidden rounded-[14px]">
@@ -504,10 +452,7 @@ export default function LocationsMap() {
           className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2"
           style={{ scrollbarWidth: "none" }}
         >
-          {LOCATIONS.filter((pin) => {
-            const d = devById(pin.id);
-            return d && (regionFilter === "all" || d.region === regionFilter);
-          }).map((pin) => (
+          {LIVE_LOCATIONS.map((pin) => (
             <DevStripCard key={pin.id} pin={pin} active={active === pin.id} onSelect={() => select(pin.id)} />
           ))}
         </div>
