@@ -312,6 +312,20 @@ function DevStripCard({
           background: "linear-gradient(180deg, rgba(15,32,39,0.05) 0%, rgba(15,32,39,0.2) 45%, rgba(15,32,39,0.92) 100%)",
         }}
       />
+      {/* A diagonal scrim anchored top-left guarantees contrast for the logo
+          against any photo (bright sky, pale render, whatever), rather than
+          leaving it to sit directly on unpredictable image content - with a
+          faint sheen along its edge for a touch of polish. */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background: "linear-gradient(135deg, rgba(15,32,39,0.6) 0%, rgba(15,32,39,0.3) 30%, transparent 56%)",
+        }}
+      />
+      <div
+        className="absolute inset-0"
+        style={{ background: "linear-gradient(120deg, transparent 42%, rgba(255,255,255,0.16) 50%, transparent 60%)" }}
+      />
 
       {logo && (
         <div className="absolute inset-x-3.5 top-3.5">
