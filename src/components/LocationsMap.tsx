@@ -1,9 +1,7 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import Link from "next/link";
-import mapboxgl from "mapbox-gl";
-import "mapbox-gl/dist/mapbox-gl.css";
 import { devById, pageDataFor, priceLabelFor, statusMetaFor } from "@/lib/data";
 import { autoFacts } from "@/lib/facts";
 import { resolveImage, buildShots } from "@/lib/image";
@@ -12,11 +10,24 @@ import { useLanguage } from "@/lib/i18n";
 import Icon from "@/components/Icon";
 import { LOCATIONS, type LocationPin } from "@/data/LOCATIONS_MAP";
 
-// Public Mapbox token, inlined at build time (see .github/workflows/deploy.yml
-// -> the MAPBOX_TOKEN repo secret). Safe to ship client-side - public tokens
-// are meant for this and are restricted by URL in the Mapbox dashboard, not
-// by secrecy.
-const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN || "";
+// Temporarily back on the illustrated map (not Mapbox) until a working
+// Mapbox token is in place - see git history (commits introducing
+// MapboxMap) to restore it once that's sorted. LOCATIONS_MAP.ts still
+// stores real lat/lng (needed for Mapbox and more precise anyway), so this
+// reruns the same lat/lon -> pixel-fraction fit used to originally place
+// these pins on /uploads/locations-map-background.png (1824x968), fit
+// against Heathrow/Luton/Stansted/London City's known real coordinates.
+function toMapFraction(lat: number, lng: number): { x: number; y: number } {
+  const refLat = 51.47;
+  const refLon = -0.4543;
+  const refX = 1293;
+  const refY = 783;
+  const scaleX = 502.0;
+  const scaleY = -728.4;
+  const px = refX + (lng - refLon) * scaleX;
+  const py = refY + (lat - refLat) * scaleY;
+  return { x: px / 1824, y: py / 968 };
+}
 
 function factsFor(devId: string): { k: string; v: string }[] {
   const pd = pageDataFor(devId);
@@ -32,192 +43,108 @@ function homesFor(devId: string): string | null {
   return factsFor(devId).find((f) => f.k === "f_types")?.v || null;
 }
 
-// A real, pannable/zoomable Mapbox GL map. Markers are plain DOM elements
-// (Mapbox's own marker API, not React) since Mapbox owns their positioning
-// as the map moves; clicking one drives the same `onSelect` state as a list
-// row or strip card, and hovering shows a lightweight native Mapbox popup
-// (so it repositions correctly on pan/zoom, which a React-positioned card
-// anchored by CSS percentages could never do on a real map).
-function MapboxMap({
-  locations,
-  activeId,
-  hoveredId,
-  selectedId,
-  onSelect,
-  onHover,
+function PinButton({
+  active,
+  className,
+  style,
+  onClick,
+  onMouseEnter,
+  children,
+  "aria-label": ariaLabel,
 }: {
-  locations: LocationPin[];
-  activeId: string | null;
-  hoveredId: string | null;
-  selectedId: string | null;
-  onSelect: (id: string) => void;
-  onHover: React.Dispatch<React.SetStateAction<string | null>>;
+  active: boolean;
+  className?: string;
+  style?: React.CSSProperties;
+  onClick: () => void;
+  onMouseEnter: () => void;
+  children: React.ReactNode;
+  "aria-label": string;
 }) {
+  // A 44px tap target (the WCAG-recommended touch-target minimum) around a
+  // visually smaller badge, so the dense Cambridge/London clusters don't
+  // have to grow into each other just to stay tappable. Hover-out is
+  // handled by the wrapper that also contains the preview card (see
+  // LocationsMap), since leaving the button for the card above it
+  // shouldn't close it.
+  return (
+    <button
+      type="button"
+      aria-label={ariaLabel}
+      aria-pressed={active}
+      onClick={onClick}
+      onMouseEnter={onMouseEnter}
+      className="flex h-11 w-11 items-center justify-center"
+    >
+      <span className={className} style={style}>
+        {children}
+      </span>
+    </button>
+  );
+}
+
+// Hover (mouse) shows this instantly; a tap/click on touch shows it too and
+// keeps it open regardless of subsequent pointer movement - neither input
+// depends on the other.
+function PreviewCard({ pin, onOpen }: { pin: LocationPin; onOpen: (id: string) => void }) {
   const { t } = useLanguage();
-  const containerRef = useRef<HTMLDivElement | null>(null);
-  const mapRef = useRef<mapboxgl.Map | null>(null);
-  const markersRef = useRef<Record<string, mapboxgl.Marker>>({});
-  const popupRef = useRef<mapboxgl.Popup | null>(null);
+  const d = devById(pin.id);
+  if (!d) return null;
 
-  // Mount the map once, starting zoomed well out over the country and
-  // flying down into the framed view once tiles are ready - an entrance
-  // rather than a snap-to-position, since a map that reveals itself reads
-  // as a far more immersive first moment than one that's just suddenly there.
-  useEffect(() => {
-    if (!containerRef.current || mapRef.current || !MAPBOX_TOKEN) return;
-    mapboxgl.accessToken = MAPBOX_TOKEN;
-    const map = new mapboxgl.Map({
-      container: containerRef.current,
-      style: "mapbox://styles/mapbox/light-v11",
-      center: [-1.8, 52.8],
-      zoom: 4.1,
-      pitch: 18,
-    });
-    map.addControl(new mapboxgl.NavigationControl({ showCompass: false }), "top-right");
-    mapRef.current = map;
+  const status = statusMetaFor(d, t);
+  const price = priceLabelFor(d, t);
+  const completion = completionFor(d.id);
+  const hero = resolveImage(buildShots(d)[0], d.name);
 
-    if (locations.length) {
-      const bounds = new mapboxgl.LngLatBounds();
-      locations.forEach((p) => bounds.extend([p.lng, p.lat]));
-      map.once("load", () => {
-        const framed = map.cameraForBounds(bounds, { padding: 56, maxZoom: 11 });
-        if (!framed) return;
-        map.flyTo({ ...framed, pitch: 0, duration: 2600, curve: 1.3, essential: true });
-      });
-    }
-
-    return () => {
-      map.remove();
-      mapRef.current = null;
-    };
-    // Intentionally mount-only - `locations` only used for the initial fit.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  // (Re)build one marker per pin whenever the pin set changes.
-  useEffect(() => {
-    const map = mapRef.current;
-    if (!map) return;
-    Object.values(markersRef.current).forEach((m) => m.remove());
-    markersRef.current = {};
-
-    locations.forEach((pin, i) => {
-      const d = devById(pin.id);
-      if (!d) return;
-      const status = statusMetaFor(d, t);
-
-      // Mapbox sets its own positioning transform directly on the element
-      // passed to Marker - this outer button must never have its own
-      // transform touched, or it'll jump off its lng/lat. A 44px tap target
-      // (WCAG minimum) around a visually smaller badge, same pattern as the
-      // rest of the site's pins; the active-state scale/color lives on the
-      // inner span instead.
-      const el = document.createElement("button");
-      el.type = "button";
-      el.setAttribute("aria-label", d.name);
-      el.className = "flex h-11 w-11 cursor-pointer items-center justify-center";
-
-      const badge = document.createElement("span");
-      badge.className =
-        "flex h-7 w-7 items-center justify-center rounded-full border-2 border-white text-[11px] font-bold text-white shadow-[0_2px_8px_rgba(15,32,39,0.25)] transition-transform duration-200";
-      badge.style.background = status.dot;
-      badge.textContent = String(i + 1);
-      el.appendChild(badge);
-
-      el.addEventListener("click", (e) => {
-        e.stopPropagation();
-        // Dive the camera toward the pin first, then open its card partway
-        // through the flight - so the selection reads as "arriving" at the
-        // location rather than a full-screen card just appearing over the
-        // map instantly.
-        const current = mapRef.current;
-        if (current) {
-          current.flyTo({
-            center: [pin.lng, pin.lat],
-            zoom: Math.max(current.getZoom(), 13),
-            duration: 900,
-            curve: 1.2,
-            essential: true,
-          });
-        }
-        window.setTimeout(() => onSelect(pin.id), current ? 420 : 0);
-      });
-      el.addEventListener("mouseenter", () => onHover(pin.id));
-      el.addEventListener("mouseleave", () => onHover((cur) => (cur === pin.id ? null : cur)));
-
-      markersRef.current[pin.id] = new mapboxgl.Marker({ element: el, anchor: "center" })
-        .setLngLat([pin.lng, pin.lat])
-        .addTo(map);
-    });
-
-    return () => {
-      Object.values(markersRef.current).forEach((m) => m.remove());
-      markersRef.current = {};
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [locations]);
-
-  // Reflect active (hovered ?? selected) styling on the marker badges - the
-  // inner span only, never the outer element Mapbox positions (see above).
-  useEffect(() => {
-    locations.forEach((pin) => {
-      const marker = markersRef.current[pin.id];
-      if (!marker) return;
-      const badge = marker.getElement().firstElementChild as HTMLElement | null;
-      if (!badge) return;
-      const d = devById(pin.id);
-      const status = d ? statusMetaFor(d, t) : null;
-      const isActive = activeId === pin.id;
-      badge.style.background = isActive ? "#C1560F" : status?.dot || "#2E86D8";
-      badge.style.transform = isActive ? "scale(1.3)" : "scale(1)";
-    });
-  }, [activeId, locations, t]);
-
-  // A hover (from the marker itself, a list row or a strip card) shows a
-  // lightweight popup pinned to that pin's real map coordinate - never when
-  // it's the tap/click-selected pin, since that already opens the full
-  // DevModal instead.
-  useEffect(() => {
-    const map = mapRef.current;
-    popupRef.current?.remove();
-    popupRef.current = null;
-    if (!map || !hoveredId || hoveredId === selectedId) return;
-
-    const pin = locations.find((p) => p.id === hoveredId);
-    const d = pin ? devById(pin.id) : null;
-    if (!pin || !d) return;
-    const status = statusMetaFor(d, t);
-    const price = priceLabelFor(d, t);
-
-    const node = document.createElement("div");
-    node.className = "hi-pop min-w-[190px] rounded-[14px] bg-white p-3.5 shadow-[0_12px_32px_rgba(15,32,39,0.28)]";
-    node.innerHTML = `
-      <div class="mb-1 flex flex-wrap items-center gap-2">
-        <div class="text-[14px] font-bold tracking-tight text-[#1F3A47]">${d.name}</div>
-        <span class="inline-flex items-center rounded-full px-2 py-0.5 text-[10px] font-bold" style="background:${status.bg};color:${status.color}">${status.label}</span>
-      </div>
-      <div class="text-[12px] text-[#8B979C]">${d.locationLabel || d.region}</div>
-      <div class="mt-2 text-[13px] font-bold text-[#C1560F]">${price}</div>
-    `;
-
-    popupRef.current = new mapboxgl.Popup({ closeButton: false, closeOnClick: false, offset: 16 })
-      .setLngLat([pin.lng, pin.lat])
-      .setDOMContent(node)
-      .addTo(map);
-  }, [hoveredId, selectedId, locations, t]);
-
-  if (!MAPBOX_TOKEN) {
-    return (
-      <div className="flex h-full w-full flex-col items-center justify-center gap-2 rounded-[22px] bg-[#F5F5F7] p-8 text-center">
-        <div className="text-[14px] font-semibold text-[#1F3A47]">Map unavailable</div>
-        <div className="max-w-[320px] text-[13px] text-[#6E7B80]">
-          Set the NEXT_PUBLIC_MAPBOX_TOKEN build secret to enable the live map.
+  return (
+    <div
+      className="hi-pop w-[280px] origin-bottom overflow-hidden rounded-[16px] bg-white shadow-[0_12px_32px_rgba(15,32,39,0.28)]"
+      onClick={(e) => e.stopPropagation()}
+    >
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={hero} alt={d.name} className="h-[130px] w-full object-cover" />
+      <div className="p-4">
+        <div className="mb-1 flex flex-wrap items-center gap-2">
+          <div className="text-[15px] font-bold tracking-tight text-[#1F3A47]">{d.name}</div>
+          <span
+            className="inline-flex items-center rounded-full px-2 py-0.5 text-[10px] font-bold"
+            style={{ background: status.bg, color: status.color }}
+          >
+            {status.label}
+          </span>
         </div>
-      </div>
-    );
-  }
+        <div className="mb-3 text-[12px] text-[#8B979C]">{d.locationLabel || d.region}</div>
 
-  return <div ref={containerRef} className="h-full w-full" />;
+        <div className="mb-3.5 grid grid-cols-2 gap-x-3 gap-y-2">
+          <div>
+            <div className="text-[10px] font-semibold uppercase tracking-wide text-[#8B979C]">Price from</div>
+            <div className="text-[13px] font-bold text-[#1F3A47]">{price}</div>
+          </div>
+          {completion && (
+            <div>
+              <div className="text-[10px] font-semibold uppercase tracking-wide text-[#8B979C]">Completion</div>
+              <div className="text-[13px] font-bold text-[#1F3A47]">{completion}</div>
+            </div>
+          )}
+        </div>
+
+        {pin.external ? (
+          <button
+            type="button"
+            onClick={() => onOpen(pin.id)}
+            className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-[#C1560F]"
+          >
+            Open development
+            <Icon name="arrowRight" className="h-3 w-3" />
+          </button>
+        ) : (
+          <Link href={pin.href} className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-[#C1560F]">
+            Open development
+            <Icon name="arrowRight" className="h-3 w-3" />
+          </Link>
+        )}
+      </div>
+    </div>
+  );
 }
 
 // Tap/click on a pin or list row opens this - a centered popover fixed over
@@ -372,6 +299,7 @@ function DevStripCard({
 const LIVE_LOCATIONS = LOCATIONS.filter((p) => devById(p.id)?.status === "live");
 
 export default function LocationsMap() {
+  const { t } = useLanguage();
   const [selected, setSelected] = useState<string | null>(null);
   const [hovered, setHovered] = useState<string | null>(null);
   const [openDev, setOpenDev] = useState<string | null>(null);
@@ -389,61 +317,95 @@ export default function LocationsMap() {
   const select = (id: string) => setSelected((cur) => (cur === id ? cur : id));
 
   return (
-    <div className="flex min-h-0 flex-1 flex-col">
-      <div className="mx-auto flex w-full min-h-0 flex-1 flex-col px-4 pb-5 pt-4 md:px-8 md:pb-6 md:pt-5" style={{ maxWidth: 1440 }}>
-        <div className="relative w-full min-h-0 flex-1 overflow-hidden rounded-[22px] border border-[#E3E9EC]">
-          <MapboxMap
-            locations={LIVE_LOCATIONS}
-            activeId={active}
-            hoveredId={hovered}
-            selectedId={selected}
-            onSelect={select}
-            onHover={setHovered}
-          />
-          {selectedPin && <DevModal pin={selectedPin} onClose={() => setSelected(null)} onOpen={setOpenDev} />}
-        </div>
+    <div className="mx-auto w-full px-4 pb-8 pt-4 md:px-8 md:pb-10 md:pt-5" style={{ maxWidth: 1440 }}>
+      <div
+        className="relative w-full overflow-visible rounded-[22px] border border-[#E3E9EC] bg-[#F0ECE6]"
+        style={{ aspectRatio: "1824 / 968" }}
+      >
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/uploads/locations-map-background.png"
+          alt=""
+          className="pointer-events-none absolute inset-0 h-full w-full select-none rounded-[22px] object-cover"
+        />
 
-        {/* All-developments strip - doubles as the list of developments,
-            since a sidebar list duplicating it added nothing a real,
-            pannable map doesn't already show. Fixed height, so it (and the
-            map above it) always fit within the screen without scrolling. */}
-        <div className="relative mt-5 flex-none">
-          <div className="mb-3 flex items-center justify-between">
-            <div className="text-[13px] font-bold uppercase tracking-wide text-[#8B979C]">All developments</div>
-            <div className="flex gap-2">
-              <button
-                type="button"
-                aria-label="Scroll left"
-                onClick={() => scrollStrip(-1)}
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-[#D7DEE2] text-[#28567A]"
+        {LIVE_LOCATIONS.map((pin, i) => {
+          const d = devById(pin.id);
+          if (!d) return null;
+          const isActive = active === pin.id;
+          const status = statusMetaFor(d, t);
+          const { x, y } = toMapFraction(pin.lat, pin.lng);
+          return (
+            <div
+              key={pin.id}
+              className={`absolute transition-opacity duration-200 ${isActive ? "z-50" : "z-0"}`}
+              style={{ left: `${x * 100}%`, top: `${y * 100}%`, transform: "translate(-50%, -50%)" }}
+              onMouseLeave={() => setHovered((cur) => (cur === pin.id ? null : cur))}
+            >
+              <PinButton
+                active={isActive}
+                aria-label={d.name}
+                onClick={() => select(pin.id)}
+                onMouseEnter={() => setHovered(pin.id)}
+                className={`flex items-center justify-center rounded-full border-2 border-white text-[11px] font-bold text-white shadow-[0_2px_8px_rgba(15,32,39,0.25)] transition-transform duration-200 ${
+                  isActive ? "h-8 w-8 scale-110" : "h-6 w-6"
+                }`}
+                style={{ background: isActive ? "#C1560F" : status.dot }}
               >
-                <Icon name="chevronLeft" className="h-4 w-4" />
-              </button>
-              <button
-                type="button"
-                aria-label="Scroll right"
-                onClick={() => scrollStrip(1)}
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-[#D7DEE2] text-[#28567A]"
-              >
-                <Icon name="chevronRight" className="h-4 w-4" />
-              </button>
+                {i + 1}
+              </PinButton>
+
+              {hovered === pin.id && selected !== pin.id && (
+                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-full">
+                  <PreviewCard pin={pin} onOpen={setOpenDev} />
+                </div>
+              )}
             </div>
+          );
+        })}
+
+        {selectedPin && <DevModal pin={selectedPin} onClose={() => setSelected(null)} onOpen={setOpenDev} />}
+      </div>
+
+      {/* All-developments strip - doubles as the list of developments,
+          since a sidebar list duplicating it added nothing the map doesn't
+          already show. */}
+      <div className="relative mt-8">
+        <div className="mb-3 flex items-center justify-between">
+          <div className="text-[13px] font-bold uppercase tracking-wide text-[#8B979C]">All developments</div>
+          <div className="flex gap-2">
+            <button
+              type="button"
+              aria-label="Scroll left"
+              onClick={() => scrollStrip(-1)}
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-[#D7DEE2] text-[#28567A]"
+            >
+              <Icon name="chevronLeft" className="h-4 w-4" />
+            </button>
+            <button
+              type="button"
+              aria-label="Scroll right"
+              onClick={() => scrollStrip(1)}
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-[#D7DEE2] text-[#28567A]"
+            >
+              <Icon name="chevronRight" className="h-4 w-4" />
+            </button>
           </div>
-          <div
-            ref={stripRef}
-            className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2"
-            style={{ scrollbarWidth: "none" }}
-          >
-            {LIVE_LOCATIONS.map((pin) => (
-              <DevStripCard
-                key={pin.id}
-                pin={pin}
-                active={active === pin.id}
-                onSelect={() => select(pin.id)}
-                onHover={setHovered}
-              />
-            ))}
-          </div>
+        </div>
+        <div
+          ref={stripRef}
+          className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2"
+          style={{ scrollbarWidth: "none" }}
+        >
+          {LIVE_LOCATIONS.map((pin) => (
+            <DevStripCard
+              key={pin.id}
+              pin={pin}
+              active={active === pin.id}
+              onSelect={() => select(pin.id)}
+              onHover={setHovered}
+            />
+          ))}
         </div>
       </div>
 
