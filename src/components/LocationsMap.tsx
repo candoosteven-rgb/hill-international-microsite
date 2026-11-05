@@ -318,6 +318,48 @@ export default function LocationsMap() {
 
   return (
     <div className="mx-auto w-full px-4 pb-8 pt-4 md:px-8 md:pb-10 md:pt-5" style={{ maxWidth: 1440 }}>
+      {/* All-developments strip - doubles as the list of developments,
+          since a sidebar list duplicating it added nothing the map doesn't
+          already show. */}
+      <div className="relative mb-8">
+        <div className="mb-3 flex items-center justify-between">
+          <div className="text-[13px] font-bold uppercase tracking-wide text-[#8B979C]">All developments</div>
+          <div className="flex gap-2">
+            <button
+              type="button"
+              aria-label="Scroll left"
+              onClick={() => scrollStrip(-1)}
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-[#D7DEE2] text-[#28567A]"
+            >
+              <Icon name="chevronLeft" className="h-4 w-4" />
+            </button>
+            <button
+              type="button"
+              aria-label="Scroll right"
+              onClick={() => scrollStrip(1)}
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-[#D7DEE2] text-[#28567A]"
+            >
+              <Icon name="chevronRight" className="h-4 w-4" />
+            </button>
+          </div>
+        </div>
+        <div
+          ref={stripRef}
+          className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2"
+          style={{ scrollbarWidth: "none" }}
+        >
+          {LIVE_LOCATIONS.map((pin) => (
+            <DevStripCard
+              key={pin.id}
+              pin={pin}
+              active={active === pin.id}
+              onSelect={() => select(pin.id)}
+              onHover={setHovered}
+            />
+          ))}
+        </div>
+      </div>
+
       <div
         className="relative w-full overflow-visible rounded-[22px] border border-[#E3E9EC] bg-[#F0ECE6]"
         style={{ aspectRatio: "1824 / 968" }}
@@ -365,48 +407,6 @@ export default function LocationsMap() {
         })}
 
         {selectedPin && <DevModal pin={selectedPin} onClose={() => setSelected(null)} onOpen={setOpenDev} />}
-      </div>
-
-      {/* All-developments strip - doubles as the list of developments,
-          since a sidebar list duplicating it added nothing the map doesn't
-          already show. */}
-      <div className="relative mt-8">
-        <div className="mb-3 flex items-center justify-between">
-          <div className="text-[13px] font-bold uppercase tracking-wide text-[#8B979C]">All developments</div>
-          <div className="flex gap-2">
-            <button
-              type="button"
-              aria-label="Scroll left"
-              onClick={() => scrollStrip(-1)}
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-[#D7DEE2] text-[#28567A]"
-            >
-              <Icon name="chevronLeft" className="h-4 w-4" />
-            </button>
-            <button
-              type="button"
-              aria-label="Scroll right"
-              onClick={() => scrollStrip(1)}
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-[#D7DEE2] text-[#28567A]"
-            >
-              <Icon name="chevronRight" className="h-4 w-4" />
-            </button>
-          </div>
-        </div>
-        <div
-          ref={stripRef}
-          className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2"
-          style={{ scrollbarWidth: "none" }}
-        >
-          {LIVE_LOCATIONS.map((pin) => (
-            <DevStripCard
-              key={pin.id}
-              pin={pin}
-              active={active === pin.id}
-              onSelect={() => select(pin.id)}
-              onHover={setHovered}
-            />
-          ))}
-        </div>
       </div>
 
       {/* Hill shell for external vendor experiences - keeps the buyer on
