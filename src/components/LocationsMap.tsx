@@ -1,10 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Link from "next/link";
 import { devById, pageDataFor, priceLabelFor, statusMetaFor } from "@/lib/data";
 import { autoFacts } from "@/lib/facts";
 import { resolveImage, buildShots } from "@/lib/image";
+import { resolveLogo } from "@/lib/logo";
 import { useLanguage } from "@/lib/i18n";
 import Icon from "@/components/Icon";
 import DestinationBoard from "@/components/DestinationBoard";
@@ -227,6 +228,42 @@ function DevModal({ pin, onClose, onOpen }: { pin: LocationPin; onClose: () => v
   );
 }
 
+// A single branded card in the bottom "all developments" strip - logo on a
+// dark tile (falling back to a styled name if the development has no logo
+// asset yet), name and location below. Selecting a card does exactly what
+// selecting its pin or list row does, via the same `select` handler.
+function DevStripCard({ pin, active, onSelect }: { pin: LocationPin; active: boolean; onSelect: () => void }) {
+  const d = devById(pin.id);
+  if (!d) return null;
+  const logo = resolveLogo(d.logo, d.name);
+
+  return (
+    <button
+      type="button"
+      aria-pressed={active}
+      onClick={onSelect}
+      className="hi-pill flex w-[168px] flex-none snap-start flex-col overflow-hidden rounded-[14px] text-left transition-transform duration-200"
+      style={{
+        background: active ? "#C1560F" : "#16313D",
+        boxShadow: active ? "0 8px 20px rgba(193,86,15,0.35)" : "0 4px 14px rgba(15,32,39,0.18)",
+      }}
+    >
+      <div className="flex h-[76px] items-center justify-center px-4">
+        {logo ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img src={logo} alt="" className="max-h-10 max-w-[120px] object-contain" />
+        ) : (
+          <span className="text-center text-[15px] font-bold leading-tight text-white">{d.name}</span>
+        )}
+      </div>
+      <div className="border-t border-white/12 px-3.5 py-3">
+        <div className="truncate text-[12.5px] font-bold text-white">{d.name}</div>
+        <div className="truncate text-[11px] text-white/60">{d.locationLabel || d.region}</div>
+      </div>
+    </button>
+  );
+}
+
 // Order the region filter pills by first appearance in LOCATIONS, which is
 // already grouped region-by-region - avoids depending on the sitewide
 // `regions` list, which may include regions with no pins on this map.
@@ -240,6 +277,8 @@ export default function LocationsMap() {
   const [hovered, setHovered] = useState<string | null>(null);
   const [openDev, setOpenDev] = useState<string | null>(null);
   const [regionFilter, setRegionFilter] = useState<string>("all");
+  const stripRef = useRef<HTMLDivElement | null>(null);
+  const scrollStrip = (dir: 1 | -1) => stripRef.current?.scrollBy({ left: dir * 360, behavior: "smooth" });
 
   // Hover gives mouse users an instant at-pin glance; a tap/click opens the
   // full centered popover (DevModal) independently of hover, so touch users
@@ -434,6 +473,43 @@ export default function LocationsMap() {
                 </div>
               ))}
           </div>
+        </div>
+      </div>
+
+      {/* All-developments strip */}
+      <div className="relative mt-10">
+        <div className="mb-4 flex items-center justify-between">
+          <div className="text-[13px] font-bold uppercase tracking-wide text-[#8B979C]">All developments</div>
+          <div className="flex gap-2">
+            <button
+              type="button"
+              aria-label="Scroll left"
+              onClick={() => scrollStrip(-1)}
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-[#D7DEE2] text-[#28567A]"
+            >
+              <Icon name="chevronLeft" className="h-4 w-4" />
+            </button>
+            <button
+              type="button"
+              aria-label="Scroll right"
+              onClick={() => scrollStrip(1)}
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-[#D7DEE2] text-[#28567A]"
+            >
+              <Icon name="chevronRight" className="h-4 w-4" />
+            </button>
+          </div>
+        </div>
+        <div
+          ref={stripRef}
+          className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2"
+          style={{ scrollbarWidth: "none" }}
+        >
+          {LOCATIONS.filter((pin) => {
+            const d = devById(pin.id);
+            return d && (regionFilter === "all" || d.region === regionFilter);
+          }).map((pin) => (
+            <DevStripCard key={pin.id} pin={pin} active={active === pin.id} onSelect={() => select(pin.id)} />
+          ))}
         </div>
       </div>
 
