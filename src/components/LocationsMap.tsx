@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { devById, pageDataFor, priceLabelFor, statusMetaFor } from "@/lib/data";
 import { autoFacts } from "@/lib/facts";
@@ -261,9 +261,21 @@ function DevStripCard({
   onSelect: () => void;
   onHover: React.Dispatch<React.SetStateAction<string | null>>;
 }) {
+  const { t } = useLanguage();
+  const imgRef = useRef<HTMLImageElement | null>(null);
+  const [heroBroken, setHeroBroken] = useState(false);
+  // The image tag is already in the static HTML, so the browser can start
+  // (and fail) loading it before React hydrates and attaches `onError` -
+  // catches that race on mount, same as a normal post-hydration failure.
+  useEffect(() => {
+    if (imgRef.current?.complete && imgRef.current.naturalWidth === 0) setHeroBroken(true);
+  }, []);
+
   const d = devById(pin.id);
   if (!d) return null;
   const logo = resolveLogo(d.logo, d.name);
+  const price = priceLabelFor(d, t);
+  const hero = resolveImage(buildShots(d)[0], d.name);
 
   return (
     <button
@@ -272,23 +284,46 @@ function DevStripCard({
       onClick={onSelect}
       onMouseEnter={() => onHover(pin.id)}
       onMouseLeave={() => onHover((cur) => (cur === pin.id ? null : cur))}
-      className="hi-pill flex w-[168px] flex-none snap-start flex-col overflow-hidden rounded-[14px] text-left transition-transform duration-200 hover:-translate-y-1"
+      className="group relative h-[216px] w-[192px] flex-none snap-start overflow-hidden rounded-[16px] text-left transition-transform duration-200 hover:-translate-y-1"
       style={{
-        background: active ? "#C1560F" : "#16313D",
-        boxShadow: active ? "0 8px 20px rgba(193,86,15,0.35)" : "0 4px 14px rgba(15,32,39,0.18)",
+        boxShadow: active ? "0 10px 26px rgba(193,86,15,0.4)" : "0 6px 18px rgba(15,32,39,0.22)",
+        outline: active ? "2.5px solid #C1560F" : "2.5px solid transparent",
+        outlineOffset: "-2.5px",
       }}
     >
-      <div className="flex h-[76px] items-center justify-center px-4">
-        {logo ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img src={logo} alt="" className="max-h-11 max-w-[130px] object-contain" />
-        ) : (
-          <span className="text-center text-[15px] font-bold leading-tight text-white">{d.name}</span>
-        )}
-      </div>
-      <div className="border-t border-white/12 px-3.5 py-3">
-        <div className="truncate text-[12.5px] font-bold text-white">{d.name}</div>
-        <div className="truncate text-[11px] text-white/60">{d.locationLabel || d.region}</div>
+      {heroBroken ? (
+        <div
+          className="absolute inset-0"
+          style={{ background: "linear-gradient(158deg,#27454F 0%,#162C35 62%,#101F26 100%)" }}
+        />
+      ) : (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          ref={imgRef}
+          src={hero}
+          alt=""
+          onError={() => setHeroBroken(true)}
+          className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+        />
+      )}
+      <div
+        className="absolute inset-0"
+        style={{
+          background: "linear-gradient(180deg, rgba(15,32,39,0.05) 0%, rgba(15,32,39,0.2) 45%, rgba(15,32,39,0.92) 100%)",
+        }}
+      />
+
+      {logo && (
+        <div className="absolute inset-x-3.5 top-3.5">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={logo} alt="" className="max-h-7 max-w-[130px] object-contain object-left" />
+        </div>
+      )}
+
+      <div className="absolute inset-x-3.5 bottom-3.5">
+        <div className="truncate text-[14px] font-bold text-white">{d.name}</div>
+        <div className="mb-1.5 truncate text-[11px] text-white/65">{d.locationLabel || d.region}</div>
+        <div className="truncate text-[12.5px] font-bold text-[#C98A6B]">{price}</div>
       </div>
     </button>
   );
