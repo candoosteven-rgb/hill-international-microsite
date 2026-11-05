@@ -59,15 +59,19 @@ function MapboxMap({
   const markersRef = useRef<Record<string, mapboxgl.Marker>>({});
   const popupRef = useRef<mapboxgl.Popup | null>(null);
 
-  // Mount the map once.
+  // Mount the map once, starting zoomed well out over the country and
+  // flying down into the framed view once tiles are ready - an entrance
+  // rather than a snap-to-position, since a map that reveals itself reads
+  // as a far more immersive first moment than one that's just suddenly there.
   useEffect(() => {
     if (!containerRef.current || mapRef.current || !MAPBOX_TOKEN) return;
     mapboxgl.accessToken = MAPBOX_TOKEN;
     const map = new mapboxgl.Map({
       container: containerRef.current,
       style: "mapbox://styles/mapbox/light-v11",
-      center: [-0.9, 51.9],
-      zoom: 6.2,
+      center: [-1.8, 52.8],
+      zoom: 4.1,
+      pitch: 18,
     });
     map.addControl(new mapboxgl.NavigationControl({ showCompass: false }), "top-right");
     mapRef.current = map;
@@ -75,7 +79,11 @@ function MapboxMap({
     if (locations.length) {
       const bounds = new mapboxgl.LngLatBounds();
       locations.forEach((p) => bounds.extend([p.lng, p.lat]));
-      map.fitBounds(bounds, { padding: 56, maxZoom: 11, duration: 0 });
+      map.once("load", () => {
+        const framed = map.cameraForBounds(bounds, { padding: 56, maxZoom: 11 });
+        if (!framed) return;
+        map.flyTo({ ...framed, pitch: 0, duration: 2600, curve: 1.3, essential: true });
+      });
     }
 
     return () => {
@@ -118,7 +126,21 @@ function MapboxMap({
 
       el.addEventListener("click", (e) => {
         e.stopPropagation();
-        onSelect(pin.id);
+        // Dive the camera toward the pin first, then open its card partway
+        // through the flight - so the selection reads as "arriving" at the
+        // location rather than a full-screen card just appearing over the
+        // map instantly.
+        const current = mapRef.current;
+        if (current) {
+          current.flyTo({
+            center: [pin.lng, pin.lat],
+            zoom: Math.max(current.getZoom(), 13),
+            duration: 900,
+            curve: 1.2,
+            essential: true,
+          });
+        }
+        window.setTimeout(() => onSelect(pin.id), current ? 420 : 0);
       });
       el.addEventListener("mouseenter", () => onHover(pin.id));
       el.addEventListener("mouseleave", () => onHover((cur) => (cur === pin.id ? null : cur)));
@@ -323,7 +345,7 @@ function DevStripCard({
       onClick={onSelect}
       onMouseEnter={() => onHover(pin.id)}
       onMouseLeave={() => onHover((cur) => (cur === pin.id ? null : cur))}
-      className="hi-pill flex w-[168px] flex-none snap-start flex-col overflow-hidden rounded-[14px] text-left transition-transform duration-200"
+      className="hi-pill flex w-[168px] flex-none snap-start flex-col overflow-hidden rounded-[14px] text-left transition-transform duration-200 hover:-translate-y-1"
       style={{
         background: active ? "#C1560F" : "#16313D",
         boxShadow: active ? "0 8px 20px rgba(193,86,15,0.35)" : "0 4px 14px rgba(15,32,39,0.18)",
