@@ -332,7 +332,7 @@ function DevStripCard({
       <div className="flex h-[76px] items-center justify-center px-4">
         {logo ? (
           // eslint-disable-next-line @next/next/no-img-element
-          <img src={logo} alt="" className="max-h-10 max-w-[120px] object-contain" />
+          <img src={logo} alt="" className="max-h-11 max-w-[130px] object-contain" />
         ) : (
           <span className="text-center text-[15px] font-bold leading-tight text-white">{d.name}</span>
         )}
@@ -367,58 +367,61 @@ export default function LocationsMap() {
   const select = (id: string) => setSelected((cur) => (cur === id ? cur : id));
 
   return (
-    <div className="mx-auto max-w-[1440px] px-4 pb-8 pt-4 md:px-8 md:pb-10 md:pt-5">
-      <div className="relative w-full overflow-hidden rounded-[22px] border border-[#E3E9EC]" style={{ height: 560 }}>
-        <MapboxMap
-          locations={LIVE_LOCATIONS}
-          activeId={active}
-          hoveredId={hovered}
-          selectedId={selected}
-          onSelect={select}
-          onHover={setHovered}
-        />
-        {selectedPin && <DevModal pin={selectedPin} onClose={() => setSelected(null)} onOpen={setOpenDev} />}
-      </div>
-
-      {/* All-developments strip - doubles as the list of developments, since
-          a sidebar list duplicating it added nothing a real, pannable map
-          doesn't already show. */}
-      <div className="relative mt-10">
-        <div className="mb-4 flex items-center justify-between">
-          <div className="text-[13px] font-bold uppercase tracking-wide text-[#8B979C]">All developments</div>
-          <div className="flex gap-2">
-            <button
-              type="button"
-              aria-label="Scroll left"
-              onClick={() => scrollStrip(-1)}
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-[#D7DEE2] text-[#28567A]"
-            >
-              <Icon name="chevronLeft" className="h-4 w-4" />
-            </button>
-            <button
-              type="button"
-              aria-label="Scroll right"
-              onClick={() => scrollStrip(1)}
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-[#D7DEE2] text-[#28567A]"
-            >
-              <Icon name="chevronRight" className="h-4 w-4" />
-            </button>
-          </div>
+    <div className="flex min-h-0 flex-1 flex-col">
+      <div className="mx-auto flex w-full min-h-0 flex-1 flex-col px-4 pb-5 pt-4 md:px-8 md:pb-6 md:pt-5" style={{ maxWidth: 1440 }}>
+        <div className="relative w-full min-h-0 flex-1 overflow-hidden rounded-[22px] border border-[#E3E9EC]">
+          <MapboxMap
+            locations={LIVE_LOCATIONS}
+            activeId={active}
+            hoveredId={hovered}
+            selectedId={selected}
+            onSelect={select}
+            onHover={setHovered}
+          />
+          {selectedPin && <DevModal pin={selectedPin} onClose={() => setSelected(null)} onOpen={setOpenDev} />}
         </div>
-        <div
-          ref={stripRef}
-          className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2"
-          style={{ scrollbarWidth: "none" }}
-        >
-          {LIVE_LOCATIONS.map((pin) => (
-            <DevStripCard
-              key={pin.id}
-              pin={pin}
-              active={active === pin.id}
-              onSelect={() => select(pin.id)}
-              onHover={setHovered}
-            />
-          ))}
+
+        {/* All-developments strip - doubles as the list of developments,
+            since a sidebar list duplicating it added nothing a real,
+            pannable map doesn't already show. Fixed height, so it (and the
+            map above it) always fit within the screen without scrolling. */}
+        <div className="relative mt-5 flex-none">
+          <div className="mb-3 flex items-center justify-between">
+            <div className="text-[13px] font-bold uppercase tracking-wide text-[#8B979C]">All developments</div>
+            <div className="flex gap-2">
+              <button
+                type="button"
+                aria-label="Scroll left"
+                onClick={() => scrollStrip(-1)}
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-[#D7DEE2] text-[#28567A]"
+              >
+                <Icon name="chevronLeft" className="h-4 w-4" />
+              </button>
+              <button
+                type="button"
+                aria-label="Scroll right"
+                onClick={() => scrollStrip(1)}
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-[#D7DEE2] text-[#28567A]"
+              >
+                <Icon name="chevronRight" className="h-4 w-4" />
+              </button>
+            </div>
+          </div>
+          <div
+            ref={stripRef}
+            className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2"
+            style={{ scrollbarWidth: "none" }}
+          >
+            {LIVE_LOCATIONS.map((pin) => (
+              <DevStripCard
+                key={pin.id}
+                pin={pin}
+                active={active === pin.id}
+                onSelect={() => select(pin.id)}
+                onHover={setHovered}
+              />
+            ))}
+          </div>
         </div>
       </div>
 
