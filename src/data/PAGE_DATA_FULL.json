@@ -831,22 +831,22 @@
         "avail": true
       },
       {
-        "plot": "Foxtail House, Apartment 66",
-        "building": "-",
-        "floor": "-",
-        "beds": 2,
-        "baths": 1,
-        "size": 835,
-        "price": 595000,
-        "avail": true
-      },
-      {
         "plot": "Marram House, Apartment 96",
         "building": "-",
         "floor": "-",
         "beds": 2,
         "baths": 1,
         "size": 791,
+        "price": 595000,
+        "avail": true
+      },
+      {
+        "plot": "Foxtail House, Apartment 66",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 835,
         "price": 595000,
         "avail": true
       },
