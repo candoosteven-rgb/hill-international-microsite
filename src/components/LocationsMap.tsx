@@ -372,7 +372,7 @@ export default function LocationsMap() {
           already show. */}
       <div className="relative mb-8">
         <div className="mb-3 flex items-center justify-between">
-          <div className="text-[13px] font-bold uppercase tracking-wide text-[#8B979C]">All developments</div>
+          <div className="text-[13px] font-bold uppercase tracking-wide text-[#8B979C]">Our developments</div>
           <div className="flex gap-2">
             <button
               type="button"
