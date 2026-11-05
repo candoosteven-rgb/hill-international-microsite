@@ -10,6 +10,8 @@
     "sync:availability": "node scripts/sync-availability.mjs"
   },
   "dependencies": {
+    "@types/mapbox-gl": "^3.4.1",
+    "mapbox-gl": "^3.34.2",
     "next": "16.3.4",
     "react": "19.2.8",
     "react-dom": "19.2.8"
