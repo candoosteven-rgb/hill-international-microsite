@@ -319,7 +319,7 @@ function DevStripCard({
       <div
         className="absolute inset-0"
         style={{
-          background: "linear-gradient(135deg, rgba(15,32,39,0.6) 0%, rgba(15,32,39,0.3) 30%, transparent 56%)",
+          background: "linear-gradient(135deg, rgba(15,32,39,0.9) 0%, rgba(15,32,39,0.55) 28%, rgba(15,32,39,0.2) 42%, transparent 58%)",
         }}
       />
       <div
