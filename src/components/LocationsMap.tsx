@@ -384,9 +384,19 @@ export default function LocationsMap() {
       zoom: 6.2,
     });
     map.addControl(new mapboxgl.NavigationControl({ showCompass: false }), "top-right");
+    // Once the map has rendered successfully at least once, a later error
+    // (e.g. one stray tile request failing on a pan/zoom - normal, usually
+    // transient, and non-fatal on a live map) shouldn't park a permanent red
+    // banner over an otherwise-working map. Only surface it visibly before
+    // that first successful render, when it likely means the map never came
+    // up at all - always still logged to the console either way.
+    let hasLoadedOnce = false;
+    map.on("load", () => {
+      hasLoadedOnce = true;
+    });
     map.on("error", (e) => {
       const msg = e?.error?.message || String(e?.error || e);
-      setMapError(msg);
+      if (!hasLoadedOnce) setMapError(msg);
       console.error("[Mapbox error]", e?.error || e);
     });
 
