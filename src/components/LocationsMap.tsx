@@ -328,9 +328,16 @@ function DevStripCard({
       />
 
       {logo && (
-        <div className="absolute inset-x-3.5 top-3.5">
+        // A fixed-height box so every logo gets the same room regardless of
+        // its own canvas shape - source files range from near-square badge
+        // marks to wide 4:1 wordmarks, so a height-only cap (the old
+        // max-h-7) left the square ones looking tiny next to the wide ones
+        // at the same rendered height. Taller box + bigger caps on both
+        // axes lets the square marks grow to something actually legible,
+        // while the width cap still keeps the widest wordmarks in bounds.
+        <div className="absolute inset-x-3.5 top-3.5 flex h-11 items-start">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={logo} alt="" className="max-h-7 max-w-[130px] object-contain object-left" />
+          <img src={logo} alt="" className="max-h-11 max-w-[150px] object-contain object-left" />
         </div>
       )}
 
