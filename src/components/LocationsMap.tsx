@@ -387,27 +387,24 @@ export default function LocationsMap() {
           since a sidebar list duplicating it added nothing the map doesn't
           already show. */}
       <div className="relative mb-8">
-        <div className="mb-3 flex items-center justify-between">
-          <div className="text-[13px] font-bold uppercase tracking-wide text-[#8B979C]">Our developments</div>
-          <div className="flex gap-2">
-            <button
-              type="button"
-              aria-label="Scroll left"
-              onClick={() => scrollStrip(-1)}
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-[#D7DEE2] text-[#28567A]"
-            >
-              <Icon name="chevronLeft" className="h-4 w-4" />
-            </button>
-            <button
-              type="button"
-              aria-label="Scroll right"
-              onClick={() => scrollStrip(1)}
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-[#D7DEE2] text-[#28567A]"
-            >
-              <Icon name="chevronRight" className="h-4 w-4" />
-            </button>
-          </div>
-        </div>
+        <button
+          type="button"
+          aria-label="Scroll left"
+          onClick={() => scrollStrip(-1)}
+          className="absolute -left-5 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full text-white shadow-[0_8px_20px_rgba(15,32,39,0.4)] transition-transform hover:scale-110"
+          style={{ top: 108, background: "#16313D" }}
+        >
+          <Icon name="chevronLeft" className="h-5 w-5" />
+        </button>
+        <button
+          type="button"
+          aria-label="Scroll right"
+          onClick={() => scrollStrip(1)}
+          className="absolute -right-5 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full text-white shadow-[0_8px_20px_rgba(15,32,39,0.4)] transition-transform hover:scale-110"
+          style={{ top: 108, background: "#16313D" }}
+        >
+          <Icon name="chevronRight" className="h-5 w-5" />
+        </button>
         <div
           ref={stripRef}
           className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-10"
