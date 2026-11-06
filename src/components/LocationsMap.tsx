@@ -72,7 +72,7 @@ function PinButton({
       aria-pressed={active}
       onClick={onClick}
       onMouseEnter={onMouseEnter}
-      className="flex h-12 w-12 items-center justify-center"
+      className="flex h-16 w-16 items-center justify-center"
     >
       <span className={className} style={style}>
         {children}
@@ -454,8 +454,8 @@ export default function LocationsMap() {
                 onMouseEnter={() => setHovered(pin.id)}
                 className={`-rotate-45 overflow-hidden rounded-[50%_50%_50%_0] border-2 transition-all duration-200 ${
                   isActive
-                    ? "h-12 w-12 shadow-[0_6px_16px_rgba(193,86,15,0.45)]"
-                    : "h-9 w-9 shadow-[0_2px_8px_rgba(15,32,39,0.3)]"
+                    ? "h-16 w-16 shadow-[0_6px_16px_rgba(193,86,15,0.45)]"
+                    : "h-12 w-12 shadow-[0_2px_8px_rgba(15,32,39,0.3)]"
                 }`}
                 style={{ borderColor: isActive ? "#C1560F" : status.dot, background: "#16313D" }}
               >
@@ -464,7 +464,7 @@ export default function LocationsMap() {
                     // eslint-disable-next-line @next/next/no-img-element
                     <img src={logo} alt="" className="h-[70%] w-[70%] object-contain" />
                   ) : (
-                    <span className="text-[16px] font-bold text-white/85">{d.name.charAt(0)}</span>
+                    <span className="text-[20px] font-bold text-white/85">{d.name.charAt(0)}</span>
                   )}
                 </span>
               </PinButton>
