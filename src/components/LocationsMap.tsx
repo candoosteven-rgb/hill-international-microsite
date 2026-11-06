@@ -379,7 +379,7 @@ export default function LocationsMap() {
     mapboxgl.accessToken = MAPBOX_TOKEN;
     const map = new mapboxgl.Map({
       container: mapContainerRef.current,
-      style: "mapbox://styles/mapbox/light-v11",
+      style: "mapbox://styles/mapbox/standard",
       center: [-0.9, 51.9],
       zoom: 6.2,
     });
