@@ -339,7 +339,15 @@ function DevStripCard({
         // start crowding the card's bottom text block.
         <div className="absolute inset-x-3.5 top-3.5">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={logo} alt="" className="max-h-[90px] max-w-[130px] object-contain object-left" />
+          <img
+            src={logo}
+            alt=""
+            className="max-h-[90px] max-w-[130px] object-contain object-left"
+            // Fitzwilliam Gate's source file is a dark navy wordmark (the
+            // others are already white) - force it white to read against
+            // the tile's dark scrim, same as every other logo here.
+            style={pin.id === "fitzwilliam-gate" ? { filter: "brightness(0) invert(1)" } : undefined}
+          />
         </div>
       )}
 
