@@ -502,10 +502,23 @@ export default function LocationsMap() {
         </div>
       </div>
 
-      <div className="relative w-full" style={{ aspectRatio: "1824 / 968", minHeight: 320 }}>
+      {/* Classic padding-bottom-percentage aspect ratio (sized off this
+          element's own width, not the newer `aspect-ratio` property -
+          either works for this box itself). */}
+      <div className="relative w-full" style={{ paddingBottom: "53.07%", minHeight: 320 }}>
         <div
           ref={mapContainerRef}
-          className="absolute inset-0 overflow-hidden rounded-[22px] border border-[#E3E9EC] bg-[#F0ECE6]"
+          className="overflow-hidden rounded-[22px] border border-[#E3E9EC] bg-[#F0ECE6]"
+          // Mapbox GL adds its own `mapboxgl-map` class to this exact element
+          // once it mounts, and that class's own stylesheet sets
+          // `position: relative` - overriding Tailwind's `absolute` utility
+          // class (a plain CSS cascade/specificity fight, same-specificity
+          // selectors, Mapbox's loads later) and silently making `inset-0`
+          // inert, which collapsed this div to its 2px border-only height
+          // with no visible background/border (confirmed live via measured
+          // getBoundingClientRect: 1376x2). An inline style always wins
+          // over any class, so set position/inset here instead.
+          style={{ position: "absolute", inset: 0 }}
         />
 
         {!MAPBOX_TOKEN && (
