@@ -3400,7 +3400,7 @@
         "floor": "-",
         "beds": 3,
         "baths": 1,
-        "size": 1291,
+        "size": 1292,
         "price": 699950,
         "avail": true
       },
@@ -3410,7 +3410,7 @@
         "floor": "-",
         "beds": 3,
         "baths": 1,
-        "size": 1291,
+        "size": 1292,
         "price": 719950,
         "avail": true
       },
@@ -3420,7 +3420,7 @@
         "floor": "-",
         "beds": 3,
         "baths": 1,
-        "size": 1523,
+        "size": 1514,
         "price": 899950,
         "avail": true
       },
@@ -3430,7 +3430,7 @@
         "floor": "-",
         "beds": 4,
         "baths": 1,
-        "size": 1722,
+        "size": 1694,
         "price": 969950,
         "avail": true
       },
@@ -3440,7 +3440,7 @@
         "floor": "-",
         "beds": 4,
         "baths": 1,
-        "size": 1706,
+        "size": 1694,
         "price": 989950,
         "avail": true
       },
@@ -3450,7 +3450,7 @@
         "floor": "-",
         "beds": 4,
         "baths": 1,
-        "size": 1706,
+        "size": 1694,
         "price": 999950,
         "avail": true
       }
