@@ -17,6 +17,17 @@ jobs:
           node-version: 20
 
       - run: npm ci
+
+      - name: Check MAPBOX_TOKEN secret is set (does not print the value)
+        env:
+          NEXT_PUBLIC_MAPBOX_TOKEN: ${{ secrets.MAPBOX_TOKEN }}
+        run: |
+          if [ -z "$NEXT_PUBLIC_MAPBOX_TOKEN" ]; then
+            echo "::warning::MAPBOX_TOKEN secret is EMPTY or not set"
+          else
+            echo "MAPBOX_TOKEN secret is set (length: ${#NEXT_PUBLIC_MAPBOX_TOKEN}, starts with: ${NEXT_PUBLIC_MAPBOX_TOKEN:0:3})"
+          fi
+
       - run: npm run build
         env:
           NEXT_PUBLIC_MAPBOX_TOKEN: ${{ secrets.MAPBOX_TOKEN }}
