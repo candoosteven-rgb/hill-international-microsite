@@ -551,11 +551,21 @@ export default function LocationsMap() {
               const status = statusMetaFor(d, t);
               const { x, y } = pos;
               const logo = resolveLogo(d.logo, d.name);
+              // The pin is a square badge rotated -45deg into a teardrop, so
+              // its actual point (the part that should mark the real
+              // coordinate) sits below the badge's own geometric center by
+              // (badge size * sin 45deg) - centering the whole badge on the
+              // coordinate instead (the previous behavior) made every pin
+              // appear to sit noticeably above/away from its true location.
+              // Add that offset to the translate below so the tip - not the
+              // badge's center - lands exactly on the pin's lat/lng.
+              const pinSize = isActive ? 64 : 48;
+              const tipOffset = pinSize * Math.SQRT1_2;
               return (
                 <div
                   key={pin.id}
                   className={`pointer-events-auto absolute transition-opacity duration-200 ${isActive ? "z-50" : "z-0"}`}
-                  style={{ left: x, top: y, transform: "translate(-50%, -50%)" }}
+                  style={{ left: x, top: y, transform: `translate(-50%, -50%) translateY(-${tipOffset}px)` }}
                   onMouseLeave={() => setHovered((cur) => (cur === pin.id ? null : cur))}
                 >
                   <PinButton
