@@ -328,9 +328,18 @@ function DevStripCard({
       />
 
       {logo && (
+        // Canalside Quarter's wordmark (a wide ~4:1 logo) reads perfectly at
+        // max-w-[130px] alone, since its own height naturally falls well
+        // under any reasonable cap. Square/badge-shaped logos (Lampton
+        // Parkside, Kew Bridge Rise, North Gate Park) need real height
+        // headroom to reach that same ~130px footprint, or a shared
+        // height-only cap leaves them tiny next to the wide ones - so this
+        // caps width first (matching Canalside's size) and gives height
+        // plenty of room to follow from that, up to the point it would
+        // start crowding the card's bottom text block.
         <div className="absolute inset-x-3.5 top-3.5">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={logo} alt="" className="max-h-7 max-w-[130px] object-contain object-left" />
+          <img src={logo} alt="" className="max-h-[90px] max-w-[130px] object-contain object-left" />
         </div>
       )}
 
