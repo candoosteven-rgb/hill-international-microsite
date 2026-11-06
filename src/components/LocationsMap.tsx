@@ -369,6 +369,10 @@ export default function LocationsMap() {
   const mapRef = useRef<mapboxgl.Map | null>(null);
   const [positions, setPositions] = useState<Record<string, { x: number; y: number }>>({});
   const mapReady = Object.keys(positions).length > 0;
+  // Surfaced directly on the page (not just the console) so a non-technical
+  // visitor - or whoever is debugging a deploy - can see exactly why the
+  // basemap didn't render without needing DevTools.
+  const [mapError, setMapError] = useState<string | null>(null);
 
   useEffect(() => {
     if (!mapContainerRef.current || mapRef.current || !MAPBOX_TOKEN) return;
@@ -380,6 +384,11 @@ export default function LocationsMap() {
       zoom: 6.2,
     });
     map.addControl(new mapboxgl.NavigationControl({ showCompass: false }), "top-right");
+    map.on("error", (e) => {
+      const msg = e?.error?.message || String(e?.error || e);
+      setMapError(msg);
+      console.error("[Mapbox error]", e?.error || e);
+    });
 
     let raf = 0;
     const sync = () => {
@@ -493,7 +502,7 @@ export default function LocationsMap() {
         </div>
       </div>
 
-      <div className="relative w-full" style={{ aspectRatio: "1824 / 968" }}>
+      <div className="relative w-full" style={{ aspectRatio: "1824 / 968", minHeight: 320 }}>
         <div
           ref={mapContainerRef}
           className="absolute inset-0 overflow-hidden rounded-[22px] border border-[#E3E9EC] bg-[#F0ECE6]"
@@ -505,6 +514,12 @@ export default function LocationsMap() {
             <div className="max-w-[320px] text-[13px] text-[#6E7B80]">
               Set the NEXT_PUBLIC_MAPBOX_TOKEN build secret to enable the live map.
             </div>
+          </div>
+        )}
+
+        {mapError && (
+          <div className="pointer-events-none absolute inset-x-3 top-3 z-[60] rounded-[10px] border border-[#E8A0A0] bg-[#FDECEC] px-3.5 py-2.5 text-[12.5px] font-medium text-[#8A2E2E] shadow-[0_6px_16px_rgba(0,0,0,0.15)]">
+            Map error: {mapError}
           </div>
         )}
 
