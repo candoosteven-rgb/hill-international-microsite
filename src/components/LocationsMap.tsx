@@ -2,6 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import mapboxgl from "mapbox-gl";
+import "mapbox-gl/dist/mapbox-gl.css";
 import { devById, pageDataFor, priceLabelFor, statusMetaFor } from "@/lib/data";
 import { autoFacts } from "@/lib/facts";
 import { resolveImage, buildShots } from "@/lib/image";
@@ -10,24 +12,11 @@ import { useLanguage } from "@/lib/i18n";
 import Icon from "@/components/Icon";
 import { LOCATIONS, type LocationPin } from "@/data/LOCATIONS_MAP";
 
-// Temporarily back on the illustrated map (not Mapbox) until a working
-// Mapbox token is in place - see git history (commits introducing
-// MapboxMap) to restore it once that's sorted. LOCATIONS_MAP.ts still
-// stores real lat/lng (needed for Mapbox and more precise anyway), so this
-// reruns the same lat/lon -> pixel-fraction fit used to originally place
-// these pins on /uploads/locations-map-background.png (1824x968), fit
-// against Heathrow/Luton/Stansted/London City's known real coordinates.
-function toMapFraction(lat: number, lng: number): { x: number; y: number } {
-  const refLat = 51.47;
-  const refLon = -0.4543;
-  const refX = 1293;
-  const refY = 783;
-  const scaleX = 502.0;
-  const scaleY = -728.4;
-  const px = refX + (lng - refLon) * scaleX;
-  const py = refY + (lat - refLat) * scaleY;
-  return { x: px / 1824, y: py / 968 };
-}
+// Public Mapbox token, inlined at build time (see .github/workflows/deploy.yml
+// -> the MAPBOX_TOKEN repo secret). Safe to ship client-side - public tokens
+// are meant for this and are restricted by URL in the Mapbox dashboard, not
+// by secrecy.
+const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN || "";
 
 function factsFor(devId: string): { k: string; v: string }[] {
   const pd = pageDataFor(devId);
@@ -371,6 +360,63 @@ export default function LocationsMap() {
   const stripRef = useRef<HTMLDivElement | null>(null);
   const scrollStrip = (dir: 1 | -1) => stripRef.current?.scrollBy({ left: dir * 360, behavior: "smooth" });
 
+  // The map's own camera (center/zoom/pan) decides where each pin lands on
+  // screen. Refs can't be read during render (React flags that as unsafe),
+  // so every time the camera moves this re-projects each pin's real lat/lng
+  // into container-relative pixels with `map.project()` inside the handler
+  // and stores the result in state - render then only ever reads that state.
+  const mapContainerRef = useRef<HTMLDivElement | null>(null);
+  const mapRef = useRef<mapboxgl.Map | null>(null);
+  const [positions, setPositions] = useState<Record<string, { x: number; y: number }>>({});
+  const mapReady = Object.keys(positions).length > 0;
+
+  useEffect(() => {
+    if (!mapContainerRef.current || mapRef.current || !MAPBOX_TOKEN) return;
+    mapboxgl.accessToken = MAPBOX_TOKEN;
+    const map = new mapboxgl.Map({
+      container: mapContainerRef.current,
+      style: "mapbox://styles/mapbox/light-v11",
+      center: [-0.9, 51.9],
+      zoom: 6.2,
+    });
+    map.addControl(new mapboxgl.NavigationControl({ showCompass: false }), "top-right");
+
+    if (LIVE_LOCATIONS.length) {
+      const bounds = new mapboxgl.LngLatBounds();
+      LIVE_LOCATIONS.forEach((p) => bounds.extend([p.lng, p.lat]));
+      map.fitBounds(bounds, { padding: 64, maxZoom: 11, duration: 0 });
+    }
+
+    let raf = 0;
+    const sync = () => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        const next: Record<string, { x: number; y: number }> = {};
+        LIVE_LOCATIONS.forEach((p) => {
+          const { x, y } = map.project([p.lng, p.lat]);
+          next[p.id] = { x, y };
+        });
+        setPositions(next);
+      });
+    };
+    map.on("move", sync);
+    map.on("load", sync);
+
+    const resizeObserver = new ResizeObserver(() => {
+      map.resize();
+      sync();
+    });
+    resizeObserver.observe(mapContainerRef.current);
+
+    mapRef.current = map;
+    return () => {
+      cancelAnimationFrame(raf);
+      resizeObserver.disconnect();
+      map.remove();
+      mapRef.current = null;
+    };
+  }, []);
+
   // Hover gives mouse users an instant at-pin glance; a tap/click opens the
   // full centered popover (DevModal) independently of hover, so touch users
   // (who never fire hover) still get the same result from a tap.
@@ -379,7 +425,16 @@ export default function LocationsMap() {
   const openDevData = openPin ? devById(openPin.id) : null;
   const selectedPin = LIVE_LOCATIONS.find((p) => p.id === selected) || null;
 
-  const select = (id: string) => setSelected((cur) => (cur === id ? cur : id));
+  // Selecting a pin (from the map, the strip, or the modal) also dives the
+  // camera toward it - the whole point of a real map over the old
+  // illustrated one is that a dense cluster can be zoomed into instead of
+  // just visually overlapping.
+  const select = (id: string) => {
+    setSelected((cur) => (cur === id ? cur : id));
+    const pin = LIVE_LOCATIONS.find((p) => p.id === id);
+    const map = mapRef.current;
+    if (pin && map) map.flyTo({ center: [pin.lng, pin.lat], zoom: Math.max(map.getZoom(), 13), duration: 700 });
+  };
 
   return (
     <div className="mx-auto w-full px-4 pb-8 pt-4 md:px-8 md:pb-10 md:pt-5" style={{ maxWidth: 1440 }}>
@@ -422,61 +477,75 @@ export default function LocationsMap() {
         </div>
       </div>
 
-      <div
-        className="relative w-full overflow-visible rounded-[22px] border border-[#E3E9EC] bg-[#F0ECE6]"
-        style={{ aspectRatio: "1824 / 968" }}
-      >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/uploads/locations-map-background.png"
-          alt=""
-          className="pointer-events-none absolute inset-0 h-full w-full select-none rounded-[22px] object-cover"
+      <div className="relative w-full" style={{ aspectRatio: "1824 / 968" }}>
+        <div
+          ref={mapContainerRef}
+          className="absolute inset-0 overflow-hidden rounded-[22px] border border-[#E3E9EC] bg-[#F0ECE6]"
         />
 
-        {LIVE_LOCATIONS.map((pin) => {
-          const d = devById(pin.id);
-          if (!d) return null;
-          const isActive = active === pin.id;
-          const status = statusMetaFor(d, t);
-          const { x, y } = toMapFraction(pin.lat, pin.lng);
-          const logo = resolveLogo(d.logo, d.name);
-          return (
-            <div
-              key={pin.id}
-              className={`absolute transition-opacity duration-200 ${isActive ? "z-50" : "z-0"}`}
-              style={{ left: `${x * 100}%`, top: `${y * 100}%`, transform: "translate(-50%, -50%)" }}
-              onMouseLeave={() => setHovered((cur) => (cur === pin.id ? null : cur))}
-            >
-              <PinButton
-                active={isActive}
-                aria-label={d.name}
-                onClick={() => select(pin.id)}
-                onMouseEnter={() => setHovered(pin.id)}
-                className={`-rotate-45 overflow-hidden rounded-[50%_50%_50%_0] border-2 transition-all duration-200 ${
-                  isActive
-                    ? "h-16 w-16 shadow-[0_6px_16px_rgba(193,86,15,0.45)]"
-                    : "h-12 w-12 shadow-[0_2px_8px_rgba(15,32,39,0.3)]"
-                }`}
-                style={{ borderColor: isActive ? "#C1560F" : status.dot, background: "#16313D" }}
-              >
-                <span className="flex h-full w-full rotate-45 items-center justify-center">
-                  {logo ? (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img src={logo} alt="" className="h-[70%] w-[70%] object-contain" />
-                  ) : (
-                    <span className="text-[20px] font-bold text-white/85">{d.name.charAt(0)}</span>
-                  )}
-                </span>
-              </PinButton>
-
-              {hovered === pin.id && selected !== pin.id && (
-                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-full">
-                  <PreviewCard pin={pin} onOpen={setOpenDev} />
-                </div>
-              )}
+        {!MAPBOX_TOKEN && (
+          <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 rounded-[22px] border border-[#E3E9EC] bg-[#F5F5F7] p-8 text-center">
+            <div className="text-[14px] font-semibold text-[#1F3A47]">Map unavailable</div>
+            <div className="max-w-[320px] text-[13px] text-[#6E7B80]">
+              Set the NEXT_PUBLIC_MAPBOX_TOKEN build secret to enable the live map.
             </div>
-          );
-        })}
+          </div>
+        )}
+
+        {/* A separate layer (not nested inside the map container, which is
+            clipped to the map's rounded corners) so a preview card near the
+            edge can still bleed outside that box instead of being cut off.
+            `pointer-events-none` here lets drag-to-pan reach the map through
+            the empty space between pins; each pin re-enables it on itself. */}
+        {mapReady && (
+          <div className="pointer-events-none absolute inset-0">
+            {LIVE_LOCATIONS.map((pin) => {
+              const d = devById(pin.id);
+              const pos = positions[pin.id];
+              if (!d || !pos) return null;
+              const isActive = active === pin.id;
+              const status = statusMetaFor(d, t);
+              const { x, y } = pos;
+              const logo = resolveLogo(d.logo, d.name);
+              return (
+                <div
+                  key={pin.id}
+                  className={`pointer-events-auto absolute transition-opacity duration-200 ${isActive ? "z-50" : "z-0"}`}
+                  style={{ left: x, top: y, transform: "translate(-50%, -50%)" }}
+                  onMouseLeave={() => setHovered((cur) => (cur === pin.id ? null : cur))}
+                >
+                  <PinButton
+                    active={isActive}
+                    aria-label={d.name}
+                    onClick={() => select(pin.id)}
+                    onMouseEnter={() => setHovered(pin.id)}
+                    className={`-rotate-45 overflow-hidden rounded-[50%_50%_50%_0] border-2 transition-all duration-200 ${
+                      isActive
+                        ? "h-16 w-16 shadow-[0_6px_16px_rgba(193,86,15,0.45)]"
+                        : "h-12 w-12 shadow-[0_2px_8px_rgba(15,32,39,0.3)]"
+                    }`}
+                    style={{ borderColor: isActive ? "#C1560F" : status.dot, background: "#16313D" }}
+                  >
+                    <span className="flex h-full w-full rotate-45 items-center justify-center">
+                      {logo ? (
+                        // eslint-disable-next-line @next/next/no-img-element
+                        <img src={logo} alt="" className="h-[70%] w-[70%] object-contain" />
+                      ) : (
+                        <span className="text-[20px] font-bold text-white/85">{d.name.charAt(0)}</span>
+                      )}
+                    </span>
+                  </PinButton>
+
+                  {hovered === pin.id && selected !== pin.id && (
+                    <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-full">
+                      <PreviewCard pin={pin} onOpen={setOpenDev} />
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        )}
 
         {selectedPin && <DevModal pin={selectedPin} onClose={() => setSelected(null)} onOpen={setOpenDev} />}
       </div>

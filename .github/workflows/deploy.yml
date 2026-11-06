@@ -18,6 +18,8 @@ jobs:
 
       - run: npm ci
       - run: npm run build
+        env:
+          NEXT_PUBLIC_MAPBOX_TOKEN: ${{ secrets.MAPBOX_TOKEN }}
 
       - name: Deploy
         uses: cloudflare/wrangler-action@v3
