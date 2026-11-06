@@ -381,12 +381,6 @@ export default function LocationsMap() {
     });
     map.addControl(new mapboxgl.NavigationControl({ showCompass: false }), "top-right");
 
-    if (LIVE_LOCATIONS.length) {
-      const bounds = new mapboxgl.LngLatBounds();
-      LIVE_LOCATIONS.forEach((p) => bounds.extend([p.lng, p.lat]));
-      map.fitBounds(bounds, { padding: 64, maxZoom: 11, duration: 0 });
-    }
-
     let raf = 0;
     const sync = () => {
       cancelAnimationFrame(raf);
@@ -402,8 +396,30 @@ export default function LocationsMap() {
     map.on("move", sync);
     map.on("load", sync);
 
+    // fitBounds needs the container's real, laid-out size - calling it right
+    // after construction can catch the container still at 0 height (CSS
+    // aspect-ratio not yet resolved), where any padding is "impossible" and
+    // Mapbox logs a warning and leaves its camera transform broken, which
+    // silently blocks all further tile rendering. So this only runs once the
+    // container reports a real size (checked eagerly, then retried from the
+    // resize observer below if it wasn't ready yet), with padding capped to
+    // what that size can actually fit.
+    let didFitBounds = false;
+    const fitInitialBounds = () => {
+      if (didFitBounds || !LIVE_LOCATIONS.length || !mapContainerRef.current) return;
+      const { width, height } = mapContainerRef.current.getBoundingClientRect();
+      if (width < 40 || height < 40) return;
+      didFitBounds = true;
+      const bounds = new mapboxgl.LngLatBounds();
+      LIVE_LOCATIONS.forEach((p) => bounds.extend([p.lng, p.lat]));
+      const padding = Math.max(8, Math.min(64, width / 4, height / 4));
+      map.fitBounds(bounds, { padding, maxZoom: 11, duration: 0 });
+    };
+    fitInitialBounds();
+
     const resizeObserver = new ResizeObserver(() => {
       map.resize();
+      fitInitialBounds();
       sync();
     });
     resizeObserver.observe(mapContainerRef.current);
