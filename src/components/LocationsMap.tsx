@@ -403,7 +403,7 @@ export default function LocationsMap() {
         </div>
         <div
           ref={stripRef}
-          className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2"
+          className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-10"
           style={{ scrollbarWidth: "none" }}
         >
           {LIVE_LOCATIONS.map((pin) => (
