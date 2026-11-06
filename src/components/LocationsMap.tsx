@@ -60,9 +60,8 @@ function PinButton({
   children: React.ReactNode;
   "aria-label": string;
 }) {
-  // A 44px tap target (the WCAG-recommended touch-target minimum) around a
-  // visually smaller badge, so the dense Cambridge/London clusters don't
-  // have to grow into each other just to stay tappable. Hover-out is
+  // A tap target at least the WCAG-recommended 44px minimum, sized to the
+  // active badge so it never clips. Hover-out is
   // handled by the wrapper that also contains the preview card (see
   // LocationsMap), since leaving the button for the card above it
   // shouldn't close it.
@@ -73,7 +72,7 @@ function PinButton({
       aria-pressed={active}
       onClick={onClick}
       onMouseEnter={onMouseEnter}
-      className="flex h-11 w-11 items-center justify-center"
+      className="flex h-12 w-12 items-center justify-center"
     >
       <span className={className} style={style}>
         {children}
@@ -458,17 +457,17 @@ export default function LocationsMap() {
                 onMouseEnter={() => setHovered(pin.id)}
                 className={`-rotate-45 overflow-hidden rounded-[50%_50%_50%_0] border-2 transition-all duration-200 ${
                   isActive
-                    ? "h-9 w-9 shadow-[0_6px_16px_rgba(193,86,15,0.45)]"
-                    : "h-7 w-7 shadow-[0_2px_8px_rgba(15,32,39,0.3)]"
+                    ? "h-12 w-12 shadow-[0_6px_16px_rgba(193,86,15,0.45)]"
+                    : "h-9 w-9 shadow-[0_2px_8px_rgba(15,32,39,0.3)]"
                 }`}
                 style={{ borderColor: isActive ? "#C1560F" : status.dot, background: "#16313D" }}
               >
                 <span className="flex h-full w-full rotate-45 items-center justify-center">
                   {logo ? (
                     // eslint-disable-next-line @next/next/no-img-element
-                    <img src={logo} alt="" className="h-[68%] w-[68%] object-contain" />
+                    <img src={logo} alt="" className="h-[70%] w-[70%] object-contain" />
                   ) : (
-                    <span className="text-[13px] font-bold text-white/85">{d.name.charAt(0)}</span>
+                    <span className="text-[16px] font-bold text-white/85">{d.name.charAt(0)}</span>
                   )}
                 </span>
               </PinButton>
