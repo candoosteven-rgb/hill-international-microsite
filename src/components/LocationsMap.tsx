@@ -429,12 +429,13 @@ export default function LocationsMap() {
           className="pointer-events-none absolute inset-0 h-full w-full select-none rounded-[22px] object-cover"
         />
 
-        {LIVE_LOCATIONS.map((pin, i) => {
+        {LIVE_LOCATIONS.map((pin) => {
           const d = devById(pin.id);
           if (!d) return null;
           const isActive = active === pin.id;
           const status = statusMetaFor(d, t);
           const { x, y } = toMapFraction(pin.lat, pin.lng);
+          const logo = resolveLogo(d.logo, d.name);
           return (
             <div
               key={pin.id}
@@ -447,12 +448,21 @@ export default function LocationsMap() {
                 aria-label={d.name}
                 onClick={() => select(pin.id)}
                 onMouseEnter={() => setHovered(pin.id)}
-                className={`flex items-center justify-center rounded-full border-2 border-white text-[11px] font-bold text-white shadow-[0_2px_8px_rgba(15,32,39,0.25)] transition-transform duration-200 ${
-                  isActive ? "h-8 w-8 scale-110" : "h-6 w-6"
+                className={`-rotate-45 overflow-hidden rounded-[50%_50%_50%_0] border-2 transition-all duration-200 ${
+                  isActive
+                    ? "h-9 w-9 shadow-[0_6px_16px_rgba(193,86,15,0.45)]"
+                    : "h-7 w-7 shadow-[0_2px_8px_rgba(15,32,39,0.3)]"
                 }`}
-                style={{ background: isActive ? "#C1560F" : status.dot }}
+                style={{ borderColor: isActive ? "#C1560F" : status.dot, background: "#16313D" }}
               >
-                {i + 1}
+                <span className="flex h-full w-full rotate-45 items-center justify-center">
+                  {logo ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img src={logo} alt="" className="h-[68%] w-[68%] object-contain" />
+                  ) : (
+                    <span className="text-[13px] font-bold text-white/85">{d.name.charAt(0)}</span>
+                  )}
+                </span>
               </PinButton>
 
               {hovered === pin.id && selected !== pin.id && (
