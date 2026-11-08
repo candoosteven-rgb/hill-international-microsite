@@ -213,23 +213,13 @@
         "avail": true
       },
       {
-        "plot": "Forest View, Apartment F1.31",
+        "plot": "Forest View, Apartment F1.19",
         "building": "-",
         "floor": "-",
         "beds": 1,
         "baths": 1,
         "size": 546,
-        "price": 357500,
-        "avail": true
-      },
-      {
-        "plot": "The Evergreens, Apartment E3.44",
-        "building": "-",
-        "floor": "-",
-        "beds": 1,
-        "baths": 1,
-        "size": 624,
-        "price": 372500,
+        "price": 355000,
         "avail": true
       },
       {
@@ -253,32 +243,12 @@
         "avail": true
       },
       {
-        "plot": "Forest View, Apartment F1.48",
-        "building": "-",
-        "floor": "-",
-        "beds": 2,
-        "baths": 1,
-        "size": 704,
-        "price": 472500,
-        "avail": true
-      },
-      {
-        "plot": "Forest View, Duplex F2.2",
-        "building": "-",
-        "floor": "-",
-        "beds": 2,
-        "baths": 1,
-        "size": 921,
-        "price": 535000,
-        "avail": true
-      },
-      {
-        "plot": "The Evergreens, Duplex E2.3",
+        "plot": "The Evergreens, Duplex E2.4",
         "building": "-",
         "floor": "-",
         "beds": 3,
         "baths": 1,
-        "size": 1173,
+        "size": 1175,
         "price": 632500,
         "avail": true
       }
@@ -821,16 +791,6 @@
         "avail": true
       },
       {
-        "plot": "Marram House, Apartment 75",
-        "building": "-",
-        "floor": "-",
-        "beds": 2,
-        "baths": 1,
-        "size": 835,
-        "price": 575000,
-        "avail": true
-      },
-      {
         "plot": "Marram House, Apartment 96",
         "building": "-",
         "floor": "-",
@@ -1155,16 +1115,6 @@
         "baths": 1,
         "size": 543,
         "price": 312000,
-        "avail": true
-      },
-      {
-        "plot": "The Liberty, Apartment 554",
-        "building": "-",
-        "floor": "-",
-        "beds": 1,
-        "baths": 1,
-        "size": 556,
-        "price": 347000,
         "avail": true
       },
       {
@@ -1668,16 +1618,6 @@
         "avail": true
       },
       {
-        "plot": "Maxima, Apartment 255",
-        "building": "-",
-        "floor": "-",
-        "beds": 1,
-        "baths": 1,
-        "size": 420,
-        "price": 242500,
-        "avail": true
-      },
-      {
         "plot": "Maxima, Apartment 171",
         "building": "-",
         "floor": "-",
@@ -1685,26 +1625,6 @@
         "baths": 1,
         "size": 542,
         "price": 260000,
-        "avail": true
-      },
-      {
-        "plot": "Maxima, Apartment 178",
-        "building": "-",
-        "floor": "-",
-        "beds": 1,
-        "baths": 1,
-        "size": 584,
-        "price": 265000,
-        "avail": true
-      },
-      {
-        "plot": "Maxima, Apartment 202",
-        "building": "-",
-        "floor": "-",
-        "beds": 1,
-        "baths": 1,
-        "size": 551,
-        "price": 267500,
         "avail": true
       },
       {
@@ -3405,13 +3325,13 @@
         "avail": true
       },
       {
-        "plot": "The Carlton, Number 5",
+        "plot": "The Carlton, Number 4",
         "building": "-",
         "floor": "-",
         "beds": 3,
         "baths": 1,
-        "size": 1292,
-        "price": 719950,
+        "size": 1291,
+        "price": 699950,
         "avail": true
       },
       {
