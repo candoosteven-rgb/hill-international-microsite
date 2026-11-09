@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import LocationsMap from "@/components/LocationsMap";
+import LocationsHeaderLogo from "@/components/LocationsHeaderLogo";
 import Footer from "@/components/Footer";
 
 // Intentionally not linked from Nav/Footer and excluded from indexing -
@@ -19,8 +20,7 @@ export default function LocationsPage() {
         style={{ background: "rgba(18,34,45,0.96)", backdropFilter: "blur(14px)" }}
       >
         <div className="mx-auto flex max-w-[1440px] items-center justify-center px-5 py-6 md:px-10">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/uploads/hill-logo-transparent.png" alt="Hill International" className="h-[36.4px] w-auto" />
+          <LocationsHeaderLogo />
         </div>
       </div>
 
