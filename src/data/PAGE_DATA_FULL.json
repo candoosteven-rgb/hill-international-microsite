@@ -223,6 +223,16 @@
         "avail": true
       },
       {
+        "plot": "The Evergreens, Apartment E3.56",
+        "building": "-",
+        "floor": "-",
+        "beds": 1,
+        "baths": 1,
+        "size": 624,
+        "price": 390000,
+        "avail": true
+      },
+      {
         "plot": "Forest View, Apartment F1.11",
         "building": "-",
         "floor": "-",
@@ -240,6 +250,26 @@
         "baths": 1,
         "size": 769,
         "price": 467500,
+        "avail": true
+      },
+      {
+        "plot": "Forest View, Apartment F1.37",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 768,
+        "price": 494500,
+        "avail": true
+      },
+      {
+        "plot": "Forest View, Duplex F2.4",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 921,
+        "price": 535000,
         "avail": true
       },
       {
@@ -1638,6 +1668,16 @@
         "avail": true
       },
       {
+        "plot": "Maxima, Apartment 246",
+        "building": "-",
+        "floor": "-",
+        "beds": 1,
+        "baths": 1,
+        "size": 420,
+        "price": 240000,
+        "avail": true
+      },
+      {
         "plot": "Maxima, Apartment 171",
         "building": "-",
         "floor": "-",
@@ -1645,6 +1685,16 @@
         "baths": 1,
         "size": 542,
         "price": 260000,
+        "avail": true
+      },
+      {
+        "plot": "Maxima, Apartment 198",
+        "building": "-",
+        "floor": "-",
+        "beds": 1,
+        "baths": 1,
+        "size": 542,
+        "price": 267500,
         "avail": true
       },
       {
@@ -1665,6 +1715,16 @@
         "baths": 1,
         "size": 796,
         "price": 350000,
+        "avail": true
+      },
+      {
+        "plot": "Maxima, Apartment 203",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 796,
+        "price": 365000,
         "avail": true
       },
       {
@@ -3335,22 +3395,22 @@
     "suite": null,
     "plots": [
       {
-        "plot": "The Carlton, Number 2",
-        "building": "-",
-        "floor": "-",
-        "beds": 3,
-        "baths": 1,
-        "size": 1292,
-        "price": 699950,
-        "avail": true
-      },
-      {
         "plot": "The Carlton, Number 4",
         "building": "-",
         "floor": "-",
         "beds": 3,
         "baths": 1,
         "size": 1291,
+        "price": 699950,
+        "avail": true
+      },
+      {
+        "plot": "The Carlton, Number 2",
+        "building": "-",
+        "floor": "-",
+        "beds": 3,
+        "baths": 1,
+        "size": 1292,
         "price": 699950,
         "avail": true
       },
