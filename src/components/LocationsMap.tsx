@@ -86,11 +86,11 @@ function buildPinMarkerElement(opts: {
   const el = document.createElement("button");
   el.type = "button";
   el.setAttribute("aria-label", opts.ariaLabel);
-  el.className = "relative flex h-16 w-16 items-center justify-center";
+  el.className = "relative flex h-20 w-20 items-center justify-center";
 
   const badge = document.createElement("span");
   badge.className =
-    "-rotate-45 overflow-hidden rounded-[50%_50%_50%_0] border-2 transition-all duration-200 h-12 w-12 shadow-[0_2px_8px_rgba(15,32,39,0.3)]";
+    "-rotate-45 overflow-hidden rounded-[50%_50%_50%_0] border-2 transition-all duration-200 h-[60px] w-[60px] shadow-[0_2px_8px_rgba(15,32,39,0.3)]";
   badge.style.background = "#16313D";
   el.appendChild(badge);
 
@@ -114,7 +114,7 @@ function buildPinMarkerElement(opts: {
     inner.appendChild(img);
   } else {
     const initialEl = document.createElement("span");
-    initialEl.className = "text-[20px] font-bold text-white/85";
+    initialEl.className = "text-[25px] font-bold text-white/85";
     initialEl.textContent = opts.initial;
     inner.appendChild(initialEl);
   }
@@ -516,7 +516,7 @@ export default function LocationsMap() {
         onMouseLeave: () => setHovered((cur) => (cur === pin.id ? null : cur)),
       });
       badgeEl.style.borderColor = status.dot;
-      const marker = new mapboxgl.Marker({ element: el, anchor: "center", offset: [0, -pinTipOffset(48)] })
+      const marker = new mapboxgl.Marker({ element: el, anchor: "center", offset: [0, -pinTipOffset(60)] })
         .setLngLat([pin.lng, pin.lat])
         .addTo(map);
       markersRef.current[pin.id] = { marker, badgeEl, popupAnchorEl };
@@ -567,9 +567,11 @@ export default function LocationsMap() {
   useEffect(() => {
     Object.entries(markersRef.current).forEach(([id, { marker, badgeEl }]) => {
       const isActive = active === id;
-      const size = isActive ? 64 : 48;
+      const size = isActive ? 80 : 60;
       badgeEl.className = `-rotate-45 overflow-hidden rounded-[50%_50%_50%_0] border-2 transition-all duration-200 ${
-        isActive ? "h-16 w-16 shadow-[0_6px_16px_rgba(193,86,15,0.45)]" : "h-12 w-12 shadow-[0_2px_8px_rgba(15,32,39,0.3)]"
+        isActive
+          ? "h-20 w-20 shadow-[0_6px_16px_rgba(193,86,15,0.45)]"
+          : "h-[60px] w-[60px] shadow-[0_2px_8px_rgba(15,32,39,0.3)]"
       }`;
       const d = devById(id);
       badgeEl.style.borderColor = isActive ? "#C1560F" : d ? statusMetaFor(d, t).dot : "#2E86D8";
