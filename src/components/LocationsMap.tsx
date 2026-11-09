@@ -400,17 +400,18 @@ export default function LocationsMap() {
       console.error("[Mapbox error]", e?.error || e);
     });
 
-    let raf = 0;
+    // Mapbox already throttles "move" to its own paint cycle during a
+    // drag/zoom, so wrapping this in an extra requestAnimationFrame just
+    // added a further frame of lag between the map's motion and the pins
+    // catching up - visible/felt as pins not tracking the drag. Run the
+    // projection synchronously on every "move" instead.
     const sync = () => {
-      cancelAnimationFrame(raf);
-      raf = requestAnimationFrame(() => {
-        const next: Record<string, { x: number; y: number }> = {};
-        LIVE_LOCATIONS.forEach((p) => {
-          const { x, y } = map.project([p.lng, p.lat]);
-          next[p.id] = { x, y };
-        });
-        setPositions(next);
+      const next: Record<string, { x: number; y: number }> = {};
+      LIVE_LOCATIONS.forEach((p) => {
+        const { x, y } = map.project([p.lng, p.lat]);
+        next[p.id] = { x, y };
       });
+      setPositions(next);
     };
     map.on("move", sync);
     map.on("load", sync);
@@ -445,7 +446,6 @@ export default function LocationsMap() {
 
     mapRef.current = map;
     return () => {
-      cancelAnimationFrame(raf);
       resizeObserver.disconnect();
       map.remove();
       mapRef.current = null;
