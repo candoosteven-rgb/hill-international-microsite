@@ -781,6 +781,16 @@
         "avail": true
       },
       {
+        "plot": "Foxtail House, Apartment 41",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 798,
+        "price": 565000,
+        "avail": true
+      },
+      {
         "plot": "Marram House, Apartment 78",
         "building": "-",
         "floor": "-",
@@ -1115,6 +1125,16 @@
         "baths": 1,
         "size": 543,
         "price": 312000,
+        "avail": true
+      },
+      {
+        "plot": "The Liberty, Apartment 573",
+        "building": "-",
+        "floor": "-",
+        "beds": 1,
+        "baths": 1,
+        "size": 556,
+        "price": 335000,
         "avail": true
       },
       {
