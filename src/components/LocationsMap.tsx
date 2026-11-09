@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import Link from "next/link";
 import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
@@ -49,68 +50,90 @@ function inscribedLogoPercent(naturalWidth: number, naturalHeight: number): { w:
   return { w: (ratio / diag) * 100, h: (1 / diag) * 100 };
 }
 
-// A map pin's logo, sized to inscribedLogoPercent once its natural
-// dimensions are known. Drives the size through React state (re-rendering
-// declaratively) rather than mutating img.style directly in the onLoad
-// handler - a direct DOM mutation on a replaced element inside a rotated
-// flex container has, on at least one browser engine, left the image
-// visibly off-center (flush to one edge) until some unrelated reflow later
-// corrected it, where a normal React re-render reliably lays out correctly
-// from the start.
-function PinLogo({ src, forceWhite }: { src: string; forceWhite: boolean }) {
-  const [size, setSize] = useState<{ w: number; h: number }>({ w: 70, h: 70 });
-  return (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img
-      src={src}
-      alt=""
-      className="object-contain"
-      style={{
-        width: `${size.w}%`,
-        height: `${size.h}%`,
-        ...(forceWhite ? { filter: "brightness(0) invert(1)" } : null),
-      }}
-      onLoad={(e) => setSize(inscribedLogoPercent(e.currentTarget.naturalWidth, e.currentTarget.naturalHeight))}
-    />
-  );
+// A pin's teardrop "point" (the part that should mark the real coordinate)
+// sits below the badge's own geometric center by (size * sin 45deg) once
+// rotated -45deg into shape - this is the distance Mapbox's marker `offset`
+// needs to shift the badge up by so the tip, not its center, lands on the
+// pin's actual lat/lng.
+function pinTipOffset(size: number): number {
+  return size * Math.SQRT1_2;
 }
 
-function PinButton({
-  active,
-  className,
-  style,
-  onClick,
-  onMouseEnter,
-  children,
-  "aria-label": ariaLabel,
-}: {
-  active: boolean;
-  className?: string;
-  style?: React.CSSProperties;
+// Builds one map pin as a plain DOM element for Mapbox's native Marker API,
+// not a React-rendered/positioned one. Mapbox repositions this element
+// itself on every camera move/zoom directly, continuously and without any
+// React round-trip - the previous approach (recomputing every pin's
+// position via map.project() on each "move" event and pushing it through
+// React state) has reportedly left pins visibly desynced from the map (and
+// their logos reportedly off-center within the badge) on at least one
+// browser in ways this sandbox's Chromium couldn't reproduce or confirm a
+// fix for - letting Mapbox own positioning entirely removes that whole
+// class of bug rather than patching another guessed-at symptom of it.
+function buildPinMarkerElement(opts: {
+  ariaLabel: string;
+  logo: string | null;
+  initial: string;
+  forceWhiteLogo: boolean;
   onClick: () => void;
   onMouseEnter: () => void;
-  children: React.ReactNode;
-  "aria-label": string;
-}) {
-  // A tap target at least the WCAG-recommended 44px minimum, sized to the
-  // active badge so it never clips. Hover-out is
-  // handled by the wrapper that also contains the preview card (see
-  // LocationsMap), since leaving the button for the card above it
-  // shouldn't close it.
-  return (
-    <button
-      type="button"
-      aria-label={ariaLabel}
-      aria-pressed={active}
-      onClick={onClick}
-      onMouseEnter={onMouseEnter}
-      className="flex h-16 w-16 items-center justify-center"
-    >
-      <span className={className} style={style}>
-        {children}
-      </span>
-    </button>
-  );
+  onMouseLeave: () => void;
+}): { el: HTMLButtonElement; badgeEl: HTMLSpanElement; popupAnchorEl: HTMLDivElement } {
+  // The outer element is the one Mapbox owns and positions via its own
+  // transform - app code must never set a transform/rotation on this
+  // element itself (a known, already-hit bug: doing so overwrites Mapbox's
+  // own positioning transform and the marker jumps to the wrong spot). All
+  // visual shape/rotation lives on the inner badge span instead.
+  const el = document.createElement("button");
+  el.type = "button";
+  el.setAttribute("aria-label", opts.ariaLabel);
+  el.className = "relative flex h-16 w-16 items-center justify-center";
+
+  const badge = document.createElement("span");
+  badge.className =
+    "-rotate-45 overflow-hidden rounded-[50%_50%_50%_0] border-2 transition-all duration-200 h-12 w-12 shadow-[0_2px_8px_rgba(15,32,39,0.3)]";
+  badge.style.background = "#16313D";
+  el.appendChild(badge);
+
+  const inner = document.createElement("span");
+  inner.className = "flex h-full w-full rotate-45 items-center justify-center";
+  badge.appendChild(inner);
+
+  if (opts.logo) {
+    const img = document.createElement("img");
+    img.src = opts.logo;
+    img.alt = "";
+    img.className = "object-contain";
+    img.style.width = "70%";
+    img.style.height = "70%";
+    if (opts.forceWhiteLogo) img.style.filter = "brightness(0) invert(1)";
+    img.onload = () => {
+      const { w, h } = inscribedLogoPercent(img.naturalWidth, img.naturalHeight);
+      img.style.width = `${w}%`;
+      img.style.height = `${h}%`;
+    };
+    inner.appendChild(img);
+  } else {
+    const initialEl = document.createElement("span");
+    initialEl.className = "text-[20px] font-bold text-white/85";
+    initialEl.textContent = opts.initial;
+    inner.appendChild(initialEl);
+  }
+
+  // Where the hover PreviewCard portals in (see LocationsMap) - a plain
+  // child of the marker's own element, so Mapbox carries it along with the
+  // marker automatically with no position syncing of our own needed.
+  const popupAnchor = document.createElement("div");
+  popupAnchor.className = "absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-full";
+  el.appendChild(popupAnchor);
+
+  el.addEventListener("click", (e) => {
+    e.stopPropagation();
+    opts.onClick();
+  });
+  el.addEventListener("mouseenter", opts.onMouseEnter);
+  el.addEventListener("mouseleave", opts.onMouseLeave);
+
+  return { el, badgeEl: badge, popupAnchorEl: popupAnchor };
 }
 
 // Hover (mouse) shows this instantly; a tap/click on touch shows it too and
@@ -405,19 +428,44 @@ export default function LocationsMap() {
   const stripRef = useRef<HTMLDivElement | null>(null);
   const scrollStrip = (dir: 1 | -1) => stripRef.current?.scrollBy({ left: dir * 360, behavior: "smooth" });
 
-  // The map's own camera (center/zoom/pan) decides where each pin lands on
-  // screen. Refs can't be read during render (React flags that as unsafe),
-  // so every time the camera moves this re-projects each pin's real lat/lng
-  // into container-relative pixels with `map.project()` inside the handler
-  // and stores the result in state - render then only ever reads that state.
   const mapContainerRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<mapboxgl.Map | null>(null);
-  const [positions, setPositions] = useState<Record<string, { x: number; y: number }>>({});
-  const mapReady = Object.keys(positions).length > 0;
+  const markersRef = useRef<Record<string, { marker: mapboxgl.Marker; badgeEl: HTMLSpanElement; popupAnchorEl: HTMLDivElement }>>({});
+  // Flips true once markers exist, purely so the hover-preview portal below
+  // (which reads markersRef, a ref - not itself a trigger for re-rendering)
+  // has a reason to re-render and pick them up.
+  const [markersReady, setMarkersReady] = useState(false);
+  // React flags reading a ref's value during render as unsafe, so this
+  // mirrors the hovered pin's own popup-anchor DOM node (read from
+  // markersRef) into state from an effect instead of reading markersRef
+  // directly in the JSX below.
+  const [hoverAnchorEl, setHoverAnchorEl] = useState<HTMLDivElement | null>(null);
+  useEffect(() => {
+    setHoverAnchorEl(hovered ? (markersRef.current[hovered]?.popupAnchorEl ?? null) : null);
+  }, [hovered, markersReady]);
   // Surfaced directly on the page (not just the console) so a non-technical
   // visitor - or whoever is debugging a deploy - can see exactly why the
   // basemap didn't render without needing DevTools.
   const [mapError, setMapError] = useState<string | null>(null);
+
+  // Hover gives mouse users an instant at-pin glance; a tap/click opens the
+  // full centered popover (DevModal) independently of hover, so touch users
+  // (who never fire hover) still get the same result from a tap.
+  const active = hovered ?? selected;
+  const openPin = LIVE_LOCATIONS.find((p) => p.id === openDev) || null;
+  const openDevData = openPin ? devById(openPin.id) : null;
+  const selectedPin = LIVE_LOCATIONS.find((p) => p.id === selected) || null;
+
+  // Selecting a pin (from the map, the strip, or the modal) also dives the
+  // camera toward it - the whole point of a real map over the old
+  // illustrated one is that a dense cluster can be zoomed into instead of
+  // just visually overlapping.
+  const select = (id: string) => {
+    setSelected((cur) => (cur === id ? cur : id));
+    const pin = LIVE_LOCATIONS.find((p) => p.id === id);
+    const map = mapRef.current;
+    if (pin && map) map.flyTo({ center: [pin.lng, pin.lat], zoom: Math.max(map.getZoom(), 13), duration: 700 });
+  };
 
   useEffect(() => {
     if (!mapContainerRef.current || mapRef.current || !MAPBOX_TOKEN) return;
@@ -445,21 +493,35 @@ export default function LocationsMap() {
       console.error("[Mapbox error]", e?.error || e);
     });
 
-    // Mapbox already throttles "move" to its own paint cycle during a
-    // drag/zoom, so wrapping this in an extra requestAnimationFrame just
-    // added a further frame of lag between the map's motion and the pins
-    // catching up - visible/felt as pins not tracking the drag. Run the
-    // projection synchronously on every "move" instead.
-    const sync = () => {
-      const next: Record<string, { x: number; y: number }> = {};
-      LIVE_LOCATIONS.forEach((p) => {
-        const { x, y } = map.project([p.lng, p.lat]);
-        next[p.id] = { x, y };
+    // Pins are Mapbox's own native markers (plain DOM elements it
+    // repositions itself on every camera move/zoom, continuously and
+    // directly) rather than React-rendered elements kept in sync by
+    // recomputing map.project() on every "move" event through React state -
+    // that approach has reportedly left pins visibly desynced from the map
+    // on at least one browser, in ways this sandbox's Chromium couldn't
+    // reproduce to debug further. Letting Mapbox own positioning entirely,
+    // the same way it owns its own attribution/zoom controls, removes that
+    // whole class of bug rather than patching another guessed-at symptom.
+    LIVE_LOCATIONS.forEach((pin) => {
+      const d = devById(pin.id);
+      if (!d) return;
+      const status = statusMetaFor(d, t);
+      const { el, badgeEl, popupAnchorEl } = buildPinMarkerElement({
+        ariaLabel: d.name,
+        logo: resolveLogo(d.logo, d.name),
+        initial: d.name.charAt(0),
+        forceWhiteLogo: PIN_LOGO_NEEDS_WHITE.has(pin.id),
+        onClick: () => select(pin.id),
+        onMouseEnter: () => setHovered(pin.id),
+        onMouseLeave: () => setHovered((cur) => (cur === pin.id ? null : cur)),
       });
-      setPositions(next);
-    };
-    map.on("move", sync);
-    map.on("load", sync);
+      badgeEl.style.borderColor = status.dot;
+      const marker = new mapboxgl.Marker({ element: el, anchor: "center", offset: [0, -pinTipOffset(48)] })
+        .setLngLat([pin.lng, pin.lat])
+        .addTo(map);
+      markersRef.current[pin.id] = { marker, badgeEl, popupAnchorEl };
+    });
+    setMarkersReady(true);
 
     // fitBounds needs the container's real, laid-out size - calling it right
     // after construction can catch the container still at 0 height (CSS
@@ -485,36 +547,36 @@ export default function LocationsMap() {
     const resizeObserver = new ResizeObserver(() => {
       map.resize();
       fitInitialBounds();
-      sync();
     });
     resizeObserver.observe(mapContainerRef.current);
 
     mapRef.current = map;
     return () => {
       resizeObserver.disconnect();
+      Object.values(markersRef.current).forEach(({ marker }) => marker.remove());
+      markersRef.current = {};
       map.remove();
       mapRef.current = null;
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Hover gives mouse users an instant at-pin glance; a tap/click opens the
-  // full centered popover (DevModal) independently of hover, so touch users
-  // (who never fire hover) still get the same result from a tap.
-  const active = hovered ?? selected;
-  const openPin = LIVE_LOCATIONS.find((p) => p.id === openDev) || null;
-  const openDevData = openPin ? devById(openPin.id) : null;
-  const selectedPin = LIVE_LOCATIONS.find((p) => p.id === selected) || null;
-
-  // Selecting a pin (from the map, the strip, or the modal) also dives the
-  // camera toward it - the whole point of a real map over the old
-  // illustrated one is that a dense cluster can be zoomed into instead of
-  // just visually overlapping.
-  const select = (id: string) => {
-    setSelected((cur) => (cur === id ? cur : id));
-    const pin = LIVE_LOCATIONS.find((p) => p.id === id);
-    const map = mapRef.current;
-    if (pin && map) map.flyTo({ center: [pin.lng, pin.lat], zoom: Math.max(map.getZoom(), 13), duration: 700 });
-  };
+  // Reflects which pin is active (hovered/selected) on the marker badges
+  // already built above - their own color/size/stacking, never the
+  // Mapbox-owned outer marker element's position/transform.
+  useEffect(() => {
+    Object.entries(markersRef.current).forEach(([id, { marker, badgeEl }]) => {
+      const isActive = active === id;
+      const size = isActive ? 64 : 48;
+      badgeEl.className = `-rotate-45 overflow-hidden rounded-[50%_50%_50%_0] border-2 transition-all duration-200 ${
+        isActive ? "h-16 w-16 shadow-[0_6px_16px_rgba(193,86,15,0.45)]" : "h-12 w-12 shadow-[0_2px_8px_rgba(15,32,39,0.3)]"
+      }`;
+      const d = devById(id);
+      badgeEl.style.borderColor = isActive ? "#C1560F" : d ? statusMetaFor(d, t).dot : "#2E86D8";
+      marker.setOffset([0, -pinTipOffset(size)]);
+      marker.getElement().style.zIndex = isActive ? "50" : "0";
+    });
+  }, [active, t]);
 
   return (
     <div className="mx-auto w-full px-4 pb-8 pt-4 md:px-8 md:pb-10 md:pt-5" style={{ maxWidth: 1440 }}>
@@ -591,69 +653,18 @@ export default function LocationsMap() {
           </div>
         )}
 
-        {/* A separate layer (not nested inside the map container, which is
-            clipped to the map's rounded corners) so a preview card near the
-            edge can still bleed outside that box instead of being cut off.
-            `pointer-events-none` here lets drag-to-pan reach the map through
-            the empty space between pins; each pin re-enables it on itself. */}
-        {mapReady && (
-          <div className="pointer-events-none absolute inset-0">
-            {LIVE_LOCATIONS.map((pin) => {
-              const d = devById(pin.id);
-              const pos = positions[pin.id];
-              if (!d || !pos) return null;
-              const isActive = active === pin.id;
-              const status = statusMetaFor(d, t);
-              const { x, y } = pos;
-              const logo = resolveLogo(d.logo, d.name);
-              // The pin is a square badge rotated -45deg into a teardrop, so
-              // its actual point (the part that should mark the real
-              // coordinate) sits below the badge's own geometric center by
-              // (badge size * sin 45deg) - centering the whole badge on the
-              // coordinate instead (the previous behavior) made every pin
-              // appear to sit noticeably above/away from its true location.
-              // Add that offset to the translate below so the tip - not the
-              // badge's center - lands exactly on the pin's lat/lng.
-              const pinSize = isActive ? 64 : 48;
-              const tipOffset = pinSize * Math.SQRT1_2;
-              return (
-                <div
-                  key={pin.id}
-                  className={`pointer-events-auto absolute transition-opacity duration-200 ${isActive ? "z-50" : "z-0"}`}
-                  style={{ left: x, top: y, transform: `translate(-50%, -50%) translateY(-${tipOffset}px)` }}
-                  onMouseLeave={() => setHovered((cur) => (cur === pin.id ? null : cur))}
-                >
-                  <PinButton
-                    active={isActive}
-                    aria-label={d.name}
-                    onClick={() => select(pin.id)}
-                    onMouseEnter={() => setHovered(pin.id)}
-                    className={`-rotate-45 overflow-hidden rounded-[50%_50%_50%_0] border-2 transition-all duration-200 ${
-                      isActive
-                        ? "h-16 w-16 shadow-[0_6px_16px_rgba(193,86,15,0.45)]"
-                        : "h-12 w-12 shadow-[0_2px_8px_rgba(15,32,39,0.3)]"
-                    }`}
-                    style={{ borderColor: isActive ? "#C1560F" : status.dot, background: "#16313D" }}
-                  >
-                    <span className="flex h-full w-full rotate-45 items-center justify-center">
-                      {logo ? (
-                        <PinLogo src={logo} forceWhite={PIN_LOGO_NEEDS_WHITE.has(pin.id)} />
-                      ) : (
-                        <span className="text-[20px] font-bold text-white/85">{d.name.charAt(0)}</span>
-                      )}
-                    </span>
-                  </PinButton>
-
-                  {hovered === pin.id && selected !== pin.id && (
-                    <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-full">
-                      <PreviewCard pin={pin} onOpen={setOpenDev} />
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-          </div>
-        )}
+        {/* The hover PreviewCard portals into a DOM node that's a child of
+            the hovered pin's own Mapbox marker element (built in the mount
+            effect above), so it's carried along by Mapbox's own marker
+            positioning automatically - no separate position syncing of our
+            own needed, the same reasoning as the pins themselves. */}
+        {hovered &&
+          selected !== hovered &&
+          hoverAnchorEl &&
+          createPortal(
+            <PreviewCard pin={LIVE_LOCATIONS.find((p) => p.id === hovered)!} onOpen={setOpenDev} />,
+            hoverAnchorEl
+          )}
 
         {selectedPin && <DevModal pin={selectedPin} onClose={() => setSelected(null)} onOpen={setOpenDev} />}
       </div>
