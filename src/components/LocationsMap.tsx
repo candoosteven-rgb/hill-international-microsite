@@ -49,6 +49,32 @@ function inscribedLogoPercent(naturalWidth: number, naturalHeight: number): { w:
   return { w: (ratio / diag) * 100, h: (1 / diag) * 100 };
 }
 
+// A map pin's logo, sized to inscribedLogoPercent once its natural
+// dimensions are known. Drives the size through React state (re-rendering
+// declaratively) rather than mutating img.style directly in the onLoad
+// handler - a direct DOM mutation on a replaced element inside a rotated
+// flex container has, on at least one browser engine, left the image
+// visibly off-center (flush to one edge) until some unrelated reflow later
+// corrected it, where a normal React re-render reliably lays out correctly
+// from the start.
+function PinLogo({ src, forceWhite }: { src: string; forceWhite: boolean }) {
+  const [size, setSize] = useState<{ w: number; h: number }>({ w: 70, h: 70 });
+  return (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src={src}
+      alt=""
+      className="object-contain"
+      style={{
+        width: `${size.w}%`,
+        height: `${size.h}%`,
+        ...(forceWhite ? { filter: "brightness(0) invert(1)" } : null),
+      }}
+      onLoad={(e) => setSize(inscribedLogoPercent(e.currentTarget.naturalWidth, e.currentTarget.naturalHeight))}
+    />
+  );
+}
+
 function PinButton({
   active,
   className,
@@ -611,24 +637,7 @@ export default function LocationsMap() {
                   >
                     <span className="flex h-full w-full rotate-45 items-center justify-center">
                       {logo ? (
-                        // eslint-disable-next-line @next/next/no-img-element
-                        <img
-                          src={logo}
-                          alt=""
-                          className="h-[70%] w-[70%] object-contain"
-                          // Fitzwilliam Gate and City Reach's source files are
-                          // dark navy wordmarks (everyone else's is already
-                          // white/light) - force them white so they read
-                          // against this pin's dark fill, same fix already
-                          // applied to Fitzwilliam Gate's strip tile.
-                          style={PIN_LOGO_NEEDS_WHITE.has(pin.id) ? { filter: "brightness(0) invert(1)" } : undefined}
-                          onLoad={(e) => {
-                            const img = e.currentTarget;
-                            const { w, h } = inscribedLogoPercent(img.naturalWidth, img.naturalHeight);
-                            img.style.width = `${w}%`;
-                            img.style.height = `${h}%`;
-                          }}
-                        />
+                        <PinLogo src={logo} forceWhite={PIN_LOGO_NEEDS_WHITE.has(pin.id)} />
                       ) : (
                         <span className="text-[20px] font-bold text-white/85">{d.name.charAt(0)}</span>
                       )}
