@@ -348,10 +348,7 @@ function DevStripCard({
             src={logo}
             alt=""
             className="max-h-[90px] max-w-[130px] object-contain object-left"
-            // Fitzwilliam Gate's source file is a dark navy wordmark (the
-            // others are already white) - force it white to read against
-            // the tile's dark scrim, same as every other logo here.
-            style={pin.id === "fitzwilliam-gate" ? { filter: "brightness(0) invert(1)" } : undefined}
+            style={PIN_LOGO_NEEDS_WHITE.has(pin.id) ? { filter: "brightness(0) invert(1)" } : undefined}
           />
         </div>
       )}
@@ -368,6 +365,11 @@ function DevStripCard({
 // Only live developments are shown on this page - computed once at module
 // scope since it doesn't depend on component state.
 const LIVE_LOCATIONS = LOCATIONS.filter((p) => devById(p.id)?.status === "live");
+
+// These developments' logo files are dark navy wordmarks, unlike everyone
+// else's (already white/light) - unreadable against this page's dark pin
+// fill and strip-tile scrim without forcing them white.
+const PIN_LOGO_NEEDS_WHITE = new Set(["fitzwilliam-gate", "city-reach"]);
 
 export default function LocationsMap() {
   const { t } = useLanguage();
@@ -614,6 +616,12 @@ export default function LocationsMap() {
                           src={logo}
                           alt=""
                           className="h-[70%] w-[70%] object-contain"
+                          // Fitzwilliam Gate and City Reach's source files are
+                          // dark navy wordmarks (everyone else's is already
+                          // white/light) - force them white so they read
+                          // against this pin's dark fill, same fix already
+                          // applied to Fitzwilliam Gate's strip tile.
+                          style={PIN_LOGO_NEEDS_WHITE.has(pin.id) ? { filter: "brightness(0) invert(1)" } : undefined}
                           onLoad={(e) => {
                             const img = e.currentTarget;
                             const { w, h } = inscribedLogoPercent(img.naturalWidth, img.naturalHeight);
