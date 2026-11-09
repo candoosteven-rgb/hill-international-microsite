@@ -32,6 +32,23 @@ function homesFor(devId: string): string | null {
   return factsFor(devId).find((f) => f.k === "f_types")?.v || null;
 }
 
+// The map pin's logo sits inside the teardrop's circular "head", so a fixed
+// square box (e.g. 70% x 70%) is only ever as big as a *square* logo (like
+// North Gate Park's) can safely get without its corners poking past that
+// circle - every wider, wordmark-style logo (most of them) was rendering
+// far smaller than the space actually available, since object-contain just
+// shrinks a wide image to fit that square untouched. This instead computes
+// the biggest rectangle of the image's own aspect ratio that still
+// inscribes inside the circle, so a wide logo fills almost the full
+// diameter width (thin ones can safely get close to 100%) while a square
+// logo still tops out at the same ~70.7% that was already working well.
+function inscribedLogoPercent(naturalWidth: number, naturalHeight: number): { w: number; h: number } {
+  if (!naturalWidth || !naturalHeight) return { w: 70, h: 70 };
+  const ratio = naturalWidth / naturalHeight;
+  const diag = Math.sqrt(ratio * ratio + 1);
+  return { w: (ratio / diag) * 100, h: (1 / diag) * 100 };
+}
+
 function PinButton({
   active,
   className,
@@ -593,7 +610,17 @@ export default function LocationsMap() {
                     <span className="flex h-full w-full rotate-45 items-center justify-center">
                       {logo ? (
                         // eslint-disable-next-line @next/next/no-img-element
-                        <img src={logo} alt="" className="h-[70%] w-[70%] object-contain" />
+                        <img
+                          src={logo}
+                          alt=""
+                          className="h-[70%] w-[70%] object-contain"
+                          onLoad={(e) => {
+                            const img = e.currentTarget;
+                            const { w, h } = inscribedLogoPercent(img.naturalWidth, img.naturalHeight);
+                            img.style.width = `${w}%`;
+                            img.style.height = `${h}%`;
+                          }}
+                        />
                       ) : (
                         <span className="text-[20px] font-bold text-white/85">{d.name.charAt(0)}</span>
                       )}
