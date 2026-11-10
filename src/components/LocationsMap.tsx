@@ -345,6 +345,7 @@ function DevStripCard({
 }) {
   const { t } = useLanguage();
   const imgRef = useRef<HTMLImageElement | null>(null);
+  const logoRef = useRef<HTMLImageElement | null>(null);
   const [heroBroken, setHeroBroken] = useState(false);
   // The image tag is already in the static HTML, so the browser can start
   // (and fail) loading it before React hydrates and attaches `onError` -
@@ -364,7 +365,20 @@ function DevStripCard({
       type="button"
       aria-pressed={active}
       onClick={onSelect}
-      onMouseEnter={() => onHover(pin.id)}
+      onMouseEnter={() => {
+        onHover(pin.id);
+        // The logo spins a full turn into view each time this tile is
+        // hovered - a repeatable "reveal", unlike the map pin's one-off
+        // click flourish - so this removes+re-adds the class on every
+        // entry (forcing a reflow in between) rather than relying on the
+        // CSS animation's own restart-on-reapply behavior.
+        const el = logoRef.current;
+        if (el) {
+          el.classList.remove("hi-spin-grow");
+          void el.offsetWidth;
+          el.classList.add("hi-spin-grow");
+        }
+      }}
       onMouseLeave={() => onHover((cur) => (cur === pin.id ? null : cur))}
       className="group relative h-[216px] w-[192px] flex-none snap-start overflow-hidden rounded-[16px] text-left transition-transform duration-300 ease-[cubic-bezier(0.2,0.7,0.2,1)] hover:-translate-y-1.5 hover:scale-[1.015]"
       style={{
@@ -422,6 +436,7 @@ function DevStripCard({
         <div className="absolute inset-x-3.5 top-3.5">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
+            ref={logoRef}
             src={logo}
             alt=""
             className="max-h-[90px] max-w-[130px] object-contain object-left"
@@ -661,25 +676,6 @@ export default function LocationsMap() {
       marker.getElement().style.zIndex = isActive ? "50" : "0";
     });
   }, [active, t]);
-  // The spin-grow flourish (see hi-spin-grow in globals.css) only runs on
-  // a deliberate click/tap - keyed off `selected`, not `active` (which
-  // also includes hover), so casually passing the mouse over pins doesn't
-  // replay it on every one.
-  const prevSelectedRef = useRef<string | null>(null);
-  useEffect(() => {
-    if (selected && prevSelectedRef.current !== selected) {
-      Object.entries(markersRef.current).forEach(([id, { badgeEl }]) => {
-        if (id !== selected) return;
-        const logoEl = badgeEl.firstElementChild?.firstElementChild;
-        if (logoEl instanceof HTMLElement) {
-          logoEl.classList.remove("hi-spin-grow");
-          void logoEl.offsetWidth;
-          logoEl.classList.add("hi-spin-grow");
-        }
-      });
-    }
-    prevSelectedRef.current = selected;
-  }, [selected]);
 
   return (
     <div className="mx-auto w-full px-4 pb-8 pt-4 md:px-8 md:pb-10 md:pt-5" style={{ maxWidth: 1440 }}>
