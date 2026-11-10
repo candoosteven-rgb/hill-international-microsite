@@ -98,6 +98,27 @@ body {
   animation: hi-pop 0.32s cubic-bezier(0.2, 0.7, 0.2, 1) both;
 }
 
+/* Map hover PreviewCard only - same settle curve as hi-pop, but the card
+   also rises and tilts back from a slight 3D lean as it settles, so it
+   reads as lifting off the map in front of the pin rather than just
+   scaling up in place. transform-origin (set via the origin-top/
+   origin-bottom class already on the card for the above/below-pin flip)
+   is what the rotateX leans back from, so the card's visible "hinge"
+   point always matches which edge it's anchored to. */
+@keyframes hi-float {
+  from {
+    transform: translateY(10px) scale(0.93) rotateX(10deg);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1) rotateX(0deg);
+    opacity: 1;
+  }
+}
+.hi-float {
+  animation: hi-float 0.38s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
 @keyframes hi-fade {
   from {
     opacity: 0;

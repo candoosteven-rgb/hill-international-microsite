@@ -90,7 +90,7 @@ function buildPinMarkerElement(opts: {
 
   const badge = document.createElement("span");
   badge.className =
-    "-rotate-45 overflow-hidden rounded-[50%_50%_50%_0] border-2 transition-all duration-200 h-[60px] w-[60px] shadow-[0_2px_8px_rgba(15,32,39,0.3)]";
+    "-rotate-45 overflow-hidden rounded-[50%_50%_50%_0] border-2 transition-all duration-300 ease-[cubic-bezier(0.2,0.7,0.2,1)] h-[60px] w-[60px] shadow-[0_2px_8px_rgba(15,32,39,0.3)]";
   badge.style.background = "#16313D";
   el.appendChild(badge);
 
@@ -170,7 +170,7 @@ function PreviewCard({
       // <button> marker element - the actual bug behind "some tiles are
       // centered, some are left" (DevModal/DevStripCard aren't inside a
       // button, so they were never affected).
-      className="hi-pop w-[280px] origin-bottom overflow-hidden rounded-[16px] bg-white text-left shadow-[0_12px_32px_rgba(15,32,39,0.28)]"
+      className="hi-float w-[280px] origin-bottom overflow-hidden rounded-[16px] bg-white text-left shadow-[0_12px_32px_rgba(15,32,39,0.28)]"
       onClick={(e) => e.stopPropagation()}
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -366,7 +366,7 @@ function DevStripCard({
       onClick={onSelect}
       onMouseEnter={() => onHover(pin.id)}
       onMouseLeave={() => onHover((cur) => (cur === pin.id ? null : cur))}
-      className="group relative h-[216px] w-[192px] flex-none snap-start overflow-hidden rounded-[16px] text-left transition-transform duration-200 hover:-translate-y-1"
+      className="group relative h-[216px] w-[192px] flex-none snap-start overflow-hidden rounded-[16px] text-left transition-transform duration-300 ease-[cubic-bezier(0.2,0.7,0.2,1)] hover:-translate-y-1.5 hover:scale-[1.015]"
       style={{
         boxShadow: active ? "0 10px 26px rgba(193,86,15,0.4)" : "0 6px 18px rgba(15,32,39,0.22)",
         outline: active ? "2.5px solid #C1560F" : "2.5px solid transparent",
@@ -650,7 +650,7 @@ export default function LocationsMap() {
     Object.entries(markersRef.current).forEach(([id, { marker, badgeEl }]) => {
       const isActive = active === id;
       const size = isActive ? 80 : 60;
-      badgeEl.className = `-rotate-45 overflow-hidden rounded-[50%_50%_50%_0] border-2 transition-all duration-200 ${
+      badgeEl.className = `-rotate-45 overflow-hidden rounded-[50%_50%_50%_0] border-2 transition-all duration-300 ease-[cubic-bezier(0.2,0.7,0.2,1)] ${
         isActive
           ? "h-20 w-20 shadow-[0_6px_16px_rgba(193,86,15,0.45)]"
           : "h-[60px] w-[60px] shadow-[0_2px_8px_rgba(15,32,39,0.3)]"
@@ -746,7 +746,7 @@ export default function LocationsMap() {
           selected !== hovered &&
           hoverAnchorEl &&
           createPortal(
-            <div ref={previewWrapRef}>
+            <div ref={previewWrapRef} style={{ perspective: 800 }}>
               <PreviewCard
                 pin={LIVE_LOCATIONS.find((p) => p.id === hovered)!}
                 onOpen={setOpenDev}
