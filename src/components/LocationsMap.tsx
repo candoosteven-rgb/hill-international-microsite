@@ -164,7 +164,13 @@ function PreviewCard({
   return (
     <div
       ref={cardRef}
-      className="hi-pop w-[280px] origin-bottom overflow-hidden rounded-[16px] bg-white shadow-[0_12px_32px_rgba(15,32,39,0.28)]"
+      // text-left overrides the browser's default <button> UA style
+      // (text-align: center), which otherwise cascades down into this
+      // card since it's portaled as a DOM descendant of the pin's own
+      // <button> marker element - the actual bug behind "some tiles are
+      // centered, some are left" (DevModal/DevStripCard aren't inside a
+      // button, so they were never affected).
+      className="hi-pop w-[280px] origin-bottom overflow-hidden rounded-[16px] bg-white text-left shadow-[0_12px_32px_rgba(15,32,39,0.28)]"
       onClick={(e) => e.stopPropagation()}
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
