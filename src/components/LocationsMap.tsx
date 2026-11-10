@@ -98,11 +98,20 @@ function buildPinMarkerElement(opts: {
   el.setAttribute("aria-label", opts.ariaLabel);
   el.className = "relative inline-flex flex-col items-center border-0 bg-transparent p-0 m-0 leading-none";
 
+  // The badge itself carries the border, background and shadow/halo - its
+  // own box-shadow must stay unclipped for the hover halo to be visible,
+  // so the logo's corner-clipping lives on the separate `content` span
+  // inside it instead of on badge directly (overflow-hidden on the same
+  // element as a box-shadow clips the shadow too, cutting the halo off).
   const badge = document.createElement("span");
   badge.className =
-    "flex items-center justify-center overflow-hidden rounded-2xl border-2 transition-all duration-300 ease-[cubic-bezier(0.2,0.7,0.2,1)] h-[60px] w-[60px] shadow-[0_2px_8px_rgba(15,32,39,0.3)]";
+    "block rounded-2xl border-2 transition-all duration-300 ease-[cubic-bezier(0.2,0.7,0.2,1)] h-[60px] w-[60px] shadow-[0_2px_8px_rgba(15,32,39,0.3)]";
   badge.style.background = "#16313D";
   el.appendChild(badge);
+
+  const content = document.createElement("span");
+  content.className = "flex h-full w-full items-center justify-center overflow-hidden rounded-2xl";
+  badge.appendChild(content);
 
   // The downward-pointing tail marking the pin's exact coordinate - a
   // plain CSS triangle (the border trick: a zero-size box whose
@@ -123,12 +132,12 @@ function buildPinMarkerElement(opts: {
     img.alt = "";
     img.className = "max-h-[72%] max-w-[72%] object-contain";
     if (opts.forceWhiteLogo) img.style.filter = "brightness(0) invert(1)";
-    badge.appendChild(img);
+    content.appendChild(img);
   } else {
     const initialEl = document.createElement("span");
     initialEl.className = "text-[25px] font-bold text-white/85";
     initialEl.textContent = opts.initial;
-    badge.appendChild(initialEl);
+    content.appendChild(initialEl);
   }
 
   // Where the hover PreviewCard portals in (see LocationsMap) - a plain
@@ -667,9 +676,9 @@ export default function LocationsMap() {
     Object.entries(markersRef.current).forEach(([id, { marker, badgeEl, tailEl }]) => {
       const isActive = active === id;
       const size = isActive ? 80 : 60;
-      badgeEl.className = `flex items-center justify-center overflow-hidden rounded-2xl border-2 transition-all duration-300 ease-[cubic-bezier(0.2,0.7,0.2,1)] ${
+      badgeEl.className = `block rounded-2xl border-2 transition-all duration-300 ease-[cubic-bezier(0.2,0.7,0.2,1)] ${
         isActive
-          ? "h-20 w-20 shadow-[0_6px_16px_rgba(193,86,15,0.45)]"
+          ? "h-20 w-20 shadow-[0_6px_16px_rgba(193,86,15,0.45),0_0_0_10px_rgba(193,86,15,0.22)]"
           : "h-[60px] w-[60px] shadow-[0_2px_8px_rgba(15,32,39,0.3)]"
       }`;
       const d = devById(id);
