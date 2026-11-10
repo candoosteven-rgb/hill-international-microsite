@@ -44,23 +44,36 @@ function homesFor(devId: string): string | null {
 // the element's center coincides with the badge's own center, and it
 // doesn't once the tail adds height below the badge.
 const TAIL_OVERLAP = 2;
+// Matches the badge's own border-2, so the tail's outline reads as a
+// continuation of the same ring rather than a different thickness.
+const TAIL_BORDER = 2;
 function tailHeightFor(size: number): number {
   return Math.round(size * 0.22);
 }
 function pinTipOffset(size: number): number {
-  return (size + tailHeightFor(size) - TAIL_OVERLAP) / 2;
+  return (size + tailHeightFor(size) + TAIL_BORDER - TAIL_OVERLAP) / 2;
 }
 
-// Sizes the CSS-triangle tail (the border trick: a zero-size box whose
-// border-top paints a downward-pointing triangle) to match the badge's
-// current size, and keeps it the badge's own navy fill regardless of the
-// badge's status-colored border ring.
-function applyTailSize(tailEl: HTMLSpanElement, size: number) {
-  const h = tailHeightFor(size);
-  const halfWidth = Math.round(size * 0.16);
-  tailEl.style.borderLeft = `${halfWidth}px solid transparent`;
-  tailEl.style.borderRight = `${halfWidth}px solid transparent`;
-  tailEl.style.borderTop = `${h}px solid #16313D`;
+// The CSS-triangle tail (the border trick: a zero-size box whose
+// border-top paints a downward-pointing triangle) can't carry its own
+// border the way the badge does, since the "border" is the whole shape -
+// so this draws it as two stacked triangles instead: a larger one in the
+// current status/active color sitting behind a smaller navy one offset by
+// TAIL_BORDER, which reads as a TAIL_BORDER-wide outline around the tail,
+// matching the badge's own ring instead of the tail just trailing off in
+// plain navy with no outline at all.
+function applyTailSize(tailOuterEl: HTMLSpanElement, tailInnerEl: HTMLSpanElement, size: number, color: string) {
+  const innerH = tailHeightFor(size);
+  const innerHalfWidth = Math.round(size * 0.16);
+  const outerH = innerH + TAIL_BORDER;
+  const outerHalfWidth = innerHalfWidth + TAIL_BORDER;
+  tailOuterEl.style.borderLeft = `${outerHalfWidth}px solid transparent`;
+  tailOuterEl.style.borderRight = `${outerHalfWidth}px solid transparent`;
+  tailOuterEl.style.borderTop = `${outerH}px solid ${color}`;
+  tailInnerEl.style.top = `${TAIL_BORDER}px`;
+  tailInnerEl.style.borderLeft = `${innerHalfWidth}px solid transparent`;
+  tailInnerEl.style.borderRight = `${innerHalfWidth}px solid transparent`;
+  tailInnerEl.style.borderTop = `${innerH}px solid #16313D`;
 }
 
 // Builds one map pin as a plain DOM element for Mapbox's native Marker API,
@@ -81,7 +94,13 @@ function buildPinMarkerElement(opts: {
   onClick: () => void;
   onMouseEnter: () => void;
   onMouseLeave: () => void;
-}): { el: HTMLButtonElement; badgeEl: HTMLSpanElement; tailEl: HTMLSpanElement; popupAnchorEl: HTMLDivElement } {
+}): {
+  el: HTMLButtonElement;
+  badgeEl: HTMLSpanElement;
+  tailOuterEl: HTMLSpanElement;
+  tailInnerEl: HTMLSpanElement;
+  popupAnchorEl: HTMLDivElement;
+} {
   // The outer element is the one Mapbox owns and positions via its own
   // transform - app code must never set a transform/rotation on this
   // element itself (a known, already-hit bug: doing so overwrites Mapbox's
@@ -113,18 +132,29 @@ function buildPinMarkerElement(opts: {
   content.className = "flex h-full w-full items-center justify-center overflow-hidden rounded-2xl";
   badge.appendChild(content);
 
-  // The downward-pointing tail marking the pin's exact coordinate - a
-  // plain CSS triangle (the border trick: a zero-size box whose
-  // border-top paints a downward triangle), not rotated/clipped content,
-  // so unlike the old teardrop badge it needs no counter-rotated inner
-  // wrapper to keep its logo upright.
-  const tail = document.createElement("span");
-  tail.className = "block";
-  tail.style.width = "0";
-  tail.style.height = "0";
-  tail.style.marginTop = `-${TAIL_OVERLAP}px`;
-  applyTailSize(tail, 60);
-  el.appendChild(tail);
+  // The downward-pointing tail marking the pin's exact coordinate - two
+  // stacked CSS triangles (see applyTailSize) so it can carry an outline
+  // matching the badge's own border ring. tailWrap's own rendered size is
+  // just tailOuter's (a normal-flow child); tailInner is positioned over
+  // it absolutely, so it doesn't affect that sizing.
+  const tailWrap = document.createElement("span");
+  tailWrap.className = "relative block";
+  tailWrap.style.marginTop = `-${TAIL_OVERLAP}px`;
+  el.appendChild(tailWrap);
+
+  const tailOuter = document.createElement("span");
+  tailOuter.className = "block";
+  tailOuter.style.width = "0";
+  tailOuter.style.height = "0";
+  tailWrap.appendChild(tailOuter);
+
+  const tailInner = document.createElement("span");
+  tailInner.className = "absolute left-1/2 -translate-x-1/2 block";
+  tailInner.style.width = "0";
+  tailInner.style.height = "0";
+  tailWrap.appendChild(tailInner);
+
+  applyTailSize(tailOuter, tailInner, 60, "#2E86D8");
 
   if (opts.logo) {
     const img = document.createElement("img");
@@ -161,7 +191,7 @@ function buildPinMarkerElement(opts: {
   el.addEventListener("mouseenter", opts.onMouseEnter);
   el.addEventListener("mouseleave", opts.onMouseLeave);
 
-  return { el, badgeEl: badge, tailEl: tail, popupAnchorEl: popupAnchor };
+  return { el, badgeEl: badge, tailOuterEl: tailOuter, tailInnerEl: tailInner, popupAnchorEl: popupAnchor };
 }
 
 // Hover (mouse) shows this instantly; a tap/click on touch shows it too and
@@ -483,7 +513,16 @@ export default function LocationsMap() {
   const mapContainerRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<mapboxgl.Map | null>(null);
   const markersRef = useRef<
-    Record<string, { marker: mapboxgl.Marker; badgeEl: HTMLSpanElement; tailEl: HTMLSpanElement; popupAnchorEl: HTMLDivElement }>
+    Record<
+      string,
+      {
+        marker: mapboxgl.Marker;
+        badgeEl: HTMLSpanElement;
+        tailOuterEl: HTMLSpanElement;
+        tailInnerEl: HTMLSpanElement;
+        popupAnchorEl: HTMLDivElement;
+      }
+    >
   >({});
   // Flips true once markers exist, purely so the hover-preview portal below
   // (which reads markersRef, a ref - not itself a trigger for re-rendering)
@@ -614,7 +653,7 @@ export default function LocationsMap() {
       const d = devById(pin.id);
       if (!d) return;
       const status = statusMetaFor(d, t);
-      const { el, badgeEl, tailEl, popupAnchorEl } = buildPinMarkerElement({
+      const { el, badgeEl, tailOuterEl, tailInnerEl, popupAnchorEl } = buildPinMarkerElement({
         ariaLabel: d.name,
         logo: resolveLogo(d.logo, d.name),
         initial: d.name.charAt(0),
@@ -624,10 +663,11 @@ export default function LocationsMap() {
         onMouseLeave: () => setHovered((cur) => (cur === pin.id ? null : cur)),
       });
       badgeEl.style.borderColor = status.dot;
+      applyTailSize(tailOuterEl, tailInnerEl, 60, status.dot);
       const marker = new mapboxgl.Marker({ element: el, anchor: "center", offset: [0, -pinTipOffset(60)] })
         .setLngLat([pin.lng, pin.lat])
         .addTo(map);
-      markersRef.current[pin.id] = { marker, badgeEl, tailEl, popupAnchorEl };
+      markersRef.current[pin.id] = { marker, badgeEl, tailOuterEl, tailInnerEl, popupAnchorEl };
     });
     setMarkersReady(true);
 
@@ -673,7 +713,7 @@ export default function LocationsMap() {
   // already built above - their own color/size/stacking, never the
   // Mapbox-owned outer marker element's position/transform.
   useEffect(() => {
-    Object.entries(markersRef.current).forEach(([id, { marker, badgeEl, tailEl }]) => {
+    Object.entries(markersRef.current).forEach(([id, { marker, badgeEl, tailOuterEl, tailInnerEl }]) => {
       const isActive = active === id;
       const size = isActive ? 80 : 60;
       badgeEl.className = `block rounded-2xl border-2 transition-all duration-300 ease-[cubic-bezier(0.2,0.7,0.2,1)] ${
@@ -682,8 +722,9 @@ export default function LocationsMap() {
           : "h-[60px] w-[60px] shadow-[0_2px_8px_rgba(15,32,39,0.3)]"
       }`;
       const d = devById(id);
-      badgeEl.style.borderColor = isActive ? "#C1560F" : d ? statusMetaFor(d, t).dot : "#2E86D8";
-      applyTailSize(tailEl, size);
+      const color = isActive ? "#C1560F" : d ? statusMetaFor(d, t).dot : "#2E86D8";
+      badgeEl.style.borderColor = color;
+      applyTailSize(tailOuterEl, tailInnerEl, size, color);
       marker.setOffset([0, -pinTipOffset(size)]);
       marker.getElement().style.zIndex = isActive ? "50" : "0";
     });
