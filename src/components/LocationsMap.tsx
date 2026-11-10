@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type RefObject } from "react";
 import { createPortal } from "react-dom";
 import Link from "next/link";
 import mapboxgl from "mapbox-gl";
@@ -121,9 +121,13 @@ function buildPinMarkerElement(opts: {
 
   // Where the hover PreviewCard portals in (see LocationsMap) - a plain
   // child of the marker's own element, so Mapbox carries it along with the
-  // marker automatically with no position syncing of our own needed.
+  // marker automatically with no position syncing of our own needed. The
+  // vertical translate is set imperatively (not via a Tailwind class) so
+  // LocationsMap's hover-position effect can flip it below the pin near
+  // the top edge of the viewport without fighting a class-driven transform.
   const popupAnchor = document.createElement("div");
-  popupAnchor.className = "absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-full";
+  popupAnchor.className = "absolute left-1/2 top-1/2";
+  popupAnchor.style.transform = "translate(-50%, -100%)";
   el.appendChild(popupAnchor);
 
   el.addEventListener("click", (e) => {
@@ -139,7 +143,15 @@ function buildPinMarkerElement(opts: {
 // Hover (mouse) shows this instantly; a tap/click on touch shows it too and
 // keeps it open regardless of subsequent pointer movement - neither input
 // depends on the other.
-function PreviewCard({ pin, onOpen }: { pin: LocationPin; onOpen: (id: string) => void }) {
+function PreviewCard({
+  pin,
+  onOpen,
+  cardRef,
+}: {
+  pin: LocationPin;
+  onOpen: (id: string) => void;
+  cardRef?: RefObject<HTMLDivElement | null>;
+}) {
   const { t } = useLanguage();
   const d = devById(pin.id);
   if (!d) return null;
@@ -151,6 +163,7 @@ function PreviewCard({ pin, onOpen }: { pin: LocationPin; onOpen: (id: string) =
 
   return (
     <div
+      ref={cardRef}
       className="hi-pop w-[280px] origin-bottom overflow-hidden rounded-[16px] bg-white shadow-[0_12px_32px_rgba(15,32,39,0.28)]"
       onClick={(e) => e.stopPropagation()}
     >
@@ -452,6 +465,60 @@ export default function LocationsMap() {
   useEffect(() => {
     setHoverAnchorEl(hovered ? (markersRef.current[hovered]?.popupAnchorEl ?? null) : null);
   }, [hovered, markersReady]);
+  // Near a map edge, the hover PreviewCard's default position (centered
+  // above the pin) can push it off-screen - clipped by the browser
+  // viewport, not just the map. Rather than pan the map on every hover
+  // (distracting, and the map's framing is otherwise deliberate), this
+  // measures the card after it mounts and nudges it back into view:
+  // flipping it below the pin when there's no room above, and shifting it
+  // horizontally when it would overhang the left/right edge. Applied as
+  // direct DOM mutations via refs (the same pattern the active-pin effect
+  // below uses on badgeEl) rather than React state, since these are purely
+  // cosmetic nudges to elements outside hovered/the ids this re-renders on.
+  const previewCardRef = useRef<HTMLDivElement | null>(null);
+  const previewWrapRef = useRef<HTMLDivElement | null>(null);
+  useEffect(() => {
+    if (!hovered) return;
+    let cancelled = false;
+    let raf = 0;
+    Object.entries(markersRef.current).forEach(([id, { popupAnchorEl }]) => {
+      if (id !== hovered) return;
+      const anchorEl = popupAnchorEl;
+      const card = previewCardRef.current;
+      const wrap = previewWrapRef.current;
+      if (!card || !wrap) return;
+      // Reset to the default "above, centered" position first so a
+      // flipped/shifted previous card doesn't flash in the wrong spot for
+      // a frame while this one is being measured.
+      anchorEl.style.transform = "translate(-50%, -100%)";
+      wrap.style.transform = "";
+      card.classList.remove("origin-top");
+      card.classList.add("origin-bottom");
+      raf = requestAnimationFrame(() => {
+        if (cancelled) return;
+        const rect = card.getBoundingClientRect();
+        const margin = 12;
+        const flipBelow = rect.top < margin;
+        let shiftX = 0;
+        if (rect.right > window.innerWidth - margin) shiftX -= rect.right - (window.innerWidth - margin);
+        if (rect.left + shiftX < margin) shiftX += margin - (rect.left + shiftX);
+        anchorEl.style.transform = flipBelow ? "translate(-50%, 28px)" : "translate(-50%, -100%)";
+        wrap.style.transform = shiftX ? `translateX(${shiftX}px)` : "";
+        if (flipBelow) {
+          card.classList.remove("origin-bottom");
+          card.classList.add("origin-top");
+        }
+      });
+    });
+    return () => {
+      cancelled = true;
+      cancelAnimationFrame(raf);
+    };
+    // hoverAnchorEl (not just hovered) is a dependency because the portal
+    // this measures only mounts once it's set - one render after hovered
+    // changes - so previewCardRef/previewWrapRef aren't populated yet on
+    // the render where hovered itself changes.
+  }, [hovered, hoverAnchorEl]);
   // Surfaced directly on the page (not just the console) so a non-technical
   // visitor - or whoever is debugging a deploy - can see exactly why the
   // basemap didn't render without needing DevTools.
@@ -673,7 +740,13 @@ export default function LocationsMap() {
           selected !== hovered &&
           hoverAnchorEl &&
           createPortal(
-            <PreviewCard pin={LIVE_LOCATIONS.find((p) => p.id === hovered)!} onOpen={setOpenDev} />,
+            <div ref={previewWrapRef}>
+              <PreviewCard
+                pin={LIVE_LOCATIONS.find((p) => p.id === hovered)!}
+                onOpen={setOpenDev}
+                cardRef={previewCardRef}
+              />
+            </div>,
             hoverAnchorEl
           )}
 
