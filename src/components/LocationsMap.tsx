@@ -170,7 +170,16 @@ function PreviewCard({ pin, onOpen }: { pin: LocationPin; onOpen: (id: string) =
 
         <div className="mb-3.5 grid grid-cols-2 gap-x-3 gap-y-2">
           <div>
-            <div className="text-[10px] font-semibold uppercase tracking-wide text-[#8B979C]">Price from</div>
+            {/* priceLabelFor() already returns a full, self-describing
+                string for a real price ("From £x", "£x – £y") but also for
+                the no-price-yet cases ("Price on request", "Coming soon",
+                "About to launch") - a fixed "Price from" label above it
+                read wrong for those. gbp() always prefixes "£" regardless
+                of locale, so that's a reliable way to show the label only
+                when there's an actual number under it. */}
+            {price.includes("£") && (
+              <div className="text-[10px] font-semibold uppercase tracking-wide text-[#8B979C]">Price from</div>
+            )}
             <div className="text-[13px] font-bold text-[#1F3A47]">{price}</div>
           </div>
           {completion && (
