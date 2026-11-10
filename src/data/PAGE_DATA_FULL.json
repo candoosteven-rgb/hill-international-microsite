@@ -458,16 +458,6 @@
         "avail": true
       },
       {
-        "plot": "Starling House, Apartment 99",
-        "building": "-",
-        "floor": "-",
-        "beds": 1,
-        "baths": 1,
-        "size": 429,
-        "price": 465000,
-        "avail": true
-      },
-      {
         "plot": "Starling House, Apartment 25",
         "building": "-",
         "floor": "-",
@@ -508,33 +498,43 @@
         "avail": true
       },
       {
-        "plot": "Starling House, Apartment 29",
+        "plot": "Wren House, Apartment 119",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 758,
+        "price": 610000,
+        "avail": true
+      },
+      {
+        "plot": "Starling House, Apartment 37",
         "building": "-",
         "floor": "-",
         "beds": 2,
         "baths": 1,
         "size": 806,
-        "price": 630000,
+        "price": 635000,
         "avail": true
       },
       {
-        "plot": "Starling House, Apartment 60",
+        "plot": "Wren House, Apartment 149",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 830,
+        "price": 645000,
+        "avail": true
+      },
+      {
+        "plot": "Starling House, Apartment 68",
         "building": "-",
         "floor": "-",
         "beds": 2,
         "baths": 1,
         "size": 846,
-        "price": 655000,
-        "avail": true
-      },
-      {
-        "plot": "Starling House, Apartment 91",
-        "building": "-",
-        "floor": "-",
-        "beds": 2,
-        "baths": 1,
-        "size": 801,
-        "price": 680000,
+        "price": 660000,
         "avail": true
       }
     ],
@@ -4093,7 +4093,7 @@
         "avail": true
       },
       {
-        "plot": "The Cornforth, Number 82",
+        "plot": "The Cornforth, Number 81",
         "building": "-",
         "floor": "-",
         "beds": 4,
