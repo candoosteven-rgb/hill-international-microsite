@@ -2856,16 +2856,6 @@
         "avail": true
       },
       {
-        "plot": "5% DEPOSIT CONTRIBUTION UP TO £23,247*",
-        "building": "-",
-        "floor": "-",
-        "beds": 0,
-        "baths": 1,
-        "size": 0,
-        "price": 23247,
-        "avail": true
-      },
-      {
         "plot": "Florence Court, Apartment 10",
         "building": "-",
         "floor": "-",
@@ -3395,22 +3385,22 @@
     "suite": null,
     "plots": [
       {
-        "plot": "The Carlton, Number 4",
-        "building": "-",
-        "floor": "-",
-        "beds": 3,
-        "baths": 1,
-        "size": 1291,
-        "price": 699950,
-        "avail": true
-      },
-      {
         "plot": "The Carlton, Number 2",
         "building": "-",
         "floor": "-",
         "beds": 3,
         "baths": 1,
         "size": 1292,
+        "price": 699950,
+        "avail": true
+      },
+      {
+        "plot": "The Carlton, Number 4",
+        "building": "-",
+        "floor": "-",
+        "beds": 3,
+        "baths": 1,
+        "size": 1291,
         "price": 699950,
         "avail": true
       },
