@@ -661,6 +661,25 @@ export default function LocationsMap() {
       marker.getElement().style.zIndex = isActive ? "50" : "0";
     });
   }, [active, t]);
+  // The spin-grow flourish (see hi-spin-grow in globals.css) only runs on
+  // a deliberate click/tap - keyed off `selected`, not `active` (which
+  // also includes hover), so casually passing the mouse over pins doesn't
+  // replay it on every one.
+  const prevSelectedRef = useRef<string | null>(null);
+  useEffect(() => {
+    if (selected && prevSelectedRef.current !== selected) {
+      Object.entries(markersRef.current).forEach(([id, { badgeEl }]) => {
+        if (id !== selected) return;
+        const logoEl = badgeEl.firstElementChild?.firstElementChild;
+        if (logoEl instanceof HTMLElement) {
+          logoEl.classList.remove("hi-spin-grow");
+          void logoEl.offsetWidth;
+          logoEl.classList.add("hi-spin-grow");
+        }
+      });
+    }
+    prevSelectedRef.current = selected;
+  }, [selected]);
 
   return (
     <div className="mx-auto w-full px-4 pb-8 pt-4 md:px-8 md:pb-10 md:pt-5" style={{ maxWidth: 1440 }}>

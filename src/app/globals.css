@@ -119,6 +119,30 @@ body {
   animation: hi-float 0.38s cubic-bezier(0.2, 0.7, 0.2, 1) both;
 }
 
+/* Pin logo/initial only, run once when a pin becomes active (selected) -
+   echoes the Demodern Nike wall reference's small product thumbnail
+   spinning up into a large hero shot: the logo spins a full turn while
+   growing, landing back upright exactly where it started (360deg reads
+   identically to 0deg), rather than just snapping to the badge's larger
+   size with no motion on the mark itself. */
+@keyframes hi-spin-grow {
+  from {
+    transform: scale(0.55) rotate(0deg);
+    opacity: 0.5;
+  }
+  60% {
+    transform: scale(1.1) rotate(300deg);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1) rotate(360deg);
+    opacity: 1;
+  }
+}
+.hi-spin-grow {
+  animation: hi-spin-grow 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
 @keyframes hi-fade {
   from {
     opacity: 0;
