@@ -663,11 +663,15 @@ export default function LocationsMap() {
   }, [active, t]);
 
   return (
-    <div className="mx-auto w-full px-4 pb-8 pt-4 md:px-8 md:pb-10 md:pt-5" style={{ maxWidth: 1440 }}>
+    <div className="mx-auto w-full px-4 pb-5 pt-4 md:px-8 md:pb-6 md:pt-5" style={{ maxWidth: 1440 }}>
       {/* All-developments strip - doubles as the list of developments,
           since a sidebar list duplicating it added nothing the map doesn't
-          already show. */}
-      <div className="relative mb-8">
+          already show. Kept visually unchanged (card size, logo fitting -
+          both tuned carefully per logo) and only tightened the whitespace
+          around it, so the strip and map fit together without scrolling on
+          a typical viewport instead of needing the map scrolled into view
+          separately. */}
+      <div className="relative mb-5">
         <button
           type="button"
           aria-label="Scroll left"
@@ -686,11 +690,7 @@ export default function LocationsMap() {
         >
           <Icon name="chevronRight" className="h-5 w-5" />
         </button>
-        <div
-          ref={stripRef}
-          className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-10"
-          style={{ scrollbarWidth: "none" }}
-        >
+        <div ref={stripRef} className="hi-scroller flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2">
           {LIVE_LOCATIONS.map((pin) => (
             <DevStripCard
               key={pin.id}
@@ -705,8 +705,10 @@ export default function LocationsMap() {
 
       {/* Classic padding-bottom-percentage aspect ratio (sized off this
           element's own width, not the newer `aspect-ratio` property -
-          either works for this box itself). */}
-      <div className="relative w-full" style={{ paddingBottom: "53.07%", minHeight: 320 }}>
+          either works for this box itself). Shortened from 53.07% so the
+          strip above and this map together fit inside a typical viewport
+          without needing to scroll past the strip to see the whole map. */}
+      <div className="relative w-full" style={{ paddingBottom: "38%", minHeight: 320 }}>
         <div
           ref={mapContainerRef}
           className="overflow-hidden rounded-[22px] border border-[#E3E9EC] bg-[#F0ECE6]"
