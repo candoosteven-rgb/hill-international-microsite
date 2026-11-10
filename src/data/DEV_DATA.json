@@ -399,7 +399,7 @@
     "name": "Honeywood",
     "region": "London",
     "zone": 5,
-    "status": "coming-soon",
+    "status": "live",
     "epc": "B",
     "logo": "uploads/honeywood-logo-white.png",
     "docs": {
@@ -469,7 +469,8 @@
     "id": "little-chalfont-park",
     "name": "Little Chalfont Park",
     "region": "Buckinghamshire",
-    "status": "coming-soon",
+    "status": "live",
+    "logo": "uploads/little-chalfont-park-logo.png",
     "docs": {
       "brochure": true,
       "factsheet": true,

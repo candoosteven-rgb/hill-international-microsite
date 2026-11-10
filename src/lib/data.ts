@@ -63,7 +63,7 @@ export const LAUNCHING_SOON = new Set(["southville-collection"]);
 // Recently launched: full live listing (colour photos, real price, normal
 // CTAs) but still flagged with a "Just Launched" badge instead of blending
 // into the plain "Live" pill.
-export const JUST_LAUNCHED = new Set(["cambium-square", "fitzwilliam-gate"]);
+export const JUST_LAUNCHED = new Set(["cambium-square", "fitzwilliam-gate", "barnet", "little-chalfont-park"]);
 
 export function priceLabelFor(d: Development, t: Translate): string {
   const p = devPrices[d.id];
