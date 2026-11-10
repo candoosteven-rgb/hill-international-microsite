@@ -645,6 +645,7 @@
     "id": "millside-grange",
     "name": "Millside Grange",
     "region": "Hertfordshire",
+    "logo": "uploads/millside-grange-logo-white.png",
     "locationLabel": "Croxley Green, Rickmansworth",
     "status": "live",
     "epc": "B",
