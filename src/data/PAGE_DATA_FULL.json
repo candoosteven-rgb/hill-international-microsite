@@ -488,22 +488,22 @@
         "avail": true
       },
       {
-        "plot": "Wren House, Apartment 113",
-        "building": "-",
-        "floor": "-",
-        "beds": 2,
-        "baths": 1,
-        "size": 782,
-        "price": 610000,
-        "avail": true
-      },
-      {
         "plot": "Wren House, Apartment 119",
         "building": "-",
         "floor": "-",
         "beds": 2,
         "baths": 1,
         "size": 758,
+        "price": 610000,
+        "avail": true
+      },
+      {
+        "plot": "Wren House, Apartment 113",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 782,
         "price": 610000,
         "avail": true
       },
