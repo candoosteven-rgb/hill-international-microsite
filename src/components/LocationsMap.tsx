@@ -33,47 +33,78 @@ function homesFor(devId: string): string | null {
   return factsFor(devId).find((f) => f.k === "f_types")?.v || null;
 }
 
-// The pin is a rounded square badge with a small downward-pointing
-// triangular tail below it, overlapping it by TAIL_OVERLAP px to hide the
-// hairline gap the badge's rounded corners would otherwise leave. Mapbox's
-// marker `offset` has to shift this whole element up by *half its own
-// total rendered height* (badge + tail - the overlap) so the tail's point
-// (the part that should mark the real coordinate), not the element's own
-// center, lands on the pin's actual lat/lng - not, as a first pass at this
-// got wrong, half the badge alone plus the tail, which is only correct if
-// the element's center coincides with the badge's own center, and it
-// doesn't once the tail adds height below the badge.
-const TAIL_OVERLAP = 2;
-// Matches the badge's own border-2, so the tail's outline reads as a
-// continuation of the same ring rather than a different thickness.
-const TAIL_BORDER = 2;
-function tailHeightFor(size: number): number {
+// The pin's shape - a rounded square with a downward-pointing tail below
+// it marking the exact coordinate - is one continuous SVG path (fill +
+// stroke), not a CSS border-hack. A tried-first CSS version (two stacked
+// border-triangles, meant to give the tail an outline matching the
+// badge's) didn't work: the two triangles' slants don't actually run
+// parallel (their width:height ratios differ), so the "outline" was
+// uneven/invisible in places, and overlapping the tail onto the badge's
+// *rounded* bottom corners (to hide the seam between two separate
+// elements) cut a visible straight edge across the curve instead. One
+// vector path sidesteps both - a single stroke traces the whole outline,
+// badge and tail together, with no seam and no mismatched angles.
+const PIN_RADIUS = 16; // matches the previous rounded-2xl
+const PIN_STROKE = 2; // matches the previous border-2
+function pinTailHeightFor(size: number): number {
   return Math.round(size * 0.22);
 }
+function pinTailHalfWidthFor(size: number): number {
+  return Math.round(size * 0.16);
+}
+function pinShapeSize(size: number): { width: number; height: number } {
+  return { width: size + PIN_STROKE, height: size + pinTailHeightFor(size) + PIN_STROKE };
+}
+// Mapbox's marker `offset` has to shift the whole element up by half its
+// own total rendered height so the tail's point, not the element's own
+// center, lands on the pin's actual lat/lng. (The +/-PIN_STROKE/2 padding
+// on both the square's top and the tail's tip is equal, so it cancels out
+// of this distance algebraically - verified pixel-exact against the
+// marker's actual rendered transform, the same way the CSS version was.)
 function pinTipOffset(size: number): number {
-  return (size + tailHeightFor(size) + TAIL_BORDER - TAIL_OVERLAP) / 2;
+  return (size + pinTailHeightFor(size)) / 2;
 }
 
-// The CSS-triangle tail (the border trick: a zero-size box whose
-// border-top paints a downward-pointing triangle) can't carry its own
-// border the way the badge does, since the "border" is the whole shape -
-// so this draws it as two stacked triangles instead: a larger one in the
-// current status/active color sitting behind a smaller navy one offset by
-// TAIL_BORDER, which reads as a TAIL_BORDER-wide outline around the tail,
-// matching the badge's own ring instead of the tail just trailing off in
-// plain navy with no outline at all.
-function applyTailSize(tailOuterEl: HTMLSpanElement, tailInnerEl: HTMLSpanElement, size: number, color: string) {
-  const innerH = tailHeightFor(size);
-  const innerHalfWidth = Math.round(size * 0.16);
-  const outerH = innerH + TAIL_BORDER;
-  const outerHalfWidth = innerHalfWidth + TAIL_BORDER;
-  tailOuterEl.style.borderLeft = `${outerHalfWidth}px solid transparent`;
-  tailOuterEl.style.borderRight = `${outerHalfWidth}px solid transparent`;
-  tailOuterEl.style.borderTop = `${outerH}px solid ${color}`;
-  tailInnerEl.style.top = `${TAIL_BORDER}px`;
-  tailInnerEl.style.borderLeft = `${innerHalfWidth}px solid transparent`;
-  tailInnerEl.style.borderRight = `${innerHalfWidth}px solid transparent`;
-  tailInnerEl.style.borderTop = `${innerH}px solid #16313D`;
+// The `d` path: a rounded square (standard four-arc rounded-rect path)
+// whose bottom edge detours - instead of running straight across - out to
+// the tail's point and back, so the whole outline is one unbroken line.
+function pinPathD(size: number): string {
+  const r = PIN_RADIUS;
+  const pad = PIN_STROKE / 2;
+  const left = pad;
+  const top = pad;
+  const right = pad + size;
+  const bottom = pad + size;
+  const halfW = pinTailHalfWidthFor(size);
+  const tipX = pad + size / 2;
+  const tipY = bottom + pinTailHeightFor(size);
+  return [
+    `M ${left + r} ${top}`,
+    `L ${right - r} ${top}`,
+    `A ${r} ${r} 0 0 1 ${right} ${top + r}`,
+    `L ${right} ${bottom - r}`,
+    `A ${r} ${r} 0 0 1 ${right - r} ${bottom}`,
+    `L ${tipX + halfW} ${bottom}`,
+    `L ${tipX} ${tipY}`,
+    `L ${tipX - halfW} ${bottom}`,
+    `L ${left + r} ${bottom}`,
+    `A ${r} ${r} 0 0 1 ${left} ${bottom - r}`,
+    `L ${left} ${top + r}`,
+    `A ${r} ${r} 0 0 1 ${left + r} ${top}`,
+    "Z",
+  ].join(" ");
+}
+
+// Resizes the pin's svg+path to a new badge size (60 inactive, 80 active)
+// and/or recolors its stroke - split out since both the initial build and
+// the active-state effect need to do this.
+function applyPinShape(svgEl: SVGSVGElement, pathEl: SVGPathElement, size: number, color: string) {
+  const { width, height } = pinShapeSize(size);
+  svgEl.setAttribute("width", String(width));
+  svgEl.setAttribute("height", String(height));
+  svgEl.setAttribute("viewBox", `0 0 ${width} ${height}`);
+  pathEl.setAttribute("d", pinPathD(size));
+  pathEl.style.stroke = color;
 }
 
 // Builds one map pin as a plain DOM element for Mapbox's native Marker API,
@@ -96,9 +127,9 @@ function buildPinMarkerElement(opts: {
   onMouseLeave: () => void;
 }): {
   el: HTMLButtonElement;
-  badgeEl: HTMLSpanElement;
-  tailOuterEl: HTMLSpanElement;
-  tailInnerEl: HTMLSpanElement;
+  svgEl: SVGSVGElement;
+  pathEl: SVGPathElement;
+  contentEl: HTMLSpanElement;
   popupAnchorEl: HTMLDivElement;
 } {
   // The outer element is the one Mapbox owns and positions via its own
@@ -106,55 +137,40 @@ function buildPinMarkerElement(opts: {
   // element itself (a known, already-hit bug: doing so overwrites Mapbox's
   // own positioning transform and the marker jumps to the wrong spot).
   // Left unsized (no fixed width/height, padding/border/margin reset since
-  // it's a <button>) so it shrink-wraps exactly around the badge+tail
-  // below - which keeps it correctly sized as they resize between the
+  // it's a <button>) so it shrink-wraps exactly around the svg shape below
+  // - which keeps it correctly sized as it resizes between the
   // active/inactive states with no extra bookkeeping here, and keeps
   // Mapbox's own anchor="center" calculation (based on this element's
-  // bounding box) matching pinTipOffset()'s assumptions about where the
-  // badge and tail actually are.
+  // bounding box) matching pinTipOffset()'s assumptions.
   const el = document.createElement("button");
   el.type = "button";
   el.setAttribute("aria-label", opts.ariaLabel);
-  el.className = "relative inline-flex flex-col items-center border-0 bg-transparent p-0 m-0 leading-none";
+  el.className = "relative inline-flex items-center justify-center border-0 bg-transparent p-0 m-0 leading-none";
 
-  // The badge itself carries the border, background and shadow/halo - its
-  // own box-shadow must stay unclipped for the hover halo to be visible,
-  // so the logo's corner-clipping lives on the separate `content` span
-  // inside it instead of on badge directly (overflow-hidden on the same
-  // element as a box-shadow clips the shadow too, cutting the halo off).
-  const badge = document.createElement("span");
-  badge.className =
-    "block rounded-2xl border-2 transition-all duration-300 ease-[cubic-bezier(0.2,0.7,0.2,1)] h-[60px] w-[60px] shadow-[0_2px_8px_rgba(15,32,39,0.3)]";
-  badge.style.background = "#16313D";
-  el.appendChild(badge);
+  const svgNS = "http://www.w3.org/2000/svg";
+  const svg = document.createElementNS(svgNS, "svg");
+  svg.setAttribute("class", "block shadow-[0_2px_8px_rgba(15,32,39,0.3)]");
+  svg.style.overflow = "visible";
+  svg.style.transition = "box-shadow 300ms cubic-bezier(0.2,0.7,0.2,1)";
+  el.appendChild(svg);
 
+  const path = document.createElementNS(svgNS, "path");
+  path.style.fill = "#16313D";
+  path.style.strokeWidth = String(PIN_STROKE);
+  path.style.transition = "stroke 300ms cubic-bezier(0.2,0.7,0.2,1)";
+  applyPinShape(svg, path, 60, "#2E86D8");
+  svg.appendChild(path);
+
+  // The logo/initial sits in its own absolutely-positioned, clipped layer
+  // over just the square part of the shape (not the tail) - the svg below
+  // only needs to provide the outline and navy fill, which already shows
+  // through anywhere the logo (object-contain) doesn't cover.
   const content = document.createElement("span");
-  content.className = "flex h-full w-full items-center justify-center overflow-hidden rounded-2xl";
-  badge.appendChild(content);
-
-  // The downward-pointing tail marking the pin's exact coordinate - two
-  // stacked CSS triangles (see applyTailSize) so it can carry an outline
-  // matching the badge's own border ring. tailWrap's own rendered size is
-  // just tailOuter's (a normal-flow child); tailInner is positioned over
-  // it absolutely, so it doesn't affect that sizing.
-  const tailWrap = document.createElement("span");
-  tailWrap.className = "relative block";
-  tailWrap.style.marginTop = `-${TAIL_OVERLAP}px`;
-  el.appendChild(tailWrap);
-
-  const tailOuter = document.createElement("span");
-  tailOuter.className = "block";
-  tailOuter.style.width = "0";
-  tailOuter.style.height = "0";
-  tailWrap.appendChild(tailOuter);
-
-  const tailInner = document.createElement("span");
-  tailInner.className = "absolute left-1/2 -translate-x-1/2 block";
-  tailInner.style.width = "0";
-  tailInner.style.height = "0";
-  tailWrap.appendChild(tailInner);
-
-  applyTailSize(tailOuter, tailInner, 60, "#2E86D8");
+  content.className =
+    "absolute flex items-center justify-center overflow-hidden rounded-2xl transition-all duration-300 ease-[cubic-bezier(0.2,0.7,0.2,1)] h-[60px] w-[60px]";
+  content.style.left = `${PIN_STROKE / 2}px`;
+  content.style.top = `${PIN_STROKE / 2}px`;
+  el.appendChild(content);
 
   if (opts.logo) {
     const img = document.createElement("img");
@@ -176,9 +192,9 @@ function buildPinMarkerElement(opts: {
   // vertical translate is set imperatively (not via a Tailwind class) so
   // LocationsMap's hover-position effect can flip it below the pin near
   // the top edge of the viewport without fighting a class-driven transform.
-  // Anchored to this element's own top (the badge's top edge, since the
-  // badge is flush against it) rather than some fraction of a fixed outer
-  // box, so it stays correct regardless of the badge/tail's current size.
+  // Anchored to this element's own top (the square's top edge) rather than
+  // some fraction of a fixed outer box, so it stays correct regardless of
+  // the shape's current size.
   const popupAnchor = document.createElement("div");
   popupAnchor.className = "absolute left-1/2 top-0";
   popupAnchor.style.transform = "translate(-50%, -100%)";
@@ -191,7 +207,7 @@ function buildPinMarkerElement(opts: {
   el.addEventListener("mouseenter", opts.onMouseEnter);
   el.addEventListener("mouseleave", opts.onMouseLeave);
 
-  return { el, badgeEl: badge, tailOuterEl: tailOuter, tailInnerEl: tailInner, popupAnchorEl: popupAnchor };
+  return { el, svgEl: svg, pathEl: path, contentEl: content, popupAnchorEl: popupAnchor };
 }
 
 // Hover (mouse) shows this instantly; a tap/click on touch shows it too and
@@ -517,9 +533,9 @@ export default function LocationsMap() {
       string,
       {
         marker: mapboxgl.Marker;
-        badgeEl: HTMLSpanElement;
-        tailOuterEl: HTMLSpanElement;
-        tailInnerEl: HTMLSpanElement;
+        svgEl: SVGSVGElement;
+        pathEl: SVGPathElement;
+        contentEl: HTMLSpanElement;
         popupAnchorEl: HTMLDivElement;
       }
     >
@@ -544,8 +560,9 @@ export default function LocationsMap() {
   // flipping it below the pin when there's no room above, and shifting it
   // horizontally when it would overhang the left/right edge. Applied as
   // direct DOM mutations via refs (the same pattern the active-pin effect
-  // below uses on badgeEl) rather than React state, since these are purely
-  // cosmetic nudges to elements outside hovered/the ids this re-renders on.
+  // below uses on the pin shape) rather than React state, since these are
+  // purely cosmetic nudges to elements outside hovered/the ids this
+  // re-renders on.
   const previewCardRef = useRef<HTMLDivElement | null>(null);
   const previewWrapRef = useRef<HTMLDivElement | null>(null);
   useEffect(() => {
@@ -653,7 +670,7 @@ export default function LocationsMap() {
       const d = devById(pin.id);
       if (!d) return;
       const status = statusMetaFor(d, t);
-      const { el, badgeEl, tailOuterEl, tailInnerEl, popupAnchorEl } = buildPinMarkerElement({
+      const { el, svgEl, pathEl, contentEl, popupAnchorEl } = buildPinMarkerElement({
         ariaLabel: d.name,
         logo: resolveLogo(d.logo, d.name),
         initial: d.name.charAt(0),
@@ -662,12 +679,11 @@ export default function LocationsMap() {
         onMouseEnter: () => setHovered(pin.id),
         onMouseLeave: () => setHovered((cur) => (cur === pin.id ? null : cur)),
       });
-      badgeEl.style.borderColor = status.dot;
-      applyTailSize(tailOuterEl, tailInnerEl, 60, status.dot);
+      applyPinShape(svgEl, pathEl, 60, status.dot);
       const marker = new mapboxgl.Marker({ element: el, anchor: "center", offset: [0, -pinTipOffset(60)] })
         .setLngLat([pin.lng, pin.lat])
         .addTo(map);
-      markersRef.current[pin.id] = { marker, badgeEl, tailOuterEl, tailInnerEl, popupAnchorEl };
+      markersRef.current[pin.id] = { marker, svgEl, pathEl, contentEl, popupAnchorEl };
     });
     setMarkersReady(true);
 
@@ -713,18 +729,19 @@ export default function LocationsMap() {
   // already built above - their own color/size/stacking, never the
   // Mapbox-owned outer marker element's position/transform.
   useEffect(() => {
-    Object.entries(markersRef.current).forEach(([id, { marker, badgeEl, tailOuterEl, tailInnerEl }]) => {
+    Object.entries(markersRef.current).forEach(([id, { marker, svgEl, pathEl, contentEl }]) => {
       const isActive = active === id;
       const size = isActive ? 80 : 60;
-      badgeEl.className = `block rounded-2xl border-2 transition-all duration-300 ease-[cubic-bezier(0.2,0.7,0.2,1)] ${
-        isActive
-          ? "h-20 w-20 shadow-[0_6px_16px_rgba(193,86,15,0.45),0_0_0_10px_rgba(193,86,15,0.22)]"
-          : "h-[60px] w-[60px] shadow-[0_2px_8px_rgba(15,32,39,0.3)]"
-      }`;
       const d = devById(id);
       const color = isActive ? "#C1560F" : d ? statusMetaFor(d, t).dot : "#2E86D8";
-      badgeEl.style.borderColor = color;
-      applyTailSize(tailOuterEl, tailInnerEl, size, color);
+      svgEl.setAttribute(
+        "class",
+        `block ${isActive ? "shadow-[0_6px_16px_rgba(193,86,15,0.45),0_0_0_10px_rgba(193,86,15,0.22)]" : "shadow-[0_2px_8px_rgba(15,32,39,0.3)]"}`
+      );
+      applyPinShape(svgEl, pathEl, size, color);
+      contentEl.className = `absolute flex items-center justify-center overflow-hidden rounded-2xl transition-all duration-300 ease-[cubic-bezier(0.2,0.7,0.2,1)] ${
+        isActive ? "h-20 w-20" : "h-[60px] w-[60px]"
+      }`;
       marker.setOffset([0, -pinTipOffset(size)]);
       marker.getElement().style.zIndex = isActive ? "50" : "0";
     });
