@@ -418,7 +418,7 @@ const LIVE_LOCATIONS = LOCATIONS.filter((p) => devById(p.id)?.status === "live")
 // These developments' logo files are dark navy wordmarks, unlike everyone
 // else's (already white/light) - unreadable against this page's dark pin
 // fill and strip-tile scrim without forcing them white.
-const PIN_LOGO_NEEDS_WHITE = new Set(["fitzwilliam-gate", "city-reach"]);
+const PIN_LOGO_NEEDS_WHITE = new Set(["fitzwilliam-gate", "city-reach", "little-chalfont-park", "barnet"]);
 
 export default function LocationsMap() {
   const { t } = useLanguage();
