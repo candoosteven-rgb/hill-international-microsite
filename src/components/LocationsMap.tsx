@@ -345,6 +345,7 @@ function DevStripCard({
 }) {
   const { t } = useLanguage();
   const imgRef = useRef<HTMLImageElement | null>(null);
+  const cardRef = useRef<HTMLButtonElement | null>(null);
   const [heroBroken, setHeroBroken] = useState(false);
   // The image tag is already in the static HTML, so the browser can start
   // (and fail) loading it before React hydrates and attaches `onError` -
@@ -361,10 +362,24 @@ function DevStripCard({
 
   return (
     <button
+      ref={cardRef}
       type="button"
       aria-pressed={active}
       onClick={onSelect}
-      onMouseEnter={() => onHover(pin.id)}
+      onMouseEnter={() => {
+        onHover(pin.id);
+        // Spin the whole tile a full turn into view each time it's
+        // hovered (see hi-spin-grow in globals.css) - remove+re-add forces
+        // a reflow in between so it replays on every entry rather than
+        // only the first.
+        const el = cardRef.current;
+        if (el) {
+          el.classList.remove("hi-spin-grow");
+          void el.offsetWidth;
+          el.classList.add("hi-spin-grow");
+        }
+      }}
+      onAnimationEnd={() => cardRef.current?.classList.remove("hi-spin-grow")}
       onMouseLeave={() => onHover((cur) => (cur === pin.id ? null : cur))}
       className="group relative h-[216px] w-[192px] flex-none snap-start overflow-hidden rounded-[16px] text-left transition-transform duration-300 ease-[cubic-bezier(0.2,0.7,0.2,1)] hover:-translate-y-1.5 hover:scale-[1.015]"
       style={{

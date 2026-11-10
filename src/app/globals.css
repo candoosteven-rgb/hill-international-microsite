@@ -119,6 +119,29 @@ body {
   animation: hi-float 0.38s cubic-bezier(0.2, 0.7, 0.2, 1) both;
 }
 
+/* "Our developments" strip tile only, run once each time it's hovered -
+   echoes the Demodern Nike wall reference: the whole tile spins a full
+   turn as it grows, landing back upright exactly where it started
+   (360deg reads identically to 0deg), rather than animating a piece of
+   its content in isolation. LocationsMap removes this class on
+   animationend so the plain CSS hover lift (translate/scale) can take
+   back over for as long as the pointer stays put - a running animation
+   would otherwise keep overriding that lift's own transform. */
+@keyframes hi-spin-grow {
+  from {
+    transform: scale(0.82) rotate(0deg);
+  }
+  60% {
+    transform: scale(1.04) rotate(300deg);
+  }
+  to {
+    transform: scale(1) rotate(360deg);
+  }
+}
+.hi-spin-grow {
+  animation: hi-spin-grow 0.55s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
 @keyframes hi-fade {
   from {
     opacity: 0;
