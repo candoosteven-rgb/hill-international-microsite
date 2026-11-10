@@ -25,7 +25,7 @@ export default function LocationsPage() {
       </div>
 
       <LocationsMap />
-      <Footer />
+      <Footer minimal />
     </div>
   );
 }

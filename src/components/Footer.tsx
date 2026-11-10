@@ -7,7 +7,16 @@ import { useAppState } from "@/lib/app-state";
 import LangPills from "@/components/LangPills";
 import Icon from "@/components/Icon";
 
-export default function Footer({ onDevelopmentsClick }: { onDevelopmentsClick?: () => void }) {
+export default function Footer({
+  onDevelopmentsClick,
+  minimal,
+}: {
+  onDevelopmentsClick?: () => void;
+  // Drops the Regions/Developments link columns - for the standalone
+  // /locations page, which (like its header) has nothing on this site for
+  // them to navigate to.
+  minimal?: boolean;
+}) {
   const { t, dp } = useLanguage();
   const { setRegionFilter } = useAppState();
   const [discOpen, setDiscOpen] = useState(false);
@@ -29,38 +38,44 @@ export default function Footer({ onDevelopmentsClick }: { onDevelopmentsClick?: 
           <span className="text-[12.5px] font-medium">{t("footer_scroll_up")}</span>
         </button>
 
-        <div className="grid grid-cols-1 gap-10 border-b border-white/12 pb-11 sm:grid-cols-2 lg:grid-cols-4 lg:gap-14">
+        <div
+          className={`grid grid-cols-1 gap-10 border-b border-white/12 pb-11 sm:grid-cols-2 ${minimal ? "" : "lg:grid-cols-4 lg:gap-14"}`}
+        >
           <div>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/uploads/hill-logo-transparent.png" alt="Hill International" loading="lazy" className="h-7 w-auto" />
           </div>
-          <div>
-            <div className="mb-4 text-[13px] font-semibold text-[#F9F5F3]">{t("footer_regions")}</div>
-            {regions.map((r) => (
-              <button
-                key={r}
-                onClick={() => goRegion(r)}
-                className="hi-link mb-2.5 block text-start text-[14px] text-white/68"
-              >
-                {r}
-              </button>
-            ))}
-          </div>
-          <div>
-            <div className="mb-4 text-[13px] font-semibold text-[#F9F5F3]">{t("footer_developments")}</div>
-            {onDevelopmentsClick ? (
-              <button
-                onClick={onDevelopmentsClick}
-                className="hi-link mb-2.5 block text-start text-[14px] text-white/68"
-              >
-                {t("nav_developments")} ({devData.length})
-              </button>
-            ) : (
-              <a href="#hi-developments" className="hi-link mb-2.5 block text-[14px] text-white/68">
-                {t("nav_developments")} ({devData.length})
-              </a>
-            )}
-          </div>
+          {!minimal && (
+            <div>
+              <div className="mb-4 text-[13px] font-semibold text-[#F9F5F3]">{t("footer_regions")}</div>
+              {regions.map((r) => (
+                <button
+                  key={r}
+                  onClick={() => goRegion(r)}
+                  className="hi-link mb-2.5 block text-start text-[14px] text-white/68"
+                >
+                  {r}
+                </button>
+              ))}
+            </div>
+          )}
+          {!minimal && (
+            <div>
+              <div className="mb-4 text-[13px] font-semibold text-[#F9F5F3]">{t("footer_developments")}</div>
+              {onDevelopmentsClick ? (
+                <button
+                  onClick={onDevelopmentsClick}
+                  className="hi-link mb-2.5 block text-start text-[14px] text-white/68"
+                >
+                  {t("nav_developments")} ({devData.length})
+                </button>
+              ) : (
+                <a href="#hi-developments" className="hi-link mb-2.5 block text-[14px] text-white/68">
+                  {t("nav_developments")} ({devData.length})
+                </a>
+              )}
+            </div>
+          )}
           <div>
             <div className="mb-4 text-[13px] font-semibold text-[#F9F5F3]">{t("footer_contact")}</div>
             <a
