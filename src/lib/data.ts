@@ -66,11 +66,22 @@ export const LAUNCHING_SOON = new Set(["barnet", "little-chalfont-park"]);
 export const JUST_LAUNCHED = new Set(["cambium-square", "fitzwilliam-gate", "barnet", "little-chalfont-park"]);
 
 export function priceLabelFor(d: Development, t: Translate): string {
-  const p = devPrices[d.id];
-  if (!p) {
+  // Prefer the live min/max across currently-available plots (kept fresh by
+  // the hill.co.uk availability sync) over DEV_PRICES.json's static range,
+  // which is hand-set once and goes stale as plots sell or new ones list -
+  // confirmed badly out of date for several developments (e.g. North Gate
+  // Park's static £1,050,000 top end no longer matches any real available
+  // plot once its house-type listings sold out). Only developments with no
+  // plots on file at all (not yet synced, or genuinely pre-price-list) fall
+  // back to the static figure.
+  const livePrices = (pageDataFor(d.id)?.plots || [])
+    .filter((plot): plot is typeof plot & { price: number } => Boolean(plot.avail && plot.price))
+    .map((plot) => plot.price);
+  const p = livePrices.length ? [Math.min(...livePrices), Math.max(...livePrices)] : devPrices[d.id];
+  if (!p || !p.length) {
     return LAUNCHING_SOON.has(d.id) ? "About to launch" : d.status === "live" ? t("price_on_request") : t("status_coming");
   }
-  return p.length > 1 ? `${gbp(p[0])} – ${gbp(p[1])}` : `${t("price_from")} ${gbp(p[0])}`;
+  return p.length > 1 && p[0] !== p[1] ? `${gbp(p[0])} – ${gbp(p[1])}` : `${t("price_from")} ${gbp(p[0])}`;
 }
 
 export function statusMetaFor(d: Development, t: Translate) {
