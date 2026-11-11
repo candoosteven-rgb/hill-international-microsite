@@ -46,6 +46,16 @@ function homesFor(devId: string): string | null {
 // badge and tail together, with no seam and no mismatched angles.
 const PIN_RADIUS = 16; // matches the previous rounded-2xl
 const PIN_STROKE = 2; // matches the previous border-2
+// `box-shadow` follows an element's rectangular layout box, which for the
+// svg is the full viewBox rectangle, not the badge+tail path drawn inside
+// it - that left a visible square shadow poking out past the shape's
+// rounded corners and tail notch. `filter: drop-shadow(...)` instead
+// follows the actual painted (non-transparent) pixels, so it hugs the
+// pin's real outline. Stacking several of them with no offset approximates
+// the halo glow a box-shadow spread can't give us here.
+const PIN_SHADOW_IDLE = "drop-shadow(0 2px 8px rgba(15,32,39,0.3))";
+const PIN_SHADOW_ACTIVE =
+  "drop-shadow(0 6px 16px rgba(193,86,15,0.45)) drop-shadow(0 0 8px rgba(193,86,15,0.5)) drop-shadow(0 0 16px rgba(193,86,15,0.35))";
 function pinTailHeightFor(size: number): number {
   return Math.round(size * 0.22);
 }
@@ -149,9 +159,10 @@ function buildPinMarkerElement(opts: {
 
   const svgNS = "http://www.w3.org/2000/svg";
   const svg = document.createElementNS(svgNS, "svg");
-  svg.setAttribute("class", "block shadow-[0_2px_8px_rgba(15,32,39,0.3)]");
+  svg.setAttribute("class", "block");
   svg.style.overflow = "visible";
-  svg.style.transition = "box-shadow 300ms cubic-bezier(0.2,0.7,0.2,1)";
+  svg.style.filter = PIN_SHADOW_IDLE;
+  svg.style.transition = "filter 300ms cubic-bezier(0.2,0.7,0.2,1)";
   el.appendChild(svg);
 
   const path = document.createElementNS(svgNS, "path");
@@ -734,10 +745,7 @@ export default function LocationsMap() {
       const size = isActive ? 80 : 60;
       const d = devById(id);
       const color = isActive ? "#C1560F" : d ? statusMetaFor(d, t).dot : "#2E86D8";
-      svgEl.setAttribute(
-        "class",
-        `block ${isActive ? "shadow-[0_6px_16px_rgba(193,86,15,0.45),0_0_0_10px_rgba(193,86,15,0.22)]" : "shadow-[0_2px_8px_rgba(15,32,39,0.3)]"}`
-      );
+      svgEl.style.filter = isActive ? PIN_SHADOW_ACTIVE : PIN_SHADOW_IDLE;
       applyPinShape(svgEl, pathEl, size, color);
       contentEl.className = `absolute flex items-center justify-center overflow-hidden rounded-2xl transition-all duration-300 ease-[cubic-bezier(0.2,0.7,0.2,1)] ${
         isActive ? "h-20 w-20" : "h-[60px] w-[60px]"
