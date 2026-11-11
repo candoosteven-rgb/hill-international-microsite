@@ -58,7 +58,7 @@ export function devById(id: string): Development | undefined {
 
 type Translate = (key: string, vars?: Record<string, string | number>) => string;
 
-export const LAUNCHING_SOON = new Set(["southville-collection"]);
+export const LAUNCHING_SOON = new Set(["barnet", "little-chalfont-park"]);
 
 // Recently launched: full live listing (colour photos, real price, normal
 // CTAs) but still flagged with a "Just Launched" badge instead of blending

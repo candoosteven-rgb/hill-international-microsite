@@ -31,8 +31,12 @@
     "place": "Hounslow, West London",
     "accessPoints": [
       {
-        "label": "Private balcony",
-        "icon": "terrace"
+        "label": "West London, Zone 3",
+        "icon": "pin"
+      },
+      {
+        "label": "4 mins walk to Piccadilly line station",
+        "icon": "train"
       },
       {
         "label": "Adjacent to 40 acre park",
@@ -43,8 +47,12 @@
         "icon": "concierge"
       },
       {
-        "label": "EV charging points",
-        "icon": "ev"
+        "label": "Parking available by separate negotiation",
+        "icon": "f_parking"
+      },
+      {
+        "label": "Private outdoor space",
+        "icon": "terrace"
       }
     ]
   },
@@ -82,24 +90,28 @@
     "accessNote": "2 min walk to Kew Bridge station",
     "accessPoints": [
       {
-        "label": "Gym",
+        "label": "West London, Zone 3",
+        "icon": "pin"
+      },
+      {
+        "label": "2 mins walk to Kew Bridge Station",
+        "icon": "train"
+      },
+      {
+        "label": "Close to Kew Gardens and River Thames",
+        "icon": "river"
+      },
+      {
+        "label": "Residents gym",
         "icon": "gym"
       },
       {
-        "label": "Nursery",
-        "icon": "nursery"
+        "label": "Resident co-working space",
+        "icon": "laptop"
       },
       {
         "label": "Concierge",
         "icon": "concierge"
-      },
-      {
-        "label": "Co-working space",
-        "icon": "laptop"
-      },
-      {
-        "label": "Close to river",
-        "icon": "river"
       }
     ]
   },
@@ -123,7 +135,7 @@
     ],
     "locationLabel": "Harringay, North London · Zone 3",
     "place": "Harringay, North London",
-    "tagline": "1 & 2 bedroom apartments and 3 & 4 bedroom houses",
+    "tagline": "1 & 2 bedroom apartments",
     "showBedIcon": true,
     "accessNote": "30 mins to King’s Cross",
     "accessPoints": [
@@ -136,12 +148,12 @@
         "icon": "concierge"
       },
       {
-        "label": "Freehold houses",
-        "icon": "f_tenure"
+        "label": "Private outdoor space to every home",
+        "icon": "terrace"
       },
       {
-        "label": "Private garden or balcony",
-        "icon": "terrace"
+        "label": "Zone 3, North London",
+        "icon": "pin"
       }
     ]
   },
@@ -183,12 +195,28 @@
         "icon": "supermarket"
       },
       {
-        "label": "Car club",
-        "icon": "car"
+        "label": "14 minutes to Limehouse",
+        "icon": "train"
       },
       {
-        "label": "34 mins to Canary Wharf by train",
+        "label": "21 mins to Canary Wharf",
         "icon": "train"
+      },
+      {
+        "label": "21 min to Fenchurch Street",
+        "icon": "train"
+      },
+      {
+        "label": "River Views to selected homes",
+        "icon": "river"
+      },
+      {
+        "label": "City views to selected homes",
+        "icon": "towers"
+      },
+      {
+        "label": "Zone 5, East London",
+        "icon": "pin"
       }
     ]
   },
@@ -220,6 +248,26 @@
       {
         "label": "Designer outlet shopping nearby",
         "icon": "cat_shops"
+      },
+      {
+        "label": "Zone 4, North London",
+        "icon": "pin"
+      },
+      {
+        "label": "Part of the established regeneration",
+        "icon": "towers"
+      },
+      {
+        "label": "1-min walk to Wembley Park Underground station",
+        "icon": "walk"
+      },
+      {
+        "label": "Reach central London in 12-minutes",
+        "icon": "train"
+      },
+      {
+        "label": "Wembley Stadium views from selected units",
+        "icon": "stadium"
       }
     ]
   },
@@ -256,7 +304,7 @@
   },
   {
     "id": "ham-richmond",
-    "name": "Ham, Richmond",
+    "name": "Ham Meadows",
     "region": "London",
     "zone": 4,
     "status": "coming-soon",
@@ -268,7 +316,7 @@
     },
     "image": "uploads/opt/ham-richmond-cgi.jpg",
     "locationLabel": "Ham, South West London",
-    "tagline": "2, 3 & 4 bedroom houses and apartments",
+    "tagline": "1, 2 & 3 bedroom apartments",
     "showBedIcon": true,
     "images": [
       "uploads/opt/ham-richmond-cgi.jpg"
@@ -284,12 +332,12 @@
         "icon": "school"
       },
       {
-        "label": "Freehold Houses",
-        "icon": "f_tenure"
-      },
-      {
         "label": "Walking distance to Richmond Park, the River Thames and Ham Common",
         "icon": "park"
+      },
+      {
+        "label": "Located in Richmond Upon Thames",
+        "icon": "pin"
       }
     ]
   },
@@ -583,6 +631,18 @@
       {
         "label": "60% sold",
         "icon": "yield"
+      },
+      {
+        "label": "4 miles to Cambridge City Centre",
+        "icon": "pin"
+      },
+      {
+        "label": "Garage and driveways to selected homes",
+        "icon": "f_parking"
+      },
+      {
+        "label": "Freehold houses, ready to move in",
+        "icon": "f_tenure"
       }
     ]
   },
@@ -837,14 +897,14 @@
     "region": "Cambridge",
     "status": "live",
     "logo": "uploads/marleigh-park-logo-white.png",
-  "image": "uploads/marleigh-park-poppies-footbridge.jpg",
+    "image": "uploads/marleigh-park-poppies-footbridge.jpg",
     "docs": {
       "brochure": true,
       "factsheet": true,
       "investor": true
     },
     "locationLabel": "Cambridge, Cambridgeshire",
-    "tagline": "1 & 2 bedroom apartments and 2, 3, 4 & 5 bedroom houses",
+    "tagline": "2 bedroom apartments and 2, 3, 4 & 5 bedroom houses",
     "showBedIcon": true,
     "images": [
       "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-01/rsz_marleigh_park_externals_part_2-44_2.jpg.webp?h=0a365b51&itok=Om075b3Z",
@@ -926,6 +986,10 @@
       {
         "label": "First release: 4 bedroom homes only",
         "icon": "star"
+      },
+      {
+        "label": "Walking distance to local outstanding school",
+        "icon": "school"
       }
     ]
   },

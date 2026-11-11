@@ -108,6 +108,17 @@ function guessAvailability(text) {
   return null; // unknown - caller decides the default
 }
 
+// Some price-list pages mix a marketing incentive banner ("£10,000
+// furniture pack available", "Stamp Duty Paid up to £29,998*", "5% Deposit
+// Contribution...") into the same table/cards as the real plot rows. Those
+// still contain a parseable price, so they'd otherwise scrape in as a fake
+// "plot" with no beds/size - caught this live after it reached production
+// (a furniture-pack banner showing up as a studio-priced listing). None of
+// these phrases should appear in a genuine plot's own row text.
+function isIncentiveRow(text) {
+  return /stamp duty|deposit contribution|furniture pack|incentive/i.test(text);
+}
+
 // The plot-name column on these pages combines a photo thumbnail with the
 // plot name in one <td>. The thumbnail has no alt text of its own, so all
 // that's left in .text() is a responsive "mobile label" duplicating the
@@ -148,6 +159,7 @@ function extractPlotsFromHtml(html) {
         const rowText = cells.join(" ");
         const price = parseMoney(rowText);
         if (price === null) return; // not a plot row
+        if (isIncentiveRow(rowText)) return; // a promo banner row, not a plot
         plots.push({
           plot: cleanPlotName(cells[0] || ""),
           beds: parseBeds(rowText),
@@ -194,6 +206,7 @@ function extractPlotsFromHtml(html) {
       const text = textWithSpaces(el);
       const price = parseMoney(text);
       if (price === null) return;
+      if (isIncentiveRow(text)) return; // a promo banner card, not a plot
       if (sampleRawHtml === null) sampleRawHtml = $.html(el).slice(0, 600);
       const heading = $(el)
         .find("h1,h2,h3,h4,h5,strong,[class*='name'],[class*='title']")

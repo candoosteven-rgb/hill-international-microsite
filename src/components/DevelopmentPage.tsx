@@ -186,9 +186,12 @@ export default function DevelopmentPage({ id }: { id: string }) {
     };
   }, [id]);
 
+  // "-" means the source price list never populated a separate building name
+  // (it's usually already captured in the plot name itself) - not a real
+  // value to filter or show a column for.
   const buildings = useMemo(() => {
     if (!pd) return [];
-    return Array.from(new Set(pd.plots.map((p) => p.building).filter(Boolean))) as string[];
+    return Array.from(new Set(pd.plots.map((p) => p.building).filter((b) => b && b !== "-"))) as string[];
   }, [pd]);
 
   const bedsOptions = useMemo(() => {
@@ -554,9 +557,8 @@ export default function DevelopmentPage({ id }: { id: string }) {
             {/* Desktop/tablet: full data-grid table */}
             <div className="hidden overflow-x-auto rounded-[18px] border border-[#E3E9EC] md:block">
               <div className="min-w-[860px]">
-                <div className="grid grid-cols-[1.2fr_1.3fr_0.7fr_0.7fr_0.8fr_1fr_1.1fr_1.6fr] gap-3.5 bg-[#F5F5F7] px-6 py-4 text-[11.5px] font-bold uppercase tracking-wide text-[#6E7B80]">
+                <div className="grid grid-cols-[1.4fr_0.7fr_0.7fr_0.8fr_1fr_1.1fr_1.6fr] gap-3.5 bg-[#F5F5F7] px-6 py-4 text-[11.5px] font-bold uppercase tracking-wide text-[#6E7B80]">
                   <span>{dp("c_plot")}</span>
-                  <span>{dp("c_building")}</span>
                   <span>{dp("c_floor")}</span>
                   <span>{dp("c_beds")}</span>
                   <span>{dp("c_baths")}</span>
@@ -567,11 +569,10 @@ export default function DevelopmentPage({ id }: { id: string }) {
                 {filteredPlots.map((p) => (
                   <div
                     key={p.plot}
-                    className="grid grid-cols-[1.2fr_1.3fr_0.7fr_0.7fr_0.8fr_1fr_1.1fr_1.6fr] items-center gap-3.5 border-t border-[#EEF1F1] px-6 py-4.5 text-[14.5px] text-[#1F3A47]"
+                    className="grid grid-cols-[1.4fr_0.7fr_0.7fr_0.8fr_1fr_1.1fr_1.6fr] items-center gap-3.5 border-t border-[#EEF1F1] px-6 py-4.5 text-[14.5px] text-[#1F3A47]"
                     style={{ opacity: p.avail ? 1 : 0.55 }}
                   >
                     <span className="font-bold">{p.plot}</span>
-                    <span className="text-[#5C6B71]">{p.building || "—"}</span>
                     <span className="text-[#5C6B71]">{p.floor || "—"}</span>
                     <span className="text-[#5C6B71]">{p.beds}</span>
                     <span className="text-[#5C6B71]">{p.baths ?? "—"}</span>
@@ -633,7 +634,6 @@ export default function DevelopmentPage({ id }: { id: string }) {
                   </div>
                   <div className="grid grid-cols-2 gap-x-4 gap-y-3 text-[13.5px]">
                     {[
-                      [dp("c_building"), p.building || "—", false],
                       [dp("c_floor"), p.floor || "—", false],
                       [dp("c_beds"), String(p.beds), false],
                       [dp("c_baths"), p.baths != null ? String(p.baths) : "—", false],

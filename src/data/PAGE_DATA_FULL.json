@@ -116,7 +116,7 @@
           "Right to Park car parking spaces available for purchase",
           "Electric car charging points available to selected parking spaces",
           "Steel reinforced concrete frame with brick facing and biodiverse roofs",
-          "10 year NHBC warranty",
+          "10-year NHBC warranty - Including 2 years’ support from Hill",
           "999 year lease",
           "Service charge payable for maintenance of shared facilities and communal areas"
         ]
@@ -468,16 +468,6 @@
         "avail": true
       },
       {
-        "plot": "£10,000 furniture pack* available",
-        "building": "-",
-        "floor": "-",
-        "beds": 0,
-        "baths": 1,
-        "size": 0,
-        "price": 10000,
-        "avail": true
-      },
-      {
         "plot": "Starling House, Apartment 20",
         "building": "-",
         "floor": "-",
@@ -564,7 +554,7 @@
         "cap": "cap_bedroom"
       },
       {
-        "src": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-03/DSC_6588-%20LR.jpg.webp?h=aae97d09&itok=r4srJaZQ",
+        "src": "uploads/opt/north-gate-park-external-playground.jpg",
         "cap": "cap_garden"
       },
       {
@@ -666,13 +656,18 @@
         "items": [
           "Steel reinforced concrete frame with outer brickwork, cavity filled with insulation",
           "PV panels to selected roofs",
-          "10 year NHBC warranty",
+          "10-year NHBC warranty - Including 2 years’ support from Hill",
           "990 year lease",
           "Service charge payable for maintenance of shared facilities and communal areas"
         ]
       }
     ],
     "travel": [
+      {
+        "to": "Harringay station",
+        "n": "12",
+        "mode": "mode_walk"
+      },
       {
         "to": "Harringay Green Lanes station",
         "n": "13",
@@ -681,6 +676,10 @@
     ],
     "amenities": {
       "cat_transport": [
+        {
+          "name": "Harringay station",
+          "d": "12 min walk"
+        },
         {
           "name": "Harringay Green Lanes station",
           "d": "13 min walk"
@@ -932,6 +931,50 @@
       {
         "src": "uploads/dagenham-green-aerial.jpg.webp",
         "cap": "cap_living"
+      },
+      {
+        "src": "uploads/opt/dagenham-green-exterior-tower.jpg",
+        "cap": "cap_exterior"
+      },
+      {
+        "src": "uploads/opt/dagenham-green-bathroom-2.jpg",
+        "cap": "cap_bathroom"
+      },
+      {
+        "src": "uploads/opt/dagenham-green-bedroom-2.jpg",
+        "cap": "cap_bedroom"
+      },
+      {
+        "src": "uploads/opt/dagenham-green-dining-2.jpg",
+        "cap": "cap_kitchen"
+      },
+      {
+        "src": "uploads/opt/dagenham-green-living-2.jpg",
+        "cap": "cap_living"
+      },
+      {
+        "src": "uploads/opt/dagenham-green-living-kitchen.jpg",
+        "cap": "cap_kitchen"
+      },
+      {
+        "src": "uploads/opt/dagenham-green-kitchen-dining.jpg",
+        "cap": "cap_kitchen"
+      },
+      {
+        "src": "uploads/opt/dagenham-green-living-room-2.jpg",
+        "cap": "cap_living"
+      },
+      {
+        "src": "uploads/opt/dagenham-green-childrens-bedroom.jpg",
+        "cap": "cap_bedroom"
+      },
+      {
+        "src": "uploads/opt/dagenham-green-principal-bedroom.jpg",
+        "cap": "cap_bedroom"
+      },
+      {
+        "src": "uploads/opt/dagenham-green-living-room-3.jpg",
+        "cap": "cap_living"
       }
     ],
     "facts": [],
@@ -1031,16 +1074,12 @@
     "amenities": {
       "cat_transport": [
         {
-          "name": "Becontree station, District line",
-          "d": "<1 mi"
+          "name": "Dagenham Dock station, c2c to Fenchurch St (20 min)",
+          "d": ""
         },
         {
           "name": "Dagenham Heathway station, District line",
-          "d": ""
-        },
-        {
-          "name": "Dagenham Dock station, c2c to Fenchurch St (20 min)",
-          "d": ""
+          "d": "1 mile"
         }
       ],
       "cat_schools": [
@@ -1650,7 +1689,7 @@
         "k": "sg_additional",
         "img": "https://www.hill.co.uk/sites/default/files/styles/media_gallery/public/images/2026-03/4371_NEXUS_VIEW%204_FINAL_02.jpg.webp?h=4fe57aec&itok=LnxVjb_G",
         "items": [
-          "10 year NHBC warranty",
+          "10-year NHBC warranty - Including 2 years’ support from Hill",
           "999 year leasehold",
           "Service charge payable for shared facilities and communal areas"
         ]
@@ -1741,17 +1780,17 @@
     "travel": [
       {
         "to": "Stevenage station",
-        "n": "8",
+        "n": "5",
         "mode": "mode_walk"
       },
       {
-        "to": "London King’s Cross",
-        "n": "22",
+        "to": "Finsbury Park",
+        "n": "19",
         "mode": "mode_train"
       },
       {
-        "to": "Finsbury Park",
-        "n": "18",
+        "to": "London King’s Cross",
+        "n": "25",
         "mode": "mode_train"
       },
       {
@@ -1774,10 +1813,6 @@
         {
           "name": "A1(M) Junction 7",
           "d": "1.1 mi"
-        },
-        {
-          "name": "Car club bay, Six Hills Way",
-          "d": "0.1 mi"
         },
         {
           "name": "Luton Airport",
@@ -2154,7 +2189,7 @@
         "k": "sg_additional",
         "img": "https://www.hill.co.uk/sites/default/files/styles/plot_spec_main_landscape/public/images/2025-07/The%20Cuckoo%2C%20Number%2020%20at%20Farehurst%20Park..jpg.webp?h=4ed63de5&itok=smFoL9eP",
         "items": [
-          "10 year NHBC warranty",
+          "10-year NHBC warranty - Including 2 years’ support from Hill",
           "2 year Hill warranty",
           "Management company formed for shared services and communal areas; annual estate charge payable"
         ]
@@ -2326,13 +2361,34 @@
     "spec": [],
     "travel": [],
     "hours": [
-      ["d_sun", "10:00 – 17:30"],
-      ["d_mon", "10:00 – 17:30"],
-      ["d_tue", "10:00 – 17:30"],
-      ["d_wed", "10:00 – 17:30"],
-      ["d_thu", "10:00 – 17:30"],
-      ["d_fri", "10:00 – 17:30"],
-      ["d_sat", "10:00 – 17:30"]
+      [
+        "d_sun",
+        "10:00 – 17:30"
+      ],
+      [
+        "d_mon",
+        "10:00 – 17:30"
+      ],
+      [
+        "d_tue",
+        "10:00 – 17:30"
+      ],
+      [
+        "d_wed",
+        "10:00 – 17:30"
+      ],
+      [
+        "d_thu",
+        "10:00 – 17:30"
+      ],
+      [
+        "d_fri",
+        "10:00 – 17:30"
+      ],
+      [
+        "d_sat",
+        "10:00 – 17:30"
+      ]
     ],
     "amenities": {
       "cat_transport": [
@@ -2568,7 +2624,7 @@
         "k": "sg_additional",
         "img": "https://www.hill.co.uk/sites/default/files/styles/plot_spec_main_landscape/public/images/2023-09/vb2298307_www.andrewhendry.com7_.jpg.webp?h=81464aaa&itok=IRPY-jMo",
         "items": [
-          "10 year NHBC warranty",
+          "10-year NHBC warranty - Including 2 years’ support from Hill",
           "Management company formed for shared services and communal areas; annual estate charge payable"
         ]
       }
@@ -2733,13 +2789,34 @@
       "maps": "https://www.google.com/maps/search/?api=1&query=City+Reach+Sales+Suite+Fanshawe+Road+Cambridge+CB1+3QX"
     },
     "hours": [
-      ["d_sun", "10:00 – 17:30"],
-      ["d_mon", "10:00 – 17:30"],
-      ["d_tue", "Closed"],
-      ["d_wed", "Closed"],
-      ["d_thu", "10:00 – 17:30"],
-      ["d_fri", "10:00 – 17:30"],
-      ["d_sat", "10:00 – 17:30"]
+      [
+        "d_sun",
+        "10:00 – 17:30"
+      ],
+      [
+        "d_mon",
+        "10:00 – 17:30"
+      ],
+      [
+        "d_tue",
+        "Closed"
+      ],
+      [
+        "d_wed",
+        "Closed"
+      ],
+      [
+        "d_thu",
+        "10:00 – 17:30"
+      ],
+      [
+        "d_fri",
+        "10:00 – 17:30"
+      ],
+      [
+        "d_sat",
+        "10:00 – 17:30"
+      ]
     ],
     "spec": [
       {
@@ -2795,7 +2872,7 @@
         "img": "https://www.hill.co.uk/sites/default/files/styles/plot_spec_main_landscape/public/images/2025-04/25_04_01_Hill_MarleighPark_009.jpg.webp?h=59d5115c&itok=Y_Yr5RUE",
         "items": [
           "Painted front entrance door with multi-point locking system",
-          "High efficiency triple glazed aluminium timber composite windows",
+          "High efficiency double glazed aluminium timber composite windows",
           "White painted flush internal doors with contemporary dual finish ironmongery",
           "Built-in mirrored wardrobe with sliding doors to principal bedroom",
           "Walls and smooth ceilings painted in white emulsion",
@@ -2818,7 +2895,7 @@
         "k": "sg_additional",
         "img": "https://www.hill.co.uk/sites/default/files/styles/plot_spec_main_landscape/public/images/2026-02/City%20Reach%20-%20Aerial%20Drone%20CGI%20-%20Outline.jpg.webp?h=21cd0a81&itok=ZIt31H6v",
         "items": [
-          "10 year NHBC warranty"
+          "10-year NHBC warranty - Including 2 years’ support from Hill"
         ]
       }
     ],
@@ -3011,19 +3088,40 @@
         "k": "sg_additional",
         "img": "https://www.hill.co.uk/sites/default/files/styles/plot_spec_main_landscape/public/images/2026-03/Hartmere%20Street%20Scene.jpg.webp?h=832a653d&itok=d08yJbnn",
         "items": [
-          "10 year NHBC warranty"
+          "10-year NHBC warranty - Including 2 years’ support from Hill"
         ]
       }
     ],
     "travel": [],
     "hours": [
-      ["d_sun", "10:00 – 17:30"],
-      ["d_mon", "10:00 – 17:30"],
-      ["d_tue", "Closed"],
-      ["d_wed", "Closed"],
-      ["d_thu", "10:00 – 17:30"],
-      ["d_fri", "10:00 – 17:30"],
-      ["d_sat", "10:00 – 17:30"]
+      [
+        "d_sun",
+        "10:00 – 17:30"
+      ],
+      [
+        "d_mon",
+        "10:00 – 17:30"
+      ],
+      [
+        "d_tue",
+        "Closed"
+      ],
+      [
+        "d_wed",
+        "Closed"
+      ],
+      [
+        "d_thu",
+        "10:00 – 17:30"
+      ],
+      [
+        "d_fri",
+        "10:00 – 17:30"
+      ],
+      [
+        "d_sat",
+        "10:00 – 17:30"
+      ]
     ],
     "amenities": {},
     "suite": {
@@ -3149,13 +3247,34 @@
       "maps": "https://www.google.com/maps/search/?api=1&query=Knights+Park+Sales+Suite+Eddington+Avenue+Cambridge+CB3+1SE"
     },
     "hours": [
-      ["d_sun", "10:00 – 17:30"],
-      ["d_mon", "10:00 – 17:30"],
-      ["d_tue", "10:00 – 17:30"],
-      ["d_wed", "10:00 – 17:30"],
-      ["d_thu", "10:00 – 17:30"],
-      ["d_fri", "10:00 – 17:30"],
-      ["d_sat", "10:00 – 17:30"]
+      [
+        "d_sun",
+        "10:00 – 17:30"
+      ],
+      [
+        "d_mon",
+        "10:00 – 17:30"
+      ],
+      [
+        "d_tue",
+        "10:00 – 17:30"
+      ],
+      [
+        "d_wed",
+        "10:00 – 17:30"
+      ],
+      [
+        "d_thu",
+        "10:00 – 17:30"
+      ],
+      [
+        "d_fri",
+        "10:00 – 17:30"
+      ],
+      [
+        "d_sat",
+        "10:00 – 17:30"
+      ]
     ],
     "spec": [],
     "travel": [],
@@ -3356,7 +3475,7 @@
           "Carpet to stairs, landings, upper floor living room, study and bedrooms",
           "Large format tiles to bathroom, en-suite and first floor WC",
           "Composite front door with multi-point locking system",
-          "High efficiency triple glazed aluminium timber composite windows with matching doors to patio and terrace where applicable",
+          "High efficiency double glazed aluminium timber composite windows with matching doors to patio and terrace where applicable",
           "Bifold doors where shown on plan",
           "Electrically operated roller garage door where applicable",
           "Landscaping to front garden",
@@ -3375,7 +3494,7 @@
           "Concrete floor to ground floors with timber to upper floors",
           "Exterior treatments are a combination of grey or red facing bricks, with wood effect cladding to selected plots and grey or red roof tiles",
           "Aluminium rain-water goods",
-          "Every home is covered by a 10-year NHBC warranty, giving you long-term peace of mind. In the first 2 years, our Hill team is on hand to support you directly, after which the NHBC warranty continues for the remaining period."
+          "10-year NHBC warranty - Including 2 years’ support from Hill"
         ]
       }
     ],
@@ -3512,13 +3631,34 @@
       "maps": "https://www.google.com/maps/search/?api=1&query=Marleigh+Park+Sales+Suite+Newmarket+Road+Cambridge+CB5+8AA"
     },
     "hours": [
-      ["d_sun", "10:00 – 17:30"],
-      ["d_mon", "10:00 – 17:30"],
-      ["d_tue", "10:00 – 17:30"],
-      ["d_wed", "10:00 – 17:30"],
-      ["d_thu", "10:00 – 17:30"],
-      ["d_fri", "10:00 – 17:30"],
-      ["d_sat", "10:00 – 17:30"]
+      [
+        "d_sun",
+        "10:00 – 17:30"
+      ],
+      [
+        "d_mon",
+        "10:00 – 17:30"
+      ],
+      [
+        "d_tue",
+        "10:00 – 17:30"
+      ],
+      [
+        "d_wed",
+        "10:00 – 17:30"
+      ],
+      [
+        "d_thu",
+        "10:00 – 17:30"
+      ],
+      [
+        "d_fri",
+        "10:00 – 17:30"
+      ],
+      [
+        "d_sat",
+        "10:00 – 17:30"
+      ]
     ],
     "spec": [],
     "travel": [],
@@ -3582,16 +3722,6 @@
         "baths": 1,
         "size": 898,
         "price": 509950,
-        "avail": true
-      },
-      {
-        "plot": "5% Deposit Contribution up to the value of £29,998*",
-        "building": "-",
-        "floor": "-",
-        "beds": 0,
-        "baths": 1,
-        "size": 0,
-        "price": 29998,
         "avail": true
       },
       {
@@ -3819,16 +3949,6 @@
         "avail": true
       },
       {
-        "plot": "Stamp Duty Paid up to the value of £4,997*",
-        "building": "-",
-        "floor": "-",
-        "beds": 0,
-        "baths": 1,
-        "size": 0,
-        "price": 4997,
-        "avail": true
-      },
-      {
         "plot": "The Brook, Number 109",
         "building": "-",
         "floor": "-",
@@ -4001,7 +4121,7 @@
         "k": "sg_additional",
         "img": "https://www.hill.co.uk/sites/default/files/styles/plot_spec_main_landscape/public/images/2026-04/Plot%2093%20Dining%20%282%29%20%281%29.jpg.webp?h=790be497&itok=k5QJJSgf",
         "items": [
-          "10 year NHBC warranty",
+          "10-year NHBC warranty - Including 2 years’ support from Hill",
           "999 year lease to apartments",
           "Service charge payable for maintenance of shared facilities and communal areas to apartments"
         ]
@@ -4013,16 +4133,6 @@
     "suite": null,
     "plots": [
       {
-        "plot": "£10,497 Stamp Duty Paid*",
-        "building": "-",
-        "floor": "-",
-        "beds": 0,
-        "baths": 1,
-        "size": 0,
-        "price": 10497,
-        "avail": true
-      },
-      {
         "plot": "The Brenner, Apartment 225",
         "building": "-",
         "floor": "-",
@@ -4030,16 +4140,6 @@
         "baths": 1,
         "size": 582,
         "price": 409950,
-        "avail": true
-      },
-      {
-        "plot": "£17,750 Stamp Duty Paid*",
-        "building": "-",
-        "floor": "-",
-        "beds": 0,
-        "baths": 1,
-        "size": 0,
-        "price": 17750,
         "avail": true
       },
       {
@@ -4090,16 +4190,6 @@
         "baths": 1,
         "size": 2443,
         "price": 1345000,
-        "avail": true
-      },
-      {
-        "plot": "STAMP DUTY PAID - £93,250*",
-        "building": "-",
-        "floor": "-",
-        "beds": 0,
-        "baths": 1,
-        "size": 0,
-        "price": 93250,
         "avail": true
       },
       {
@@ -4236,7 +4326,7 @@
         "k": "sg_additional",
         "img": "https://www.hill.co.uk/sites/default/files/styles/plot_spec_main_landscape/public/images/2025-08/THE%20CLIFTON%20COLLECTION_SHOW%20HOME-4.jpg.webp?h=3bb6718d&itok=k8STfAXS",
         "items": [
-          "10 year NHBC warranty",
+          "10-year NHBC warranty - Including 2 years’ support from Hill",
           "990 year lease",
           "Service charge payable for maintenance of shared facilities and communal areas",
           "Steel reinforced concrete frame with outer brick and stonework, cavity filled with insulation",
