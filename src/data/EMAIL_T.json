@@ -14,5 +14,9 @@
   "ar": {
     "subject": "شكرًا لتسجيل اهتمامك مع هيل إنترناشونال",
     "body": "مرحبًا {name}،\n\nشكرًا لتسجيل اهتمامك. سيتواصل معك أحد أعضاء فريق المبيعات الدولي خلال يوم عمل واحد لمناقشة الخطوات التالية باللغة {language}.\n\nفي غضون ذلك، يمكنك استكشاف مشاريعنا وتحميل الكتيبات التي تهمك.\n\nفريق هيل إنترناشونال\nenquiries@hillinternational.co.uk"
+  },
+  "yue": {
+    "subject": "Thanks for registering your interest with Hill International",
+    "body": "Hi {name},\n\nThanks for registering your interest. A member of our international sales team will be in touch within one business day to talk through next steps in {language}.\n\nIn the meantime, feel free to explore our developments and download the brochures that interest you.\n\nThe Hill International team\nenquiries@hillinternational.co.uk"
   }
 }

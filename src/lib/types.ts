@@ -1,4 +1,4 @@
-export type LangCode = "en" | "tr" | "zh" | "ar";
+export type LangCode = "en" | "tr" | "zh" | "ar" | "yue";
 
 export interface Lang {
   code: LangCode;

@@ -4,10 +4,11 @@ import { devById, priceLabelFor, statusMetaFor } from "@/lib/data";
 import { resolveImage, buildShots } from "@/lib/image";
 import { useLanguage } from "@/lib/i18n";
 import { useAppState } from "@/lib/app-state";
+import { tc } from "@/lib/contentTranslations";
 import Icon from "@/components/Icon";
 
 export default function CompareModal() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const { compareIds, compareOpen, setCompareOpen, removeCompare } = useAppState();
 
   if (!compareOpen) return null;
@@ -18,8 +19,14 @@ export default function CompareModal() {
     { label: t("compare_row_region"), cells: devs.map((d) => d.region) },
     { label: t("compare_row_zone"), cells: devs.map((d) => (d.zone ? `Zone ${d.zone}` : "—")) },
     { label: t("compare_row_status"), cells: devs.map((d) => statusMetaFor(d, t).label) },
-    { label: t("compare_row_homes"), cells: devs.map((d) => d.tagline || t("dev_tagline", { region: d.region })) },
-    { label: t("offers_label"), cells: devs.map((d) => (d.accessPoints || []).map((a) => a.label).join(" · ") || "—") },
+    {
+      label: t("compare_row_homes"),
+      cells: devs.map((d) => (d.tagline ? tc(d.tagline, lang) : t("dev_tagline", { region: d.region }))),
+    },
+    {
+      label: t("offers_label"),
+      cells: devs.map((d) => (d.accessPoints || []).map((a) => tc(a.label, lang)).join(" · ") || "—"),
+    },
   ];
 
   return (

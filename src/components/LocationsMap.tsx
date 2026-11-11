@@ -10,6 +10,7 @@ import { autoFacts } from "@/lib/facts";
 import { resolveImage, buildShots } from "@/lib/image";
 import { resolveLogo } from "@/lib/logo";
 import { useLanguage } from "@/lib/i18n";
+import { tc } from "@/lib/contentTranslations";
 import Icon from "@/components/Icon";
 import { LOCATIONS, type LocationPin } from "@/data/LOCATIONS_MAP";
 
@@ -233,7 +234,7 @@ function PreviewCard({
   onOpen: (id: string) => void;
   cardRef?: RefObject<HTMLDivElement | null>;
 }) {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const d = devById(pin.id);
   if (!d) return null;
 
@@ -266,7 +267,7 @@ function PreviewCard({
             {status.label}
           </span>
         </div>
-        <div className="mb-3 text-[12px] text-[#8B979C]">{d.locationLabel || d.region}</div>
+        <div className="mb-3 text-[12px] text-[#8B979C]">{d.locationLabel ? tc(d.locationLabel, lang) : d.region}</div>
 
         <div className="mb-3.5 grid grid-cols-2 gap-x-3 gap-y-2">
           <div>
@@ -317,7 +318,7 @@ function PreviewCard({
 // exactly like the main site's CompareModal/DevCard (hi-fade backdrop,
 // hi-pop card, hero + overlaid pills, rust price).
 function DevModal({ pin, onClose, onOpen }: { pin: LocationPin; onClose: () => void; onOpen: (id: string) => void }) {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const d = devById(pin.id);
   if (!d) return null;
 
@@ -357,7 +358,7 @@ function DevModal({ pin, onClose, onOpen }: { pin: LocationPin; onClose: () => v
           <div className="absolute inset-x-3.5 top-3.5 flex items-start gap-2">
             <span className="inline-flex min-w-0 items-start gap-1.5 rounded-full bg-[rgba(31,58,71,0.85)] px-3 py-1.5 text-[11px] font-semibold uppercase tracking-wide text-white">
               <Icon name="pin" className="mt-0.5 h-2.5 w-2.5 flex-none" />
-              <span>{d.locationLabel || d.region}</span>
+              <span>{d.locationLabel ? tc(d.locationLabel, lang) : d.region}</span>
             </span>
             <span
               className="inline-flex flex-none items-center gap-1.5 whitespace-nowrap rounded-full px-3 py-1.5 text-[11px] font-bold"
@@ -424,7 +425,7 @@ function DevStripCard({
   onSelect: () => void;
   onHover: React.Dispatch<React.SetStateAction<string | null>>;
 }) {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const imgRef = useRef<HTMLImageElement | null>(null);
   const [heroBroken, setHeroBroken] = useState(false);
   // The image tag is already in the static HTML, so the browser can start
@@ -513,7 +514,7 @@ function DevStripCard({
 
       <div className="absolute inset-x-3.5 bottom-3.5">
         <div className="truncate text-[14px] font-bold text-white">{d.name}</div>
-        <div className="mb-1.5 truncate text-[11px] text-white/65">{d.locationLabel || d.region}</div>
+        <div className="mb-1.5 truncate text-[11px] text-white/65">{d.locationLabel ? tc(d.locationLabel, lang) : d.region}</div>
         <div className="truncate text-[12.5px] font-bold text-[#C98A6B]">{price}</div>
       </div>
     </button>

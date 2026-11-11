@@ -10,6 +10,7 @@ import { resolveImage, placeholderFor, buildShots } from "@/lib/image";
 import { VIDEO_EMBEDS, isYoutubeEmbed, youtubeWatchUrl } from "@/lib/video";
 import { resolveLogo } from "@/lib/logo";
 import { useLanguage } from "@/lib/i18n";
+import { tc, tcUnit } from "@/lib/contentTranslations";
 import { useAppState } from "@/lib/app-state";
 import { submitEnquiry } from "@/lib/enquiry";
 import { useSwipe } from "@/lib/useSwipe";
@@ -237,7 +238,7 @@ export default function DevelopmentPage({ id }: { id: string }) {
   const status = statusMetaFor(d, t);
   const isLiked = liked.has(d.id);
   const priceLabel = priceLabelFor(d, t);
-  const tagline = d.tagline || t("dev_tagline", { region: d.region });
+  const tagline = d.tagline ? tc(d.tagline, lang) : t("dev_tagline", { region: d.region });
   const logoSrc = resolveLogo(d.logo, d.name);
   const locCats = Object.keys(pd.amenities);
   const facts = pd.facts.length ? pd.facts : autoFacts(d);
@@ -394,7 +395,7 @@ export default function DevelopmentPage({ id }: { id: string }) {
             <div className="mb-2.5 flex flex-wrap items-center gap-2 md:mb-5 md:gap-3">
               <span className="hi-eyebrow inline-flex items-center gap-1.5 text-white/82">
                 <Icon name="pin" className="h-3.5 w-3.5 text-[#C98A6B]" />
-                {d.locationLabel || d.region}
+                {d.locationLabel ? tc(d.locationLabel, lang) : d.region}
               </span>
               <span
                 className="hidden rounded-full px-3 py-1.5 text-[11px] font-bold shadow-[0_3px_10px_rgba(0,0,0,0.3)] md:inline-flex"
@@ -420,7 +421,7 @@ export default function DevelopmentPage({ id }: { id: string }) {
               {d.accessNote && (
                 <>
                   <span className="hidden h-6.5 w-px bg-white/20 md:block" />
-                  <span className="text-[14.5px] font-bold text-[#C98A6B]">{d.accessNote}</span>
+                  <span className="text-[14.5px] font-bold text-[#C98A6B]">{tc(d.accessNote, lang)}</span>
                 </>
               )}
             </div>
@@ -733,7 +734,7 @@ export default function DevelopmentPage({ id }: { id: string }) {
                             className="flex items-start gap-3 border-b border-white/8 pb-3 text-[15.5px] leading-relaxed text-white/82"
                           >
                             <Icon name="check" className="mt-0.5 h-3.5 w-3.5 flex-none text-[#C98A6B]" strokeWidth={2.4} />
-                            {item}
+                            {tc(item, lang)}
                           </span>
                         ))}
                       </div>
@@ -870,7 +871,13 @@ export default function DevelopmentPage({ id }: { id: string }) {
           <div className="mx-auto max-w-[1400px]">
             <span className="hi-eyebrow mb-3 block text-[#C1560F]">{devText(d, dp, "loc_eyebrow")}</span>
             <h2 className="mb-10 max-w-[720px] text-[32px] font-bold tracking-tight text-[#1F3A47]">
-              {d.id === "nexus" ? dp("loc_title") : d.place || d.locationLabel || d.region}
+              {d.id === "nexus"
+                ? dp("loc_title")
+                : d.place
+                  ? tc(d.place, lang)
+                  : d.locationLabel
+                    ? tc(d.locationLabel, lang)
+                    : d.region}
             </h2>
 
             <div className="mb-16 grid grid-cols-1 items-start gap-11 lg:grid-cols-[minmax(320px,1fr)_minmax(320px,1fr)]">
@@ -896,9 +903,11 @@ export default function DevelopmentPage({ id }: { id: string }) {
                               <span className="flex h-8.5 w-8.5 flex-none items-center justify-center rounded-full bg-[#F2F6F8]">
                                 <Icon name={locCatIconName(locCat)} className="h-4 w-4 text-[#28567A]" strokeWidth={1.7} />
                               </span>
-                              {a.name}
+                              {tc(a.name, lang)}
                             </span>
-                            <span className="whitespace-nowrap text-[13px] font-bold tabular-nums text-[#28567A]">{a.d}</span>
+                            <span className="whitespace-nowrap text-[13px] font-bold tabular-nums text-[#28567A]">
+                              {tcUnit(a.d, lang)}
+                            </span>
                           </div>
                         ))}
                       </div>
@@ -911,7 +920,7 @@ export default function DevelopmentPage({ id }: { id: string }) {
                           <span className="flex h-8.5 w-8.5 flex-none items-center justify-center rounded-full bg-[#F2F6F8]">
                             <Icon name={a.icon as Parameters<typeof Icon>[0]["name"]} className="h-4 w-4 text-[#28567A]" strokeWidth={1.7} />
                           </span>
-                          {a.label}
+                          {tc(a.label, lang)}
                         </div>
                       ))}
                     </div>
@@ -944,9 +953,9 @@ export default function DevelopmentPage({ id }: { id: string }) {
                 <div className="flex flex-col gap-2.5">
                   {pd.travel.map((tr, i) => (
                     <div key={i} className="flex items-center justify-between rounded-xl bg-[#F5F5F7] px-5 py-3.5">
-                      <span className="text-[14.5px] font-medium text-[#1F3A47]">{tr.to}</span>
+                      <span className="text-[14.5px] font-medium text-[#1F3A47]">{tc(tr.to, lang)}</span>
                       <span className="text-[13.5px] font-semibold text-[#28567A]">
-                        {tr.n} min &middot; {dp(tr.mode)}
+                        {tcUnit(`${tr.n} min`, lang)} &middot; {dp(tr.mode)}
                       </span>
                     </div>
                   ))}

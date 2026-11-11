@@ -6,6 +6,7 @@ import type { Development } from "@/lib/types";
 import { LAUNCHING_SOON, priceLabelFor, statusMetaFor } from "@/lib/data";
 import { resolveImage, buildShots } from "@/lib/image";
 import { useLanguage } from "@/lib/i18n";
+import { tc } from "@/lib/contentTranslations";
 import { useAppState } from "@/lib/app-state";
 import { useSwipe } from "@/lib/useSwipe";
 import Icon from "@/components/Icon";
@@ -58,7 +59,7 @@ const CARD_IMAGE_OBJECT_POSITION: Record<string, string> = {
 };
 
 export default function DevCard({ d }: { d: Development }) {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const router = useRouter();
   const { liked, toggleLiked, compareIds, toggleCompare, startPriority } = useAppState();
   const [shot, setShot] = useState(0);
@@ -141,7 +142,7 @@ export default function DevCard({ d }: { d: Development }) {
         <div className="absolute inset-x-3.5 top-3.5 z-[5] flex items-start justify-between gap-2">
           <span className="inline-flex min-w-0 items-start gap-1.5 rounded-full bg-[rgba(31,58,71,0.85)] px-3 py-1.5 text-[11px] font-semibold uppercase tracking-wide text-white">
             <Icon name="pin" className="mt-0.5 h-2.5 w-2.5 flex-none" />
-            <span>{d.locationLabel || d.region}</span>
+            <span>{d.locationLabel ? tc(d.locationLabel, lang) : d.region}</span>
           </span>
 
           <div className="flex flex-none items-center gap-2">
@@ -210,19 +211,21 @@ export default function DevCard({ d }: { d: Development }) {
           {d.place && (
             <p className="mb-1.5 flex items-center gap-1.5 text-[13px] text-[#8B979C]">
               <Icon name="pin" className="h-3.5 w-3.5 flex-none text-[#1F3A47]" />
-              {d.place}
+              {tc(d.place, lang)}
             </p>
           )}
           <div className="flex flex-col gap-1">
-            {tagline.split("\n").map((line, i) => (
-              <p
-                key={i}
-                className="flex items-start gap-2 text-[14px] leading-snug text-[#5C6B71]"
-                style={{ unicodeBidi: "plaintext" }}
-              >
-                {line}
-              </p>
-            ))}
+            {tc(tagline, lang)
+              .split("\n")
+              .map((line, i) => (
+                <p
+                  key={i}
+                  className="flex items-start gap-2 text-[14px] leading-snug text-[#5C6B71]"
+                  style={{ unicodeBidi: "plaintext" }}
+                >
+                  {line}
+                </p>
+              ))}
           </div>
         </div>
 
@@ -239,7 +242,7 @@ export default function DevCard({ d }: { d: Development }) {
                   style={{ unicodeBidi: "plaintext" }}
                 >
                   <Icon name={ICON_MAP[ap.icon] || "pin"} className="h-4 w-4 flex-none" />
-                  {ap.label}
+                  {tc(ap.label, lang)}
                 </span>
               ))}
             </div>
