@@ -41,7 +41,16 @@ jobs:
             exit 1
           fi
           if ! grep -rqF "$NEXT_PUBLIC_MAPBOX_TOKEN" out/_next/static/chunks/*.js; then
-            echo "::error::NEXT_PUBLIC_MAPBOX_TOKEN wasn't inlined into any client chunk, even though the secret is set - the build succeeded but the live map would silently show 'Map unavailable' with no map errors visible anywhere. This has happened before from a Next.js/Turbopack + Node version combination that fails to inline NEXT_PUBLIC_ vars (it compiles to a runtime process.env property read instead of a literal) - check the Node version this workflow uses against one known to inline correctly."
+            echo "::error::NEXT_PUBLIC_MAPBOX_TOKEN wasn't inlined into any client chunk, even though the secret is set - the build succeeded but the live map would silently show 'Map unavailable' with no map errors visible anywhere."
+            exit 1
+          fi
+          # The check above only proves the literal exists SOMEWHERE in the
+          # build - it has passed before while the specific chunk that reads
+          # it still carried the unsubstituted runtime lookup (Turbopack can
+          # inline the same module differently across chunks it ends up
+          # split into). Directly fail on that exact broken pattern too.
+          if grep -rlE '\.env\.NEXT_PUBLIC_MAPBOX_TOKEN\b' out/_next/static/chunks/*.js; then
+            echo "::error::Found an un-inlined runtime read of NEXT_PUBLIC_MAPBOX_TOKEN (e.g. 'process.env.NEXT_PUBLIC_MAPBOX_TOKEN') in a client chunk above - that chunk will see an empty token in the browser and show 'Map unavailable', even though another chunk did get the literal inlined."
             exit 1
           fi
 
