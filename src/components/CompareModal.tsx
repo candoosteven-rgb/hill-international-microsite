@@ -4,7 +4,7 @@ import { devById, priceLabelFor, statusMetaFor } from "@/lib/data";
 import { resolveImage, buildShots } from "@/lib/image";
 import { useLanguage } from "@/lib/i18n";
 import { useAppState } from "@/lib/app-state";
-import { tc } from "@/lib/contentTranslations";
+import { tc, tcUnit } from "@/lib/contentTranslations";
 import Icon from "@/components/Icon";
 
 export default function CompareModal() {
@@ -17,7 +17,7 @@ export default function CompareModal() {
   const rows: { label: string; cells: React.ReactNode[] }[] = [
     { label: t("price_from"), cells: devs.map((d) => priceLabelFor(d, t)) },
     { label: t("compare_row_region"), cells: devs.map((d) => d.region) },
-    { label: t("compare_row_zone"), cells: devs.map((d) => (d.zone ? `Zone ${d.zone}` : "—")) },
+    { label: t("compare_row_zone"), cells: devs.map((d) => (d.zone ? tcUnit(`Zone ${d.zone}`, lang) : "—")) },
     { label: t("compare_row_status"), cells: devs.map((d) => statusMetaFor(d, t).label) },
     {
       label: t("compare_row_homes"),

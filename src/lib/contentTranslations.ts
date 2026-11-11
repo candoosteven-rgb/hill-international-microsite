@@ -37,6 +37,7 @@ const UNIT_WORDS: Record<Exclude<LangCode, "en">, Record<string, string>> = {
     drive: "araçla",
     hr: "sa",
     hrs: "sa",
+    zone: "Bölge",
   },
   zh: {
     mi: "英里",
@@ -50,6 +51,7 @@ const UNIT_WORDS: Record<Exclude<LangCode, "en">, Record<string, string>> = {
     drive: "车程",
     hr: "小时",
     hrs: "小时",
+    zone: "区",
   },
   ar: {
     mi: "ميل",
@@ -63,6 +65,7 @@ const UNIT_WORDS: Record<Exclude<LangCode, "en">, Record<string, string>> = {
     drive: "بالسيارة",
     hr: "ساعة",
     hrs: "ساعة",
+    zone: "المنطقة",
   },
   yue: {
     mi: "英里",
@@ -76,6 +79,7 @@ const UNIT_WORDS: Record<Exclude<LangCode, "en">, Record<string, string>> = {
     drive: "車程",
     hr: "小時",
     hrs: "小時",
+    zone: "區",
   },
 };
 
@@ -104,6 +108,11 @@ const DISTANCE_PATTERNS: Array<{ re: RegExp; build: (m: RegExpMatchArray, u: Rec
   {
     re: /^(\d+)\s*hrs?(?:\s+(\d+)\s*min)?\s+drive$/i,
     build: (m, u) => (m[2] ? `${m[1]} ${u.hr} ${m[2]} ${u.min} ${u.drive}` : `${m[1]} ${u.hr} ${u.drive}`),
+  },
+  // "Zone 4" (an auto-fact derived from the numeric d.zone field)
+  {
+    re: /^Zone\s+(\d+)$/i,
+    build: (m, u) => `${u.zone} ${m[1]}`,
   },
 ];
 

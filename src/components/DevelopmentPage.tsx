@@ -46,7 +46,7 @@ const OVERVIEW_HIGHLIGHTS: Record<string, string[]> = {
     "Rare opportunity to own a freehold house close to central Cambridge",
     "Ideally positioned adjacent to Histon Road Park",
     "Within walking distance of leading University of Cambridge colleges, including Fitzwilliam, Murray Edwards and Churchill",
-    "Excellent connectivity – cycle to Cambridge city centre in around 13 minutes and Cambridge Station in just 15 minutes",
+    "Excellent connectivity – cycle to Cambridge city centre in around 8 minutes and Cambridge Station in just 15 minutes",
     "Every home benefits from a private garden and off-road parking",
   ],
 };
@@ -437,16 +437,16 @@ export default function DevelopmentPage({ id }: { id: string }) {
                 className="mb-6.5 font-bold text-[#1F3A47]"
                 style={{ fontSize: "clamp(30px,3.6vw,46px)", lineHeight: 1.04, letterSpacing: "-0.035em" }}
               >
-                {devHeadline(d, dp)}
+                {devHeadline(d, dp, lang)}
               </h2>
-              <p className="mb-4.5 text-[16.5px] leading-relaxed text-[#5C6B71]">{devBlurb(d, dp)}</p>
+              <p className="mb-4.5 text-[16.5px] leading-relaxed text-[#5C6B71]">{devBlurb(d, dp, lang)}</p>
               <p className="text-[16.5px] leading-relaxed text-[#5C6B71]">{devBlurb2(d, dp)}</p>
               {!!OVERVIEW_HIGHLIGHTS[d.id]?.length && (
                 <ul className="mt-4.5 flex flex-col gap-2.5">
                   {OVERVIEW_HIGHLIGHTS[d.id].map((h, i) => (
                     <li key={i} className="flex items-start gap-2.5 text-[16.5px] leading-relaxed text-[#5C6B71]">
                       <span className="mt-2.5 h-1.5 w-1.5 flex-none rounded-full bg-[#C1560F]" />
-                      {h}
+                      {tc(h, lang)}
                     </li>
                   ))}
                 </ul>
@@ -455,7 +455,7 @@ export default function DevelopmentPage({ id }: { id: string }) {
 
             {usp ? (
               <div className="rounded-[22px] bg-[#F5F5F7] p-8 md:p-9">
-                {usp.eyebrow && <div className="hi-eyebrow mb-5 text-[#C1560F]">{usp.eyebrow}</div>}
+                {usp.eyebrow && <div className="hi-eyebrow mb-5 text-[#C1560F]">{tc(usp.eyebrow, lang)}</div>}
                 <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
                   {usp.items.map((item, i) => (
                     <div key={i} className="flex items-start gap-3.5">
@@ -463,10 +463,10 @@ export default function DevelopmentPage({ id }: { id: string }) {
                         <Icon name={item.icon} className="h-4.5 w-4.5 text-[#C1560F]" />
                       </div>
                       <div>
-                        <div className="text-[14.5px] font-bold leading-snug text-[#1F3A47]">{item.title}</div>
+                        <div className="text-[14.5px] font-bold leading-snug text-[#1F3A47]">{tc(item.title, lang)}</div>
                         {item.lines?.map((l, j) => (
                           <div key={j} className="text-[13px] leading-snug text-[#6E7B80]">
-                            {l}
+                            {tc(l, lang)}
                           </div>
                         ))}
                       </div>
@@ -487,7 +487,9 @@ export default function DevelopmentPage({ id }: { id: string }) {
                           <div className="mb-3 flex h-8 w-8 items-center justify-center rounded-full bg-[rgba(193,86,15,0.12)]">
                             {factIcon && <Icon name={factIcon} className="h-4 w-4 text-[#C1560F]" />}
                           </div>
-                          <div className="mb-1.5 text-[24px] font-bold tracking-tight text-[#1F3A47]">{f.v || "—"}</div>
+                          <div className="mb-1.5 text-[24px] font-bold tracking-tight text-[#1F3A47]">
+                            {f.v ? tcUnit(tc(f.v, lang), lang) : "—"}
+                          </div>
                           <div className="text-[13px] font-medium leading-snug text-[#6E7B80]">{dp(f.k)}</div>
                         </div>
                       );
