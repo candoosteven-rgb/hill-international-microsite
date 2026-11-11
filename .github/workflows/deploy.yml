@@ -28,9 +28,21 @@ jobs:
             echo "MAPBOX_TOKEN secret is set (length: ${#NEXT_PUBLIC_MAPBOX_TOKEN}, starts with: ${NEXT_PUBLIC_MAPBOX_TOKEN:0:3})"
           fi
 
-      - run: npm run build
+      - name: Build
         env:
           NEXT_PUBLIC_MAPBOX_TOKEN: ${{ secrets.MAPBOX_TOKEN }}
+        run: |
+          # Turbopack has a known, non-deterministic font-loading flake -
+          # "Module not found: Can't resolve
+          # '@vercel/turbopack-next/internal/font/google/font'" - that has
+          # nothing to do with the actual source change in a given commit
+          # (hit repeatedly in local development, and once here in CI on an
+          # otherwise-unrelated content change). A clean retry has always
+          # succeeded, so retry once before failing the whole deploy over it.
+          npm run build && exit 0
+          echo "::warning::First build attempt failed - retrying once in case this was the known Turbopack font-loading flake."
+          rm -rf .next out
+          npm run build
 
       - name: Verify MAPBOX_TOKEN was actually inlined into the build output
         env:
