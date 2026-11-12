@@ -3504,22 +3504,22 @@
     "suite": null,
     "plots": [
       {
-        "plot": "The Carlton, Number 4",
-        "building": "-",
-        "floor": "-",
-        "beds": 3,
-        "baths": 1,
-        "size": 1291,
-        "price": 699950,
-        "avail": true
-      },
-      {
         "plot": "The Carlton, Number 2",
         "building": "-",
         "floor": "-",
         "beds": 3,
         "baths": 1,
         "size": 1292,
+        "price": 699950,
+        "avail": true
+      },
+      {
+        "plot": "The Carlton, Number 4",
+        "building": "-",
+        "floor": "-",
+        "beds": 3,
+        "baths": 1,
+        "size": 1291,
         "price": 699950,
         "avail": true
       },
