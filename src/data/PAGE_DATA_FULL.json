@@ -2240,43 +2240,23 @@
     "suite": null,
     "plots": [
       {
-        "plot": "The Robin, Number 99",
+        "plot": "The Robin, Number 99.",
         "building": "-",
         "floor": "-",
         "beds": 2,
         "baths": 1,
         "size": 918,
-        "price": 489950,
+        "price": 455000,
         "avail": true
       },
       {
-        "plot": "The Robin, Number 74",
-        "building": "-",
-        "floor": "-",
-        "beds": 2,
-        "baths": 1,
-        "size": 918,
-        "price": 499950,
-        "avail": true
-      },
-      {
-        "plot": "The Jay, Number 70",
+        "plot": "The Jay, Number 70.",
         "building": "-",
         "floor": "-",
         "beds": 3,
         "baths": 1,
         "size": 1176,
-        "price": 659950,
-        "avail": true
-      },
-      {
-        "plot": "The Jay, Number 76",
-        "building": "-",
-        "floor": "-",
-        "beds": 3,
-        "baths": 1,
-        "size": 1176,
-        "price": 669950,
+        "price": 629950,
         "avail": true
       },
       {
@@ -2286,11 +2266,21 @@
         "beds": 4,
         "baths": 1,
         "size": 1305,
+        "price": 699950,
+        "avail": true
+      },
+      {
+        "plot": "The Partridge, Number 95",
+        "building": "-",
+        "floor": "-",
+        "beds": 4,
+        "baths": 1,
+        "size": 1469,
         "price": 749950,
         "avail": true
       },
       {
-        "plot": "The Owl, Number 97",
+        "plot": "The Owl, Number 81",
         "building": "-",
         "floor": "-",
         "beds": 4,
@@ -2306,7 +2296,7 @@
         "beds": 5,
         "baths": 1,
         "size": 1977,
-        "price": 999950,
+        "price": 949950,
         "avail": true
       }
     ],
@@ -2720,13 +2710,13 @@
     "suite": null,
     "plots": [
       {
-        "plot": "The Lawrence, Number 153",
+        "plot": "The Lawrence, Number 153.",
         "building": "-",
         "floor": "-",
         "beds": 5,
         "baths": 1,
         "size": 2166,
-        "price": 1649950,
+        "price": 1599950,
         "avail": true
       }
     ],
@@ -3504,22 +3494,22 @@
     "suite": null,
     "plots": [
       {
-        "plot": "The Carlton, Number 4",
-        "building": "-",
-        "floor": "-",
-        "beds": 3,
-        "baths": 1,
-        "size": 1291,
-        "price": 699950,
-        "avail": true
-      },
-      {
         "plot": "The Carlton, Number 2",
         "building": "-",
         "floor": "-",
         "beds": 3,
         "baths": 1,
         "size": 1292,
+        "price": 699950,
+        "avail": true
+      },
+      {
+        "plot": "The Carlton, Number 4",
+        "building": "-",
+        "floor": "-",
+        "beds": 3,
+        "baths": 1,
+        "size": 1291,
         "price": 699950,
         "avail": true
       },
@@ -3715,13 +3705,13 @@
         "avail": true
       },
       {
-        "plot": "The Cherry, Number 457",
+        "plot": "The Cherry, Number 456",
         "building": "-",
         "floor": "-",
         "beds": 2,
         "baths": 1,
         "size": 898,
-        "price": 509950,
+        "price": 479950,
         "avail": true
       },
       {
@@ -3741,7 +3731,7 @@
         "beds": 3,
         "baths": 1,
         "size": 1132,
-        "price": 649950,
+        "price": 619950,
         "avail": true
       }
     ],
