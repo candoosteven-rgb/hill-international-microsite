@@ -3751,7 +3751,7 @@
         "beds": 3,
         "baths": 1,
         "size": 1132,
-        "price": 619950,
+        "price": 629950,
         "avail": true
       }
     ],
@@ -4143,7 +4143,7 @@
     "suite": null,
     "plots": [
       {
-        "plot": "The Brenner, Apartment 225",
+        "plot": "The Brenner, Apartment 225.",
         "building": "-",
         "floor": "-",
         "beds": 1,
