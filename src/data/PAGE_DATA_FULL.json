@@ -2290,22 +2290,22 @@
         "avail": true
       },
       {
-        "plot": "The Kestrel, Number 55",
-        "building": "-",
-        "floor": "-",
-        "beds": 4,
-        "baths": 1,
-        "size": 1487,
-        "price": 779950,
-        "avail": true
-      },
-      {
         "plot": "The Owl, Number 81",
         "building": "-",
         "floor": "-",
         "beds": 4,
         "baths": 1,
         "size": 1468,
+        "price": 779950,
+        "avail": true
+      },
+      {
+        "plot": "The Kestrel, Number 55",
+        "building": "-",
+        "floor": "-",
+        "beds": 4,
+        "baths": 1,
+        "size": 1487,
         "price": 779950,
         "avail": true
       },
@@ -3514,22 +3514,22 @@
     "suite": null,
     "plots": [
       {
-        "plot": "The Carlton, Number 2",
-        "building": "-",
-        "floor": "-",
-        "beds": 3,
-        "baths": 1,
-        "size": 1292,
-        "price": 699950,
-        "avail": true
-      },
-      {
         "plot": "The Carlton, Number 4",
         "building": "-",
         "floor": "-",
         "beds": 3,
         "baths": 1,
         "size": 1291,
+        "price": 699950,
+        "avail": true
+      },
+      {
+        "plot": "The Carlton, Number 2",
+        "building": "-",
+        "floor": "-",
+        "beds": 3,
+        "baths": 1,
+        "size": 1292,
         "price": 699950,
         "avail": true
       },
