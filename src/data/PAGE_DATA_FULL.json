@@ -478,16 +478,6 @@
         "avail": true
       },
       {
-        "plot": "Wren House, Apartment 113",
-        "building": "-",
-        "floor": "-",
-        "beds": 2,
-        "baths": 1,
-        "size": 782,
-        "price": 610000,
-        "avail": true
-      },
-      {
         "plot": "Wren House, Apartment 119",
         "building": "-",
         "floor": "-",
@@ -498,13 +488,23 @@
         "avail": true
       },
       {
-        "plot": "Starling House, Apartment 29",
+        "plot": "Wren House, Apartment 113",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 782,
+        "price": 610000,
+        "avail": true
+      },
+      {
+        "plot": "Starling House, Apartment 37",
         "building": "-",
         "floor": "-",
         "beds": 2,
         "baths": 1,
         "size": 806,
-        "price": 630000,
+        "price": 635000,
         "avail": true
       },
       {
@@ -518,12 +518,12 @@
         "avail": true
       },
       {
-        "plot": "Starling House, Apartment 84",
+        "plot": "Starling House, Apartment 91",
         "building": "-",
         "floor": "-",
         "beds": 2,
         "baths": 1,
-        "size": 846,
+        "size": 801,
         "price": 680000,
         "avail": true
       }
@@ -800,16 +800,6 @@
         "avail": true
       },
       {
-        "plot": "Foxtail House, Apartment 43",
-        "building": "-",
-        "floor": "-",
-        "beds": 2,
-        "baths": 1,
-        "size": 797,
-        "price": 550000,
-        "avail": true
-      },
-      {
         "plot": "Marram House, Apartment 91",
         "building": "-",
         "floor": "-",
@@ -820,7 +810,7 @@
         "avail": true
       },
       {
-        "plot": "Marram House, Apartment 92",
+        "plot": "Foxtail House, Apartment 44",
         "building": "-",
         "floor": "-",
         "beds": 2,
@@ -830,13 +820,13 @@
         "avail": true
       },
       {
-        "plot": "Foxtail House, Apartment 41",
+        "plot": "Marram House, Apartment 87",
         "building": "-",
         "floor": "-",
         "beds": 2,
         "baths": 1,
-        "size": 798,
-        "price": 565000,
+        "size": 835,
+        "price": 585000,
         "avail": true
       },
       {
@@ -850,6 +840,16 @@
         "avail": true
       },
       {
+        "plot": "Marram House, Apartment 96",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 791,
+        "price": 595000,
+        "avail": true
+      },
+      {
         "plot": "Marram House, Apartment 103",
         "building": "-",
         "floor": "-",
@@ -857,16 +857,6 @@
         "baths": 1,
         "size": 835,
         "price": 615000,
-        "avail": true
-      },
-      {
-        "plot": "The Ash, Number 2",
-        "building": "-",
-        "floor": "-",
-        "beds": 3,
-        "baths": 1,
-        "size": 1289,
-        "price": 965000,
         "avail": true
       }
     ],
@@ -3514,22 +3504,22 @@
     "suite": null,
     "plots": [
       {
-        "plot": "The Carlton, Number 4",
-        "building": "-",
-        "floor": "-",
-        "beds": 3,
-        "baths": 1,
-        "size": 1291,
-        "price": 699950,
-        "avail": true
-      },
-      {
         "plot": "The Carlton, Number 2",
         "building": "-",
         "floor": "-",
         "beds": 3,
         "baths": 1,
         "size": 1292,
+        "price": 699950,
+        "avail": true
+      },
+      {
+        "plot": "The Carlton, Number 4",
+        "building": "-",
+        "floor": "-",
+        "beds": 3,
+        "baths": 1,
+        "size": 1291,
         "price": 699950,
         "avail": true
       },
@@ -3974,7 +3964,7 @@
         "floor": "-",
         "beds": 4,
         "baths": 1,
-        "size": 1395,
+        "size": 1394,
         "price": 574950,
         "avail": true
       },
@@ -3984,7 +3974,7 @@
         "floor": "-",
         "beds": 4,
         "baths": 1,
-        "size": 1585,
+        "size": 1581,
         "price": 619950,
         "avail": true
       },
@@ -3996,16 +3986,6 @@
         "baths": 1,
         "size": 1954,
         "price": 649950,
-        "avail": true
-      },
-      {
-        "plot": "The Eden, Number 27",
-        "building": "-",
-        "floor": "-",
-        "beds": 4,
-        "baths": 1,
-        "size": 1954,
-        "price": 669950,
         "avail": true
       }
     ],
