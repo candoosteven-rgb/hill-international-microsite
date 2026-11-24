@@ -478,22 +478,22 @@
         "avail": true
       },
       {
-        "plot": "Wren House, Apartment 119",
-        "building": "-",
-        "floor": "-",
-        "beds": 2,
-        "baths": 1,
-        "size": 758,
-        "price": 610000,
-        "avail": true
-      },
-      {
         "plot": "Wren House, Apartment 113",
         "building": "-",
         "floor": "-",
         "beds": 2,
         "baths": 1,
         "size": 782,
+        "price": 610000,
+        "avail": true
+      },
+      {
+        "plot": "Wren House, Apartment 119",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 758,
         "price": 610000,
         "avail": true
       },
@@ -790,6 +790,16 @@
     },
     "plots": [
       {
+        "plot": "Marram House, Apartment 88",
+        "building": "-",
+        "floor": "-",
+        "beds": 1,
+        "baths": 1,
+        "size": 556,
+        "price": 395000,
+        "avail": true
+      },
+      {
         "plot": "Marram House, Apartment 79.",
         "building": "-",
         "floor": "-",
@@ -800,16 +810,6 @@
         "avail": true
       },
       {
-        "plot": "Marram House, Apartment 91",
-        "building": "-",
-        "floor": "-",
-        "beds": 2,
-        "baths": 1,
-        "size": 797,
-        "price": 555000,
-        "avail": true
-      },
-      {
         "plot": "Foxtail House, Apartment 44",
         "building": "-",
         "floor": "-",
@@ -817,6 +817,16 @@
         "baths": 1,
         "size": 797,
         "price": 560000,
+        "avail": true
+      },
+      {
+        "plot": "Foxtail House, Apartment 50",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 797,
+        "price": 565000,
         "avail": true
       },
       {
@@ -1203,7 +1213,7 @@
         "beds": 1,
         "baths": 1,
         "size": 556,
-        "price": 335000,
+        "price": 319000,
         "avail": true
       },
       {
@@ -1213,7 +1223,7 @@
         "beds": 1,
         "baths": 1,
         "size": 556,
-        "price": 352500,
+        "price": 331000,
         "avail": true
       },
       {
@@ -1223,7 +1233,7 @@
         "beds": 2,
         "baths": 1,
         "size": 806,
-        "price": 395000,
+        "price": 378000,
         "avail": true
       },
       {
@@ -1233,7 +1243,7 @@
         "beds": 2,
         "baths": 1,
         "size": 801,
-        "price": 405000,
+        "price": 400000,
         "avail": true
       },
       {
@@ -1243,6 +1253,16 @@
         "beds": 2,
         "baths": 1,
         "size": 801,
+        "price": 409000,
+        "avail": true
+      },
+      {
+        "plot": "The Liberty, Apartment 652",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 798,
         "price": 445000,
         "avail": true
       },
@@ -1254,16 +1274,6 @@
         "baths": 1,
         "size": 934,
         "price": 500000,
-        "avail": true
-      },
-      {
-        "plot": "The Liberty, Apartment 652",
-        "building": "-",
-        "floor": "-",
-        "beds": 2,
-        "baths": 1,
-        "size": 798,
-        "price": 525000,
         "avail": true
       }
     ],
@@ -1717,23 +1727,23 @@
         "avail": true
       },
       {
-        "plot": "Maxima, Apartment 171",
+        "plot": "Maxima, Apartment 167",
         "building": "-",
         "floor": "-",
         "beds": 1,
         "baths": 1,
         "size": 542,
-        "price": 260000,
+        "price": 250000,
         "avail": true
       },
       {
-        "plot": "Maxima, Apartment 198",
+        "plot": "Maxima, Apartment 178",
         "building": "-",
         "floor": "-",
         "beds": 1,
         "baths": 1,
-        "size": 542,
-        "price": 267500,
+        "size": 584,
+        "price": 265000,
         "avail": true
       },
       {
@@ -1767,13 +1777,13 @@
         "avail": true
       },
       {
-        "plot": "Maxima, Apartment 179",
+        "plot": "Maxima, Apartment 197",
         "building": "-",
         "floor": "-",
         "beds": 3,
         "baths": 1,
         "size": 942,
-        "price": 415000,
+        "price": 425000,
         "avail": true
       }
     ],
@@ -2909,7 +2919,37 @@
         "beds": 1,
         "baths": 1,
         "size": 560,
-        "price": 349950,
+        "price": 319950,
+        "avail": true
+      },
+      {
+        "plot": "Florence Court, Apartment 8",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 788,
+        "price": 424950,
+        "avail": true
+      },
+      {
+        "plot": "Florence Court, Apartment 14",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 820,
+        "price": 442950,
+        "avail": true
+      },
+      {
+        "plot": "Florence Court, Apartment 15",
+        "building": "-",
+        "floor": "-",
+        "beds": 2,
+        "baths": 1,
+        "size": 820,
+        "price": 449950,
         "avail": true
       },
       {
@@ -2943,16 +2983,6 @@
         "avail": true
       },
       {
-        "plot": "Florence Court, Apartment 14",
-        "building": "-",
-        "floor": "-",
-        "beds": 2,
-        "baths": 1,
-        "size": 820,
-        "price": 469950,
-        "avail": true
-      },
-      {
         "plot": "Ida Court, Apartment 58",
         "building": "-",
         "floor": "-",
@@ -2960,16 +2990,6 @@
         "baths": 1,
         "size": 760,
         "price": 469950,
-        "avail": true
-      },
-      {
-        "plot": "Florence Court, Apartment 15",
-        "building": "-",
-        "floor": "-",
-        "beds": 2,
-        "baths": 1,
-        "size": 820,
-        "price": 479950,
         "avail": true
       }
     ],
@@ -3132,6 +3152,16 @@
     },
     "plots": [
       {
+        "plot": "5% Deposit Paid up to £27,499*",
+        "building": "-",
+        "floor": "-",
+        "beds": 0,
+        "baths": 1,
+        "size": 0,
+        "price": 27499,
+        "avail": true
+      },
+      {
         "plot": "The Darwin, Number 35",
         "building": "-",
         "floor": "-",
@@ -3149,6 +3179,16 @@
         "baths": 1,
         "size": 1363,
         "price": 834950,
+        "avail": true
+      },
+      {
+        "plot": "5% Deposit Paid up to £34,997*",
+        "building": "-",
+        "floor": "-",
+        "beds": 0,
+        "baths": 1,
+        "size": 0,
+        "price": 34997,
         "avail": true
       },
       {
@@ -3504,22 +3544,22 @@
     "suite": null,
     "plots": [
       {
-        "plot": "The Carlton, Number 4",
-        "building": "-",
-        "floor": "-",
-        "beds": 3,
-        "baths": 1,
-        "size": 1291,
-        "price": 699950,
-        "avail": true
-      },
-      {
         "plot": "The Carlton, Number 2",
         "building": "-",
         "floor": "-",
         "beds": 3,
         "baths": 1,
         "size": 1292,
+        "price": 699950,
+        "avail": true
+      },
+      {
+        "plot": "The Carlton, Number 4",
+        "building": "-",
+        "floor": "-",
+        "beds": 3,
+        "baths": 1,
+        "size": 1291,
         "price": 699950,
         "avail": true
       },
