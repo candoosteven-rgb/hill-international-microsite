@@ -218,7 +218,7 @@
         "floor": "-",
         "beds": 1,
         "baths": 1,
-        "size": 546,
+        "size": 545,
         "price": 355000,
         "avail": true
       },
@@ -278,7 +278,7 @@
         "floor": "-",
         "beds": 3,
         "baths": 1,
-        "size": 1175,
+        "size": 119,
         "price": 632500,
         "avail": true
       }
@@ -3152,13 +3152,13 @@
     },
     "plots": [
       {
-        "plot": "5% Deposit Paid up to £27,499*",
+        "plot": "5% Deposit Paid up to £37,499*",
         "building": "-",
         "floor": "-",
         "beds": 0,
         "baths": 1,
         "size": 0,
-        "price": 27499,
+        "price": 37499,
         "avail": true
       },
       {
@@ -3182,13 +3182,13 @@
         "avail": true
       },
       {
-        "plot": "5% Deposit Paid up to £34,997*",
+        "plot": "5% Deposit Paid up to £44,997*",
         "building": "-",
         "floor": "-",
         "beds": 0,
         "baths": 1,
         "size": 0,
-        "price": 34997,
+        "price": 44997,
         "avail": true
       },
       {
@@ -3544,22 +3544,22 @@
     "suite": null,
     "plots": [
       {
-        "plot": "The Carlton, Number 2",
-        "building": "-",
-        "floor": "-",
-        "beds": 3,
-        "baths": 1,
-        "size": 1292,
-        "price": 699950,
-        "avail": true
-      },
-      {
         "plot": "The Carlton, Number 4",
         "building": "-",
         "floor": "-",
         "beds": 3,
         "baths": 1,
         "size": 1291,
+        "price": 699950,
+        "avail": true
+      },
+      {
+        "plot": "The Carlton, Number 2",
+        "building": "-",
+        "floor": "-",
+        "beds": 3,
+        "baths": 1,
+        "size": 1292,
         "price": 699950,
         "avail": true
       },
@@ -4019,13 +4019,13 @@
         "avail": true
       },
       {
-        "plot": "The Eden, Number 29",
+        "plot": "The Eden, Number 27",
         "building": "-",
         "floor": "-",
         "beds": 4,
         "baths": 1,
         "size": 1954,
-        "price": 649950,
+        "price": 669950,
         "avail": true
       }
     ],
